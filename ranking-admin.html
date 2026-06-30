@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Moto4 Latin Cup · Clasificación</title>
+<style>
+  :root{
+    --bg:#0b0710; --surface:#15101f; --surface2:#1c1529; --line:#2a2036;
+    --violet:#8b5cf6; --magenta:#d946ef; --txt:#ece8f3; --muted:#9a90ad;
+    --green:#22c55e; --red:#ef4444; --gold:#facc15;
+    --grad:linear-gradient(120deg,#8b5cf6,#d946ef);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  body{min-height:100vh}
+  input{font-family:inherit}
+  /* ---------- LOGIN ---------- */
+  #login{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:22px;padding:24px;background:radial-gradient(120% 80% at 50% 0%,#1a1130 0%,#0b0710 60%)}
+  .brand{text-align:center}
+  .brand .k{font-size:11px;letter-spacing:.42em;color:var(--muted);text-transform:uppercase}
+  .brand .t{font-size:26px;font-weight:800;letter-spacing:.02em;margin-top:6px;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pinbox{width:100%;max-width:320px;text-align:center}
+  #pin{width:100%;font-size:28px;letter-spacing:.5em;text-align:center;padding:16px;
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;color:var(--txt)}
+  #pin:focus{outline:none;border-color:var(--violet)}
+  .btn{border:none;border-radius:12px;font-size:15px;font-weight:700;padding:14px 18px;
+    color:#fff;background:var(--grad);cursor:pointer;width:100%}
+  .btn:active{transform:scale(.985)}
+  .pinmsg{color:var(--red);font-size:13px;min-height:18px;margin-top:10px}
+  /* ---------- APP ---------- */
+  #app{display:none;max-width:1100px;margin:0 auto;padding:14px 12px 90px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:6px 2px 14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  header .k{font-size:10px;letter-spacing:.36em;color:var(--muted);text-transform:uppercase}
+  header h1{font-size:18px;margin:3px 0 0;font-weight:800}
+  header h1 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ver{font-size:10px;color:var(--muted)}
+  .ghost{background:var(--surface);border:1px solid var(--line);color:var(--txt);
+    border-radius:10px;padding:9px 12px;font-size:13px;font-weight:600;cursor:pointer}
+  .ghost:active{background:var(--surface2)}
+  /* fechas */
+  .fechas{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;scrollbar-width:none}
+  .fechas::-webkit-scrollbar{display:none}
+  .fchip{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--muted);
+    border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+  .fchip.on{color:#fff;background:var(--grad);border-color:transparent}
+  .fchip.add{color:var(--violet);border-style:dashed}
+  /* toolbar */
+  .tools{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
+  .tools .ghost{flex:1 1 auto;min-width:130px;text-align:center}
+  .tools .imp{border-color:#3a2d52;color:#c9b8f5}
+  .tools .save{background:var(--grad);border:none;color:#fff}
+  .tools .save:disabled{opacity:.5}
+  /* tabla */
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:760px}
+  th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+    text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);font-weight:700;background:var(--surface2)}
+  td{padding:5px 6px;border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:none}
+  td input{width:100%;background:transparent;border:1px solid transparent;border-radius:8px;
+    color:var(--txt);font-size:14px;padding:9px 8px}
+  td input:focus{outline:none;border-color:var(--violet);background:var(--surface2)}
+  td.c-pos input,td.c-num input,td.c-vts input,td.c-pts input{text-align:center}
+  .c-pos{width:58px}.c-num{width:64px}.c-vts{width:64px}.c-pts{width:72px}
+  .c-pts input{font-weight:800;color:var(--gold)}
+  .c-del{width:40px;text-align:center}
+  .del{background:none;border:none;color:#6a5d7e;font-size:18px;cursor:pointer;padding:6px}
+  .del:active{color:var(--red)}
+  .pos-medal input{color:#fff;font-weight:800}
+  .empty{text-align:center;color:var(--muted);padding:34px 14px;font-size:14px}
+  /* toast */
+  #toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(140%);
+    background:#222;color:#fff;padding:13px 20px;border-radius:12px;font-size:14px;font-weight:600;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .28s ease;z-index:50;max-width:90vw;text-align:center}
+  #toast.show{transform:translateX(-50%) translateY(0)}
+  #toast.ok{background:#15351f;border:1px solid var(--green)}
+  #toast.err{background:#371717;border:1px solid var(--red)}
+  .hint{font-size:12px;color:var(--muted);padding:2px 4px 12px}
+  .loading{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--muted);padding:40px;font-size:14px}
+  .spin{width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--violet);border-radius:50%;animation:r 1s linear infinite}
+  @keyframes r{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.spin{animation:none}#toast{transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="login">
+  <div class="brand">
+    <div class="k">Moto4 Latin Cup</div>
+    <div class="t">Clasificación · Admin</div>
+  </div>
+  <div class="pinbox">
+    <input id="pin" type="tel" inputmode="numeric" maxlength="6" placeholder="••••••" autocomplete="off">
+    <div class="pinmsg" id="pinmsg"></div>
+    <button class="btn" id="enter">Entrar</button>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="app">
+  <header>
+    <div>
+      <div class="k">Moto4 Latin Cup</div>
+      <h1>Clasificación <b>· Director</b></h1>
+    </div>
+    <div style="text-align:right">
+      <button class="ghost" id="reload">↻ Recargar</button>
+      <div class="ver" id="ver"></div>
+    </div>
+  </header>
+
+  <div class="fechas" id="fechas"></div>
+
+  <div class="tools">
+    <button class="ghost imp" id="importar">↓ Importar de Speedhive</button>
+    <button class="ghost" id="agregar">+ Agregar piloto</button>
+    <button class="ghost" id="recalc">↺ Recalcular puntos</button>
+    <button class="ghost save" id="guardar" disabled>Guardar fecha</button>
+  </div>
+
+  <div class="hint" id="hint">Editá cualquier celda. Los puntos se calculan por posición (25-20-16…), pero podés cambiarlos a mano para sanciones o empates.</div>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <th class="c-pos">Pos</th>
+          <th class="c-num">Nº</th>
+          <th>Piloto</th>
+          <th>País</th>
+          <th>Mejor vuelta</th>
+          <th>Tiempo total</th>
+          <th class="c-vts">Vueltas</th>
+          <th class="c-pts">Puntos</th>
+          <th class="c-del"></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<datalist id="pilotosList"></datalist>
+<div id="toast"></div>
+
+<script>
+// ====================================================================
+//  CONFIG — pegá acá la URL de tu aplicación web (la que termina en /exec)
+// ====================================================================
+var API_URL = "PEGAR_AQUI_LA_URL_DEL_DESPLIEGUE";  // <-- /exec del Apps Script del campeonato
+var PIN_OK  = "270913";
+var VERSION = "v2026.06.29-A";
+var PUNTOS  = [25,20,16,13,11,10,9,8,7,6,5,4,3,2,1];
+
+// ---- estado ----
+var STORE = { resultados:[], pilotos:[], carreras:[], fechas:[] };
+var paisDe = {};          // normaliza(nombre) -> pais
+var sesionDe = {};        // fecha -> sesion Speedhive (si se conoce)
+var fechaActual = null;
+var rows = [];            // filas en edición de la fecha actual
+var dirty = false;
+
+// ---- helpers ----
+function $(id){ return document.getElementById(id); }
+function norm(s){ return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim(); }
+function toast(msg,kind){
+  var t=$("toast"); t.textContent=msg; t.className="show "+(kind||"");
+  clearTimeout(t._t); t._t=setTimeout(function(){ t.className=""; }, 2600);
+}
+function setDirty(v){ dirty=v; $("guardar").disabled=!v; }
+
+// ---- API ----
+function api(body){
+  return fetch(API_URL,{
+    method:"POST",
+    headers:{"Content-Type":"text/plain;charset=utf-8"}, // simple request -> sin preflight
+    body:JSON.stringify(body),
+    redirect:"follow"
+  }).then(function(r){ return r.json(); });
+}
+
+// ====================== LOGIN ======================
+$("enter").onclick = doLogin;
+$("pin").addEventListener("keydown",function(e){ if(e.key==="Enter") doLogin(); });
+function doLogin(){
+  if($("pin").value === PIN_OK){
+    $("login").style.display="none";
+    $("app").style.display="block";
+    $("ver").textContent=VERSION;
+    cargar();
+  } else {
+    $("pinmsg").textContent="PIN incorrecto";
+    $("pin").value="";
+  }
+}
+
+// ====================== CARGA ======================
+function cargar(){
+  $("tbody").innerHTML='<tr><td colspan="9"><div class="loading"><div class="spin"></div> Cargando clasificación…</div></td></tr>';
+  if(API_URL.indexOf("PEGAR_AQUI")===0){
+    toast("Falta pegar la URL del despliegue en API_URL","err");
+    $("tbody").innerHTML='<tr><td colspan="9"><div class="empty">Configurá la URL del Apps Script (constante API_URL) y volvé a entrar.</div></td></tr>';
+    return;
+  }
+  api({action:"cargar"}).then(function(d){
+    if(!d || !d.ok){ toast("No se pudo cargar","err"); return; }
+    STORE = d;
+    paisDe={}; sesionDe={};
+    (STORE.pilotos||[]).forEach(function(p){ if(p.pais) paisDe[norm(p.nombre)]=p.pais; });
+    (STORE.carreras||[]).forEach(function(c){ sesionDe[c.id]=c.sesion; });
+    buildDatalist();
+    buildFechas();
+    var f = fechaActual || (STORE.fechas && STORE.fechas[0]) || 1;
+    selectFecha(f);
+  }).catch(function(e){
+    toast("Error de conexión","err");
+    $("tbody").innerHTML='<tr><td colspan="9"><div class="empty">No respondió el servidor. Revisá la URL y el despliegue.</div></td></tr>';
+  });
+}
+$("reload").onclick=function(){
+  if(dirty && !confirm("Tenés cambios sin guardar. ¿Recargar igual?")) return;
+  fechaActual=fechaActual; cargar();
+};
+
+function buildDatalist(){
+  var dl=$("pilotosList");
+  dl.innerHTML=(STORE.pilotos||[]).map(function(p){
+    return '<option value="'+escapeAttr(p.nombre)+'">';
+  }).join("");
+}
+function buildFechas(){
+  var box=$("fechas");
+  var fs=(STORE.fechas||[]).slice();
+  box.innerHTML="";
+  fs.forEach(function(f){
+    var b=document.createElement("button");
+    b.className="fchip"+(f===fechaActual?" on":"");
+    b.textContent="Fecha "+f;
+    b.onclick=function(){ tryChangeFecha(f); };
+    box.appendChild(b);
+  });
+  var add=document.createElement("button");
+  add.className="fchip add"; add.textContent="+ Nueva fecha";
+  add.onclick=nuevaFecha;
+  box.appendChild(add);
+}
+function tryChangeFecha(f){
+  if(f===fechaActual) return;
+  if(dirty && !confirm("Tenés cambios sin guardar en la Fecha "+fechaActual+". ¿Cambiar igual?")) return;
+  selectFecha(f);
+}
+function nuevaFecha(){
+  var n=prompt("Número de la nueva fecha (ej: 2):");
+  if(n===null) return;
+  n=parseInt(n,10);
+  if(!n){ toast("Número inválido","err"); return; }
+  if(STORE.fechas.indexOf(n)<0) STORE.fechas.push(n);
+  STORE.fechas.sort(function(a,b){return a-b;});
+  selectFecha(n);
+}
+
+// ====================== TABLA ======================
+function selectFecha(f){
+  fechaActual=f;
+  rows = (STORE.resultados||[]).filter(function(r){ return String(r.fecha)===String(f); })
+    .map(cloneRow);
+  rows.sort(function(a,b){ return (Number(a.pos)||999)-(Number(b.pos)||999); });
+  setDirty(false);
+  buildFechas();
+  render();
+}
+function cloneRow(r){
+  return { pos:r.pos, num:r.num, piloto:r.piloto, pais:r.pais,
+    mejor:r.mejor, total:r.total, vueltas:r.vueltas, puntos:r.puntos };
+}
+function render(){
+  var tb=$("tbody");
+  if(!rows.length){
+    tb.innerHTML='<tr><td colspan="9"><div class="empty">Sin pilotos en esta fecha.<br>Usá “Importar de Speedhive” o “+ Agregar piloto”.</div></td></tr>';
+    return;
+  }
+  tb.innerHTML="";
+  rows.forEach(function(r,i){ tb.appendChild(rowEl(r,i)); });
+}
+function rowEl(r,i){
+  var tr=document.createElement("tr");
+  var posCls = (Number(r.pos)>=1 && Number(r.pos)<=3) ? "c-pos pos-medal" : "c-pos";
+  tr.innerHTML =
+    cell(posCls,"pos",r.pos,"number")+
+    cell("c-num","num",r.num,"text")+
+    cellPiloto(r.piloto)+
+    cell("","pais",r.pais,"text")+
+    cell("","mejor",r.mejor,"text")+
+    cell("","total",r.total,"text")+
+    cell("c-vts","vueltas",r.vueltas,"text")+
+    cell("c-pts","puntos",r.puntos,"number")+
+    '<td class="c-del"><button class="del" title="Quitar">✕</button></td>';
+  // bind inputs
+  var inputs=tr.querySelectorAll("input");
+  inputs.forEach(function(inp){
+    inp.addEventListener("input",function(){
+      var k=inp.getAttribute("data-k");
+      r[k]=inp.value; setDirty(true);
+      if(k==="piloto") autoPais(r,tr);
+    });
+  });
+  tr.querySelector(".del").onclick=function(){
+    rows.splice(i,1); setDirty(true); render();
+  };
+  return tr;
+}
+function cell(cls,k,val,type){
+  return '<td class="'+cls+'"><input data-k="'+k+'" type="'+type+'" value="'+escapeAttr(val)+'"></td>';
+}
+function cellPiloto(val){
+  return '<td><input data-k="piloto" list="pilotosList" type="text" value="'+escapeAttr(val)+'" placeholder="Nombre y apellido"></td>';
+}
+function autoPais(r,tr){
+  var p=paisDe[norm(r.piloto)];
+  if(p){
+    r.pais=p;
+    var inp=tr.querySelector('input[data-k="pais"]');
+    if(inp && !inp.value) inp.value=p;
+  }
+}
+function escapeAttr(s){
+  return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
+}
+
+// ====================== ACCIONES ======================
+$("agregar").onclick=function(){
+  var pos = rows.length+1;
+  rows.push({pos:pos,num:"",piloto:"",pais:"",mejor:"",total:"",vueltas:"",puntos:(PUNTOS[pos-1]||0)});
+  setDirty(true); render();
+};
+$("recalc").onclick=function(){
+  // ordena por posición y asigna puntos según la posición escrita
+  rows.sort(function(a,b){ return (Number(a.pos)||999)-(Number(b.pos)||999); });
+  rows.forEach(function(r){
+    var pos=Number(r.pos);
+    r.puntos = (pos>=1) ? (PUNTOS[pos-1]||0) : 0;
+  });
+  setDirty(true); render();
+  toast("Puntos recalculados por posición");
+};
+$("importar").onclick=function(){
+  var pre = sesionDe[fechaActual]||"";
+  var ses = prompt("ID de sesión de Speedhive para la Fecha "+fechaActual+":", pre);
+  if(ses===null) return;
+  ses=String(ses).trim();
+  if(!ses){ toast("Falta el ID de sesión","err"); return; }
+  if(rows.length && !confirm("Esto reemplaza lo que está en pantalla con lo de Speedhive (todavía sin guardar). ¿Seguir?")) return;
+  toast("Trayendo de Speedhive…");
+  api({action:"importar",fecha:fechaActual,sesion:ses}).then(function(d){
+    if(!d||!d.ok){ toast("No se pudo importar","err"); return; }
+    if(!d.filas || !d.filas.length){ toast("Speedhive no devolvió datos para esa sesión","err"); return; }
+    rows = d.filas.map(cloneRow);
+    rows.sort(function(a,b){ return (Number(a.pos)||999)-(Number(b.pos)||999); });
+    setDirty(true); render();
+    toast(d.filas.length+" pilotos importados. Revisá y Guardá.","ok");
+  }).catch(function(){ toast("Error al importar","err"); });
+};
+$("guardar").onclick=function(){
+  // limpia filas totalmente vacías
+  var limpio = rows.filter(function(r){
+    return String(r.piloto).trim()!=="" || String(r.pos).trim()!=="";
+  });
+  $("guardar").disabled=true; $("guardar").textContent="Guardando…";
+  api({action:"guardar",fecha:fechaActual,filas:limpio}).then(function(d){
+    $("guardar").textContent="Guardar fecha";
+    if(d&&d.ok){
+      toast("Fecha "+fechaActual+" guardada ✓ ("+d.guardadas+" pilotos)","ok");
+      // refresca el store local con lo guardado
+      STORE.resultados = (STORE.resultados||[]).filter(function(r){ return String(r.fecha)!==String(fechaActual); });
+      limpio.forEach(function(r){ STORE.resultados.push(Object.assign({fecha:fechaActual},r)); });
+      setDirty(false);
+    } else {
+      toast("No se pudo guardar"+(d&&d.error?": "+d.error:""),"err");
+      $("guardar").disabled=false;
+    }
+  }).catch(function(){
+    $("guardar").textContent="Guardar fecha";
+    $("guardar").disabled=false;
+    toast("Error de conexión al guardar","err");
+  });
+};
+
+// aviso al salir con cambios
+window.addEventListener("beforeunload",function(e){
+  if(dirty){ e.preventDefault(); e.returnValue=""; }
+});
+</script>
+</body>
+</html>

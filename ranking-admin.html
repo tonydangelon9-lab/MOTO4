@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Moto4 Latin Cup · Clasificación</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moto4 FIM Latin America Cup · Campeonato</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
@@ -17,410 +17,273 @@
     --body:"Saira",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;background:var(--bg);color:var(--txt);
-    font-family:var(--body)}
-  body{min-height:100vh}
+  html,body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--body)}
   input{font-family:inherit}
-  /* ---------- LOGIN ---------- */
-  #login{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;
-    justify-content:center;gap:22px;padding:24px;background:radial-gradient(120% 80% at 50% 0%,#1a1130 0%,#0b0710 60%)}
-  .brand{text-align:center}
-  .brand .k{font-size:11px;letter-spacing:.42em;color:var(--muted);text-transform:uppercase}
-  .brand .t{font-family:var(--disp);font-size:30px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-top:6px;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .pinbox{width:100%;max-width:320px;text-align:center}
-  #pin{width:100%;font-size:28px;letter-spacing:.5em;text-align:center;padding:16px;
-    background:var(--surface);border:1px solid var(--line);border-radius:14px;color:var(--txt)}
-  #pin:focus{outline:none;border-color:var(--violet)}
-  .btn{border:none;border-radius:12px;font-size:15px;font-weight:700;padding:14px 18px;
-    color:#fff;background:var(--grad);cursor:pointer;width:100%}
-  .btn:active{transform:scale(.985)}
-  .pinmsg{color:var(--red);font-size:13px;min-height:18px;margin-top:10px}
-  /* ---------- APP ---------- */
-  #app{display:none;max-width:1100px;margin:0 auto;padding:14px 12px 90px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:10px;
-    padding:6px 2px 14px;border-bottom:1px solid var(--line);margin-bottom:14px}
-  header .k{font-size:10px;letter-spacing:.36em;color:var(--muted);text-transform:uppercase}
-  header h1{font-family:var(--disp);font-size:22px;margin:3px 0 0;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+  #app{max-width:1180px;margin:0 auto;padding:16px 12px 90px}
+  header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+    padding:4px 2px 16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+  .k{font-family:var(--disp);font-size:11px;letter-spacing:.34em;color:var(--muted);text-transform:uppercase}
+  header h1{font-family:var(--disp);font-size:26px;margin:4px 0 0;font-weight:800;letter-spacing:.03em;text-transform:uppercase;line-height:1}
   header h1 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .ver{font-size:10px;color:var(--muted)}
+  .sub{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+  .right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+  .btn{border:none;border-radius:10px;font-family:var(--disp);letter-spacing:.04em;text-transform:uppercase;
+    font-size:13px;font-weight:700;padding:10px 14px;color:#fff;background:var(--grad);cursor:pointer}
+  .btn:active{transform:scale(.98)}
   .ghost{background:var(--surface);border:1px solid var(--line);color:var(--txt);
-    font-family:var(--disp);letter-spacing:.03em;text-transform:uppercase;
-    border-radius:10px;padding:11px 14px;font-size:14px;font-weight:700;cursor:pointer}
+    font-family:var(--disp);letter-spacing:.04em;text-transform:uppercase;border-radius:10px;
+    padding:10px 14px;font-size:13px;font-weight:700;cursor:pointer}
   .ghost:active{background:var(--surface2)}
-  /* fechas */
-  .fechas{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;scrollbar-width:none}
-  .fechas::-webkit-scrollbar{display:none}
-  .fchip{flex:0 0 auto;font-family:var(--disp);letter-spacing:.04em;border:1px solid var(--line);background:var(--surface);color:var(--muted);
-    border-radius:999px;padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;text-transform:uppercase}
-  .fchip.on{color:#fff;background:var(--grad);border-color:transparent}
-  .fchip.add{color:var(--violet);border-style:dashed}
-  /* toolbar */
-  .tools{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px}
-  .tools .ghost{flex:1 1 auto;min-width:130px;text-align:center}
-  .tools .imp{border-color:#3a2d52;color:#c9b8f5}
-  .tools .save{background:var(--grad);border:none;color:#fff}
-  .tools .save:disabled{opacity:.5}
-  /* tabla */
+  .ver{font-size:10px;color:var(--muted)}
+  .tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+  .tools button{flex:0 1 auto}
+  .editing-on .ghost.editbtn{background:var(--grad);border-color:transparent;color:#fff}
   .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-  table{border-collapse:collapse;width:100%;min-width:940px}
-  th{font-family:var(--disp);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
-    text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);font-weight:700;background:var(--surface2)}
-  td{padding:5px 6px;border-bottom:1px solid var(--line)}
-  tr:last-child td{border-bottom:none}
-  td input{width:100%;background:transparent;border:1px solid transparent;border-radius:8px;
-    color:var(--txt);font-family:var(--body);font-size:14px;padding:9px 8px;font-variant-numeric:tabular-nums}
-  td input:focus{outline:none;border-color:var(--violet);background:var(--surface2)}
-  td.c-pos input,td.c-num input,td.c-vts input,td.c-pts input{text-align:center}
-  .c-pos{width:58px}.c-num{width:64px}.c-vts{width:64px}.c-pts{width:74px}
-  .c-pil{min-width:210px}.c-pais{width:96px}
-  td.c-mejor input,td.c-total input{letter-spacing:.03em}
-  .c-pts input{font-weight:800;color:var(--gold)}
-  .c-del{width:40px;text-align:center}
-  .del{background:none;border:none;color:#6a5d7e;font-size:18px;cursor:pointer;padding:6px}
+  table{border-collapse:collapse;width:100%;min-width:1080px}
+  thead th{font-family:var(--disp);text-transform:uppercase;color:var(--muted);
+    border-bottom:1px solid var(--line);background:var(--surface2);font-weight:700;padding:8px 6px;text-align:center}
+  thead tr.grp th{font-size:11px;letter-spacing:.12em;padding-top:11px;border-bottom:none}
+  thead tr.col th{font-size:11px;letter-spacing:.06em;padding-bottom:11px}
+  thead th.l{text-align:left}
+  .gbrasil{color:#7dd3fc}.garg{color:#fcd34d}
+  tbody td{padding:4px 6px;border-bottom:1px solid var(--line);text-align:center;font-variant-numeric:tabular-nums}
+  tbody tr:last-child td{border-bottom:none}
+  td.l{text-align:left}
+  .c-pos{width:46px;font-family:var(--disp);font-weight:800;font-size:16px}
+  .c-num{width:50px;color:var(--muted);font-weight:600}
+  .c-pil{min-width:200px;text-align:left;font-weight:600;font-size:15px}
+  .c-nac{min-width:104px;font-size:12px;color:var(--muted);letter-spacing:.04em}
+  .c-fmn{width:74px;font-size:11px;color:var(--muted)}
+  .c-v{width:58px}
+  .c-tot{width:74px}
+  .c-tot b{font-family:var(--disp);font-size:18px;color:var(--gold);font-weight:800}
+  .c-del{width:40px}
+  tr.p1 .c-pos{color:#ffd700}tr.p2 .c-pos{color:#cfd8dc}tr.p3 .c-pos{color:#e0a96d}
+  tr.p1{background:linear-gradient(90deg,rgba(250,204,21,.10),transparent)}
+  td input{width:100%;background:var(--surface2);border:1px solid var(--line);border-radius:7px;
+    color:var(--txt);font-size:14px;padding:8px 6px;text-align:center;font-variant-numeric:tabular-nums}
+  td.l input,td.c-pil input,td.c-nac input{text-align:left}
+  td input:focus{outline:none;border-color:var(--violet)}
+  .del{background:none;border:none;color:#6a5d7e;font-size:18px;cursor:pointer}
   .del:active{color:var(--red)}
-  .pos-medal input{color:#fff;font-weight:800}
-  .empty{text-align:center;color:var(--muted);padding:34px 14px;font-size:14px}
-  /* toast */
+  .foot{font-size:11px;color:var(--muted);padding:14px 4px;text-align:center;letter-spacing:.02em}
+  .badge{display:inline-block;font-family:var(--disp);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-left:6px}
   #toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(140%);
     background:#222;color:#fff;padding:13px 20px;border-radius:12px;font-size:14px;font-weight:600;
     box-shadow:0 10px 30px rgba(0,0,0,.5);transition:transform .28s ease;z-index:50;max-width:90vw;text-align:center}
   #toast.show{transform:translateX(-50%) translateY(0)}
   #toast.ok{background:#15351f;border:1px solid var(--green)}
   #toast.err{background:#371717;border:1px solid var(--red)}
-  .hint{font-size:12px;color:var(--muted);padding:2px 4px 12px}
-  .loading{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--muted);padding:40px;font-size:14px}
-  .spin{width:18px;height:18px;border:2px solid var(--line);border-top-color:var(--violet);border-radius:50%;animation:r 1s linear infinite}
-  @keyframes r{to{transform:rotate(360deg)}}
-  @media (prefers-reduced-motion:reduce){.spin{animation:none}#toast{transition:none}}
+  @media (prefers-reduced-motion:reduce){#toast{transition:none}}
+  @media(max-width:560px){header h1{font-size:21px}}
 </style>
 </head>
 <body>
-
-<!-- ===================== LOGIN ===================== -->
-<div id="login">
-  <div class="brand">
-    <div class="k">Moto4 Latin Cup</div>
-    <div class="t">Clasificación · Admin</div>
-  </div>
-  <div class="pinbox">
-    <input id="pin" type="tel" inputmode="numeric" maxlength="6" placeholder="••••••" autocomplete="off">
-    <div class="pinmsg" id="pinmsg"></div>
-    <button class="btn" id="enter">Entrar</button>
-  </div>
-</div>
-
-<!-- ===================== APP ===================== -->
 <div id="app">
   <header>
     <div>
-      <div class="k">Moto4 Latin Cup</div>
-      <h1>Clasificación <b>· Director</b></h1>
+      <div class="k">Moto4 FIM Latin America Cup 2026</div>
+      <h1>Campeonato <b>· Moto4</b></h1>
+      <div class="sub">Clasificación general · El camino latino al MotoGP<span class="badge" id="modo">Solo lectura</span></div>
     </div>
-    <div style="text-align:right">
-      <button class="ghost" id="reload">↻ Recargar</button>
+    <div class="right">
+      <button class="ghost editbtn" id="editar">🔒 Editar</button>
       <div class="ver" id="ver"></div>
     </div>
   </header>
 
-  <div class="fechas" id="fechas"></div>
-
-  <div class="tools">
-    <button class="ghost imp" id="importar">↓ Importar de Speedhive</button>
+  <div class="tools" id="tools" style="display:none">
     <button class="ghost" id="agregar">+ Agregar piloto</button>
-    <button class="ghost" id="recalc">↺ Recalcular puntos</button>
-    <button class="ghost save" id="guardar" disabled>Guardar fecha</button>
+    <button class="ghost" id="ordenar">↓ Ordenar por puntos</button>
+    <button class="btn" id="guardar">Guardar campeonato</button>
   </div>
-
-  <div class="hint" id="hint">Editá cualquier celda. Los puntos se calculan por posición (25-20-16…), pero podés cambiarlos a mano para sanciones o empates.</div>
 
   <div class="scroll">
     <table>
       <thead>
-        <tr>
-          <th class="c-pos">Pos</th>
-          <th class="c-num">Nº</th>
-          <th class="c-pil">Piloto</th>
-          <th class="c-pais">País</th>
-          <th class="c-mejor">Mejor vuelta</th>
-          <th class="c-total">Tiempo total</th>
-          <th class="c-vts">Vueltas</th>
-          <th class="c-pts">Puntos</th>
-          <th class="c-del"></th>
+        <tr class="grp">
+          <th class="l" rowspan="2">Pos</th>
+          <th rowspan="2">N°</th>
+          <th class="l" rowspan="2">Piloto</th>
+          <th rowspan="2">Nac</th>
+          <th rowspan="2">FMN</th>
+          <th class="gbrasil" colspan="3">Brasil</th>
+          <th class="garg" colspan="3">Argentina</th>
+          <th rowspan="2">Total</th>
+          <th rowspan="2" class="c-del editonly" style="display:none"></th>
+        </tr>
+        <tr class="col">
+          <th class="gbrasil">1ª</th><th class="gbrasil">2ª</th><th class="gbrasil">3ª</th>
+          <th class="garg">4ª</th><th class="garg">5ª</th><th class="garg">6ª</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
     </table>
   </div>
+
+  <div class="foot">Clase Moto4 · Honda · 6 válidas (3 Brasil + 3 Argentina) · Fuente oficial: FIM Latin America</div>
 </div>
 
-<datalist id="pilotosList"></datalist>
 <div id="toast"></div>
 
 <script>
-// ====================================================================
-//  CONFIG — pegá acá la URL de tu aplicación web (la que termina en /exec)
-// ====================================================================
-var API_URL = "https://script.google.com/macros/s/AKfycbxXUNIbRWaI0laKPgae6YH2bhkbJMkuL_oBAASgxNt5T6foqyIzHdvseGoQjQx7447G/exec";  // /exec del Apps Script del campeonato
+var API_URL = "https://script.google.com/macros/s/AKfycbxXUNIbRWaI0laKPgae6YH2bhkbJMkuL_oBAASgxNt5T6foqyIzHdvseGoQjQx7447G/exec";
 var PIN_OK  = "270913";
-var VERSION = "v2026.06.30-B";
-var PUNTOS  = [25,20,16,13,11,10,9,8,7,6,5,4,3,2,1];
+var VERSION = "v2026.06.30-CAMP1";
+var STORE_KEY = "moto4_campeonato_2026";
 
-// ---- estado ----
-var STORE = { resultados:[], pilotos:[], carreras:[], fechas:[] };
-var paisDe = {};          // normaliza(nombre) -> pais
-var paisTok = {};         // tokens ordenados del nombre -> pais (ignora el orden)
-var sesionDe = {};        // fecha -> sesion Speedhive (si se conoce)
-var fechaActual = null;
-var rows = [];            // filas en edición de la fecha actual
-var dirty = false;
+// Datos oficiales precargados (PDF FIM LATAM — consolidado 1ª a 6ª válida)
+// v = [Brasil1, Brasil2, Brasil3, Argentina4, Argentina5, Argentina6]
+var DATA_DEFAULT = [
+  { num:74, piloto:"Kensei Matsudaira",   nac:"USA",        fmn:"AMA",   v:[8,20,20,25,20,20] },
+  { num:62, piloto:"Alberto Enriquez",    nac:"Ecuador",    fmn:"RFME",  v:[6.5,25,25,13,0,25] },
+  { num:34, piloto:"Andoni Dominguez",    nac:"Nicaragua",  fmn:"FEM",   v:[12.5,13,6,11,25,11] },
+  { num:10, piloto:"Mahdi Salem",         nac:"Palestina",  fmn:"PMSMF", v:[5.5,0,16,20,16,16] },
+  { num:64, piloto:"Ulises Weyrauch",     nac:"USA",        fmn:"AMA",   v:[3.5,10,10,10,13,10] },
+  { num:99, piloto:"Cristobal Carreño",   nac:"Chile",      fmn:"FEM",   v:[10,9,11,9,9,7] },
+  { num:11, piloto:"Santiago Gossa",      nac:"Argentina",  fmn:"CAMOD", v:[0,0,13,16,11,9] },
+  { num:46, piloto:"Nicolás Torrez",      nac:"Paraguay",   fmn:"FEMOP", v:[2.5,6,5,8,8,6] },
+  { num:42, piloto:"Murilo Gomes",        nac:"Brasil",     fmn:"CBM",   v:[5,16,0,0,0,13] },
+  { num:26, piloto:"Santiago Vogel",      nac:"Argentina",  fmn:"CAMOD", v:[0,7,8,0,10,8] },
+  { num:91, piloto:"Aidan Hancock",       nac:"USA",        fmn:"AMA",   v:[1,4,4,7,7,5] },
+  { num:19, piloto:"Lorenzo Tiberi",      nac:"Argentina",  fmn:"CAMOD", v:[4,11,9,0,0,0] },
+  { num:69, piloto:"Anyelo Perdomo",      nac:"Venezuela",  fmn:"FMV",   v:[4.5,8,7,0,0,0] },
+  { num:16, piloto:"Santiago Bravo",      nac:"Venezuela",  fmn:"FMV",   v:[2,5,3,0,0,0] },
+  { num:8,  piloto:"Matias Alarcon",      nac:"Chile",      fmn:"FEM",   v:[3,0,0,0,0,0] },
+  { num:15, piloto:"Gael Olivo",          nac:"México",     fmn:"FEM",   v:[1.5,0,0,0,0,0] }
+];
 
-// ---- helpers ----
+var rows = [];
+var editing = false;
+
 function $(id){ return document.getElementById(id); }
-function norm(s){ return String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim(); }
-function keyTokens(s){ return norm(s).split(/\s+/).filter(Boolean).sort().join(" "); }
-function lookupPais(nombre){
-  var n=norm(nombre); if(paisDe[n]) return paisDe[n];
-  var k=keyTokens(nombre); if(paisTok[k]) return paisTok[k];
-  return "";
-}
-function backfillPais(arr){
-  (arr||[]).forEach(function(r){
-    if(!r.pais || String(r.pais).trim()===""){
-      var p=lookupPais(r.piloto); if(p) r.pais=p;
-    }
-  });
-}
-function toast(msg,kind){
-  var t=$("toast"); t.textContent=msg; t.className="show "+(kind||"");
-  clearTimeout(t._t); t._t=setTimeout(function(){ t.className=""; }, 2600);
-}
-function setDirty(v){ dirty=v; $("guardar").disabled=!v; }
+function toast(m,k){ var t=$("toast"); t.textContent=m; t.className="show "+(k||""); clearTimeout(t._t); t._t=setTimeout(function(){t.className="";},2600); }
+function num(x){ var n=parseFloat(x); return isNaN(n)?0:n; }
+function totalDe(r){ return (r.v||[]).reduce(function(a,b){ return a+num(b); },0); }
+function cloneRows(arr){ return (arr||[]).map(function(r){ return { num:r.num, piloto:r.piloto, nac:r.nac, fmn:r.fmn, v:(r.v||[]).slice(0,6) }; }); }
 
-// ---- API ----
 function api(body){
-  return fetch(API_URL,{
-    method:"POST",
-    headers:{"Content-Type":"text/plain;charset=utf-8"}, // simple request -> sin preflight
-    body:JSON.stringify(body),
-    redirect:"follow"
-  }).then(function(r){ return r.json(); });
+  return fetch(API_URL,{ method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"},
+    body:JSON.stringify(body), redirect:"follow" }).then(function(r){ return r.json(); });
 }
 
-// ====================== LOGIN ======================
-$("enter").onclick = doLogin;
-$("pin").addEventListener("keydown",function(e){ if(e.key==="Enter") doLogin(); });
-function doLogin(){
-  if($("pin").value === PIN_OK){
-    $("login").style.display="none";
-    $("app").style.display="block";
-    $("ver").textContent=VERSION;
-    cargar();
-  } else {
-    $("pinmsg").textContent="PIN incorrecto";
-    $("pin").value="";
-  }
-}
-
-// ====================== CARGA ======================
-function cargar(){
-  $("tbody").innerHTML='<tr><td colspan="9"><div class="loading"><div class="spin"></div> Cargando clasificación…</div></td></tr>';
-  if(API_URL.indexOf("PEGAR_AQUI")===0){
-    toast("Falta pegar la URL del despliegue en API_URL","err");
-    $("tbody").innerHTML='<tr><td colspan="9"><div class="empty">Configurá la URL del Apps Script (constante API_URL) y volvé a entrar.</div></td></tr>';
-    return;
-  }
-  api({action:"cargar"}).then(function(d){
-    if(!d || !d.ok){ toast("No se pudo cargar","err"); return; }
-    STORE = d;
-    paisDe={}; paisTok={}; sesionDe={};
-    (STORE.pilotos||[]).forEach(function(p){
-      if(p.pais){ paisDe[norm(p.nombre)]=p.pais; paisTok[keyTokens(p.nombre)]=p.pais; }
-    });
-    (STORE.carreras||[]).forEach(function(c){ sesionDe[c.id]=c.sesion; });
-    buildDatalist();
-    buildFechas();
-    var f = fechaActual || (STORE.fechas && STORE.fechas[0]) || 1;
-    selectFecha(f);
-  }).catch(function(e){
-    toast("Error de conexión","err");
-    $("tbody").innerHTML='<tr><td colspan="9"><div class="empty">No respondió el servidor. Revisá la URL y el despliegue.</div></td></tr>';
-  });
-}
-$("reload").onclick=function(){
-  if(dirty && !confirm("Tenés cambios sin guardar. ¿Recargar igual?")) return;
-  fechaActual=fechaActual; cargar();
-};
-
-function buildDatalist(){
-  var dl=$("pilotosList");
-  dl.innerHTML=(STORE.pilotos||[]).map(function(p){
-    return '<option value="'+escapeAttr(p.nombre)+'">';
-  }).join("");
-}
-function buildFechas(){
-  var box=$("fechas");
-  var fs=(STORE.fechas||[]).slice();
-  box.innerHTML="";
-  fs.forEach(function(f){
-    var b=document.createElement("button");
-    b.className="fchip"+(f===fechaActual?" on":"");
-    b.textContent="Fecha "+f;
-    b.onclick=function(){ tryChangeFecha(f); };
-    box.appendChild(b);
-  });
-  var add=document.createElement("button");
-  add.className="fchip add"; add.textContent="+ Nueva fecha";
-  add.onclick=nuevaFecha;
-  box.appendChild(add);
-}
-function tryChangeFecha(f){
-  if(f===fechaActual) return;
-  if(dirty && !confirm("Tenés cambios sin guardar en la Fecha "+fechaActual+". ¿Cambiar igual?")) return;
-  selectFecha(f);
-}
-function nuevaFecha(){
-  var n=prompt("Número de la nueva fecha (ej: 2):");
-  if(n===null) return;
-  n=parseInt(n,10);
-  if(!n){ toast("Número inválido","err"); return; }
-  if(STORE.fechas.indexOf(n)<0) STORE.fechas.push(n);
-  STORE.fechas.sort(function(a,b){return a-b;});
-  selectFecha(n);
-}
-
-// ====================== TABLA ======================
-function selectFecha(f){
-  fechaActual=f;
-  rows = (STORE.resultados||[]).filter(function(r){ return String(r.fecha)===String(f); })
-    .map(cloneRow);
-  backfillPais(rows);
-  rows.sort(function(a,b){ return (Number(a.pos)||999)-(Number(b.pos)||999); });
-  setDirty(false);
-  buildFechas();
+function init(){
+  $("ver").textContent=VERSION;
+  var saved=null;
+  try{ var s=localStorage.getItem(STORE_KEY); if(s) saved=JSON.parse(s); }catch(e){}
+  rows = cloneRows(saved && saved.length ? saved : DATA_DEFAULT);
+  ordenar(false);
   render();
-}
-function cloneRow(r){
-  return { pos:r.pos, num:r.num, piloto:r.piloto, pais:r.pais,
-    mejor:r.mejor, total:r.total, vueltas:r.vueltas, puntos:r.puntos };
-}
-function render(){
-  var tb=$("tbody");
-  if(!rows.length){
-    tb.innerHTML='<tr><td colspan="9"><div class="empty">Sin pilotos en esta fecha.<br>Usá “Importar de Speedhive” o “+ Agregar piloto”.</div></td></tr>';
-    return;
+  if(API_URL.indexOf("PEGAR_AQUI")<0){
+    api({action:"cargarCamp"}).then(function(d){
+      if(d && d.ok && d.filas && d.filas.length){
+        rows = cloneRows(d.filas);
+        ordenar(false); render();
+      }
+    }).catch(function(){});
   }
-  tb.innerHTML="";
-  rows.forEach(function(r,i){ tb.appendChild(rowEl(r,i)); });
 }
-function rowEl(r,i){
-  var tr=document.createElement("tr");
-  var posCls = (Number(r.pos)>=1 && Number(r.pos)<=3) ? "c-pos pos-medal" : "c-pos";
-  tr.innerHTML =
-    cell(posCls,"pos",r.pos,"number")+
-    cell("c-num","num",r.num,"text")+
-    cellPiloto(r.piloto)+
-    cell("c-pais","pais",r.pais,"text")+
-    cell("c-mejor","mejor",r.mejor,"text")+
-    cell("c-total","total",r.total,"text")+
-    cell("c-vts","vueltas",r.vueltas,"text")+
-    cell("c-pts","puntos",r.puntos,"number")+
-    '<td class="c-del"><button class="del" title="Quitar">✕</button></td>';
-  // bind inputs
-  var inputs=tr.querySelectorAll("input");
-  inputs.forEach(function(inp){
+
+function ordenar(re){
+  rows.sort(function(a,b){ return totalDe(b)-totalDe(a); });
+  if(re) render();
+}
+
+function render(){
+  document.body.classList.toggle("editing-on", editing);
+  $("tools").style.display = editing ? "flex" : "none";
+  $("modo").textContent = editing ? "Edición" : "Solo lectura";
+  $("editar").textContent = editing ? "✓ Listo" : "🔒 Editar";
+  document.querySelectorAll(".editonly").forEach(function(el){ el.style.display = editing ? "" : "none"; });
+
+  var tb=$("tbody"); tb.innerHTML="";
+  rows.forEach(function(r,i){
+    var tot=totalDe(r);
+    var tr=document.createElement("tr");
+    var pos=i+1;
+    if(pos<=3) tr.className="p"+pos;
+    if(editing){
+      tr.innerHTML =
+        '<td class="c-pos l">'+pos+'</td>'+
+        '<td class="c-num"><input data-k="num" value="'+at(r.num)+'"></td>'+
+        '<td class="c-pil l"><input data-k="piloto" value="'+at(r.piloto)+'"></td>'+
+        '<td class="c-nac"><input data-k="nac" value="'+at(r.nac)+'"></td>'+
+        '<td class="c-fmn"><input data-k="fmn" value="'+at(r.fmn)+'"></td>'+
+        vInputs(r)+
+        '<td class="c-tot"><b>'+fmt(tot)+'</b></td>'+
+        '<td class="c-del editonly"><button class="del">✕</button></td>';
+      bindRow(tr,r,i);
+    } else {
+      tr.innerHTML =
+        '<td class="c-pos l">'+pos+'</td>'+
+        '<td class="c-num">'+at(r.num)+'</td>'+
+        '<td class="c-pil l">'+at(r.piloto)+'</td>'+
+        '<td class="c-nac">'+at(r.nac).toUpperCase()+'</td>'+
+        '<td class="c-fmn">'+at(r.fmn)+'</td>'+
+        vCells(r)+
+        '<td class="c-tot"><b>'+fmt(tot)+'</b></td>';
+    }
+    tb.appendChild(tr);
+  });
+}
+function vCells(r){
+  var h=""; for(var i=0;i<6;i++){ var x=num(r.v[i]); h+='<td class="c-v">'+(x?fmt(x):'<span style="color:#5a4f70">·</span>')+'</td>'; } return h;
+}
+function vInputs(r){
+  var h=""; for(var i=0;i<6;i++){ h+='<td class="c-v"><input data-vi="'+i+'" inputmode="decimal" value="'+at(r.v[i]||"")+'"></td>'; } return h;
+}
+function bindRow(tr,r,i){
+  tr.querySelectorAll('input[data-k]').forEach(function(inp){
+    inp.addEventListener("input",function(){ r[inp.getAttribute("data-k")]=inp.value; });
+  });
+  tr.querySelectorAll('input[data-vi]').forEach(function(inp){
     inp.addEventListener("input",function(){
-      var k=inp.getAttribute("data-k");
-      r[k]=inp.value; setDirty(true);
-      if(k==="piloto") autoPais(r,tr);
+      r.v[+inp.getAttribute("data-vi")]=inp.value;
+      tr.querySelector(".c-tot b").textContent=fmt(totalDe(r));
     });
   });
-  tr.querySelector(".del").onclick=function(){
-    rows.splice(i,1); setDirty(true); render();
-  };
-  return tr;
+  var del=tr.querySelector(".del");
+  if(del) del.onclick=function(){ rows.splice(i,1); render(); };
 }
-function cell(cls,k,val,type){
-  return '<td class="'+cls+'"><input data-k="'+k+'" type="'+type+'" value="'+escapeAttr(val)+'"></td>';
-}
-function cellPiloto(val){
-  return '<td class="c-pil"><input data-k="piloto" list="pilotosList" type="text" value="'+escapeAttr(val)+'" placeholder="Nombre y apellido"></td>';
-}
-function autoPais(r,tr){
-  var p=lookupPais(r.piloto);
-  if(p){
-    r.pais=p;
-    var inp=tr.querySelector('input[data-k="pais"]');
-    if(inp && !inp.value) inp.value=p;
+function at(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+function fmt(n){ n=num(n); return String(n); }
+
+$("editar").onclick=function(){
+  if(!editing){
+    var pin=prompt("PIN para editar:");
+    if(pin!==PIN_OK){ if(pin!==null) toast("PIN incorrecto","err"); return; }
+    editing=true;
+  } else {
+    editing=false;
+    ordenar(false);
   }
-}
-function escapeAttr(s){
-  return String(s==null?"":s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
-}
-
-// ====================== ACCIONES ======================
+  render();
+};
 $("agregar").onclick=function(){
-  var pos = rows.length+1;
-  rows.push({pos:pos,num:"",piloto:"",pais:"",mejor:"",total:"",vueltas:"",puntos:(PUNTOS[pos-1]||0)});
-  setDirty(true); render();
+  rows.push({ num:"", piloto:"", nac:"", fmn:"", v:[0,0,0,0,0,0] });
+  render();
 };
-$("recalc").onclick=function(){
-  // ordena por posición y asigna puntos según la posición escrita
-  rows.sort(function(a,b){ return (Number(a.pos)||999)-(Number(b.pos)||999); });
-  rows.forEach(function(r){
-    var pos=Number(r.pos);
-    r.puntos = (pos>=1) ? (PUNTOS[pos-1]||0) : 0;
-  });
-  setDirty(true); render();
-  toast("Puntos recalculados por posición");
-};
-$("importar").onclick=function(){
-  var pre = sesionDe[fechaActual]||"";
-  var ses = prompt("ID de sesión de Speedhive para la Fecha "+fechaActual+":", pre);
-  if(ses===null) return;
-  ses=String(ses).trim();
-  if(!ses){ toast("Falta el ID de sesión","err"); return; }
-  if(rows.length && !confirm("Esto reemplaza lo que está en pantalla con lo de Speedhive (todavía sin guardar). ¿Seguir?")) return;
-  toast("Trayendo de Speedhive…");
-  api({action:"importar",fecha:fechaActual,sesion:ses}).then(function(d){
-    if(!d||!d.ok){ toast("No se pudo importar","err"); return; }
-    if(!d.filas || !d.filas.length){ toast("Speedhive no devolvió datos para esa sesión","err"); return; }
-    rows = d.filas.map(cloneRow);
-    backfillPais(rows);
-    rows.sort(function(a,b){ return (Number(a.pos)||999)-(Number(b.pos)||999); });
-    setDirty(true); render();
-    toast(d.filas.length+" pilotos importados. Revisá y Guardá.","ok");
-  }).catch(function(){ toast("Error al importar","err"); });
-};
+$("ordenar").onclick=function(){ ordenar(true); toast("Ordenado por puntos"); };
 $("guardar").onclick=function(){
-  // limpia filas totalmente vacías
-  var limpio = rows.filter(function(r){
-    return String(r.piloto).trim()!=="" || String(r.pos).trim()!=="";
-  });
+  var limpio=rows.filter(function(r){ return String(r.piloto).trim()!==""; })
+    .map(function(r){ return { num:r.num, piloto:r.piloto, nac:r.nac, fmn:r.fmn, v:r.v.map(num) }; });
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify(limpio)); }catch(e){}
+  rows=cloneRows(limpio); ordenar(false);
   $("guardar").disabled=true; $("guardar").textContent="Guardando…";
-  api({action:"guardar",fecha:fechaActual,filas:limpio}).then(function(d){
-    $("guardar").textContent="Guardar fecha";
-    if(d&&d.ok){
-      toast("Fecha "+fechaActual+" guardada ✓ ("+d.guardadas+" pilotos)","ok");
-      // refresca el store local con lo guardado
-      STORE.resultados = (STORE.resultados||[]).filter(function(r){ return String(r.fecha)!==String(fechaActual); });
-      limpio.forEach(function(r){ STORE.resultados.push(Object.assign({fecha:fechaActual},r)); });
-      setDirty(false);
-    } else {
-      toast("No se pudo guardar"+(d&&d.error?": "+d.error:""),"err");
-      $("guardar").disabled=false;
-    }
+  api({action:"guardarCamp", filas:limpio}).then(function(d){
+    $("guardar").disabled=false; $("guardar").textContent="Guardar campeonato";
+    if(d && d.ok){ toast("Campeonato guardado en la planilla ✓","ok"); }
+    else { toast("Guardado en este equipo. (Para verse en todos lados falta activar el guardado online)","err"); }
+    editing=false; render();
   }).catch(function(){
-    $("guardar").textContent="Guardar fecha";
-    $("guardar").disabled=false;
-    toast("Error de conexión al guardar","err");
+    $("guardar").disabled=false; $("guardar").textContent="Guardar campeonato";
+    toast("Guardado en este equipo. (El guardado online no respondió)","err");
+    editing=false; render();
   });
 };
 
-// aviso al salir con cambios
-window.addEventListener("beforeunload",function(e){
-  if(dirty){ e.preventDefault(); e.returnValue=""; }
-});
+init();
 </script>
 </body>
 </html>

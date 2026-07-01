@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="513.33331"
+   height="288"
+   viewBox="0 0 513.33331 288"
+   sodipodi:docname="Mobil_RGB-TM.eps"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="513.33331"
+       height="288"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <g
+       id="group-R5">
+      <path
+         id="path2"
+         d="m 1507.35,983.648 c 0,154.182 124.99,279.152 279.15,279.152 154.18,0 279.17,-124.97 279.17,-279.152 0,-154.16 -124.99,-279.148 -279.17,-279.148 -154.16,0 -279.15,124.988 -279.15,279.148 z m 278.87,-128.136 c 70.67,0 127.96,57.277 127.96,127.976 0,70.672 -57.29,127.962 -127.96,127.962 -70.67,0 -127.96,-57.29 -127.96,-127.962 0,-70.699 57.29,-127.976 127.96,-127.976"
+         style="fill:#ed1d24;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,288)" />
+      <path
+         id="path3"
+         d="M 720,1440 H 953.258 L 1085.08,997.859 h 2.03 L 1220.97,1440 h 227.16 V 720 h -150.08 v 509.09 h -2.03 L 1152.01,720 H 1014.1 L 872.117,1229.09 H 870.09 V 720 H 720 Z M 2274.97,720 v 46.629 c 38.54,-42.59 87.21,-58.82 143.99,-58.82 151.11,0 265.72,126.769 265.72,274.832 0,148.049 -113.58,276.859 -265.72,276.859 -54.75,0 -102.41,-17.25 -143.99,-52.74 V 1440 H 2124.88 V 720 Z m 129.61,135.512 c -70.67,0 -127.97,57.277 -127.97,127.976 0,70.672 57.3,127.962 127.97,127.962 70.67,0 127.97,-57.29 127.97,-127.962 0,-70.699 -57.3,-127.976 -127.97,-127.976 z M 2747.55,720 h 150.09 v 527.34 h -150.09 z m 0,578.03 h 150.09 V 1440 H 2747.55 Z M 2980.8,720 h 150.1 v 720 h -150.1 z m 245.45,707.27 h 21.79 V 1440 h -58.58 v -12.73 h 21.79 v -59.28 h 15 z m 99.85,12.73 h -21.79 l -12.83,-56.78 h -0.19 l -13.05,56.78 h -21.95 v -72.01 h 14.06 v 60.16 h 0.19 l 13.13,-60.16 h 14.76 l 13.42,60.16 h 0.19 v -60.16 h 14.06 V 1440"
+         style="fill:#26469e;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,288)" />
+    </g>
+  </g>
+</svg>

@@ -6,15 +6,17 @@
 <title>Moto4 FIM Latin America Cup · Campeonato</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+  @font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
   :root{
-    --bg:#0b0710; --surface:#15101f; --surface2:#1c1529; --line:#2a2036;
-    --violet:#8b5cf6; --magenta:#d946ef; --txt:#ece8f3; --muted:#9a90ad;
+    --bg:#000000; --surface:#0e0410; --surface2:#160518; --line:#2a0f30;
+    --violet:#C604F7; --magenta:#D63DFC; --txt:#f2eefb; --muted:#b79bc0;
     --green:#22c55e; --red:#ef4444; --gold:#facc15;
-    --grad:linear-gradient(120deg,#8b5cf6,#d946ef);
-    --disp:"Saira Condensed","Saira",-apple-system,BlinkMacSystemFont,sans-serif;
-    --body:"Saira",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --grad:linear-gradient(120deg,#C604F7,#D63DFC,#E37BFD);
+    --disp:"MGP Display","Arial Narrow",Arial,sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--body)}
@@ -22,6 +24,9 @@
   #app{max-width:1180px;margin:0 auto;padding:16px 12px 90px}
   header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
     padding:4px 2px 16px;border-bottom:1px solid var(--line);margin-bottom:16px}
+  .brand{display:flex;align-items:center;gap:14px}
+  header img.logo{height:54px;width:auto;display:block;flex:0 0 auto}
+  @media(max-width:560px){header img.logo{height:40px}.brand{gap:10px}}
   .k{font-family:var(--disp);font-size:11px;letter-spacing:.34em;color:var(--muted);text-transform:uppercase}
   header h1{font-family:var(--disp);font-size:26px;margin:4px 0 0;font-weight:800;letter-spacing:.03em;text-transform:uppercase;line-height:1}
   header h1 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -82,10 +87,13 @@
 <body>
 <div id="app">
   <header>
-    <div>
-      <div class="k">Moto4 FIM Latin America Cup 2026</div>
-      <h1>Campeonato <b>· Moto4</b></h1>
-      <div class="sub">Clasificación general · El camino latino al MotoGP<span class="badge" id="modo">Solo lectura</span></div>
+    <div class="brand">
+      <img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
+      <div>
+        <div class="k">FIM Latin America Cup 2026</div>
+        <h1>Campeonato</h1>
+        <div class="sub">Clasificación general · El camino latino al MotoGP<span class="badge" id="modo">Solo lectura</span></div>
+      </div>
     </div>
     <div class="right">
       <button class="ghost editbtn" id="editar">🔒 Editar</button>
@@ -128,7 +136,7 @@
 <div id="toast"></div>
 
 <script>
-var API_URL = "https://script.google.com/macros/s/AKfycbxXUNIbRWaI0laKPgae6YH2bhkbJMkuL_oBAASgxNt5T6foqyIzHdvseGoQjQx7447G/exec";
+var API_URL = "https://script.google.com/macros/s/AKfycbystPCHyyVfaxG_ewOD5ZJSLgDEVctdN9rx817EyTT5ciGPMWoE-S45Isx6X4uEah0W/exec";
 var PIN_OK  = "270913";
 var VERSION = "v2026.06.30-CAMP2";
 var STORE_KEY = "moto4_campeonato_2026";

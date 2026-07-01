@@ -60,17 +60,30 @@
   .tab{font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;font-size:14px;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:10px 20px;border-radius:999px;cursor:pointer}
   .tab.active{color:#fff;background:var(--grad);border-color:transparent}
   .panel{display:none}.panel.active{display:block}
-  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-  table{border-collapse:collapse;width:100%;min-width:520px}
-  thead th{font-family:var(--disp);text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);background:var(--surface2);font-weight:700;padding:12px 8px;font-size:12px;letter-spacing:.06em}
-  thead th.l{text-align:left}
-  tbody td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:center;font-variant-numeric:tabular-nums}
-  tbody tr:last-child td{border-bottom:none} td.l{text-align:left}
-  .c-pos{width:56px;font-family:var(--disp);font-weight:700;font-size:17px}
-  .c-num{width:54px;color:var(--muted)} .c-pil{text-align:left;font-weight:600}
-  .c-nac{font-size:12px;color:var(--muted)} .c-tot b{font-family:var(--disp);font-size:19px;color:var(--gold)}
-  tr.p1 .c-pos{color:#ffd700}tr.p2 .c-pos{color:#cfd8dc}tr.p3 .c-pos{color:#e0a96d}
-  tr.p1{background:linear-gradient(90deg,rgba(250,204,21,.10),transparent)}
+  .rklist{display:flex;flex-direction:column;gap:9px;max-width:940px;margin:0 auto}
+  .rkrow{display:flex;align-items:center;gap:12px;background:#fff;color:#0a0410;border-radius:14px;padding:8px 16px 8px 12px;position:relative;transition:transform .15s}
+  .rkrow:hover{transform:translateX(4px)}
+  .rk-pos{font-family:var(--disp);font-weight:700;font-size:24px;width:40px;text-align:center;color:#0a0410;flex:none}
+  .rk-photo{width:50px;height:50px;flex:none;border-radius:50%;position:relative;z-index:1}
+  .rk-photo img{width:50px;height:50px;border-radius:50%;object-fit:cover;object-position:top center;background:var(--grad);display:block;transition:transform .2s ease,box-shadow .2s ease;transform-origin:center bottom}
+  .rkrow:hover .rk-photo img{transform:scale(2.15) translateY(-12px);box-shadow:0 16px 36px rgba(0,0,0,.55);position:relative;z-index:20}
+  .rk-photo.noimg::after{content:attr(data-i);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--grad);color:#fff;border-radius:50%;font-family:var(--disp);font-weight:700;font-size:16px}
+  .rk-num{font-family:var(--disp);font-weight:700;font-size:13px;color:#fff;background:var(--purple);border-radius:7px;padding:3px 8px;min-width:34px;text-align:center;flex:none}
+  .rk-flag{font-size:20px;flex:none;line-height:1}
+  .rk-name{flex:1;min-width:0;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase;letter-spacing:.01em}
+  .rk-name span{font-weight:500;color:#3a2740}.rk-name b{font-weight:800}
+  .rk-gap{font-family:var(--disp);font-weight:700;font-size:12px;color:#fff;background:var(--violet);border-radius:6px;padding:3px 7px;flex:none;min-width:54px;text-align:center}
+  .rk-pts{font-family:var(--disp);font-weight:700;font-size:22px;flex:none;min-width:58px;text-align:right;color:#0a0410}
+  .rkrow.p1{background:var(--grad);color:#fff;box-shadow:0 6px 26px rgba(214,61,252,.35)}
+  .rkrow.p1 .rk-pos,.rkrow.p1 .rk-pts{color:#fff}
+  .rkrow.p1 .rk-name span{color:#f3ddfb}.rkrow.p1 .rk-num{background:#fff;color:var(--purple)}
+  .rkrow.p1 .rk-gap{background:rgba(255,255,255,.25)}
+  @media(max-width:560px){
+    .rk-pos{font-size:18px;width:24px}.rk-photo,.rk-photo img{width:42px;height:42px}
+    .rk-name{font-size:12.5px}.rk-pts{font-size:18px;min-width:42px}.rk-flag{font-size:16px}
+    .rk-num{font-size:11px;min-width:26px;padding:2px 5px}.rk-gap{min-width:42px;font-size:11px;padding:2px 5px}
+    .rkrow{gap:7px;padding:7px 10px 7px 7px}
+  }
   .rkfoot{font-size:11px;color:var(--muted);padding:14px 4px;text-align:center}
   .live{max-width:900px;margin:0 auto;text-align:center}
   .videobox{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--muted)}
@@ -81,19 +94,40 @@
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk active" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Ranking 2026</h1><p>Clasificación general oficial rumbo al título.</p></div></header><section><div class="wrap"><div class="tabs2" id="tabbar"><button class="tab active" data-t="ranking">Ranking</button><button class="tab" data-t="envivo">En vivo</button></div><div class="panel active" id="p-ranking"><div class="scroll"><table><thead><tr><th class="l">Pos</th><th>N°</th><th class="l">Piloto</th><th>Nac</th><th>Puntos</th></tr></thead><tbody id="rkbody"></tbody></table></div><div class="rkfoot">Clase Moto4 · Honda · Fuente oficial FIM Latin America · Se actualiza con la planilla del campeonato.</div></div><div class="panel" id="p-envivo"><div class="live"><div class="videobox" id="videobox"><div class="placeholder"><div class="big">Transmisión en vivo</div><div>Pegá el enlace de YouTube en el archivo para activarla.</div></div></div><div class="livebtns"><a class="btn" id="ytbtn" href="#" target="_blank" rel="noopener">Ver en YouTube</a><a class="btn" id="timingbtn" href="#" target="_blank" rel="noopener" style="background:var(--surface);border:1px solid var(--line)">Tu tiempo en vivo</a></div><div class="note">Para activar esta sección necesito: el <b>enlace de YouTube</b> del vivo y el <b>enlace del cronometraje</b> (Speedhive u otro).</div></div></div></div></section><footer><div class="wrap"><div class="fstrip"><img src="07-LOGOS-SPONSORS/Mobil_RGB-TM.svg" alt="Mobil"><img src="07-LOGOS-SPONSORS/Honda_Logo.svg" alt="Honda"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"><img src="07-LOGOS-SPONSORS/Federation-Internationale-de-Motocyclisme-Logo%20(1).png" alt="FIM"></div><img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"><div>moto4latincup.lat · @moto4latincup</div><div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div><div class="langs">Español · Português (próximamente) · English (soon)</div></div></footer><script>
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk active" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Ranking 2026</h1><p>Clasificación general oficial rumbo al título.</p></div></header><section><div class="wrap"><div class="tabs2" id="tabbar"><button class="tab active" data-t="ranking">Ranking</button><button class="tab" data-t="envivo">En vivo</button></div><div class="panel active" id="p-ranking"><div class="rklist" id="rklist"></div><div class="rkfoot">Clase Moto4 · Honda · Fuente oficial FIM Latin America · Se actualiza con la planilla del campeonato.</div></div><div class="panel" id="p-envivo"><div class="live"><div class="videobox" id="videobox"><div class="placeholder"><div class="big">Transmisión en vivo</div><div>Pegá el enlace de YouTube en el archivo para activarla.</div></div></div><div class="livebtns"><a class="btn" id="ytbtn" href="#" target="_blank" rel="noopener">Ver en YouTube</a><a class="btn" id="timingbtn" href="#" target="_blank" rel="noopener" style="background:var(--surface);border:1px solid var(--line)">Tu tiempo en vivo</a></div><div class="note">Para activar esta sección necesito: el <b>enlace de YouTube</b> del vivo y el <b>enlace del cronometraje</b> (Speedhive u otro).</div></div></div></div></section><footer><div class="wrap"><div class="fstrip"><img src="07-LOGOS-SPONSORS/Mobil_RGB-TM.svg" alt="Mobil"><img src="07-LOGOS-SPONSORS/Honda_Logo.svg" alt="Honda"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"><img src="07-LOGOS-SPONSORS/Federation-Internationale-de-Motocyclisme-Logo%20(1).png" alt="FIM"></div><img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"><div>moto4latincup.lat · @moto4latincup</div><div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div><div class="langs">Español · Português (próximamente) · English (soon)</div></div></footer><script>
 var YT_EMBED="",YT_LINK="",TIMING_LINK="";
 var API_URL="https://script.google.com/macros/s/AKfycbystPCHyyVfaxG_ewOD5ZJSLgDEVctdN9rx817EyTT5ciGPMWoE-S45Isx6X4uEah0W/exec";
 var DATA_DEFAULT=[{"num": 74, "piloto": "Kensei Matsudaira", "nac": "USA", "v": [8, 20, 20, 25, 20, 20]}, {"num": 62, "piloto": "Alberto Enriquez", "nac": "Ecuador", "v": [6.5, 25, 25, 13, 0, 25]}, {"num": 34, "piloto": "Andoni Dominguez", "nac": "Nicaragua", "v": [12.5, 13, 6, 11, 25, 11]}, {"num": 10, "piloto": "Mahdi Salem", "nac": "Palestina", "v": [5.5, 0, 16, 20, 16, 16]}, {"num": 64, "piloto": "Ulises Weyrauch", "nac": "USA", "v": [3.5, 10, 10, 10, 13, 10]}, {"num": 99, "piloto": "Cristobal Carreño", "nac": "Chile", "v": [10, 9, 11, 9, 9, 7]}, {"num": 11, "piloto": "Santiago Gossa", "nac": "Argentina", "v": [0, 0, 13, 16, 11, 9]}, {"num": 46, "piloto": "Nicolás Torrez", "nac": "Paraguay", "v": [2.5, 6, 5, 8, 8, 6]}, {"num": 42, "piloto": "Murilo Gomes", "nac": "Brasil", "v": [5, 16, 0, 0, 0, 13]}, {"num": 26, "piloto": "Santiago Vogel", "nac": "Argentina", "v": [0, 7, 8, 0, 10, 8]}, {"num": 91, "piloto": "Aidan Hancock", "nac": "USA", "v": [1, 4, 4, 7, 7, 5]}, {"num": 19, "piloto": "Lorenzo Tiberi", "nac": "Argentina", "v": [4, 11, 9, 0, 0, 0]}, {"num": 69, "piloto": "Anyelo Perdomo", "nac": "Venezuela", "v": [4.5, 8, 7, 0, 0, 0]}, {"num": 16, "piloto": "Santiago Bravo", "nac": "Venezuela", "v": [2, 5, 3, 0, 0, 0]}, {"num": 8, "piloto": "Matias Alarcon", "nac": "Chile", "v": [3, 0, 0, 0, 0, 0]}, {"num": 15, "piloto": "Gael Olivo", "nac": "México", "v": [1.5, 0, 0, 0, 0, 0]}];
 function num(x){var n=parseFloat(x);return isNaN(n)?0:n;}
 function tot(r){return (r.v||[]).reduce(function(a,b){return a+num(b);},0);}
-function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
-function renderRanking(rows){rows=rows.slice().sort(function(a,b){return tot(b)-tot(a);});
-  var tb=document.getElementById("rkbody");tb.innerHTML="";
-  rows.forEach(function(r,i){var pos=i+1,tr=document.createElement("tr");if(pos<=3)tr.className="p"+pos;
-    tr.innerHTML='<td class="c-pos l">'+pos+'</td><td class="c-num">'+esc(r.num)+'</td>'+
-      '<td class="c-pil l">'+esc(r.piloto)+'</td><td class="c-nac">'+esc(String(r.nac).toUpperCase())+'</td>'+
-      '<td class="c-tot"><b>'+String(num(tot(r)))+'</b></td>';tb.appendChild(tr);});}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
+var FLAGS={"usa":"🇺🇸","estados unidos":"🇺🇸","ee.uu.":"🇺🇸","ecuador":"🇪🇨","nicaragua":"🇳🇮","palestina":"🇵🇸","chile":"🇨🇱","argentina":"🇦🇷","paraguay":"🇵🇾","brasil":"🇧🇷","brazil":"🇧🇷","venezuela":"🇻🇪","mexico":"🇲🇽","méxico":"🇲🇽","puerto rico":"🇵🇷"};
+var PHOTOS={74:"kensei-matsudaira",62:"alberto-enriquez",34:"andoni-dominguez",10:"mahdi-salem",64:"ulises-jie-wuu",99:"cristobal-carreno",11:"santiago-gossa",46:"thiago-torrez",42:"murilo-gomes",26:"santiago-vogel",91:"aidan-leonard",19:"lorenzo-tiberi",69:"anyelo-vidal",16:"luis-bravo",8:"matias-alarcon",15:"mario-tijerina"};
+function flag(n){return FLAGS[String(n||"").toLowerCase().trim()]||"🏁";}
+function fmt(n){n=num(n);return (n%1===0)?String(n):n.toFixed(1);}
+function inis(name){var p=String(name||"").trim().split(/\s+/);return (((p[0]||"")[0]||"")+((p[1]||"")[0]||"")).toUpperCase();}
+function renderRanking(rows){
+  rows=rows.slice().sort(function(a,b){return tot(b)-tot(a);});
+  var lead=rows.length?tot(rows[0]):0;
+  var box=document.getElementById("rklist");box.innerHTML="";
+  rows.forEach(function(r,i){
+    var pos=i+1,t=tot(r),gap=pos===1?"":"-"+fmt(lead-t);
+    var parts=String(r.piloto||"").trim().split(/\s+/);
+    var first=parts.shift()||"",last=parts.join(" ");
+    var slug=PHOTOS[r.num]||"";
+    var img=slug?'<img src="FOTOS-DE-PILOTO/'+slug+'.jpg" alt="'+esc(r.piloto)+'" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.classList.add(\'noimg\')">':'';
+    var row=document.createElement("div");
+    row.className="rkrow"+(pos===1?" p1":"");
+    row.innerHTML='<div class="rk-pos">'+pos+'</div>'+
+      '<div class="rk-photo" data-i="'+esc(inis(r.piloto))+'">'+img+'</div>'+
+      '<div class="rk-num">'+esc(r.num)+'</div>'+
+      '<div class="rk-flag">'+flag(r.nac)+'</div>'+
+      '<div class="rk-name"><span>'+esc(first)+'</span> <b>'+esc(last)+'</b></div>'+
+      '<div class="rk-gap"'+(gap?'':' style="visibility:hidden"')+'>'+(gap||'-')+'</div>'+
+      '<div class="rk-pts">'+fmt(t)+'</div>';
+    box.appendChild(row);
+  });
+}
 renderRanking(DATA_DEFAULT);
 fetch(API_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"cargarCamp"})})
   .then(function(r){return r.json();}).then(function(d){if(d&&d.ok&&d.filas&&d.filas.length){var ok=d.filas.filter(function(r){return tot(r)>0;});if(ok.length)renderRanking(d.filas);}}).catch(function(){});

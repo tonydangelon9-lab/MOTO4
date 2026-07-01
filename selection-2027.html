@@ -5,62 +5,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moto4 Latin Cup · Selection Program 2027</title>
 <meta name="description" content="El camino latino al MotoGP. Postulaciones abiertas para pilotos de 14 a 19 años de toda Latinoamérica.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* ===== FUENTE OFICIAL MGP (05-MGP-FONT) ===== */
+  @font-face{
+    font-family:"MGP Display";
+    src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");
+    font-weight:700;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:"MGP Display";
+    src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");
+    font-weight:500;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:"MGP Display Exp";
+    src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");
+    font-weight:700;font-style:normal;font-display:swap;
+  }
+  @font-face{
+    font-family:"MGP Inline";
+    src:url("05-MGP-FONT/MGPInline-Bold.ttf") format("truetype");
+    font-weight:700;font-style:normal;font-display:swap;
+  }
+
   /* ===== MARCA OFICIAL MOTO4 LATIN CUP (Quick Guide v3-2026) ===== */
   :root{
     --black:#000000; --white:#FFFFFF;
     --purple:#D63DFC;   /* Latin Purple */
     --violet:#C604F7;   /* Latin Violet */
     --pink:#E37BFD;     /* Latin Pink   */
-    --bg:#000000; --surface:#0e0410; --surface2:#160518; --line:#2a0f30; --muted:#b79bc0;
+    --bg:#000000; --surface:#0e0410; --line:#2a0f30; --muted:#b79bc0;
     --grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
     --grad-dark:linear-gradient(135deg,#1a0620 0%, #3a0d47 45%, #000000 100%);
-    --disp:"Saira Condensed","Saira",-apple-system,BlinkMacSystemFont,sans-serif;
-    --body:"Saira",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --disp:"MGP Display","Arial Narrow",sans-serif;
+    --dispx:"MGP Display Exp","MGP Display",sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--white);font-family:var(--body);line-height:1.55;overflow-x:hidden}
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-  .disp{font-family:var(--disp);text-transform:uppercase;letter-spacing:.02em;line-height:1}
+  .disp{font-family:var(--disp);text-transform:uppercase;letter-spacing:.01em;line-height:1}
   .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
   a{color:inherit}
-  .btn{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;
-    font-weight:800;font-size:17px;color:#fff;background:var(--grad);border:none;border-radius:999px;
+  .btn{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;
+    font-weight:700;font-size:17px;color:#fff;background:var(--grad);border:none;border-radius:999px;
     padding:15px 34px;cursor:pointer;text-decoration:none;box-shadow:0 10px 40px rgba(214,61,252,.4);transition:transform .15s}
   .btn:active{transform:scale(.97)}
   .btn.big{font-size:20px;padding:17px 46px}
 
-  .pattern{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-
   nav{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:.02em;text-transform:uppercase}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+  nav img.logo{height:38px;width:auto;display:block}
   nav .btn{padding:9px 22px;font-size:13px;box-shadow:none}
 
-  .hero{position:relative;padding:84px 0 74px;text-align:center;overflow:hidden;background:var(--grad-dark)}
-  .hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  .hero{position:relative;padding:70px 0 74px;text-align:center;overflow:hidden;background:var(--grad-dark)}
+  .hero::after{content:"";position:absolute;inset:0;z-index:0;
     background:radial-gradient(70% 55% at 50% 0%, rgba(214,61,252,.32) 0%, rgba(198,4,247,.12) 40%, transparent 72%)}
+  .hero .wrap{position:relative;z-index:1}
+  .hero .mobil{height:20px;margin-bottom:6px;opacity:.95}
+  .hero .herologo{max-width:min(520px,86vw);width:100%;height:auto;margin:0 auto 26px;display:block;filter:drop-shadow(0 8px 30px rgba(214,61,252,.35))}
   .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(0,0,0,.5);
-    border-radius:999px;padding:8px 16px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--white)}
+    border-radius:999px;padding:8px 16px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.1em;font-size:12px;color:var(--white)}
   .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 12px var(--pink)}
-  .hero h1{font-family:var(--disp);text-transform:uppercase;font-weight:800;font-size:clamp(40px,8.5vw,84px);
-    letter-spacing:.01em;margin:22px 0 14px}
+  .hero h1{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:clamp(34px,7vw,68px);
+    letter-spacing:.01em;margin:20px 0 14px}
   .hero p.lead{font-size:clamp(16px,2.4vw,21px);color:#e9d8ef;max-width:620px;margin:0 auto 30px}
   .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
   .cta-row .note{font-size:13px;color:var(--muted)}
-  .roadto{margin-top:34px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.22em;font-size:12px;color:var(--muted)}
+  .roadto{margin-top:32px}
+  .roadto img{height:26px;opacity:.9}
 
   .count{display:flex;gap:12px;justify-content:center;margin:34px 0 0;flex-wrap:wrap}
   .count .box{background:rgba(0,0,0,.55);border:1px solid var(--line);border-radius:14px;padding:14px 18px;min-width:78px}
-  .count .n{font-family:var(--disp);font-weight:800;font-size:34px;line-height:1;color:var(--pink)}
+  .count .n{font-family:var(--disp);font-weight:700;font-size:34px;line-height:1;color:var(--pink)}
   .count .l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
 
   section{padding:66px 0;border-top:1px solid var(--line);position:relative}
-  .sec-h{font-family:var(--disp);text-transform:uppercase;font-weight:800;font-size:clamp(26px,4.5vw,44px);margin-bottom:8px}
+  .sec-h{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:clamp(24px,4.2vw,40px);margin-bottom:8px}
   .sec-sub{color:var(--muted);max-width:680px;margin-bottom:34px;font-size:16px}
   .lead-big{font-size:clamp(17px,2.2vw,20px);color:var(--white);max-width:760px}
   .lead-big .muted{color:var(--muted)}
@@ -69,15 +91,15 @@
   .g3{grid-template-columns:repeat(3,1fr)}
   .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative;overflow:hidden}
   .card::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--grad)}
-  .card h3{font-family:var(--disp);text-transform:uppercase;font-size:19px;letter-spacing:.02em;margin-bottom:8px}
+  .card h3{font-family:var(--disp);text-transform:uppercase;font-size:19px;letter-spacing:.01em;margin-bottom:8px}
   .card p{color:var(--muted);font-size:15px}
   .card .ic{font-size:26px;margin-bottom:10px;display:block}
 
   .steps{display:grid;gap:14px}
   .step{display:flex;gap:18px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
   .step .num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:var(--grad);
-    font-family:var(--disp);font-weight:800;font-size:20px;color:#fff;display:flex;align-items:center;justify-content:center}
-  .step h4{font-family:var(--disp);text-transform:uppercase;font-size:16px;letter-spacing:.02em;margin-bottom:3px}
+    font-family:var(--disp);font-weight:700;font-size:20px;color:#fff;display:flex;align-items:center;justify-content:center}
+  .step h4{font-family:var(--disp);text-transform:uppercase;font-size:16px;letter-spacing:.01em;margin-bottom:3px}
   .step p{color:var(--muted);font-size:14px}
 
   .reqs{display:grid;gap:12px}
@@ -88,53 +110,47 @@
   .fechas{display:grid;border:1px solid var(--line);border-radius:16px;overflow:hidden}
   .fecha{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--surface)}
   .fecha:last-child{border-bottom:none}
-  .fecha .ev{font-family:var(--disp);text-transform:uppercase;letter-spacing:.03em;font-size:15px}
+  .fecha .ev{font-family:var(--disp);text-transform:uppercase;letter-spacing:.02em;font-size:15px}
   .fecha .dt{color:var(--muted);font-size:15px;text-align:right}
 
   .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 20px;margin-bottom:12px}
   .faq summary{cursor:pointer;list-style:none;padding:18px 0;font-family:var(--disp);text-transform:uppercase;
-    letter-spacing:.02em;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+    letter-spacing:.01em;font-size:16px;display:flex;justify-content:space-between;align-items:center}
   .faq summary::-webkit-details-marker{display:none}
   .faq summary::after{content:"+";color:var(--purple);font-size:22px;font-family:var(--body)}
   .faq details[open] summary::after{content:"–"}
   .faq p{color:var(--muted);padding:0 0 18px;font-size:15px}
 
   .final{text-align:center;position:relative;overflow:hidden;background:var(--grad-dark)}
-  .final::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 90% at 50% 0%, rgba(214,61,252,.2), transparent 70%)}
+  .final::after{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(70% 90% at 50% 0%, rgba(214,61,252,.2), transparent 70%)}
+  .final .wrap{position:relative;z-index:1}
   .final .qr{width:150px;height:150px;border-radius:16px;border:1px dashed var(--line);background:rgba(0,0,0,.5);
     margin:26px auto 0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;text-align:center;padding:14px}
 
   footer{border-top:1px solid var(--line);padding:38px 0;text-align:center;color:var(--muted);font-size:14px;background:#000}
-  footer .logo{margin-bottom:8px}
+  footer .flogo{height:40px;margin-bottom:14px}
   .langs{margin-top:12px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 
   @media(max-width:720px){
     .g3{grid-template-columns:1fr}
     .fecha{flex-direction:column;gap:2px}
     .fecha .dt{text-align:left}
-    nav .logo{font-size:17px}
   }
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
-  <div class="logo">Moto4 <span class="grad">Latin Cup</span></div>
+  <img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
   <a href="#postular" class="btn">Postular</a>
 </div></nav>
 
 <header class="hero">
-  <div class="pattern"><svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" fill="none" style="position:absolute;right:-10%;top:-20%;width:80%;height:140%;opacity:.5">
-    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#C604F7"/><stop offset="1" stop-color="#000000"/></linearGradient></defs>
-    <path d="M-50 400 Q 150 400 150 200 Q 150 -20 400 -20" stroke="url(#g)" stroke-width="34"/>
-    <path d="M-50 440 Q 190 440 190 200 Q 190 20 400 20" stroke="url(#g)" stroke-width="22"/>
-    <path d="M-50 470 Q 220 470 220 200 Q 220 55 400 55" stroke="url(#g)" stroke-width="13"/>
-    <path d="M-50 492 Q 245 492 245 200 Q 245 85 400 85" stroke="url(#g)" stroke-width="7"/>
-  </svg></div>
   <div class="wrap">
+    <img class="mobil" src="07-LOGOS-SPONSORS/Mobil_RGB-TM.svg" alt="Mobil">
+    <img class="herologo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
     <span class="badge"><span class="dot"></span> Postulaciones abiertas · Temporada 2027</span>
-    <h1>El camino latino<br>al <span class="grad">MotoGP</span></h1>
+    <h1>El camino latino al <span class="grad">MotoGP</span></h1>
     <p class="lead">Moto4 Latin Cup abre el Selection Program 2027. Si soñás con ser piloto profesional, esta es tu puerta de entrada.</p>
     <div class="cta-row">
       <a href="#postular" class="btn big">Postular ahora</a>
@@ -146,7 +162,7 @@
       <div class="box"><div class="n" id="cd-m">--</div><div class="l">Min</div></div>
       <div class="box"><div class="n" id="cd-s">--</div><div class="l">Seg</div></div>
     </div>
-    <div class="roadto">Road to MotoGP</div>
+    <div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div>
   </div>
 </header>
 
@@ -227,7 +243,7 @@
 </div></section>
 
 <footer><div class="wrap">
-  <div class="logo">Moto4 <span class="grad">Latin Cup</span></div>
+  <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
   <div>moto4latincup.lat · @moto4latincup</div>
   <div class="langs">Español · Português (próximamente) · English (soon)</div>
 </div></footer>

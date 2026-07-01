@@ -147,7 +147,15 @@
 <div class="wrap"><div class="done" id="done">
   <div class="chk">🏁</div>
   <h2>¡Postulación enviada!</h2>
-  <p>Recibimos tu postulación al Selection Program 2027. Vamos a revisarla y te contactaremos por email. ¡Mucha suerte!</p>
+  <p>Estamos procesando tu información. Vamos a revisar tu postulación y te contactaremos por email para continuar con el proceso. ¡Mucha suerte!</p>
+  <a href="index.html" class="submit" style="display:inline-block;text-decoration:none;max-width:260px">Volver al inicio</a>
+</div></div>
+
+<div class="wrap"><div class="done" id="gate">
+  <div class="chk">⏱️</div>
+  <h2>Las postulaciones abren pronto</h2>
+  <p>La preinscripción al Selection Program 2027 abre el <b>15 de agosto de 2026</b>. Guardá este link y volvé en esa fecha para postularte.</p>
+  <div id="countdown" style="font-family:var(--disp);font-size:24px;color:var(--pink);letter-spacing:.06em;margin-bottom:20px"></div>
   <a href="index.html" class="submit" style="display:inline-block;text-decoration:none;max-width:260px">Volver al inicio</a>
 </div></div>
 
@@ -158,8 +166,24 @@
 
 <script>
   // ===== CONFIG =====
-  // Cuando conectemos el guardado, pegá acá la URL del Apps Script (deja "" para modo demo):
+  // 1) Cuando tengas el Apps Script, pegá acá su URL (dejá "" para modo demo):
   var FORM_API = "";
+  // 2) Apertura de la preinscripción (hora local del visitante). Cambiá acá si mueven la fecha:
+  var OPEN_DATE = new Date("2026-08-15T09:00:00");
+
+  // --- control de apertura del formulario ---
+  (function(){
+    if(new Date() < OPEN_DATE){
+      document.getElementById("form").style.display="none";
+      document.getElementById("gate").style.display="block";
+      function tick(){
+        var diff=OPEN_DATE-new Date(); if(diff<0){location.reload();return;}
+        var d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5), m=Math.floor(diff%36e5/6e4);
+        document.getElementById("countdown").textContent=d+"d "+h+"h "+m+"m";
+      }
+      tick(); setInterval(tick,60000);
+    }
+  })();
 
   var form=document.getElementById("form"), btn=document.getElementById("btn"), msg=document.getElementById("msg");
   form.addEventListener("submit",function(e){

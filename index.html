@@ -25,9 +25,9 @@
     font-size:15px;color:#fff;background:var(--grad);border:none;border-radius:999px;padding:12px 26px;cursor:pointer}
   .btn.big{font-size:18px;padding:15px 36px}
   .btn.ghost{background:rgba(0,0,0,.35);border:2px solid var(--purple);color:var(--pink)}
-  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
-  nav img.logo{height:38px;display:block}
+  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
+  nav img.logo{height:60px;display:block}
   .navlinks{display:flex;gap:26px;align-items:center}
   .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted)}
   .navlinks a.lnk:hover,.navlinks a.lnk.active{color:#fff}
@@ -53,7 +53,7 @@
   footer{border-top:1px solid var(--line);padding:40px 0 34px;text-align:center;color:var(--muted);font-size:13px;background:#000}
   footer .fstrip{display:flex;flex-wrap:wrap;gap:22px 36px;align-items:center;justify-content:center;margin-bottom:22px;opacity:.85}
   footer .fstrip img{height:30px}
-  footer .flogo{height:38px;margin-bottom:10px}
+  footer .flogo{height:92px;margin-bottom:10px}
   footer .roadto img{height:22px;opacity:.85;margin-top:10px}
   footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
   .hero{position:relative;min-height:82vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 0;overflow:hidden;background:var(--grad-dark)}
@@ -76,33 +76,32 @@
   .card p{color:var(--muted);font-size:13px}
 
   footer .sponsors{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:24px}
-  footer .sp-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:38px;width:100%}
-  footer .sp-row.principal img{height:46px;width:auto;display:block;object-fit:contain}
+  footer .sp-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-evenly;gap:24px;width:100%}
+  footer .sp-row.principal img{height:34px;width:auto;display:block;object-fit:contain}
   .logo-blanco{filter:brightness(0) invert(1)}
-  footer .sp-row.secundario{gap:30px}
-  footer .sp-row.secundario img{height:26px;width:auto;display:block;object-fit:contain;opacity:.92}
-  footer .flogo{height:40px;margin:0 auto 8px;display:block}
+  footer .sp-row.secundario{gap:24px}
+  footer .sp-row.secundario img{height:28px;width:auto;display:block;object-fit:contain;opacity:.95}
+  footer .flogo{height:92px;margin:0 auto 8px;display:block}
   footer .fmeta{margin-top:2px}
   footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-  @media(max-width:560px){footer .sp-row.principal img{height:34px}footer .sp-row.secundario img{height:20px}footer .sp-row{gap:22px}footer .sp-row.secundario{gap:18px}}
+  @media(max-width:560px){footer .sp-row.principal img{height:26px}footer .sp-row.secundario img{height:20px}footer .sp-row{gap:16px}footer .flogo{height:72px}nav img.logo{height:48px}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk active" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a></div></div></nav><header class="hero"><div class="bg" style="background-image:url('02-BACKGROUNDS/Background_Moto4_LatinCup_Version1_16_9.png')"></div><div class="wrap"><img class="herologo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"><h1>El camino latino al <span class="grad">MotoGP</span></h1><p>El campeonato oficial FIM Latin America de la categoría Moto4. Jóvenes talentos, motos iguales, un solo sueño.</p><div class="cta"><a href="selection-2027.html" class="btn big">Postular 2027</a><a href="campeonato.html" class="btn ghost big">Ver ranking</a></div><div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div></div></header><section><div class="wrap"><div class="cards"><a class="card" href="calendario.html"><div class="ico">📅</div><h3>Calendario</h3><p>Las 6 fechas de la temporada 2026.</p></a><a class="card" href="pilotos.html"><div class="ico">🏁</div><h3>Pilotos</h3><p>Los 16 talentos de la grilla.</p></a><a class="card" href="campeonato.html"><div class="ico">🏆</div><h3>Ranking 2026</h3><p>La clasificación general.</p></a><a class="card" href="selection-2027.html"><div class="ico">⭐</div><h3>Postular</h3><p>Selection Program 2027.</p></a></div></div></section><footer><div class="wrap">
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk active" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a></div></div></nav><header class="hero"><div class="bg" style="background-image:url('02-BACKGROUNDS/Background_Moto4_LatinCup_Version1_16_9.png')"></div><div class="wrap"><img class="herologo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"><h1>El camino latino al <span class="grad">MotoGP</span></h1><p>El campeonato oficial FIM Latin America de la categoría Moto4. Jóvenes talentos, motos iguales, un solo sueño.</p><div class="cta"><a href="selection-2027.html" class="btn big">Postular 2027</a><a href="campeonato.html" class="btn ghost big">Ver ranking</a></div><div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div></div></header><section><div class="wrap"><div class="cards"><a class="card" href="calendario.html"><div class="ico">📅</div><h3>Calendario</h3><p>Las 6 fechas de la temporada 2026.</p></a><a class="card" href="pilotos.html"><div class="ico">🏁</div><h3>Pilotos</h3><p>Los 16 talentos de la grilla.</p></a><a class="card" href="campeonato.html"><div class="ico">🏆</div><h3>Ranking 2026</h3><p>La clasificación general.</p></a><a class="card" href="selection-2027.html"><div class="ico">⭐</div><h3>Postular</h3><p>Selection Program 2027.</p></a></div></div></section><footer><div class="wrap">
   <div class="sponsors">
     <div class="sp-row principal">
       <img src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
+      <img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
       <img src="07-LOGOS-SPONSORS/Honda_Logo.svg" alt="Honda">
-      <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
     </div>
     <div class="sp-row secundario">
       <img src="07-LOGOS-SPONSORS/Federation-Internationale-de-Motocyclisme-Logo%20(1).png" alt="FIM Latin America">
       <img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
-      <img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
-      <!-- MAS-SPONSORS: agregar aca Spider, DLRS, etc. cuando esten los nombres de archivo -->
+      <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
     </div>
   </div>
-  <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
+  <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
   <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
   <div class="langs">Español · Português (próximamente) · English (soon)</div>
 </div></footer><script>var b=document.getElementById("burger"),m=document.getElementById("menu");if(b){b.addEventListener("click",function(){m.classList.toggle("open");});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");});});}</script>

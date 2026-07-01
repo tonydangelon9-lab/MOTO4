@@ -167,13 +167,14 @@
 <script>
   // ===== CONFIG =====
   // 1) Cuando tengas el Apps Script, pegá acá su URL (dejá "" para modo demo):
-  var FORM_API = "";
+  var FORM_API = "https://script.google.com/macros/s/AKfycbxyHjGMrEfsvZXTVt7Ji60WJzJedgH0qLBveV9YTgpB3sT7XUz_m4VK0z3HuWrSChHR/exec";
   // 2) Apertura de la preinscripción (hora local del visitante). Cambiá acá si mueven la fecha:
   var OPEN_DATE = new Date("2026-08-15T09:00:00");
 
   // --- control de apertura del formulario ---
   (function(){
-    if(new Date() < OPEN_DATE){
+    var preview = /[?&]preview/i.test(location.search); // moto4latincup.lat/postular.html?preview=1 abre el form para probar
+    if(!preview && new Date() < OPEN_DATE){
       document.getElementById("form").style.display="none";
       document.getElementById("gate").style.display="block";
       function tick(){

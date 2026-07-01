@@ -62,12 +62,13 @@
   .panel{display:none}.panel.active{display:block}
   .rklist{display:flex;flex-direction:column;gap:9px;max-width:940px;margin:0 auto}
   .rkrow{display:flex;align-items:center;gap:12px;background:#fff;color:#0a0410;border-radius:14px;padding:8px 16px 8px 12px;position:relative;transition:transform .15s}
-  .rkrow:hover{transform:translateX(4px)}
+  .rkrow:hover{transform:translateX(4px);z-index:40}
   .rk-pos{font-family:var(--disp);font-weight:700;font-size:24px;width:40px;text-align:center;color:#0a0410;flex:none}
   .rk-photo{width:50px;height:50px;flex:none;border-radius:50%;position:relative;z-index:1}
-  .rk-photo img{width:50px;height:50px;border-radius:50%;object-fit:cover;object-position:top center;background:var(--grad);display:block;transition:transform .2s ease,box-shadow .2s ease;transform-origin:center bottom}
-  .rkrow:hover .rk-photo img{transform:scale(2.15) translateY(-12px);box-shadow:0 16px 36px rgba(0,0,0,.55);position:relative;z-index:20}
-  .rk-photo.noimg::after{content:attr(data-i);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--grad);color:#fff;border-radius:50%;font-family:var(--disp);font-weight:700;font-size:16px}
+  .rk-photo img{width:50px;height:50px;border-radius:50%;object-fit:cover;object-position:top center;background:var(--grad);display:block;transition:transform .22s ease,box-shadow .22s ease;transform-origin:center bottom}
+  .rkrow:hover .rk-photo img{transform:scale(2.2) translateY(-26px);box-shadow:0 0 0 3px #fff,0 18px 40px rgba(0,0,0,.6);position:relative;z-index:60}
+  .rk-photo.noimg::after{content:attr(data-i);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--grad);color:#fff;border-radius:50%;font-family:var(--disp);font-weight:700;font-size:16px;transition:transform .22s ease,box-shadow .22s ease;transform-origin:center bottom}
+  .rkrow:hover .rk-photo.noimg::after{transform:scale(2.2) translateY(-26px);box-shadow:0 0 0 3px #fff,0 18px 40px rgba(0,0,0,.6);z-index:60}
   .rk-num{font-family:var(--disp);font-weight:700;font-size:13px;color:#fff;background:var(--purple);border-radius:7px;padding:3px 8px;min-width:34px;text-align:center;flex:none}
   .rk-flag{font-size:20px;flex:none;line-height:1}
   .rk-name{flex:1;min-width:0;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase;letter-spacing:.01em}

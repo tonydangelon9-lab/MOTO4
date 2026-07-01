@@ -130,7 +130,7 @@
 <script>
 var API_URL = "https://script.google.com/macros/s/AKfycbxXUNIbRWaI0laKPgae6YH2bhkbJMkuL_oBAASgxNt5T6foqyIzHdvseGoQjQx7447G/exec";
 var PIN_OK  = "270913";
-var VERSION = "v2026.06.30-CAMP1";
+var VERSION = "v2026.06.30-CAMP2";
 var STORE_KEY = "moto4_campeonato_2026";
 
 // Datos oficiales precargados (PDF FIM LATAM — consolidado 1ª a 6ª válida)
@@ -178,8 +178,12 @@ function init(){
   if(API_URL.indexOf("PEGAR_AQUI")<0){
     api({action:"cargarCamp"}).then(function(d){
       if(d && d.ok && d.filas && d.filas.length){
-        rows = cloneRows(d.filas);
-        ordenar(false); render();
+        // solo adopta la versión de la planilla si tiene puntos cargados
+        var validas = d.filas.filter(function(r){ return totalDe(r) > 0; });
+        if(validas.length){
+          rows = cloneRows(d.filas);
+          ordenar(false); render();
+        }
       }
     }).catch(function(){});
   }

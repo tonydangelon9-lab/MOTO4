@@ -136,6 +136,16 @@
     .fecha{flex-direction:column;gap:2px}
     .fecha .dt{text-align:left}
   }
+
+  footer .sponsors{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:24px}
+  footer .sp-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:38px;width:100%}
+  footer .sp-row.principal img{height:46px;width:auto;display:block;object-fit:contain}
+  footer .sp-row.secundario{gap:30px}
+  footer .sp-row.secundario img{height:26px;width:auto;display:block;object-fit:contain;opacity:.92}
+  footer .flogo{height:40px;margin:0 auto 8px;display:block}
+  footer .fmeta{margin-top:2px}
+  footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  @media(max-width:560px){footer .sp-row.principal img{height:34px}footer .sp-row.secundario img{height:20px}footer .sp-row{gap:22px}footer .sp-row.secundario{gap:18px}}
 </style>
 </head>
 <body>
@@ -243,8 +253,19 @@
 </div></section>
 
 <footer><div class="wrap">
+  <div class="sponsors">
+    <div class="sp-row principal">
+      <img src="07-LOGOS-SPONSORS/Mobil_RGB-TM.svg" alt="Mobil">
+      <img src="07-LOGOS-SPONSORS/Honda_Logo.svg" alt="Honda">
+      <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+    </div>
+    <div class="sp-row secundario">
+      <img src="07-LOGOS-SPONSORS/Federation-Internationale-de-Motocyclisme-Logo%20(1).png" alt="FIM Latin America">
+      <!-- MAS-SPONSORS: agregar aca SMK, Pirelli, Spider, DLRS, etc. cuando esten los nombres de archivo -->
+    </div>
+  </div>
   <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_Inline_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
-  <div>moto4latincup.lat · @moto4latincup</div>
+  <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
   <div class="langs">Español · Português (próximamente) · English (soon)</div>
 </div></footer>
 

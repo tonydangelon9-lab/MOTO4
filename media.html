@@ -162,7 +162,7 @@
            99-largada.jpg           -> va a Cristobal Carreno
       Sin numero (ej: paddock-general.jpg) -> va a "Generales".
    ============================================================ */
-var REPO_API = "https://api.github.com/repos/tonydangelon9-lab/MOTO4/contents/MEDIA";
+var REPO_DIRS = ["MEDIA","MEDIA-fotos-listas"]; // la pagina lee ambas carpetas
 var PILOTOS = {"74":"Kensei Matsudaira","62":"Alberto Enríquez","34":"Andoni Domínguez","10":"Mahdi Salem",
  "64":"Ulises Weyrauch","99":"Cristóbal Carreño","11":"Santiago Gossa","46":"Nicolás Torrez",
  "42":"Murilo Gomes","26":"Santiago Vogel","91":"Aidan Hancock","19":"Lorenzo Tiberi",
@@ -198,7 +198,11 @@ var PILOTOS = {"74":"Kensei Matsudaira","62":"Alberto Enríquez","34":"Andoni Do
       });
     });
   }
-  fetch(REPO_API).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(list){
+  Promise.all(REPO_DIRS.map(function(dir){
+    return fetch("https://api.github.com/repos/tonydangelon9-lab/MOTO4/contents/"+dir)
+      .then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; });
+  })).then(function(res){
+    var list = [].concat.apply([], res);
     fotos = list.filter(function(f){ return f.type==="file" && esImg(f.name); })
                 .map(function(f){ return {url:f.download_url, g:grupo(f.name), n:f.name}; })
                 .sort(function(a,b){ return a.n<b.n?-1:1; });

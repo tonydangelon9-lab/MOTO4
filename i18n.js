@@ -104,6 +104,7 @@ var D = {
 
 /* ===== POSTULAR: GATE + FORM ===== */
 "Las postulaciones abren pronto":{en:"Applications open soon",pt:"As inscrições abrem em breve"},
+"La inscripción abre en":{en:"Applications open in",pt:"As inscrições abrem em"},
 "La preinscripción al Selection Program 2027 abre el":{en:"Pre-registration for the Selection Program 2027 opens on",pt:"A pré-inscrição para o Selection Program 2027 abre em"},
 "15 de agosto de 2026":{en:"August 15, 2026",pt:"15 de agosto de 2026"},
 ". Guarda este enlace y vuelve en esa fecha para postularte.":{en:". Save this link and come back on that date to apply.",pt:". Guarde este link e volte nessa data para se inscrever."},

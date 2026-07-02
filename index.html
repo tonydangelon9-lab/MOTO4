@@ -99,10 +99,16 @@
   .nm-mob{display:none}
   @media(max-width:860px){.nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}}
 
+  
+  .cta-count{margin-top:14px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--pink)}
+  .cta-count b{color:#fff;font-family:var(--dispx)}
+  .cta-count .flecha{display:inline-block;animation:m4up 1.1s ease-in-out infinite;color:var(--purple)}
+  @keyframes m4up{0%,100%{transform:translateY(2px)}50%{transform:translateY(-4px)}}
+
   </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk active" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="hero"><div class="bg" style="background-image:url('02-BACKGROUNDS/Background_Moto4_LatinCup_Version1_16_9.png')"></div><div class="wrap"><img class="herologo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"><h1>El camino latino al <span class="grad">MotoGP</span></h1><p>El campeonato oficial FIM Latin America de la categoría Moto4. Jóvenes talentos, motos iguales, un solo sueño.</p><div class="cta"><a href="selection-2027.html" class="btn big">Postular 2027</a></div><div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div></div></header><section><div class="wrap"><div class="cards"><a class="card" href="calendario.html"><div class="ico">📅</div><h3>Calendario</h3><p>Las 6 fechas de la temporada 2026.</p></a><a class="card" href="pilotos.html"><div class="ico">🏁</div><h3>Pilotos</h3><p>Los 16 talentos de la grilla.</p></a><a class="card" href="campeonato.html"><div class="ico">🏆</div><h3>Ranking 2026</h3><p>La clasificación general.</p></a><a class="card" href="selection-2027.html"><div class="ico">⭐</div><h3>Postular</h3><p>Selection Program 2027.</p></a></div></div></section><footer><div class="wrap">
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk active" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="hero"><div class="bg" style="background-image:url('02-BACKGROUNDS/Background_Moto4_LatinCup_Version1_16_9.png')"></div><div class="wrap"><img class="herologo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"><h1>El camino latino al <span class="grad">MotoGP</span></h1><p>El campeonato oficial FIM Latin America de la categoría Moto4. Jóvenes talentos, motos iguales, un solo sueño.</p><div class="cta"><a href="selection-2027.html" class="btn big">Postular 2027</a></div><div class="cta-count" id="ctacount" style="display:none"><span class="flecha">&#9650;</span> <span data-fijo="1">La inscripción abre en</span> <b id="ctadias"></b></div><div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div></div></header><section><div class="wrap"><div class="cards"><a class="card" href="calendario.html"><div class="ico">📅</div><h3>Calendario</h3><p>Las 6 fechas de la temporada 2026.</p></a><a class="card" href="pilotos.html"><div class="ico">🏁</div><h3>Pilotos</h3><p>Los 16 talentos de la grilla.</p></a><a class="card" href="campeonato.html"><div class="ico">🏆</div><h3>Ranking 2026</h3><p>La clasificación general.</p></a><a class="card" href="selection-2027.html"><div class="ico">⭐</div><h3>Postular</h3><p>Selection Program 2027.</p></a></div></div></section><footer><div class="wrap">
   <div class="sponsors">
     <div class="sp-row principal">
       <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
@@ -120,6 +126,22 @@
   <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
   <div class="langs">Español · English · Português</div>
 </div></footer><script>var b=document.getElementById("burger"),m=document.getElementById("menu");if(b){b.addEventListener("click",function(){m.classList.toggle("open");});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");});});}</script>
+
+<script>
+(function(){
+  var OPEN = new Date("2026-08-15T09:00:00");
+  var box = document.getElementById("ctacount"), out = document.getElementById("ctadias");
+  function tick(){
+    var diff = OPEN - new Date();
+    if(diff <= 0){ box.style.display="none"; return; }
+    var d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5), m=Math.floor(diff%36e5/6e4);
+    out.textContent = d+"d "+h+"h "+m+"m";
+    box.style.display="block";
+  }
+  tick(); setInterval(tick, 60000);
+})();
+</script>
+
 <script src="i18n.js"></script>
 </body>
 </html>

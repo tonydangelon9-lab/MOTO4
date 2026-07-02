@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 
-<title>Moto4 Latin Cup · Selection Program 2027</title>
+<title>Mobil Moto4 Latin Cup · Selection Program 2027</title>
 <meta name="description" content="El camino latino al MotoGP. Postulaciones abiertas para pilotos de 14 a 19 años de toda Latinoamérica.">
 <style>
   /* ===== FUENTE OFICIAL MGP (05-MGP-FONT) ===== */
@@ -58,7 +58,7 @@
   .btn:active{transform:scale(.97)}
   .btn.big{font-size:20px;padding:17px 46px}
 
-  nav{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:40;background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
   nav img.logo{height:38px;width:auto;display:block}
   nav .btn{padding:9px 22px;font-size:13px;box-shadow:none}
@@ -155,13 +155,19 @@
   footer .fmeta{margin-top:2px}
   footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
   @media(max-width:560px){footer .sp-row.principal img{height:26px}footer .sp-row.secundario img{height:20px}footer .sp-row{gap:16px}footer .flogo{height:72px}nav img.logo{height:48px}}
-</style>
+
+  /* Mobil en esquina derecha del nav */
+  .nav-mobil{height:20px;width:auto;display:block}
+  .nm-mob{display:none}
+  @media(max-width:860px){.nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}}
+
+  </style>
 </head>
 <body>
 
 <nav><div class="wrap">
   <img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
-  <a href="#postular" class="btn">Postular</a>
+  <span style="display:flex;align-items:center;gap:16px"><a href="#postular" class="btn">Postular</a><img class="nav-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></span>
 </div></nav>
 
 <header class="hero">
@@ -170,7 +176,7 @@
     <img class="herologo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
     <span class="badge"><span class="dot"></span> Postulaciones abiertas · Temporada 2027</span>
     <h1>El camino latino al <span class="grad">MotoGP</span></h1>
-    <p class="lead">Moto4 Latin Cup abre el Selection Program 2027. Si soñás con ser piloto profesional, esta es tu puerta de entrada.</p>
+    <p class="lead">Moto4 Latin Cup abre el Selection Program 2027. Si sueñas con ser piloto profesional, esta es tu puerta de entrada.</p>
     <div class="cta-row">
       <a href="#postular" class="btn big">Postular ahora</a>
       <span class="note">Pilotos de 14 a 19 años · Toda Latinoamérica</span>
@@ -192,7 +198,7 @@
 
 <section><div class="wrap">
   <h2 class="sec-h">Selection <span class="grad">Program 2027</span></h2>
-  <p class="lead-big">Un proceso de selección con estándar internacional, inspirado en la Red Bull MotoGP Rookies Cup y el Road to MotoGP. <span class="muted">Postulás online, un panel de expertos evalúa tu perfil, tus resultados y tus videos, y los mejores son invitados a un Selection Event presencial donde definimos la grilla 2027.</span></p>
+  <p class="lead-big">Un proceso de selección con estándar internacional, inspirado en la Red Bull MotoGP Rookies Cup y el Road to MotoGP. <span class="muted">Postulas online, un panel de expertos evalúa tu perfil, tus resultados y tus videos, y los mejores son invitados a un Selection Event presencial donde definimos la grilla 2027.</span></p>
 </div></section>
 
 <section><div class="wrap">
@@ -207,7 +213,7 @@
 
 <section><div class="wrap">
   <h2 class="sec-h">Requisitos</h2>
-  <p class="sec-sub">Una postulación completa y bien presentada tiene muchas más chances. Prepará esto antes de empezar:</p>
+  <p class="sec-sub">Una postulación completa y bien presentada tiene muchas más chances. Prepara esto antes de empezar:</p>
   <div class="reqs">
     <div class="req"><span class="chk">✓</span><span>Formulario <b>completo y bien presentado</b>.</span></div>
     <div class="req"><span class="chk">✓</span><span>Fotos de <b>buena calidad</b> (perfil, compitiendo, cuerpo completo con equipo).</span></div>
@@ -220,19 +226,19 @@
 <section><div class="wrap">
   <h2 class="sec-h">El proceso, <span class="grad">paso a paso</span></h2>
   <div class="steps">
-    <div class="step"><div class="num">1</div><div><h4>Postulás online</h4><p>Completás el formulario y cargás tus documentos y videos.</p></div></div>
+    <div class="step"><div class="num">1</div><div><h4>Postulas online</h4><p>Completas el formulario y cargas tus documentos y videos.</p></div></div>
     <div class="step"><div class="num">2</div><div><h4>Evaluación digital</h4><p>Tu perfil recibe un puntaje según edad, experiencia, resultados y nivel.</p></div></div>
     <div class="step"><div class="num">3</div><div><h4>Revisión del panel</h4><p>Un panel de expertos analiza a los mejores candidatos.</p></div></div>
-    <div class="step"><div class="num">4</div><div><h4>Entrevista</h4><p>Conversamos con vos para conocerte mejor.</p></div></div>
+    <div class="step"><div class="num">4</div><div><h4>Entrevista</h4><p>Conversamos contigo para conocerte mejor.</p></div></div>
     <div class="step"><div class="num">5</div><div><h4>Invitación al Selection Event</h4><p>Los seleccionados son invitados al evento presencial.</p></div></div>
-    <div class="step"><div class="num">6</div><div><h4>Evaluación presencial</h4><p>Demostrás tu nivel dentro y fuera de la moto.</p></div></div>
+    <div class="step"><div class="num">6</div><div><h4>Evaluación presencial</h4><p>Demuestras tu nivel dentro y fuera de la moto.</p></div></div>
     <div class="step"><div class="num">7</div><div><h4>Selección final 2027</h4><p>Se define la grilla de pilotos de la temporada.</p></div></div>
   </div>
 </div></section>
 
 <section><div class="wrap">
   <h2 class="sec-h">Fechas importantes</h2>
-  <p class="sec-sub">Agenda del programa. Confirmá las fechas finales antes de difundir.</p>
+  <p class="sec-sub">Agenda del programa. Confirma las fechas finales antes de difundir.</p>
   <div class="fechas">
     <div class="fecha"><span class="ev">Apertura de postulaciones</span><span class="dt">Por confirmar</span></div>
     <div class="fecha"><span class="ev">Lanzamiento · Festival Interlagos</span><span class="dt">Por confirmar</span></div>
@@ -248,15 +254,15 @@
   <div class="faq" style="margin-top:26px">
     <details><summary>¿Tiene costo postular?</summary><p>La postulación online al Selection Program no tiene costo. Los detalles de la temporada se informan a los seleccionados.</p></details>
     <details><summary>¿Puedo postular si nunca corrí en circuito?</summary><p>Sí. Valoramos la experiencia de alto rendimiento en moto en general: MiniGP, motocross, dirt track, karting o minimotos. No es obligatorio venir de road racing.</p></details>
-    <details><summary>Soy menor de edad, ¿qué necesito?</summary><p>Necesitás los datos y la autorización de tu padre, madre o tutor, además del documento correspondiente. Todo se carga en el formulario.</p></details>
-    <details><summary>¿En qué idioma postulo?</summary><p>Podés postular en español. Próximamente estarán disponibles las versiones en portugués e inglés.</p></details>
-    <details><summary>¿Cuándo y dónde es el Selection Event?</summary><p>La fecha y sede se comunican a los pilotos invitados por email. Seguí el proceso por ese medio.</p></details>
+    <details><summary>Soy menor de edad, ¿qué necesito?</summary><p>Necesitas los datos y la autorización de tu padre, madre o tutor, además del documento correspondiente. Todo se carga en el formulario.</p></details>
+    <details><summary>¿En qué idioma postulo?</summary><p>Puedes postular en español; la página también está disponible en inglés y portugués.</p></details>
+    <details><summary>¿Cuándo y dónde es el Selection Event?</summary><p>La fecha y sede se comunican a los pilotos invitados por email. Sigue el proceso por ese medio.</p></details>
   </div>
 </div></section>
 
 <section class="final" id="postular"><div class="wrap">
   <h2 class="sec-h">¿Listo para <span class="grad">empezar?</span></h2>
-  <p class="sec-sub" style="margin-left:auto;margin-right:auto">Completá tu postulación y sumate al camino latino hacia el MotoGP.</p>
+  <p class="sec-sub" style="margin-left:auto;margin-right:auto">Completa tu postulación y súmate al camino latino hacia el MotoGP.</p>
   <a href="#" class="btn big" id="postular-btn">Postular ahora</a>
   <div class="qr">QR<br>(para flyers<br>y stand)</div>
 </div></section>
@@ -277,7 +283,7 @@
   </div>
   <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
   <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
-  <div class="langs">Español · Português (próximamente) · English (soon)</div>
+  <div class="langs">Español · English · Português</div>
 </div></footer>
 
 <script>
@@ -303,5 +309,6 @@
     tick(); setInterval(tick,1000);
   })();
 </script>
+<script src="i18n.js"></script>
 </body>
 </html>

@@ -7,8 +7,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 
-<title>Mobil Moto4 Latin Cup · El camino latino al MotoGP</title>
-<meta name="description" content="Moto4 Latin Cup — el campeonato oficial FIM Latin America. El camino latino al MotoGP.">
+<title>Mobil Moto4 Latin Cup · Media</title>
+<meta name="description" content="Galería oficial de fotos de la Mobil Moto4 Latin Cup.">
 <style>
   @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
   @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
@@ -99,10 +99,40 @@
   .nm-mob{display:none}
   @media(max-width:860px){.nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}}
 
+  
+  .phead{background:var(--grad-dark);text-align:center;padding:46px 0 30px;position:relative;overflow:hidden}
+  .phead::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 90% at 50% 0%,rgba(214,61,252,.28),transparent 70%)}
+  .phead .wrap{position:relative;z-index:1}
+  .phead .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:12px;color:var(--pink)}
+  .phead h1{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:clamp(30px,6vw,54px);margin-top:8px;line-height:1}
+  .phead p{color:#e9d8ef;margin-top:10px;font-size:15px}
+  /* filtros por piloto */
+  .mfiltros{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 14px;-webkit-overflow-scrolling:touch}
+  .mfiltros button{flex:0 0 auto;font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.05em;
+    color:#e9d8ef;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+  .mfiltros button.act{background:var(--grad);color:#000;border-color:transparent;font-weight:700}
+  /* grilla */
+  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:760px){.mgrid{grid-template-columns:repeat(2,1fr)}}
+  .mgrid a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface);aspect-ratio:3/2}
+  .mgrid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .2s}
+  .mgrid a:hover img{transform:scale(1.05)}
+  .mmsg{text-align:center;color:var(--muted);padding:36px 0;font-size:14px}
+  /* lightbox */
+  .mlb{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
+  .mlb.open{display:flex}
+  .mlb img{max-width:96vw;max-height:88vh;border-radius:10px;box-shadow:0 20px 80px rgba(214,61,252,.35)}
+  .mlb .mx{position:absolute;top:16px;right:22px;font-size:30px;color:#fff;cursor:pointer;background:none;border:none}
+
   </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk active" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="hero"><div class="bg" style="background-image:url('02-BACKGROUNDS/Background_Moto4_LatinCup_Version1_16_9.png')"></div><div class="wrap"><img class="herologo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"><h1>El camino latino al <span class="grad">MotoGP</span></h1><p>El campeonato oficial FIM Latin America de la categoría Moto4. Jóvenes talentos, motos iguales, un solo sueño.</p><div class="cta"><a href="selection-2027.html" class="btn big">Postular 2027</a></div><div class="roadto"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div></div></header><section><div class="wrap"><div class="cards"><a class="card" href="calendario.html"><div class="ico">📅</div><h3>Calendario</h3><p>Las 6 fechas de la temporada 2026.</p></a><a class="card" href="pilotos.html"><div class="ico">🏁</div><h3>Pilotos</h3><p>Los 16 talentos de la grilla.</p></a><a class="card" href="campeonato.html"><div class="ico">🏆</div><h3>Ranking 2026</h3><p>La clasificación general.</p></a><a class="card" href="selection-2027.html"><div class="ico">⭐</div><h3>Postular</h3><p>Selection Program 2027.</p></a></div></div></section><footer><div class="wrap">
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk active" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="phead"><div class="wrap"><div class="k">Mobil Moto4 Latin Cup</div><h1>Media</h1><p>Galería oficial de fotos del campeonato.</p></div></header>
+<section><div class="wrap">
+  <div class="mfiltros" id="mfiltros"></div>
+  <div class="mgrid" id="mgrid"></div>
+  <div class="mmsg" id="mmsg">Cargando fotos…</div>
+</div></section><footer><div class="wrap">
   <div class="sponsors">
     <div class="sp-row principal">
       <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
@@ -120,6 +150,68 @@
   <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
   <div class="langs">Español · English · Português</div>
 </div></footer><script>var b=document.getElementById("burger"),m=document.getElementById("menu");if(b){b.addEventListener("click",function(){m.classList.toggle("open");});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");});});}</script>
+
+<div class="mlb" id="mlb"><button class="mx" id="mx">&#10005;</button><img id="mlbimg" src="" alt=""></div>
+<script>
+/* ============================================================
+   GALERIA MEDIA — lee la carpeta MEDIA/ del repo automaticamente.
+   COMO AGREGAR FOTOS (administracion):
+   1) En GitHub, carpeta MEDIA/ -> Add file -> Upload files.
+   2) Nombre del archivo: empezar con el NUMERO del piloto y un guion.
+      Ej:  74-podio-interlagos.jpg  -> va a Kensei Matsudaira
+           99-largada.jpg           -> va a Cristobal Carreno
+      Sin numero (ej: paddock-general.jpg) -> va a "Generales".
+   ============================================================ */
+var REPO_API = "https://api.github.com/repos/tonydangelon9-lab/MOTO4/contents/MEDIA";
+var PILOTOS = {"74":"Kensei Matsudaira","62":"Alberto Enríquez","34":"Andoni Domínguez","10":"Mahdi Salem",
+ "64":"Ulises Weyrauch","99":"Cristóbal Carreño","11":"Santiago Gossa","46":"Nicolás Torrez",
+ "42":"Murilo Gomes","26":"Santiago Vogel","91":"Aidan Hancock","19":"Lorenzo Tiberi",
+ "69":"Anyelo Perdomo","16":"Santiago Bravo","8":"Matías Alarcón","15":"Gael Olivo"};
+(function(){
+  var grid=document.getElementById("mgrid"), msg=document.getElementById("mmsg"), fil=document.getElementById("mfiltros");
+  var fotos=[], filtro="todos";
+  function esImg(n){ return /\.(jpg|jpeg|png|webp)$/i.test(n); }
+  function grupo(n){ var m=n.match(/^(\d{1,3})-/); return (m && PILOTOS[m[1]]) ? m[1] : "gen"; }
+  function pintar(){
+    var lista = fotos.filter(function(f){ return filtro==="todos" || f.g===filtro; });
+    grid.innerHTML = lista.map(function(f){
+      return '<a href="#" data-src="'+f.url+'"><img loading="lazy" src="'+f.url+'" alt=""></a>';
+    }).join("");
+    msg.style.display = lista.length ? "none" : "block";
+    msg.textContent = lista.length ? "" : "Aún no hay fotos en esta categoría.";
+    grid.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click",function(e){ e.preventDefault();
+        document.getElementById("mlbimg").src=a.getAttribute("data-src");
+        document.getElementById("mlb").classList.add("open"); });
+    });
+  }
+  function chips(){
+    var grupos={}; fotos.forEach(function(f){ grupos[f.g]=true; });
+    var html='<button class="act" data-g="todos">Todos</button>';
+    Object.keys(PILOTOS).forEach(function(n){ if(grupos[n]) html+='<button data-g="'+n+'">#'+n+' '+PILOTOS[n]+'</button>'; });
+    if(grupos["gen"]) html+='<button data-g="gen">Generales</button>';
+    fil.innerHTML=html;
+    fil.querySelectorAll("button").forEach(function(b){
+      b.addEventListener("click",function(){
+        fil.querySelectorAll("button").forEach(function(x){x.className="";});
+        b.className="act"; filtro=b.getAttribute("data-g"); pintar();
+      });
+    });
+  }
+  fetch(REPO_API).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(list){
+    fotos = list.filter(function(f){ return f.type==="file" && esImg(f.name); })
+                .map(function(f){ return {url:f.download_url, g:grupo(f.name), n:f.name}; })
+                .sort(function(a,b){ return a.n<b.n?-1:1; });
+    if(!fotos.length){ msg.textContent="Próximamente: las fotos del campeonato."; return; }
+    chips(); pintar();
+    if(window.m4Apply) window.m4Apply(document.body);
+  }).catch(function(){ msg.textContent="Próximamente: las fotos del campeonato."; });
+  document.getElementById("mx").addEventListener("click",function(){ document.getElementById("mlb").classList.remove("open"); });
+  document.getElementById("mlb").addEventListener("click",function(e){ if(e.target.id==="mlb") document.getElementById("mlb").classList.remove("open"); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") document.getElementById("mlb").classList.remove("open"); });
+})();
+</script>
+
 <script src="i18n.js"></script>
 </body>
 </html>

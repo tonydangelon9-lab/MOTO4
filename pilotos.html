@@ -136,7 +136,7 @@
   </div>
   <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
   <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
-  <div class="langs">Español · Português (próximamente) · English (soon)</div>
+  <div class="langs">Español · English · Português</div>
 </div></footer><script>var b=document.getElementById("burger"),m=document.getElementById("menu");if(b){b.addEventListener("click",function(){m.classList.toggle("open");});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");});});}</script>
 
 <!-- ===== FICHA DE PILOTO ===== -->
@@ -212,7 +212,7 @@ var FICHAS = {
     var rows="";
     LABELS.forEach(function(L){ var v=d[L[0]]; if(v){ rows+='<div class="frow"><div class="fk">'+L[1]+'</div><div class="fv">'+v+'</div></div>'; } });
     document.getElementById("frows").innerHTML=rows;
-    bk.classList.add("open"); document.body.style.overflow="hidden";
+    bk.classList.add("open"); document.body.style.overflow="hidden"; if(window.m4Apply) window.m4Apply(bk);
   }
   function cerrar(){ bk.classList.remove("open"); document.body.style.overflow=""; }
   document.querySelectorAll(".pcard").forEach(function(c){ c.addEventListener("click",function(){abrir(c);}); });
@@ -222,5 +222,6 @@ var FICHAS = {
 })();
 </script>
 
+<script src="i18n.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 
-<title>Moto4 Latin Cup · Ranking 2026</title>
+<title>Mobil Moto4 Latin Cup · Ranking 2026</title>
 <meta name="description" content="Moto4 Latin Cup — el campeonato oficial FIM Latin America. El camino latino al MotoGP.">
 <style>
   @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
@@ -29,7 +29,7 @@
     font-size:15px;color:#fff;background:var(--grad);border:none;border-radius:999px;padding:12px 26px;cursor:pointer}
   .btn.big{font-size:18px;padding:15px 36px}
   .btn.ghost{background:rgba(0,0,0,.35);border:2px solid var(--purple);color:var(--pink)}
-  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
   nav img.logo{height:60px;display:block}
   .navlinks{display:flex;gap:26px;align-items:center}
@@ -111,10 +111,16 @@
   footer .fmeta{margin-top:2px}
   footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
   @media(max-width:560px){footer .sp-row.principal img{height:26px}footer .sp-row.secundario img{height:20px}footer .sp-row{gap:16px}footer .flogo{height:72px}nav img.logo{height:48px}}
-</style>
+
+  /* Mobil en esquina derecha del nav */
+  .nav-mobil{height:20px;width:auto;display:block}
+  .nm-mob{display:none}
+  @media(max-width:860px){.nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}}
+
+  </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk active" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Ranking 2026</h1><p>Clasificación general oficial rumbo al título.</p></div></header><section><div class="wrap"><div class="tabs2" id="tabbar"><button class="tab active" data-t="ranking">Ranking</button><button class="tab" data-t="envivo">En vivo</button></div><div class="panel active" id="p-ranking"><div class="rklist" id="rklist"></div><div class="rkfoot">Clase Moto4 · Honda · Fuente oficial FIM Latin America · Se actualiza con la planilla del campeonato.</div></div><div class="panel" id="p-envivo"><div class="live"><div class="videobox" id="videobox"><div class="placeholder"><div class="big">Transmisión en vivo</div><div>Pegá el enlace de YouTube en el archivo para activarla.</div></div></div><div class="livebtns"><a class="btn" id="ytbtn" href="#" target="_blank" rel="noopener">Ver en YouTube</a><a class="btn" id="timingbtn" href="#" target="_blank" rel="noopener" style="background:var(--surface);border:1px solid var(--line)">Tu tiempo en vivo</a></div><div class="note">Para activar esta sección necesito: el <b>enlace de YouTube</b> del vivo y el <b>enlace del cronometraje</b> (Speedhive u otro).</div></div></div></div></section><footer><div class="wrap">
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk active" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Ranking 2026</h1><p>Clasificación general oficial rumbo al título.</p></div></header><section><div class="wrap"><div class="tabs2" id="tabbar"><button class="tab active" data-t="ranking">Ranking</button><button class="tab" data-t="envivo">En vivo</button></div><div class="panel active" id="p-ranking"><div class="rklist" id="rklist"></div><div class="rkfoot">Clase Moto4 · Honda · Fuente oficial FIM Latin America · Se actualiza con la planilla del campeonato.</div></div><div class="panel" id="p-envivo"><div class="live"><div class="videobox" id="videobox"><div class="placeholder"><div class="big">Transmisión en vivo</div><div>Pegá el enlace de YouTube en el archivo para activarla.</div></div></div><div class="livebtns"><a class="btn" id="ytbtn" href="#" target="_blank" rel="noopener">Ver en YouTube</a><a class="btn" id="timingbtn" href="#" target="_blank" rel="noopener" style="background:var(--surface);border:1px solid var(--line)">Tu tiempo en vivo</a></div><div class="note">Para activar esta sección necesito: el <b>enlace de YouTube</b> del vivo y el <b>enlace del cronometraje</b> (Speedhive u otro).</div></div></div></div></section><footer><div class="wrap">
   <div class="sponsors">
     <div class="sp-row principal">
       <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">

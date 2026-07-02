@@ -124,11 +124,55 @@
   .mlb img{max-width:96vw;max-height:88vh;border-radius:10px;box-shadow:0 20px 80px rgba(214,61,252,.35)}
   .mlb .mx{position:absolute;top:16px;right:22px;font-size:30px;color:#fff;cursor:pointer;background:none;border:none}
 
+  
+  /* ===== en vivo + ganador ===== */
+  .msec{font-family:"MGP Display Exp",sans-serif;text-transform:uppercase;font-size:22px;color:#fff;margin:6px 0 14px}
+  .mlive{margin-bottom:34px}
+  .videobox{position:relative;width:100%;aspect-ratio:16/9;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:14px}
+  .videobox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .livebtns{display:flex;gap:12px;flex-wrap:wrap}
+  .livebtns .ghostb{background:var(--surface);border:1px solid var(--purple);color:var(--pink)}
+  .mwinner{margin-bottom:34px}
+  .wcard{display:grid;grid-template-columns:280px 1fr;gap:0;border-radius:18px;overflow:hidden;
+    background:linear-gradient(120deg,#C604F7,#D63DFC);box-shadow:0 14px 40px rgba(198,4,247,.35)}
+  @media(max-width:640px){.wcard{grid-template-columns:1fr}}
+  .wfoto img{width:100%;height:100%;min-height:240px;object-fit:cover;display:block}
+  .wdata{padding:26px;display:flex;flex-direction:column;justify-content:center}
+  .wtag{font-family:var(--disp);text-transform:uppercase;letter-spacing:.14em;font-size:13px;color:#000;background:#fff;display:inline-block;width:max-content;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+  .wtit{font-family:"MGP Display Exp",sans-serif;font-size:clamp(30px,5vw,46px);color:#fff;line-height:1;text-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .wnom{font-family:"MGP Display Exp",sans-serif;text-transform:uppercase;font-size:clamp(18px,3vw,26px);color:#fff;margin-top:8px}
+  .wnum{font-family:"MGP Display Exp",sans-serif;font-size:20px;color:rgba(255,255,255,.85);margin-top:2px}
+
   </style>
 </head>
 <body>
 <nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk active" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="phead"><div class="wrap"><div class="k">Mobil Moto4 Latin Cup</div><h1>Media</h1><p>Galería oficial de fotos del campeonato.</p></div></header>
 <section><div class="wrap">
+  <!-- ===== EN VIVO ===== -->
+  <div class="mlive" id="mlive" style="display:none">
+    <h2 class="msec">En vivo</h2>
+    <div class="videobox" id="videobox"></div>
+    <div class="livebtns">
+      <a class="btn" id="ytbtn" href="#" target="_blank" rel="noopener">Ver en YouTube</a>
+      <a class="btn ghostb" id="timingbtn" href="#" target="_blank" rel="noopener">Tu tiempo en vivo</a>
+    </div>
+  </div>
+  <!-- ===== GANADOR ===== -->
+  <div class="mwinner" id="mwinner" style="display:none">
+    <h2 class="msec">Ganador</h2>
+    <div class="wcard">
+      <div class="wfoto"><img id="wfoto" src="" alt="" onerror="document.getElementById('mwinner').style.display='none'"></div>
+      <div class="wdata">
+        <div class="wtag" id="wcarrera"></div>
+        <div class="wtit">WINNER</div>
+        <div class="wnom" id="wnombre"></div>
+        <div class="wnum" id="wnumero"></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <h2 class="msec">Galería</h2>
   <div class="mfiltros" id="mfiltros"></div>
   <div class="mgrid" id="mgrid"></div>
   <div class="mmsg" id="mmsg">Cargando fotos…</div>
@@ -213,6 +257,51 @@ var PILOTOS = {"74":"Kensei Matsudaira","62":"Alberto Enríquez","34":"Andoni Do
   document.getElementById("mx").addEventListener("click",function(){ document.getElementById("mlb").classList.remove("open"); });
   document.getElementById("mlb").addEventListener("click",function(e){ if(e.target.id==="mlb") document.getElementById("mlb").classList.remove("open"); });
   document.addEventListener("keydown",function(e){ if(e.key==="Escape") document.getElementById("mlb").classList.remove("open"); });
+})();
+</script>
+
+
+<script>
+/* ============================================================
+   EN VIVO + GANADOR — EDITAR AQUI (Antonio)
+   ------------------------------------------------------------
+   EN VIVO (dia de carrera):
+   1) YT_EMBED: enlace "embed" de YouTube. Se arma asi:
+      del enlace normal youtube.com/watch?v=ABC123
+      queda:  https://www.youtube.com/embed/ABC123
+   2) YT_LINK: el enlace normal del video/canal.
+   3) TIMING_LINK: enlace de Speedhive del evento.
+   -> Con los tres vacios (""), la seccion NO se muestra.
+
+   GANADOR (despues de cada carrera):
+   - foto: nombre EXACTO del archivo subido a la carpeta MEDIA
+     (ej: "74-winner-r1.jpg").
+   - carrera: etiqueta (ej: "Race 1 · Goiânia").
+   - nombre: nombre del piloto. numero: su numero (ej: "#74").
+   -> Con foto vacia (""), la seccion NO se muestra.
+   ============================================================ */
+var YT_EMBED = "";
+var YT_LINK = "";
+var TIMING_LINK = "";
+
+var GANADOR = { foto:"", carrera:"", nombre:"", numero:"" };
+/* ===== fin de la zona editable ===== */
+
+(function(){
+  if(YT_EMBED || YT_LINK || TIMING_LINK){
+    document.getElementById("mlive").style.display="block";
+    if(YT_EMBED){ document.getElementById("videobox").innerHTML='<iframe src="'+YT_EMBED+'" allowfullscreen></iframe>'; }
+    else { document.getElementById("videobox").style.display="none"; }
+    var yb=document.getElementById("ytbtn"); if(YT_LINK){yb.href=YT_LINK;}else{yb.style.display="none";}
+    var tb=document.getElementById("timingbtn"); if(TIMING_LINK){tb.href=TIMING_LINK;}else{tb.style.display="none";}
+  }
+  if(GANADOR.foto){
+    document.getElementById("mwinner").style.display="block";
+    document.getElementById("wfoto").src = (GANADOR.foto.indexOf("/")>-1?GANADOR.foto:"MEDIA/"+GANADOR.foto);
+    document.getElementById("wcarrera").textContent = GANADOR.carrera||"";
+    document.getElementById("wnombre").textContent = GANADOR.nombre||"";
+    document.getElementById("wnumero").textContent = GANADOR.numero||"";
+  }
 })();
 </script>
 

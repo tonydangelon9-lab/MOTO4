@@ -20,6 +20,8 @@ var D = {
 "Todos":{en:"All",pt:"Todos"},
 "Generales":{en:"General",pt:"Gerais"},
 "Cargando fotos…":{en:"Loading photos…",pt:"Carregando fotos…"},
+"Galería":{en:"Gallery",pt:"Galeria"},
+"Ganador":{en:"Winner",pt:"Vencedor"},
 "Aún no hay fotos en esta categoría.":{en:"No photos in this category yet.",pt:"Ainda não há fotos nesta categoria."},
 "Próximamente: las fotos del campeonato.":{en:"Coming soon: championship photos.",pt:"Em breve: as fotos do campeonato."},
 "Postular 2027":{en:"Apply 2027",pt:"Inscreva-se 2027"},

@@ -60,14 +60,19 @@
   footer .flogo{height:92px;margin-bottom:10px}
   footer .roadto img{height:22px;opacity:.85;margin-top:10px}
   footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-  .cal{display:grid;gap:12px;max-width:840px;margin:0 auto}
-  .crow{display:grid;grid-template-columns:120px 1fr auto;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;position:relative;overflow:hidden}
+  .cal{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:920px;margin:0 auto;position:relative;z-index:1}
+  @media(max-width:760px){.cal{grid-template-columns:1fr}}
+  .crow{display:grid;grid-template-columns:86px 1fr;align-items:center;gap:14px;
+    background:linear-gradient(100deg,#C604F7 0%,#D63DFC 100%);
+    border:none;border-radius:16px;padding:16px 20px;position:relative;overflow:hidden;
+    box-shadow:0 10px 26px rgba(198,4,247,.28)}
+  .crow::after{content:"";position:absolute;right:-30px;top:-40px;width:150px;height:150px;border:22px solid rgba(255,255,255,.07);border-radius:50%;pointer-events:none}
   .crow::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px}
   .crow.br::before{background:var(--blue)}.crow.ar::before{background:var(--gold)}
-  .cval{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:18px}
-  .cpais{font-family:var(--disp);text-transform:uppercase;font-size:14px;text-align:right}
-  .crow.br .cpais{color:var(--blue)}.crow.ar .cpais{color:var(--gold)}
-  @media(max-width:560px){.crow{grid-template-columns:70px 1fr}.cpais{grid-column:1/-1;text-align:left}}
+  .cval{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:34px;line-height:1;color:#fff;text-shadow:0 3px 10px rgba(0,0,0,.35)}
+  .cpais{font-family:var(--disp);text-transform:uppercase;font-size:12px;text-align:left;grid-column:2;letter-spacing:.06em;opacity:.95;margin-top:2px}
+  .crow.br .cpais{color:#fff}.crow.ar .cpais{color:#fff}
+  @media(max-width:560px){.crow{grid-template-columns:64px 1fr}.cpais{grid-column:2}}
 
   footer .sponsors{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:24px}
   footer .sp-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-evenly;gap:24px;width:100%}
@@ -89,10 +94,40 @@
   .nm-mob{display:none}
   @media(max-width:860px){.nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}}
 
+  
+  /* ===== FICHA DE CIRCUITO ===== */
+  .crow{cursor:pointer;transition:transform .12s,box-shadow .15s}
+  .crow:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(227,123,253,.45)}
+  .cver{font-size:11px;color:rgba(255,255,255,.85);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+  .cbk{position:fixed;inset:0;background:rgba(0,0,0,.74);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:18px}
+  .cbk.open{display:flex}
+  .cficha{background:#100616;border:1px solid var(--purple,#D63DFC);border-radius:20px;max-width:680px;width:100%;max-height:90vh;overflow:auto;position:relative;box-shadow:0 30px 80px rgba(214,61,252,.35)}
+  .cficha .ctop{height:6px;background:linear-gradient(90deg,#C604F7,#D63DFC,#E37BFD);border-radius:20px 20px 0 0}
+  .cficha .cx{position:absolute;top:12px;right:16px;font-size:24px;color:#e9d8ef;cursor:pointer;background:none;border:none;line-height:1}
+  .cficha .cbody{padding:26px}
+  .cficha h3{font-family:"MGP Display Exp",sans-serif;text-transform:uppercase;font-size:24px;color:#fff;margin:0 0 2px}
+  .cficha .csub{color:#E37BFD;font-size:13px;margin-bottom:14px}
+  .cficha .clayout{width:100%;max-height:230px;object-fit:contain;margin:6px 0 14px;display:block}
+  .cficha .cdato{margin-bottom:11px}
+  .cficha .cdato .ck{font-size:11px;letter-spacing:.12em;color:#a678b8;text-transform:uppercase}
+  .cficha .cdato .cv{font-size:14.5px;color:#f2eaf7;margin-top:2px;line-height:1.55}
+
+  
+  /* ===== estilo Dorna: titulo y ondas ===== */
+  .cal-title{font-family:"MGP Display Exp",sans-serif;text-transform:uppercase;text-align:center;font-size:clamp(30px,5.4vw,50px);margin:0 0 28px;color:#fff;position:relative;z-index:1}
+  .cal-title .anio{color:transparent;-webkit-text-stroke:2px var(--purple);letter-spacing:.02em;margin-right:12px}
+  .cal-sec{position:relative;overflow:hidden}
+  .cal-waves{position:absolute;right:-16%;top:-18%;width:70%;aspect-ratio:1;border-radius:50%;
+    background:repeating-radial-gradient(circle at 70% 30%, transparent 0 44px, rgba(214,61,252,.16) 44px 66px);
+    transform:rotate(15deg);pointer-events:none}
+  .cal-waves.b{right:auto;left:-20%;top:auto;bottom:-30%;transform:rotate(200deg);opacity:.7}
+  .cal-road{display:flex;justify-content:center;margin-top:34px;position:relative;z-index:1}
+  .cal-road img{height:26px;opacity:.92}
+
   </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk active" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Calendario</h1><p>Seis fechas · 4 en Brasil y 2 en Argentina · Road to MotoGP.</p></div></header><section><div class="wrap"><div class="cal"><div class="crow br"><div class="cval">R1</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Goiânia</div><div style="color:var(--muted);font-size:13px;margin-top:2px">20–22 MAR · Apoyo MotoGP · 1 carrera</div></div><div class="cpais">Brasil 🇧🇷</div></div><div class="crow br"><div class="cval">R3–4</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Interlagos</div><div style="color:var(--muted);font-size:13px;margin-top:2px">10–12 ABR · 1000GP</div></div><div class="cpais">Brasil 🇧🇷</div></div><div class="crow ar"><div class="cval">R5–6</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">San Nicolás</div><div style="color:var(--muted);font-size:13px;margin-top:2px">19–21 JUN · GP3</div></div><div class="cpais">Argentina 🇦🇷</div></div><div class="crow ar"><div class="cval">R7–8</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">San Juan</div><div style="color:var(--muted);font-size:13px;margin-top:2px">4–6 SEPT · GP3</div></div><div class="cpais">Argentina 🇦🇷</div></div><div class="crow br"><div class="cval">R9–10</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Santa Cruz do Sul</div><div style="color:var(--muted);font-size:13px;margin-top:2px">25–27 SEPT · 1000GP</div></div><div class="cpais">Brasil 🇧🇷</div></div><div class="crow br"><div class="cval">R11–12</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Cuiabá</div><div style="color:var(--muted);font-size:13px;margin-top:2px">6–8 NOV · 1000GP</div></div><div class="cpais">Brasil 🇧🇷</div></div></div></div></section><footer><div class="wrap">
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk active" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Calendario</h1><p>Seis fechas · 4 en Brasil y 2 en Argentina · Road to MotoGP.</p></div></header><section class="cal-sec"><div class="cal-waves"></div><div class="cal-waves b"></div><div class="wrap"><div class="cal-title"><span class="anio">2026</span>Calendario</div><div class="cal"><div class="crow br" data-circ="goiania"><div class="cval">R1</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Goiânia</div><div class="cver">Ver circuito ▸</div><div style="color:rgba(255,255,255,.92);font-size:13px;margin-top:2px">20–22 MAR · Apoyo MotoGP · 1 carrera</div></div><div class="cpais">Brasil 🇧🇷</div></div><div class="crow br" data-circ="interlagos"><div class="cval">R3–4</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Interlagos</div><div class="cver">Ver circuito ▸</div><div style="color:rgba(255,255,255,.92);font-size:13px;margin-top:2px">10–12 ABR · 1000GP</div></div><div class="cpais">Brasil 🇧🇷</div></div><div class="crow ar" data-circ="san-nicolas"><div class="cval">R5–6</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">San Nicolás</div><div class="cver">Ver circuito ▸</div><div style="color:rgba(255,255,255,.92);font-size:13px;margin-top:2px">19–21 JUN · GP3</div></div><div class="cpais">Argentina 🇦🇷</div></div><div class="crow ar" data-circ="san-juan"><div class="cval">R7–8</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">San Juan</div><div class="cver">Ver circuito ▸</div><div style="color:rgba(255,255,255,.92);font-size:13px;margin-top:2px">4–6 SEPT · GP3</div></div><div class="cpais">Argentina 🇦🇷</div></div><div class="crow br" data-circ="santa-cruz"><div class="cval">R9–10</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Santa Cruz do Sul</div><div class="cver">Ver circuito ▸</div><div style="color:rgba(255,255,255,.92);font-size:13px;margin-top:2px">25–27 SEPT · 1000GP</div></div><div class="cpais">Brasil 🇧🇷</div></div><div class="crow br" data-circ="cuiaba"><div class="cval">R11–12</div><div style="text-align:left"><div style="font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px">Cuiabá</div><div class="cver">Ver circuito ▸</div><div style="color:rgba(255,255,255,.92);font-size:13px;margin-top:2px">6–8 NOV · 1000GP</div></div><div class="cpais">Brasil 🇧🇷</div></div></div><div class="cal-road"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP"></div></div></section><footer><div class="wrap">
   <div class="sponsors">
     <div class="sp-row principal">
       <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
@@ -110,6 +145,77 @@
   <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
   <div class="langs">Español · English · Português</div>
 </div></footer><script>var b=document.getElementById("burger"),m=document.getElementById("menu");if(b){b.addEventListener("click",function(){m.classList.toggle("open");});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");});});}</script>
+
+<!-- ===== FICHA DE CIRCUITO ===== -->
+<div class="cbk" id="cbk"><div class="cficha">
+  <div class="ctop"></div>
+  <button class="cx" id="cx" aria-label="Cerrar">&#10005;</button>
+  <div class="cbody">
+    <h3 id="cnom"></h3>
+    <div class="csub" id="cofi"></div>
+    <img class="clayout" id="clay" src="" alt="Trazado" onerror="this.style.display='none'">
+    <div id="cdatos"></div>
+  </div>
+</div></div>
+
+<script>
+/* ===== DATOS DE CIRCUITOS (editable) =====
+   Para mostrar el TRAZADO: subir la imagen a la carpeta LAYOUTS/ del repo
+   con el nombre exacto: goiania.png, interlagos.png, san-nicolas.png,
+   san-juan.png, santa-cruz.png, cuiaba.png (fondo transparente ideal). */
+var CIRCUITOS = {
+ "goiania":{nombre:"Goiânia",oficial:"Autódromo Internacional Ayrton Senna",
+  ubicacion:"Goiânia, Goiás, Brasil",longitud:"3.835 m",
+  historia:"Inaugurado en 1974 y rebautizado en honor a Ayrton Senna. Sede del GP de Brasil de 500cc del Mundial de Motociclismo (1987–1989) y hoy casa del MotoGP de Brasil.",
+  destacado:"Trazado rápido y fluido, uno de los templos históricos del motociclismo brasileño."},
+ "interlagos":{nombre:"Interlagos",oficial:"Autódromo José Carlos Pace",
+  ubicacion:"São Paulo, Brasil",longitud:"4.309 m · 15 curvas · sentido antihorario",
+  historia:"Inaugurado en 1940, es uno de los circuitos más icónicos del mundo y sede del Gran Premio de Brasil de Fórmula 1.",
+  destacado:"Desniveles pronunciados, el mítico 'Senna S' y una atmósfera única en el motorsport mundial."},
+ "san-nicolas":{nombre:"San Nicolás",oficial:"Autódromo San Nicolás Ciudad · Juan María Traverso",
+  ubicacion:"San Nicolás de los Arroyos, Buenos Aires, Argentina (km 225 autopista Buenos Aires–Rosario)",
+  longitud:"4.000 m (variantes de 3.959 y 2.414 m) · recta principal de ~800 m",
+  historia:"Inaugurado el 7 de octubre de 2018; desde 2022 lleva el nombre del múltiple campeón Juan María Traverso. Integra un predio ferial de 110 hectáreas, sede de Expoagro.",
+  destacado:"Uno de los autódromos más modernos de Argentina: asfalto de última generación y vista completa de la pista desde cualquier sector."},
+ "san-juan":{nombre:"San Juan",oficial:"Circuito San Juan Villicum",
+  ubicacion:"Albardón, San Juan, Argentina — al pie de la precordillera",
+  longitud:"≈ 4.270 m",
+  historia:"Inaugurado en 2018, recibió el Mundial de Superbike (WorldSBK) entre 2018 y 2022, poniendo a San Juan en el mapa del motociclismo internacional.",
+  destacado:"Trazado técnico y moderno con paisaje precordillerano, estándar internacional FIM."},
+ "santa-cruz":{nombre:"Santa Cruz do Sul",oficial:"Autódromo Internacional de Santa Cruz do Sul",
+  ubicacion:"Santa Cruz do Sul, Rio Grande do Sul, Brasil (km 102, ruta RS-471)",
+  longitud:"3.530,7 m · 14 curvas (7 derecha / 7 izquierda) · recta de ~752 m",
+  historia:"Inaugurado el 12 de junio de 2005. Sede habitual de Stock Car, Fórmula Truck y del Campeonato Brasileño de Velocidad.",
+  destacado:"Considerado uno de los circuitos más modernos y selectivos de Brasil, con curvas ciegas en subida y bajada que exigen precisión."},
+ "cuiaba":{nombre:"Cuiabá",oficial:"Autódromo Internacional de Mato Grosso · Parque Novo Mato Grosso",
+  ubicacion:"Cuiabá, Mato Grosso, Brasil",
+  longitud:"4.500 m (trazado mixto) · 13 curvas (9 derecha / 4 izquierda) · anillo externo de 2.800 m",
+  historia:"Inaugurado en noviembre de 2025, es el circuito más nuevo de Latinoamérica, proyectado bajo normas FIA y FIM dentro del mayor centro multieventos de la región.",
+  destacado:"Iluminación artificial de 128 torres y 768 reflectores: preparado para carreras nocturnas."}
+};
+(function(){
+  var bk=document.getElementById("cbk");
+  var ROWS=[["ubicacion","Ubicación"],["longitud","Trazado"],["historia","Historia"],["destacado","Lo destacado"]];
+  function abrirC(id){
+    var d=CIRCUITOS[id]; if(!d) return;
+    document.getElementById("cnom").textContent=d.nombre;
+    document.getElementById("cofi").textContent=d.oficial;
+    var im=document.getElementById("clay");
+    im.style.display="block"; im.src="LAYOUTS/"+id+".png";
+    var html="";
+    ROWS.forEach(function(r){ if(d[r[0]]) html+='<div class="cdato"><div class="ck">'+r[1]+'</div><div class="cv">'+d[r[0]]+'</div></div>'; });
+    document.getElementById("cdatos").innerHTML=html;
+    bk.classList.add("open"); document.body.style.overflow="hidden";
+    if(window.m4Apply) window.m4Apply(bk);
+  }
+  function cerrarC(){ bk.classList.remove("open"); document.body.style.overflow=""; }
+  document.querySelectorAll(".crow[data-circ]").forEach(function(r){ r.addEventListener("click",function(){ abrirC(r.getAttribute("data-circ")); }); });
+  document.getElementById("cx").addEventListener("click",cerrarC);
+  bk.addEventListener("click",function(e){ if(e.target===bk) cerrarC(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") cerrarC(); });
+})();
+</script>
+
 <script src="i18n.js"></script>
 </body>
 </html>

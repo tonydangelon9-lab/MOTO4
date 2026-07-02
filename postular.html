@@ -88,7 +88,17 @@
   footer .fmeta{margin-top:2px}
   footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
   @media(max-width:560px){footer .sp-row.principal img{height:26px}footer .sp-row.secundario img{height:20px}footer .sp-row{gap:16px}footer .flogo{height:72px}nav img.logo{height:48px}}
-</style>
+
+  /* ===== seccion programa ===== */
+  .programa{padding:34px 0 6px}
+  .programa h2{font-family:"MGP Display Exp",sans-serif;text-transform:uppercase;font-size:clamp(20px,3.4vw,30px);color:#fff;margin:0 0 14px;text-align:center}
+  .programa p{color:#e9d8ef;font-size:15px;line-height:1.65;max-width:760px;margin:0 auto 14px}
+  .programa .pintro{font-size:17px;text-align:center}
+  .programa .premios{max-width:760px;margin:20px auto}
+  .programa .premio{background:#1c0b26;border:1px solid rgba(214,61,252,.35);border-left:4px solid var(--purple,#D63DFC);border-radius:12px;padding:14px 18px;margin-bottom:10px;color:#f2eaf7;font-size:15px;line-height:1.55}
+  .programa .pcierre{text-align:center;color:#d9c8e2;margin-top:18px}
+
+  </style>
 </head>
 <body>
 
@@ -102,6 +112,22 @@
   <p>Completá tu postulación. Pilotos de 14 a 19 años de toda Latinoamérica. El camino latino al MotoGP empieza acá.</p>
   <p style="margin-top:10px;font-size:13px"><a href="selection-2027.html" style="color:var(--pink);text-decoration:underline">Conocé el programa completo →</a></p>
 </div></header>
+
+<!-- ===== EL PROGRAMA (Selection Program 2027) ===== -->
+<section class="programa"><div class="wrap">
+  <h2>Tu lugar en el camino oficial al MotoGP&trade;</h2>
+  <p class="pintro"><b>La Mobil Moto4 Latin Cup no es un campeonato m&aacute;s: es la puerta de entrada oficial de Latinoam&eacute;rica a la pir&aacute;mide mundial del MotoGP&trade;.</b></p>
+  <p>Creada dentro del programa <b>Road to MotoGP&trade;</b> &mdash;la estructura oficial de la FIM y Dorna Sports para el desarrollo de pilotos&mdash; y respaldada por <b>Honda, Mobil y FIM Latin America</b>, la Moto4 Latin Cup forma parte de la nueva generaci&oacute;n de categor&iacute;as Moto4 que la FIM y Dorna lanzaron a nivel mundial en 2026. Lo que pasa ac&aacute;, se ve desde el paddock del Mundial.</p>
+  <p><b>La moto: Honda NSF250R.</b> Todos compiten con la misma m&aacute;quina de especificaci&oacute;n Moto3 con la que Dorna forma campeones en sus copas de talento de todo el planeta, con neum&aacute;ticos Pirelli de especificaci&oacute;n &uacute;nica. Igualdad total de material: ac&aacute; gana el talento, no el presupuesto.</p>
+  <p><b>Categor&iacute;a OPEN &mdash; abierta al mundo.</b> Las categor&iacute;as de FIM Latin America son abiertas: puede participar un piloto de cualquier pa&iacute;s. En la grilla 2026 ya corren pilotos de Estados Unidos, Palestina, Puerto Rico y toda Latinoam&eacute;rica.</p>
+  <div class="premios">
+    <div class="premio">&#127942; <b>El campe&oacute;n</b> correr&aacute; con nuestro equipo en la <b>European Talent Cup (FIM JuniorGP)</b> con el <b>100% de los gastos del equipo cubiertos</b>.</div>
+    <div class="premio">&#129351; <b>Los tres primeros</b> acceden directo al <b>Selection Event de la Red Bull MotoGP Rookies Cup</b>.</div>
+    <div class="premio">&#11088; <b>Todos los seleccionados</b> entran a la <b>Selectiva de noviembre 2026</b>, que define la grilla 2027.</div>
+  </div>
+  <p class="pcierre">Edad: 14 a 19 a&ntilde;os. Una moto igual para todos. Un camino directo y oficial.<br><b>El Mundial ahora mira hacia ac&aacute;.</b></p>
+</div></section>
+
 
 <div class="wrap">
 <form id="form">
@@ -146,16 +172,6 @@
     <textarea name="resultados" placeholder="Campeonato, categoría, posición, año, circuito..." required></textarea></div>
 
   <div class="step-k">Paso 5</div>
-  <div class="step-h">Fotos y videos</div>
-  <div class="field"><label>Enlace a tus fotos <span class="req">*</span></label>
-    <input name="fotos" placeholder="Link de Google Drive o Instagram" required>
-    <div class="hint">Subí tus fotos a Google Drive o una carpeta y pegá el enlace (que sea público).</div></div>
-  <div class="field"><label>Video de presentación (máx. 60s) <span class="req">*</span></label>
-    <input name="video_pres" placeholder="Link de YouTube o Drive" required></div>
-  <div class="field"><label>Video onboard / en pista</label><input name="video_pista" placeholder="Link de YouTube o Drive"></div>
-  <div class="field"><label>Resultados en PDF</label><input name="pdf" placeholder="Link de Google Drive"></div>
-
-  <div class="step-k">Paso 6</div>
   <div class="step-h">Tu motivación</div>
   <div class="field"><label>¿Por qué querés ser parte del Moto4 Latin Cup? <span class="req">*</span></label>
     <textarea name="motivacion" required></textarea></div>
@@ -207,7 +223,7 @@
   // 1) Cuando tengas el Apps Script, pegá acá su URL (dejá "" para modo demo):
   var FORM_API = "https://script.google.com/macros/s/AKfycbxyHjGMrEfsvZXTVt7Ji60WJzJedgH0qLBveV9YTgpB3sT7XUz_m4VK0z3HuWrSChHR/exec";
   // 2) Apertura de la preinscripción (hora local del visitante). Cambiá acá si mueven la fecha:
-  var OPEN_DATE = new Date("2020-01-01T00:00:00"); // ABIERTO ahora. Para cerrar hasta el 15/8, poné: new Date("2026-08-15T09:00:00")
+  var OPEN_DATE = new Date("2026-08-15T09:00:00"); // Apertura de inscripciones. Para cambiar el dia, edita solo esta fecha.
 
   // --- control de apertura del formulario ---
   (function(){

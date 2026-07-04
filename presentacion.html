@@ -237,7 +237,10 @@
   .sQ .fotos2 span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
     font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
 
-  .slide{margin:0}
+  /* REGLA FINAL: el posicionamiento del deck manda sobre los estilos importados */
+  .stage .slide{width:1456px;height:819px;position:absolute;inset:0;margin:0;overflow:hidden;
+    opacity:0;pointer-events:none;transition:opacity .35s}
+  .stage .slide.on{opacity:1;pointer-events:auto}
 
   /* ===== impresión / PDF ===== */
   @media print{

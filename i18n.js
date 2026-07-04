@@ -82,6 +82,16 @@ var D = {
 "Aún no hay noticias publicadas.":{en:"No news published yet.",pt:"Ainda não há notícias publicadas."},
 "Leer más":{en:"Read more",pt:"Leia mais"},
 
+/* ===== MEDIA ===== */
+"Galería oficial de fotos del campeonato.":{en:"Official photo gallery of the championship.",pt:"Galeria oficial de fotos do campeonato."},
+"Galería":{en:"Gallery",pt:"Galeria"},
+"Cargando fotos…":{en:"Loading photos…",pt:"Carregando fotos…"},
+"Todos":{en:"All",pt:"Todos"},
+"Generales":{en:"General",pt:"Gerais"},
+"Ganador":{en:"Winner",pt:"Vencedor"},
+"Próximamente: las fotos del campeonato.":{en:"Coming soon: the championship photos.",pt:"Em breve: as fotos do campeonato."},
+"Aún no hay fotos en esta categoría.":{en:"No photos in this category yet.",pt:"Ainda não há fotos nesta categoria."},
+
 /* ===== PILOTOS ===== */
 "Grilla 2026":{en:"2026 Grid",pt:"Grid 2026"},
 "16 talentos de toda Latinoamérica rumbo al Mundial.":{en:"16 talents from all over Latin America heading to the World Championship.",pt:"16 talentos de toda a América Latina rumo ao Mundial."},

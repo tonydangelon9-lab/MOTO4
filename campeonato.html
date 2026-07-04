@@ -33,7 +33,7 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
   nav img.logo{height:60px;display:block}
   .navlinks{display:flex;gap:26px;align-items:center}
-  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted)}
+  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted);white-space:nowrap}
   .navlinks a.lnk:hover,.navlinks a.lnk.active{color:#fff}
   .navlinks a.lnk.active{position:relative}
   .navlinks a.lnk.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--grad)}
@@ -117,21 +117,60 @@
   .nm-mob{display:none}
   @media(max-width:860px){.nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}}
 
+  
+  /* ===== FRANJA ROTATIVA DE SPONSORS ===== */
+  .smarquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);
+    overflow:hidden;padding:18px 0;position:relative}
+  .smarquee::before,.smarquee::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+  .smarquee::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+  .smarquee::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+  .strack{display:flex;align-items:center;gap:64px;width:max-content;animation:sscroll 28s linear infinite}
+  .strack img{height:30px;width:auto;object-fit:contain;opacity:.92}
+  .strack img.big{height:38px}
+  .strack img.chico{height:22px}
+  @keyframes sscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.strack{animation:none;flex-wrap:wrap;width:auto;justify-content:center;gap:34px;padding:0 20px}}
+  .smarquee:hover .strack{animation-play-state:paused}
+  footer .sp-row.unica{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:26px 56px;width:100%}
+  footer .sp-row.unica img{width:auto;display:block;object-fit:contain;margin:0}
+  footer .sp-row.unica img.sp-mobil{height:38px}
+  footer .sp-row.unica img.sp-honda{height:26px}
+  footer .sp-row.unica img.sp-fim{height:46px}
+  footer .sp-row.unica img.sp-road{height:28px}
+  @media(max-width:560px){footer .sp-row.unica{gap:16px 28px}
+    footer .sp-row.unica img.sp-mobil{height:24px}footer .sp-row.unica img.sp-honda{height:16px}
+    footer .sp-row.unica img.sp-fim{height:30px}footer .sp-row.unica img.sp-road{height:18px}}
+  .newpill{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:6px;background:var(--grad);
+    color:#000;font-size:10px;font-weight:700;letter-spacing:.08em;vertical-align:middle;font-family:var(--body)}
+
   </style>
 </head>
 <body>
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk active" href="campeonato.html">Ranking 2026</a><a class="lnk" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Ranking 2026</h1><p>Clasificación general oficial rumbo al título.</p></div></header><section><div class="wrap"><div class="panel active" id="p-ranking"><div class="rklist" id="rklist"></div><div class="rkfoot">Clase Moto4 · Honda · Fuente oficial FIM Latin America · Se actualiza con la planilla del campeonato.</div></div></div></section><footer><div class="wrap">
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk active" href="campeonato.html">Ranking 2026</a><a class="lnk" href="noticias.html">Noticias<span class="newpill">NEW</span></a><a class="lnk" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav><header class="phead"><div class="wrap"><div class="k">FIM Latin America · Temporada 2026</div><h1>Ranking 2026</h1><p>Clasificación general oficial rumbo al título.</p></div></header><section><div class="wrap"><div class="panel active" id="p-ranking"><div class="rklist" id="rklist"></div><div class="rkfoot">Clase Moto4 · Honda · Fuente oficial FIM Latin America · Se actualiza con la planilla del campeonato.</div></div></div></section><div class="smarquee" aria-label="Sponsors oficiales">
+  <div class="strack">
+    <img class="big" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
+    <img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
+    <img class="chico" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
+    <img class="chico" src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
+    <img class="chico" src="07-LOGOS-SPONSORS/Revemar_White.png" alt="Revemar">
+    <img class="big logo-blanco" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
+    <img class="chico" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+    <img class="big" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
+    <img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
+    <img class="chico" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
+    <img class="chico" src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
+    <img class="chico" src="07-LOGOS-SPONSORS/Revemar_White.png" alt="Revemar">
+    <img class="big logo-blanco" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
+    <img class="chico" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+  </div>
+</div>
+<footer><div class="wrap">
   <div class="sponsors">
-    <div class="sp-row principal">
+    <div class="sp-row unica">
       <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
-      <img class="sp-pirelli" src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
-      <img class="sp-honda" src="07-LOGOS-SPONSORS/Honda_Logo.svg" alt="Honda">
-      <img class="sp-menor" src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
-      <img class="sp-menor" src="07-LOGOS-SPONSORS/Revemar_White.png" alt="Revemar">
-    </div>
-    <div class="sp-row secundario">
-      <img class="logo-blanco sp-fim" src="07-LOGOS-SPONSORS/Federation-Internationale-de-Motocyclisme-Logo%20(1).png" alt="FIM Latin America">
-      <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+      <img class="sp-honda" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
+      <img class="logo-blanco sp-fim" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
+      <img class="sp-road" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
     </div>
   </div>
   <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">

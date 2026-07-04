@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<title>Mobil Moto4 Latin Cup · Presentación oficial</title>
+<meta name="description" content="Presentación oficial de la Mobil Moto4 Latin Cup para marcas y aliados.">
+<meta name="robots" content="noindex">
+<style>
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+  @font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+  :root{--white:#fff;--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;
+    --line:#2a0f30;--muted:#b79bc0;
+    --grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+    --grad-dark:linear-gradient(135deg,#1a0620 0%,#3a0d47 45%,#000 100%);
+    --disp:"MGP Display","Arial Narrow",Arial,sans-serif;--dispx:"MGP Display Exp","MGP Display","Arial Narrow",sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{background:#000;color:#fff;font-family:var(--body);overflow:hidden}
+  a{color:inherit;text-decoration:none}
+  .lb{filter:brightness(0) invert(1)}
+
+  /* ===== barra superior ===== */
+  .topbar{position:fixed;top:0;left:0;right:0;height:60px;z-index:60;display:flex;align-items:center;justify-content:space-between;
+    padding:0 18px;background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar img.tl{height:42px}
+  .topbar .acts{display:flex;gap:10px;align-items:center}
+  .tbtn{font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;font-size:12px;color:#fff;
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;white-space:nowrap}
+  .tbtn.solid{background:var(--grad);border:none;color:#000;font-weight:700}
+
+  /* ===== candado ===== */
+  .gate{position:fixed;inset:0;z-index:100;background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+  .gate::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 35%,rgba(214,61,252,.32),transparent 70%)}
+  .gate .in{position:relative;z-index:2;max-width:420px;width:100%}
+  .gate img{width:min(320px,70vw);margin-bottom:26px}
+  .gate h1{font-family:var(--dispx);text-transform:uppercase;font-size:24px;margin-bottom:8px}
+  .gate p{color:#e9d8ef;font-size:14px;margin-bottom:20px}
+  .gate input{width:100%;background:rgba(0,0,0,.5);border:1px solid var(--purple);border-radius:14px;color:#fff;
+    font-family:var(--dispx);font-size:26px;text-align:center;letter-spacing:.35em;padding:14px}
+  .gate input:focus{outline:none;box-shadow:0 0 0 4px rgba(214,61,252,.3)}
+  .gate button{margin-top:16px;width:100%;font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px;
+    color:#fff;background:var(--grad);border:none;border-radius:999px;padding:15px;cursor:pointer}
+  .gate .err{color:#ff9db1;font-size:13px;margin-top:12px;visibility:hidden}
+
+  /* ===== escenario del deck (escala fija 1456x819) ===== */
+  .stagewrap{position:fixed;inset:60px 0 64px 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .stage{width:1456px;height:819px;position:relative;transform-origin:center center}
+  .slide{width:1456px;height:819px;position:absolute;inset:0;overflow:hidden;background:var(--bg);color:#fff;
+    opacity:0;pointer-events:none;transition:opacity .35s}
+  .slide.on{opacity:1;pointer-events:auto}
+
+  /* ===== controles ===== */
+  .ctrl{position:fixed;bottom:0;left:0;right:0;height:64px;z-index:60;display:flex;align-items:center;justify-content:center;gap:18px;
+    background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .nav{width:46px;height:46px;border-radius:50%;background:var(--grad);border:none;color:#000;font-size:20px;font-weight:700;cursor:pointer}
+  .nav:disabled{opacity:.35}
+  .cnt{font-family:var(--dispx);font-weight:700;font-size:16px;min-width:88px;text-align:center;letter-spacing:.06em}
+
+  /* ===== estilos de las láminas (del preview aprobado) ===== */
+
+  :root{--white:#fff;--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;
+    --line:#2a0f30;--muted:#b79bc0;
+    --grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+    --grad-dark:linear-gradient(135deg,#1a0620 0%,#3a0d47 45%,#000 100%);
+    --disp:"MGP Display","Arial Narrow",Arial,sans-serif;--dispx:"MGP Display Exp","MGP Display","Arial Narrow",sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#222;font-family:var(--body)}
+  .slide{width:1456px;height:819px;position:relative;overflow:hidden;background:var(--bg);color:#fff;margin:30px auto}
+
+  /* ============ LÁMINA 1: PORTADA ============ */
+  .s1{background:var(--grad-dark)}
+  .s1 .foto{position:absolute;inset:0;background:url('PRESENTACION/race2026.jpg') center/cover;opacity:.30;filter:saturate(1.1)}
+  .s1::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 50% 30%,rgba(214,61,252,.35),transparent 70%),linear-gradient(180deg,transparent 55%,rgba(0,0,0,.85))}
+  .s1 .c{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+  .s1 .lg{width:520px;filter:drop-shadow(0 16px 50px rgba(214,61,252,.5))}
+  .s1 h1{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:40px;margin-top:26px;letter-spacing:.02em}
+  .s1 h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .s1 .sub{font-family:var(--disp);text-transform:uppercase;letter-spacing:.3em;font-size:15px;color:var(--pink);margin-top:12px}
+  .s1 .sponsors{position:absolute;bottom:34px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:56px;z-index:3}
+  .s1 .sponsors .sp{font-family:var(--disp);font-weight:700;letter-spacing:.06em;font-size:19px;opacity:.95}
+  .s1 .tag{position:absolute;top:30px;right:38px;font-family:var(--disp);text-transform:uppercase;font-size:13px;letter-spacing:.16em;color:#e9d8ef;border:1px solid rgba(214,61,252,.5);border-radius:999px;padding:8px 18px;background:rgba(0,0,0,.35);z-index:3}
+
+  /* ============ LÁMINA 2: LA HISTORIA ============ */
+  .s2{background:#000}
+  .s2 .head{background:var(--grad-dark);padding:34px 60px 24px;position:relative;overflow:hidden}
+  .s2 .head::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% 0%,rgba(214,61,252,.3),transparent 70%)}
+  .s2 .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:13px;color:var(--pink);position:relative;z-index:1}
+  .s2 h2{font-family:var(--dispx);text-transform:uppercase;font-size:46px;position:relative;z-index:1}
+  .s2 .tl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px;padding:34px 60px 0;position:relative}
+  .s2 .tl::before{content:"";position:absolute;left:60px;right:60px;top:118px;height:4px;background:var(--grad);border-radius:4px}
+  .s2 .hito .anio{font-family:var(--dispx);font-size:42px;color:transparent;-webkit-text-stroke:2px var(--purple);letter-spacing:.02em}
+  .s2 .hito .dot{width:18px;height:18px;border-radius:50%;background:var(--grad);margin:14px 0 16px;box-shadow:0 0 0 6px rgba(214,61,252,.25)}
+  .s2 .hito .foto{width:100%;aspect-ratio:16/9;border-radius:14px;object-fit:cover;border:1px solid var(--line);display:block}
+  .s2 .hito h3{font-family:var(--disp);text-transform:uppercase;font-size:19px;margin:14px 0 6px;color:#fff;letter-spacing:.03em}
+  .s2 .hito p{font-size:13.5px;line-height:1.5;color:#d9c8e2}
+  .s2 .hito p b{color:#fff}
+  .s2 .flogo{position:absolute;bottom:26px;right:40px;font-family:var(--disp);font-weight:700;font-size:15px;color:var(--pink);letter-spacing:.06em}
+
+
+  .shead{background:var(--grad-dark);padding:30px 60px 22px;position:relative;overflow:hidden}
+  .shead::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% 0%,rgba(214,61,252,.3),transparent 70%)}
+  .shead .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:13px;color:var(--pink);position:relative;z-index:1}
+  .shead h2{font-family:var(--dispx);text-transform:uppercase;font-size:42px;position:relative;z-index:1}
+  .smark{position:absolute;bottom:20px;right:34px;height:72px}
+  .scont{padding:36px 60px}
+  .bignum{font-family:var(--dispx);font-weight:700}
+  .chip{display:inline-block;background:rgba(214,61,252,.16);border:1px solid rgba(214,61,252,.45);border-radius:999px;padding:6px 16px;font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--pink)}
+
+  /* s3 quienes somos */
+  .s3 .cols{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:center}
+  .s3 p{font-size:16.5px;line-height:1.65;color:#e9d8ef;margin-bottom:14px}
+  .s3 p b{color:#fff}
+  .s3 .quote{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--purple);border-radius:14px;padding:22px 24px}
+  .s3 .quote .q{font-size:15.5px;line-height:1.6;color:#f2eaf7;font-style:italic}
+  .s3 .quote .a{margin-top:12px;font-family:var(--disp);text-transform:uppercase;font-size:12.5px;letter-spacing:.08em;color:var(--pink)}
+
+  /* s4 piramide */
+  .s4 .lad{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px}
+  .s4 .step{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 26px;font-family:var(--dispx);text-transform:uppercase;font-size:19px;text-align:center}
+  .s4 .step small{display:block;font-family:var(--body);text-transform:none;font-size:12px;color:var(--muted);margin-top:2px}
+  .s4 .arrow{color:var(--purple);font-size:20px;line-height:.6}
+  .s4 .step.top{background:var(--grad);color:#000;font-weight:700;border:none}
+  .s4 .step.latin{background:rgba(214,61,252,.18);border:2px solid var(--purple);box-shadow:0 10px 30px rgba(214,61,252,.3)}
+
+  /* s5 categoria */
+  .s5 .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .s5 .foto{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+  .s5 .spec{display:flex;gap:12px;margin-bottom:13px}
+  .s5 .spec .sk{font-family:var(--disp);text-transform:uppercase;font-size:11px;letter-spacing:.1em;color:#a678b8;min-width:96px;padding-top:3px}
+  .s5 .spec .sv{font-size:15px;color:#f2eaf7}
+
+  /* s6 calendario */
+  .s6 .cal{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:900px;margin:0 auto}
+  .s6 .ev{background:linear-gradient(100deg,#C604F7,#D63DFC);border-radius:13px;padding:13px 18px;display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:12px}
+  .s6 .ev .r{font-family:var(--dispx);font-weight:700;font-size:14px}
+  .s6 .ev .n{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:16px}
+  .s6 .ev .d{font-family:var(--disp);text-transform:uppercase;font-size:10.5px;opacity:.95;margin-top:2px}
+  .s6 .ev .f{font-size:20px}
+  .s6 .tot{display:flex;gap:40px;justify-content:center;margin-top:26px}
+  .s6 .tot .t{text-align:center}
+  .s6 .tot .bignum{font-size:52px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .s6 .tot .tl{font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--muted)}
+
+  /* s7 grilla */
+  .s7 .pg{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:1180px;margin:0 auto}
+  .s7 .pl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 13px;display:flex;align-items:center;gap:10px}
+  .s7 .pl .fl{font-size:19px}
+  .s7 .pl .nm{font-family:var(--disp);text-transform:uppercase;font-size:13.5px;line-height:1.15}
+  .s7 .pl .nm small{display:block;color:var(--muted);font-size:10px;font-family:var(--body);text-transform:none}
+  .s7 .stats{display:flex;gap:44px;justify-content:center;margin-top:24px}
+
+  /* s8 ranking barras */
+  .s8 .bars{max-width:980px;margin:0 auto}
+  .s8 .brow{display:grid;grid-template-columns:200px 1fr 64px;align-items:center;gap:14px;margin-bottom:12px}
+  .s8 .bn{font-family:var(--disp);text-transform:uppercase;font-size:14.5px;text-align:right}
+  .s8 .btr{height:24px;background:var(--surface);border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+  .s8 .bf{height:100%;background:var(--grad);border-radius:8px}
+  .s8 .bv{font-family:var(--dispx);font-weight:700;font-size:17px;color:var(--pink)}
+  .s8 .brow.lider .bn{color:#fff;font-weight:700}
+
+  /* s9 mercado */
+  .s9 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
+  .s9 .kpi{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;position:relative;overflow:hidden}
+  .s9 .kpi::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+  .s9 .kpi .bignum{font-size:46px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .s9 .kpi .kt{font-family:var(--disp);text-transform:uppercase;font-size:12.5px;letter-spacing:.06em;color:#e9d8ef;margin-top:8px;line-height:1.4}
+  .s9 .kpi .src{font-size:10px;color:#7a5a86;margin-top:6px}
+  .s9 .own{display:flex;gap:16px;justify-content:center}
+  .s9 .own .o{background:rgba(214,61,252,.12);border:1px solid rgba(214,61,252,.4);border-radius:14px;padding:14px 26px;text-align:center}
+  .s9 .own .bignum{font-size:30px;color:#fff}
+  .s9 .own .ot{font-size:11.5px;color:var(--pink);font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+
+  /* s10 camino */
+  .s10 .prem{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .s10 .p{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;overflow:hidden}
+  .s10 .p::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--grad)}
+  .s10 .p .ico{font-size:38px}
+  .s10 .p h3{font-family:var(--dispx);text-transform:uppercase;font-size:19px;margin:12px 0 8px;line-height:1.2}
+  .s10 .p p{font-size:14px;color:#d9c8e2;line-height:1.55}
+  .s10 .p p b{color:#fff}
+
+  /* s11 oportunidades */
+  .s11 .ops{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .s11 .op{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start}
+  .s11 .op .ico{font-size:26px}
+  .s11 .op h4{font-family:var(--disp);text-transform:uppercase;font-size:16px;margin-bottom:4px}
+  .s11 .op p{font-size:12.5px;color:var(--muted);line-height:1.5}
+  .s11 .nota{text-align:center;margin-top:22px;color:#d9c8e2;font-size:14px}
+  .s11 .lay2{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;align-items:start}
+  .s11 .heroimg{border-radius:16px;overflow:hidden;border:1px solid var(--line);position:relative}
+  .s11 .heroimg img{width:100%;display:block}
+  .s11 .heroimg span{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.68);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:8px}
+
+  /* s12 contacto */
+  .s12{background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center}
+  .s12::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 40%,rgba(214,61,252,.3),transparent 70%)}
+  .s12 .c{position:relative;z-index:2}
+  .s12 .lg{width:420px;margin-bottom:30px}
+  .s12 .line{font-family:var(--disp);text-transform:uppercase;font-size:20px;letter-spacing:.06em;margin:8px 0}
+  .s12 .line b{color:var(--pink)}
+
+
+  .sK .mos{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:12px;height:520px}
+  .sK .mos .ph{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff}
+  .sK .mos img{width:100%;height:100%;object-fit:cover;display:block}
+  .sK .mos .cap{position:relative}
+  .sK .mos .cap span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
+
+
+  .sQ .lay{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:center}
+  .sQ .diag{background:#f2f2f2;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+  .sQ .diag img{width:100%;height:100%;object-fit:contain;display:block;background:#f2f2f2}
+  .sQ .diag2{display:grid;grid-template-rows:1fr 1fr;gap:10px;min-height:0}
+  .sQ .diag2 .diag{min-height:0;overflow:hidden}
+  .sQ ul{list-style:none;margin-top:14px}
+  .sQ li{font-size:13.5px;color:#e9d8ef;padding:7px 0 7px 26px;position:relative;border-bottom:1px solid var(--line)}
+  .sQ li::before{content:"◆";position:absolute;left:2px;color:var(--purple);font-size:11px}
+  .sQ .precio{margin-top:18px;background:var(--grad);border-radius:12px;padding:12px 22px;text-align:center;
+    font-family:var(--dispx);font-weight:700;font-size:24px;color:#000}
+  .sQ .precio small{display:block;font-family:var(--disp);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .sQ .fotos2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .sQ .fotos2 .ph{border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative}
+  .sQ .fotos2 img{width:100%;height:100%;object-fit:cover;display:block}
+  .sQ .fotos4{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:470px}
+  .sQ .fotos4 .ph{border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative;background:#f2f2f2}
+  .sQ .fotos4 img{width:100%;height:100%;object-fit:cover;display:block}
+  .sQ .fotos4 .ph.fit img{object-fit:contain}
+  .sQ .fotos4 span{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.68);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:6px}
+  .sQ .fotos2 span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
+
+  .slide{margin:0}
+
+  /* ===== impresión / PDF ===== */
+  @media print{
+    .topbar,.ctrl,.gate{display:none !important}
+    body{overflow:visible}
+    .stagewrap{position:static;display:block}
+    .stage{width:auto;height:auto;transform:none !important}
+    .slide{position:relative;opacity:1;pointer-events:auto;page-break-after:always;margin:0}
+    @page{size:1456px 819px;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <div class="in">
+    <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup">
+    <h1>Presentación oficial</h1>
+    <p>Material reservado para marcas y aliados.<br>Ingresa el código de acceso.</p>
+    <input id="code" type="tel" inputmode="numeric" maxlength="8" placeholder="········" autocomplete="off">
+    <button id="entrar">Entrar</button>
+    <div class="err" id="err">Código incorrecto</div>
+    <p style="margin-top:22px;font-size:12px"><a href="index.html" style="color:var(--pink);text-decoration:underline">← Volver a moto4latincup.lat</a></p>
+  </div>
+</div>
+
+<div class="topbar">
+  <a href="index.html"><img class="tl" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup"></a>
+  <div class="acts">
+    <button class="tbtn" onclick="window.print()">Descargar PDF</button>
+    <a class="tbtn solid" href="index.html">Volver al sitio</a>
+  </div>
+</div>
+
+<div class="stagewrap"><div class="stage" id="stage">
+<div class="slide s1">
+  <div class="foto"></div>
+  <div class="tag">Presentación oficial · 2026</div>
+  <div class="c">
+    <img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup">
+    <h1>El camino latino al <span class="grad">MotoGP</span></h1>
+    <div class="sub">Mobil Moto4 Latin Cup · FIM Latin America · Road to MotoGP</div>
+  </div>
+  <div class="sponsors">
+    <img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:34px"><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:30px"><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:22px"><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:22px"><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:22px"><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:38px"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:24px">
+  </div>
+</div>
+<div class="slide s2">
+  <div class="head"><div class="k">De Latin America Talent Cup a Moto4 Latin Cup</div><h2>Nuestra historia</h2></div>
+  <div class="tl">
+    <div class="hito">
+      <div class="anio">2023</div><div class="dot"></div>
+      <img class="foto" src="PRESENTACION/h2023.jpg">
+      <h3>El anuncio ante el mundo</h3>
+      <p>En el <b>Gran Premio de Argentina de MotoGP</b> (Termas de Río Hondo), <b>Carmelo Ezpeleta</b> (CEO de Dorna Sports), <b>Pedro Venturo</b> (Presidente FIM Latin America) y <b>Antonio D'Angelo</b> (GP3 Sports) anuncian el camino latino al Mundial.</p>
+    </div>
+    <div class="hito">
+      <div class="anio">2025</div><div class="dot"></div>
+      <img class="foto" src="PRESENTACION/h2025.jpg">
+      <h3>Nace la Latin America Talent Cup</h3>
+      <p>Lanzamiento oficial ante <b>+30 medios</b> y la máxima autoridad del deporte en Chile. <b>18 Honda NSF250R llegadas directo de Japón</b>, 20 federaciones FIM-LA y primeras carreras junto al MotoGP en Termas.</p>
+    </div>
+    <div class="hito">
+      <div class="anio">2026</div><div class="dot"></div>
+      <img class="foto" src="PRESENTACION/h2026.jpg">
+      <h3>Evolución: Moto4 Latin Cup</h3>
+      <p>La LATC se integra a la <b>familia mundial Moto4 de FIM y Dorna</b> (Asia, Europa, Gran Bretaña, Norte… y Latinoamérica), con <b>Mobil</b> como title sponsor. De copa regional a <b>categoría oficial del sistema mundial</b>.</p>
+    </div>
+  </div>
+  <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="position:absolute;bottom:22px;right:36px;height:78px" alt="Mobil Moto4 Latin Cup">
+</div>
+<div class="slide s3">
+  <div class="shead"><div class="k">El campeonato oficial</div><h2>Quiénes somos</h2></div>
+  <div class="scont cols">
+    <div>
+      <p>La <b>Mobil Moto4 Latin Cup</b> es el campeonato oficial <b>FIM Latin America</b> de la categoría Moto4, creado dentro del programa <b>Road to MotoGP™</b> — la estructura de la FIM y <b>Dorna Sports</b> para el desarrollo de pilotos en el mundo.</p>
+      <p>Organizado por <b>GP3 Sports</b> con el respaldo de <b>20 federaciones nacionales</b> afiliadas a FIM-LA, es la puerta de entrada oficial de Latinoamérica a la pirámide mundial del motociclismo.</p>
+      <p><b>Categoría OPEN:</b> abierta a pilotos de cualquier país. En la grilla 2026 corren talentos de Estados Unidos, Palestina, Puerto Rico y toda Latinoamérica.</p>
+    </div>
+    <div class="quote">
+      <div class="q">"Estamos encantados de ver cómo Road to MotoGP se expande a Latinoamérica, sumando una nueva región al programa y dando una oportunidad increíble a miles de jóvenes pilotos. La accesibilidad crea igualdad."</div>
+      <div class="a">Carmelo Ezpeleta · CEO Dorna Sports</div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s4">
+  <div class="shead"><div class="k">Road to MotoGP</div><h2>La pirámide al Mundial</h2></div>
+  <div class="scont lad">
+    <div class="step top">MotoGP™ <small>Moto2 · Moto3 · Campeonato del Mundo</small></div>
+    <div class="arrow">▲</div>
+    <div class="step">Red Bull MotoGP Rookies Cup · FIM JuniorGP <small>European Talent Cup</small></div>
+    <div class="arrow">▲</div>
+    <div class="step latin">Mobil MOTO4 LATIN CUP <small>la copa oficial de Latinoamérica · familia mundial Moto4: Asia · European · British · Northern · Latin</small></div>
+    <div class="arrow">▲</div>
+    <div class="step">Campeonatos nacionales · FIM MiniGP <small>GP3-CAV Argentina · Moto1000GP Brasil · GP3 Chile</small></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s5">
+  <div class="shead"><div class="k">Igualdad total de material</div><h2>La categoría</h2></div>
+  <div class="scont cols">
+    <img class="foto" src="PRESENTACION/moto_real_2026.jpg">
+    <div>
+      <span class="chip">Honda NSF250R · especificación Moto3</span>
+      <div style="height:16px"></div>
+      <div class="spec"><div class="sk">Moto</div><div class="sv">Honda NSF250R — la misma con la que Dorna forma campeones en sus copas de talento del mundo</div></div>
+      <div class="spec"><div class="sk">Motor</div><div class="sv">4 tiempos refrigerado por líquido · chasis aluminio twin tube</div></div>
+      <div class="spec"><div class="sk">Neumáticos</div><div class="sv">Pirelli de especificación única para toda la grilla</div></div>
+      <div class="spec"><div class="sk">Filosofía</div><div class="sv"><b>Motos iguales para todos: aquí gana el talento, no el presupuesto.</b></div></div>
+      <div class="spec"><div class="sk">Edad</div><div class="sv">Pilotos de 14 a 19 años</div></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide sK">
+  <div class="shead"><div class="k">Temporada 2026 · powered by Mobil</div><h2>La imagen de este año</h2></div>
+  <div class="scont">
+    <div class="mos">
+      <div class="ph cap"><img src="PRESENTACION/race2026.jpg" style="object-position:center"><span>En pista · Interlagos 2026</span></div>
+      <div class="ph cap"><img src="PRESENTACION/suit2026.jpg"><span>Traje oficial 2026</span></div>
+      <div class="ph cap"><img src="PRESENTACION/kit2026.jpg" style="object-position:top"><span>Kit Mobil 2026</span></div>
+      <div class="ph cap"><img src="PRESENTACION/box2026.jpg"><span>Box oficial · Interlagos 2026</span></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s6">
+  <div class="shead"><div class="k">Temporada 2026 · Brasil y Argentina</div><h2>Calendario</h2></div>
+  <div class="scont">
+    <div class="cal">
+      <div class="ev"><div class="r">R1</div><div><div class="n">Goiânia</div><div class="d">20–22 MAR · Apoyo MotoGP</div></div><div class="f">🇧🇷</div></div>
+      <div class="ev"><div class="r">R2–3</div><div><div class="n">Interlagos</div><div class="d">10–12 ABR · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
+      <div class="ev"><div class="r">R4–5–6</div><div><div class="n">San Nicolás</div><div class="d">19–21 JUN · GP3-CAV</div></div><div class="f">🇦🇷</div></div>
+      <div class="ev"><div class="r">R7–8–9</div><div><div class="n">San Juan Villicum</div><div class="d">4–6 SEPT · GP3-CAV</div></div><div class="f">🇦🇷</div></div>
+      <div class="ev"><div class="r">R10–11</div><div><div class="n">Santa Cruz do Sul</div><div class="d">25–27 SEPT · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
+      <div class="ev"><div class="r">R12–13</div><div><div class="n">Cuiabá</div><div class="d">6–8 NOV · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
+    </div>
+    <div class="tot">
+      <div class="t"><div class="bignum">6</div><div class="tl">Fechas</div></div>
+      <div class="t"><div class="bignum">13</div><div class="tl">Carreras</div></div>
+      <div class="t"><div class="bignum">2</div><div class="tl">Países</div></div>
+      <div class="t"><div class="bignum">1</div><div class="tl">Junto a MotoGP</div></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s7">
+  <div class="shead"><div class="k">Grilla 2026</div><h2>16 talentos · 10 países</h2></div>
+  <div class="scont">
+    <div class="pg">
+      <div class="pl"><span class="fl">🇺🇸</span><div class="nm">Kensei Matsudaira<small>Estados Unidos · 15</small></div></div>
+      <div class="pl"><span class="fl">🇪🇨</span><div class="nm">Alberto Enríquez<small>Ecuador · 16</small></div></div>
+      <div class="pl"><span class="fl">🇳🇮</span><div class="nm">Andoni Domínguez<small>Nicaragua · 16</small></div></div>
+      <div class="pl"><span class="fl">🇵🇸</span><div class="nm">Mahdi Salem<small>Palestina · 15</small></div></div>
+      <div class="pl"><span class="fl">🇵🇷</span><div class="nm">Ulises Jie-Wuu Weyrauch<small>Puerto Rico · 16</small></div></div>
+      <div class="pl"><span class="fl">🇨🇱</span><div class="nm">Cristóbal Carreño<small>Chile · 16</small></div></div>
+      <div class="pl"><span class="fl">🇦🇷</span><div class="nm">Santiago Gossa<small>Argentina · 15</small></div></div>
+      <div class="pl"><span class="fl">🇵🇾</span><div class="nm">Thiago Torrez<small>Paraguay · 17</small></div></div>
+      <div class="pl"><span class="fl">🇧🇷</span><div class="nm">Murilo Gomes<small>Brasil · 15</small></div></div>
+      <div class="pl"><span class="fl">🇦🇷</span><div class="nm">Santiago Vogel<small>Argentina · 14</small></div></div>
+      <div class="pl"><span class="fl">🇺🇸</span><div class="nm">Aidan Leonard Hancock<small>Estados Unidos · 17</small></div></div>
+      <div class="pl"><span class="fl">🇦🇷</span><div class="nm">Lorenzo Tiberi<small>Argentina · 14</small></div></div>
+      <div class="pl"><span class="fl">🇻🇪</span><div class="nm">Anyelo Vidal<small>Venezuela · 17</small></div></div>
+      <div class="pl"><span class="fl">🇻🇪</span><div class="nm">Luis Bravo<small>Venezuela · 18</small></div></div>
+      <div class="pl"><span class="fl">🇨🇱</span><div class="nm">Matías Alarcón<small>Chile · 16</small></div></div>
+      <div class="pl"><span class="fl">🇲🇽</span><div class="nm">Mario Tijerina<small>México · 17</small></div></div>
+    </div>
+    <div class="stats">
+      <span class="chip">Edades 14–18</span><span class="chip">10 nacionalidades</span><span class="chip">Categoría OPEN</span>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s8">
+  <div class="shead"><div class="k">Campeonato 2026 · tras San Nicolás (R6)</div><h2>Ranking en vivo</h2></div>
+  <div class="scont bars">
+    <div class="brow lider"><div class="bn">🇺🇸 Kensei Matsudaira</div><div class="btr"><div class="bf" style="width:100%"></div></div><div class="bv">113</div></div>
+    <div class="brow"><div class="bn">🇪🇨 Alberto Enríquez</div><div class="btr"><div class="bf" style="width:83.6%"></div></div><div class="bv">94.5</div></div>
+    <div class="brow"><div class="bn">🇳🇮 Andoni Domínguez</div><div class="btr"><div class="bf" style="width:69.5%"></div></div><div class="bv">78.5</div></div>
+    <div class="brow"><div class="bn">🇵🇸 Mahdi Salem</div><div class="btr"><div class="bf" style="width:65%"></div></div><div class="bv">73.5</div></div>
+    <div class="brow"><div class="bn">🇵🇷 Ulises Weyrauch</div><div class="btr"><div class="bf" style="width:50%"></div></div><div class="bv">56.5</div></div>
+    <div class="brow"><div class="bn">🇨🇱 Cristóbal Carreño</div><div class="btr"><div class="bf" style="width:48.7%"></div></div><div class="bv">55</div></div>
+    <div class="brow"><div class="bn">🇦🇷 Santiago Gossa</div><div class="btr"><div class="bf" style="width:43.4%"></div></div><div class="bv">49</div></div>
+    <div class="brow"><div class="bn">🇵🇾 Thiago Torrez</div><div class="btr"><div class="bf" style="width:31.4%"></div></div><div class="bv">35.5</div></div>
+    <div style="text-align:center;margin-top:18px"><span class="chip">Se actualiza en vivo en moto4latincup.lat</span></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s9">
+  <div class="shead"><div class="k">Por qué Latinoamérica · por qué ahora</div><h2>El mercado</h2></div>
+  <div class="scont">
+    <div class="grid">
+      <div class="kpi"><div class="bignum">+18,8%</div><div class="kt">Latinoamérica: la región de MAYOR crecimiento del mundo en motos (1S 2025)</div><div class="src">Fuente: informes de industria 2025</div></div>
+      <div class="kpi"><div class="bignum">2,2 M</div><div class="kt">Motos vendidas en Brasil en 2025 — récord en 22 años · 6º mercado mundial</div><div class="src">Fuente: Abraciclo / Fenabrave</div></div>
+      <div class="kpi"><div class="bignum">660 M</div><div class="kt">Habitantes en Latinoamérica: una generación que crece sobre dos ruedas</div><div class="src">Argentina +48,7% · Colombia +33,9% · Chile +128,9% (1S 2025)</div></div>
+    </div>
+    <div class="own">
+      <div class="o"><div class="bignum">11,1 mil</div><div class="ot">Seguidores @moto4latin</div></div>
+      <div class="o"><div class="bignum">148,3 mil</div><div class="ot">Visualizaciones / 30 días</div></div>
+      <div class="o"><div class="bignum">20</div><div class="ot">Federaciones FIM-LA</div></div>
+      <div class="o"><div class="bignum">3</div><div class="ot">Idiomas: ES · EN · PT</div></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s10">
+  <div class="shead"><div class="k">Lo que se llevan los pilotos</div><h2>El camino y los premios</h2></div>
+  <div class="scont prem">
+    <div class="p"><div class="ico">🏆</div><h3>El campeón</h3><p>Correrá con nuestro equipo en la <b>European Talent Cup (FIM JuniorGP)</b> con el <b>100% de los gastos del equipo cubiertos</b>.</p></div>
+    <div class="p"><div class="ico">🥇</div><h3>Los tres primeros</h3><p>Acceso directo al <b>Selection Event de la Red Bull MotoGP Rookies Cup</b>, la antesala del Mundial.</p></div>
+    <div class="p"><div class="ico">⭐</div><h3>Todos los seleccionados</h3><p>Entran a la <b>Selectiva de noviembre 2026</b>, que define la grilla 2027. Lo que pasa aquí se ve desde el paddock del Mundial.</p></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s11">
+  <div class="shead"><div class="k">Para marcas que quieren entrar a Latinoamérica</div><h2>Oportunidades</h2></div>
+  <div class="scont lay2">
+    <div class="heroimg"><img src="PRESENTACION/moto_real_2026.jpg"><span>Así queda tu marca · moto oficial 2026</span></div>
+    <div>
+    <div class="ops" style="grid-template-columns:1fr 1fr">
+      <div class="op"><div class="ico">🏍️</div><div><h4>Moto</h4><p>Livery de las Honda NSF250R en las 13 carreras de la temporada.</p></div></div>
+      <div class="op"><div class="ico">🧥</div><div><h4>Piloto</h4><p>Trajes y uniformes oficiales de los 16 pilotos de la grilla.</p></div></div>
+      <div class="op"><div class="ico">🏁</div><div><h4>Pista y box</h4><p>Estructura de boxes, podio y paddock en Brasil y Argentina.</p></div></div>
+      <div class="op"><div class="ico">📱</div><div><h4>Digital</h4><p>Sitio oficial trilingüe con logo rotativo y link directo + redes del campeonato.</p></div></div>
+      <div class="op"><div class="ico">🥂</div><div><h4>Hospitality VIP</h4><p>Área VIP y experiencias con invitados en los eventos.</p></div></div>
+      <div class="op"><div class="ico">👑</div><div><h4>Naming rights</h4><p>Denominación de la categoría junto a la marca, al estilo de las grandes copas.</p></div></div>
+    </div>
+    <div class="nota">Propuestas a la medida de cada marca — conversemos.</div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide sQ">
+  <div class="shead"><div class="k">Propuesta comercial · nivel de entrada</div><h2>Cuota Partner</h2></div>
+  <div class="scont lay">
+    <div class="fotos2" style="height:430px">
+      <div class="ph"><img src="PRESENTACION/camion2026.jpg" style="object-position:left"><span>Camión oficial del campeonato</span></div>
+      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Estructura de boxes · 2026</span></div>
+    </div>
+    <div>
+      <span class="chip">Presencia en el paddock y en digital</span>
+      <ul>
+        <li>Logo en el camión oficial del campeonato</li>
+        <li>Logo en la estructura de boxes en las 6 fechas</li>
+        <li>Redes sociales de la Moto4 Latin Cup</li>
+        <li>Sitio web oficial: logo rotativo con link directo</li>
+        <li>Material de comunicación online / offline</li>
+      </ul>
+      <div class="precio">USD 70K <small>por temporada</small></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide sQ">
+  <div class="shead"><div class="k">Propuesta comercial</div><h2>Cuota Master</h2></div>
+  <div class="scont lay">
+    <div class="fotos4">
+      <div class="ph fit"><img src="PRESENTACION/moto_espacios_master.jpg"><span>Moto · espacios disponibles</span></div>
+      <div class="ph fit"><img src="PRESENTACION/traje_real.jpg"><span>Traje oficial 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/camion2026.jpg" style="object-position:left"><span>Camión oficial</span></div>
+      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box · Interlagos 2026</span></div>
+    </div>
+    <div>
+      <span class="chip">Espacios disponibles marcados en la moto</span>
+      <ul>
+        <li>Livery de la Honda NSF250R (carenado lateral, panza y colín)</li>
+        <li>Traje oficial 2026 de los pilotos (hombros)</li>
+        <li>Estructura de boxes</li>
+        <li>Material de comunicación online / offline</li>
+        <li>Redes sociales + sitio web Moto4 Latin Cup</li>
+        <li>Proyectos especiales · VIP en eventos</li>
+      </ul>
+      <div class="precio">USD 130K <small>por temporada</small></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide sQ">
+  <div class="shead"><div class="k">Propuesta comercial · posición estelar</div><h2>Cuota Naming Rights</h2></div>
+  <div class="scont lay">
+    <div class="fotos4">
+      <div class="ph fit"><img src="PRESENTACION/moto_espacios_naming.jpg"><span>Moto · posición estelar</span></div>
+      <div class="ph fit"><img src="PRESENTACION/traje_real.jpg"><span>Traje oficial 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/camion2026.jpg" style="object-position:left"><span>Camión oficial</span></div>
+      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box · Interlagos 2026</span></div>
+    </div>
+    <div>
+      <span class="chip">Todo lo de la Cuota Master, más:</span>
+      <ul>
+        <li><b style="color:#fff">Naming rights de la categoría</b> — la copa lleva el nombre de la marca</li>
+        <li>Posición estelar del carenado — el círculo principal de la moto</li>
+        <li>Pecho y espalda del traje de los 16 pilotos</li>
+        <li>Protagonismo en toda la comunicación</li>
+      </ul>
+      <div class="precio">USD 400K <small>por temporada</small></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+<div class="slide s12">
+  <div class="c">
+    <img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+    <div class="line">Antonio D'Angelo · GP3 Sports</div>
+    <div class="line"><b>antonio@gp3sports.com</b></div>
+    <div class="line">moto4latincup.lat · @moto4latin</div>
+    <div style="margin-top:26px"><span class="chip">El camino latino al MotoGP</span></div>
+  </div>
+</div>
+</div></div>
+
+<div class="ctrl">
+  <button class="nav" id="prev" aria-label="Anterior">‹</button>
+  <div class="cnt"><span id="cur">1</span> / <span id="tot"></span></div>
+  <button class="nav" id="next" aria-label="Siguiente">›</button>
+</div>
+
+<script>
+(function(){
+  var CODIGO = "20262027"; // ← cambiar aquí el código de acceso
+  var gate=document.getElementById("gate"), inp=document.getElementById("code"), err=document.getElementById("err");
+  function abrir(){ gate.style.display="none"; try{sessionStorage.setItem("m4pres","1");}catch(e){} fit(); }
+  function probar(){
+    if(inp.value.trim()===CODIGO) abrir();
+    else{ err.style.visibility="visible"; inp.value=""; inp.focus(); }
+  }
+  document.getElementById("entrar").addEventListener("click",probar);
+  inp.addEventListener("keydown",function(e){ if(e.key==="Enter") probar(); });
+  try{ if(sessionStorage.getItem("m4pres")==="1") gate.style.display="none"; }catch(e){}
+
+  var slides=[].slice.call(document.querySelectorAll(".slide"));
+  var i=0; document.getElementById("tot").textContent=slides.length;
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach(function(s,k){ s.classList.toggle("on",k===i); });
+    document.getElementById("cur").textContent=i+1;
+    document.getElementById("prev").disabled=(i===0);
+    document.getElementById("next").disabled=(i===slides.length-1);
+  }
+  document.getElementById("prev").addEventListener("click",function(){show(i-1);});
+  document.getElementById("next").addEventListener("click",function(){show(i+1);});
+  document.addEventListener("keydown",function(e){
+    if(gate.style.display!=="none") return;
+    if(e.key==="ArrowRight"||e.key===" ") show(i+1);
+    if(e.key==="ArrowLeft") show(i-1);
+  });
+  var x0=null;
+  document.addEventListener("touchstart",function(e){ x0=e.touches[0].clientX; },{passive:true});
+  document.addEventListener("touchend",function(e){
+    if(x0===null||gate.style.display!=="none") return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(dx<-50) show(i+1); if(dx>50) show(i-1); x0=null;
+  },{passive:true});
+
+  // escala fija: la lámina siempre se ve idéntica, en cualquier pantalla
+  function fit(){
+    var w=window.innerWidth, h=window.innerHeight-124;
+    var s=Math.min(w/1456, h/819);
+    document.getElementById("stage").style.transform="scale("+s+")";
+  }
+  window.addEventListener("resize",fit); fit(); show(0);
+})();
+</script>
+<script src="i18n.js"></script>
+</body>
+</html>

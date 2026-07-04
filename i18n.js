@@ -15,6 +15,7 @@ var D = {
 "Pilotos":{en:"Riders",pt:"Pilotos"},
 "Ranking 2026":{en:"2026 Standings",pt:"Ranking 2026"},
 "Noticias":{en:"News",pt:"Notícias"},
+"Presentación":{en:"Presentation",pt:"Apresentação"},
 "Postular":{en:"Apply",pt:"Inscreva-se"},
 "Postular 2027":{en:"Apply 2027",pt:"Inscreva-se 2027"},
 "Postular ahora":{en:"Apply now",pt:"Inscreva-se agora"},

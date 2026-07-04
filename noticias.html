@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+
+<title>Mobil Moto4 Latin Cup · Noticias</title>
+<meta name="description" content="Noticias oficiales de la Mobil Moto4 Latin Cup: crónicas de carrera, resultados y novedades del camino latino al MotoGP.">
+<style>
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+  @font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+  :root{--white:#fff;--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;
+    --line:#2a0f30;--muted:#b79bc0;--blue:#7dd3fc;--gold:#fcd34d;
+    --grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+    --grad-dark:linear-gradient(135deg,#1a0620 0%,#3a0d47 45%,#000 100%);
+    --disp:"MGP Display","Arial Narrow",Arial,sans-serif;--dispx:"MGP Display Exp","MGP Display",sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--white);font-family:var(--body);line-height:1.55;overflow-x:hidden}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  a{color:inherit;text-decoration:none}
+  .btn{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-weight:700;
+    font-size:15px;color:#fff;background:var(--grad);border:none;border-radius:999px;padding:12px 26px;cursor:pointer}
+  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
+  nav img.logo{height:60px;display:block}
+  .navlinks{display:flex;gap:26px;align-items:center}
+  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted)}
+  .navlinks a.lnk:hover,.navlinks a.lnk.active{color:#fff}
+  .navlinks a.lnk.active{position:relative}
+  .navlinks a.lnk.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--grad)}
+  nav .btn{padding:9px 20px;font-size:13px}
+  .burger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+  @media(max-width:860px){
+    .navlinks{position:fixed;inset:70px 0 auto 0;background:rgba(0,0,0,.97);flex-direction:column;gap:0;
+      border-bottom:1px solid var(--line);padding:10px 0;transform:translateY(-130%);transition:transform .25s;z-index:49}
+    .navlinks.open{transform:translateY(0)}
+    .navlinks a.lnk{padding:14px 22px;width:100%;text-align:center}
+    .navlinks .btn{margin:10px auto} .burger{display:block}
+  }
+  .newpill{display:inline-block;margin-left:6px;padding:2px 6px;border-radius:6px;background:var(--grad);
+    color:#000;font-size:10px;font-weight:700;letter-spacing:.08em;vertical-align:middle;font-family:var(--body)}
+  .phead{background:var(--grad-dark);text-align:center;padding:46px 0 30px;position:relative;overflow:hidden}
+  .phead::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 90% at 50% 0%,rgba(214,61,252,.28),transparent 70%)}
+  .phead .wrap{position:relative;z-index:1}
+  .phead .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:12px;color:var(--pink)}
+  .phead h1{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:clamp(30px,6vw,54px);margin-top:8px;line-height:1}
+  .phead p{color:#e9d8ef;margin-top:10px;font-size:15px}
+  section{padding:36px 0 56px}
+  footer{border-top:1px solid var(--line);padding:40px 0 34px;text-align:center;color:var(--muted);font-size:13px;background:#000}
+  footer .sponsors{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:24px}
+  footer .sp-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-evenly;gap:24px;width:100%}
+  footer .sp-row.principal img{height:44px;width:auto;display:block;object-fit:contain}
+  .logo-blanco{filter:brightness(0) invert(1)}
+  footer .sp-row.principal img.sp-pirelli{height:40px}
+  footer .sp-row.principal img.sp-honda{height:30px}
+  footer .sp-row.principal img.sp-menor{height:22px}
+  footer .sp-row.secundario{gap:24px}
+  footer .sp-row.secundario img{height:38px;width:auto;display:block;object-fit:contain;opacity:.95}
+  footer .sp-row.secundario img.sp-fim{height:52px;opacity:1}
+  footer .flogo{height:92px;margin:0 auto 8px;display:block}
+  footer .fmeta{margin-top:2px}
+  footer .langs{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  @media(max-width:560px){footer .sp-row.principal img{height:26px}footer .sp-row.principal img.sp-honda{height:16px}footer .sp-row.secundario img{height:20px}footer .sp-row{gap:16px}footer .flogo{height:72px}nav img.logo{height:48px}}
+  .nav-mobil{height:20px;width:auto;display:block}
+  .nm-mob{display:none}
+  @media(max-width:860px){.nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}}
+
+  /* ===== NOTICIAS ===== */
+  .nfiltros{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 18px;-webkit-overflow-scrolling:touch;justify-content:center;flex-wrap:wrap}
+  .nfiltros button{flex:0 0 auto;font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.06em;
+    color:#e9d8ef;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+  .nfiltros button.act{background:var(--grad);color:#000;border-color:transparent;font-weight:700}
+  .ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.ngrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.ngrid{grid-template-columns:1fr}}
+  .ncard{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);
+    border-radius:18px;overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s;position:relative}
+  .ncard:hover{transform:translateY(-4px);border-color:var(--purple)}
+  .ncard::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--grad);z-index:2}
+  .ncard .nimg{aspect-ratio:16/9;background:var(--grad-dark);position:relative;overflow:hidden}
+  .ncard .nimg img{width:100%;height:100%;object-fit:cover;display:block}
+  .ncard .nimg .nlogo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .ncard .nimg .nlogo img{width:55%;height:auto;object-fit:contain;opacity:.92}
+  .nnew{position:absolute;top:14px;left:12px;z-index:3;background:var(--grad);color:#000;font-family:var(--disp);
+    font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:7px}
+  .nbody{padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .nmeta{display:flex;gap:10px;align-items:center;font-family:var(--disp);text-transform:uppercase;font-size:11.5px;letter-spacing:.08em}
+  .ncat{color:var(--pink);font-weight:700}
+  .nfecha{color:var(--muted)}
+  .ncard h2{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:19px;line-height:1.15}
+  .ncard p{color:var(--muted);font-size:13.5px;line-height:1.5}
+  .nmsg{text-align:center;color:var(--muted);padding:40px 0;font-size:14px}
+
+  /* modal de artículo */
+  .nbk{position:fixed;inset:0;background:rgba(0,0,0,.74);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:18px}
+  .nbk.open{display:flex}
+  .nart{background:#100616;border:1px solid var(--purple);border-radius:20px;max-width:680px;width:100%;max-height:90vh;overflow:auto;position:relative;box-shadow:0 30px 80px rgba(214,61,252,.35)}
+  .nart .ntop{height:6px;background:linear-gradient(90deg,#C604F7,#D63DFC,#E37BFD);border-radius:20px 20px 0 0}
+  .nart .nx{position:absolute;top:12px;right:16px;font-size:24px;color:#e9d8ef;cursor:pointer;background:none;border:none;line-height:1;z-index:3}
+  .nart .nimg{aspect-ratio:16/9;background:var(--grad-dark);overflow:hidden;position:relative}
+  .nart .nimg img{width:100%;height:100%;object-fit:cover;display:block}
+  .nart .nimg .nlogo{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .nart .nimg .nlogo img{width:50%;height:auto;object-fit:contain;opacity:.92}
+  .nartbody{padding:22px 26px 30px}
+  .nartbody h2{font-family:"MGP Display Exp",sans-serif;text-transform:uppercase;font-weight:700;font-size:clamp(20px,4vw,28px);line-height:1.12;margin:8px 0 14px;color:#fff}
+  .nartbody .cuerpo{color:#f2eaf7;font-size:15px;line-height:1.65}
+  .nartbody .cuerpo b{color:#fff}
+  .nartbody .cuerpo a{color:var(--pink);text-decoration:underline}
+
+  /* ===== FRANJA ROTATIVA DE SPONSORS ===== */
+  .smarquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);
+    overflow:hidden;padding:18px 0;position:relative}
+  .smarquee::before,.smarquee::after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+  .smarquee::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+  .smarquee::after{right:0;background:linear-gradient(270deg,var(--surface),transparent)}
+  .strack{display:flex;align-items:center;gap:64px;width:max-content;animation:sscroll 28s linear infinite}
+  .strack img{height:30px;width:auto;object-fit:contain;opacity:.92}
+  .strack img.big{height:38px}
+  .strack img.chico{height:22px}
+  @keyframes sscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.strack{animation:none;flex-wrap:wrap;width:auto;justify-content:center;gap:34px;padding:0 20px}}
+  .smarquee:hover .strack{animation-play-state:paused}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk active" href="noticias.html">Noticias<span class="newpill">NEW</span></a><a class="lnk" href="media.html">Media</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav>
+
+<header class="phead"><div class="wrap"><div class="k">Mobil Moto4 Latin Cup</div><h1>Noticias</h1><p>Crónicas, resultados y novedades del camino latino al MotoGP.</p></div></header>
+
+<section><div class="wrap">
+  <div class="nfiltros" id="nfiltros"></div>
+  <div class="ngrid" id="ngrid"></div>
+  <div class="nmsg" id="nmsg" style="display:none">Aún no hay noticias publicadas.</div>
+</div></section>
+
+<!-- Franja rotativa de sponsors -->
+<div class="smarquee" aria-label="Sponsors oficiales">
+  <div class="strack" id="strack">
+    <img class="big" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
+    <img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
+    <img class="chico" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
+    <img class="chico" src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
+    <img class="chico" src="07-LOGOS-SPONSORS/Revemar_White.png" alt="Revemar">
+    <img class="big logo-blanco" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
+    <img class="chico" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <div class="sponsors">
+    <div class="sp-row principal">
+      <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
+      <img class="sp-pirelli" src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
+      <img class="sp-honda" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
+      <img class="sp-menor" src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
+      <img class="sp-menor" src="07-LOGOS-SPONSORS/Revemar_White.png" alt="Revemar">
+    </div>
+    <div class="sp-row secundario">
+      <img class="logo-blanco sp-fim" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
+      <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+    </div>
+  </div>
+  <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
+  <div class="fmeta">moto4latincup.lat · @moto4latincup</div>
+  <div class="langs">Español · English · Português</div>
+</div></footer>
+
+<!-- Modal de artículo -->
+<div class="nbk" id="nbk"><article class="nart">
+  <div class="ntop"></div>
+  <button class="nx" id="nx" aria-label="Cerrar">&#10005;</button>
+  <div class="nimg" id="nartimg"></div>
+  <div class="nartbody">
+    <div class="nmeta"><span class="ncat" id="nartcat"></span><span class="nfecha" id="nartfecha"></span></div>
+    <h2 id="narttit"></h2>
+    <div class="cuerpo" id="nartcuerpo"></div>
+  </div>
+</article></div>
+
+<script>var b=document.getElementById("burger"),m=document.getElementById("menu");if(b){b.addEventListener("click",function(){m.classList.toggle("open");});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");});});}</script>
+
+<script src="noticias-data.js"></script>
+<script>
+(function(){
+  var LOGO = "00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png";
+  var MESES = ["ENE","FEB","MAR","ABR","MAY","JUN","JUL","AGO","SEP","OCT","NOV","DIC"];
+  var news = (window.NOTICIAS || []).slice().sort(function(a,b){ return b.fecha.localeCompare(a.fecha); });
+
+  function fmt(f){ var p=f.split("-"); return p[2]+" "+MESES[parseInt(p[1],10)-1]+" "+p[0]; }
+  function esNueva(f){ var d=(Date.now()-new Date(f+"T12:00:00").getTime())/86400000; return d>=0 && d<=14; }
+  function imgHTML(n){
+    if(n.imagen){ return '<img src="'+n.imagen+'" alt="" loading="lazy">'; }
+    return '<div class="nlogo"><img src="'+LOGO+'" alt="Moto4 Latin Cup"></div>';
+  }
+
+  var cats=["Todas"];
+  news.forEach(function(n){ if(cats.indexOf(n.categoria)<0) cats.push(n.categoria); });
+  var filtros=document.getElementById("nfiltros"), actual="Todas";
+  cats.forEach(function(c,i){
+    var b=document.createElement("button"); b.textContent=c;
+    if(i===0) b.className="act";
+    b.onclick=function(){
+      actual=c;
+      filtros.querySelectorAll("button").forEach(function(x){x.className="";});
+      b.className="act"; render();
+    };
+    filtros.appendChild(b);
+  });
+
+  var grid=document.getElementById("ngrid"), msg=document.getElementById("nmsg");
+  function render(){
+    grid.innerHTML="";
+    var lista=news.filter(function(n){ return actual==="Todas"||n.categoria===actual; });
+    msg.style.display=lista.length?"none":"block";
+    lista.forEach(function(n){
+      var card=document.createElement("article"); card.className="ncard";
+      card.innerHTML=(esNueva(n.fecha)?'<span class="nnew">NEW</span>':"")+
+        '<div class="nimg">'+imgHTML(n)+'</div>'+
+        '<div class="nbody"><div class="nmeta"><span class="ncat">'+n.categoria+'</span><span class="nfecha">'+fmt(n.fecha)+'</span></div>'+
+        '<h2>'+n.titulo+'</h2><p>'+n.bajada+'</p></div>';
+      card.onclick=function(){ abrir(n); };
+      grid.appendChild(card);
+    });
+    if(window.m4Apply) window.m4Apply(grid);
+  }
+
+  var bk=document.getElementById("nbk");
+  function abrir(n){
+    document.getElementById("nartimg").innerHTML=imgHTML(n);
+    document.getElementById("nartcat").textContent=n.categoria;
+    document.getElementById("nartfecha").textContent=fmt(n.fecha);
+    document.getElementById("narttit").textContent=n.titulo;
+    document.getElementById("nartcuerpo").innerHTML=n.cuerpo;
+    bk.classList.add("open"); document.body.style.overflow="hidden";
+    if(window.m4Apply) window.m4Apply(bk);
+  }
+  function cerrar(){ bk.classList.remove("open"); document.body.style.overflow=""; }
+  document.getElementById("nx").onclick=cerrar;
+  bk.addEventListener("click",function(e){ if(e.target===bk) cerrar(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") cerrar(); });
+
+  var track=document.getElementById("strack");
+  track.innerHTML+=track.innerHTML;
+
+  render();
+})();
+</script>
+
+<script src="i18n.js"></script>
+</body>
+</html>

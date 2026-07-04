@@ -14,16 +14,8 @@ var D = {
 "Calendario":{en:"Calendar",pt:"Calendário"},
 "Pilotos":{en:"Riders",pt:"Pilotos"},
 "Ranking 2026":{en:"2026 Standings",pt:"Ranking 2026"},
+"Noticias":{en:"News",pt:"Notícias"},
 "Postular":{en:"Apply",pt:"Inscreva-se"},
-"Media":{en:"Media",pt:"Mídia"},
-"Galería oficial de fotos del campeonato.":{en:"Official photo gallery of the championship.",pt:"Galeria oficial de fotos do campeonato."},
-"Todos":{en:"All",pt:"Todos"},
-"Generales":{en:"General",pt:"Gerais"},
-"Cargando fotos…":{en:"Loading photos…",pt:"Carregando fotos…"},
-"Galería":{en:"Gallery",pt:"Galeria"},
-"Ganador":{en:"Winner",pt:"Vencedor"},
-"Aún no hay fotos en esta categoría.":{en:"No photos in this category yet.",pt:"Ainda não há fotos nesta categoria."},
-"Próximamente: las fotos del campeonato.":{en:"Coming soon: championship photos.",pt:"Em breve: as fotos do campeonato."},
 "Postular 2027":{en:"Apply 2027",pt:"Inscreva-se 2027"},
 "Postular ahora":{en:"Apply now",pt:"Inscreva-se agora"},
 "Volver al inicio":{en:"Back to home",pt:"Voltar ao início"},
@@ -37,6 +29,7 @@ var D = {
 "Los 16 talentos de la grilla.":{en:"The 16 talents on the grid.",pt:"Os 16 talentos do grid."},
 "La clasificación general.":{en:"The overall standings.",pt:"A classificação geral."},
 "Selection Program 2027.":{en:"Selection Program 2027.",pt:"Selection Program 2027."},
+"La inscripción abre en":{en:"Applications open in",pt:"As inscrições abrem em"},
 
 /* ===== CALENDARIO ===== */
 "FIM Latin America · Temporada 2026":{en:"FIM Latin America · 2026 Season",pt:"FIM Latin America · Temporada 2026"},
@@ -50,6 +43,44 @@ var D = {
 "Brasil 🇧🇷":{en:"Brazil 🇧🇷",pt:"Brasil 🇧🇷"},
 "Argentina 🇦🇷":{en:"Argentina 🇦🇷",pt:"Argentina 🇦🇷"},
 "Por confirmar":{en:"To be confirmed",pt:"A confirmar"},
+"Ver circuito ▸":{en:"View circuit ▸",pt:"Ver circuito ▸"},
+
+/* ===== FICHAS DE CIRCUITO (modal del calendario) ===== */
+"Ubicación":{en:"Location",pt:"Localização"},
+"Trazado":{en:"Track",pt:"Traçado"},
+"Historia":{en:"History",pt:"História"},
+"Lo destacado":{en:"Highlights",pt:"Destaques"},
+"3.835 m":{en:"3,835 m",pt:"3.835 m"},
+"Inaugurado en 1974 y rebautizado en honor a Ayrton Senna. Sede del GP de Brasil de 500cc del Mundial de Motociclismo (1987–1989) y hoy casa del MotoGP de Brasil.":{en:"Opened in 1974 and renamed in honor of Ayrton Senna. Host of the 500cc Brazilian GP of the Motorcycle World Championship (1987–1989) and now home of the Brazilian MotoGP.",pt:"Inaugurado em 1974 e rebatizado em homenagem a Ayrton Senna. Sede do GP do Brasil de 500cc do Mundial de Motociclismo (1987–1989) e hoje casa do MotoGP do Brasil."},
+"Trazado rápido y fluido, uno de los templos históricos del motociclismo brasileño.":{en:"A fast, flowing layout, one of the historic temples of Brazilian motorcycle racing.",pt:"Traçado rápido e fluido, um dos templos históricos do motociclismo brasileiro."},
+"4.309 m · 15 curvas · sentido antihorario":{en:"4,309 m · 15 corners · counterclockwise",pt:"4.309 m · 15 curvas · sentido anti-horário"},
+"Inaugurado en 1940, es uno de los circuitos más icónicos del mundo y sede del Gran Premio de Brasil de Fórmula 1.":{en:"Opened in 1940, it is one of the most iconic circuits in the world and home of the Formula 1 Brazilian Grand Prix.",pt:"Inaugurado em 1940, é um dos circuitos mais icônicos do mundo e sede do Grande Prêmio do Brasil de Fórmula 1."},
+"Desniveles pronunciados, el mítico 'Senna S' y una atmósfera única en el motorsport mundial.":{en:"Steep elevation changes, the legendary 'Senna S' and a unique atmosphere in world motorsport.",pt:"Desníveis acentuados, o mítico 'Senna S' e uma atmosfera única no automobilismo mundial."},
+"San Nicolás de los Arroyos, Buenos Aires, Argentina (km 225 autopista Buenos Aires–Rosario)":{en:"San Nicolás de los Arroyos, Buenos Aires, Argentina (km 225, Buenos Aires–Rosario highway)",pt:"San Nicolás de los Arroyos, Buenos Aires, Argentina (km 225 da rodovia Buenos Aires–Rosario)"},
+"4.000 m (variantes de 3.959 y 2.414 m) · recta principal de ~800 m":{en:"4,000 m (3,959 and 2,414 m variants) · main straight of ~800 m",pt:"4.000 m (variantes de 3.959 e 2.414 m) · reta principal de ~800 m"},
+"Inaugurado el 7 de octubre de 2018; desde 2022 lleva el nombre del múltiple campeón Juan María Traverso. Integra un predio ferial de 110 hectáreas, sede de Expoagro.":{en:"Opened on October 7, 2018; since 2022 it bears the name of multiple champion Juan María Traverso. It is part of a 110-hectare fairground, home of Expoagro.",pt:"Inaugurado em 7 de outubro de 2018; desde 2022 leva o nome do multicampeão Juan María Traverso. Integra um parque de exposições de 110 hectares, sede da Expoagro."},
+"Uno de los autódromos más modernos de Argentina: asfalto de última generación y vista completa de la pista desde cualquier sector.":{en:"One of Argentina's most modern racetracks: state-of-the-art asphalt and a full view of the track from any sector.",pt:"Um dos autódromos mais modernos da Argentina: asfalto de última geração e vista completa da pista de qualquer setor."},
+"Albardón, San Juan, Argentina — al pie de la precordillera":{en:"Albardón, San Juan, Argentina — at the foot of the Andean foothills",pt:"Albardón, San Juan, Argentina — ao pé da pré-cordilheira"},
+"≈ 4.270 m":{en:"≈ 4,270 m",pt:"≈ 4.270 m"},
+"Inaugurado en 2018, recibió el Mundial de Superbike (WorldSBK) entre 2018 y 2022, poniendo a San Juan en el mapa del motociclismo internacional.":{en:"Opened in 2018, it hosted the Superbike World Championship (WorldSBK) between 2018 and 2022, putting San Juan on the map of international motorcycle racing.",pt:"Inaugurado em 2018, recebeu o Mundial de Superbike (WorldSBK) entre 2018 e 2022, colocando San Juan no mapa do motociclismo internacional."},
+"Trazado técnico y moderno con paisaje precordillerano, estándar internacional FIM.":{en:"A modern, technical layout with foothill scenery, built to FIM international standards.",pt:"Traçado técnico e moderno com paisagem da pré-cordilheira, padrão internacional FIM."},
+"Santa Cruz do Sul, Rio Grande do Sul, Brasil (km 102, ruta RS-471)":{en:"Santa Cruz do Sul, Rio Grande do Sul, Brazil (km 102, RS-471 road)",pt:"Santa Cruz do Sul, Rio Grande do Sul, Brasil (km 102 da rodovia RS-471)"},
+"3.530,7 m · 14 curvas (7 derecha / 7 izquierda) · recta de ~752 m":{en:"3,530.7 m · 14 corners (7 right / 7 left) · straight of ~752 m",pt:"3.530,7 m · 14 curvas (7 à direita / 7 à esquerda) · reta de ~752 m"},
+"Inaugurado el 12 de junio de 2005. Sede habitual de Stock Car, Fórmula Truck y del Campeonato Brasileño de Velocidad.":{en:"Opened on June 12, 2005. Regular host of Stock Car, Fórmula Truck and the Brazilian Road Racing Championship.",pt:"Inaugurado em 12 de junho de 2005. Sede habitual da Stock Car, da Fórmula Truck e do Campeonato Brasileiro de Motovelocidade."},
+"Considerado uno de los circuitos más modernos y selectivos de Brasil, con curvas ciegas en subida y bajada que exigen precisión.":{en:"Considered one of Brazil's most modern and demanding circuits, with blind uphill and downhill corners that demand precision.",pt:"Considerado um dos circuitos mais modernos e seletivos do Brasil, com curvas cegas em subida e descida que exigem precisão."},
+"Cuiabá, Mato Grosso, Brasil":{en:"Cuiabá, Mato Grosso, Brazil",pt:"Cuiabá, Mato Grosso, Brasil"},
+"4.500 m (trazado mixto) · 13 curvas (9 derecha / 4 izquierda) · anillo externo de 2.800 m":{en:"4,500 m (mixed layout) · 13 corners (9 right / 4 left) · 2,800 m outer ring",pt:"4.500 m (traçado misto) · 13 curvas (9 à direita / 4 à esquerda) · anel externo de 2.800 m"},
+"Inaugurado en noviembre de 2025, es el circuito más nuevo de Latinoamérica, proyectado bajo normas FIA y FIM dentro del mayor centro multieventos de la región.":{en:"Opened in November 2025, it is Latin America's newest circuit, designed to FIA and FIM standards within the region's largest multi-event complex.",pt:"Inaugurado em novembro de 2025, é o circuito mais novo da América Latina, projetado sob normas FIA e FIM dentro do maior centro de multieventos da região."},
+"Iluminación artificial de 128 torres y 768 reflectores: preparado para carreras nocturnas.":{en:"Artificial lighting with 128 towers and 768 floodlights: ready for night racing.",pt:"Iluminação artificial com 128 torres e 768 refletores: preparado para corridas noturnas."},
+
+/* ===== NOTICIAS ===== */
+"Crónicas, resultados y novedades del camino latino al MotoGP.":{en:"Race reports, results and news from the Latin road to MotoGP.",pt:"Crônicas, resultados e novidades do caminho latino para o MotoGP."},
+"Todas":{en:"All",pt:"Todas"},
+"Campeonato":{en:"Championship",pt:"Campeonato"},
+"Resultados":{en:"Results",pt:"Resultados"},
+"Selección 2027":{en:"Selection 2027",pt:"Seleção 2027"},
+"Aún no hay noticias publicadas.":{en:"No news published yet.",pt:"Ainda não há notícias publicadas."},
+"Leer más":{en:"Read more",pt:"Leia mais"},
 
 /* ===== PILOTOS ===== */
 "Grilla 2026":{en:"2026 Grid",pt:"Grid 2026"},
@@ -67,7 +98,7 @@ var D = {
 "Altura":{en:"Height",pt:"Altura"},
 "Peso":{en:"Weight",pt:"Peso"},
 "Campeonatos":{en:"Championships",pt:"Campeonatos"},
-"Palmarés":{en:"Achievements",pt:"Palmarés"},
+"Palmarés":{en:"Achievements",pt:"Conquistas"},
 
 /* ===== CAMPEONATO ===== */
 "Clasificación general oficial rumbo al título.":{en:"Official overall standings on the road to the title.",pt:"Classificação geral oficial rumo ao título."},
@@ -106,7 +137,6 @@ var D = {
 
 /* ===== POSTULAR: GATE + FORM ===== */
 "Las postulaciones abren pronto":{en:"Applications open soon",pt:"As inscrições abrem em breve"},
-"La inscripción abre en":{en:"Applications open in",pt:"As inscrições abrem em"},
 "La preinscripción al Selection Program 2027 abre el":{en:"Pre-registration for the Selection Program 2027 opens on",pt:"A pré-inscrição para o Selection Program 2027 abre em"},
 "15 de agosto de 2026":{en:"August 15, 2026",pt:"15 de agosto de 2026"},
 ". Guarda este enlace y vuelve en esa fecha para postularte.":{en:". Save this link and come back on that date to apply.",pt:". Guarde este link e volte nessa data para se inscrever."},

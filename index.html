@@ -122,6 +122,16 @@
   @media (prefers-reduced-motion: reduce){.strack{animation:none;flex-wrap:wrap;width:auto;justify-content:center;gap:34px;padding:0 20px}}
   .smarquee:hover .strack{animation-play-state:paused}
 
+    footer .sp-row.unica{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:26px 56px;width:100%}
+  footer .sp-row.unica img{width:auto;display:block;object-fit:contain}
+  footer .sp-row.unica img.sp-mobil{height:38px}
+  footer .sp-row.unica img.sp-honda{height:26px}
+  footer .sp-row.unica img.sp-fim{height:46px}
+  footer .sp-row.unica img.sp-road{height:28px}
+  @media(max-width:560px){footer .sp-row.unica{gap:16px 28px}
+    footer .sp-row.unica img.sp-mobil{height:24px}footer .sp-row.unica img.sp-honda{height:16px}
+    footer .sp-row.unica img.sp-fim{height:30px}footer .sp-row.unica img.sp-road{height:18px}}
+
   </style>
 </head>
 <body>
@@ -145,13 +155,11 @@
 </div>
 <footer><div class="wrap">
   <div class="sponsors">
-    <div class="sp-row principal">
+    <div class="sp-row unica">
       <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
       <img class="sp-honda" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
-    </div>
-    <div class="sp-row secundario">
       <img class="logo-blanco sp-fim" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
-      <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+      <img class="sp-road" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
     </div>
   </div>
   <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7b2ff7"/><stop offset="1" stop-color="#d63dfc"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="24" fill="#12081c"/>
+  <!-- Trazado estilizado — Autódromo José Carlos Pace (Interlagos) -->
+  <path d="M 640 150
+           C 700 150 720 190 715 235
+           C 710 300 700 380 660 430
+           C 630 468 580 480 530 478
+           C 470 476 430 455 400 445
+           C 370 435 340 440 330 460
+           C 320 480 295 490 275 478
+           C 255 466 255 440 270 425
+           C 285 410 300 400 295 380
+           C 290 360 265 355 245 365
+           C 220 377 195 372 185 352
+           C 175 332 185 310 210 300
+           C 245 286 290 280 310 255
+           C 328 232 320 205 290 195
+           C 250 182 170 175 130 190
+           C 95 203 75 240 90 275
+           C 105 310 150 330 190 345
+           L 205 351"
+        fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+  <path d="M 640 150 C 560 138 300 130 200 148 C 150 157 118 172 130 190"
+        fill="none" stroke="url(#g)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Meta -->
+  <rect x="395" y="128" width="10" height="26" fill="#ffffff"/>
+  <rect x="395" y="128" width="5" height="13" fill="#000000"/>
+  <rect x="400" y="141" width="5" height="13" fill="#000000"/>
+  <text x="60" y="545" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="700"
+        font-size="42" fill="#ffffff" letter-spacing="2" style="text-transform:uppercase">INTERLAGOS</text>
+  <text x="60" y="575" font-family="Barlow, Arial, sans-serif" font-size="18" fill="#b9a5c6">São Paulo · Brasil · 4.309 m</text>
+</svg>

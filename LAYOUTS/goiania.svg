@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7b2ff7"/><stop offset="1" stop-color="#d63dfc"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="24" fill="#12081c"/>
+  <!-- Trazado estilizado — Autódromo Internacional Ayrton Senna (Goiânia) -->
+  <path d="M 130 210
+           C 130 165 175 140 230 140
+           L 590 140
+           C 660 140 705 175 705 230
+           C 705 285 660 315 600 315
+           C 560 315 530 305 505 320
+           C 480 335 478 365 500 382
+           C 525 401 560 395 585 410
+           C 615 428 620 465 595 488
+           C 565 515 505 520 440 520
+           L 240 520
+           C 175 520 130 490 130 435
+           L 130 210 Z"
+        fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+  <path d="M 230 140 L 590 140" fill="none" stroke="url(#g)" stroke-width="13" stroke-linecap="round"/>
+  <!-- Meta -->
+  <rect x="398" y="127" width="10" height="26" fill="#ffffff"/>
+  <rect x="398" y="127" width="5" height="13" fill="#000000"/>
+  <rect x="403" y="140" width="5" height="13" fill="#000000"/>
+  <text x="60" y="580" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="700"
+        font-size="42" fill="#ffffff" letter-spacing="2">GOIÂNIA</text>
+  <text x="250" y="580" font-family="Barlow, Arial, sans-serif" font-size="18" fill="#b9a5c6">Goiás · Brasil · 3.835 m</text>
+</svg>

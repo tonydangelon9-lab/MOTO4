@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7b2ff7"/><stop offset="1" stop-color="#d63dfc"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="24" fill="#12081c"/>
+  <!-- Trazado estilizado — Circuito San Juan Villicum -->
+  <path d="M 150 420
+           C 120 400 110 360 130 335
+           C 150 310 190 305 215 320
+           C 245 338 280 345 310 330
+           C 340 315 350 285 335 260
+           C 320 235 290 228 265 240
+           C 240 252 212 248 200 226
+           C 188 204 200 178 226 170
+           C 300 148 470 130 580 140
+           C 650 147 700 175 705 225
+           C 710 275 680 305 630 315
+           C 580 325 540 310 515 335
+           C 492 358 500 390 530 405
+           C 570 425 620 420 655 445
+           C 690 470 690 510 655 528
+           C 610 550 480 552 380 545
+           C 290 539 200 505 160 460
+           C 148 446 145 432 150 420 Z"
+        fill="none" stroke="#ffffff" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+  <path d="M 226 170 C 300 148 470 130 580 140" fill="none" stroke="url(#g)" stroke-width="13" stroke-linecap="round"/>
+  <!-- Meta -->
+  <rect x="398" y="123" width="10" height="26" fill="#ffffff"/>
+  <rect x="398" y="123" width="5" height="13" fill="#000000"/>
+  <rect x="403" y="136" width="5" height="13" fill="#000000"/>
+  <text x="60" y="545" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="700"
+        font-size="42" fill="#ffffff" letter-spacing="2">SAN JUAN VILLICUM</text>
+  <text x="60" y="575" font-family="Barlow, Arial, sans-serif" font-size="18" fill="#b9a5c6">San Juan · Argentina · 4.276 m</text>
+</svg>

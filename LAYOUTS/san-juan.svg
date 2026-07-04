@@ -7,9 +7,9 @@
   <rect width="800" height="600" rx="24" fill="#12081c"/>
   <path d="M 200 300 C 200 200 300 150 400 150 C 520 150 600 210 600 300 C 600 390 520 450 400 450 C 300 450 200 400 200 300 Z"
         fill="none" stroke="#3a2350" stroke-width="12" stroke-dasharray="4 22" stroke-linecap="round"/>
-  <text x="400" y="285" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif"
+  <text x="400" y="285" text-anchor="middle" font-family="Arial Narrow, Arial, sans-serif"
         font-weight="700" font-size="46" fill="#ffffff" letter-spacing="2">SAN JUAN VILLICUM</text>
-  <text x="400" y="320" text-anchor="middle" font-family="Barlow, Arial, sans-serif" font-size="18" fill="#b9a5c6">San Juan · Argentina</text>
-  <text x="400" y="365" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif"
+  <text x="400" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#b9a5c6">San Juan · Argentina</text>
+  <text x="400" y="365" text-anchor="middle" font-family="Arial Narrow, Arial, sans-serif"
         font-weight="700" font-size="20" fill="url(#g)" letter-spacing="4">TRAZADO OFICIAL PRÓXIMAMENTE</text>
 </svg>

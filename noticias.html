@@ -31,7 +31,7 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
   nav img.logo{height:60px;display:block}
   .navlinks{display:flex;gap:26px;align-items:center}
-  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted)}
+  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted);white-space:nowrap}
   .navlinks a.lnk:hover,.navlinks a.lnk.active{color:#fff}
   .navlinks a.lnk.active{position:relative}
   .navlinks a.lnk.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--grad)}
@@ -142,7 +142,14 @@
 
 <!-- Franja rotativa de sponsors -->
 <div class="smarquee" aria-label="Sponsors oficiales">
-  <div class="strack" id="strack">
+  <div class="strack">
+    <img class="big" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
+    <img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
+    <img class="chico" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
+    <img class="chico" src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
+    <img class="chico" src="07-LOGOS-SPONSORS/Revemar_White.png" alt="Revemar">
+    <img class="big logo-blanco" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
+    <img class="chico" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
     <img class="big" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
     <img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
     <img class="chico" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
@@ -157,10 +164,7 @@
   <div class="sponsors">
     <div class="sp-row principal">
       <img class="sp-mobil" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil">
-      <img class="sp-pirelli" src="07-LOGOS-SPONSORS/Pirelli_Logo.png" alt="Pirelli">
       <img class="sp-honda" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" alt="Honda">
-      <img class="sp-menor" src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" alt="SMK">
-      <img class="sp-menor" src="07-LOGOS-SPONSORS/Revemar_White.png" alt="Revemar">
     </div>
     <div class="sp-row secundario">
       <img class="logo-blanco sp-fim" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" alt="FIM Latin America">
@@ -245,9 +249,6 @@
   document.getElementById("nx").onclick=cerrar;
   bk.addEventListener("click",function(e){ if(e.target===bk) cerrar(); });
   document.addEventListener("keydown",function(e){ if(e.key==="Escape") cerrar(); });
-
-  var track=document.getElementById("strack");
-  track.innerHTML+=track.innerHTML;
 
   render();
 })();

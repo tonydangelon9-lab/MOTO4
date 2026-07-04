@@ -249,6 +249,13 @@
     @page{size:1456px 819px;margin:0}
   }
 </style>
+<script>
+window.__imgErrs=[];
+window.addEventListener("error",function(e){
+  if(e.target && e.target.tagName==="IMG" && e.target.getAttribute("src"))
+    window.__imgErrs.push(e.target.getAttribute("src"));
+},true);
+</script>
 </head>
 <body>
 
@@ -571,18 +578,25 @@
   var slides=[].slice.call(document.querySelectorAll(".slide"));
   var i=0; document.getElementById("tot").textContent=slides.length;
   function show(n){
-    i=Math.max(0,Math.min(slides.length-1,n));
-    slides.forEach(function(s,k){ s.classList.toggle("on",k===i); });
-    document.getElementById("cur").textContent=i+1;
-    document.getElementById("prev").disabled=(i===0);
-    document.getElementById("next").disabled=(i===slides.length-1);
+    try{
+      i=Math.max(0,Math.min(slides.length-1,n));
+      slides.forEach(function(s,k){ s.classList.toggle("on",k===i); });
+      document.getElementById("cur").textContent=i+1;
+      document.getElementById("prev").disabled=(i===0);
+      document.getElementById("next").disabled=(i===slides.length-1);
+    }catch(e){}
   }
-  document.getElementById("prev").addEventListener("click",function(){show(i-1);});
-  document.getElementById("next").addEventListener("click",function(){show(i+1);});
+  document.getElementById("prev").addEventListener("click",function(e){e.stopPropagation();show(i-1);});
+  document.getElementById("next").addEventListener("click",function(e){e.stopPropagation();show(i+1);});
   document.addEventListener("keydown",function(e){
     if(gate.style.display!=="none") return;
     if(e.key==="ArrowRight"||e.key===" ") show(i+1);
     if(e.key==="ArrowLeft") show(i-1);
+  });
+  // clic en la mitad derecha = siguiente, mitad izquierda = anterior
+  document.querySelector(".stagewrap").addEventListener("click",function(e){
+    if(gate.style.display!=="none") return;
+    if(e.clientX > window.innerWidth/2) show(i+1); else show(i-1);
   });
   var x0=null;
   document.addEventListener("touchstart",function(e){ x0=e.touches[0].clientX; },{passive:true});
@@ -591,6 +605,20 @@
     var dx=e.changedTouches[0].clientX-x0;
     if(dx<-50) show(i+1); if(dx>50) show(i-1); x0=null;
   },{passive:true});
+
+  // aviso de imágenes faltantes (lee los errores capturados desde el head)
+  function pintarAviso(){
+    var rotas=window.__imgErrs||[];
+    if(!rotas.length) return;
+    var chip=document.getElementById("imgchip");
+    if(!chip){
+      chip=document.createElement("div"); chip.id="imgchip";
+      chip.style.cssText="position:fixed;top:70px;left:12px;z-index:70;background:#5b1020;border:1px solid #ff5470;color:#ffd6de;font:12px/1.5 -apple-system,Arial;padding:10px 14px;border-radius:10px;max-width:340px";
+      document.body.appendChild(chip);
+    }
+    chip.innerHTML="<b>Aviso: "+rotas.length+" imagen(es) no cargaron del repo:</b><br>"+rotas.slice(0,8).join("<br>");
+  }
+  window.addEventListener("load",function(){ pintarAviso(); setTimeout(pintarAviso,3000); });
 
   // escala fija: la lámina siempre se ve idéntica, en cualquier pantalla
   function fit(){

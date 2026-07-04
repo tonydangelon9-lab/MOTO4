@@ -28,16 +28,16 @@
   .btn{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-weight:700;
     font-size:15px;color:#fff;background:var(--grad);border:none;border-radius:999px;padding:12px 26px;cursor:pointer}
   nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
-  nav img.logo{height:60px;display:block}
-  .navlinks{display:flex;gap:26px;align-items:center}
-  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted);white-space:nowrap}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:12px}
+  nav img.logo{height:52px;display:block}
+  .navlinks{display:flex;gap:16px;align-items:center}
+  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.03em;font-size:12.5px;color:var(--muted);white-space:nowrap}
   .navlinks a.lnk:hover,.navlinks a.lnk.active{color:#fff}
   .navlinks a.lnk.active{position:relative}
   .navlinks a.lnk.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--grad)}
-  nav .btn{padding:9px 20px;font-size:13px}
+  nav .btn{padding:8px 15px;font-size:12px}
   .burger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
-  @media(max-width:860px){
+  @media(max-width:1080px){
     .navlinks{position:fixed;inset:70px 0 auto 0;background:rgba(0,0,0,.97);flex-direction:column;gap:0;
       border-bottom:1px solid var(--line);padding:10px 0;transform:translateY(-130%);transition:transform .25s;z-index:49}
     .navlinks.open{transform:translateY(0)}

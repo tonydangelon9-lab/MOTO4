@@ -107,16 +107,16 @@
 
   /* ===== NAV ESTANDAR (menú completo) ===== */
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px;position:relative;max-width:1180px}
-  nav img.logo{height:60px;display:block}
-  .navlinks{display:flex;gap:26px;align-items:center}
-  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:14px;color:var(--muted);white-space:nowrap}
+  nav img.logo{height:52px;display:block}
+  .navlinks{display:flex;gap:16px;align-items:center}
+  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.03em;font-size:12.5px;color:var(--muted);white-space:nowrap}
   .navlinks a.lnk:hover,.navlinks a.lnk.active{color:#fff}
   .navlinks .btn{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-weight:700;
     font-size:13px;color:#fff;background:var(--grad);border:none;border-radius:999px;padding:9px 20px;cursor:pointer}
   .burger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
   .nav-mobil{height:20px;width:auto;display:block;position:static;transform:none;top:auto;right:auto}
   .nm-mob{display:none}
-  @media(max-width:860px){
+  @media(max-width:1080px){
     .navlinks{position:fixed;inset:70px 0 auto 0;background:rgba(0,0,0,.97);flex-direction:column;gap:0;
       border-bottom:1px solid var(--line);padding:10px 0;transform:translateY(-130%);transition:transform .25s;z-index:49;display:flex}
     .navlinks.open{transform:translateY(0)}

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<title>Mobil Moto4 Latin Cup · Presentación oficial</title>
-<meta name="description" content="Presentación oficial de la Mobil Moto4 Latin Cup para marcas y aliados.">
+<title>Mobil Moto4 Latin Cup · Propuesta comercial</title>
+<meta name="description" content="Propuesta comercial de la Mobil Moto4 Latin Cup para marcas y aliados.">
 <meta name="robots" content="noindex">
 <style>
   @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
@@ -85,23 +85,6 @@
   .s1 .sponsors .sp{font-family:var(--disp);font-weight:700;letter-spacing:.06em;font-size:19px;opacity:.95}
   .s1 .tag{position:absolute;top:30px;right:38px;font-family:var(--disp);text-transform:uppercase;font-size:13px;letter-spacing:.16em;color:#e9d8ef;border:1px solid rgba(214,61,252,.5);border-radius:999px;padding:8px 18px;background:rgba(0,0,0,.35);z-index:3}
 
-  /* ============ LÁMINA 2: LA HISTORIA ============ */
-  .s2{background:#000}
-  .s2 .head{background:var(--grad-dark);padding:34px 60px 24px;position:relative;overflow:hidden}
-  .s2 .head::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% 0%,rgba(214,61,252,.3),transparent 70%)}
-  .s2 .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:13px;color:var(--pink);position:relative;z-index:1}
-  .s2 h2{font-family:var(--dispx);text-transform:uppercase;font-size:46px;position:relative;z-index:1}
-  .s2 .tl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px;padding:34px 60px 0;position:relative}
-  .s2 .tl::before{content:"";position:absolute;left:60px;right:60px;top:118px;height:4px;background:var(--grad);border-radius:4px}
-  .s2 .hito .anio{font-family:var(--dispx);font-size:42px;color:transparent;-webkit-text-stroke:2px var(--purple);letter-spacing:.02em}
-  .s2 .hito .dot{width:18px;height:18px;border-radius:50%;background:var(--grad);margin:14px 0 16px;box-shadow:0 0 0 6px rgba(214,61,252,.25)}
-  .s2 .hito .foto{width:100%;aspect-ratio:16/9;border-radius:14px;object-fit:cover;border:1px solid var(--line);display:block}
-  .s2 .hito h3{font-family:var(--disp);text-transform:uppercase;font-size:19px;margin:14px 0 6px;color:#fff;letter-spacing:.03em}
-  .s2 .hito p{font-size:13.5px;line-height:1.5;color:#d9c8e2}
-  .s2 .hito p b{color:#fff}
-  .s2 .flogo{position:absolute;bottom:26px;right:40px;font-family:var(--disp);font-weight:700;font-size:15px;color:var(--pink);letter-spacing:.06em}
-
-
   .shead{background:var(--grad-dark);padding:30px 60px 22px;position:relative;overflow:hidden}
   .shead::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% 0%,rgba(214,61,252,.3),transparent 70%)}
   .shead .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:13px;color:var(--pink);position:relative;z-index:1}
@@ -137,6 +120,8 @@
   /* s6 calendario */
   .s6 .cal{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:900px;margin:0 auto}
   .s6 .ev{background:linear-gradient(100deg,#C604F7,#D63DFC);border-radius:13px;padding:13px 18px;display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:12px}
+  .s6 .ev.hecha{background:var(--surface);border:1px solid var(--line);opacity:.72}
+  .s6 .ev.hecha .n{color:#cbb3d4}
   .s6 .ev .r{font-family:var(--dispx);font-weight:700;font-size:14px}
   .s6 .ev .n{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:16px}
   .s6 .ev .d{font-family:var(--disp);text-transform:uppercase;font-size:10.5px;opacity:.95;margin-top:2px}
@@ -154,15 +139,6 @@
   .s7 .pl .nm small{display:block;color:var(--muted);font-size:10px;font-family:var(--body);text-transform:none}
   .s7 .stats{display:flex;gap:44px;justify-content:center;margin-top:24px}
 
-  /* s8 ranking barras */
-  .s8 .bars{max-width:980px;margin:0 auto}
-  .s8 .brow{display:grid;grid-template-columns:200px 1fr 64px;align-items:center;gap:14px;margin-bottom:12px}
-  .s8 .bn{font-family:var(--disp);text-transform:uppercase;font-size:14.5px;text-align:right}
-  .s8 .btr{height:24px;background:var(--surface);border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-  .s8 .bf{height:100%;background:var(--grad);border-radius:8px}
-  .s8 .bv{font-family:var(--dispx);font-weight:700;font-size:17px;color:var(--pink)}
-  .s8 .brow.lider .bn{color:#fff;font-weight:700}
-
   /* s9 mercado */
   .s9 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
   .s9 .kpi{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;position:relative;overflow:hidden}
@@ -175,7 +151,7 @@
   .s9 .own .bignum{font-size:30px;color:#fff}
   .s9 .own .ot{font-size:11.5px;color:var(--pink);font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
 
-  /* s10 camino */
+  /* s10 tarjetas premium (premios / por qué ahora) */
   .s10 .prem{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .s10 .p{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;overflow:hidden}
   .s10 .p::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--grad)}
@@ -184,7 +160,7 @@
   .s10 .p p{font-size:14px;color:#d9c8e2;line-height:1.55}
   .s10 .p p b{color:#fff}
 
-  /* s11 oportunidades */
+  /* s11 oportunidades / audiencia */
   .s11 .ops{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .s11 .op{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;gap:14px;align-items:flex-start}
   .s11 .op .ico{font-size:26px}
@@ -204,7 +180,8 @@
   .s12 .lg{width:420px;margin-bottom:30px}
   .s12 .line{font-family:var(--disp);text-transform:uppercase;font-size:20px;letter-spacing:.06em;margin:8px 0}
   .s12 .line b{color:var(--pink)}
-
+  .s12 .pasos{font-family:var(--disp);text-transform:uppercase;font-size:15px;letter-spacing:.06em;color:#e9d8ef;margin:0 0 22px}
+  .s12 .pasos b{color:var(--pink)}
 
   .sK .mos{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:12px;height:520px}
   .sK .mos .ph{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff}
@@ -212,7 +189,6 @@
   .sK .mos .cap{position:relative}
   .sK .mos .cap span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
     font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
-
 
   .sQ .lay{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:center}
   .sQ .diag{background:#f2f2f2;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
@@ -265,7 +241,7 @@ window.addEventListener("error",function(e){
 <div class="gate" id="gate">
   <div class="in">
     <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup">
-    <h1>Presentación oficial</h1>
+    <h1>Propuesta comercial</h1>
     <p>Material reservado para marcas y aliados.<br>Ingresa el código de acceso.</p>
     <input id="code" type="tel" inputmode="numeric" maxlength="8" placeholder="········" autocomplete="off">
     <button id="entrar">Entrar</button>
@@ -283,42 +259,21 @@ window.addEventListener("error",function(e){
 </div>
 
 <div class="stagewrap"><div class="stage" id="stage">
+
+<!-- ============ 1 · PORTADA ============ -->
 <div class="slide s1">
   <div class="foto"></div>
-  <div class="tag">Presentación oficial · 2026</div>
+  <div class="tag">Propuesta comercial · 2026–2027</div>
   <div class="c">
     <img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup">
     <h1>El camino latino al <span class="grad">MotoGP</span></h1>
     <div class="sub">Mobil Moto4 Latin Cup · FIM Latin America · Road to MotoGP</div>
   </div>
   <div class="sponsors">
-    <img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:34px"><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:30px"><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:22px"><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:22px"><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:22px"><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:38px"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:24px">
-  </div>
+    <img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:34px"><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:30px"><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:22px"><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:22px"><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:22px"><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:38px"><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:24px"></div>
 </div>
-<div class="slide s2">
-  <div class="head"><div class="k">De Latin America Talent Cup a Moto4 Latin Cup</div><h2>Nuestra historia</h2></div>
-  <div class="tl">
-    <div class="hito">
-      <div class="anio">2023</div><div class="dot"></div>
-      <img class="foto" src="PRESENTACION/h2023.jpg">
-      <h3>El anuncio ante el mundo</h3>
-      <p>En el <b>Gran Premio de Argentina de MotoGP</b> (Termas de Río Hondo), <b>Carmelo Ezpeleta</b> (CEO de Dorna Sports), <b>Pedro Venturo</b> (Presidente FIM Latin America) y <b>Antonio D'Angelo</b> (GP3 Sports) anuncian el camino latino al Mundial.</p>
-    </div>
-    <div class="hito">
-      <div class="anio">2025</div><div class="dot"></div>
-      <img class="foto" src="PRESENTACION/h2025.jpg">
-      <h3>Nace la Latin America Talent Cup</h3>
-      <p>Lanzamiento oficial ante <b>+30 medios</b> y la máxima autoridad del deporte en Chile. <b>18 Honda NSF250R llegadas directo de Japón</b>, 20 federaciones FIM-LA y primeras carreras junto al MotoGP en Termas.</p>
-    </div>
-    <div class="hito">
-      <div class="anio">2026</div><div class="dot"></div>
-      <img class="foto" src="PRESENTACION/h2026.jpg">
-      <h3>Evolución: Moto4 Latin Cup</h3>
-      <p>La LATC se integra a la <b>familia mundial Moto4 de FIM y Dorna</b> (Asia, Europa, Gran Bretaña, Norte… y Latinoamérica), con <b>Mobil</b> como title sponsor. De copa regional a <b>categoría oficial del sistema mundial</b>.</p>
-    </div>
-  </div>
-  <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="position:absolute;bottom:22px;right:36px;height:78px" alt="Mobil Moto4 Latin Cup">
-</div>
+
+<!-- ============ 2 · QUIÉNES SOMOS (legitimidad) ============ -->
 <div class="slide s3">
   <div class="shead"><div class="k">El campeonato oficial</div><h2>Quiénes somos</h2></div>
   <div class="scont cols">
@@ -334,6 +289,8 @@ window.addEventListener("error",function(e){
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
+
+<!-- ============ 3 · PIRÁMIDE ============ -->
 <div class="slide s4">
   <div class="shead"><div class="k">Road to MotoGP</div><h2>La pirámide al Mundial</h2></div>
   <div class="scont lad">
@@ -347,6 +304,57 @@ window.addEventListener("error",function(e){
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
+
+<!-- ============ 4 · EL MERCADO ============ -->
+<div class="slide s9">
+  <div class="shead"><div class="k">Por qué Latinoamérica · por qué ahora</div><h2>El mercado</h2></div>
+  <div class="scont">
+    <div class="grid">
+      <div class="kpi"><div class="bignum">+18,8%</div><div class="kt">Latinoamérica: la región de MAYOR crecimiento del mundo en motos (1S 2025)</div><div class="src">Fuente: informes de industria 2025</div></div>
+      <div class="kpi"><div class="bignum">2,2 M</div><div class="kt">Motos vendidas en Brasil en 2025 — récord en 22 años · 6º mercado mundial</div><div class="src">Fuente: Abraciclo / Fenabrave</div></div>
+      <div class="kpi"><div class="bignum">660 M</div><div class="kt">Habitantes en Latinoamérica: una generación que crece sobre dos ruedas</div><div class="src">Argentina +48,7% · Colombia +33,9% (1S 2025)</div></div>
+    </div>
+    <div style="text-align:center;margin-top:10px;color:#e9d8ef;font-size:15px;line-height:1.6">Ningún otro property deportivo conecta a las marcas con este público<br><b style="color:#fff">desde la base de la pirámide del Mundial.</b></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ 5 · DÓNDE TE VE EL PÚBLICO (audiencia) ============ -->
+<!-- PENDIENTE antes de enviar a marcas: asistencia por evento (Moto1000GP + CAV) y alcance de transmisión -->
+<div class="slide s11">
+  <div class="shead"><div class="k">Exposición real, medible</div><h2>Dónde te ve el público</h2></div>
+  <div class="scont">
+    <div class="ops">
+      <div class="op"><div class="ico">🏟️</div><div><h4>En pista</h4><p>Junto a Moto1000GP (Brasil) y GP3-CAV (Argentina), los campeonatos de velocidad líderes de cada país.</p></div></div>
+      <div class="op"><div class="ico">📺</div><div><h4>En pantalla</h4><p>Cada fecha se transmite en vivo dentro del programa de Moto1000GP y GP3-CAV.</p></div></div>
+      <div class="op"><div class="ico">🏆</div><div><h4>Junto a MotoGP</h4><p>La temporada 2026 abrió en Goiânia como categoría de apoyo del Mundial, ante su público y su prensa.</p></div></div>
+      <div class="op"><div class="ico">📰</div><div><h4>En medios</h4><p>+30 medios cubrieron el lanzamiento oficial. Cobertura de prensa en cada fecha del calendario.</p></div></div>
+      <div class="op"><div class="ico">📱</div><div><h4>En digital</h4><p>148,3 mil visualizaciones en los últimos 30 días y una comunidad @moto4latin en crecimiento sostenido.</p></div></div>
+      <div class="op"><div class="ico">🌎</div><div><h4>En tres idiomas</h4><p>Sitio oficial trilingüe ES · EN · PT con ranking en vivo, perfiles de pilotos y galería de cada evento.</p></div></div>
+    </div>
+    <div class="nota">Los números de asistencia y alcance de transmisión se entregan en la propuesta a medida de cada marca.</div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ 6 · JUNTO A MOTOGP (activo estrella) ============ -->
+<div class="slide s5">
+  <div class="shead"><div class="k">Road to MotoGP en acción</div><h2>En el escenario del Mundial</h2></div>
+  <div class="scont cols">
+    <img class="foto" src="PRESENTACION/race2026.jpg">
+    <div>
+      <span class="chip">Goiânia 2026 · categoría de apoyo de MotoGP</span>
+      <div style="height:16px"></div>
+      <div class="spec"><div class="sk">El hecho</div><div class="sv">La copa abrió su temporada 2026 en el fin de semana del <b>Gran Premio de Brasil de MotoGP</b> en Goiânia — el evento de motor más grande de Latinoamérica.</div></div>
+      <div class="spec"><div class="sk">La exposición</div><div class="sv">Público del Mundial, prensa internacional acreditada y presencia en el paddock junto a las marcas globales de MotoGP.</div></div>
+      <div class="spec"><div class="sk">Lo que significa</div><div class="sv"><b>Tu marca compartiendo escenario con el Mundial</b> — un acceso que ningún otro property regional puede ofrecer.</div></div>
+      <div class="spec"><div class="sk">2027</div><div class="sv">La relación institucional con Dorna Sports posiciona a la copa para repetir presencia junto a MotoGP en Brasil.</div></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ 7 · LA CATEGORÍA ============ -->
 <div class="slide s5">
   <div class="shead"><div class="k">Igualdad total de material</div><h2>La categoría</h2></div>
   <div class="scont cols">
@@ -358,43 +366,13 @@ window.addEventListener("error",function(e){
       <div class="spec"><div class="sk">Motor</div><div class="sv">4 tiempos refrigerado por líquido · chasis aluminio twin tube</div></div>
       <div class="spec"><div class="sk">Neumáticos</div><div class="sv">Pirelli de especificación única para toda la grilla</div></div>
       <div class="spec"><div class="sk">Filosofía</div><div class="sv"><b>Motos iguales para todos: aquí gana el talento, no el presupuesto.</b></div></div>
-      <div class="spec"><div class="sk">Edad</div><div class="sv">Pilotos de 14 a 19 años</div></div>
+      <div class="spec"><div class="sk">Edad</div><div class="sv">Pilotos de 14 a 18 años</div></div>
     </div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
-<div class="slide sK">
-  <div class="shead"><div class="k">Temporada 2026 · powered by Mobil</div><h2>La imagen de este año</h2></div>
-  <div class="scont">
-    <div class="mos">
-      <div class="ph cap"><img src="PRESENTACION/race2026.jpg" style="object-position:center"><span>En pista · Interlagos 2026</span></div>
-      <div class="ph cap"><img src="PRESENTACION/suit2026.jpg"><span>Traje oficial 2026</span></div>
-      <div class="ph cap"><img src="PRESENTACION/kit2026.jpg" style="object-position:top"><span>Kit Mobil 2026</span></div>
-      <div class="ph cap"><img src="PRESENTACION/box2026.jpg"><span>Box oficial · Interlagos 2026</span></div>
-    </div>
-  </div>
-  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
-</div>
-<div class="slide s6">
-  <div class="shead"><div class="k">Temporada 2026 · Brasil y Argentina</div><h2>Calendario</h2></div>
-  <div class="scont">
-    <div class="cal">
-      <div class="ev"><div class="r">R1</div><div><div class="n">Goiânia</div><div class="d">20–22 MAR · Apoyo MotoGP</div></div><div class="f">🇧🇷</div></div>
-      <div class="ev"><div class="r">R2–3</div><div><div class="n">Interlagos</div><div class="d">10–12 ABR · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
-      <div class="ev"><div class="r">R4–5–6</div><div><div class="n">San Nicolás</div><div class="d">19–21 JUN · GP3-CAV</div></div><div class="f">🇦🇷</div></div>
-      <div class="ev"><div class="r">R7–8–9</div><div><div class="n">San Juan Villicum</div><div class="d">4–6 SEPT · GP3-CAV</div></div><div class="f">🇦🇷</div></div>
-      <div class="ev"><div class="r">R10–11</div><div><div class="n">Santa Cruz do Sul</div><div class="d">25–27 SEPT · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
-      <div class="ev"><div class="r">R12–13</div><div><div class="n">Cuiabá</div><div class="d">6–8 NOV · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
-    </div>
-    <div class="tot">
-      <div class="t"><div class="bignum">6</div><div class="tl">Fechas</div></div>
-      <div class="t"><div class="bignum">13</div><div class="tl">Carreras</div></div>
-      <div class="t"><div class="bignum">2</div><div class="tl">Países</div></div>
-      <div class="t"><div class="bignum">1</div><div class="tl">Junto a MotoGP</div></div>
-    </div>
-  </div>
-  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
-</div>
+
+<!-- ============ 8 · GRILLA ============ -->
 <div class="slide s7">
   <div class="shead"><div class="k">Grilla 2026</div><h2>16 talentos · 10 países</h2></div>
   <div class="scont">
@@ -422,38 +400,8 @@ window.addEventListener("error",function(e){
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
-<div class="slide s8">
-  <div class="shead"><div class="k">Campeonato 2026 · tras San Nicolás (R6)</div><h2>Ranking en vivo</h2></div>
-  <div class="scont bars">
-    <div class="brow lider"><div class="bn">🇺🇸 Kensei Matsudaira</div><div class="btr"><div class="bf" style="width:100%"></div></div><div class="bv">113</div></div>
-    <div class="brow"><div class="bn">🇪🇨 Alberto Enríquez</div><div class="btr"><div class="bf" style="width:83.6%"></div></div><div class="bv">94.5</div></div>
-    <div class="brow"><div class="bn">🇳🇮 Andoni Domínguez</div><div class="btr"><div class="bf" style="width:69.5%"></div></div><div class="bv">78.5</div></div>
-    <div class="brow"><div class="bn">🇵🇸 Mahdi Salem</div><div class="btr"><div class="bf" style="width:65%"></div></div><div class="bv">73.5</div></div>
-    <div class="brow"><div class="bn">🇵🇷 Ulises Weyrauch</div><div class="btr"><div class="bf" style="width:50%"></div></div><div class="bv">56.5</div></div>
-    <div class="brow"><div class="bn">🇨🇱 Cristóbal Carreño</div><div class="btr"><div class="bf" style="width:48.7%"></div></div><div class="bv">55</div></div>
-    <div class="brow"><div class="bn">🇦🇷 Santiago Gossa</div><div class="btr"><div class="bf" style="width:43.4%"></div></div><div class="bv">49</div></div>
-    <div class="brow"><div class="bn">🇵🇾 Thiago Torrez</div><div class="btr"><div class="bf" style="width:31.4%"></div></div><div class="bv">35.5</div></div>
-    <div style="text-align:center;margin-top:18px"><span class="chip">Se actualiza en vivo en moto4latincup.lat</span></div>
-  </div>
-  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
-</div>
-<div class="slide s9">
-  <div class="shead"><div class="k">Por qué Latinoamérica · por qué ahora</div><h2>El mercado</h2></div>
-  <div class="scont">
-    <div class="grid">
-      <div class="kpi"><div class="bignum">+18,8%</div><div class="kt">Latinoamérica: la región de MAYOR crecimiento del mundo en motos (1S 2025)</div><div class="src">Fuente: informes de industria 2025</div></div>
-      <div class="kpi"><div class="bignum">2,2 M</div><div class="kt">Motos vendidas en Brasil en 2025 — récord en 22 años · 6º mercado mundial</div><div class="src">Fuente: Abraciclo / Fenabrave</div></div>
-      <div class="kpi"><div class="bignum">660 M</div><div class="kt">Habitantes en Latinoamérica: una generación que crece sobre dos ruedas</div><div class="src">Argentina +48,7% · Colombia +33,9% · Chile +128,9% (1S 2025)</div></div>
-    </div>
-    <div class="own">
-      <div class="o"><div class="bignum">11,1 mil</div><div class="ot">Seguidores @moto4latin</div></div>
-      <div class="o"><div class="bignum">148,3 mil</div><div class="ot">Visualizaciones / 30 días</div></div>
-      <div class="o"><div class="bignum">20</div><div class="ot">Federaciones FIM-LA</div></div>
-      <div class="o"><div class="bignum">3</div><div class="ot">Idiomas: ES · EN · PT</div></div>
-    </div>
-  </div>
-  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
-</div>
+
+<!-- ============ 9 · PREMIOS (valor deportivo) ============ -->
 <div class="slide s10">
   <div class="shead"><div class="k">Lo que se llevan los pilotos</div><h2>El camino y los premios</h2></div>
   <div class="scont prem">
@@ -463,6 +411,46 @@ window.addEventListener("error",function(e){
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
+
+<!-- ============ 10 · CASO MOBIL (prueba social) ============ -->
+<div class="slide sK">
+  <div class="shead"><div class="k">Nuestro title sponsor · temporada 2026</div><h2>Mobil ya está en la pista</h2></div>
+  <div class="scont">
+    <div class="mos">
+      <div class="ph cap"><img src="PRESENTACION/race2026.jpg" style="object-position:center"><span>En pista · Interlagos 2026</span></div>
+      <div class="ph cap"><img src="PRESENTACION/suit2026.jpg"><span>Traje oficial 2026</span></div>
+      <div class="ph cap"><img src="PRESENTACION/kit2026.jpg" style="object-position:top"><span>Kit Mobil 2026</span></div>
+      <div class="ph cap"><img src="PRESENTACION/box2026.jpg"><span>Box oficial · Interlagos 2026</span></div>
+    </div>
+    <div style="text-align:center;margin-top:16px;color:#e9d8ef;font-size:14.5px">Presencia en cada moto, cada podio y cada pieza de contenido de la temporada. <b style="color:#fff">Tu marca puede tener su propio espacio en esta historia.</b></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ 11 · CALENDARIO: LO QUE VIENE ============ -->
+<div class="slide s6">
+  <div class="shead"><div class="k">Temporada 2026 · quedan 3 fechas</div><h2>Calendario</h2></div>
+  <div class="scont">
+    <div class="cal">
+      <div class="ev hecha"><div class="r">R1</div><div><div class="n">Goiânia</div><div class="d">20–22 MAR · Apoyo MotoGP · ✓ disputada</div></div><div class="f">🇧🇷</div></div>
+      <div class="ev hecha"><div class="r">R2–3</div><div><div class="n">Interlagos</div><div class="d">10–12 ABR · Moto1000GP · ✓ disputada</div></div><div class="f">🇧🇷</div></div>
+      <div class="ev hecha"><div class="r">R4–5–6</div><div><div class="n">San Nicolás</div><div class="d">19–21 JUN · GP3-CAV · ✓ disputada</div></div><div class="f">🇦🇷</div></div>
+      <div class="ev"><div class="r">R7–8–9</div><div><div class="n">San Juan Villicum</div><div class="d">4–6 SEPT · GP3-CAV</div></div><div class="f">🇦🇷</div></div>
+      <div class="ev"><div class="r">R10–11</div><div><div class="n">Santa Cruz do Sul</div><div class="d">25–27 SEPT · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
+      <div class="ev"><div class="r">R12–13</div><div><div class="n">Cuiabá</div><div class="d">6–8 NOV · Moto1000GP</div></div><div class="f">🇧🇷</div></div>
+    </div>
+    <div class="tot">
+      <div class="t"><div class="bignum">3</div><div class="tl">Fechas por delante</div></div>
+      <div class="t"><div class="bignum">7</div><div class="tl">Carreras por correr</div></div>
+      <div class="t"><div class="bignum">2</div><div class="tl">Países</div></div>
+      <div class="t"><div class="bignum">2027</div><div class="tl">Prioridad sponsors</div></div>
+    </div>
+    <div style="text-align:center;margin-top:20px"><span class="chip">Temporada 2027 en definición con Dorna y FIM-LA · los sponsors 2026 eligen posición primero</span></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ 12 · OPORTUNIDADES ============ -->
 <div class="slide s11">
   <div class="shead"><div class="k">Para marcas que quieren entrar a Latinoamérica</div><h2>Oportunidades</h2></div>
   <div class="scont lay2">
@@ -474,15 +462,40 @@ window.addEventListener("error",function(e){
       <div class="op"><div class="ico">🏁</div><div><h4>Pista y box</h4><p>Estructura de boxes, podio y paddock en Brasil y Argentina.</p></div></div>
       <div class="op"><div class="ico">📱</div><div><h4>Digital</h4><p>Sitio oficial trilingüe con logo rotativo y link directo + redes del campeonato.</p></div></div>
       <div class="op"><div class="ico">🥂</div><div><h4>Hospitality VIP</h4><p>Área VIP y experiencias con invitados en los eventos.</p></div></div>
-      <div class="op"><div class="ico">👑</div><div><h4>Naming rights</h4><p>Denominación de la categoría junto a la marca, al estilo de las grandes copas.</p></div></div>
+      <div class="op"><div class="ico">🎬</div><div><h4>Activación y contenido</h4><p>Activación comercial en el paddock y contenido dedicado con los pilotos.</p></div></div>
     </div>
     <div class="nota">Propuestas a la medida de cada marca — conversemos.</div>
     </div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
+
+<!-- ============ 13 · PACK POR EVENTO (puerta de entrada) ============ -->
 <div class="slide sQ">
-  <div class="shead"><div class="k">Propuesta comercial · nivel de entrada</div><h2>Cuota Partner</h2></div>
+  <div class="shead"><div class="k">Propuesta comercial · la puerta de entrada</div><h2>Pack por evento</h2></div>
+  <div class="scont lay">
+    <div class="fotos2" style="height:430px">
+      <div class="ph"><img src="PRESENTACION/race2026.jpg"><span>Fin de semana de carrera · 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Estructura de boxes · 2026</span></div>
+    </div>
+    <div>
+      <span class="chip">Una fecha · presencia completa</span>
+      <ul>
+        <li>Cartelería en pista, box y podio durante el fin de semana</li>
+        <li>Activación comercial en el paddock (stand, producto, sampling)</li>
+        <li>Contenido digital dedicado del evento en redes oficiales</li>
+        <li>Invitaciones VIP para clientes y ejecutivos</li>
+        <li>Ideal para probar el property antes de la temporada completa</li>
+      </ul>
+      <div class="precio">A MEDIDA <small>según fecha · San Juan · Santa Cruz · Cuiabá</small></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ 14 · SPONSOR OFICIAL ============ -->
+<div class="slide sQ">
+  <div class="shead"><div class="k">Propuesta comercial · nivel de entrada</div><h2>Sponsor Oficial</h2></div>
   <div class="scont lay">
     <div class="fotos2" style="height:430px">
       <div class="ph"><img src="PRESENTACION/camion2026.jpg" style="object-position:left"><span>Camión oficial del campeonato</span></div>
@@ -492,18 +505,20 @@ window.addEventListener("error",function(e){
       <span class="chip">Presencia en el paddock y en digital</span>
       <ul>
         <li>Logo en el camión oficial del campeonato</li>
-        <li>Logo en la estructura de boxes en las 6 fechas</li>
+        <li>Logo en la estructura de boxes en todas las fechas</li>
         <li>Redes sociales de la Moto4 Latin Cup</li>
         <li>Sitio web oficial: logo rotativo con link directo</li>
         <li>Material de comunicación online / offline</li>
       </ul>
-      <div class="precio">USD 70K <small>por temporada</small></div>
+      <div class="precio">USD 70K <small>cierre 2026 + temporada 2027 completa</small></div>
     </div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
+
+<!-- ============ 15 · MASTER SPONSOR ============ -->
 <div class="slide sQ">
-  <div class="shead"><div class="k">Propuesta comercial</div><h2>Cuota Master</h2></div>
+  <div class="shead"><div class="k">Propuesta comercial</div><h2>Master Sponsor</h2></div>
   <div class="scont lay">
     <div class="fotos4">
       <div class="ph fit"><img src="PRESENTACION/moto_espacios_master.jpg"><span>Moto · espacios disponibles</span></div>
@@ -517,17 +532,20 @@ window.addEventListener("error",function(e){
         <li>Livery de la Honda NSF250R (carenado lateral, panza y colín)</li>
         <li>Traje oficial 2026 de los pilotos (hombros)</li>
         <li>Estructura de boxes</li>
+        <li>Exclusividad de categoría de producto</li>
         <li>Material de comunicación online / offline</li>
         <li>Redes sociales + sitio web Moto4 Latin Cup</li>
         <li>Proyectos especiales · VIP en eventos</li>
       </ul>
-      <div class="precio">USD 130K <small>por temporada</small></div>
+      <div class="precio">USD 130K <small>cierre 2026 + temporada 2027 completa</small></div>
     </div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
+
+<!-- ============ 16 · PREMIUM PARTNER (ex naming rights) ============ -->
 <div class="slide sQ">
-  <div class="shead"><div class="k">Propuesta comercial · posición estelar</div><h2>Cuota Naming Rights</h2></div>
+  <div class="shead"><div class="k">Propuesta comercial · posición estelar</div><h2>Premium Partner</h2></div>
   <div class="scont lay">
     <div class="fotos4">
       <div class="ph fit"><img src="PRESENTACION/moto_espacios_naming.jpg"><span>Moto · posición estelar</span></div>
@@ -536,27 +554,43 @@ window.addEventListener("error",function(e){
       <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box · Interlagos 2026</span></div>
     </div>
     <div>
-      <span class="chip">Todo lo de la Cuota Master, más:</span>
+      <span class="chip">Todo lo del Master Sponsor, más:</span>
       <ul>
-        <li><b style="color:#fff">Naming rights de la categoría</b> — la copa lleva el nombre de la marca</li>
-        <li>Posición estelar del carenado — el círculo principal de la moto</li>
+        <li><b style="color:#fff">Posición estelar del carenado</b> — el círculo principal de la moto</li>
         <li>Pecho y espalda del traje de los 16 pilotos</li>
+        <li><b style="color:#fff">Naming de premios y categorías</b> — «Pole Position [Marca]» · «Rookie del Año [Marca]»</li>
+        <li>Derecho preferente sobre el naming rights del campeonato</li>
         <li>Protagonismo en toda la comunicación</li>
       </ul>
-      <div class="precio">USD 400K <small>por temporada</small></div>
+      <div class="precio">USD 400K <small>cierre 2026 + temporada 2027 completa</small></div>
     </div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
+
+<!-- ============ 17 · POR QUÉ AHORA ============ -->
+<div class="slide s10">
+  <div class="shead"><div class="k">Quedan 3 fechas · la 2027 se define primero para los de adentro</div><h2>Por qué ahora</h2></div>
+  <div class="scont prem">
+    <div class="p"><div class="ico">⏱️</div><h3>Entrás ahora, corrés este año</h3><p>Tu marca en pista en <b>San Juan, Santa Cruz do Sul y Cuiabá</b> — y la <b>temporada 2027 completa incluida</b> en el mismo paquete.</p></div>
+    <div class="p"><div class="ico">🥇</div><h3>Prioridad 2027</h3><p>Los sponsors actuales <b>eligen posición y congelan tarifa</b> antes de la apertura comercial general de la próxima temporada.</p></div>
+    <div class="p"><div class="ico">📈</div><h3>Tarifa de lanzamiento</h3><p>Los valores 2026–2027 son de <b>primera temporada</b>. Con el crecimiento del property y la exposición junto a MotoGP, no se repiten.</p></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ 18 · CONTACTO + PRÓXIMOS PASOS ============ -->
 <div class="slide s12">
   <div class="c">
     <img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+    <div class="pasos"><b>1</b> · Reunión de 30 minutos &nbsp;→&nbsp; <b>2</b> · Propuesta a medida en 5 días &nbsp;→&nbsp; <b>3</b> · Tu marca en pista</div>
     <div class="line">Antonio D'Angelo · GP3 Sports</div>
     <div class="line"><b>antonio@gp3sports.com</b></div>
     <div class="line">moto4latincup.lat · @moto4latin</div>
     <div style="margin-top:26px"><span class="chip">El camino latino al MotoGP</span></div>
   </div>
 </div>
+
 </div></div>
 
 <div class="ctrl">

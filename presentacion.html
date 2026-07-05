@@ -212,6 +212,22 @@
     font-family:var(--disp);text-transform:uppercase;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:6px}
   .sQ .fotos2 span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
     font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
+  /* camión panorámico: arriba entero + foto grande abajo */
+  .sQ .stack{display:grid;grid-template-rows:auto 1fr;gap:10px;height:430px}
+  .sQ .stack .ph{border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;background:var(--surface)}
+  .sQ .stack .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .sQ .stack .ph.pano img{height:auto;object-fit:contain}
+  .sQ .stack span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
+  /* dos fotos arriba + camión panorámico a lo ancho abajo */
+  .sQ .g3{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;gap:10px;height:470px}
+  .sQ .g3 .ph{border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative;background:#f2f2f2;min-height:0}
+  .sQ .g3 .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .sQ .g3 .ph.fit img{object-fit:contain}
+  .sQ .g3 .ph.wide{grid-column:1/3;background:var(--surface)}
+  .sQ .g3 .ph.wide img{height:auto;display:block}
+  .sQ .g3 span{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.68);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:6px}
 
   /* REGLA FINAL: el posicionamiento del deck manda sobre los estilos importados */
   .stage .slide{width:1456px;height:819px;position:absolute;inset:0;margin:0;overflow:hidden;
@@ -497,8 +513,8 @@ window.addEventListener("error",function(e){
 <div class="slide sQ">
   <div class="shead"><div class="k">Propuesta comercial · nivel de entrada</div><h2>Sponsor Oficial</h2></div>
   <div class="scont lay">
-    <div class="fotos2" style="height:430px">
-      <div class="ph"><img src="PRESENTACION/camion2026.jpg" style="object-position:left"><span>Camión oficial del campeonato</span></div>
+    <div class="stack">
+      <div class="ph pano"><img src="PRESENTACION/camion_pano_2026.jpg"><span>Camión oficial del campeonato</span></div>
       <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Estructura de boxes · 2026</span></div>
     </div>
     <div>
@@ -520,11 +536,10 @@ window.addEventListener("error",function(e){
 <div class="slide sQ">
   <div class="shead"><div class="k">Propuesta comercial</div><h2>Master Sponsor</h2></div>
   <div class="scont lay">
-    <div class="fotos4">
+    <div class="g3">
       <div class="ph fit"><img src="PRESENTACION/moto_espacios_master.jpg"><span>Moto · espacios disponibles</span></div>
       <div class="ph fit"><img src="PRESENTACION/traje_real.jpg"><span>Traje oficial 2026</span></div>
-      <div class="ph"><img src="PRESENTACION/camion2026.jpg" style="object-position:left"><span>Camión oficial</span></div>
-      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box · Interlagos 2026</span></div>
+      <div class="ph wide"><img src="PRESENTACION/camion_pano_2026.jpg"><span>Camión oficial del campeonato</span></div>
     </div>
     <div>
       <span class="chip">Espacios disponibles marcados en la moto</span>
@@ -547,11 +562,10 @@ window.addEventListener("error",function(e){
 <div class="slide sQ">
   <div class="shead"><div class="k">Propuesta comercial · posición estelar</div><h2>Premium Partner</h2></div>
   <div class="scont lay">
-    <div class="fotos4">
+    <div class="g3">
       <div class="ph fit"><img src="PRESENTACION/moto_espacios_naming.jpg"><span>Moto · posición estelar</span></div>
       <div class="ph fit"><img src="PRESENTACION/traje_real.jpg"><span>Traje oficial 2026</span></div>
-      <div class="ph"><img src="PRESENTACION/camion2026.jpg" style="object-position:left"><span>Camión oficial</span></div>
-      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box · Interlagos 2026</span></div>
+      <div class="ph wide"><img src="PRESENTACION/camion_pano_2026.jpg"><span>Camión oficial del campeonato</span></div>
     </div>
     <div>
       <span class="chip">Todo lo del Master Sponsor, más:</span>

@@ -160,7 +160,7 @@
   .org .nota b{color:#fff}
 
   /* mosaico imagen 2026 */
-  .sK .mos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;height:540px}
+  .sK .mos{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:12px;height:540px}
   .sK .mos .ph{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff;position:relative}
   .sK .mos img{width:100%;height:100%;object-fit:cover;display:block}
   .sK .mos span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
@@ -193,11 +193,6 @@
   .s12 .lg{width:420px;margin-bottom:30px}
   .s12 .line{font-family:var(--disp);text-transform:uppercase;font-size:20px;letter-spacing:.06em;margin:8px 0}
   .s12 .line b{color:var(--pink)}
-
-  /* tira de sponsors en todas las láminas */
-  .sstrip{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:32px;align-items:center;
-    background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-    padding:9px 26px;border-radius:999px;z-index:6;white-space:nowrap}
 
   /* REGLA FINAL: el posicionamiento del deck manda sobre cualquier estilo — SIEMPRE al final */
   .stage .slide{width:1456px;height:819px;position:absolute;inset:0;margin:0;overflow:hidden;
@@ -338,9 +333,20 @@ window.addEventListener("error",function(e){
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
 
-<!-- ============ CAMINO MUNDIAL (pirámide oficial, lockup Mobil) ============ -->
-<div class="slide imgslide light">
-  <img src="PRESENTACION/piramide_mundial_mobil.jpg" alt="El camino mundial Road to MotoGP">
+<!-- ============ CAMINO AL MUNDIAL 2026-2029 ============ -->
+<div class="slide s4">
+  <div class="shead"><div class="k">Road to MotoGP · proyección 2026–2029</div><h2>El camino al Mundial</h2></div>
+  <div class="scont lad">
+    <div class="step top"><span class="anio">2029</span> MotoGP™ <small>Moto3 · Moto2 · Campeonato del Mundo</small></div>
+    <div class="arrow">▲</div>
+    <div class="step"><span class="anio">2028</span> FIM JuniorGP <small>Moto3 Junior World Championship</small></div>
+    <div class="arrow">▲</div>
+    <div class="step"><span class="anio">2027</span> Moto4 European Cup · European Talent Cup <small>el campeón corre en Europa con los gastos del equipo cubiertos</small></div>
+    <div class="arrow">▲</div>
+    <div class="step latin"><span class="anio">2026</span> <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="height:44px;vertical-align:middle;margin:0 6px"> <small>la copa oficial de Latinoamérica · la base de la pirámide</small></div>
+    <div style="margin-top:18px"><span class="chip">El campeón de cada temporada asciende un escalón — de Latinoamérica al Mundial</span></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:34px">
 </div>
 
 <!-- ============ 11 · SEPARADOR: PROPUESTA ============ -->
@@ -412,7 +418,7 @@ window.addEventListener("error",function(e){
   <div class="scont">
     <div class="mos">
       <div class="ph"><img src="PRESENTACION/race2026.jpg" style="object-position:center"><span>En pista · Interlagos 2026</span></div>
-      <div class="ph"><img src="PRESENTACION/suit2026.jpg" style="object-position:center 25%"><span>Traje oficial 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/suit2026.jpg"><span>Traje oficial 2026</span></div>
       <div class="ph"><img src="PRESENTACION/kit2026.jpg" style="object-position:top"><span>Kit Mobil 2026</span></div>
       <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box oficial · Interlagos 2026</span></div>
     </div>
@@ -431,8 +437,8 @@ window.addEventListener("error",function(e){
 <div class="slide">
   <div class="shead"><div class="k">Cuota Master</div><h2>Espacios en el traje</h2></div>
   <div class="duo">
-    <div class="ph"><img src="PRESENTACION/traje_master_puntos.jpg" alt="Puntos en el traje"><span>Master · hombros (flechas amarillas)</span></div>
-    <div class="ph real"><img src="PRESENTACION/suit2026.jpg" alt="Traje oficial 2026" style="object-position:center 20%"><span>El traje en acción · 2026</span></div>
+    <div class="ph"><img src="PRESENTACION/traje_master_puntos.jpg" alt="Espacios en el traje"><span>Espacios disponibles · hombros</span></div>
+    <div class="ph real"><img src="PRESENTACION/traje_real.jpg" alt="Traje oficial 2026"><span>Traje oficial 2026</span></div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
@@ -469,8 +475,8 @@ window.addEventListener("error",function(e){
 <div class="slide">
   <div class="shead"><div class="k">Cuota Posición Estelar</div><h2>Espacios en el traje</h2></div>
   <div class="duo">
-    <div class="ph"><img src="PRESENTACION/traje_estelar_puntos.jpg" alt="Puntos en el traje"><span>Estelar · pecho y espalda (flecha azul)</span></div>
-    <div class="ph real"><img src="PRESENTACION/suit2026.jpg" alt="Traje oficial 2026" style="object-position:center 20%"><span>El traje en acción · 2026</span></div>
+    <div class="ph"><img src="PRESENTACION/traje_estelar_puntos.jpg" alt="Pecho y espalda del traje"><span>Pecho y espalda · los 16 pilotos</span></div>
+    <div class="ph real"><img src="PRESENTACION/traje_real.jpg" alt="Traje oficial 2026"><span>Traje oficial 2026</span></div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
@@ -497,7 +503,8 @@ window.addEventListener("error",function(e){
 <div class="slide s12">
   <div class="c">
     <img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
-    <div class="line"><b>Mobil Moto4 Latin Cup</b></div>
+    <div class="line">Antonio D'Angelo · GP3 Sports</div>
+    <div class="line"><b>antonio@gp3sports.com</b></div>
     <div class="line">moto4latincup.lat · @moto4latin</div>
     <div style="margin-top:26px"><span class="chip">El camino latino al MotoGP</span></div>
   </div>
@@ -577,18 +584,6 @@ window.addEventListener("error",function(e){
     var s=Math.min(w/1456, h/819);
     document.getElementById("stage").style.transform="scale("+s+")";
   }
-  // sponsors en TODAS las láminas
-  var STRIP = '<div class="sstrip">'
-    +'<img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:24px">'
-    +'<img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:21px">'
-    +'<img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:16px">'
-    +'<img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:16px">'
-    +'<img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:16px">'
-    +'<img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:27px">'
-    +'<img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:17px">'
-    +'</div>';
-  slides.forEach(function(s){ if(!s.querySelector(".sponsors")) s.insertAdjacentHTML("beforeend", STRIP); });
-
   window.addEventListener("resize",fit); fit(); show(0);
 })();
 </script>

@@ -82,6 +82,16 @@
   .s1 .tag{position:absolute;top:30px;right:38px;font-family:var(--disp);text-transform:uppercase;font-size:13px;letter-spacing:.16em;color:#e9d8ef;border:1px solid rgba(214,61,252,.5);border-radius:999px;padding:8px 18px;background:rgba(0,0,0,.35);z-index:3}
   .sponsors{position:absolute;bottom:34px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:56px;z-index:3}
 
+  .s4 .lad{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px}
+  .s4 .step{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 30px;font-family:var(--dispx);text-transform:uppercase;font-size:19px;text-align:center}
+  .s4 .step small{display:block;font-family:var(--body);text-transform:none;font-size:12.5px;color:var(--muted);margin-top:3px}
+  .s4 .step .anio{color:var(--pink);margin-right:10px}
+  .s4 .step.top .anio{color:#3a0d47}
+  .s4 .arrow{color:var(--purple);font-size:20px;line-height:.6}
+  .s4 .step.top{background:var(--grad);color:#000;font-weight:700;border:none}
+  .s4 .step.latin{background:rgba(214,61,252,.18);border:2px solid var(--purple);box-shadow:0 10px 30px rgba(214,61,252,.3)}
+  .s4 .lad{justify-content:center}
+
   /* separadores de capítulo */
   .sep{background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center}
   .sep .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.22;filter:saturate(1.1)}
@@ -159,7 +169,7 @@
   /* cuotas: diagramas de espacios */
   .diagfull{display:flex;align-items:center;justify-content:center;background:#f2f2f2;height:641px}
   .diagfull img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-  .duo{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;height:600px;padding:24px 60px 0}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;height:600px;padding:24px 60px 0}
   .duo .ph{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#f2f2f2;position:relative}
   .duo .ph img{width:100%;height:100%;object-fit:contain;display:block}
   .duo .ph.real img{object-fit:cover}
@@ -282,14 +292,9 @@ window.addEventListener("error",function(e){
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
 
-<!-- ============ 5 · SEPARADOR: BENCHMARK ============ -->
-<div class="slide imgslide">
-  <img src="PRESENTACION/benchmark_asia.jpg" alt="Benchmark · Idemitsu Moto4 Asia Cup">
-</div>
-
 <!-- ============ 6 · ASIA TALENT CUP ============ -->
 <div class="slide cols2">
-  <div class="shead"><div class="k">El modelo que ya funciona</div><h2>Asia Talent Cup</h2></div>
+  <div class="shead"><div class="k">Benchmark · el modelo que ya funciona</div><h2>Asia Talent Cup</h2></div>
   <div class="scont cols">
     <div>
       <p><b>Creada en 2014</b> para jóvenes pilotos asiáticos (14–17 años), la ATC es una de las principales puertas de entrada a MotoGP™ y ya produjo talentos como <b>Ai Ogura y Somkiat Chantra</b>.</p>
@@ -328,9 +333,20 @@ window.addEventListener("error",function(e){
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
 
-<!-- ============ 10 · SISTEMA MUNDIAL ============ -->
-<div class="slide imgslide light">
-  <img src="PRESENTACION/piramide_mundial.jpg" alt="La familia mundial Moto4 dentro del sistema Road to MotoGP">
+<!-- ============ CAMINO AL MUNDIAL 2026-2029 ============ -->
+<div class="slide s4">
+  <div class="shead"><div class="k">Road to MotoGP · proyección 2026–2029</div><h2>El camino al Mundial</h2></div>
+  <div class="scont lad">
+    <div class="step top"><span class="anio">2029</span> MotoGP™ <small>Moto3 · Moto2 · Campeonato del Mundo</small></div>
+    <div class="arrow">▲</div>
+    <div class="step"><span class="anio">2028</span> FIM JuniorGP <small>Moto3 Junior World Championship</small></div>
+    <div class="arrow">▲</div>
+    <div class="step"><span class="anio">2027</span> Moto4 European Cup · European Talent Cup <small>el campeón corre en Europa con los gastos del equipo cubiertos</small></div>
+    <div class="arrow">▲</div>
+    <div class="step latin"><span class="anio">2026</span> <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="height:44px;vertical-align:middle;margin:0 6px"> <small>la copa oficial de Latinoamérica · la base de la pirámide</small></div>
+    <div style="margin-top:18px"><span class="chip">El campeón de cada temporada asciende un escalón — de Latinoamérica al Mundial</span></div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:34px">
 </div>
 
 <!-- ============ 11 · SEPARADOR: PROPUESTA ============ -->

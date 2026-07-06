@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <title>Mobil Moto4 Latin Cup · Propuesta comercial</title>
@@ -47,7 +47,7 @@
   .gate .err{color:#ff9db1;font-size:13px;margin-top:12px;visibility:hidden}
 
   /* ===== escenario del deck (escala fija 1456x819: idéntico en iPhone y desktop) ===== */
-  .stagewrap{position:fixed;inset:60px 0 64px 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .stagewrap{position:fixed;inset:60px 0 64px 0;/* top/bottom los ajusta fit() */display:flex;align-items:center;justify-content:center;overflow:hidden}
   .stage{width:1456px;height:819px;position:relative;transform-origin:center center}
   .slide{width:1456px;height:819px;position:absolute;inset:0;overflow:hidden;background:var(--bg);color:#fff;
     opacity:0;pointer-events:none;transition:opacity .35s}
@@ -193,6 +193,17 @@
   .s12 .lg{width:420px;margin-bottom:30px}
   .s12 .line{font-family:var(--disp);text-transform:uppercase;font-size:20px;letter-spacing:.06em;margin:8px 0}
   .s12 .line b{color:var(--pink)}
+
+  /* móvil / iPad: barras finas y safe-area */
+  @media (max-width:740px){
+    .topbar{height:46px;padding:0 10px}
+    .topbar img.tl{height:32px}
+    .tbtn{font-size:10px;padding:6px 11px}
+    .ctrl{height:auto;min-height:50px;padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
+    .nav{width:38px;height:38px;font-size:17px}
+    .cnt{font-size:13px;min-width:70px}
+  }
+  .ctrl{padding-bottom:env(safe-area-inset-bottom)}
 
   /* tira de sponsors en todas las láminas */
   .sstrip{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:32px;align-items:center;

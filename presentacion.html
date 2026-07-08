@@ -19,7 +19,7 @@
     --disp:"MGP Display","Arial Narrow",Arial,sans-serif;--dispx:"MGP Display Exp","MGP Display","Arial Narrow",sans-serif;
     --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-  body{background:#000;color:#fff;font-family:var(--body);overflow:hidden}
+  body{background:#000;color:#fff;font-family:var(--body);overflow:hidden;position:fixed;inset:0;width:100%;height:100%;overscroll-behavior:none;-webkit-text-size-adjust:100%}
   a{color:inherit;text-decoration:none}
   .lb{filter:brightness(0) invert(1)}
 
@@ -160,7 +160,7 @@
   .org .nota b{color:#fff}
 
   /* mosaico imagen 2026 */
-  .sK .mos{display:grid;grid-template-columns:1fr 1fr;gap:12px;height:540px}
+  .sK .mos{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:560px}
   .sK .mos .ph{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff;position:relative}
   .sK .mos img{width:100%;height:100%;object-fit:cover;display:block}
   .sK .mos span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
@@ -226,6 +226,7 @@
     padding:9px 26px;border-radius:999px;z-index:6;white-space:nowrap}
 
   /* REGLA FINAL: el posicionamiento del deck manda sobre cualquier estilo — SIEMPRE al final */
+  .stagewrap .stage{width:1456px !important;height:819px !important;flex:0 0 auto !important;transform-origin:center center}
   .stage .slide{width:1456px;height:819px;position:absolute;inset:0;margin:0;overflow:hidden;
     opacity:0;pointer-events:none;transition:opacity .35s}
   .stage .slide.on{opacity:1;pointer-events:auto}
@@ -233,7 +234,7 @@
   /* ===== impresión / PDF ===== */
   @media print{
     .topbar,.ctrl,.gate{display:none !important}
-    body{overflow:visible}
+    body{overflow:visible;position:static;width:auto;height:auto}
     .stagewrap{position:static;display:block}
     .stage{width:auto;height:auto;transform:none !important}
     .slide{position:relative;opacity:1;pointer-events:auto;page-break-after:always;margin:0}
@@ -389,8 +390,12 @@ window.addEventListener("error",function(e){
   <div class="shead"><div class="k">Temporada 2026 · powered by Mobil</div><h2>La imagen de este año</h2></div>
   <div class="scont">
     <div class="mos">
-      <div class="ph"><img src="PRESENTACION/race2026.jpg" style="object-position:center"><span>En pista · Interlagos 2026</span></div>
-      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box oficial · Interlagos 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/sn_parque.jpg"><span>Parque cerrado · San Nicolás</span></div>
+      <div class="ph"><img src="PRESENTACION/accion_pack.jpg"><span>En pista · GP3-CAV 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/largada_pirelli.jpg" style="object-position:center 65%"><span>La largada</span></div>
+      <div class="ph"><img src="PRESENTACION/podio_gp3.jpg" style="object-position:center 30%"><span>Podio · 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/podio_motos.jpg"><span>Los ganadores</span></div>
+      <div class="ph"><img src="PRESENTACION/equipo_mobil.jpg" style="object-position:center 35%"><span>El equipo · powered by Mobil</span></div>
     </div>
   </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
@@ -602,8 +607,13 @@ window.addEventListener("error",function(e){
 
   // escala fija: la lámina se ve idéntica en cualquier pantalla (iPhone incluido)
   function fit(){
-    var w=window.innerWidth, h=window.innerHeight-124;
-    var s=Math.min(w/1456, h/819);
+    var tb=document.querySelector(".topbar").offsetHeight;
+    var cb=document.querySelector(".ctrl").offsetHeight;
+    var wrap=document.querySelector(".stagewrap");
+    wrap.style.top=tb+"px"; wrap.style.bottom=cb+"px";
+    var vw=(window.visualViewport?visualViewport.width:window.innerWidth);
+    var vh=(window.visualViewport?visualViewport.height:window.innerHeight)-tb-cb;
+    var s=Math.min(vw/1456, vh/819);
     document.getElementById("stage").style.transform="scale("+s+")";
   }
   // sponsors en TODAS las láminas

@@ -186,6 +186,21 @@
   .bprops .ft small{font-family:var(--disp);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
   .tnota{text-align:center;color:var(--muted);font-size:12px;margin-top:14px}
 
+  /* mercado exportador */
+  .mkt .kpis{display:flex;gap:16px;justify-content:center;margin-bottom:20px}
+  .mkt .kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 26px;text-align:center;position:relative;overflow:hidden}
+  .mkt .kpi::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+  .mkt .kpi .bignum{font-size:38px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.05}
+  .mkt .kpi .kt{font-family:var(--disp);text-transform:uppercase;font-size:11.5px;letter-spacing:.06em;color:#e9d8ef;margin-top:6px;max-width:230px}
+  .mkt .bars{max-width:880px;margin:0 auto}
+  .mkt .bar{display:grid;grid-template-columns:130px 1fr 110px;align-items:center;gap:14px;margin:9px 0}
+  .mkt .bar .n{font-family:var(--disp);text-transform:uppercase;font-size:14px;text-align:right;color:#e9d8ef}
+  .mkt .bar .tr{background:var(--surface);border:1px solid var(--line);border-radius:8px;height:28px;overflow:hidden}
+  .mkt .bar .fl{height:100%;background:var(--grad);border-radius:8px 0 0 8px}
+  .mkt .bar .v{font-family:var(--dispx);font-size:15px;color:#fff}
+  .mkt .lids{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+  .mkt .src{text-align:center;color:#7a5a86;font-size:11px;margin-top:12px}
+
   /* cierre */
   .s12{background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center}
   .s12::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 40%,rgba(214,61,252,.3),transparent 70%)}
@@ -354,14 +369,31 @@ window.addEventListener("error",function(e){
   <img src="PRESENTACION/piramide_mundial_mobil.jpg" alt="El camino mundial Road to MotoGP">
 </div>
 
+<!-- ============ TEAM LATIN MOBIL ============ -->
+<div class="slide">
+  <div class="shead"><div class="k">El equipo oficial</div><h2>Team Latin Mobil</h2></div>
+  <div class="diagfull"><img src="PRESENTACION/box_teamlatin.jpg" alt="Team Latin Mobil · box oficial"></div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
 <!-- ============ 11 · SEPARADOR: PROPUESTA ============ -->
 <div class="slide sep">
-  <div class="bg" style="background-image:url('PRESENTACION/h2025.jpg')"></div>
+  <div class="bg" style="background-image:url('PRESENTACION/foto_grupal_2026.jpg')"></div>
   <div class="c">
-    <img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
-    <h2>Propuesta</h2>
-    <div class="sub">Tu marca en el camino latino al Mundial</div>
+    <h2 style="font-size:68px;line-height:1.18;max-width:1150px">Tu marca en el camino<br>latino al Mundial</h2>
   </div>
+</div>
+
+<!-- ============ 15 · LA IMAGEN 2026 ============ -->
+<div class="slide sK">
+  <div class="shead"><div class="k">Temporada 2026 · powered by Mobil</div><h2>La imagen de este año</h2></div>
+  <div class="scont">
+    <div class="mos">
+      <div class="ph"><img src="PRESENTACION/race2026.jpg" style="object-position:center"><span>En pista · Interlagos 2026</span></div>
+      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box oficial · Interlagos 2026</span></div>
+    </div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
 
 <!-- ============ 12 · ESTRUCTURA ============ -->
@@ -417,21 +449,18 @@ window.addEventListener("error",function(e){
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
 
-<!-- ============ 15 · LA IMAGEN 2026 ============ -->
-<div class="slide sK">
-  <div class="shead"><div class="k">Temporada 2026 · powered by Mobil</div><h2>La imagen de este año</h2></div>
-  <div class="scont">
-    <div class="mos">
-      <div class="ph"><img src="PRESENTACION/race2026.jpg" style="object-position:center"><span>En pista · Interlagos 2026</span></div>
-      <div class="ph"><img src="PRESENTACION/box2026.jpg"><span>Box oficial · Interlagos 2026</span></div>
-    </div>
-  </div>
-  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
-</div>
 
 <!-- ============ 16 · CUOTA MASTER · MOTO ============ -->
+<div class="slide sep">
+  <div class="bg" style="background-image:url('PRESENTACION/box_teamlatin.jpg')"></div>
+  <div class="c">
+    <h2 style="font-size:84px">Espacios de visibilidad</h2>
+    <div class="sub">Donde su marca puede estar</div>
+  </div>
+</div>
+
 <div class="slide">
-  <div class="shead"><div class="k">Espacios de visibilidad</div><h2>La moto</h2></div>
+<div class="shead"><div class="k">Espacios de visibilidad</div><h2>La moto</h2></div>
   <div class="diagfull"><img src="PRESENTACION/moto_espacios_num.jpg" alt="Espacios de visibilidad en la moto"></div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
@@ -449,7 +478,47 @@ window.addEventListener("error",function(e){
 <!-- ============ 19 · CUOTA POSICIÓN ESTELAR · MOTO ============ -->
 <div class="slide">
   <div class="shead"><div class="k">Espacios de visibilidad</div><h2>El camión</h2></div>
-  <div class="diagfull"><img src="PRESENTACION/camion_blanco.jpg" alt="Espacios de visibilidad en el camión oficial"></div>
+  <div class="diagfull"><img src="PRESENTACION/camion_espacios_num.jpg" alt="Espacios de visibilidad en el camión oficial"></div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+
+<!-- ============ MERCADO: LATAM EXPORTA AL MUNDO ============ -->
+<div class="slide mkt">
+  <div class="shead"><div class="k">Para marcas de frutas, alimentos y bebidas</div><h2>Latinoamérica exporta al mundo</h2></div>
+  <div class="scont">
+    <div class="kpis">
+      <div class="kpi"><div class="bignum">US$ 41.430 M</div><div class="kt">Exportación de fruta LATAM · 2024</div></div>
+      <div class="kpi"><div class="bignum">+70%</div><div class="kt">Crecimiento del agro regional en 10 años</div></div>
+      <div class="kpi"><div class="bignum">18%</div><div class="kt">De las agroexportaciones del mundo · 2° detrás de Asia</div></div>
+    </div>
+    <div class="bars">
+      <div class="bar"><div class="n">Chile</div><div class="tr"><div class="fl" style="width:100%"></div></div><div class="v">US$ 8.289 M</div></div>
+      <div class="bar"><div class="n">Perú</div><div class="tr"><div class="fl" style="width:78%"></div></div><div class="v">US$ 6.470 M</div></div>
+      <div class="bar"><div class="n">Ecuador</div><div class="tr"><div class="fl" style="width:51%"></div></div><div class="v">US$ 4.268 M</div></div>
+      <div class="bar"><div class="n">Costa Rica</div><div class="tr"><div class="fl" style="width:34%"></div></div><div class="v">US$ 2.779 M</div></div>
+      <div class="bar"><div class="n">Colombia</div><div class="tr"><div class="fl" style="width:22%"></div></div><div class="v">US$ 1.822 M</div></div>
+    </div>
+    <div class="lids">
+      <span class="chip">🇵🇪 N°1 mundial arándanos y uvas</span><span class="chip">🇪🇨 N°1 banano</span><span class="chip">🇨🇷 N°1 piñas</span><span class="chip">🇲🇽 N°1 palta</span><span class="chip">🇨🇱 N°1 cerezas</span>
+    </div>
+    <div class="src">Exportación de fruta fresca por país, 2024 (valor FOB). Fuentes: CEPAL · Fluctuante · Agraria.pe</div>
+  </div>
+  <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
+</div>
+
+<!-- ============ MERCADO: SU MARCA VIAJA CON LA COPA ============ -->
+<div class="slide est mkt">
+  <div class="shead"><div class="k">La vitrina continental</div><h2>Su marca viaja con la copa</h2></div>
+  <div class="scont">
+    <div class="tot" style="margin-top:34px">
+      <div class="t"><div class="bignum" style="font-size:96px">10</div><div class="tl">Nacionalidades</div><div class="ts">en la grilla 2026 — un embajador en cada mercado</div></div>
+      <div class="t"><div class="bignum" style="font-size:96px">20</div><div class="tl">Federaciones</div><div class="ts">FIM Latin America detrás del campeonato</div></div>
+      <div class="t"><div class="bignum" style="font-size:96px">1</div><div class="tl">Inversión</div><div class="ts">con presencia en todos sus mercados a la vez</div></div>
+    </div>
+    <div style="text-align:center;margin-top:44px;color:#e9d8ef;font-size:16.5px;line-height:1.7;max-width:1050px;margin-left:auto;margin-right:auto">Los países que lideran la exportación regional <b style="color:#fff">están en nuestra grilla</b>: Ecuador, México, Chile, Brasil, Argentina, Paraguay, Venezuela…<br><b style="color:#fff">Cada piloto lleva su marca de vuelta a casa</b> — prensa local, comunidad y orgullo nacional en cada mercado donde usted vende.</div>
+    <div class="lids" style="margin-top:30px"><span class="chip">Carreras en Brasil y Argentina</span><span class="chip">1 fecha junto a MotoGP</span><span class="chip">Cobertura en 10 países vía federaciones y prensa local</span></div>
+  </div>
   <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png">
 </div>
 

@@ -270,6 +270,8 @@ fbq("track","PageView");
 <div class="check"><input type="checkbox" id="ok1" required>
 <label for="ok1" style="margin:0">Confirmo que los datos son verdaderos y, si soy menor, cuento con la autorización de mi tutor. <span class="req">*</span></label></div>
 
+<div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true"><label>No completar</label><input type="text" name="hp_web" tabindex="-1" autocomplete="off"></div>
+<input type="hidden" name="ts_form" id="ts_form">
 <button type="submit" class="submit" id="btn">Enviar postulación</button>
 <div class="msg" id="msg"></div>
 </form>
@@ -349,6 +351,7 @@ tick(); setInterval(tick,60000);
 })();
 
 var form=document.getElementById("form"), btn=document.getElementById("btn"), msg=document.getElementById("msg");
+try{ document.getElementById("ts_form").value=String(Date.now()); }catch(_){}
 form.addEventListener("submit",function(e){
 e.preventDefault();
 var data={}; new FormData(form).forEach(function(v,k){ data[k]=v; });

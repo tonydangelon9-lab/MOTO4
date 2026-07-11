@@ -237,6 +237,20 @@ fbq("track","PageView");
 <textarea name="resultados" placeholder="Campeonato, categoría, posición, año, circuito..." required></textarea></div>
 
 <div class="step-k">Paso 5</div>
+<div class="step-h">Tu material audiovisual</div>
+<div class="hint" style="margin:-6px 0 14px">Subí los archivos a Google Drive o YouTube y pegá acá el enlace. Verificá que el link se pueda abrir sin permisos.</div>
+<div class="field"><label>Video de presentación <span class="req">*</span></label>
+<input type="url" name="video_presentacion" placeholder="https://..." required>
+<div class="hint">Contá quién sos, tu recorrido y por qué querés entrar. Máximo 2 minutos.</div></div>
+<div class="field"><label>Video en pista <span class="req">*</span></label>
+<input type="url" name="video_pista" placeholder="https://..." required>
+<div class="hint">Onboard o filmado desde afuera. Es lo que más miran los seleccionadores.</div></div>
+<div class="field"><label>Fotos (link)</label>
+<input type="url" name="fotos" placeholder="https://..."></div>
+<div class="field"><label>PDF de resultados (link)</label>
+<input type="url" name="pdf_resultados" placeholder="https://..."></div>
+
+<div class="step-k">Paso 6</div>
 <div class="step-h">Tu motivación</div>
 <div class="field"><label>¿Por qué quieres ser parte del Moto4 Latin Cup? <span class="req">*</span></label>
 <textarea name="motivacion" required></textarea></div>
@@ -299,7 +313,7 @@ fbq("track","PageView");
 <script>
 // ===== CONFIG =====
 // 1) Cuando tengas el Apps Script, pegá aquí su URL (dejá "" para modo demo):
-var FORM_API = "https://script.google.com/macros/s/AKfycbxyHjGMrEfsvZXTVt7Ji60WJzJedgH0qLBveV9YTgpB3sT7XUz_m4VK0z3HuWrSChHR/exec";
+var FORM_API = "https://script.google.com/macros/s/AKfycbyvpEIEs-SZ4H6OEYZtJoEiTBtzil1EHL9KhXk8BM__SpdqznxSqXBMU3FFr22555_2/exec";
 // 2) Apertura de la preinscripción (hora local del visitante). Cambiá aquí si mueven la fecha:
 var OPEN_DATE = new Date("2026-08-15T09:00:00"); // Apertura de inscripciones. Para cambiar el dia, edita solo esta fecha.
 

@@ -341,6 +341,7 @@ form.addEventListener("submit",function(e){
 e.preventDefault();
 var data={}; new FormData(form).forEach(function(v,k){ data[k]=v; });
 data.fecha_envio=new Date().toISOString();
+try{ data.idioma=(localStorage.getItem("m4lang")||document.documentElement.lang||"es").slice(0,2).toLowerCase(); }catch(_){ data.idioma="es"; }
 msg.className="msg";
 
 if(!FORM_API){

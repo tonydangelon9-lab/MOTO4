@@ -125,7 +125,7 @@ const PRESENTACIONES = [
     desc:{es:'La presentación oficial de la copa regional: temporada, pilotos, calendario y oportunidades comerciales 2027.', en:'The regional Cup official presentation: season, riders, calendar and 2027 commercial opportunities.', pt:'A apresentação oficial da Copa regional: temporada, pilotos, calendário e oportunidades comerciais 2027.'} },
   { id:'honda', hash:'1a50a509fa3a85b060af75de3463030c146c9bb52496c4366f8ac363029a6c36', slides:null, link:'team-junior.html',
     tag:{es:'EL EQUIPO · SOCIO TÉCNICO', en:'THE TEAM · TECHNICAL PARTNER', pt:'A EQUIPE · PARCEIRO TÉCNICO'},
-    nombre:{es:'HONDA · TEAM JUNIOR LATIN AMERICA', en:'HONDA · TEAM JUNIOR LATIN AMERICA', pt:'HONDA · TEAM JUNIOR LATIN AMERICA'},
+    nombre:{es:'PRESENTACIÓN TEAM JUNIOR', en:'TEAM JUNIOR PRESENTATION', pt:'APRESENTAÇÃO TEAM JUNIOR'},
     desc:{es:'Master Plan del equipo puente Barcelona 2027 · FIM MotoJunior. Propuesta de alianza para Honda HRC.', en:'Master Plan of the Barcelona 2027 bridge team · FIM MotoJunior. Partnership proposal for Honda HRC.', pt:'Master Plan da equipe-ponte Barcelona 2027 · FIM MotoJunior. Proposta de parceria para a Honda HRC.'} },
   { id:'socios', hash:'c0bc4bf9dcbdf78dd5d503455bfea489f4bca70b62c8543f346eab5260ff3b88', slides:null,
     tag:{es:'EL EQUIPO · INVERSIONISTAS', en:'THE TEAM · INVESTORS', pt:'A EQUIPE · INVESTIDORES'},
@@ -177,7 +177,10 @@ async function tryOpen(idx){
   const hv=await sha256(val);
   if(hv!==p.hash){ err.style.color='#ff7a9c'; err.textContent=u.wrong; const c=err.closest('.card'); c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); return; }
   err.textContent='';
-  if(p.link){ window.location.href = p.link; return; }
+  if(p.link){
+    try{ if(p.id==='moto4') sessionStorage.setItem('m4pres','1'); if(p.id==='honda') sessionStorage.setItem('m4tj','1'); }catch(e){}
+    window.location.href = p.link; return;
+  }
   if(!p.slides){ err.textContent=u.prep; err.style.color='#8be89b'; return; }
   activo=p; cur=0; deckLang=lang;
   document.getElementById('vtitle').textContent=p.nombre[lang];

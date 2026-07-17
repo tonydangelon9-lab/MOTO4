@@ -127,7 +127,7 @@ const PRESENTACIONES = [
     tag:{es:'EL EQUIPO · SOCIO TÉCNICO', en:'THE TEAM · TECHNICAL PARTNER', pt:'A EQUIPE · PARCEIRO TÉCNICO'},
     nombre:{es:'PRESENTACIÓN TEAM JUNIOR', en:'TEAM JUNIOR PRESENTATION', pt:'APRESENTAÇÃO TEAM JUNIOR'},
     desc:{es:'Master Plan del equipo puente Barcelona 2027 · FIM MotoJunior. Propuesta de alianza para Honda HRC.', en:'Master Plan of the Barcelona 2027 bridge team · FIM MotoJunior. Partnership proposal for Honda HRC.', pt:'Master Plan da equipe-ponte Barcelona 2027 · FIM MotoJunior. Proposta de parceria para a Honda HRC.'} },
-  { id:'socios', hash:'c0bc4bf9dcbdf78dd5d503455bfea489f4bca70b62c8543f346eab5260ff3b88', slides:null,
+  { id:'socios', hash:'c0bc4bf9dcbdf78dd5d503455bfea489f4bca70b62c8543f346eab5260ff3b88', slides:null, link:'socios.html',
     tag:{es:'EL EQUIPO · INVERSIONISTAS', en:'THE TEAM · INVESTORS', pt:'A EQUIPE · INVESTIDORES'},
     nombre:{es:'SOCIOS · MASTER PLAN COMPLETO', en:'PARTNERS · FULL MASTER PLAN', pt:'SÓCIOS · MASTER PLAN COMPLETO'},
     desc:{es:'Documento integral del proyecto para el directorio y potenciales asociados del equipo.', en:'The full project document for the board and potential team associates.', pt:'Documento integral do projeto para a diretoria e potenciais associados da equipe.'} },
@@ -178,7 +178,7 @@ async function tryOpen(idx){
   if(hv!==p.hash){ err.style.color='#ff7a9c'; err.textContent=u.wrong; const c=err.closest('.card'); c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); return; }
   err.textContent='';
   if(p.link){
-    try{ if(p.id==='moto4') sessionStorage.setItem('m4pres','1'); if(p.id==='honda') sessionStorage.setItem('m4tj','1'); }catch(e){}
+    try{ if(p.id==='moto4') sessionStorage.setItem('m4pres','1'); if(p.id==='honda') sessionStorage.setItem('m4tj','1'); if(p.id==='socios') sessionStorage.setItem('m4soc','1'); }catch(e){}
     window.location.href = p.link; return;
   }
   if(!p.slides){ err.textContent=u.prep; err.style.color='#8be89b'; return; }

@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<title>Team Junior Latin America · Master Plan Honda</title>
+<meta content="Master Plan Team Junior Latin America · propuesta de alianza Honda." name="description"/>
+<meta content="noindex" name="robots"/>
+<style>
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+  @font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+  :root{--white:#fff;--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;
+    --line:#2a0f30;--muted:#b79bc0;--honda:#ff2b3d;
+    --grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+    --grad-dark:linear-gradient(135deg,#1a0620 0%,#3a0d47 45%,#000 100%);
+    --disp:"MGP Display","Arial Narrow",Arial,sans-serif;--dispx:"MGP Display Exp","MGP Display","Arial Narrow",sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{background:#000;color:#fff;font-family:var(--body);overflow:hidden;position:fixed;inset:0;width:100%;height:100%;overscroll-behavior:none;-webkit-text-size-adjust:100%}
+  a{color:inherit;text-decoration:none}
+  .lb{filter:brightness(0) invert(1)}
+
+  /* ===== barra superior ===== */
+  .topbar{position:fixed;top:0;left:0;right:0;height:60px;z-index:60;display:flex;align-items:center;justify-content:space-between;
+    padding:0 18px;background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar img.tl{height:42px}
+  .topbar .acts{display:flex;gap:10px;align-items:center}
+  .tbtn{font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;font-size:12px;color:#fff;
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;white-space:nowrap}
+  .tbtn.solid{background:var(--grad);border:none;color:#000;font-weight:700}
+
+  /* ===== candado ===== */
+  .gate{position:fixed;inset:0;z-index:100;background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+  .gate::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 35%,rgba(214,61,252,.32),transparent 70%)}
+  .gate .in{position:relative;z-index:2;max-width:440px;width:100%}
+  .gate img{width:min(320px,70vw);margin-bottom:26px}
+  .gate h1{font-family:var(--dispx);text-transform:uppercase;font-size:23px;margin-bottom:8px}
+  .gate p{color:#e9d8ef;font-size:14px;margin-bottom:20px}
+  .gate input{width:100%;background:rgba(0,0,0,.5);border:1px solid var(--purple);border-radius:14px;color:#fff;
+    font-family:var(--dispx);font-size:24px;text-align:center;letter-spacing:.22em;padding:14px;text-transform:uppercase}
+  .gate input::placeholder{color:#8a6a96;letter-spacing:.22em}
+  .gate input:focus{outline:none;box-shadow:0 0 0 4px rgba(214,61,252,.3)}
+  .gate button{margin-top:16px;width:100%;font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px;
+    color:#fff;background:var(--grad);border:none;border-radius:999px;padding:15px;cursor:pointer}
+  .gate .err{color:#ff9db1;font-size:13px;margin-top:12px;visibility:hidden}
+
+  /* ===== escenario del deck (escala fija 1456x819) ===== */
+  .stagewrap{position:fixed;inset:60px 0 64px 0;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .stage{width:1456px;height:819px;position:relative;transform-origin:center center}
+  .slide{width:1456px;height:819px;position:absolute;inset:0;overflow:hidden;background:var(--bg);color:#fff;
+    opacity:0;pointer-events:none;transition:opacity .35s}
+  .slide.on{opacity:1;pointer-events:auto}
+
+  /* ===== controles ===== */
+  .ctrl{position:fixed;bottom:0;left:0;right:0;height:64px;z-index:60;display:flex;align-items:center;justify-content:center;gap:18px;
+    background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .nav{width:46px;height:46px;border-radius:50%;background:var(--grad);border:none;color:#000;font-size:20px;font-weight:700;cursor:pointer}
+  .nav:disabled{opacity:.35}
+  .cnt{font-family:var(--dispx);font-weight:700;font-size:16px;min-width:88px;text-align:center;letter-spacing:.06em}
+
+  /* ===== estilos comunes de láminas ===== */
+  .shead{background:var(--grad-dark);padding:26px 60px 20px;position:relative;overflow:hidden}
+  .shead::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% 0%,rgba(214,61,252,.3),transparent 70%)}
+  .shead .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:13px;color:var(--pink);position:relative;z-index:1}
+  .shead h2{font-family:var(--dispx);text-transform:uppercase;font-size:36px;position:relative;z-index:1}
+  .scont{padding:28px 60px 20px}
+  .scont.tight{padding:20px 60px 14px}
+  .bignum{font-family:var(--dispx);font-weight:700}
+  .chip{display:inline-block;background:rgba(214,61,252,.16);border:1px solid rgba(214,61,252,.45);border-radius:999px;padding:6px 16px;font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--pink)}
+  /* utilidades de relleno vertical: distribuyen el contenido en toda la lámina */
+  .scont.fillv{height:calc(100% - 112px);display:flex;flex-direction:column;justify-content:space-evenly;padding-top:12px;padding-bottom:52px}
+  .scont.gridv{height:calc(100% - 112px);align-content:center;padding-bottom:56px}
+  .diag .scont.gridv,.fin .scont.gridv{grid-template-rows:1fr;align-content:stretch}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px}
+  .panel.hl{background:rgba(214,61,252,.10);border:1px solid rgba(214,61,252,.5)}
+  .cap{font-size:12px;color:var(--muted);font-style:italic;margin-top:8px}
+  .sfoot{position:absolute;left:60px;right:60px;bottom:14px;display:flex;justify-content:space-between;z-index:6;
+    font-family:var(--disp);text-transform:uppercase;letter-spacing:.18em;font-size:10.5px;color:#8a6a96;pointer-events:none}
+
+  /* fila de logos institucionales (portada y cierre) */
+  .instlogos{display:flex;justify-content:center;align-items:center;gap:52px}
+  .instlogos .fimchip{background:#fff;border-radius:12px;padding:8px 18px;display:inline-flex;align-items:center}
+
+  /* portada */
+  .tj1{background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center}
+  .tj1::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 50% 32%,rgba(214,61,252,.32),transparent 70%)}
+  .tj1 .c{position:relative;z-index:2;width:100%;padding:40px 60px}
+  .tj1 .kk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.34em;font-size:15px;color:var(--pink)}
+  .tj1 h1{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:86px;line-height:1.04;margin-top:18px}
+  .tj1 h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tj1 .route{font-family:var(--disp);text-transform:uppercase;letter-spacing:.1em;font-size:19px;color:#e9d8ef;margin-top:22px}
+  .tj1 .route b{color:var(--pink)}
+  .tj1 .instlogos{margin-top:44px}
+  .tj1 .orgs{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:12.5px;color:var(--muted);margin-top:38px}
+  .tj1 .fecha{font-size:13px;color:var(--muted);margin-top:10px}
+
+  /* columnas foto + texto */
+  .pcols .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:start}
+  .pcols .foto{width:100%;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+  .pcols p{font-size:16px;line-height:1.65;color:#e9d8ef;margin-bottom:14px}
+  .pcols p.lead{font-size:18.5px;color:#fff;line-height:1.55}
+  .pcols p b{color:#fff}
+
+  /* mini-cadena (lámina 2) */
+  .chainmini{display:flex;align-items:center;gap:10px;margin:18px 0 12px}
+  .chainmini .st{border:1px solid var(--purple);background:var(--surface);border-radius:10px;padding:10px 14px;
+    font-family:var(--dispx);text-transform:uppercase;font-size:12.5px;white-space:nowrap}
+  .chainmini .st.top{background:var(--grad);border:none;color:#000;font-weight:700}
+  .chainmini .ar{color:var(--pink);font-size:17px}
+  .itnote{font-size:14px;font-style:italic;color:var(--pink)}
+
+  /* dos paneles Asia / LATAM (lámina 3) */
+  .duo2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .duo2 .pan{border-radius:14px;padding:20px 24px;background:var(--surface);border:1px solid var(--line)}
+  .duo2 .pan.hl{background:rgba(214,61,252,.10);border:1px solid rgba(214,61,252,.5)}
+  .duo2 h3{font-family:var(--dispx);text-transform:uppercase;font-size:20px;color:var(--pink);margin-bottom:14px}
+  .duo2 .pan.hl h3{color:var(--purple)}
+  .duo2 .bi{margin-bottom:13px;font-size:14px;line-height:1.55;color:#d9c8e2}
+  .duo2 .bi b{display:block;color:#fff;font-size:14.5px;margin-bottom:2px}
+  .botline{text-align:center;font-family:var(--dispx);text-transform:uppercase;font-size:19px;margin-top:18px}
+  .intro{font-size:15px;color:#e9d8ef;line-height:1.55;margin-bottom:16px}
+
+  /* hitos con encabezado + texto (lámina 4) */
+  .miles .it{margin-bottom:17px}
+  .miles .it h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:15.5px;color:var(--pink);margin-bottom:4px}
+  .miles .it p{font-size:13.5px;line-height:1.5;color:#d9c8e2;margin:0}
+
+  /* timeline 18 años (lámina 5) */
+  .tl18{position:relative;margin:26px 0 20px}
+  .tl18 .rail{position:absolute;top:64px;left:20px;right:20px;height:2px;background:var(--purple)}
+  .tl18 .cols{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;position:relative}
+  .tl18 .m{text-align:center}
+  .tl18 .yr{font-family:var(--dispx);font-size:28px;font-weight:700}
+  .tl18 .dot{width:14px;height:14px;border-radius:50%;background:var(--pink);margin:12px auto 10px;position:relative;z-index:2;border:3px solid #000}
+  .tl18 .m.hot .dot{background:var(--purple);box-shadow:0 0 14px rgba(214,61,252,.8)}
+  .tl18 .tg{font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;color:var(--pink);margin-bottom:6px}
+  .tl18 .tx{font-size:12.5px;line-height:1.5;color:#c9b3d2}
+  .statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .statrow .sc{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+  .statrow .sc .n{font-family:var(--dispx);font-size:38px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;min-width:70px}
+  .statrow .sc .t{font-size:13px;line-height:1.45;color:#d9c8e2}
+
+  /* cantera (lámina 6) */
+  .cantera .cols{display:grid;grid-template-columns:1.25fr 1fr;gap:32px;align-items:start}
+  .cantera .facts .fc{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:15px 20px;margin-bottom:14px}
+  .cantera .facts .n{font-family:var(--dispx);font-size:30px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;min-width:118px;white-space:nowrap}
+  .cantera .facts .t{font-size:13px;line-height:1.45;color:#d9c8e2}
+  .prize{margin-top:6px;border-radius:14px;padding:16px 24px;background:rgba(214,61,252,.10);border:1px solid rgba(214,61,252,.5);font-size:13.5px;line-height:1.55;color:#f2eaf7}
+  .prize b{font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;color:var(--pink)}
+
+  /* tarjetas 4 columnas (láminas 7 y 14) */
+  .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .cards4 .cd{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;position:relative;overflow:hidden}
+  .cards4 .cd::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+  .cards4 .cd h4{font-family:var(--dispx);text-transform:uppercase;font-size:15px;margin-bottom:8px}
+  .cards4 .cd p{font-size:12px;line-height:1.5;color:#d9c8e2;margin:0}
+  .cards4 .cd.hot{background:rgba(214,61,252,.14);border:1px solid var(--purple)}
+  .cards4 .cd .yr{font-family:var(--dispx);font-size:34px;font-weight:700;color:var(--purple);margin-bottom:6px}
+  .cards4 .cd.hot .yr{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* campeones (lámina 8) */
+  .champ3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .champ3 .cd{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 24px;position:relative;overflow:hidden}
+  .champ3 .cd::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+  .champ3 .pais{font-family:var(--disp);text-transform:uppercase;letter-spacing:.16em;font-size:11.5px;color:var(--pink);margin-bottom:5px}
+  .champ3 h4{font-family:var(--dispx);text-transform:uppercase;font-size:21px;margin-bottom:9px}
+  .champ3 p{font-size:13px;line-height:1.55;color:#d9c8e2;margin:0}
+  .bpanel{margin-top:18px;border-radius:14px;padding:18px 26px;background:rgba(214,61,252,.10);border:1px solid rgba(214,61,252,.5);font-size:14px;line-height:1.6;color:#d9c8e2}
+  .bpanel b{color:#fff}
+
+  /* filas numeradas (lámina 9) */
+  .diag .cols{display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:start}
+  .numrows{display:flex;flex-direction:column;justify-content:space-evenly;height:100%}
+  .numrows .r{display:flex;align-items:center;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+  .numrows .n{font-family:var(--dispx);font-size:36px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;min-width:34px;text-align:center}
+  .numrows h4{font-family:var(--dispx);text-transform:uppercase;font-size:15px;margin-bottom:3px}
+  .numrows p{font-size:12.5px;line-height:1.45;color:#d9c8e2;margin:0}
+  .sidep{border-radius:14px;padding:20px 24px;background:rgba(214,61,252,.10);border:1px solid rgba(214,61,252,.5);height:100%;display:flex;flex-direction:column;justify-content:center}
+  .sidep h3{font-family:var(--dispx);text-transform:uppercase;font-size:17px;color:var(--pink);margin-bottom:12px}
+  .sidep p{font-size:13px;line-height:1.55;color:#d9c8e2;margin-bottom:11px}
+  .sidep p b{color:#fff}
+  .sidep p.cta{color:var(--pink);font-weight:700;margin-bottom:0}
+
+  /* cadena 1-2-3-4 (lámina 10) */
+  .chain4{display:grid;grid-template-columns:1fr 26px 1fr 26px 1fr 26px 1fr;gap:0;align-items:stretch}
+  .chain4 .ar{display:flex;align-items:center;justify-content:center;color:var(--pink);font-size:22px;font-weight:700}
+  .chain4 .cd{background:var(--surface);border:1px solid var(--purple);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column}
+  .chain4 .cd.top{background:var(--grad-dark);border:1px solid var(--pink);box-shadow:0 10px 30px rgba(214,61,252,.3)}
+  .chain4 .n{font-family:var(--dispx);font-size:34px;font-weight:700;color:var(--purple);line-height:1}
+  .chain4 .cd.top .n{color:#fff}
+  .chain4 h4{font-family:var(--dispx);text-transform:uppercase;font-size:14.5px;margin:10px 0 6px;line-height:1.25}
+  .chain4 .sb{font-size:12px;line-height:1.4;color:#d9c8e2;flex:1}
+  .chain4 .seal{margin-top:12px;background:#fff;border-radius:8px;text-align:center;padding:7px 4px;
+    font-family:var(--dispx);text-transform:uppercase;font-size:12.5px;font-weight:700;color:#E60012}
+
+  /* especificaciones (lámina 11) */
+  .spec{display:flex;gap:14px;margin-bottom:15px}
+  .spec .sk{font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--pink);min-width:130px;padding-top:2px}
+  .spec .sv{font-size:13.5px;line-height:1.5;color:#e9d8ef}
+  .spec .sv b{color:#fff}
+
+  /* grilla 3x2 (lámina 12) */
+  .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+  .grid6 .cd{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+  .grid6 h4{font-family:var(--disp);text-transform:uppercase;letter-spacing:.1em;font-size:13.5px;color:var(--pink);margin-bottom:6px}
+  .grid6 p{font-size:12.5px;line-height:1.5;color:#d9c8e2;margin:0}
+  .nota{font-size:13.5px;line-height:1.55;color:#d9c8e2;margin-top:16px}
+  .nota b{color:#fff}
+
+  /* mercado (lámina 13) */
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px}
+  .kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 24px;position:relative;overflow:hidden}
+  .kpi::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+  .kpi .bignum{font-size:42px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+  .kpi .kt{font-size:12.5px;line-height:1.45;color:#d9c8e2;margin-top:6px}
+
+  /* financiero (lámina 15) */
+  .fin .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+  .fin .pan{border-radius:14px;padding:22px 26px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-evenly}
+  .fin .pan.hl{background:rgba(214,61,252,.10);border:1px solid rgba(214,61,252,.5)}
+  .fin h3{font-family:var(--dispx);text-transform:uppercase;font-size:16px;color:var(--pink);margin-bottom:10px}
+  .fin .pan.hl h3{color:var(--purple)}
+  .fin .bi{margin-bottom:9px;font-size:12.5px;line-height:1.45;color:#d9c8e2}
+  .fin .bi b{display:block;color:#fff;font-size:13px;margin-bottom:1px}
+  .fin .it{margin-bottom:12px;font-size:12.5px;line-height:1.5;color:#d9c8e2}
+  .fin .it b{font-family:var(--dispx);text-transform:uppercase;color:#fff;font-size:13px}
+  .minibars{display:flex;gap:34px;align-items:flex-end;margin-top:14px;padding:0 8px;height:132px}
+  .minibars .mb{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .minibars .v{font-family:var(--dispx);font-size:12px;margin-bottom:5px}
+  .minibars .bar{width:44px;background:var(--pink);border-radius:4px 4px 0 0}
+  .minibars .mb:first-child .bar{background:var(--grad)}
+  .minibars .y{font-family:var(--disp);font-size:11.5px;letter-spacing:.08em;color:var(--muted);margin-top:6px}
+
+  /* cierre (lámina 16) */
+  .tj16{background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center}
+  .tj16::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 38%,rgba(214,61,252,.3),transparent 70%)}
+  .tj16 .c{position:relative;z-index:2;width:100%;padding:40px 70px}
+  .tj16 .l1{font-family:var(--dispx);text-transform:uppercase;font-size:38px;line-height:1.15}
+  .tj16 .l2{font-family:var(--dispx);text-transform:uppercase;font-size:38px;line-height:1.15;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tj16 .lv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 20px;text-align:left}
+  .tj16 .lv .cd{background:rgba(0,0,0,.42);border:1px solid var(--purple);border-radius:14px;padding:16px 20px}
+  .tj16 .lv h4{font-family:var(--dispx);text-transform:uppercase;font-size:15px;color:var(--pink);margin-bottom:7px}
+  .tj16 .lv p{font-size:12.5px;line-height:1.5;color:#e9d8ef;margin:0}
+  .tj16 .it{font-size:13px;font-style:italic;color:#cbb3d4}
+  .tj16 .next{display:inline-block;background:var(--grad);color:#000;border-radius:999px;padding:13px 34px;margin-top:20px;font-size:14px}
+  .tj16 .next b{font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em}
+  .tj16 .instlogos{margin-top:34px}
+
+  /* móvil / iPad */
+  @media (max-width:740px){
+    .topbar{height:46px;padding:0 10px}
+    .topbar img.tl{height:32px}
+    .tbtn{font-size:10px;padding:6px 11px}
+    .ctrl{height:auto;min-height:50px;padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
+    .nav{width:38px;height:38px;font-size:17px}
+    .cnt{font-size:13px;min-width:70px}
+  }
+  .ctrl{padding-bottom:env(safe-area-inset-bottom)}
+
+  /* REGLA FINAL: el posicionamiento del deck manda — SIEMPRE al final */
+  .stagewrap .stage{width:1456px !important;height:819px !important;flex:0 0 auto !important;transform-origin:center center}
+  .stage .slide{width:1456px;height:819px;position:absolute;inset:0;margin:0;overflow:hidden;
+    opacity:0;pointer-events:none;transition:opacity .35s}
+  .stage .slide.on{opacity:1;pointer-events:auto}
+
+  /* ===== CELULAR HORIZONTAL ===== */
+  @media (orientation:landscape) and (max-height:500px){
+    .topbar{transform:translateY(-100%)}
+    .ctrl{transform:translateY(100%)}
+    .stagewrap{top:0 !important;bottom:0 !important}
+  }
+
+  /* ===== impresión / PDF ===== */
+  @media print{
+    .topbar,.ctrl,.gate{display:none !important}
+    body{overflow:visible;position:static;width:auto;height:auto}
+    .stagewrap{position:static;display:block}
+    .stage{width:auto;height:auto;transform:none !important}
+    .slide{position:relative;opacity:1;pointer-events:auto;page-break-after:always;margin:0}
+    @page{size:1456px 819px;margin:0}
+  }
+
+  /* ===== selector de idioma ===== */
+  .langdd{position:relative}
+  .langbtn{display:flex;align-items:center;gap:7px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;
+    font-size:12px;color:#fff;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;cursor:pointer;white-space:nowrap;line-height:1}
+  .langbtn .cej{font-size:10px;opacity:.85;transition:transform .18s}
+  .langdd.open .langbtn .cej{transform:rotate(180deg)}
+  .langmenu{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:#140618;border:1px solid var(--line);
+    border-radius:14px;padding:6px;display:none;flex-direction:column;gap:2px;z-index:80;box-shadow:0 18px 44px rgba(0,0,0,.55)}
+  .langdd.open .langmenu{display:flex}
+  .langmenu button{font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px;color:#c9b3d2;
+    background:transparent;border:none;border-radius:9px;padding:10px 14px;text-align:left;cursor:pointer;white-space:nowrap}
+  .langmenu button:hover{background:var(--surface);color:#fff}
+  .langmenu button.on{background:var(--grad);color:#000;font-weight:700}
+  @media (max-width:740px){ .langbtn{font-size:10px;padding:6px 10px} }
+</style>
+<script>
+window.__imgErrs=[];
+window.addEventListener("error",function(e){
+  if(e.target && e.target.tagName==="IMG" && e.target.getAttribute("src"))
+    window.__imgErrs.push(e.target.getAttribute("src"));
+},true);
+</script>
+</head>
+<body>
+<div class="gate" id="gate">
+<div class="in">
+<img alt="Mobil Moto4 Latin Cup" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+<h1>Team Junior Latin America</h1>
+<p>Master Plan · Material reservado.<br/>Ingresa el código de acceso.</p>
+<input autocomplete="off" id="code" maxlength="16" placeholder="CÓDIGO" type="text" autocapitalize="characters" spellcheck="false"/>
+<button id="entrar">Entrar</button>
+<div class="err" id="err">Código incorrecto</div>
+<p style="margin-top:22px;font-size:12px"><a href="presentaciones.html" style="color:var(--pink);text-decoration:underline">← Volver a presentaciones</a></p>
+</div>
+</div>
+<div class="topbar">
+<a href="presentaciones.html"><img alt="Mobil Moto4 Latin Cup" class="tl" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/></a>
+<div class="acts">
+<div class="langdd" id="langdd">
+<button class="langbtn" id="langbtn" aria-haspopup="true"><span aria-hidden="true">🌐</span> <span id="langcur">Español</span> <span class="cej" aria-hidden="true">▾</span></button>
+<div class="langmenu" id="langmenu">
+<button data-lng="es" class="on">Español</button>
+<button data-lng="en">English</button>
+<button data-lng="pt">Português</button>
+</div>
+</div>
+<button class="tbtn" data-i18n="tbpdf" onclick="window.print()">Descargar PDF</button>
+<a class="tbtn solid" data-i18n="tbsite" href="presentaciones.html">Volver</a>
+</div>
+</div>
+<div class="stagewrap"><div class="stage" id="stage">
+
+<!-- ============ 1 · PORTADA ============ -->
+<div class="slide tj1">
+<div class="c">
+<div class="kk" data-i18n="s1k">Master Plan · Propuesta de alianza</div>
+<h1>TEAM JUNIOR<br/><span class="grad">LATIN AMERICA</span></h1>
+<div class="route" data-i18n="s1route">FIM MotoJunior · Moto4 2027 <b>→</b> Moto3 Junior 2028 <b>→</b> Mundial de Moto3 2030</div>
+<div class="instlogos">
+<img alt="Mobil Moto4 Latin Cup" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="height:88px"/>
+<img alt="Road to MotoGP" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:34px"/>
+<span class="fimchip"><img alt="FIM Latin America" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:52px"/></span>
+<img alt="Honda" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:36px"/>
+</div>
+<div class="orgs">GP3 Sports · Road to MotoGP™ · FIM Latin America · Honda</div>
+<div class="fecha" data-i18n="s1date">Barcelona · Julio 2026</div>
+</div>
+</div>
+
+<!-- ============ 2 · LA MISIÓN ============ -->
+<div class="slide pcols">
+<div class="shead"><div class="k" data-i18n="s2k">La misión</div><h2 data-i18n="s2h">El puente entre Latinoamérica y el Mundial</h2></div>
+<div class="scont cols gridv">
+<div>
+<p class="lead" data-i18n="s2p1">Un equipo profesional con base en Barcelona que compite en el FIM MotoJunior desde 2027, reservado al talento de la <b>Mobil Moto4 Latin Cup</b>.</p>
+<p data-i18n="s2p2">Hoy el mejor piloto joven de Latinoamérica no tiene adónde ir cuando gana la copa. El <b>Team Junior Latin America</b> completa el sistema: identifica el talento en la región, lo desarrolla en Europa y lo lleva al Mundial — siempre sobre Honda.</p>
+<div class="chainmini">
+<span class="st">LATIN CUP</span><span class="ar">→</span>
+<span class="st">MOTO4</span><span class="ar">→</span>
+<span class="st">MOTO3 JUNIOR</span><span class="ar">→</span>
+<span class="st top" data-i18n="s2c4">Mundial</span>
+</div>
+<div class="itnote" data-i18n="s2it">Una sola cadena de desarrollo — y con este equipo, una sola marca en cada eslabón.</div>
+</div>
+<div>
+<img alt="Mobil Moto4 Latin Cup en Termas de Río Hondo" class="foto" src="tjla_pit.jpg" style="aspect-ratio:16/10"/>
+<div class="cap">Mobil Moto4 Latin Cup · Termas de Río Hondo</div>
+</div>
+</div>
+</div>
+
+<!-- ============ 3 · EL PRECEDENTE: ASIA ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s3k">El precedente</div><h2 data-i18n="s3h">Ustedes ya lo hicieron en Asia</h2></div>
+<div class="scont tight fillv">
+<div class="intro" data-i18n="s3in">El modelo que proponemos no es una teoría: es el sistema que Honda y Dorna validaron en Asia, aplicado al mercado que aún no lo tiene.</div>
+<div class="duo2">
+<div class="pan">
+<h3 data-i18n="s3a">Asia — El camino recorrido</h3>
+<div class="bi" data-i18n="s3a1"><b>Idemitsu Asia Talent Cup — desde 2014</b>Copa monomarca Dorna sobre Honda NSF250R (hoy Idemitsu Moto4 Asia Cup).</div>
+<div class="bi" data-i18n="s3a2"><b>Honda Team Asia — el equipo puente</b>Los talentos de la copa suben a JuniorGP, Moto3 y Moto2 dentro de la estructura Honda.</div>
+<div class="bi" data-i18n="s3a3"><b>Resultado: pilotos en el Mundial</b>Somkiat Chantra — primer tailandés a tiempo completo en MotoGP (LCR Honda Idemitsu). Taiyo Furusato y más talentos en el Mundial, formados 100% en la cadena Honda.</div>
+</div>
+<div class="pan hl">
+<h3 data-i18n="s3l">LATAM — La pieza que falta</h3>
+<div class="bi" data-i18n="s3l1"><b>Mobil Moto4 Latin Cup — en pista desde 2025</b>Copa oficial del Road to MotoGP™ sobre Honda NSF250R, con Honda Brasil como socio desde 2026.</div>
+<div class="bi" data-i18n="s3l2"><b>Team Junior Latin America — el equipo puente</b>Base en Barcelona · Moto4 del FIM MotoJunior World Championship en 2027 · Moto3 Junior en 2028.</div>
+<div class="bi" data-i18n="s3l3"><b>Objetivo: el Mundial en 2030</b>El primer piloto formado íntegramente en el programa llega al Campeonato del Mundo de Moto3 — el Somkiat Chantra latinoamericano, sobre Honda.</div>
+</div>
+</div>
+<div class="botline" data-i18n="s3bt">Aspiramos a recorrer, paso a paso, el camino que ustedes ya demostraron en Asia.</div>
+</div>
+</div>
+
+<!-- ============ 4 · RESPALDO INSTITUCIONAL ============ -->
+<div class="slide pcols">
+<div class="shead"><div class="k" data-i18n="s4k">Respaldo institucional</div><h2 data-i18n="s4h">Nacidos dentro del sistema oficial</h2></div>
+<div class="scont cols gridv" style="grid-template-columns:1fr 1.05fr">
+<div class="miles">
+<div class="it"><h4 data-i18n="s4i1h">Dic. 2022 · Rimini</h4><p data-i18n="s4i1t">Presentación mundial del proyecto en la asamblea anual de la FIM, junto a su presidente Jorge Viegas.</p></div>
+<div class="it"><h4 data-i18n="s4i2h">Mar. 2023 · Termas de Río Hondo</h4><p data-i18n="s4i2t">Lanzamiento oficial de la copa junto a Carmelo Ezpeleta (CEO de Dorna Sports) y Pedro Venturo (presidente de FIM Latin America), en el GP de Argentina.</p></div>
+<div class="it"><h4>Road to MotoGP™</h4><p data-i18n="s4i3t">La copa es parte del programa oficial de Dorna: portar este sello es una validación en sí misma.</p></div>
+<div class="it"><h4 data-i18n="s4i4h">2026 · Honda Brasil y Mobil</h4><p data-i18n="s4i4t">Honda Brasil se suma como socio del programa completo y Mobil como title sponsor. Esta alianza ya existe — proponemos profundizarla.</p></div>
+</div>
+<div>
+<img alt="Carmelo Ezpeleta y Antonio D'Angelo" class="foto" src="tjla_ezpeleta.jpg" style="height:470px;object-position:center 20%"/>
+<div class="cap" data-i18n="s4cap">Carmelo Ezpeleta (CEO, Dorna Sports) y Antonio D'Angelo (GP3 Sports) · Termas de Río Hondo</div>
+</div>
+</div>
+</div>
+
+<!-- ============ 5 · 18 AÑOS ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s5k">Trayectoria</div><h2 data-i18n="s5h">18 años construyendo el sistema</h2></div>
+<div class="scont tight fillv">
+<div class="tl18">
+<div class="rail"></div>
+<div class="cols">
+<div class="m"><div class="yr">2008</div><div class="dot"></div><div class="tg">Chile</div><div class="tx" data-i18n="s5x1">Nace GP3 Sports, promotor del CCV — la principal plataforma de velocidad del país.</div></div>
+<div class="m"><div class="yr">2020</div><div class="dot"></div><div class="tg" data-i18n="s5g2">Italia</div><div class="tx" data-i18n="s5x2">Se constituye el Team GP3 AD11; en competición europea desde 2021.</div></div>
+<div class="m"><div class="yr">2023</div><div class="dot"></div><div class="tg" data-i18n="s5g3">Lanzamiento</div><div class="tx" data-i18n="s5x3">La copa se presenta al mundo junto al CEO de Dorna en el GP de Argentina.</div></div>
+<div class="m"><div class="yr">2025</div><div class="dot"></div><div class="tg" data-i18n="s5g4">Doble hito</div><div class="tx" data-i18n="s5x4">Debut en pista de la copa regional y título Italiano FMI (CIV Femminile, Martina Guarino).</div></div>
+<div class="m hot"><div class="yr">2026</div><div class="dot"></div><div class="tg">Mobil + Honda</div><div class="tx" data-i18n="s5x5">Mobil title sponsor · Honda Brasil socio del programa · GP3 asume el CAV Argentina.</div></div>
+<div class="m hot"><div class="yr">2027</div><div class="dot"></div><div class="tg">Team Junior</div><div class="tx" data-i18n="s5x6">Debut del equipo en la categoría Moto4 del FIM MotoJunior, base Barcelona.</div></div>
+</div>
+</div>
+<div class="statrow">
+<div class="sc"><div class="n">4</div><div class="t" data-i18n="s5s1">países en operación simultánea: Chile, Argentina, Brasil e Italia</div></div>
+<div class="sc"><div class="n">+34</div><div class="t" data-i18n="s5s2">pilotos formados en el sistema GP3</div></div>
+<div class="sc"><div class="n">3</div><div class="t" data-i18n="s5s3">pilotos al Mundial FIM (WorldWCR)</div></div>
+<div class="sc"><div class="n">6</div><div class="t" data-i18n="s5s4">temporadas de operación europea en pista</div></div>
+</div>
+</div>
+</div>
+
+<!-- ============ 6 · LA CANTERA ============ -->
+<div class="slide cantera">
+<div class="shead"><div class="k" data-i18n="s6k">La cantera oficial</div><h2>Mobil Moto4 Latin Cup</h2></div>
+<div class="scont tight cols" style="align-items:center;padding-top:30px">
+<div>
+<img alt="Mobil Moto4 Latin Cup en pista" src="tjla_track.jpg" style="width:100%;height:400px;object-fit:cover;border-radius:16px;border:1px solid var(--line)"/>
+<div class="cap" data-i18n="s6cap">Respaldada por las 20 federaciones de FIM Latin America · familia mundial Moto4 de FIM y Dorna (Asia, Europa, Gran Bretaña, Norteamérica y Latinoamérica)</div>
+</div>
+<div class="facts">
+<div class="fc"><div class="n">18</div><div class="t" data-i18n="s6f1">Honda NSF250R propias, importadas de fábrica — flota oficial de la copa</div></div>
+<div class="fc"><div class="n">16 / 10</div><div class="t" data-i18n="s6f2">pilotos titulares de 10 países · categoría reglamentaria de 14 a 19 años</div></div>
+<div class="fc"><div class="n">6 · 13</div><div class="t" data-i18n="s6f3">fechas y carreras 2026, incluida la apertura del GP de Brasil en Goiânia</div></div>
+</div>
+</div>
+<div style="padding:0 60px;margin-top:14px">
+<div class="prize" data-i18n="s6pz"><b>El premio de la copa:</b> el campeón asciende como titular al Team Junior Latin America para disputar la categoría Moto4 del FIM MotoJunior World Championship (la evolución de la European Talent Cup), con el 100% de los gastos cubiertos. Y por separado, el Top 3 accede al Selection Event de la Red Bull MotoGP Rookies Cup.</div>
+</div>
+</div>
+
+<!-- ============ 7 · NUESTRO EQUIPO EN EUROPA ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s7k">Nuestro equipo en Europa</div><h2 data-i18n="s7h">Un equipo con experiencia de Mundial</h2></div>
+<div class="scont tight fillv">
+<div class="cards4">
+<div class="cd"><h4>Martina Guarino</h4><p data-i18n="s7c1">Campeona Italiana FMI 2025 (CIV Femminile) con el Team GP3 AD11 · proyectada al Mundial WorldWCR 2026.</p></div>
+<div class="cd"><h4>Isis Carreño</h4><p data-i18n="s7c2">Debut europeo 2021 con el equipo · podios en la Women's European Cup · clasificada al primer Mundial WorldWCR (2024).</p></div>
+<div class="cd"><h4>Beatrice Barbera</h4><p data-i18n="s7c3">Formada en la estructura GP3 · titular del Mundial WorldWCR 2025 con el #94.</p></div>
+<div class="cd"><h4>Facundo Mora</h4><p data-i18n="s7c4">Primer campeón de la copa (2025, 228 pts) · hoy ya registrado y compitiendo en el Campeonato Italiano de Velocidad.</p></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center;margin-top:24px">
+<img alt="Podio Mobil Moto4 Latin Cup" src="tjla_podio.jpg" style="width:100%;height:250px;object-fit:cover;border-radius:16px;border:1px solid var(--line)"/>
+<div>
+<p style="font-size:17px;line-height:1.65;color:#e9d8ef" data-i18n="s7p1">Del lanzamiento de 2023 al registro federativo en Europa: <b style="color:#fff">el ciclo cantera → Europa → Mundial está demostrado en pista, no prometido en papel.</b></p>
+<p class="itnote" style="margin-top:14px" data-i18n="s7p2">El ciclo está demostrado en pista. Nuestro compromiso es sostenerlo año tras año.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ============ 8 · CAMPEONES DEL MUNDO ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s8k">El momento es ahora</div><h2 data-i18n="s8h">La región ya produce campeones del mundo</h2></div>
+<div class="scont tight fillv">
+<div class="intro" data-i18n="s8in">Las canteras del Road to MotoGP™ ya coronan campeones — y el talento latinoamericano está en el centro de esa ola:</div>
+<div class="champ3">
+<div class="cd"><div class="pais" data-i18n="s8c1c">Colombia</div><h4>David Alonso</h4><p data-i18n="s8c1t">Campeón del Mundo de Moto3 2024 con un récord histórico de 14 victorias en una temporada. El primer campeón mundial colombiano del motociclismo.</p></div>
+<div class="cd"><div class="pais" data-i18n="s8c2c">Brasil</div><h4>Diogo Moreira</h4><p data-i18n="s8c2t">Campeón del Mundo de Moto2 2025 — el primer campeón mundial brasileño. Honda ya apostó por él: debuta en MotoGP 2026 con LCR Honda.</p></div>
+<div class="cd"><div class="pais" data-i18n="s8c3c">Japón · Modelo Asia</div><h4>Ai Ogura</h4><p data-i18n="s8c3t">Formado en la Idemitsu Asia Talent Cup sobre Honda NSF250R. Campeón del Mundo de Moto2 2024 y hoy piloto de MotoGP: la cantera Honda funciona.</p></div>
+</div>
+<div class="bpanel" data-i18n="s8b">Alonso y Moreira llegaron a la cima por caminos individuales, sin una cadena regional que los acompañara. <b>El Team Junior Latin America construye esa cadena para que el próximo campeón latinoamericano se forme sobre Honda desde su primera carrera — como Ogura en Asia.</b></div>
+</div>
+</div>
+
+<!-- ============ 9 · EL DIAGNÓSTICO ============ -->
+<div class="slide diag">
+<div class="shead"><div class="k" data-i18n="s9k">El diagnóstico</div><h2 data-i18n="s9h">El talento existe. Falta la estructura.</h2></div>
+<div class="scont tight cols gridv">
+<div class="numrows">
+<div class="r"><div class="n">1</div><div><h4 data-i18n="s9r1h">Sin hoja de ruta</h4><p data-i18n="s9r1t">Decisiones familiares improvisadas, temporada a temporada: carreras con potencial mundialista que se truncan.</p></div></div>
+<div class="r"><div class="n">2</div><div><h4 data-i18n="s9r2h">Costos sin plan plurianual</h4><p data-i18n="s9r2t">Las familias agotan sus recursos en un solo año europeo y regresan a casa.</p></div></div>
+<div class="r"><div class="n">3</div><div><h4 data-i18n="s9r3h">Cambios constantes de equipo</h4><p data-i18n="s9r3t">Cada cambio fragmenta el desarrollo técnico: los datos y la confianza se pierden.</p></div></div>
+<div class="r"><div class="n">4</div><div><h4 data-i18n="s9r4h">Solo, lejos de casa</h4><p data-i18n="s9r4t">Sin preparación física, mental ni educativa, el piloto rinde menos de lo que vale.</p></div></div>
+</div>
+<div class="sidep">
+<h3 data-i18n="s9x">Y hay algo más</h3>
+<p data-i18n="s9x1"><b>La fuga ya está institucionalizada:</b> la propia pirámide del Road to MotoGP™ envía al Top 3 de la copa al Selection Event de la Red Bull Rookies Cup — un programa que corre sobre KTM.</p>
+<p data-i18n="s9x2">Sin un equipo puente Honda, el sistema entrega a la competencia talento formado sobre la NSF250R.</p>
+<p class="cta" data-i18n="s9x3">Este proyecto cierra esa puerta.</p>
+</div>
+</div>
+</div>
+
+<!-- ============ 10 · UNA SOLA CADENA ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s10k">La propuesta de valor central</div><h2 data-i18n="s10h">Una sola cadena · Una sola marca</h2></div>
+<div class="scont fillv">
+<div class="chain4">
+<div class="cd"><div class="n">1</div><h4>MOBIL MOTO4 LATIN CUP</h4><div class="sb" data-i18n="s10c1s">Latinoamérica · 14–18 años</div><div class="seal">Honda NSF250R</div></div>
+<div class="ar">→</div>
+<div class="cd"><div class="n">2</div><h4>MOTO4 · FIM MOTOJUNIOR</h4><div class="sb">Team Junior LA · Barcelona · 2027</div><div class="seal">Honda NSF250R</div></div>
+<div class="ar">→</div>
+<div class="cd"><div class="n">3</div><h4>MOTO3 JUNIOR · FIM MOTOJUNIOR</h4><div class="sb">Team Junior LA · 2028</div><div class="seal">Honda</div></div>
+<div class="ar">→</div>
+<div class="cd top"><div class="n">4</div><h4 data-i18n="s10c4h">Mundial de Moto3</h4><div class="sb" data-i18n="s10c4s">El objetivo · 2030</div><div class="seal">Honda</div></div>
+</div>
+<div class="bpanel" style="margin-top:26px" data-i18n="s10b"><b>Con el Team Junior Latin America la cadena queda 100% Honda:</b> NSF250R en la cantera, NSF250R en Moto4, Honda hasta la puerta del Mundial. Cada cliente de la región ve su propia marca acompañar al piloto desde la primera carrera en casa hasta el Mundial — continuidad total de producto y de exposición para cada aliado de la cadena.</div>
+</div>
+</div>
+
+<!-- ============ 11 · EL EQUIPO 2027 EN BARCELONA ============ -->
+<div class="slide pcols">
+<div class="shead"><div class="k" data-i18n="s11k">La operación</div><h2 data-i18n="s11h">El equipo 2027 en Barcelona</h2></div>
+<div class="scont cols gridv" style="grid-template-columns:1.05fr 1fr">
+<div>
+<div class="spec"><div class="sk" data-i18n="s11s1k">Base única</div><div class="sv" data-i18n="s11s1v">Galpón integral en Barcelona: taller, bodega, telemetría, oficina y camión bajo un mismo techo. Traslado completo de activos desde Pésaro en ejecución.</div></div>
+<div class="spec"><div class="sk" data-i18n="s11s2k">Categoría</div><div class="sv" data-i18n="s11s2v">Moto4 del FIM MotoJunior · Honda NSF250R · 2 pilotos titulares surgidos de la copa (Selectiva de noviembre 2026).</div></div>
+<div class="spec"><div class="sk" data-i18n="s11s3k">Material</div><div class="sv" data-i18n="s11s3v">4 motocicletas (2 titulares + 2 reserva), motores de repuesto y camión propio del equipo.</div></div>
+<div class="spec"><div class="sk" data-i18n="s11s4k">Estructura</div><div class="sv" data-i18n="s11s4v">9 profesionales: dirección deportiva y técnica europea, 2 mecánicos y 1 telemetrista dedicados por cada moto.</div></div>
+<div class="spec"><div class="sk" data-i18n="s11s5k">Método</div><div class="sv" data-i18n="s11s5v">Telemetría individual desde el día uno — en una categoría monomarca, <b>los datos son la única ventaja competitiva real</b>.</div></div>
+</div>
+<div>
+<img alt="Camión y box del Team Junior Latin America" class="foto" src="tjla_camion.jpg" style="height:440px"/>
+<div class="cap" data-i18n="s11cap">Camión y box oficiales del Team Junior Latin America (renders 2027)</div>
+</div>
+</div>
+</div>
+
+<!-- ============ 12 · EL PROGRAMA DEL PILOTO ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s12k">Desarrollo integral</div><h2 data-i18n="s12h">El programa del piloto</h2></div>
+<div class="scont tight fillv">
+<div class="intro" data-i18n="s12in">8 meses viviendo en España con beca deportiva del 100% — el estándar 360° de las academias de élite europeas, aplicado al talento latinoamericano:</div>
+<div class="grid6">
+<div class="cd"><h4 data-i18n="s12c1h">Deportivo</h4><p data-i18n="s12c1t">Test y rodajes en Montmeló, Alcarràs y Calafat, compartiendo pista con los rivales europeos del fin de semana.</p></div>
+<div class="cd"><h4 data-i18n="s12c2h">Técnico</h4><p data-i18n="s12c2t">Sesión obligatoria de video y telemetría con el telemetrista asignado: el piloto aprende a leer sus propios datos.</p></div>
+<div class="cd"><h4 data-i18n="s12c3h">Físico</h4><p data-i18n="s12c3t">Gimnasio y resistencia con preparador especializado y monitoreo de cargas.</p></div>
+<div class="cd"><h4 data-i18n="s12c4h">Mental</h4><p data-i18n="s12c4t">Psicólogo deportivo permanente: presión de competencia y distancia de la familia.</p></div>
+<div class="cd"><h4 data-i18n="s12c5h">Educativo</h4><p data-i18n="s12c5t">Plan escolar protegido + inglés técnico obligatorio, el idioma del paddock mundial.</p></div>
+<div class="cd"><h4 data-i18n="s12c6h">Profesional</h4><p data-i18n="s12c6t">Rutina de atleta de élite: nutrición, puntualidad, relación con ingenieros y sponsors.</p></div>
+</div>
+<div class="nota" data-i18n="s12n"><b>Tutoría legal resuelta:</b> GP3 Sport Italia S.R.L. (sociedad UE activa desde 2020) asume la representación legal de los menores durante su estancia en España — sin barreras migratorias ni federativas.</div>
+</div>
+</div>
+
+<!-- ============ 13 · EL MERCADO ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s13k">Por qué ahora</div><h2 data-i18n="s13h">El mercado que espera esta historia</h2></div>
+<div class="scont tight fillv">
+<div class="kpis">
+<div class="kpi"><div class="bignum" data-i18n="s13s1n">+18,8%</div><div class="kt" data-i18n="s13s1t">crecimiento de ventas de motos en LATAM en el 1er semestre de 2025 — la región de mayor expansión del mundo</div></div>
+<div class="kpi"><div class="bignum" data-i18n="s13s2n">2,2 M</div><div class="kt" data-i18n="s13s2t">motos vendidas en Brasil en 2025: récord de 22 años y 6º mercado mundial — con Honda como líder histórico</div></div>
+<div class="kpi"><div class="bignum" data-i18n="s13s3n">660 M</div><div class="kt" data-i18n="s13s3t">personas en la región que aún no tienen un ídolo propio en el Mundial de motociclismo</div></div>
+</div>
+<div class="nota" style="margin-top:4px" data-i18n="s13sg"><b>Señales del mismo ciclo:</b> Chile crece +128,9% en media-alta cilindrada, Argentina +48,7% en matriculaciones, Colombia +33,9% en uso diario — y MotoGP™ regresó a Brasil, con la Mobil Moto4 Latin Cup abriendo el programa oficial del GP en Goiânia.</div>
+<div class="bpanel" style="margin-top:16px" data-i18n="s13h2"><b>Honda vendió 1,4 millones de motos en Brasil en 2025 — ~67% del mercado y 7 de las 10 más vendidas del país.</b> Este proyecto convierte ese liderazgo en lealtad: el cliente que maneja una Honda en São Paulo, Santiago o Buenos Aires verá a los pilotos de su región correr en Europa sobre su misma marca.</div>
+</div>
+</div>
+
+<!-- ============ 14 · HOJA DE RUTA ============ -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="s14k">La ruta al Mundial</div><h2 data-i18n="s14h">Hoja de ruta 2027–2030</h2></div>
+<div class="scont tight fillv">
+<div class="cards4">
+<div class="cd"><div class="yr">2027</div><h4 data-i18n="s14y1h">Debut europeo</h4><p data-i18n="s14y1t">Moto4 del FIM MotoJunior con 2 pilotos de la Latin Cup. Base de Barcelona plenamente operativa.</p></div>
+<div class="cd"><div class="yr">2028</div><h4 data-i18n="s14y2h">Doble categoría</h4><p data-i18n="s14y2t">El piloto líder asciende al Moto3 Junior World Championship; un nuevo talento de la copa entra a Moto4.</p></div>
+<div class="cd"><div class="yr">2029</div><h4 data-i18n="s14y3h">Consolidación</h4><p data-i18n="s14y3t">Maduración de datos y rendimiento en ambas categorías; los pilotos alcanzan la edad reglamentaria.</p></div>
+<div class="cd hot"><div class="yr">2030</div><h4 data-i18n="s14y4h">El Mundial</h4><p data-i18n="s14y4t">El primer piloto formado íntegramente en el programa debuta en el Campeonato del Mundo de Moto3.</p></div>
+</div>
+<div class="sidep" style="margin-top:20px;height:auto">
+<h3 data-i18n="s14dh">Nuestra declaración de Isla de Man</h3>
+<p style="margin-bottom:0" data-i18n="s14d">En 1954, Soichiro Honda declaró que competiría en el TT de la Isla de Man antes de contar con los recursos para lograrlo: “pondré toda mi energía y creatividad en ganar”. <b>Compartimos esa filosofía: cada hito de este proyecto se construyó paso a paso, en pista. Esta es nuestra declaración: 2030, el primer piloto del programa en el Mundial de Moto3, sobre una Honda. Manaus fabrica las motos — nosotros proponemos la fábrica de pilotos.</b></p>
+</div>
+</div>
+</div>
+
+<!-- ============ 15 · SOLIDEZ Y RETORNO ============ -->
+<div class="slide fin">
+<div class="shead"><div class="k" data-i18n="s15k">Solidez y retorno</div><h2 data-i18n="s15h">Honda acelera, no financia</h2></div>
+<div class="scont tight cols gridv">
+<div class="pan">
+<h3 data-i18n="s15lt">Un programa que se sostiene solo</h3>
+<div class="bi" data-i18n="s15b1"><b>Presupuesto 2027: €567.910 (≈ USD 648.000)</b>Temporada de debut completa — flota, plantilla de 9 profesionales, logística europea e inversión de arranque incluida: €51.600 por carrera.</div>
+<div class="bi" data-i18n="s15b2"><b>Escenario base 100% cubierto</b>Estructura societaria de Talent Sport S.A., socios estratégicos incorporados en 2024 (Alexis Varlan y Alonso Rebolledo) y sponsors ya contratados. El equipo sale a pista con o sin nuevos aliados.</div>
+<div class="bi" data-i18n="s15b3"><b>Escalamiento planificado 2028–2029</b>El presupuesto crece con el ascenso a Moto3 Junior y la operación en doble categoría — crecimiento por progresión deportiva, no por déficit.</div>
+<div class="minibars">
+<div class="mb"><div class="v">€568k</div><div class="bar" style="height:62px"></div><div class="y">2027</div></div>
+<div class="mb"><div class="v">€797k</div><div class="bar" style="height:87px"></div><div class="y">2028</div></div>
+<div class="mb"><div class="v">€822k</div><div class="bar" style="height:90px"></div><div class="y">2029</div></div>
+</div>
+</div>
+<div class="pan hl">
+<h3 data-i18n="s15rt">Lo que Honda recibe como acelerador</h3>
+<div class="it" data-i18n="s15r1"><b>22 Honda NSF250R</b> — en el ecosistema completo: 18 de la flota oficial de la copa + 4 del equipo europeo — la mayor plataforma NSF250R de la región.</div>
+<div class="it" data-i18n="s15r2"><b>Exposición sin fugas</b> — una sola marca de la primera carrera en LATAM al Mundial, activable con la red de dealers de la región.</div>
+<div class="it" data-i18n="s15r3"><b>Contenido y reporting</b> — gabinete de prensa trilingüe ES/EN/PT, contenido co-brandeado semanal y reporte de retorno por temporada.</div>
+<div class="it" data-i18n="s15r4"><b>Pipeline de talento</b> — visibilidad directa del desarrollo de los futuros pilotos Honda de Latinoamérica, al estilo del programa de Asia.</div>
+</div>
+</div>
+</div>
+
+<!-- ============ 16 · CIERRE ============ -->
+<div class="slide tj16">
+<div class="c">
+<div class="l1" data-i18n="s16l1">El puente ya existe y corre en Honda.</div>
+<div class="l2" data-i18n="s16l2">Hagámoslo oficial.</div>
+<div class="lv">
+<div class="cd"><h4 data-i18n="s16ah">A · Socio técnico</h4><p data-i18n="s16at">Condiciones preferentes de flota NSF250R, repuestos y soporte técnico HRC para el equipo puente.</p></div>
+<div class="cd"><h4 data-i18n="s16bh">B · Endoso de marca</h4><p data-i18n="s16bt">Denominación oficial del equipo con la marca Honda, al estilo del modelo Idemitsu en Asia.</p></div>
+<div class="cd"><h4 data-i18n="s16ch">C · Pipeline HRC</h4><p data-i18n="s16ct">Integración del programa al sistema de talento Honda: visibilidad prioritaria del desarrollo y diálogo preferente sobre los pilotos.</p></div>
+</div>
+<div class="it" data-i18n="s16it">Tres niveles independientes y escalables — la alianza puede comenzar por A. Los invitamos a ver el trabajo donde sucede: en el box y en la pista.</div>
+<div><span class="next" data-i18n="s16nx"><b>Próximo paso:</b> reunión técnica antes de la Selectiva de noviembre 2026 — ahí se definen los pilotos 2027.</span></div>
+<div class="instlogos">
+<img alt="Mobil Moto4 Latin Cup" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="height:62px"/>
+<img alt="Road to MotoGP" src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:26px"/>
+<span class="fimchip" style="padding:6px 14px"><img alt="FIM Latin America" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:40px"/></span>
+<img alt="Honda" src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:28px"/>
+</div>
+</div>
+</div>
+
+</div></div>
+<div class="ctrl">
+<button aria-label="Anterior" class="nav" id="prev">‹</button>
+<div class="cnt"><span id="cur">1</span> / <span id="tot"></span></div>
+<button aria-label="Siguiente" class="nav" id="next">›</button>
+</div>
+<script>
+(function(){
+  // Candado: código alfanumérico validado por SHA-256 (crypto.subtle). El código NO está en claro.
+  var HASH="1a50a509fa3a85b060af75de3463030c146c9bb52496c4366f8ac363029a6c36";
+  var gate=document.getElementById("gate"), inp=document.getElementById("code"), err=document.getElementById("err");
+  function abrir(){ gate.style.display="none"; try{sessionStorage.setItem("m4tj","1");}catch(e){} fit(); }
+  function sha256hex(txt){
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(txt)).then(function(buf){
+      return Array.prototype.map.call(new Uint8Array(buf),function(b){return b.toString(16).padStart(2,"0");}).join("");
+    });
+  }
+  function probar(){
+    var v=inp.value.trim().toUpperCase();
+    if(!v){ err.style.visibility="visible"; inp.focus(); return; }
+    sha256hex(v).then(function(hex){
+      if(hex===HASH) abrir();
+      else{ err.style.visibility="visible"; inp.value=""; inp.focus(); }
+    }).catch(function(){ err.style.visibility="visible"; });
+  }
+  document.getElementById("entrar").addEventListener("click",probar);
+  inp.addEventListener("keydown",function(e){ if(e.key==="Enter") probar(); });
+  try{ if(sessionStorage.getItem("m4tj")==="1") gate.style.display="none"; }catch(e){}
+
+  var slides=[].slice.call(document.querySelectorAll(".slide"));
+  var i=0; document.getElementById("tot").textContent=slides.length;
+  function show(n){
+    try{
+      i=Math.max(0,Math.min(slides.length-1,n));
+      slides.forEach(function(s,k){ s.classList.toggle("on",k===i); });
+      document.getElementById("cur").textContent=i+1;
+      document.getElementById("prev").disabled=(i===0);
+      document.getElementById("next").disabled=(i===slides.length-1);
+    }catch(e){}
+  }
+  document.getElementById("prev").addEventListener("click",function(e){e.stopPropagation();show(i-1);});
+  document.getElementById("next").addEventListener("click",function(e){e.stopPropagation();show(i+1);});
+  document.addEventListener("keydown",function(e){
+    if(gate.style.display!=="none") return;
+    if(e.key==="ArrowRight"||e.key===" ") show(i+1);
+    if(e.key==="ArrowLeft") show(i-1);
+  });
+  document.querySelector(".stagewrap").addEventListener("click",function(e){
+    if(gate.style.display!=="none") return;
+    if(e.clientX > window.innerWidth/2) show(i+1); else show(i-1);
+  });
+  var x0=null;
+  document.addEventListener("touchstart",function(e){ x0=e.touches[0].clientX; },{passive:true});
+  document.addEventListener("touchend",function(e){
+    if(x0===null||gate.style.display!=="none") return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(dx<-50) show(i+1); if(dx>50) show(i-1); x0=null;
+  },{passive:true});
+
+  // aviso de imágenes faltantes
+  function pintarAviso(){
+    var rotas=window.__imgErrs||[];
+    if(!rotas.length) return;
+    var chip=document.getElementById("imgchip");
+    if(!chip){
+      chip=document.createElement("div"); chip.id="imgchip";
+      chip.style.cssText="position:fixed;top:70px;left:12px;z-index:70;background:#5b1020;border:1px solid #ff5470;color:#ffd6de;font:12px/1.5 -apple-system,Arial;padding:10px 14px;border-radius:10px;max-width:340px";
+      document.body.appendChild(chip);
+    }
+    chip.innerHTML="<b>Aviso: "+rotas.length+" imagen(es) no cargaron del repo:</b><br>"+rotas.slice(0,8).join("<br>");
+  }
+  window.addEventListener("load",function(){ pintarAviso(); setTimeout(pintarAviso,3000); });
+
+  // escala fija: la lámina se ve idéntica en cualquier pantalla
+  function fit(){
+    var fs=(window.matchMedia&&window.matchMedia("(orientation:landscape) and (max-height:500px)").matches)||false;
+    var tb=fs?0:document.querySelector(".topbar").offsetHeight;
+    var cb=fs?0:document.querySelector(".ctrl").offsetHeight;
+    var wrap=document.querySelector(".stagewrap");
+    wrap.style.top=tb+"px"; wrap.style.bottom=cb+"px";
+    var vw=(window.visualViewport?visualViewport.width:window.innerWidth);
+    var vh=(window.visualViewport?visualViewport.height:window.innerHeight)-tb-cb;
+    var s=Math.min(vw/1456, vh/819);
+    document.getElementById("stage").style.transform="scale("+s+")";
+  }
+  // footer TJLA en las láminas interiores (como en el pptx: sin footer en portada y cierre)
+  slides.forEach(function(s,k){
+    if(k===0||k===slides.length-1) return;
+    s.insertAdjacentHTML("beforeend",
+      '<div class="sfoot"><span>TJLA · Team Junior Latin America 2027</span><span>'+String(k+1).padStart(2,"0")+'</span></div>');
+  });
+
+  window.addEventListener("resize",fit);
+  window.addEventListener("orientationchange",function(){ fit(); setTimeout(fit,250); setTimeout(fit,600); });
+  if(window.visualViewport) visualViewport.addEventListener("resize",fit);
+  fit(); show(0);
+})();
+</script>
+<script>
+(function(){
+  var I18N={
+  "en":{
+    "tbpdf":"Download PDF","tbsite":"Back",
+    "s1k":"Master Plan · Partnership proposal",
+    "s1route":"FIM MotoJunior · Moto4 2027 <b>→</b> Moto3 Junior 2028 <b>→</b> Moto3 World Championship 2030",
+    "s1date":"Barcelona · July 2026",
+    "s2k":"The mission","s2h":"The bridge from Latin America to the World Championship",
+    "s2p1":"A professional team based in Barcelona, racing in the FIM MotoJunior from 2027 and reserved for talent from the <b>Mobil Moto4 Latin Cup</b>.",
+    "s2p2":"Today, Latin America's best young rider has nowhere to go after winning the Cup. <b>Team Junior Latin America</b> completes the system: it identifies talent in the region, develops it in Europe and takes it to the World Championship — always on Honda.",
+    "s2c4":"World Ch.",
+    "s2it":"One development chain — and with this team, one brand at every link.",
+    "s3k":"The precedent","s3h":"You have already done this in Asia",
+    "s3in":"The model we propose is not a theory: it is the system Honda and Dorna validated in Asia, applied to the market that still lacks it.",
+    "s3a":"Asia — The proven path",
+    "s3a1":"<b>Idemitsu Asia Talent Cup — since 2014</b>Dorna one-make cup on the Honda NSF250R (today the Idemitsu Moto4 Asia Cup).",
+    "s3a2":"<b>Honda Team Asia — the bridge team</b>The Cup's talents step up to JuniorGP, Moto3 and Moto2 within the Honda structure.",
+    "s3a3":"<b>The result: riders in the World Championship</b>Somkiat Chantra — first full-time Thai rider in MotoGP (LCR Honda Idemitsu). Taiyo Furusato and more talent in the World Championship, developed 100% within the Honda chain.",
+    "s3l":"LATAM — The missing piece",
+    "s3l1":"<b>Mobil Moto4 Latin Cup — on track since 2025</b>Official Road to MotoGP™ cup on the Honda NSF250R, with Honda Brasil as a partner since 2026.",
+    "s3l2":"<b>Team Junior Latin America — the bridge team</b>Based in Barcelona · Moto4 class of the FIM MotoJunior World Championship in 2027 · Moto3 Junior in 2028.",
+    "s3l3":"<b>The goal: the World Championship in 2030</b>The first rider developed entirely in the programme reaches the Moto3 World Championship — Latin America's own Somkiat Chantra, on a Honda.",
+    "s3bt":"We aim to follow, step by step, the path you have already proven in Asia.",
+    "s4k":"Institutional backing","s4h":"Born inside the official system",
+    "s4i1h":"Dec 2022 · Rimini","s4i1t":"Global presentation of the project at the FIM annual assembly, alongside FIM President Jorge Viegas.",
+    "s4i2h":"Mar 2023 · Termas de Río Hondo","s4i2t":"Official launch of the Cup with Carmelo Ezpeleta (CEO of Dorna Sports) and Pedro Venturo (President of FIM Latin America), at the Argentine GP.",
+    "s4i3t":"The Cup is part of Dorna's official programme: carrying this seal is a validation in itself.",
+    "s4i4h":"2026 · Honda Brasil and Mobil","s4i4t":"Honda Brasil joins as a partner of the full programme and Mobil as title sponsor. This alliance already exists — we propose to deepen it.",
+    "s4cap":"Carmelo Ezpeleta (CEO, Dorna Sports) and Antonio D'Angelo (GP3 Sports) · Termas de Río Hondo",
+    "s5k":"Track record","s5h":"18 years building the system",
+    "s5x1":"GP3 Sports is founded, promoter of the CCV — the country's leading road-racing platform.",
+    "s5g2":"Italy","s5x2":"Team GP3 AD11 is incorporated; racing in Europe since 2021.",
+    "s5g3":"Launch","s5x3":"The Cup is unveiled to the world with Dorna's CEO at the Argentine GP.",
+    "s5g4":"Double milestone","s5x4":"The regional Cup's track debut and the FMI Italian title (CIV Femminile, Martina Guarino).",
+    "s5x5":"Mobil title sponsor · Honda Brasil programme partner · GP3 takes over Argentina's CAV.",
+    "s5x6":"The team debuts in the Moto4 class of the FIM MotoJunior, based in Barcelona.",
+    "s5s1":"countries in simultaneous operation: Chile, Argentina, Brazil and Italy",
+    "s5s2":"riders developed within the GP3 system",
+    "s5s3":"riders to the FIM World Championship (WorldWCR)",
+    "s5s4":"seasons of European track operation",
+    "s6k":"The official feeder system",
+    "s6cap":"Backed by the 20 federations of FIM Latin America · part of the global FIM–Dorna Moto4 family (Asia, Europe, Great Britain, North America and Latin America)",
+    "s6f1":"factory-imported Honda NSF250R, fully owned — the Cup's official fleet",
+    "s6f2":"full-time riders from 10 countries · regulation age bracket 14 to 19",
+    "s6f3":"rounds and races in 2026, including the Brazilian GP opener in Goiânia",
+    "s6pz":"<b>The Cup's prize:</b> the champion moves up to a full-time seat with Team Junior Latin America to race the Moto4 class of the FIM MotoJunior World Championship (the evolution of the European Talent Cup), with 100% of costs covered. Separately, the Top 3 earn entry to the Red Bull MotoGP Rookies Cup Selection Event.",
+    "s7k":"Our team in Europe","s7h":"A team with World Championship experience",
+    "s7c1":"2025 FMI Italian Champion (CIV Femminile) with Team GP3 AD11 · on course for WorldWCR in 2026.",
+    "s7c2":"European debut in 2021 with the team · podiums in the Women's European Cup · qualified for the first WorldWCR season (2024).",
+    "s7c3":"Developed within the GP3 structure · full-time WorldWCR rider in 2025 with the #94.",
+    "s7c4":"First champion of the Cup (2025, 228 pts) · already licensed and racing in the Italian Speed Championship.",
+    "s7p1":"From the 2023 launch to federation registration in Europe: <b style=\"color:#fff\">the feeder system → Europe → World Championship cycle is proven on track, not promised on paper.</b>",
+    "s7p2":"The cycle is proven on track. Our commitment is to sustain it year after year.",
+    "s8k":"The moment is now","s8h":"The region is already producing world champions",
+    "s8in":"The Road to MotoGP™ feeder systems are already crowning champions — and Latin American talent sits at the centre of that wave:",
+    "s8c1c":"Colombia","s8c1t":"2024 Moto3 World Champion with an all-time record of 14 wins in a season. The first Colombian world champion in motorcycle racing.",
+    "s8c2c":"Brazil","s8c2t":"2025 Moto2 World Champion — the first Brazilian world champion. Honda has already backed him: he debuts in MotoGP 2026 with LCR Honda.",
+    "s8c3c":"Japan · The Asia model","s8c3t":"Developed in the Idemitsu Asia Talent Cup on the Honda NSF250R. 2024 Moto2 World Champion and now a MotoGP rider: the Honda talent pipeline works.",
+    "s8b":"Alonso and Moreira reached the top on individual paths, with no regional chain behind them. <b>Team Junior Latin America builds that chain so the next Latin American champion grows up on Honda from his very first race — like Ogura in Asia.</b>",
+    "s9k":"The diagnosis","s9h":"The talent exists. The structure does not.",
+    "s9r1h":"No roadmap","s9r1t":"Improvised family decisions, season by season: careers with world-level potential cut short.",
+    "s9r2h":"No multi-year cost plan","s9r2t":"Families exhaust their resources in a single European season and go back home.",
+    "s9r3h":"Constant team changes","s9r3t":"Every switch fragments technical development: data and trust are lost.",
+    "s9r4h":"Alone, far from home","s9r4t":"Without physical, mental and educational support, the rider performs below his true level.",
+    "s9x":"And one more thing",
+    "s9x1":"<b>The leak is already institutionalised:</b> the Road to MotoGP™ pyramid itself sends the Cup's Top 3 to the Red Bull Rookies Cup Selection Event — a programme that runs on KTM.",
+    "s9x2":"Without a Honda bridge team, the system hands talent trained on the NSF250R straight to the competition.",
+    "s9x3":"This project closes that door.",
+    "s10k":"The core value proposition","s10h":"One chain · One brand",
+    "s10c1s":"Latin America · ages 14–18",
+    "s10c4h":"Moto3 World Championship","s10c4s":"The goal · 2030",
+    "s10b":"<b>With Team Junior Latin America the chain becomes 100% Honda:</b> NSF250R in the feeder system, NSF250R in Moto4, Honda all the way to the World Championship's door. Every customer in the region sees their own brand alongside the rider from his first race at home to the World Championship — full continuity of product and exposure for every partner in the chain.",
+    "s11k":"The operation","s11h":"The 2027 team in Barcelona",
+    "s11s1k":"Single base","s11s1v":"One workshop facility in Barcelona: workshop, storage, telemetry, office and truck under one roof. Full asset relocation from Pesaro in progress.",
+    "s11s2k":"Class","s11s2v":"Moto4 class of the FIM MotoJunior · Honda NSF250R · 2 full-time riders drawn from the Cup (the Cup's November 2026 selection).",
+    "s11s3k":"Equipment","s11s3v":"4 motorcycles (2 race + 2 reserve), spare engines and the team's own truck.",
+    "s11s4k":"Structure","s11s4v":"9 professionals: European sporting and technical management, plus 2 mechanics and 1 dedicated data engineer per bike.",
+    "s11s5k":"Method","s11s5v":"Individual telemetry from day one — in a one-make class, <b>data is the only real competitive edge</b>.",
+    "s11cap":"Official Team Junior Latin America truck and pit box (2027 renders)",
+    "s12k":"360° development","s12h":"The rider programme",
+    "s12in":"8 months living in Spain on a full sporting scholarship — the 360° standard of Europe's elite academies, applied to Latin American talent:",
+    "s12c1h":"Sporting","s12c1t":"Tests and track time at Montmeló, Alcarràs and Calafat, sharing the circuit with their weekend European rivals.",
+    "s12c2h":"Technical","s12c2t":"Mandatory video and telemetry session with the assigned data engineer: the rider learns to read his own data.",
+    "s12c3h":"Physical","s12c3t":"Gym and endurance work with a specialist trainer and load monitoring.",
+    "s12c4h":"Mental","s12c4t":"Full-time sports psychologist: competition pressure and distance from family.",
+    "s12c5h":"Education","s12c5t":"Protected schooling plan + mandatory technical English — the language of the world championship paddock.",
+    "s12c6h":"Professional","s12c6t":"Elite-athlete routine: nutrition, punctuality, working with engineers and sponsors.",
+    "s12n":"<b>Legal guardianship solved:</b> GP3 Sport Italia S.R.L. (an EU company active since 2020) assumes legal representation of the minors during their stay in Spain — no immigration or federation barriers.",
+    "s13k":"Why now","s13h":"A market waiting for this story",
+    "s13s1n":"+18.8%","s13s1t":"growth in LATAM motorcycle sales in H1 2025 — the fastest-growing region in the world",
+    "s13s2n":"2.2M","s13s2t":"motorcycles sold in Brazil in 2025: a 22-year record and the world's 6th-largest market — with Honda its historic leader",
+    "s13s3n":"660M","s13s3t":"people in the region still without a home-grown hero in world championship motorcycle racing",
+    "s13sg":"<b>Signals of the same cycle:</b> Chile up +128.9% in mid-to-large displacement, Argentina +48.7% in registrations, Colombia +33.9% in daily use — and MotoGP™ is back in Brazil, with the Mobil Moto4 Latin Cup opening the GP's official programme in Goiânia.",
+    "s13h2":"<b>Honda sold 1.4 million motorcycles in Brazil in 2025 — ~67% market share and 7 of the country's 10 best-sellers.</b> This project turns that leadership into loyalty: the customer riding a Honda in São Paulo, Santiago or Buenos Aires will watch riders from their own region race in Europe on the same brand.",
+    "s14k":"The route to the World Championship","s14h":"Roadmap 2027–2030",
+    "s14y1h":"European debut","s14y1t":"FIM MotoJunior Moto4 with 2 riders from the Latin Cup. Barcelona base fully operational.",
+    "s14y2h":"Two classes","s14y2t":"The lead rider steps up to the Moto3 Junior World Championship; a new Cup talent joins Moto4.",
+    "s14y3h":"Consolidation","s14y3t":"Data and performance mature across both classes; the riders reach regulation age.",
+    "s14y4h":"The World Championship","s14y4t":"The first rider developed entirely in the programme debuts in the Moto3 World Championship.",
+    "s14dh":"Our Isle of Man declaration",
+    "s14d":"In 1954, Soichiro Honda declared he would race the Isle of Man TT before he had the resources to do it: “I will pour all my energy and creativity into winning”. <b>We share that philosophy: every milestone of this project was built step by step, on track. This is our declaration: 2030, the programme's first rider in the Moto3 World Championship, on a Honda. Manaus builds the motorcycles — we propose the rider factory.</b>",
+    "s15k":"Solidity and return","s15h":"Honda accelerates — it does not fund",
+    "s15lt":"A self-sustaining programme",
+    "s15b1":"<b>2027 budget: €567,910 (≈ USD 648,000)</b>Full debut season — fleet, 9-strong staff, European logistics and start-up investment included: €51,600 per race.",
+    "s15b2":"<b>Base case 100% covered</b>Talent Sport S.A. corporate structure, strategic partners on board since 2024 (Alexis Varlan and Alonso Rebolledo) and sponsors already signed. The team races with or without new partners.",
+    "s15b3":"<b>Planned scale-up 2028–2029</b>The budget grows with the step up to Moto3 Junior and two-class operation — growth driven by sporting progression, not by deficit.",
+    "s15rt":"What Honda gains as accelerator",
+    "s15r1":"<b>22 Honda NSF250R</b> — across the full ecosystem: 18 in the Cup's official fleet + 4 in the European team — the region's largest NSF250R platform.",
+    "s15r2":"<b>Leak-free exposure</b> — one single brand from the first race in LATAM to the World Championship, activated through the region's dealer network.",
+    "s15r3":"<b>Content and reporting</b> — trilingual ES/EN/PT press office, weekly co-branded content and a return-on-partnership report every season.",
+    "s15r4":"<b>Talent pipeline</b> — direct visibility of the development of Latin America's future Honda riders, in the style of the Asia programme.",
+    "s16l1":"The bridge exists. It races on Honda.","s16l2":"Let's make it official.",
+    "s16ah":"A · Technical partner","s16at":"Preferential terms on the NSF250R fleet, spare parts and HRC technical support for the bridge team.",
+    "s16bh":"B · Brand endorsement","s16bt":"Official team naming with the Honda brand, in the style of the Idemitsu model in Asia.",
+    "s16ch":"C · HRC pipeline","s16ct":"The programme joins Honda's talent system: priority visibility of rider development and first option in dialogue on the riders.",
+    "s16it":"Three independent, scalable tiers — the partnership can start at A. We invite you to see the work where it happens: in the pit box and on track.",
+    "s16nx":"<b>Next step:</b> a technical meeting ahead of the Cup's November 2026 selection — where the 2027 riders are decided."
+  },
+  "pt":{
+    "tbpdf":"Baixar PDF","tbsite":"Voltar",
+    "s1k":"Master Plan · Proposta de parceria",
+    "s1route":"FIM MotoJunior · Moto4 2027 <b>→</b> Moto3 Junior 2028 <b>→</b> Mundial de Moto3 2030",
+    "s1date":"Barcelona · Julho de 2026",
+    "s2k":"A missão","s2h":"A ponte entre a América Latina e o Mundial",
+    "s2p1":"Uma equipe profissional com base em Barcelona que disputa o FIM MotoJunior a partir de 2027, reservada ao talento da <b>Mobil Moto4 Latin Cup</b>.",
+    "s2p2":"Hoje, o melhor piloto jovem da América Latina não tem para onde ir quando vence a Copa. O <b>Team Junior Latin America</b> completa o sistema: identifica o talento na região, desenvolve na Europa e leva ao Mundial — sempre sobre uma Honda.",
+    "s2c4":"Mundial",
+    "s2it":"Uma única cadeia de desenvolvimento — e, com esta equipe, uma única marca em cada elo.",
+    "s3k":"O precedente","s3h":"Vocês já fizeram isso na Ásia",
+    "s3in":"O modelo que propomos não é teoria: é o sistema que Honda e Dorna validaram na Ásia, aplicado ao mercado que ainda não o tem.",
+    "s3a":"Ásia — O caminho percorrido",
+    "s3a1":"<b>Idemitsu Asia Talent Cup — desde 2014</b>Copa monomarca da Dorna com a Honda NSF250R (hoje Idemitsu Moto4 Asia Cup).",
+    "s3a2":"<b>Honda Team Asia — a equipe-ponte</b>Os talentos da Copa sobem para JuniorGP, Moto3 e Moto2 dentro da estrutura Honda.",
+    "s3a3":"<b>Resultado: pilotos no Mundial</b>Somkiat Chantra — primeiro tailandês em tempo integral na MotoGP (LCR Honda Idemitsu). Taiyo Furusato e outros talentos no Mundial, formados 100% na cadeia Honda.",
+    "s3l":"LATAM — A peça que falta",
+    "s3l1":"<b>Mobil Moto4 Latin Cup — na pista desde 2025</b>Copa oficial do Road to MotoGP™ com a Honda NSF250R e a Honda Brasil como parceira desde 2026.",
+    "s3l2":"<b>Team Junior Latin America — a equipe-ponte</b>Base em Barcelona · Moto4 do FIM MotoJunior World Championship em 2027 · Moto3 Junior em 2028.",
+    "s3l3":"<b>Objetivo: o Mundial em 2030</b>O primeiro piloto formado integralmente no programa chega ao Mundial de Moto3 — o Somkiat Chantra latino-americano, sobre uma Honda.",
+    "s3bt":"Queremos percorrer, passo a passo, o caminho que vocês já comprovaram na Ásia.",
+    "s4k":"Respaldo institucional","s4h":"Nascidos dentro do sistema oficial",
+    "s4i1h":"Dez. 2022 · Rimini","s4i1t":"Apresentação mundial do projeto na assembleia anual da FIM, ao lado do presidente Jorge Viegas.",
+    "s4i2h":"Mar. 2023 · Termas de Río Hondo","s4i2t":"Lançamento oficial da Copa ao lado de Carmelo Ezpeleta (CEO da Dorna Sports) e Pedro Venturo (presidente da FIM Latin America), no GP da Argentina.",
+    "s4i3t":"A Copa integra o programa oficial da Dorna: carregar esse selo já é, por si só, uma validação.",
+    "s4i4h":"2026 · Honda Brasil e Mobil","s4i4t":"A Honda Brasil entra como parceira do programa completo e a Mobil como title sponsor. Essa aliança já existe — propomos aprofundá-la.",
+    "s4cap":"Carmelo Ezpeleta (CEO, Dorna Sports) e Antonio D'Angelo (GP3 Sports) · Termas de Río Hondo",
+    "s5k":"Trajetória","s5h":"18 anos construindo o sistema",
+    "s5x1":"Nasce a GP3 Sports, promotora do CCV — principal plataforma de motovelocidade do país.",
+    "s5g2":"Itália","s5x2":"Constitui-se o Team GP3 AD11; em competição europeia desde 2021.",
+    "s5g3":"Lançamento","s5x3":"A Copa é apresentada ao mundo ao lado do CEO da Dorna, no GP da Argentina.",
+    "s5g4":"Marco duplo","s5x4":"Estreia da Copa regional na pista e título Italiano FMI (CIV Femminile, Martina Guarino).",
+    "s5x5":"Mobil title sponsor · Honda Brasil parceira do programa · GP3 assume o CAV Argentina.",
+    "s5x6":"Estreia da equipe na categoria Moto4 do FIM MotoJunior, com base em Barcelona.",
+    "s5s1":"países em operação simultânea: Chile, Argentina, Brasil e Itália",
+    "s5s2":"pilotos formados no sistema GP3",
+    "s5s3":"pilotos no Mundial FIM (WorldWCR)",
+    "s5s4":"temporadas de operação europeia na pista",
+    "s6k":"O celeiro oficial de talentos",
+    "s6cap":"Chancelada pelas 20 federações da FIM Latin America · família mundial Moto4 da FIM e da Dorna (Ásia, Europa, Grã-Bretanha, América do Norte e América Latina)",
+    "s6f1":"Honda NSF250R próprias, importadas de fábrica — frota oficial da Copa",
+    "s6f2":"pilotos titulares de 10 países · categoria regulamentar de 14 a 19 anos",
+    "s6f3":"etapas e corridas em 2026, incluindo a abertura do GP do Brasil em Goiânia",
+    "s6pz":"<b>O prêmio da Copa:</b> o campeão sobe como titular ao Team Junior Latin America para disputar a categoria Moto4 do FIM MotoJunior World Championship (a evolução da European Talent Cup), com 100% dos custos cobertos. E, à parte, o Top 3 garante vaga no Selection Event da Red Bull MotoGP Rookies Cup.",
+    "s7k":"Nossa equipe na Europa","s7h":"Uma equipe com experiência de Mundial",
+    "s7c1":"Campeã Italiana FMI 2025 (CIV Femminile) com o Team GP3 AD11 · projetada para o Mundial WorldWCR 2026.",
+    "s7c2":"Estreia europeia em 2021 com a equipe · pódios na Women's European Cup · classificada ao primeiro Mundial WorldWCR (2024).",
+    "s7c3":"Formada na estrutura GP3 · titular do Mundial WorldWCR 2025 com o #94.",
+    "s7c4":"Primeiro campeão da Copa (2025, 228 pts) · hoje já registrado e competindo no Campeonato Italiano de Velocidade.",
+    "s7p1":"Do lançamento de 2023 ao registro federativo na Europa: <b style=\"color:#fff\">o ciclo base → Europa → Mundial está comprovado na pista, não prometido no papel.</b>",
+    "s7p2":"O ciclo está comprovado na pista. Nosso compromisso é sustentá-lo ano após ano.",
+    "s8k":"A hora é agora","s8h":"A região já produz campeões mundiais",
+    "s8in":"Os celeiros de talentos do Road to MotoGP™ já coroam campeões — e o talento latino-americano está no centro dessa onda:",
+    "s8c1c":"Colômbia","s8c1t":"Campeão Mundial de Moto3 2024, com recorde histórico de 14 vitórias em uma temporada. O primeiro campeão mundial colombiano da motovelocidade.",
+    "s8c2c":"Brasil","s8c2t":"Campeão Mundial de Moto2 2025 — o primeiro campeão mundial brasileiro. A Honda já apostou nele: estreia na MotoGP em 2026 com a LCR Honda.",
+    "s8c3c":"Japão · Modelo Ásia","s8c3t":"Formado na Idemitsu Asia Talent Cup sobre a Honda NSF250R. Campeão Mundial de Moto2 2024 e hoje piloto de MotoGP: a base Honda funciona.",
+    "s8b":"Alonso e Moreira chegaram ao topo por caminhos individuais, sem uma cadeia regional que os acompanhasse. <b>O Team Junior Latin America constrói essa cadeia para que o próximo campeão latino-americano se forme sobre uma Honda desde a primeira corrida — como Ogura na Ásia.</b>",
+    "s9k":"O diagnóstico","s9h":"O talento existe. Falta a estrutura.",
+    "s9r1h":"Sem plano de carreira","s9r1t":"Decisões familiares improvisadas, temporada a temporada: carreiras com potencial de Mundial que se interrompem.",
+    "s9r2h":"Custos sem plano plurianual","s9r2t":"As famílias esgotam os recursos em um único ano na Europa e voltam para casa.",
+    "s9r3h":"Trocas constantes de equipe","s9r3t":"Cada troca fragmenta o desenvolvimento técnico: dados e confiança se perdem.",
+    "s9r4h":"Sozinho, longe de casa","s9r4t":"Sem preparação física, mental e educacional, o piloto rende menos do que vale.",
+    "s9x":"E tem mais",
+    "s9x1":"<b>A fuga já está institucionalizada:</b> a própria pirâmide do Road to MotoGP™ envia o Top 3 da Copa ao Selection Event da Red Bull Rookies Cup — um programa que corre sobre KTM.",
+    "s9x2":"Sem uma equipe-ponte Honda, o sistema entrega à concorrência talento formado sobre a NSF250R.",
+    "s9x3":"Este projeto fecha essa porta.",
+    "s10k":"A proposta de valor central","s10h":"Uma só cadeia · Uma só marca",
+    "s10c1s":"América Latina · 14–18 anos",
+    "s10c4h":"Mundial de Moto3","s10c4s":"O objetivo · 2030",
+    "s10b":"<b>Com o Team Junior Latin America, a cadeia fica 100% Honda:</b> NSF250R no celeiro de talentos, NSF250R na Moto4, Honda até a porta do Mundial. Cada cliente da região vê a própria marca acompanhar o piloto da primeira corrida em casa até o Mundial — continuidade total de produto e de exposição para cada parceiro da cadeia.",
+    "s11k":"A operação","s11h":"A equipe 2027 em Barcelona",
+    "s11s1k":"Base única","s11s1v":"Galpão integrado em Barcelona: oficina, almoxarifado, telemetria, escritório e caminhão sob o mesmo teto. Transferência completa dos ativos de Pesaro em andamento.",
+    "s11s2k":"Categoria","s11s2v":"Moto4 do FIM MotoJunior · Honda NSF250R · 2 pilotos titulares vindos da Copa (Seletiva de novembro de 2026).",
+    "s11s3k":"Material","s11s3v":"4 motos (2 titulares + 2 reservas), motores sobressalentes e caminhão próprio da equipe.",
+    "s11s4k":"Estrutura","s11s4v":"9 profissionais: direção esportiva e técnica europeia, 2 mecânicos e 1 engenheiro de dados/telemetria dedicados por moto.",
+    "s11s5k":"Método","s11s5v":"Telemetria individual desde o primeiro dia — em uma categoria monomarca, <b>os dados são a única vantagem competitiva real</b>.",
+    "s11cap":"Caminhão e box oficiais do Team Junior Latin America (renders 2027)",
+    "s12k":"Desenvolvimento integral","s12h":"O programa do piloto",
+    "s12in":"8 meses morando na Espanha com bolsa esportiva integral — o padrão 360° das academias de elite europeias, aplicado ao talento latino-americano:",
+    "s12c1h":"Esportivo","s12c1t":"Testes e treinos em Montmeló, Alcarràs e Calafat, dividindo a pista com os rivais europeus do fim de semana.",
+    "s12c2h":"Técnico","s12c2t":"Sessão obrigatória de vídeo e telemetria com o engenheiro de dados designado: o piloto aprende a ler os próprios dados.",
+    "s12c3h":"Físico","s12c3t":"Academia e resistência com preparador especializado e monitoramento de cargas.",
+    "s12c4h":"Mental","s12c4t":"Psicólogo esportivo permanente: pressão da competição e distância da família.",
+    "s12c5h":"Educacional","s12c5t":"Plano escolar protegido + inglês técnico obrigatório, o idioma do paddock mundial.",
+    "s12c6h":"Profissional","s12c6t":"Rotina de atleta de elite: nutrição, pontualidade, relação com engenheiros e patrocinadores.",
+    "s12n":"<b>Tutela legal resolvida:</b> a GP3 Sport Italia S.R.L. (sociedade da UE ativa desde 2020) assume a representação legal dos menores durante a estada na Espanha — sem barreiras migratórias nem federativas.",
+    "s13k":"Por que agora","s13h":"O mercado que espera por essa história",
+    "s13s1n":"+18,8%","s13s1t":"crescimento nas vendas de motos na LATAM no 1º semestre de 2025 — a região que mais cresce no mundo",
+    "s13s2n":"2,2 M","s13s2t":"motos vendidas no Brasil em 2025: recorde em 22 anos e 6º mercado mundial — com a Honda como líder histórica",
+    "s13s3n":"660 M","s13s3t":"pessoas na região que ainda não têm um ídolo próprio no Mundial de motovelocidade",
+    "s13sg":"<b>Sinais do mesmo ciclo:</b> o Chile cresce +128,9% em média-alta cilindrada, a Argentina +48,7% em emplacamentos, a Colômbia +33,9% em uso diário — e a MotoGP™ voltou ao Brasil, com a Mobil Moto4 Latin Cup abrindo o programa oficial do GP em Goiânia.",
+    "s13h2":"<b>A Honda vendeu 1,4 milhão de motos no Brasil em 2025 — ~67% do mercado e 7 das 10 mais vendidas do país.</b> Este projeto converte essa liderança em lealdade: o cliente que pilota uma Honda em São Paulo, Santiago ou Buenos Aires verá os pilotos da sua região correr na Europa com a mesma marca.",
+    "s14k":"A rota para o Mundial","s14h":"Roteiro 2027–2030",
+    "s14y1h":"Estreia europeia","s14y1t":"Moto4 do FIM MotoJunior com 2 pilotos da Latin Cup. Base de Barcelona plenamente operacional.",
+    "s14y2h":"Categoria dupla","s14y2t":"O piloto líder sobe ao Moto3 Junior World Championship; um novo talento da Copa entra na Moto4.",
+    "s14y3h":"Consolidação","s14y3t":"Maturação de dados e desempenho nas duas categorias; os pilotos atingem a idade regulamentar.",
+    "s14y4h":"O Mundial","s14y4t":"O primeiro piloto formado integralmente no programa estreia no Mundial de Moto3.",
+    "s14dh":"Nossa declaração da Ilha de Man",
+    "s14d":"Em 1954, Soichiro Honda declarou que disputaria o TT da Ilha de Man antes mesmo de ter os recursos para isso: “vou colocar toda a minha energia e criatividade para vencer”. <b>Compartilhamos essa filosofia: cada marco deste projeto foi construído passo a passo, na pista. Esta é a nossa declaração: 2030, o primeiro piloto do programa no Mundial de Moto3, sobre uma Honda. Manaus fabrica as motos — nós propomos a fábrica de pilotos.</b>",
+    "s15k":"Solidez e retorno","s15h":"A Honda acelera, não financia",
+    "s15lt":"Um programa que se sustenta sozinho",
+    "s15b1":"<b>Orçamento 2027: €567.910 (≈ USD 648.000)</b>Temporada de estreia completa — frota, equipe de 9 profissionais, logística europeia e investimento inicial incluído: €51.600 por corrida.",
+    "s15b2":"<b>Cenário-base 100% coberto</b>Estrutura societária da Talent Sport S.A., sócios estratégicos incorporados em 2024 (Alexis Varlan e Alonso Rebolledo) e patrocinadores já contratados. A equipe vai à pista com ou sem novos parceiros.",
+    "s15b3":"<b>Escalonamento planejado 2028–2029</b>O orçamento cresce com a subida ao Moto3 Junior e a operação em categoria dupla — crescimento por progressão esportiva, não por déficit.",
+    "s15rt":"O que a Honda recebe como aceleradora",
+    "s15r1":"<b>22 Honda NSF250R</b> — no ecossistema completo: 18 da frota oficial da Copa + 4 da equipe europeia — a maior plataforma NSF250R da região.",
+    "s15r2":"<b>Exposição sem fugas</b> — uma só marca da primeira corrida na LATAM até o Mundial, ativável com a rede de concessionárias da região.",
+    "s15r3":"<b>Conteúdo e reporting</b> — assessoria de imprensa trilíngue ES/EN/PT, conteúdo co-branded semanal e relatório de retorno por temporada.",
+    "s15r4":"<b>Pipeline de talentos</b> — visibilidade direta do desenvolvimento dos futuros pilotos Honda da América Latina, nos moldes do programa da Ásia.",
+    "s16l1":"A ponte já existe — e corre de Honda.","s16l2":"Vamos oficializá-la.",
+    "s16ah":"A · Parceiro técnico","s16at":"Condições preferenciais de frota NSF250R, peças de reposição e suporte técnico HRC para a equipe-ponte.",
+    "s16bh":"B · Endosso de marca","s16bt":"Denominação oficial da equipe com a marca Honda, nos moldes do modelo Idemitsu na Ásia.",
+    "s16ch":"C · Pipeline HRC","s16ct":"Integração do programa ao sistema de talentos Honda: visibilidade prioritária do desenvolvimento e diálogo preferencial sobre os pilotos.",
+    "s16it":"Três níveis independentes e escaláveis — a parceria pode começar pelo A. Convidamos vocês a ver o trabalho onde ele acontece: no box e na pista.",
+    "s16nx":"<b>Próximo passo:</b> reunião técnica antes da Seletiva de novembro de 2026 — é lá que se definem os pilotos de 2027."
+  }};
+  var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  els.forEach(function(el){ el.setAttribute('data-es', el.innerHTML); });
+  var NAMES={es:'Español',en:'English',pt:'Português'};
+  var dd=document.getElementById('langdd'), btn=document.getElementById('langbtn'),
+      menu=document.getElementById('langmenu'), cur=document.getElementById('langcur');
+  function setLang(l){
+    document.documentElement.lang=l;
+    els.forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      var v=(l==='es')?el.getAttribute('data-es'):((I18N[l]&&I18N[l][k])!=null?I18N[l][k]:el.getAttribute('data-es'));
+      el.innerHTML=v;
+    });
+    if(cur) cur.textContent=NAMES[l]||'Español';
+    [].slice.call(menu.querySelectorAll('button')).forEach(function(b){
+      b.classList.toggle('on', b.getAttribute('data-lng')===l);
+    });
+    try{sessionStorage.setItem('m4lang',l);}catch(e){}
+  }
+  btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('open');});
+  [].slice.call(menu.querySelectorAll('button')).forEach(function(b){
+    b.addEventListener('click',function(e){e.stopPropagation();setLang(b.getAttribute('data-lng'));dd.classList.remove('open');});
+  });
+  document.addEventListener('click',function(){ dd.classList.remove('open'); });
+  var saved='es'; try{saved=sessionStorage.getItem('m4lang')||'es';}catch(e){}
+  setLang(saved);
+  window.M4setLang=setLang;
+})();
+</script>
+</body>
+</html>

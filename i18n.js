@@ -86,6 +86,8 @@ var D = {
 /* ===== MEDIA ===== */
 "Galería oficial de fotos del campeonato.":{en:"Official photo gallery of the championship.",pt:"Galeria oficial de fotos do campeonato."},
 "Galería":{en:"Gallery",pt:"Galeria"},
+"Fotografías de Interlagos":{en:"Interlagos Photos",pt:"Fotos de Interlagos"},
+"Fotografías de San Nicolás":{en:"San Nicolás Photos",pt:"Fotos de San Nicolás"},
 "Cargando fotos…":{en:"Loading photos…",pt:"Carregando fotos…"},
 "Todos":{en:"All",pt:"Todos"},
 "Generales":{en:"General",pt:"Gerais"},

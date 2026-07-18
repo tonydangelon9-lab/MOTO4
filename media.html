@@ -111,6 +111,10 @@
   .mfiltros button{flex:0 0 auto;font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.05em;
     color:#e9d8ef;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
   .mfiltros button.act{background:var(--grad);color:#000;border-color:transparent;font-weight:700}
+  /* cuadros por evento */
+  .evbox{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:24px 18px 18px;margin-bottom:28px;overflow:hidden}
+  .evbox::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--grad)}
+  .evtit{font-family:var(--dispx);text-transform:uppercase;font-size:clamp(18px,3vw,24px);margin:4px 0 16px;color:#fff}
   /* grilla */
   .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
   @media(max-width:760px){.mgrid{grid-template-columns:repeat(2,1fr)}}
@@ -230,8 +234,16 @@ fbq("track","PageView");
 <section><div class="wrap">
   <h2 class="msec">Galería</h2>
   <div class="mfiltros" id="mfiltros"></div>
-  <div class="mgrid" id="mgrid"></div>
-  <div class="mmsg" id="mmsg">Cargando fotos…</div>
+  <div class="evbox">
+    <h3 class="evtit">Fotografías de Interlagos</h3>
+    <div class="mgrid" id="mgrid-inter"></div>
+    <div class="mmsg" id="mmsg-inter">Cargando fotos…</div>
+  </div>
+  <div class="evbox">
+    <h3 class="evtit">Fotografías de San Nicolás</h3>
+    <div class="mgrid" id="mgrid-sn"></div>
+    <div class="mmsg" id="mmsg-sn">Cargando fotos…</div>
+  </div>
 </div></section><div class="smarquee" aria-label="Sponsors oficiales">
   <div class="strack">
     <a href="https://www.moovelub.com" target="_blank" rel="noopener"><img class="big" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></a>
@@ -264,7 +276,7 @@ fbq("track","PageView");
   <div class="langs">Español · English · Português</div>
 </div></footer><script>var b=document.getElementById("burger"),m=document.getElementById("menu");if(b){b.addEventListener("click",function(){m.classList.toggle("open");});m.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){m.classList.remove("open");});});}</script>
 
-<div class="mlb" id="mlb"><button class="mx" id="mx">&#10005;</button></div>
+<div class="mlb" id="mlb"><button class="mx" id="mx">&#10005;</button><img id="mlbimg" alt=""></div>
 <script>
 /* ============================================================
    GALERIA MEDIA — lee la carpeta MEDIA/ del repo automaticamente.
@@ -274,32 +286,41 @@ fbq("track","PageView");
       Ej:  74-podio-interlagos.jpg  -> va a Kensei Matsudaira
            99-largada.jpg           -> va a Cristobal Carreno
       Sin numero (ej: paddock-general.jpg) -> va a "Generales".
+   CARPETAS POR EVENTO:
+      MEDIA/ y MEDIA-fotos-listas/  -> cuadro "Fotografías de Interlagos"
+      MEDIA-san-nicolas/            -> cuadro "Fotografías de San Nicolás"
    ============================================================ */
-var REPO_DIRS = ["MEDIA","MEDIA-fotos-listas"]; // la pagina lee ambas carpetas
+var EVENTOS = [
+  { dirs:["MEDIA","MEDIA-fotos-listas"], grid:"mgrid-inter", msg:"mmsg-inter" }, // Interlagos
+  { dirs:["MEDIA-san-nicolas"],          grid:"mgrid-sn",    msg:"mmsg-sn"    }  // San Nicolás
+];
 var PILOTOS = {"74":"Kensei Matsudaira","62":"Alberto Enríquez","34":"Andoni Domínguez","10":"Mahdi Salem",
  "64":"Ulises Weyrauch","99":"Cristóbal Carreño","11":"Santiago Gossa","46":"Nicolás Torrez",
  "42":"Murilo Gomes","26":"Santiago Vogel","91":"Aidan Hancock","19":"Lorenzo Tiberi",
  "69":"Anyelo Perdomo","16":"Santiago Bravo","8":"Matías Alarcón","15":"Gael Olivo"};
 (function(){
-  var grid=document.getElementById("mgrid"), msg=document.getElementById("mmsg"), fil=document.getElementById("mfiltros");
-  var fotos=[], filtro="todos";
+  var fil=document.getElementById("mfiltros");
+  var filtro="todos";
   function esImg(n){ return /\.(jpg|jpeg|png|webp)$/i.test(n); }
   function grupo(n){ var m=n.match(/^(\d{1,3})-/); return (m && PILOTOS[m[1]]) ? m[1] : "gen"; }
   function pintar(){
-    var lista = fotos.filter(function(f){ return filtro==="todos" || f.g===filtro; });
-    grid.innerHTML = lista.map(function(f){
-      return '<a href="#" data-src="'+f.url+'"><img loading="lazy" src="'+f.url+'" alt=""></a>';
-    }).join("");
-    msg.style.display = lista.length ? "none" : "block";
-    msg.textContent = lista.length ? "" : "Aún no hay fotos en esta categoría.";
-    grid.querySelectorAll("a").forEach(function(a){
-      a.addEventListener("click",function(e){ e.preventDefault();
-        document.getElementById("mlbimg").src=a.getAttribute("data-src");
-        document.getElementById("mlb").classList.add("open"); });
+    EVENTOS.forEach(function(ev){
+      var grid=document.getElementById(ev.grid), msg=document.getElementById(ev.msg);
+      var lista = ev.fotos.filter(function(f){ return filtro==="todos" || f.g===filtro; });
+      grid.innerHTML = lista.map(function(f){
+        return '<a href="#" data-src="'+f.url+'"><img loading="lazy" src="'+f.url+'" alt=""></a>';
+      }).join("");
+      msg.style.display = lista.length ? "none" : "block";
+      msg.textContent = lista.length ? "" : "Aún no hay fotos en esta categoría.";
+      grid.querySelectorAll("a").forEach(function(a){
+        a.addEventListener("click",function(e){ e.preventDefault();
+          document.getElementById("mlbimg").src=a.getAttribute("data-src");
+          document.getElementById("mlb").classList.add("open"); });
+      });
     });
   }
   function chips(){
-    var grupos={}; fotos.forEach(function(f){ grupos[f.g]=true; });
+    var grupos={}; EVENTOS.forEach(function(ev){ ev.fotos.forEach(function(f){ grupos[f.g]=true; }); });
     var html='<button class="act" data-g="todos">Todos</button>';
     Object.keys(PILOTOS).forEach(function(n){ if(grupos[n]) html+='<button data-g="'+n+'">#'+n+' '+PILOTOS[n]+'</button>'; });
     if(grupos["gen"]) html+='<button data-g="gen">Generales</button>';
@@ -311,18 +332,22 @@ var PILOTOS = {"74":"Kensei Matsudaira","62":"Alberto Enríquez","34":"Andoni Do
       });
     });
   }
-  Promise.all(REPO_DIRS.map(function(dir){
-    return fetch("https://api.github.com/repos/tonydangelon9-lab/MOTO4/contents/"+dir)
-      .then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; });
-  })).then(function(res){
-    var list = [].concat.apply([], res);
-    fotos = list.filter(function(f){ return f.type==="file" && esImg(f.name); })
-                .map(function(f){ return {url:f.download_url, g:grupo(f.name), n:f.name}; })
-                .sort(function(a,b){ return a.n<b.n?-1:1; });
-    if(!fotos.length){ msg.textContent="Próximamente: las fotos del campeonato."; return; }
+  Promise.all(EVENTOS.map(function(ev){
+    return Promise.all(ev.dirs.map(function(dir){
+      return fetch("https://api.github.com/repos/tonydangelon9-lab/MOTO4/contents/"+dir)
+        .then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; });
+    })).then(function(res){
+      var list = [].concat.apply([], res);
+      ev.fotos = list.filter(function(f){ return f.type==="file" && esImg(f.name); })
+                     .map(function(f){ return {url:f.download_url, g:grupo(f.name), n:f.name}; })
+                     .sort(function(a,b){ return a.n<b.n?-1:1; });
+    });
+  })).then(function(){
+    var total = EVENTOS.reduce(function(s,ev){ return s+ev.fotos.length; },0);
+    if(!total){ EVENTOS.forEach(function(ev){ document.getElementById(ev.msg).textContent="Próximamente: las fotos del campeonato."; }); return; }
     chips(); pintar();
     if(window.m4Apply) window.m4Apply(document.body);
-  }).catch(function(){ msg.textContent="Próximamente: las fotos del campeonato."; });
+  }).catch(function(){ EVENTOS.forEach(function(ev){ document.getElementById(ev.msg).textContent="Próximamente: las fotos del campeonato."; }); });
   document.getElementById("mx").addEventListener("click",function(){ document.getElementById("mlb").classList.remove("open"); });
   document.getElementById("mlb").addEventListener("click",function(e){ if(e.target.id==="mlb") document.getElementById("mlb").classList.remove("open"); });
   document.addEventListener("keydown",function(e){ if(e.key==="Escape") document.getElementById("mlb").classList.remove("open"); });

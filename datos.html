@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<title>Mobil Moto4 Latin Cup · Datos</title>
+<meta name="description" content="Panel de datos y audiencia del ecosistema Moto4 Latin Cup / GP3 Sports.">
+<style>
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+  @font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+  :root{--white:#fff;--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;
+    --line:#2a0f30;--muted:#b79bc0;--verde:#4ade80;--rojo:#f87171;
+    --grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+    --grad-dark:linear-gradient(135deg,#1a0620 0%,#3a0d47 45%,#000 100%);
+    --disp:"MGP Display","Arial Narrow",Arial,sans-serif;--dispx:"MGP Display Exp","MGP Display",sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{background:var(--bg);color:var(--white);font-family:var(--body);line-height:1.55;overflow-x:hidden}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  a{color:inherit;text-decoration:none}
+  .btn{display:inline-block;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-weight:700;
+    font-size:15px;color:#fff;background:var(--grad);border:none;border-radius:999px;padding:12px 26px;cursor:pointer}
+  nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:12px}
+  nav img.logo{height:52px;display:block}
+  .navlinks{display:flex;gap:16px;align-items:center}
+  .navlinks a.lnk{font-family:var(--disp);text-transform:uppercase;letter-spacing:.03em;font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .navlinks a.lnk:hover,.navlinks a.lnk.active{color:#fff}
+  .navlinks a.lnk.active{position:relative}
+  .navlinks a.lnk.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--grad)}
+  nav .btn{padding:8px 15px;font-size:12px;white-space:nowrap}
+  .burger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+  .nav-mobil{height:20px;width:auto;display:block}
+  .nm-mob{display:none}
+  @media(max-width:1080px){
+    .navlinks{position:fixed;inset:70px 0 auto 0;background:rgba(0,0,0,.97);flex-direction:column;gap:0;
+      border-bottom:1px solid var(--line);padding:10px 0;transform:translateY(-130%);transition:transform .25s;z-index:49}
+    .navlinks.open{transform:translateY(0)}
+    .navlinks a.lnk{padding:14px 22px;width:100%;text-align:center}
+    .navlinks .btn{margin:10px auto} .burger{display:block}
+    .nm-desk{display:none}.nm-mob{display:block;height:17px;margin-left:auto;margin-right:12px}
+  }
+  /* ===== CANDADO ===== */
+  .gate{position:fixed;inset:0;background:var(--grad-dark);z-index:200;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+  .gate .box{max-width:420px;width:100%}
+  .gate img{height:90px;margin-bottom:18px}
+  .gate h2{font-family:var(--dispx);text-transform:uppercase;font-size:26px;margin-bottom:6px}
+  .gate p{color:#e9d8ef;font-size:14px;margin-bottom:18px}
+  .gate input{width:100%;padding:14px 18px;border-radius:12px;border:1px solid var(--purple);background:rgba(0,0,0,.5);
+    color:#fff;font-size:17px;text-align:center;letter-spacing:.2em;text-transform:uppercase}
+  .gate input:focus{outline:none;box-shadow:0 0 0 4px rgba(214,61,252,.3)}
+  .gate .btn{margin-top:14px;width:100%}
+  .gate .err{color:#ff8a8a;font-size:13px;margin-top:10px;min-height:18px}
+  /* ===== CABECERA ===== */
+  .phead{background:var(--grad-dark);text-align:center;padding:46px 0 30px;position:relative;overflow:hidden}
+  .phead::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 90% at 50% 0%,rgba(214,61,252,.28),transparent 70%)}
+  .phead .wrap{position:relative;z-index:1}
+  .phead .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:12px;color:var(--pink)}
+  .phead h1{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:clamp(30px,6vw,54px);margin-top:8px;line-height:1}
+  .phead p{color:#e9d8ef;margin-top:10px;font-size:15px}
+  .lastup{display:inline-block;margin-top:14px;padding:8px 20px;border:1px solid var(--purple);border-radius:999px;
+    background:rgba(20,2,24,.72);font-family:var(--disp);text-transform:uppercase;letter-spacing:.06em;font-size:13px;color:var(--pink)}
+  .lastup b{color:#fff}
+  section{padding:46px 0}
+  .msec{font-family:var(--dispx);text-transform:uppercase;font-size:22px;color:#fff;margin:6px 0 16px}
+  /* ===== TARJETAS ===== */
+  .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:900px){.kgrid{grid-template-columns:repeat(2,1fr)}}
+  .kcard{position:relative;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px 18px;overflow:hidden}
+  .kcard::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--grad)}
+  .kcard .lbl{font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--muted)}
+  .kcard .val{font-family:var(--dispx);font-size:clamp(26px,3.4vw,38px);line-height:1.1;margin-top:6px}
+  .kcard .sub{font-size:12px;color:var(--muted);margin-top:4px}
+  .kcard .delta{font-size:12px;margin-top:4px;font-weight:700}
+  .delta.up{color:var(--verde)} .delta.down{color:var(--rojo)} .delta.flat{color:var(--muted)}
+  /* ===== GRAFICO / TABLA ===== */
+  .panelbox{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:20px;margin-top:14px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{padding:10px 8px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;font-size:11.5px;color:var(--pink)}
+  .tscroll{overflow-x:auto}
+  .metod{border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:12px;background:var(--surface2);padding:16px 18px;font-size:13.5px;color:#d9c3e0;margin-top:18px}
+  footer{border-top:1px solid var(--line);padding:34px 0 30px;text-align:center;color:var(--muted);font-size:13px;background:#000}
+  footer .flogo{height:80px;margin-bottom:8px}
+  .toolbar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+  .btn.ghost{background:rgba(0,0,0,.35);border:2px solid var(--purple);color:var(--pink)}
+  @media print{
+    nav,.toolbar,footer,.gate{display:none !important}
+    body{background:#fff;color:#000}
+    .kcard,.panelbox,.metod{border-color:#ccc;background:#fff;color:#000}
+    .kcard .val{color:#000} .phead{background:#fff} .phead h1,.phead .k,.phead p{color:#000}
+    .lastup{color:#000;border-color:#999;background:#fff} .lastup b{color:#000}
+    th,td{border-color:#ddd;color:#000} .msec{color:#000}
+  }
+</style>
+</head>
+<body>
+<!-- CANDADO -->
+<div class="gate" id="gate">
+  <div class="box">
+    <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
+    <h2>Panel de Datos</h2>
+    <p data-i18n>Acceso reservado. Ingresa el código para continuar.</p>
+    <input id="gcode" type="text" autocomplete="off" placeholder="CÓDIGO">
+    <button class="btn" id="gbtn" data-i18n>Entrar</button>
+    <div class="err" id="gerr"></div>
+  </div>
+</div>
+
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk" href="noticias.html">Noticias</a><a class="lnk" href="presentaciones.html">Presentación</a><a class="lnk" href="media.html">Media</a><a class="lnk active" href="datos.html">Datos</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav>
+
+<header class="phead"><div class="wrap">
+  <div class="k">Mobil Moto4 Latin Cup · GP3 Sports</div>
+  <h1 data-i18n>Panel de Datos</h1>
+  <p data-i18n>Audiencia y crecimiento del ecosistema, medidos con el mismo método cada día.</p>
+  <div class="lastup"><span data-i18n>Última actualización</span>: <b id="lastdate">—</b></div>
+</div></header>
+
+<section><div class="wrap">
+  <h2 class="msec" data-i18n>Resumen del ecosistema</h2>
+  <div class="kgrid" id="resumen"></div>
+  <div class="toolbar">
+    <button class="btn ghost" onclick="window.print()" data-i18n>Descargar PDF</button>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="msec" data-i18n>Evolución</h2>
+  <div class="panelbox"><canvas id="chart1" height="110"></canvas></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="msec" data-i18n>Todos los canales</h2>
+  <div class="panelbox tscroll"><table id="tabla"></table></div>
+  <div class="metod" id="metod">
+    <b data-i18n>Metodología:</b> <span data-i18n>los valores provienen de los perfiles públicos y las cuentas administradas, leídos con el mismo método en cada corte. Los números se muestran tal como los publica cada plataforma (redondeados). Las métricas de alcance y visualizaciones se incorporarán al conectar la API de Meta (fase 2). Serie histórica sin ediciones: los cortes anteriores nunca se modifican.</span>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <img class="flogo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
+  <div>moto4latincup.lat · GP3 Sports · <span data-i18n>Material reservado para sponsors y aliados</span></div>
+</div></footer>
+
+<script src="chart.umd.js"></script>
+<script src="metrics-data.js"></script>
+<script>
+var b=document.getElementById("burger"),m=document.getElementById("menu");
+if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
+
+/* ===== Candado DATOS2026 (SHA-256, el código no está en claro) ===== */
+(function(){
+  var HASH="29eb22840e48e50a4d79b5bc0a3c25b92cc623b19378e505bf3f11abbbfafc58";
+  var gate=document.getElementById("gate"), inp=document.getElementById("gcode"), err=document.getElementById("gerr");
+  function abrir(){ gate.style.display="none"; try{sessionStorage.setItem("m4datos","1");}catch(e){} }
+  function sha256hex(txt){
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(txt)).then(function(buf){
+      return Array.prototype.map.call(new Uint8Array(buf),function(x){return ("0"+x.toString(16)).slice(-2);}).join("");
+    });
+  }
+  function probar(){
+    var v=(inp.value||"").trim().toUpperCase();
+    if(!v) return;
+    sha256hex(v).then(function(hex){
+      if(hex===HASH) abrir();
+      else { err.textContent="Código incorrecto"; inp.value=""; }
+    });
+  }
+  document.getElementById("gbtn").addEventListener("click",probar);
+  inp.addEventListener("keydown",function(e){ if(e.key==="Enter") probar(); });
+  try{ if(sessionStorage.getItem("m4datos")==="1") gate.style.display="none"; }catch(e){}
+})();
+
+/* ===== Panel ===== */
+(function(){
+  if(typeof METRICS==="undefined" || !METRICS.length) return;
+  var CANALES=[
+    {k:"ig_gp3sports",   f:"seguidores",  lbl:"Instagram GP3 Sports",   sub:"@gp3.sports.latam"},
+    {k:"ig_moto4latin",  f:"seguidores",  lbl:"Instagram Moto4",        sub:"@moto4latin"},
+    {k:"fb_gp3sports",   f:"seguidores",  lbl:"Facebook GP3 Sports",    sub:"página principal"},
+    {k:"yt_gp3tv",       f:"suscriptores",lbl:"YouTube GP3 Sports TV",  sub:"@gp3sportstv860"},
+    {k:"fb_moto4",       f:"seguidores",  lbl:"Facebook Moto4",         sub:"Mobil Moto4 Latin Cup"},
+    {k:"fb_motovelatam", f:"seguidores",  lbl:"FB Motociclismo LATAM",  sub:"resultados de la región"},
+    {k:"fb_tonydangelo", f:"seguidores",  lbl:"FB Tony D'Angelo #11",   sub:"marca personal"},
+    {k:"fb_rubus",       f:"seguidores",  lbl:"FB Rubus Racing Park",   sub:"circuito"},
+    {k:"fb_gp3sports2",  f:"seguidores",  lbl:"FB GP3 Sports (2ª)",     sub:"en fusión"},
+    {k:"fb_gp3motorcycle",f:"seguidores", lbl:"FB GP3 Motorcycle",      sub:"escuela"},
+    {k:"fb_monomarca",   f:"seguidores",  lbl:"FB Monomarca Femenina",  sub:"categoría femenina"}
+  ];
+  var last=METRICS[METRICS.length-1], prev=METRICS.length>1?METRICS[METRICS.length-2]:null;
+  function val(s,c){ var o=s[c.k]; return (o && o[c.f]!=null)?o[c.f]:null; }
+  function fmt(n){ return n==null?"—":n.toLocaleString("es-CL"); }
+  document.getElementById("lastdate").textContent=last.fecha;
+
+  /* total ecosistema (canales propios, sin duplicada en fusión) */
+  var TOT_KEYS=CANALES.filter(function(c){return c.k!=="fb_gp3sports2";});
+  function total(s){ var t=0; TOT_KEYS.forEach(function(c){ var v=val(s,c); if(v) t+=v; }); return t; }
+
+  var res=document.getElementById("resumen");
+  function delta(now,before){
+    if(before==null||now==null) return '<div class="delta flat">línea base</div>';
+    var d=now-before;
+    if(d===0) return '<div class="delta flat">= sin cambio</div>';
+    return '<div class="delta '+(d>0?'up':'down')+'">'+(d>0?'▲ +':'▼ ')+d.toLocaleString("es-CL")+'</div>';
+  }
+  var cards='<div class="kcard"><div class="lbl">Audiencia total</div><div class="val">'+fmt(total(last))+'</div><div class="sub">seguidores sumados del ecosistema</div>'+delta(total(last),prev?total(prev):null)+'</div>';
+  CANALES.slice(0,7).forEach(function(c){
+    cards+='<div class="kcard"><div class="lbl">'+c.lbl+'</div><div class="val">'+fmt(val(last,c))+'</div><div class="sub">'+c.sub+'</div>'+delta(val(last,c),prev?val(prev,c):null)+'</div>';
+  });
+  res.innerHTML=cards;
+
+  /* gráfico evolución (4 series clave) */
+  var SERIES=[
+    {c:CANALES[0], color:"#E37BFD"},
+    {c:CANALES[1], color:"#C604F7"},
+    {c:CANALES[2], color:"#7dd3fc"},
+    {c:CANALES[3], color:"#f87171"}
+  ];
+  new Chart(document.getElementById("chart1"),{
+    type:"line",
+    data:{ labels:METRICS.map(function(s){return s.fecha;}),
+      datasets:SERIES.map(function(sr){ return {label:sr.c.lbl, data:METRICS.map(function(s){return val(s,sr.c);}),
+        borderColor:sr.color, backgroundColor:sr.color, tension:.25, pointRadius:4}; }) },
+    options:{ responsive:true, plugins:{legend:{labels:{color:"#e9d8ef"}}},
+      scales:{ x:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}},
+               y:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}} } }
+  });
+
+  /* tabla histórica completa */
+  var t="<tr><th>Fecha</th>"+CANALES.map(function(c){return "<th>"+c.lbl+"</th>";}).join("")+"<th>Total</th></tr>";
+  METRICS.slice().reverse().forEach(function(s){
+    t+="<tr><td>"+s.fecha+"</td>"+CANALES.map(function(c){return "<td>"+fmt(val(s,c))+"</td>";}).join("")+"<td><b>"+fmt(total(s))+"</b></td></tr>";
+  });
+  document.getElementById("tabla").innerHTML=t;
+})();
+</script>
+<script src="i18n.js"></script>
+</body>
+</html>

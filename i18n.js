@@ -9,6 +9,10 @@
    ============================================================ */
 (function(){
 var D = {
+"Área privada para sponsors y aliados. Cada sección tiene su propia clave de acceso.":{en:"Private area for sponsors and partners. Each section has its own access code.",pt:"Área privada para patrocinadores e aliados. Cada seção tem sua própria chave de acesso."},
+"Propuestas comerciales y material reservado por marca y por proyecto.":{en:"Commercial proposals and reserved material by brand and project.",pt:"Propostas comerciais e material reservado por marca e projeto."},
+"🔒 Requiere clave":{en:"🔒 Access code required",pt:"🔒 Requer chave"},
+"Intranet":{en:"Intranet",pt:"Intranet"},
 "La audiencia total del ecosistema incluye los canales de la copa y excluye la página GP3 Sports duplicada (6.000) para no contar seguidores dos veces mientras se completa su fusión.":{en:"The ecosystem's total audience includes the cup's channels and excludes the duplicate GP3 Sports page (6,000) to avoid double-counting followers while its merge is completed.",pt:"A audiência total do ecossistema inclui os canais da copa e exclui a página GP3 Sports duplicada (6.000) para não contar seguidores duas vezes enquanto a fusão é concluída."},
 /* ===== NAV / GENERAL ===== */
 "Inicio":{en:"Home",pt:"Início"},

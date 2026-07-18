@@ -22,7 +22,7 @@ body::before{ content:''; position:fixed; inset:0; background:
 .langbar button.on{ background:var(--primary); border-color:var(--primary); color:#fff;}
 .logo{ display:block; margin:0 auto 8px; height:84px; }
 .kicker{ text-align:center; color:var(--light); font-size:12px; letter-spacing:4px; font-weight:bold; margin-top:18px;}
-h1{ font-family:'MGP Display'; text-align:center; font-size:clamp(26px,5vw,44px); letter-spacing:2px; margin:6px 0 4px;}
+h1{ font-family:'MGP Display'; text-align:center; font-size:clamp(19px,5.6vw,44px); letter-spacing:2px; margin:6px 0 4px; overflow-wrap:anywhere;}
 .sub{ text-align:center; color:var(--gray); font-size:14px; margin-bottom:40px;}
 .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;}
 .card{ background:var(--panel); border:1px solid rgba(198,4,247,.35); border-radius:14px; padding:26px 24px; transition:transform .15s, border-color .15s;}
@@ -58,6 +58,7 @@ footer{ text-align:center; color:#5d4b6a; font-size:11px; margin-top:26px; lette
 #prev{ left:14px;} #next{ right:14px;}
 .vbottom{ text-align:center; padding:10px; color:var(--gray); font-size:12.5px; letter-spacing:2px; background:#0B0011; border-top:1px solid #2A0136;}
 @media (max-width:640px){ .logo{height:60px} .langbar{position:static; justify-content:center; margin-bottom:10px;} .backlnk{position:static; display:inline-block; margin-bottom:10px;} }
+html,body{overflow-x:hidden}
 </style>
 </head>
 <body>
@@ -109,13 +110,13 @@ const SLIDES = {es:[],en:[],pt:[]};
 // Textos de interfaz en tres idiomas
 const UI = {
   es: { kicker:'ACCESO EXCLUSIVO · MARCAS Y ALIADOS', title:'PRESENTACIONES', sub:'Cada presentación es privada: ingresa el código que recibiste de GP3 Sports.',
-        demo:'¿No tienes tu código? Escríbenos: <b>antonio@gp3sports.com</b>',
+        demo:'¿No tienes tu código? Escríbenos: <b>inscripcion@gp3chile.cl</b>',
         placeholder:'CÓDIGO', enter:'ENTRAR', wrong:'Código incorrecto', gate:'Ingresa el código de acceso a la sección de presentaciones', gatebtn:'ACCEDER', back:'← Volver al inicio', prep:'✓ Código válido — presentación en preparación', fs:'⛶ Pantalla completa', exit:'✕ Salir', keys:'· usa las flechas ← →' },
   en: { kicker:'EXCLUSIVE ACCESS · BRANDS & PARTNERS', title:'PRESENTATIONS', sub:'Each presentation is private: enter the code you received from GP3 Sports.',
-        demo:'No access code yet? Contact us: <b>antonio@gp3sports.com</b>',
+        demo:'No access code yet? Contact us: <b>inscripcion@gp3chile.cl</b>',
         placeholder:'ACCESS CODE', enter:'ENTER', wrong:'Incorrect code', gate:'Enter the access code for the presentations section', gatebtn:'ACCESS', back:'← Back to home', prep:'✓ Valid code — presentation in preparation', fs:'⛶ Full screen', exit:'✕ Exit', keys:'· use the ← → arrow keys' },
   pt: { kicker:'ACESSO EXCLUSIVO · MARCAS E PARCEIROS', title:'APRESENTAÇÕES', sub:'Cada apresentação é privada: digite o código que você recebeu da GP3 Sports.',
-        demo:'Não tem seu código? Fale conosco: <b>antonio@gp3sports.com</b>',
+        demo:'Não tem seu código? Fale conosco: <b>inscripcion@gp3chile.cl</b>',
         placeholder:'CÓDIGO', enter:'ENTRAR', wrong:'Código incorreto', gate:'Digite o código de acesso à seção de apresentações', gatebtn:'ACESSAR', back:'← Voltar ao início', prep:'✓ Código válido — apresentação em preparação', fs:'⛶ Tela cheia', exit:'✕ Sair', keys:'· use as setas ← →' }
 };
 const PRESENTACIONES = [

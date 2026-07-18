@@ -9,6 +9,7 @@
    ============================================================ */
 (function(){
 var D = {
+"La audiencia total del ecosistema incluye los canales de la copa y excluye la página GP3 Sports duplicada (6.000) para no contar seguidores dos veces mientras se completa su fusión.":{en:"The ecosystem's total audience includes the cup's channels and excludes the duplicate GP3 Sports page (6,000) to avoid double-counting followers while its merge is completed.",pt:"A audiência total do ecossistema inclui os canais da copa e exclui a página GP3 Sports duplicada (6.000) para não contar seguidores duas vezes enquanto a fusão é concluída."},
 /* ===== NAV / GENERAL ===== */
 "Inicio":{en:"Home",pt:"Início"},
 "Calendario":{en:"Calendar",pt:"Calendário"},
@@ -313,6 +314,7 @@ window.m4Apply = apply;
 function ui(){
   var css = document.createElement("style");
   css.textContent = ".m4lang{position:fixed;top:88px;right:12px;z-index:300;font-family:inherit}"+
+    "@media(max-width:600px){.m4lang{opacity:.55;top:78px;right:8px}.m4lang:hover,.m4lang:active,.m4lang:focus-within{opacity:1}}"+
     ".m4lang button{background:rgba(10,4,16,.88);border:1px solid rgba(214,61,252,.5);color:#f2eaf7;border-radius:20px;padding:7px 14px;font-size:13px;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}"+
     ".m4lang .m4menu{display:none;position:absolute;right:0;top:40px;background:#160820;border:1px solid rgba(214,61,252,.5);border-radius:12px;overflow:hidden;min-width:130px;box-shadow:0 12px 32px rgba(0,0,0,.5)}"+
     ".m4lang.open .m4menu{display:block}"+

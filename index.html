@@ -78,7 +78,7 @@
   .card:hover{transform:translateY(-4px);border-color:var(--purple)}
   .card::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--grad)}
   .card .ico{font-size:30px}
-  .card h3{font-family:var(--disp);text-transform:uppercase;font-size:20px;margin:10px 0 6px}
+  .card h3{font-family:var(--disp);text-transform:uppercase;font-size:clamp(13.5px,4vw,20px);margin:10px 0 6px;overflow-wrap:break-word}
   .card p{color:var(--muted);font-size:13px}
 
   footer .sponsors{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:24px}

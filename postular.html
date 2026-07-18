@@ -65,7 +65,7 @@ color:#fff;background:var(--grad);border:none;border-radius:999px;padding:18px;c
 .msg.err{display:block;background:#371717;border:1px solid var(--red)}
 
 .done{display:none;text-align:center;padding:60px 0}
-.done h2{font-family:var(--dispx);text-transform:uppercase;font-size:32px;margin-bottom:10px}
+.done h2{font-family:var(--dispx);text-transform:uppercase;font-size:clamp(20px,6.2vw,32px);margin-bottom:10px;overflow-wrap:anywhere}
 .done p{color:var(--muted);max-width:400px;margin:0 auto 20px}
 .done .chk{font-size:56px}
 
@@ -160,6 +160,7 @@ nav .btn{white-space:nowrap}
 #wa:hover{transform:scale(1.08)}
 #wa svg{width:31px;height:31px;fill:#fff}
 @media(max-width:560px){#wa{width:52px;height:52px;right:14px;bottom:14px}#wa svg{width:28px;height:28px}}
+html,body{overflow-x:hidden}
 </style>
 <!-- Meta Pixel Code -->
 <script>

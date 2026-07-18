@@ -332,12 +332,12 @@ var PILOTOS = {"74":"Kensei Matsudaira","62":"Alberto Enríquez","34":"Andoni Do
       });
     });
   }
+  /* Lista de fotos incluida en el propio sitio (sin depender de la API de GitHub). */
+  var MANIFEST = {"MEDIA-fotos-listas": ["10-mahdi-salem-accion.jpg", "11-santiago-gossa-accion.jpg", "16-santiago-bravo-accion.jpg", "19-lorenzo-tiberi-accion.jpg", "26-santiago-vogel-accion.jpg", "34-andoni-dominguez-accion.jpg", "42-murillo-gomes-accion.jpg", "46-nicolas-torrez-accion.jpg", "62-alberto-enriquez-accion.jpg", "64-ulises-weyrauch-accion.jpg", "69-anyelo-perdomo-accion.jpg", "74-kensei-matsudaira-accion.jpg", "91-aidan-hancock-accion.jpg", "99-cristobal-carreno-accion.jpg"], "MEDIA-san-nicolas": ["sn-01-llegada.jpg", "sn-02-boxes.jpg", "sn-03-pista-bn.jpg", "sn-04-accion.jpg", "sn-05-grupo-accion.jpg", "sn-06-pitlane.jpg", "sn-07-carrera.jpg", "sn-08-carrera.jpg", "sn-09-carrera.jpg", "sn-10-carrera.jpg", "sn-11-carrera.jpg", "sn-12-carrera.jpg", "sn-13-meta-mobil.jpg", "sn-14-piloto.jpg", "sn-15-paddock.jpg", "sn-16-pitlane.jpg", "sn-17-box.jpg", "sn-18-equipo.jpg", "sn-19-grupo.jpg", "sn-20-podio-carrera1.jpg", "sn-21-podio-carrera1.jpg", "sn-22-podio-carrera1.jpg", "sn-23-podio-carrera2.jpg", "sn-24-podio-carrera2.jpg", "sn-25-podio-carrera3.jpg", "sn-26-podio-carrera3.jpg"]};
   Promise.all(EVENTOS.map(function(ev){
-    return Promise.all(ev.dirs.map(function(dir){
-      return fetch("https://api.github.com/repos/tonydangelon9-lab/MOTO4/contents/"+dir)
-        .then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; });
-    })).then(function(res){
-      var list = [].concat.apply([], res);
+    return Promise.resolve(ev.dirs.reduce(function(acc,dir){
+      return acc.concat((MANIFEST[dir]||[]).map(function(n){ return {type:"file", name:n, download_url:dir+"/"+n}; }));
+    },[])).then(function(list){
       ev.fotos = list.filter(function(f){ return f.type==="file" && esImg(f.name); })
                      .map(function(f){ return {url:f.download_url, g:grupo(f.name), n:f.name}; })
                      .sort(function(a,b){ return a.n<b.n?-1:1; });

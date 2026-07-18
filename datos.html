@@ -85,6 +85,8 @@
   th:first-child,td:first-child{text-align:left}
   th{font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;font-size:11.5px;color:var(--pink)}
   .tscroll{overflow-x:auto}
+  @media(max-width:640px){.tscroll::after{content:"\2190 desliza \00B7 swipe \2192";display:block;text-align:center;font-size:10px;color:#b79bc0;padding-top:6px;letter-spacing:.08em}}
+  @media(max-width:520px){.kcard .lbl{font-size:10.5px;letter-spacing:.03em;overflow-wrap:break-word}}
   .metod{border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:12px;background:var(--surface2);padding:16px 18px;font-size:13.5px;color:#d9c3e0;margin-top:18px}
   footer{border-top:1px solid var(--line);padding:34px 0 30px;text-align:center;color:var(--muted);font-size:13px;background:#000}
   footer .flogo{height:80px;margin-bottom:8px}
@@ -133,6 +135,7 @@
 <section style="padding-top:0"><div class="wrap">
   <h2 class="msec" data-i18n>Ecosistema GP3 Sports</h2>
   <div class="kgrid" id="resumen"></div>
+  <div class="metod" style="margin-top:12px" data-i18n>La audiencia total del ecosistema incluye los canales de la copa y excluye la página GP3 Sports duplicada (6.000) para no contar seguidores dos veces mientras se completa su fusión.</div>
   <div class="toolbar">
     <button class="btn ghost" onclick="window.print()" data-i18n>Descargar PDF</button>
   </div>
@@ -304,9 +307,9 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
       data:{ labels:SERIE.map(function(s){return s.fecha;}),
         datasets:SERIES.map(function(sr){ return {label:sr.c.lbl, data:SERIE.map(function(s){return val(s,sr.c);}),
           borderColor:sr.color, backgroundColor:sr.color, tension:.25, pointRadius:4, spanGaps:true}; }) },
-      options:{ responsive:true, plugins:{legend:{labels:{color:"#e9d8ef"}}},
+      options:{ responsive:true, plugins:{legend:{position:"bottom",labels:{color:"#e9d8ef",boxWidth:12,font:{size:10}}}},
         scales:{ x:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}},
-                 y:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}} } }
+                 y:{ticks:{color:"#b79bc0",callback:function(v){return Number(v).toLocaleString("es-CL");}},grid:{color:"rgba(42,15,48,.6)"}} } }
     });
   });
 

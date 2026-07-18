@@ -131,6 +131,13 @@
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
+  <h2 class="msec" data-i18n>Acumulado Temporada 2026</h2>
+  <div class="kgrid" id="acum"></div>
+  <div class="panelbox tscroll" style="margin-top:14px"><table id="acumtabla"></table></div>
+  <div class="metod" id="acumnota"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
   <h2 class="msec" data-i18n>Evolución</h2>
   <div class="panelbox"><canvas id="chart1" height="110"></canvas></div>
 </div></section>
@@ -214,6 +221,28 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     cards+='<div class="kcard"><div class="lbl">'+c.lbl+'</div><div class="val">'+fmt(val(last,c))+'</div><div class="sub">'+c.sub+'</div>'+delta(val(last,c),prev?val(prev,c):null)+'</div>';
   });
   res.innerHTML=cards;
+
+  /* ===== acumulado temporada ===== */
+  if(typeof ACUMULADO!=="undefined"){
+    var A=ACUMULADO;
+    var visMeta = A.gp3_fb.visualizaciones + A.gp3_ig.visualizaciones + A.m4_fb.visualizaciones + A.m4_ig.visualizaciones;
+    var clics = A.gp3_fb.clics + A.gp3_ig.clics + A.m4_fb.clics + A.m4_ig.clics;
+    var inter = A.gp3_fb.interacciones + A.gp3_ig.interacciones + A.m4_fb.interacciones + A.m4_ig.interacciones;
+    var segn = A.gp3_fb.seg_nuevos + A.gp3_ig.seg_nuevos + A.m4_fb.seg_nuevos + A.m4_ig.seg_nuevos + A.youtube.seg_nuevos;
+    function M(n){ return n>=1000000 ? (n/1000000).toLocaleString("es-CL",{maximumFractionDigits:1})+" M" : n.toLocaleString("es-CL"); }
+    document.getElementById("acum").innerHTML =
+      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+A.periodo_meta+'</div></div>'+
+      '<div class="kcard"><div class="lbl">Vistas YouTube</div><div class="val">'+M(A.youtube.vistas)+'</div><div class="sub">'+A.periodo_yt+' · '+M(A.youtube.horas)+' horas vistas</div></div>'+
+      '<div class="kcard"><div class="lbl">Interacciones</div><div class="val">'+M(inter)+'</div><div class="sub">likes, comentarios y compartidos</div></div>'+
+      '<div class="kcard"><div class="lbl">Seguidores nuevos</div><div class="val">+'+M(segn)+'</div><div class="sub">todas las plataformas</div></div>';
+    var at='<tr><th>Propiedad</th><th>Visualizaciones</th><th>Alcance / Espectadores</th><th>Interacciones</th><th>Clics</th><th>Seguidores nuevos</th></tr>';
+    function fila(nom,o){ return "<tr><td>"+nom+"</td><td>"+M(o.visualizaciones||o.vistas||0)+"</td><td>"+M(o.alcance||o.espectadores||0)+"</td><td>"+M(o.interacciones||0)+"</td><td>"+((o.clics!=null)?M(o.clics):"—")+"</td><td>+"+M(o.seg_nuevos)+"</td></tr>"; }
+    at+=fila("Facebook GP3 Sports",A.gp3_fb)+fila("Instagram @gp3.sports.latam",A.gp3_ig)+fila("Facebook Mobil Moto4",A.m4_fb)+fila("Instagram @moto4latin",A.m4_ig);
+    at+="<tr><td>YouTube GP3 Sports TV</td><td>"+M(A.youtube.vistas)+"</td><td>"+M(A.youtube.horas)+" h vistas</td><td>—</td><td>—</td><td>+"+M(A.youtube.seg_nuevos)+"</td></tr>";
+    document.getElementById("acumtabla").innerHTML=at;
+    var tops=A.youtube.top.map(function(t){return t[0]+" ("+M(t[1])+" vistas)";}).join(" · ");
+    document.getElementById("acumnota").innerHTML="<b>Lo más visto en YouTube:</b> "+tops+".<br><b>Nota:</b> "+A.notas;
+  }
 
   /* gráfico evolución (4 series clave) */
   var SERIES=[

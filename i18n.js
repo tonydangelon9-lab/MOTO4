@@ -95,6 +95,7 @@ var D = {
 "Audiencia y crecimiento del ecosistema, medidos con el mismo método cada día.":{en:"Audience and growth of the ecosystem, measured with the same method every day.",pt:"Audiência e crescimento do ecossistema, medidos com o mesmo método todos os dias."},
 "Última actualización":{en:"Last updated",pt:"Última atualização"},
 "Resumen del ecosistema":{en:"Ecosystem summary",pt:"Resumo do ecossistema"},
+"Acumulado Temporada 2026":{en:"2026 Season Totals",pt:"Acumulado Temporada 2026"},
 "Evolución":{en:"Growth over time",pt:"Evolução"},
 "Todos los canales":{en:"All channels",pt:"Todos os canais"},
 "Descargar PDF":{en:"Download PDF",pt:"Baixar PDF"},

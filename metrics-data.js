@@ -9,6 +9,25 @@
    Fuentes: perfiles públicos de Instagram/YouTube y páginas de
    Facebook administradas (leídas vía navegador o API).
    ============================================================ */
+/* ===== ACUMULADO TEMPORADA 2026 =====
+   Meta (FB+IG): ventana de 90 días exportada de Meta Business Suite (18 abr - 16 jul 2026).
+   YouTube: YouTube Studio, 1 mar - 16 jul 2026. No editar hacia atrás; se actualiza por corte. */
+var ACUMULADO = {
+  corte: "2026-07-16",
+  periodo_meta: "18 abr – 16 jul 2026 (90 días)",
+  periodo_yt: "1 mar – 16 jul 2026",
+  gp3_fb:  { visualizaciones: 2600000, espectadores: 1200000, interacciones: 5600, clics: 59100, visitas: 5100, seg_nuevos: 191 },
+  gp3_ig:  { visualizaciones: 1111448, alcance: 616600, interacciones: 18800, clics: 20500, visitas: 12100, seg_nuevos: 1800 },
+  m4_fb:   { visualizaciones: 63800, espectadores: 34400, interacciones: 1500, clics: 0, visitas: 1100, seg_nuevos: 64 },
+  m4_ig:   { visualizaciones: 221175, alcance: 42500, interacciones: 5300, clics: 10, visitas: 3300, seg_nuevos: 437 },
+  youtube: { vistas: 23640, horas: 3900, seg_nuevos: 324,
+             top: [ ["2026 (lanzamiento, 5 abr)", 10564],
+                    ["Transmisión San Nicolás (21 jun)", 4912],
+                    ["Transmisión Toay · La Pampa (24 may)", 4079],
+                    ["2ª Fecha Binacional Huachalalume (31 may)", 1974] ] },
+  notas: "Cifras tal como las reportan Meta Business Suite y YouTube Studio. Los picos diarios coinciden con los fines de semana de carrera (hasta 237.591 visualizaciones en un día, fecha de mayo; 30.074 en la página Moto4 el fin de semana de San Nicolás)."
+};
+
 var METRICS = [
 { fecha: "2026-07-18",
   ig_moto4latin:   { seguidores: 11100, publicaciones: 449 },

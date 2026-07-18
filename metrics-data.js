@@ -40,11 +40,11 @@ var EVENTOS = [
   { nombre: "Toay, La Pampa (ARG)", marca: "CAV / GP3", fechas: "22–25 may",
     fb_moto4: 10990, fb_gp3: 275599, yt_stream: 4079, nota: "" },
   { nombre: "Interlagos (BRA)", marca: "Moto1000GP", fechas: "10–12 abr",
-    fb_moto4: null, fb_gp3: null, yt_stream: null,
-    nota: "Fechas 2 y 3. Ganó Alberto Enríquez las dos finales. TRANSMISIÓN POR TV: ESPN Latin America (marco Moto1000GP). Fuera de la ventana Meta de 90 días (empieza 18 abr) y sin directo en el canal propio → las métricas digitales propias no aplican; el retorno principal fue la exposición televisiva." },
+    fb_moto4: null, fb_gp3: null, yt_stream: 19400,
+    nota: "Fechas 2 y 3. Ganó Alberto Enríquez las dos finales. Directo YouTube = 19.400 vistas de las carreras Moto4 en el canal oficial Moto1000GP (Corrida 1: 9.400 + Corrida 2: 10.000), transmisión anfitriona. Además, TV en ESPN Latin America. Fuera de la ventana Meta de 90 días (empieza 18 abr) → sin datos de FB/IG." },
   { nombre: "Goiânia (BRA)", marca: "Apoyo MotoGP™", fechas: "20–22 mar",
     fb_moto4: null, fb_gp3: null, yt_stream: null,
-    nota: "Fecha 1 · DEBUT junto al Gran Premio de MotoGP™. Ganó Andoni Domínguez; podio de Kensei Matsudaira. TRANSMISIÓN POR TV: ESPN Latin America (marco MotoGP™). Fuera de la ventana Meta de 90 días y sin directo propio → el retorno principal fue la exposición televisiva de altísimo valor por el marco MotoGP." }
+    nota: "Fecha 1 · DEBUT junto al Gran Premio de MotoGP™. Ganó Andoni Domínguez; podio de Kensei Matsudaira. Exposición por TV en ESPN Latin America dentro del marco MotoGP™ (retorno de altísimo valor). Sin transmisión libre en YouTube y fuera de la ventana Meta → sin métricas digitales propias; el rating de ESPN no es público (se solicita a ESPN / al organizador)." }
 ];
 
 var METRICS = [

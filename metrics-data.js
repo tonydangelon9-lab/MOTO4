@@ -21,7 +21,7 @@ var ACUMULADO = {
   m4_fb:   { visualizaciones: 63800, espectadores: 34400, interacciones: 1500, clics: 0, visitas: 1100, seg_nuevos: 64 },
   m4_ig:   { visualizaciones: 221175, alcance: 42500, interacciones: 5300, clics: 10, visitas: 3300, seg_nuevos: 437 },
   youtube: { vistas: 23640, horas: 3900, seg_nuevos: 324,
-             top: [ ["2026 (lanzamiento, 5 abr)", 10564],
+             top: [ ["Termas de Río Hondo · opener (5 abr)", 10564],
                     ["Transmisión San Nicolás (21 jun)", 4912],
                     ["Transmisión Toay · La Pampa (24 may)", 4079],
                     ["2ª Fecha Binacional Huachalalume (31 may)", 1974] ] },
@@ -38,7 +38,13 @@ var EVENTOS = [
   { nombre: "Huachalalume (CHI)", marca: "GP3 binacional", fechas: "29 may – 1 jun",
     fb_moto4: 254, fb_gp3: 91793, yt_stream: 1974, nota: "2ª fecha binacional" },
   { nombre: "Toay, La Pampa (ARG)", marca: "CAV / GP3", fechas: "22–25 may",
-    fb_moto4: 10990, fb_gp3: 275599, yt_stream: 4079, nota: "" }
+    fb_moto4: 10990, fb_gp3: 275599, yt_stream: 4079, nota: "" },
+  { nombre: "Interlagos (BRA)", marca: "Moto1000GP", fechas: "10–12 abr",
+    fb_moto4: null, fb_gp3: null, yt_stream: null,
+    nota: "Fechas 2 y 3. Ganó Alberto Enríquez las dos finales. TRANSMISIÓN POR TV: ESPN Latin America (marco Moto1000GP). Fuera de la ventana Meta de 90 días (empieza 18 abr) y sin directo en el canal propio → las métricas digitales propias no aplican; el retorno principal fue la exposición televisiva." },
+  { nombre: "Goiânia (BRA)", marca: "Apoyo MotoGP™", fechas: "20–22 mar",
+    fb_moto4: null, fb_gp3: null, yt_stream: null,
+    nota: "Fecha 1 · DEBUT junto al Gran Premio de MotoGP™. Ganó Andoni Domínguez; podio de Kensei Matsudaira. TRANSMISIÓN POR TV: ESPN Latin America (marco MotoGP™). Fuera de la ventana Meta de 90 días y sin directo propio → el retorno principal fue la exposición televisiva de altísimo valor por el marco MotoGP." }
 ];
 
 var METRICS = [

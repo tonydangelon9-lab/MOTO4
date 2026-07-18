@@ -102,16 +102,18 @@
 </head>
 <body>
 <!-- CANDADO -->
-<div class="gate" id="gate">
+<div class="gate" id="gate" role="dialog" aria-labelledby="gtit">
   <div class="box">
     <img src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup">
-    <h2>Panel de Datos</h2>
+    <h2 id="gtit">Panel de Datos</h2>
     <p data-i18n>Acceso reservado. Ingresa el código para continuar.</p>
-    <input id="gcode" type="text" autocomplete="off" placeholder="CÓDIGO">
+    <label for="gcode" class="sr" style="position:absolute;left:-9999px">Código de acceso</label>
+    <input id="gcode" type="text" autocomplete="off" placeholder="CÓDIGO" aria-label="Código de acceso">
     <button class="btn" id="gbtn" data-i18n>Entrar</button>
-    <div class="err" id="gerr"></div>
+    <div class="err" id="gerr" aria-live="polite"></div>
   </div>
 </div>
+<noscript><div style="padding:40px;text-align:center;font-family:Arial,sans-serif">Este panel necesita JavaScript activado para mostrar los datos. / This panel requires JavaScript.</div></noscript>
 
 <nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk" href="noticias.html">Noticias</a><a class="lnk" href="presentaciones.html">Presentación</a><a class="lnk" href="media.html">Media</a><a class="lnk active" href="datos.html">Datos</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav>
 
@@ -123,7 +125,13 @@
 </div></header>
 
 <section><div class="wrap">
-  <h2 class="msec" data-i18n>Resumen del ecosistema</h2>
+  <h2 class="msec" data-i18n>Mobil Moto4 Latin Cup — la copa</h2>
+  <div class="kgrid" id="rescopa"></div>
+  <div class="metod" style="margin-top:12px" data-i18n>La comparación trimestral de la copa está influida por el calendario: el trimestre anterior incluyó el debut junto a MotoGP en Goiânia. La unidad correcta de medición es el fin de semana de carrera (ver sección Por carrera).</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="msec" data-i18n>Ecosistema GP3 Sports</h2>
   <div class="kgrid" id="resumen"></div>
   <div class="toolbar">
     <button class="btn ghost" onclick="window.print()" data-i18n>Descargar PDF</button>
@@ -135,6 +143,12 @@
   <div class="kgrid" id="acum"></div>
   <div class="panelbox tscroll" style="margin-top:14px"><table id="acumtabla"></table></div>
   <div class="metod" id="acumnota"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="msec" data-i18n>Por fin de semana de carrera</h2>
+  <div class="panelbox tscroll"><table id="evtabla"></table></div>
+  <div class="metod" data-i18n>Visualizaciones de Facebook sumadas en la ventana de cada evento (serie diaria de Meta) + vistas del directo en YouTube. Las próximas fechas (Villicum 4-6 sept, Santa Cruz do Sul 25-27 sept, Cuiabá 6-8 nov) se medirán completas, incluyendo Instagram.</div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -165,6 +179,7 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
 (function(){
   var HASH="29eb22840e48e50a4d79b5bc0a3c25b92cc623b19378e505bf3f11abbbfafc58";
   var gate=document.getElementById("gate"), inp=document.getElementById("gcode"), err=document.getElementById("gerr");
+  if(!(window.crypto&&crypto.subtle)){ err.textContent="Navegador no compatible: abre esta página en https:// con un navegador actual."; }
   function abrir(){ gate.style.display="none"; try{sessionStorage.setItem("m4datos","1");}catch(e){} }
   function sha256hex(txt){
     return crypto.subtle.digest("SHA-256", new TextEncoder().encode(txt)).then(function(buf){
@@ -200,73 +215,109 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     {k:"fb_gp3motorcycle",f:"seguidores", lbl:"FB GP3 Motorcycle",      sub:"escuela"},
     {k:"fb_monomarca",   f:"seguidores",  lbl:"FB Monomarca Femenina",  sub:"categoría femenina"}
   ];
-  var last=METRICS[METRICS.length-1], prev=METRICS.length>1?METRICS[METRICS.length-2]:null;
-  function val(s,c){ var o=s[c.k]; return (o && o[c.f]!=null)?o[c.f]:null; }
-  function fmt(n){ return n==null?"—":n.toLocaleString("es-CL"); }
-  document.getElementById("lastdate").textContent=last.fecha;
+  /* --- endurecimiento: dedupe por fecha (se conserva la última entrada del día) --- */
+  var byDate={}; METRICS.forEach(function(s){ if(s&&s.fecha) byDate[s.fecha]=s; });
+  var SERIE=Object.keys(byDate).sort().map(function(f){return byDate[f];});
+  if(!SERIE.length) return;
+  var last=SERIE[SERIE.length-1], prev=SERIE.length>1?SERIE[SERIE.length-2]:null;
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  function val(s,c){ var o=s&&s[c.k]; return (o && typeof o[c.f]==="number" && isFinite(o[c.f]))?o[c.f]:null; }
+  function fmt(n){ return (n==null||!isFinite(n))?"—":n.toLocaleString("es-CL"); }
+  function guard(fn){ try{ fn(); }catch(e){ /* una sección rota no mata el panel */ } }
+  document.getElementById("lastdate").textContent=esc(last.fecha);
 
-  /* total ecosistema (canales propios, sin duplicada en fusión) */
+  /* total ecosistema: solo canales medidos; el delta compara cobertura común */
   var TOT_KEYS=CANALES.filter(function(c){return c.k!=="fb_gp3sports2";});
-  function total(s){ var t=0; TOT_KEYS.forEach(function(c){ var v=val(s,c); if(v) t+=v; }); return t; }
-
-  var res=document.getElementById("resumen");
+  function totalInfo(s){ var t=0,n=0; TOT_KEYS.forEach(function(c){ var v=val(s,c); if(v!=null){t+=v;n++;} }); return {t:t,n:n}; }
+  function totalComun(a,b){ var ta=0,tb=0,n=0; TOT_KEYS.forEach(function(c){ var va=val(a,c),vb=val(b,c); if(va!=null&&vb!=null){ta+=va;tb+=vb;n++;} }); return n?{a:ta,b:tb}:null; }
   function delta(now,before){
     if(before==null||now==null) return '<div class="delta flat">línea base</div>';
     var d=now-before;
     if(d===0) return '<div class="delta flat">= sin cambio</div>';
     return '<div class="delta '+(d>0?'up':'down')+'">'+(d>0?'▲ +':'▼ ')+d.toLocaleString("es-CL")+'</div>';
   }
-  var cards='<div class="kcard"><div class="lbl">Audiencia total</div><div class="val">'+fmt(total(last))+'</div><div class="sub">seguidores sumados del ecosistema</div>'+delta(total(last),prev?total(prev):null)+'</div>';
-  CANALES.slice(0,7).forEach(function(c){
-    cards+='<div class="kcard"><div class="lbl">'+c.lbl+'</div><div class="val">'+fmt(val(last,c))+'</div><div class="sub">'+c.sub+'</div>'+delta(val(last,c),prev?val(prev,c):null)+'</div>';
+
+  /* ===== LA COPA primero (la marca que factura) ===== */
+  guard(function(){
+    var CK=[CANALES[1],CANALES[4]]; /* IG Moto4, FB Moto4 */
+    var audCopa=null; var a=val(last,CK[0]), b=val(last,CK[1]);
+    if(a!=null||b!=null) audCopa=(a||0)+(b||0);
+    var cc='<div class="kcard"><div class="lbl">Audiencia de la copa</div><div class="val">'+fmt(audCopa)+'</div><div class="sub">IG + FB Mobil Moto4 Latin Cup</div></div>';
+    CK.forEach(function(c){ cc+='<div class="kcard"><div class="lbl">'+esc(c.lbl)+'</div><div class="val">'+fmt(val(last,c))+'</div><div class="sub">'+esc(c.sub)+'</div>'+delta(val(last,c),prev?val(prev,c):null)+'</div>'; });
+    cc+='<div class="kcard"><div class="lbl">Interacción IG de la copa</div><div class="val">12,5%</div><div class="sub">interacciones/alcance 90 días — élite (referencia deporte: 1-3%)</div></div>';
+    document.getElementById("rescopa").innerHTML=cc;
   });
-  res.innerHTML=cards;
+
+  /* ===== Ecosistema ===== */
+  guard(function(){
+    var ti=totalInfo(last), tc=prev?totalComun(last,prev):null;
+    var cards='<div class="kcard"><div class="lbl">Audiencia total</div><div class="val">'+fmt(ti.t)+'</div><div class="sub">seguidores sumados · '+ti.n+' de '+TOT_KEYS.length+' canales medidos</div>'+(tc?delta(tc.a,tc.b):'<div class="delta flat">línea base</div>')+'</div>';
+    [CANALES[0],CANALES[2],CANALES[3],CANALES[5],CANALES[6],CANALES[7]].forEach(function(c){
+      cards+='<div class="kcard"><div class="lbl">'+esc(c.lbl)+'</div><div class="val">'+fmt(val(last,c))+'</div><div class="sub">'+esc(c.sub)+'</div>'+delta(val(last,c),prev?val(prev,c):null)+'</div>';
+    });
+    document.getElementById("resumen").innerHTML=cards;
+  });
 
   /* ===== acumulado temporada ===== */
-  if(typeof ACUMULADO!=="undefined"){
+  function M(n){ if(n==null||!isFinite(n)) return "—"; return n>=1000000 ? (n/1000000).toLocaleString("es-CL",{maximumFractionDigits:1})+" M" : n.toLocaleString("es-CL"); }
+  guard(function(){
+    if(typeof ACUMULADO==="undefined") return;
     var A=ACUMULADO;
-    var visMeta = A.gp3_fb.visualizaciones + A.gp3_ig.visualizaciones + A.m4_fb.visualizaciones + A.m4_ig.visualizaciones;
-    var clics = A.gp3_fb.clics + A.gp3_ig.clics + A.m4_fb.clics + A.m4_ig.clics;
-    var inter = A.gp3_fb.interacciones + A.gp3_ig.interacciones + A.m4_fb.interacciones + A.m4_ig.interacciones;
-    var segn = A.gp3_fb.seg_nuevos + A.gp3_ig.seg_nuevos + A.m4_fb.seg_nuevos + A.m4_ig.seg_nuevos + A.youtube.seg_nuevos;
-    function M(n){ return n>=1000000 ? (n/1000000).toLocaleString("es-CL",{maximumFractionDigits:1})+" M" : n.toLocaleString("es-CL"); }
+    function s4(f){ var t=0,ok=false; [A.gp3_fb,A.gp3_ig,A.m4_fb,A.m4_ig].forEach(function(o){ if(o&&typeof o[f]==="number"){t+=o[f];ok=true;} }); return ok?t:null; }
+    var visMeta=s4("visualizaciones"), inter=s4("interacciones");
+    var segn=(s4("seg_nuevos")||0)+((A.youtube&&A.youtube.seg_nuevos)||0);
     document.getElementById("acum").innerHTML =
-      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+A.periodo_meta+'</div></div>'+
-      '<div class="kcard"><div class="lbl">Vistas YouTube</div><div class="val">'+M(A.youtube.vistas)+'</div><div class="sub">'+A.periodo_yt+' · '+M(A.youtube.horas)+' horas vistas</div></div>'+
+      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+esc(A.periodo_meta)+' · 100% orgánico (sin pauta)</div></div>'+
+      '<div class="kcard"><div class="lbl">Vistas YouTube</div><div class="val">'+M(A.youtube&&A.youtube.vistas)+'</div><div class="sub">'+esc(A.periodo_yt)+' · '+M(A.youtube&&A.youtube.horas)+' horas vistas</div></div>'+
       '<div class="kcard"><div class="lbl">Interacciones</div><div class="val">'+M(inter)+'</div><div class="sub">likes, comentarios y compartidos</div></div>'+
       '<div class="kcard"><div class="lbl">Seguidores nuevos</div><div class="val">+'+M(segn)+'</div><div class="sub">todas las plataformas</div></div>';
     var at='<tr><th>Propiedad</th><th>Visualizaciones</th><th>Alcance / Espectadores</th><th>Interacciones</th><th>Clics</th><th>Seguidores nuevos</th></tr>';
-    function fila(nom,o){ return "<tr><td>"+nom+"</td><td>"+M(o.visualizaciones||o.vistas||0)+"</td><td>"+M(o.alcance||o.espectadores||0)+"</td><td>"+M(o.interacciones||0)+"</td><td>"+((o.clics!=null)?M(o.clics):"—")+"</td><td>+"+M(o.seg_nuevos)+"</td></tr>"; }
+    function fila(nom,o){ if(!o) return ""; return "<tr><td>"+esc(nom)+"</td><td>"+M(o.visualizaciones!=null?o.visualizaciones:o.vistas)+"</td><td>"+M(o.alcance!=null?o.alcance:o.espectadores)+"</td><td>"+M(o.interacciones)+"</td><td>"+M(o.clics)+"</td><td>+"+M(o.seg_nuevos)+"</td></tr>"; }
     at+=fila("Facebook GP3 Sports",A.gp3_fb)+fila("Instagram @gp3.sports.latam",A.gp3_ig)+fila("Facebook Mobil Moto4",A.m4_fb)+fila("Instagram @moto4latin",A.m4_ig);
-    at+="<tr><td>YouTube GP3 Sports TV</td><td>"+M(A.youtube.vistas)+"</td><td>"+M(A.youtube.horas)+" h vistas</td><td>—</td><td>—</td><td>+"+M(A.youtube.seg_nuevos)+"</td></tr>";
+    if(A.youtube) at+="<tr><td>YouTube GP3 Sports TV</td><td>"+M(A.youtube.vistas)+"</td><td>"+M(A.youtube.horas)+" h vistas</td><td>—</td><td>—</td><td>+"+M(A.youtube.seg_nuevos)+"</td></tr>";
     document.getElementById("acumtabla").innerHTML=at;
-    var tops=A.youtube.top.map(function(t){return t[0]+" ("+M(t[1])+" vistas)";}).join(" · ");
-    document.getElementById("acumnota").innerHTML="<b>Lo más visto en YouTube:</b> "+tops+".<br><b>Nota:</b> "+A.notas;
-  }
+    var tops=(A.youtube&&A.youtube.top||[]).map(function(t){return esc(t[0])+" ("+M(t[1])+" vistas)";}).join(" · ");
+    document.getElementById("acumnota").innerHTML="<b>Lo más visto en YouTube:</b> "+tops+".<br><b>Nota:</b> "+esc(A.notas)+"<br><b>Metodología:</b> las visualizaciones de FB GP3 Sports corresponden a alcance de campaña orgánica (distribución algorítmica a no-seguidores), no a comunidad propia; se reportan separadas de las métricas de la copa.";
+  });
+
+  /* ===== por fin de semana de carrera ===== */
+  guard(function(){
+    if(typeof EVENTOS==="undefined"||!EVENTOS.length) return;
+    var et='<tr><th>Evento</th><th>Marca</th><th>Fechas 2026</th><th>FB Moto4</th><th>FB GP3</th><th>Directo YouTube</th><th>Nota</th></tr>';
+    EVENTOS.forEach(function(e){
+      et+="<tr><td>"+esc(e.nombre)+"</td><td>"+esc(e.marca)+"</td><td>"+esc(e.fechas)+"</td><td>"+M(e.fb_moto4)+"</td><td>"+M(e.fb_gp3)+"</td><td>"+M(e.yt_stream)+"</td><td>"+esc(e.nota)+"</td></tr>";
+    });
+    document.getElementById("evtabla").innerHTML=et;
+  });
 
   /* gráfico evolución (4 series clave) */
-  var SERIES=[
-    {c:CANALES[0], color:"#E37BFD"},
-    {c:CANALES[1], color:"#C604F7"},
-    {c:CANALES[2], color:"#7dd3fc"},
-    {c:CANALES[3], color:"#f87171"}
-  ];
-  new Chart(document.getElementById("chart1"),{
-    type:"line",
-    data:{ labels:METRICS.map(function(s){return s.fecha;}),
-      datasets:SERIES.map(function(sr){ return {label:sr.c.lbl, data:METRICS.map(function(s){return val(s,sr.c);}),
-        borderColor:sr.color, backgroundColor:sr.color, tension:.25, pointRadius:4}; }) },
-    options:{ responsive:true, plugins:{legend:{labels:{color:"#e9d8ef"}}},
-      scales:{ x:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}},
-               y:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}} } }
+  guard(function(){
+    if(typeof Chart==="undefined") return;
+    var SERIES=[
+      {c:CANALES[0], color:"#E37BFD"},
+      {c:CANALES[1], color:"#C604F7"},
+      {c:CANALES[2], color:"#7dd3fc"},
+      {c:CANALES[3], color:"#f87171"}
+    ];
+    new Chart(document.getElementById("chart1"),{
+      type:"line",
+      data:{ labels:SERIE.map(function(s){return s.fecha;}),
+        datasets:SERIES.map(function(sr){ return {label:sr.c.lbl, data:SERIE.map(function(s){return val(s,sr.c);}),
+          borderColor:sr.color, backgroundColor:sr.color, tension:.25, pointRadius:4, spanGaps:true}; }) },
+      options:{ responsive:true, plugins:{legend:{labels:{color:"#e9d8ef"}}},
+        scales:{ x:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}},
+                 y:{ticks:{color:"#b79bc0"},grid:{color:"rgba(42,15,48,.6)"}} } }
+    });
   });
 
-  /* tabla histórica completa */
-  var t="<tr><th>Fecha</th>"+CANALES.map(function(c){return "<th>"+c.lbl+"</th>";}).join("")+"<th>Total</th></tr>";
-  METRICS.slice().reverse().forEach(function(s){
-    t+="<tr><td>"+s.fecha+"</td>"+CANALES.map(function(c){return "<td>"+fmt(val(s,c))+"</td>";}).join("")+"<td><b>"+fmt(total(s))+"</b></td></tr>";
+  /* tabla histórica completa (últimos 120 cortes) */
+  guard(function(){
+    var t="<tr><th>Fecha</th>"+CANALES.map(function(c){return "<th>"+esc(c.lbl)+"</th>";}).join("")+"<th>Total</th></tr>";
+    SERIE.slice(-120).reverse().forEach(function(s){
+      t+="<tr><td>"+esc(s.fecha)+"</td>"+CANALES.map(function(c){return "<td>"+fmt(val(s,c))+"</td>";}).join("")+"<td><b>"+fmt(totalInfo(s).t)+"</b></td></tr>";
+    });
+    document.getElementById("tabla").innerHTML=t;
   });
-  document.getElementById("tabla").innerHTML=t;
 })();
 </script>
 <script src="i18n.js"></script>

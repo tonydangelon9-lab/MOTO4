@@ -231,7 +231,7 @@ var D = {
 "Abierto a pilotos dentro de ese rango de edad para la temporada 2027.":{en:"Open to riders within that age range for the 2027 season.",pt:"Aberto a pilotos dentro dessa faixa etária para a temporada 2027."},
 "Toda Latinoamérica":{en:"All of Latin America",pt:"Toda a América Latina"},
 "De cualquier país de la región. El camino latino empieza en casa.":{en:"From any country in the region. The Latin road starts at home.",pt:"De qualquer país da região. O caminho latino começa em casa."},
-"Motos iguales, reglamento internacional, y una vidriera real ante el paddock del motociclismo.":{en:"Equal bikes, international regulations, and real visibility before the motorcycling paddock.",pt:"Motos iguais, regulamento internacional e uma vitrine real diante do paddock do motociclismo."},
+"Motos iguales, reglamento internacional, y una vitrina real ante el paddock del motociclismo.":{en:"Equal bikes, international regulations, and real visibility before the motorcycling paddock.",pt:"Motos iguais, regulamento internacional e uma vitrine real diante do paddock do motociclismo."},
 "Un proceso de selección con estándar internacional, inspirado en la Red Bull MotoGP Rookies Cup y el Road to MotoGP.":{en:"A selection process with international standards, inspired by the Red Bull MotoGP Rookies Cup and the Road to MotoGP.",pt:"Um processo de seleção com padrão internacional, inspirado na Red Bull MotoGP Rookies Cup e no Road to MotoGP."},
 "El proceso,":{en:"The process,",pt:"O processo,"},
 "paso a paso":{en:"step by step",pt:"passo a passo"},

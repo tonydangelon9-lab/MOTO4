@@ -14,6 +14,24 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-06-24",
+    categoria: "Instagram",
+    titulo: "🇺🇸 CHAMPIONSHIP STANDINGS",
+    bajada: "🇺🇸 CHAMPIONSHIP STANDINGS 📍 After Argentina 🇦🇷 | Rounds 4, 5 & 6  Here are the updated Riders’ Championship standings following the races in San Nicolás. Six races completed a",
+    imagen: "NOTICIAS-IG/DZ8zXJMET3X.jpg",
+    ig: "DZ8zXJMET3X",
+    cuerpo: "🇺🇸 CHAMPIONSHIP STANDINGS<br>📍 After Argentina 🇦🇷 | Rounds 4, 5 & 6<br><br>Here are the updated Riders’ Championship standings following the races in San Nicolás. Six races completed and the battle for the 2026 Moto4 Latin Cup continues.<br><br>🇪🇸 CLASIFICACIÓN DEL CAMPEONATO<br>📍 Después de Argentina 🇦🇷 | Rounds 4, 5 y 6<br><br>Así queda el Riders’ Championship tras las carreras disputadas en San Nicolás. Con seis carreras completadas, la lucha por la Moto4 Latin Cup 2026 continúa.<br><br>🇧🇷 CLASSIFICAÇÃO DO CAMPEONATO<br>📍 Após a Argentina 🇦🇷 | Rounds 4, 5 & 6<br><br>Confira a classificação atualizada do Riders’ Championship após as corridas em San Nicolás. Com seis corridas disputadas, a disputa pela Moto4 Latin Cup 2026 continua.<br><br>🏍️ Road to MotoGP."
+  },
+  {
+    fecha: "2026-06-21",
+    categoria: "Instagram",
+    titulo: "🇬🇧 RACE 3 WINNER – SAN NICOLÁS 🏁",
+    bajada: "🇬🇧 RACE 3 WINNER – SAN NICOLÁS 🏁  Alberto Enriquez takes the victory in Race 3 after a brilliant ride at San Nicolás. Managing the pace and delivering when it mattered most, he ",
+    imagen: "NOTICIAS-IG/DZ23Z8BxJ4z.jpg",
+    ig: "DZ23Z8BxJ4z",
+    cuerpo: "🇬🇧 RACE 3 WINNER – SAN NICOLÁS 🏁<br><br>Alberto Enriquez takes the victory in Race 3 after a brilliant ride at San Nicolás. Managing the pace and delivering when it mattered most, he secured the final win of the weekend in Argentina.<br><br>The Moto4 Latin Cup closes Rounds 4, 5 and 6 with exciting battles and unforgettable moments as the next generation continues its journey on the Road to MotoGP. 🔥<br><br>🇪🇸 GANADOR CARRERA 3 – SAN NICOLÁS 🏁<br><br>Alberto Enriquez se queda con la victoria en la Carrera 3 tras una gran actuación en San Nicolás. Administrando el ritmo de carrera y aprovechando cada oportunidad, consiguió el último triunfo del fin de semana en Argentina.<br><br>La Moto4 Latin Cup cierra las fechas 4, 5 y 6 con emocionantes batallas en pista y grandes momentos, mientras la nueva generación de pilotos continúa su camino hacia MotoGP. 🔥<br><br>🇧🇷 VENCEDOR DA CORRIDA 3 – SAN NICOLÁS 🏁<br><br>Alberto Enriquez conquista a vitória da Corrida 3 após uma grande atuação em San Nicolás. Controlando o ritmo da corrida e aproveitando cada oportunidade, garantiu a última vitória do fim de semana na Argentina.<br><br>A Moto4 Latin Cup encerra as etapas 4, 5 e 6 com grandes disputas e momentos inesquecíveis, enquanto a nova geração segue seu caminho rumo à MotoGP. 🔥"
+  },
+  {
     fecha: "2026-07-16",
     categoria: "Instagram",
     titulo: "🇬🇧",

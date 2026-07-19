@@ -15,6 +15,16 @@
 window.NOTICIAS = [
 
   {
+    fecha: "2026-07-19",
+    categoria: "Selección 2027",
+    titulo: "Diego Moreira invita a postular: las inscripciones 2027 abren el 15 de agosto",
+    bajada: "El piloto Diego Moreira dejó un mensaje para los jóvenes talentos: el camino al Road to MotoGP arranca pronto y las postulaciones a la Mobil Moto4 Latin Cup 2027 abren el 15 de agosto.",
+    imagen: "",
+    ig: "Da-av7_RRsn",
+    cuerpo: "El piloto <b>Diego Moreira</b> dejó un mensaje para los jóvenes que sueñan con dar su primer paso en el <b>Road to MotoGP</b>: la Mobil Moto4 Latin Cup 2027 se acerca y las <b>postulaciones abren el 15 de agosto</b>.<br><br>Los interesados podrán completar su preinscripción al Selection Program 2027 en la sección Postular del sitio oficial. La Selectiva de noviembre define la grilla de la próxima temporada del campeonato oficial FIM Latin America de la categoría Moto4.<br><br>\"Si sueñas con dar tu primer paso en el Road to MotoGP, esta es tu oportunidad\", invita Moreira."
+  },
+
+  {
     fecha: "2026-03-01",
     categoria: "Campeonato",
     titulo: "Mobil se suma al camino latino al Mundial: nace la Mobil Moto4 Latin Cup",

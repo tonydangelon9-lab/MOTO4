@@ -13,6 +13,24 @@
    ============================================================ */
 
 window.NOTICIAS = [
+  {
+    fecha: "2026-07-16",
+    categoria: "Instagram",
+    titulo: "🇬🇧",
+    bajada: "🇬🇧 SAME MACHINE. DIFFERENT TALENT. Every rider starts on the same Honda NSF250R. The same motorcycle. The same opportunity. Talent, dedication and determination make the differen",
+    imagen: "NOTICIAS-IG/Da2yRB1xw3c.jpg",
+    ig: "Da2yRB1xw3c",
+    cuerpo: "🇬🇧<br>SAME MACHINE. DIFFERENT TALENT.<br>Every rider starts on the same Honda NSF250R.<br>The same motorcycle. The same opportunity.<br>Talent, dedication and determination make the difference.<br>This is where the journey begins.<br>Road to MotoGP™️ 🏁<br><br>🇪🇸<br>LA MISMA MOTO. DIFERENTE TALENTO.<br>Cada piloto comienza sobre la misma Honda NSF250R.<br>La misma motocicleta. La misma oportunidad.<br>El talento, la dedicación y la determinación marcan la diferencia.<br>Aquí comienza el camino.<br>Road to MotoGP™️ 🏁<br><br>🇧🇷<br>A MESMA MOTO. TALENTO DIFERENTE.<br>Todos os pilotos começam com a mesma Honda NSF250R.<br>A mesma motocicleta. A mesma oportunidade.<br>O talento, a dedicação e a determinação fazem a diferença.<br>É aqui que a jornada começa.<br>Road to MotoGP™️ 🏁"
+  },
+  {
+    fecha: "2026-07-13",
+    categoria: "Instagram",
+    titulo: "Feel the speed. Live the future. 🏁🏍️",
+    bajada: "Feel the speed. Live the future. 🏁🏍️ 🇬🇧 Ready for the next round?  Vive la velocidad. Vive el futuro. 🏁🏍️ 🇪🇸 ¿Listos para la próxima carrera?  Sinta a velocidade. Viva o fu",
+    imagen: "NOTICIAS-IG/Dav7zOGBt-_.jpg",
+    ig: "Dav7zOGBt-_",
+    cuerpo: "Feel the speed. Live the future. 🏁🏍️<br>🇬🇧 Ready for the next round?<br><br>Vive la velocidad. Vive el futuro. 🏁🏍️<br>🇪🇸 ¿Listos para la próxima carrera?<br><br>Sinta a velocidade. Viva o futuro. 🏁🏍️<br>🇧🇷 Prontos para a próxima etapa?"
+  },
 
   {
     fecha: "2026-07-19",

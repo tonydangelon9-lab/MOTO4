@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-06-21",
+    categoria: "Instagram",
+    titulo: "🇬🇧 RACE 2 WINNER – SAN NICOLÁS 🏁",
+    bajada: "🇬🇧 RACE 2 WINNER – SAN NICOLÁS 🏁  Andoni Dominguez takes the victory in Race 2 after an impressive performance at San Nicolás. Consistency, speed and determination allowed him t",
+    imagen: "NOTICIAS-IG/DZ2opyFRMKa.jpg",
+    ig: "DZ2opyFRMKa",
+    cuerpo: "🇬🇧 RACE 2 WINNER – SAN NICOLÁS 🏁<br><br>Andoni Dominguez takes the victory in Race 2 after an impressive performance at San Nicolás. Consistency, speed and determination allowed him to claim the top step of the podium during another exciting race weekend in Argentina.<br><br>The Moto4 Latin Cup continues to deliver intense battles as the next generation of riders keeps moving forward on the Road to MotoGP. 🔥<br><br>🇪🇸 GANADOR CARRERA 2 – SAN NICOLÁS 🏁<br><br>Andoni Dominguez se queda con la victoria en la Carrera 2 tras una destacada actuación en San Nicolás. La constancia, la velocidad y la determinación le permitieron alcanzar lo más alto del podio en otro emocionante capítulo del fin de semana en Argentina.<br><br>La Moto4 Latin Cup continúa ofreciendo grandes batallas en pista mientras la nueva generación de pilotos sigue avanzando en el camino hacia MotoGP. 🔥<br><br>🇧🇷 VENCEDOR DA CORRIDA 2 – SAN NICOLÁS 🏁<br><br>Andoni Dominguez conquista a vitória da Corrida 2 após uma grande atuação em San Nicolás. Consistência, velocidade e determinação levaram o piloto ao lugar mais alto do pódio em mais uma emocionante corrida na Argentina.<br><br>A Moto4 Latin Cup continua proporcionando grandes disputas na pista enquanto a nova geração de pilotos segue seu caminho rumo à MotoGP. 🔥"
+  },
+  {
     fecha: "2026-06-24",
     categoria: "Instagram",
     titulo: "🇺🇸 CHAMPIONSHIP STANDINGS",

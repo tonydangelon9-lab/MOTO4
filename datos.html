@@ -135,7 +135,7 @@
 <section style="padding-top:0"><div class="wrap">
   <h2 class="msec" data-i18n>Ecosistema GP3 Sports</h2>
   <div class="kgrid" id="resumen"></div>
-  <div class="metod" style="margin-top:12px" data-i18n>La audiencia total del ecosistema incluye los canales de la copa y excluye la página GP3 Sports duplicada (6.000) para no contar seguidores dos veces mientras se completa su fusión.</div>
+  <div class="metod" style="margin-top:12px" data-i18n>Los seguidores acumulados suman seguidores de varias cuentas y puede haber personas duplicadas entre plataformas; se excluye la página GP3 Sports duplicada (6.000) para no contar seguidores dos veces mientras se completa su fusión.</div>
   <div class="toolbar">
     <button class="btn ghost" onclick="window.print()" data-i18n>Descargar PDF</button>
   </div>
@@ -254,7 +254,7 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
   /* ===== Ecosistema ===== */
   guard(function(){
     var ti=totalInfo(last), tc=prev?totalComun(last,prev):null;
-    var cards='<div class="kcard"><div class="lbl">Audiencia total</div><div class="val">'+fmt(ti.t)+'</div><div class="sub">seguidores sumados · '+ti.n+' de '+TOT_KEYS.length+' canales medidos</div>'+(tc?delta(tc.a,tc.b):'<div class="delta flat">línea base</div>')+'</div>';
+    var cards='<div class="kcard"><div class="lbl">Seguidores acumulados</div><div class="val">'+fmt(ti.t)+'</div><div class="sub">seguidores sumados · '+ti.n+' de '+TOT_KEYS.length+' canales medidos</div>'+(tc?delta(tc.a,tc.b):'<div class="delta flat">línea base</div>')+'</div>';
     [CANALES[0],CANALES[2],CANALES[3],CANALES[5],CANALES[6],CANALES[7]].forEach(function(c){
       cards+='<div class="kcard"><div class="lbl">'+esc(c.lbl)+'</div><div class="val">'+fmt(val(last,c))+'</div><div class="sub">'+esc(c.sub)+'</div>'+delta(val(last,c),prev?val(prev,c):null)+'</div>';
     });
@@ -270,7 +270,7 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     var visMeta=s4("visualizaciones"), inter=s4("interacciones");
     var segn=(s4("seg_nuevos")||0)+((A.youtube&&A.youtube.seg_nuevos)||0);
     document.getElementById("acum").innerHTML =
-      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+esc(A.periodo_meta)+' · 100% orgánico (sin pauta)</div></div>'+
+      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+esc(A.periodo_meta)+' · orgánico (sin pauta declarada)</div></div>'+
       '<div class="kcard"><div class="lbl">Vistas YouTube</div><div class="val">'+M(A.youtube&&A.youtube.vistas)+'</div><div class="sub">'+esc(A.periodo_yt)+' · '+M(A.youtube&&A.youtube.horas)+' horas vistas</div></div>'+
       '<div class="kcard"><div class="lbl">Interacciones</div><div class="val">'+M(inter)+'</div><div class="sub">likes, comentarios y compartidos</div></div>'+
       '<div class="kcard"><div class="lbl">Seguidores nuevos</div><div class="val">+'+M(segn)+'</div><div class="sub">todas las plataformas</div></div>';

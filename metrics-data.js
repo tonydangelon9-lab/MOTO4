@@ -25,7 +25,7 @@ var ACUMULADO = {
                     ["Transmisión San Nicolás (21 jun)", 4912],
                     ["Transmisión Toay · La Pampa (24 may)", 4079],
                     ["2ª Fecha Binacional Huachalalume (31 may)", 1974] ] },
-  notas: "Cifras tal como las reportan Meta Business Suite y YouTube Studio. Los picos diarios coinciden con los fines de semana de carrera (hasta 237.591 visualizaciones en un día, dom 17 may; 30.074 en la página Moto4 el domingo 21 jun, San Nicolás). Alcance verificado como ORGÁNICO: el Administrador de Anuncios no registra pauta pagada en 2026 (última campaña pagada: 2018)."
+  notas: "Cifras tal como las reportan Meta Business Suite y YouTube Studio. Los picos diarios coinciden con los fines de semana de carrera (hasta 237.591 visualizaciones en un día, dom 17 may; 30.074 en la página Moto4 el domingo 21 jun, San Nicolás). Estas visualizaciones corresponden a la distribución orgánica de las páginas. La pauta pagada (campañas Meta 2026) se muestra por separado en la sección “Alcance amplificado”."
 };
 
 /* ===== POR FIN DE SEMANA DE CARRERA (ventana Meta 90 días) =====

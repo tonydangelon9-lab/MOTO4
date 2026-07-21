@@ -7,11 +7,22 @@
  "yt_subs": 2540,
  "yt_views": 149650,
  "yt_videos": 127,
- "web_usuarios": 12,
- "web_sesiones": 15,
+ "web_usuarios": 13,
+ "web_sesiones": 16,
  "web_vistas": 27,
  "ig_gp3_seg": 29867,
- "ig_moto4_seg": 11150,
+ "ig_moto4_seg": 11149,
+ "fb_pages": {
+  "Team GP3 AD11 BY FIMLA": 3069,
+  "GP3  Sports": 6059,
+  "Motociclismo de Velocidad Latinoamericano": 8873,
+  "Tony D'Angelo #11": 6983,
+  "GP3 Sports": 17923,
+  "Rubus Racing Park": 5162,
+  "GP3  Motorcycle": 1528,
+  "Mobil Moto4 Latin Cup": 4419,
+  "Monomarca Femenina Chilena de Velocidad": 505
+ },
  "campanas": [
   {
    "nombre": "Termas - Advantage+ - RMKT - GP3",

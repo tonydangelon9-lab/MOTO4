@@ -52,23 +52,23 @@ td.r,th.r{text-align:right}
 <div class="page">
 <div class="band">
 <div class="lg">GP<span class="r">3</span><span class="s">SPORTS LATAM</span></div>
-<div class="rt"><div class="t1">Informe de Marca · Moto4 Latin Cup</div><div class="t2">Temporada 2026 · Corte 21 jul</div></div>
+<div class="rt"><div class="t1">Informe de Marca · Moto4 Latin Cup</div><div class="t2" id="k_corte">Temporada 2026 · Corte 21 jul</div></div>
 </div>
 <h2 class="sec"><span class="n">1</span> Resumen ejecutivo</h2>
 <div class="kpis">
-<div class="kpi"><div class="kn">2.551.491</div><div class="kl">Personas alcanzadas · temporada 2026</div></div>
-<div class="kpi"><div class="kn">5,9 M</div><div class="kl">Impresiones de marca</div></div>
+<div class="kpi"><div class="kn" id="k_reach">2.551.491</div><div class="kl">Personas alcanzadas · temporada 2026</div></div>
+<div class="kpi"><div class="kn" id="k_impr">5,9 M</div><div class="kl">Impresiones de marca</div></div>
 <div class="kpi"><div class="kn">4×</div><div class="kl">Afinidad de audiencia vs. industria</div></div>
-<div class="kpi"><div class="kn">149.638</div><div class="kl">Visualizaciones en YouTube · GP3 TV</div></div>
+<div class="kpi"><div class="kn" id="k_ytviews">149.638</div><div class="kl">Visualizaciones en YouTube · GP3 TV</div></div>
 </div>
-<p class="body">GP3 Sports LATAM lleva 18 años formando pilotos jóvenes de Latinoamérica y llevándolos a los grandes campeonatos del mundo. La <b>Mobil Moto4 Latin Cup</b> es la puerta de entrada del Road to MotoGP en la región. En la temporada 2026, el ecosistema digital de GP3 puso la marca de sus patrocinadores frente a <b>2.551.491 personas</b>, con una afinidad de audiencia <b>4× superior</b> al promedio de la industria — señal de una comunidad que no solo ve, sino que reacciona.</p>
+<p class="body">GP3 Sports LATAM lleva 18 años formando pilotos jóvenes de Latinoamérica y llevándolos a los grandes campeonatos del mundo. La <b>Mobil Moto4 Latin Cup</b> es la puerta de entrada del Road to MotoGP en la región. En la temporada 2026, el ecosistema digital de GP3 puso la marca de sus patrocinadores frente a <b id="k_reach_t">2.551.491 personas</b>, con una afinidad de audiencia <b>4× superior</b> al promedio de la industria — señal de una comunidad que no solo ve, sino que reacciona.</p>
 <h2 class="sec"><span class="n">2</span> La audiencia</h2>
 <p class="body">Mostramos por separado el alcance <b>orgánico</b> (nuestra comunidad, que elige seguirnos) y el <b>amplificado</b> (con inversión propia de GP3). La transparencia es parte del valor: nada mezclado, nada inflado.</p>
 <div class="split">
-<div class="box"><div class="t">Alcance amplificado (pauta propia)</div><div class="big">2.551.491</div><div class="m">personas · 5.873.370 impresiones de marca · afinidad 4× industria</div></div>
-<div class="box"><div class="t">Comunidad orgánica</div><div class="big">GP3 TV · 2.540</div><div class="m">suscriptores · 149.638 visualizaciones · 127 videos · + Instagram de Moto4 y GP3</div></div>
+<div class="box"><div class="t">Alcance amplificado (pauta propia)</div><div class="big" id="k_reach2">2.551.491</div><div class="m" id="k_impr2">personas · 5.873.370 impresiones de marca · afinidad 4× industria</div></div>
+<div class="box"><div class="t">Comunidad orgánica</div><div class="big" id="k_ytsubs">GP3 TV · 2.540</div><div class="m" id="k_ytdet">suscriptores · 149.638 visualizaciones · 127 videos · + Instagram de Moto4 y GP3</div></div>
 </div>
-<div class="box"><div class="t">Alcance por fecha (personas · 2026)</div><svg viewBox="0 0 560 168" width="100%" style="max-width:560px"><text x="110" y="24.0" font-size="12" fill="#333" text-anchor="end">Termas</text><rect x="118" y="10" width="370.0" height="19" fill="#E30613"/><text x="495.0" y="24.0" font-size="11.5" font-weight="700" fill="#111">835.540</text><text x="110" y="56.0" font-size="12" fill="#333" text-anchor="end">Termas Tickets</text><rect x="118" y="42" width="152.0" height="19" fill="#E30613"/><text x="277.0" y="56.0" font-size="11.5" font-weight="700" fill="#111">343.297</text><text x="110" y="88.0" font-size="12" fill="#333" text-anchor="end">La Pampa</text><rect x="118" y="74" width="353.0" height="19" fill="#E30613"/><text x="478.0" y="88.0" font-size="11.5" font-weight="700" fill="#111">797.134</text><text x="110" y="120.0" font-size="12" fill="#333" text-anchor="end">Huachalalume</text><rect x="118" y="106" width="212.0" height="19" fill="#E30613"/><text x="337.0" y="120.0" font-size="11.5" font-weight="700" fill="#111">478.844</text><text x="110" y="152.0" font-size="12" fill="#333" text-anchor="end">San Nicolás</text><rect x="118" y="138" width="324.1" height="19" fill="#E30613"/><text x="449.1" y="152.0" font-size="11.5" font-weight="700" fill="#111">731.889</text></svg></div>
+<div class="box"><div class="t">Alcance por fecha (personas · 2026)</div><div id="reach-bars"></div></div>
 <h2 class="sec"><span class="n">3</span> Exposición de marca</h2>
 <p class="body">Los puntos donde aparece la marca del patrocinador. La medición cuantitativa de cada soporte se incorpora en la próxima fase.</p>
 <div class="expo">
@@ -82,7 +82,7 @@ td.r,th.r{text-align:right}
 <h2 class="sec"><span class="n">4</span> Retorno y valor</h2>
 <div class="box" style="margin-bottom:12px"><table>
 <tr><th>Tipo de exposición</th><th class="r">Qué aporta</th><th class="r">Estado</th></tr>
-<tr><td><b>Amplificado</b> (pauta Meta)</td><td class="r">2.551.491 personas · 5,87M impresiones</td><td class="r">Medido</td></tr>
+<tr><td><b>Amplificado</b> (pauta Meta)</td><td class="r" id="k_tbl">2.551.491 personas · 5,87M impresiones</td><td class="r">Medido</td></tr>
 <tr><td><b>Orgánico propio</b> (redes)</td><td class="r">Comunidad YouTube + Instagram, engagement</td><td class="r">En captura</td></tr>
 <tr><td><b>Ganado</b> (prensa, TV)</td><td class="r">Notas de medios, cobertura de carreras</td><td class="r">En captura</td></tr>
 </table></div>
@@ -92,7 +92,7 @@ td.r,th.r{text-align:right}
 </ul>
 <div class="foot">
 <div>Emitido por <b>GP3 Sports LATAM</b> · moto4latincup.lat · gp3sports.lat</div>
-<div>Datos verificados en Meta Ads Manager y YouTube · 21 jul 2026</div>
+<div>Datos verificados en Meta Ads Manager y YouTube · <span id="k_foot">21 jul 2026</span></div>
 </div>
 </div>
 <div id="gate" style="position:fixed;inset:0;background:radial-gradient(120% 100% at 70% 20%,#1a1a1a,#000);z-index:9999;display:flex;align-items:center;justify-content:center">
@@ -108,4 +108,51 @@ td.r,th.r{text-align:right}
 function gp3check(){var v=(document.getElementById('gc').value||'').trim().toUpperCase();if(v==='MARCA2026'){document.getElementById('gate').style.display='none';}else{document.getElementById('gerr').textContent='Codigo incorrecto';}}
 document.getElementById('gc').addEventListener('keydown',function(e){if(e.key==='Enter')gp3check();});
 </script>
+
+<script>
+(function(){
+  function miles(n){n=Math.round(Number(n)||0);var s=String(Math.abs(n)),o='',c=0;for(var i=s.length-1;i>=0;i--){o=s.charAt(i)+o;c++;if(c%3===0&&i>0)o='.'+o;}return(n<0?'-':'')+o;}
+  function millones(n){n=Number(n)||0;var m=n/1e6;return (Math.round(m*10)/10).toString().replace('.',',')+' M';}
+  function fdate(str){var m={'01':'ene','02':'feb','03':'mar','04':'abr','05':'may','06':'jun','07':'jul','08':'ago','09':'sep','10':'oct','11':'nov','12':'dic'};var p=(str||'').split('-');if(p.length===3)return p[0]+' '+(m[p[1]]||p[1])+' '+p[2];return str;}
+  function corto(str){var p=(str||'').split('-');if(p.length===3)return p[0]+' '+({'01':'ene','02':'feb','03':'mar','04':'abr','05':'may','06':'jun','07':'jul','08':'ago','09':'sep','10':'oct','11':'nov','12':'dic'}[p[1]]||p[1]);return str;}
+  function label(nombre){var s=(nombre||'').toLowerCase();
+    if(s.indexOf('termas')>=0&&(s.indexOf('ticket')>=0||s.indexOf('trh')>=0))return 'Termas Tickets';
+    if(s.indexOf('trh')>=0)return 'Termas Tickets';
+    if(s.indexOf('termas')>=0)return 'Termas';
+    if(s.indexOf('pampa')>=0)return 'La Pampa';
+    if(s.indexOf('nicolas')>=0||s.indexOf('nicolás')>=0)return 'San Nicolás';
+    if(s.indexOf('huacha')>=0)return 'Huachalalume';
+    var t=(nombre||'').split(/[-_]/)[0].trim();return t.charAt(0).toUpperCase()+t.slice(1);
+  }
+  function bars(camps){
+    var rows=(camps||[]).slice().sort(function(a,b){return b.alcance-a.alcance;});
+    if(!rows.length)return '';
+    var max=rows[0].alcance||1, n=rows.length, rh=32, top=10, h=top+n*rh, w=560, x0=118, maxw=370;
+    var svg='<svg viewBox="0 0 '+w+' '+h+'" width="100%" style="max-width:560px">';
+    for(var i=0;i<n;i++){var c=rows[i], y=top+i*rh, ty=y+14, bw=Math.max(4,Math.round(maxw*(c.alcance/max)*10)/10);
+      svg+='<text x="110" y="'+ty+'" font-size="12" fill="#333" text-anchor="end">'+label(c.nombre)+'</text>';
+      svg+='<rect x="'+x0+'" y="'+y+'" width="'+bw+'" height="19" fill="#E30613" rx="2"/>';
+      svg+='<text x="'+(x0+bw+7)+'" y="'+ty+'" font-size="11.5" font-weight="700" fill="#111">'+miles(c.alcance)+'</text>';
+    }
+    return svg+'</svg>';
+  }
+  function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+  fetch('kpis.json?t='+Date.now()).then(function(r){return r.json();}).then(function(d){
+    var f=fdate(d.fecha), fc=corto(d.fecha);
+    set('k_corte','Temporada 2026 · Corte '+fc);
+    set('k_reach',miles(d.alcance));
+    set('k_impr',millones(d.impresiones));
+    set('k_ytviews',miles(d.yt_views));
+    set('k_reach_t',miles(d.alcance)+' personas');
+    set('k_reach2',miles(d.alcance));
+    set('k_impr2','personas · '+miles(d.impresiones)+' impresiones de marca · afinidad 4× industria');
+    set('k_ytsubs','GP3 TV · '+miles(d.yt_subs));
+    set('k_ytdet','suscriptores · '+miles(d.yt_views)+' visualizaciones · '+miles(d.yt_videos)+' videos · + Instagram de Moto4 y GP3');
+    set('k_tbl',miles(d.alcance)+' personas · '+millones(d.impresiones).replace(' M','M')+' impresiones');
+    set('k_foot',f);
+    var rb=document.getElementById('reach-bars');if(rb)rb.innerHTML=bars(d.campanas);
+  }).catch(function(e){});
+})();
+</script>
+
 </body></html>

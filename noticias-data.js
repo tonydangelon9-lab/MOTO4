@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-07-21",
+    categoria: "Instagram",
+    titulo: "🇬🇧",
+    bajada: "🇬🇧 🏁 A special invitation from David Alonso. David Alonso is proof that dreams can become reality. Every great journey starts with a first step.  📅 Pre-registrations for the Mo",
+    imagen: "NOTICIAS-IG/DbD6CRXR4As.jpg",
+    ig: "DbD6CRXR4As",
+    cuerpo: "🇬🇧<br>🏁 A special invitation from David Alonso.<br>David Alonso is proof that dreams can become reality. Every great journey starts with a first step.<br><br>📅 Pre-registrations for the Moto4 Latin Cup 2027 open on August 15.<br>If you dream of taking your first step on the Road to MotoGP™️, this is your opportunity.<br>🌐 Find all the information on our official website.<br>www.moto4latincup.lat<br>🔗 Link in bio.<br><br>🇪🇸<br>🏁 Una invitación especial de David Alonso.<br>David Alonso es la prueba de que los sueños pueden hacerse realidad. Todo gran camino comienza con un primer paso.<br>📅 Las preinscripciones para la Moto4 Latin Cup 2027 comienzan el 15 de agosto.<br>Si sueñas con dar tu primer paso hacia el Road to MotoGP™️, esta es tu oportunidad.<br>🌐 Conoce toda la información en nuestro sitio web oficial.<br>www.moto4latincup.lat<br>🔗 Link en la bio.<br><br>🇧🇷<br>🏁 Um convite especial de David Alonso.<br>David Alonso é a prova de que os sonhos podem se tornar realidade. Toda grande jornada começa com o primeiro passo.<br>📅 As pré-inscrições para a Moto4 Latin Cup 2027 começam em 15 de agosto.<br>Se você sonha em dar o primeiro passo rumo ao Road to MotoGP™️, esta é a sua oportunidade.<br>🌐 Encontre todas as informações em nosso site oficial.<br>www.moto4latincup.lat<br>🔗 Link na bio."
+  },
+  {
     fecha: "2026-06-21",
     categoria: "Instagram",
     titulo: "🇬🇧 RACE 2 WINNER – SAN NICOLÁS 🏁",

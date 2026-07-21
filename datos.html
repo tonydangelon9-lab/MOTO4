@@ -165,6 +165,12 @@ gtag("config", "G-8L674LLGV6");
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
+  <h2 class="msec">Visitas a la web (Google Analytics)</h2>
+  <div class="kgrid" id="webvis"></div>
+  <div class="metod">Cuánta gente entra al sitio, medido con Google Analytics (propiedad Moto4 Latin Cup). Se actualiza solo cada día. La medición empezó el 21-jul-2026, así que los números van a ir creciendo con los días.</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
   <h2 class="msec" data-i18n>Por fin de semana de carrera</h2>
   <div class="panelbox tscroll"><table id="evtabla"></table></div>
   <div class="metod" data-i18n>Visualizaciones de Facebook sumadas en la ventana de cada evento (serie diaria de Meta) + vistas del directo en YouTube. Goiânia (fecha 1, junto a MotoGP™) e Interlagos (fechas 2-3) son anteriores a la ventana de Meta (que empieza el 18 de abril), por lo que no tienen datos de Facebook/Instagram. De Interlagos sí hay directo: 19.400 vistas de las carreras Moto4 en el canal oficial del Moto1000GP (transmisión anfitriona). Ambas se transmitieron además por TV en ESPN Latin America dentro del marco MotoGP™/Moto1000GP — un retorno televisivo cuyo rating no es público. Goiânia, al no tener transmisión libre, se valora principalmente por esa exposición en TV junto al Gran Premio. Las próximas fechas (Villicum 4-6 sept, Santa Cruz do Sul 25-27 sept, Cuiabá 6-8 nov) se medirán completas, incluyendo Instagram.</div>
@@ -365,6 +371,18 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
       var t='<tr><th>Campaña</th><th>Alcance</th><th>Impresiones</th><th>Clics</th><th>CTR</th></tr>';
       camps.forEach(function(c){ if(!c.alcance&&!c.impr) return; t+='<tr><td>'+esc(label(c.nombre))+'</td><td>'+M(c.alcance)+'</td><td>'+M(c.impr)+'</td><td>'+M(c.clics)+'</td><td>'+pct(c.ctr)+'</td></tr>'; });
       pt.innerHTML=t;
+    } }catch(e){}
+  }).catch(function(e){});
+})();
+</script>
+<script>
+(function(){
+  function M(n){ if(n==null||!isFinite(n)) return "—"; n=Number(n); return n>=1000000 ? (n/1000000).toLocaleString("es-CL",{maximumFractionDigits:1})+" M" : Math.round(n).toLocaleString("es-CL"); }
+  fetch("kpis.json?t="+Date.now()).then(function(r){return r.json();}).then(function(d){
+    try{ var w=document.getElementById("webvis"); if(w){ w.innerHTML=
+      '<div class="kcard"><div class="lbl">Usuarios</div><div class="val">'+M(d.web_usuarios)+'</div><div class="sub">personas distintas que entraron</div></div>'+
+      '<div class="kcard"><div class="lbl">Sesiones</div><div class="val">'+M(d.web_sesiones)+'</div><div class="sub">visitas al sitio</div></div>'+
+      '<div class="kcard"><div class="lbl">Paginas vistas</div><div class="val">'+M(d.web_vistas)+'</div><div class="sub">paginas abiertas en total</div></div>';
     } }catch(e){}
   }).catch(function(e){});
 })();

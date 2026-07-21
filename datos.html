@@ -126,7 +126,7 @@ gtag("config", "G-8L674LLGV6");
 </div>
 <noscript><div style="padding:40px;text-align:center;font-family:Arial,sans-serif">Este panel necesita JavaScript activado para mostrar los datos. / This panel requires JavaScript.</div></noscript>
 
-<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk" href="noticias.html">Noticias</a><a class="lnk" href="media.html">Media</a><a class="lnk" href="informe.html">Informe</a><a class="lnk active" href="datos.html">Datos</a><a class="lnk" href="intranet.html">Intranet</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav>
+<nav><div class="wrap"><a href="index.html"><img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Moto4 Latin Cup"></a><img class="nav-mobil nm-mob" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"><button class="burger" id="burger" aria-label="Menú">&#9776;</button><div class="navlinks" id="menu"><a class="lnk" href="index.html">Inicio</a><a class="lnk" href="calendario.html">Calendario</a><a class="lnk" href="pilotos.html">Pilotos</a><a class="lnk" href="campeonato.html">Ranking 2026</a><a class="lnk" href="noticias.html">Noticias</a><a class="lnk" href="media.html">Media</a><a class="lnk active" href="datos.html">Datos</a><a class="lnk" href="intranet.html">Intranet</a><a class="btn" href="postular.html">Postular</a><img class="nav-mobil nm-desk" src="07-LOGOS-SPONSORS/Mobil_White.png" alt="Mobil"></div></div></nav>
 
 <header class="phead"><div class="wrap">
   <div class="k">Mobil Moto4 Latin Cup · GP3 Sports</div>
@@ -155,6 +155,13 @@ gtag("config", "G-8L674LLGV6");
   <div class="kgrid" id="acum"></div>
   <div class="panelbox tscroll" style="margin-top:14px"><table id="acumtabla"></table></div>
   <div class="metod" id="acumnota"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2 class="msec">Alcance amplificado (pauta Meta 2026)</h2>
+  <div class="kgrid" id="pauta"></div>
+  <div class="panelbox tscroll" style="margin-top:14px"><table id="pautatabla"></table></div>
+  <div class="metod">Alcance e impresiones de las campañas propias de GP3 en Meta (Facebook/Instagram) durante 2026, amplificadas con pauta. Complementa el alcance orgánico de arriba. Se actualiza solo cada día. No incluye montos de inversión.</div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -279,7 +286,7 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     var visMeta=s4("visualizaciones"), inter=s4("interacciones");
     var segn=(s4("seg_nuevos")||0)+((A.youtube&&A.youtube.seg_nuevos)||0);
     document.getElementById("acum").innerHTML =
-      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+esc(A.periodo_meta)+' · orgánico (sin pauta declarada)</div></div>'+
+      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+esc(A.periodo_meta)+' · orgánico</div></div>'+
       '<div class="kcard"><div class="lbl">Vistas YouTube</div><div class="val">'+M(A.youtube&&A.youtube.vistas)+'</div><div class="sub">'+esc(A.periodo_yt)+' · '+M(A.youtube&&A.youtube.horas)+' horas vistas</div></div>'+
       '<div class="kcard"><div class="lbl">Interacciones</div><div class="val">'+M(inter)+'</div><div class="sub">likes, comentarios y compartidos</div></div>'+
       '<div class="kcard"><div class="lbl">Seguidores nuevos</div><div class="val">+'+M(segn)+'</div><div class="sub">todas las plataformas</div></div>';
@@ -330,6 +337,36 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     });
     document.getElementById("tabla").innerHTML=t;
   });
+})();
+</script>
+<script>
+(function(){
+  function M(n){ if(n==null||!isFinite(n)) return "—"; n=Number(n); return n>=1000000 ? (n/1000000).toLocaleString("es-CL",{maximumFractionDigits:1})+" M" : Math.round(n).toLocaleString("es-CL"); }
+  function pct(n){ return (Number(n||0)).toLocaleString("es-CL",{maximumFractionDigits:2})+"%"; }
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function label(nombre){ var s=(nombre||"").toLowerCase();
+    if(s.indexOf("termas")>=0&&(s.indexOf("ticket")>=0||s.indexOf("trh")>=0))return "Termas (tickets)";
+    if(s.indexOf("trh")>=0)return "Termas (tickets)";
+    if(s.indexOf("termas")>=0)return "Termas de Río Hondo";
+    if(s.indexOf("pampa")>=0)return "La Pampa (Toay)";
+    if(s.indexOf("nicolas")>=0||s.indexOf("nicolás")>=0)return "San Nicolás";
+    if(s.indexOf("huacha")>=0)return "Huachalalume";
+    var t=(nombre||"").split(/[-_]/)[0].trim(); return t.charAt(0).toUpperCase()+t.slice(1);
+  }
+  fetch("kpis.json?t="+Date.now()).then(function(r){return r.json();}).then(function(d){
+    try{ var ld=document.getElementById("lastdate"); if(ld&&d.fecha) ld.textContent=d.fecha; }catch(e){}
+    try{ var pa=document.getElementById("pauta"); if(pa){ pa.innerHTML=
+      '<div class="kcard"><div class="lbl">Personas alcanzadas</div><div class="val">'+M(d.alcance)+'</div><div class="sub">campañas Meta 2026 · amplificado con pauta</div></div>'+
+      '<div class="kcard"><div class="lbl">Impresiones de marca</div><div class="val">'+M(d.impresiones)+'</div><div class="sub">veces que apareció la marca</div></div>'+
+      '<div class="kcard"><div class="lbl">Clics</div><div class="val">'+M(d.clics)+'</div><div class="sub">interacciones al anuncio</div></div>'+
+      '<div class="kcard"><div class="lbl">CTR</div><div class="val">'+pct(d.ctr)+'</div><div class="sub">afinidad (referencia industria ~1%)</div></div>';
+    } }catch(e){}
+    try{ var pt=document.getElementById("pautatabla"); if(pt){ var camps=(d.campanas||[]).slice().sort(function(a,b){return b.alcance-a.alcance;});
+      var t='<tr><th>Campaña</th><th>Alcance</th><th>Impresiones</th><th>Clics</th><th>CTR</th></tr>';
+      camps.forEach(function(c){ if(!c.alcance&&!c.impr) return; t+='<tr><td>'+esc(label(c.nombre))+'</td><td>'+M(c.alcance)+'</td><td>'+M(c.impr)+'</td><td>'+M(c.clics)+'</td><td>'+pct(c.ctr)+'</td></tr>'; });
+      pt.innerHTML=t;
+    } }catch(e){}
+  }).catch(function(e){});
 })();
 </script>
 <script src="i18n.js"></script>

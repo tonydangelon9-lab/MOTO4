@@ -1,0 +1,47 @@
+{
+ "fecha": "21-07-2026",
+ "alcance": 2548570,
+ "impresiones": 5873370,
+ "clics": 233061,
+ "ctr": 3.97,
+ "yt_subs": 2540,
+ "yt_views": 149643,
+ "yt_videos": 127,
+ "campanas": [
+  {
+   "nombre": "Termas - Advantage+ - RMKT - GP3",
+   "alcance": 835540,
+   "impr": 1425952,
+   "clics": 97526,
+   "ctr": 6.839361
+  },
+  {
+   "nombre": "LaPampa_Mayo2026_tráfico",
+   "alcance": 797134,
+   "impr": 1642091,
+   "clics": 64221,
+   "ctr": 3.910928
+  },
+  {
+   "nombre": "SAN_NICOLAS_2026_TRAFICO_V1",
+   "alcance": 728968,
+   "impr": 1331594,
+   "clics": 42264,
+   "ctr": 3.17394
+  },
+  {
+   "nombre": "GP3_Huachalalume_Mayo2026 - v2",
+   "alcance": 478844,
+   "impr": 1066732,
+   "clics": 16275,
+   "ctr": 1.525688
+  },
+  {
+   "nombre": "TRH - abril26 -RMKT - TICKETS - FOTO",
+   "alcance": 343297,
+   "impr": 407001,
+   "clics": 12775,
+   "ctr": 3.138813
+  }
+ ]
+}

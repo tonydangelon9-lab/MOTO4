@@ -61,5 +61,6 @@ var METRICS = [
   fb_rubus:        { seguidores: 5100 },
   fb_monomarca:    { seguidores: 505 },
   notas: "Línea base del panel. Valores tal como los muestran las plataformas (redondeados)."
-}
+},
+{ fecha: "2026-07-21", ig_moto4latin:{seguidores:11149}, ig_gp3sports:{seguidores:29867}, yt_gp3tv:{suscriptores:2540,videos:127}, fb_gp3sports:{seguidores:17923}, fb_moto4:{seguidores:4419}, fb_gp3sports2:{seguidores:6059}, fb_motovelatam:{seguidores:8873}, fb_tonydangelo:{seguidores:6983}, fb_gp3motorcycle:{seguidores:1528}, fb_rubus:{seguidores:5162}, fb_monomarca:{seguidores:505}, notas:"Captura automatica diaria." }
 ];

@@ -128,6 +128,10 @@ const PRESENTACIONES = [
     tag:{es:'EL EQUIPO · SOCIO TÉCNICO', en:'THE TEAM · TECHNICAL PARTNER', pt:'A EQUIPE · PARCEIRO TÉCNICO'},
     nombre:{es:'PRESENTACIÓN TEAM JUNIOR', en:'TEAM JUNIOR PRESENTATION', pt:'APRESENTAÇÃO TEAM JUNIOR'},
     desc:{es:'Master Plan del equipo puente Barcelona 2027 · FIM MotoJunior. Propuesta de alianza para Honda HRC.', en:'Master Plan of the Barcelona 2027 bridge team · FIM MotoJunior. Partnership proposal for Honda HRC.', pt:'Master Plan da equipe-ponte Barcelona 2027 · FIM MotoJunior. Proposta de parceria para a Honda HRC.'} },
+  { id:'inst', hash:'6b4dfc25ff298642d9e9a3d0037f1753fcc3694d79f86f4cce5ca24af90058f0', slides:null, link:'institucional.html',
+    tag:{es:'LA COPA · INSTITUCIONAL', en:'THE CUP · INSTITUTIONAL', pt:'A COPA · INSTITUCIONAL'},
+    nombre:{es:'PRESENTACIÓN INSTITUCIONAL', en:'INSTITUTIONAL PRESENTATION', pt:'APRESENTAÇÃO INSTITUCIONAL'},
+    desc:{es:'Cómo nació, cómo funciona y cómo está la copa. Para federaciones, autoridades, prensa y aliados. Sin contenido comercial.', en:'How the cup was born, how it works and where it stands. For federations, authorities, press and partners. No commercial content.', pt:'Como a copa nasceu, como funciona e como está. Para federações, autoridades, imprensa e parceiros. Sem conteúdo comercial.'} },
   { id:'socios', hash:'c0bc4bf9dcbdf78dd5d503455bfea489f4bca70b62c8543f346eab5260ff3b88', slides:null, link:'socios.html',
     tag:{es:'EL EQUIPO · INVERSIONISTAS', en:'THE TEAM · INVESTORS', pt:'A EQUIPE · INVESTIDORES'},
     nombre:{es:'SOCIOS · MASTER PLAN COMPLETO', en:'PARTNERS · FULL MASTER PLAN', pt:'SÓCIOS · MASTER PLAN COMPLETO'},
@@ -179,7 +183,7 @@ async function tryOpen(idx){
   if(hv!==p.hash){ err.style.color='#ff7a9c'; err.textContent=u.wrong; const c=err.closest('.card'); c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); return; }
   err.textContent='';
   if(p.link){
-    try{ if(p.id==='moto4') sessionStorage.setItem('m4pres','1'); if(p.id==='honda') sessionStorage.setItem('m4tj','1'); if(p.id==='socios') sessionStorage.setItem('m4soc','1'); }catch(e){}
+    try{ if(p.id==='moto4') sessionStorage.setItem('m4pres','1'); if(p.id==='honda') sessionStorage.setItem('m4tj','1'); if(p.id==='socios') sessionStorage.setItem('m4soc','1'); if(p.id==='inst') sessionStorage.setItem('m4inst','1'); }catch(e){}
     window.location.href = p.link; return;
   }
   if(!p.slides){ err.textContent=u.prep; err.style.color='#8be89b'; return; }

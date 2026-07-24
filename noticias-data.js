@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-07-23",
+    categoria: "Instagram",
+    titulo: "🇬🇧",
+    bajada: "🇬🇧 See you in San Juan. 🇦🇷🏍️ The journey continues at the next stop on the Road to MotoGP™️. 📍 San Juan, Argentina 📅 September 4–6, 2026 🏁 Rounds 7 & 8 A new challenge awai",
+    imagen: "NOTICIAS-IG/DbIuuzYRENE.jpg",
+    ig: "DbIuuzYRENE",
+    cuerpo: "🇬🇧<br>See you in San Juan. 🇦🇷🏍️<br>The journey continues at the next stop on the Road to MotoGP™️.<br>📍 San Juan, Argentina<br>📅 September 4–6, 2026<br>🏁 Rounds 7 & 8<br>A new challenge awaits. The same Honda NSF250R. The same opportunity. The next step starts here.<br><br>🇪🇸<br>Nos vemos en San Juan. 🇦🇷🏍️<br>El camino continúa con una nueva parada rumbo a MotoGP™️.<br>📍 San Juan, Argentina<br>📅 4 al 6 de septiembre de 2026<br>🏁 Rounds 7 y 8<br>Un nuevo desafío nos espera. La misma Honda NSF250R. La misma oportunidad. El siguiente paso comienza aquí.<br><br>🇧🇷<br>Nos vemos em San Juan. 🇦🇷🏍️<br>A jornada continua com a próxima etapa rumo ao MotoGP™️.<br>📍 San Juan, Argentina<br>📅 4 a 6 de setembro de 2026<br>🏁 Rounds 7 e 8<br>Um novo desafio nos espera. A mesma Honda NSF250R. A mesma oportunidade. O próximo passo começa aqui."
+  },
+  {
     fecha: "2026-07-21",
     categoria: "Instagram",
     titulo: "🇬🇧",

@@ -14,6 +14,24 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-07-27",
+    categoria: "Instagram",
+    titulo: "⏱️ D-39 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-39 | RUMBO A VILLICUM 🇦🇷  El líder del campeonato abre la cuenta regresiva: Kensei Matsudaira (#74, USA) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villic",
+    imagen: "NOTICIAS-IG/DbTBaOPFve0.jpg",
+    ig: "DbTBaOPFve0",
+    cuerpo: "⏱️ D-39 | RUMBO A VILLICUM 🇦🇷<br><br>El líder del campeonato abre la cuenta regresiva: Kensei Matsudaira (#74, USA) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P1 del ranking con 113 puntos en la Mobil Moto4 Latin Cup.<br><br>🇬🇧 39 days to go! The championship leader opens the countdown: Kensei Matsudaira (#74, USA) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P1 in the standings with 113 points.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-07-26",
+    categoria: "Instagram",
+    titulo: "⏱️ FALTAN 40 DÍAS | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ FALTAN 40 DÍAS | RUMBO A VILLICUM 🇦🇷  Comienza la cuenta regresiva: la Mobil Moto4 Latin Cup llega al Circuito San Juan Villicum con las Rounds 7-8-9, del 4 al 6 de septiembre",
+    imagen: "NOTICIAS-IG/DbRF0r2karn.jpg",
+    ig: "DbRF0r2karn",
+    cuerpo: "⏱️ FALTAN 40 DÍAS | RUMBO A VILLICUM 🇦🇷<br><br>Comienza la cuenta regresiva: la Mobil Moto4 Latin Cup llega al Circuito San Juan Villicum con las Rounds 7-8-9, del 4 al 6 de septiembre. Cada día te presentaremos un piloto confirmado. Atentos.<br><br>🇬🇧 40 DAYS TO GO. The countdown to Villicum begins — Rounds 7-8-9 at Circuito San Juan Villicum, September 4-6. Every day, one confirmed rider. Stay tuned.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-07-23",
     categoria: "Instagram",
     titulo: "🇬🇧",

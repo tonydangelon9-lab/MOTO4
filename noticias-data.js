@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-07-28",
+    categoria: "Instagram",
+    titulo: "⏱️ D-38 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-38 | RUMBO A VILLICUM 🇦🇷  Doble ganador en Interlagos y escolta del campeonato: Alberto Enríquez (#62, Ecuador) está confirmado para las Rounds 7-8-9 en el Circuito San Juan",
+    imagen: "NOTICIAS-IG/DbVmMT8Ddx3.jpg",
+    ig: "DbVmMT8Ddx3",
+    cuerpo: "⏱️ D-38 | RUMBO A VILLICUM 🇦🇷<br><br>Doble ganador en Interlagos y escolta del campeonato: Alberto Enríquez (#62, Ecuador) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P2 del ranking con 94,5 puntos en la Mobil Moto4 Latin Cup.<br><br>🇬🇧 38 days to go! Double winner at Interlagos and championship runner-up: Alberto Enríquez (#62, Ecuador) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P2 in the standings with 94.5 points.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-07-27",
     categoria: "Instagram",
     titulo: "🚨 CAMBIO DE SEDE · La final 2026 se corre en Goiânia 🇧🇷",

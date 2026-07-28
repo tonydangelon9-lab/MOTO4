@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-07-27",
     categoria: "Instagram",
+    titulo: "🚨 CAMBIO DE SEDE · La final 2026 se corre en Goiânia 🇧🇷",
+    bajada: "🚨 CAMBIO DE SEDE · La final 2026 se corre en Goiânia 🇧🇷  La definición del título vuelve a donde todo comenzó: el Autódromo de Goiânia, el mismo escenario donde la copa debutó j",
+    imagen: "NOTICIAS-IG/DbT_NfRj-eQ.jpg",
+    ig: "DbT_NfRj-eQ",
+    cuerpo: "🚨 CAMBIO DE SEDE · La final 2026 se corre en Goiânia 🇧🇷<br><br>La definición del título vuelve a donde todo comenzó: el Autódromo de Goiânia, el mismo escenario donde la copa debutó junto a MotoGP™.<br><br>📅 R12–R13 · 4 al 6 de diciembre · junto al Moto1000GP. El campeonato se define en la casa del debut. Nos vemos en Goiás.<br><br>🇬🇧 VENUE CHANGE · The 2026 season finale moves to Goiânia, Brazil. The title will be decided where the cup made its debut alongside MotoGP™ — Dec 4–6, R12–R13, with Moto1000GP.<br><br>#Moto4LatinCup #RoadToMotoGP #Goiania #Moto1000GP #ElCaminoLatinoAlMotoGP"
+  },
+  {
+    fecha: "2026-07-27",
+    categoria: "Instagram",
     titulo: "⏱️ D-39 | RUMBO A VILLICUM 🇦🇷",
     bajada: "⏱️ D-39 | RUMBO A VILLICUM 🇦🇷  El líder del campeonato abre la cuenta regresiva: Kensei Matsudaira (#74, USA) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villic",
     imagen: "NOTICIAS-IG/DbTBaOPFve0.jpg",

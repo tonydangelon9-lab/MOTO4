@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-07-29",
+    categoria: "Instagram",
+    titulo: "⏱️ D-37 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-37 | RUMBO A VILLICUM 🇦🇷  El ganador del debut histórico en Goiânia: Andoni Domínguez (#34, Nicaragua) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum",
+    imagen: "NOTICIAS-IG/DbYLA_IFN5l.jpg",
+    ig: "DbYLA_IFN5l",
+    cuerpo: "⏱️ D-37 | RUMBO A VILLICUM 🇦🇷<br><br>El ganador del debut histórico en Goiânia: Andoni Domínguez (#34, Nicaragua) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P3 del ranking con 78,5 puntos en la Mobil Moto4 Latin Cup.<br><br>🇬🇧 37 days to go! The winner of the historic Goiânia debut: Andoni Domínguez (#34, Nicaragua) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P3 in the standings with 78.5 points.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-07-28",
     categoria: "Instagram",
     titulo: "⏱️ D-38 | RUMBO A VILLICUM 🇦🇷",

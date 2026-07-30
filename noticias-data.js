@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-07-30",
+    categoria: "Instagram",
+    titulo: "⏱️ D-36 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-36 | RUMBO A VILLICUM 🇦🇷  La garra que no se negocia: Mahdi Salem (#10, Palestina) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P4 del ranking co",
+    imagen: "NOTICIAS-IG/Dbav0STCKRF.jpg",
+    ig: "Dbav0STCKRF",
+    cuerpo: "⏱️ D-36 | RUMBO A VILLICUM 🇦🇷<br><br>La garra que no se negocia: Mahdi Salem (#10, Palestina) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P4 del ranking con 73,5 puntos en la Mobil Moto4 Latin Cup.<br><br>🇬🇧 36 days to go! Relentless determination: Mahdi Salem (#10, Palestine) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P4 in the standings with 73.5 points.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-07-29",
     categoria: "Instagram",
     titulo: "⏱️ D-37 | RUMBO A VILLICUM 🇦🇷",

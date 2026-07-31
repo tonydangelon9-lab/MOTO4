@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-07-31",
+    categoria: "Instagram",
+    titulo: "⏱️ D-35 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-35 | RUMBO A VILLICUM 🇦🇷  Top 5 del campeonato y con hambre de más: Ulises Weyrauch (#64, USA) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P5 de",
+    imagen: "NOTICIAS-IG/DbdUmWkje25.jpg",
+    ig: "DbdUmWkje25",
+    cuerpo: "⏱️ D-35 | RUMBO A VILLICUM 🇦🇷<br><br>Top 5 del campeonato y con hambre de más: Ulises Weyrauch (#64, USA) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P5 del ranking con 56,5 puntos en la Mobil Moto4 Latin Cup.<br><br>🇬🇧 35 days to go! Top 5 in the championship and hungry for more: Ulises Weyrauch (#64, USA) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P5 in the standings with 56.5 points.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-07-30",
     categoria: "Instagram",
     titulo: "⏱️ D-36 | RUMBO A VILLICUM 🇦🇷",

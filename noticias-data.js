@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-01",
+    categoria: "Instagram",
+    titulo: "⏱️ D-34 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-34 | RUMBO A VILLICUM 🇦🇷  La carta chilena 🇨🇱: Cristóbal Carreño (#99, Chile) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P6 del ranking con 5",
+    imagen: "NOTICIAS-IG/Dbf5YmHDCdT.jpg",
+    ig: "Dbf5YmHDCdT",
+    cuerpo: "⏱️ D-34 | RUMBO A VILLICUM 🇦🇷<br><br>La carta chilena 🇨🇱: Cristóbal Carreño (#99, Chile) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P6 del ranking con 55 puntos en la Mobil Moto4 Latin Cup.<br><br>🇬🇧 34 days to go! Chile's contender: Cristóbal Carreño (#99, Chile) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P6 in the standings with 55 points.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-07-31",
     categoria: "Instagram",
     titulo: "⏱️ D-35 | RUMBO A VILLICUM 🇦🇷",

@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-02",
+    categoria: "Instagram",
+    titulo: "⏱️ D-33 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-33 | RUMBO A VILLICUM 🇦🇷  Corre en casa 🇦🇷: Santiago Gossa (#11, Argentina) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P7 del ranking con 49 ",
+    imagen: "NOTICIAS-IG/DbieMCkjGZe.jpg",
+    ig: "DbieMCkjGZe",
+    cuerpo: "⏱️ D-33 | RUMBO A VILLICUM 🇦🇷<br><br>Corre en casa 🇦🇷: Santiago Gossa (#11, Argentina) está confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P7 del ranking con 49 puntos en la Mobil Moto4 Latin Cup. El público argentino tendrá a quién alentar.<br><br>🇬🇧 33 days to go! Racing at home: Santiago Gossa (#11, Argentina) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P7 in the standings with 49 points. The Argentine crowd will have someone to cheer for.<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-01",
     categoria: "Instagram",
     titulo: "⏱️ D-34 | RUMBO A VILLICUM 🇦🇷",

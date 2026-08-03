@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-03",
+    categoria: "Instagram",
+    titulo: "⏱️ D-32 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-32 | RUMBO A VILLICUM 🇦🇷  Thiago Torrez (#46, Paraguay) esta confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P8 del ranking con 35,5 puntos en la Mobil M",
+    imagen: "NOTICIAS-IG/DblEQpVmn05.jpg",
+    ig: "DblEQpVmn05",
+    cuerpo: "⏱️ D-32 | RUMBO A VILLICUM 🇦🇷<br><br>Thiago Torrez (#46, Paraguay) esta confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P8 del ranking con 35,5 puntos en la Mobil Moto4 Latin Cup.<br><br>🇬🇧 32 days to go! Thiago Torrez (#46, Paraguay) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P8 in the standings with 35.5 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-02",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

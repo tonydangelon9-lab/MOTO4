@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-04",
+    categoria: "Instagram",
+    titulo: "⏱️ D-31 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-31 | RUMBO A VILLICUM 🇦🇷  Murilo Gomes (#42, Brasil) esta confirmado para las Rounds 7-8-9 en Villicum — P9 del ranking con 34 puntos.  🇬🇧 31 days to go! Murilo Gomes (#42",
+    imagen: "NOTICIAS-IG/DbnpEZok04W.jpg",
+    ig: "DbnpEZok04W",
+    cuerpo: "⏱️ D-31 | RUMBO A VILLICUM 🇦🇷<br><br>Murilo Gomes (#42, Brasil) esta confirmado para las Rounds 7-8-9 en Villicum — P9 del ranking con 34 puntos.<br><br>🇬🇧 31 days to go! Murilo Gomes (#42, Brazil) is confirmed for Rounds 7-8-9 at Villicum — P9 in the standings with 34 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-03",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-05",
+    categoria: "Instagram",
+    titulo: "⏱️ D-30 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-30 | RUMBO A VILLICUM 🇦🇷  Otro argentino en casa: Santiago Vogel (#26, Argentina) esta confirmado para las Rounds 7-8-9 en Villicum — P10 del ranking con 33 puntos.  🇬🇧 30",
+    imagen: "NOTICIAS-IG/DbqN2OdjGxV.jpg",
+    ig: "DbqN2OdjGxV",
+    cuerpo: "⏱️ D-30 | RUMBO A VILLICUM 🇦🇷<br><br>Otro argentino en casa: Santiago Vogel (#26, Argentina) esta confirmado para las Rounds 7-8-9 en Villicum — P10 del ranking con 33 puntos.<br><br>🇬🇧 30 days to go! Another home hero: Santiago Vogel (#26, Argentina) is confirmed for Rounds 7-8-9 at Villicum — P10 in the standings with 33 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-04",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

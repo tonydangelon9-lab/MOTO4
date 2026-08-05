@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-04",
     categoria: "Instagram",
+    titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷  Thiago Torrez (#46, Paraguay) en plena acción — P8 del ranking con 35,5 puntos, confirmado para Villicum.  🇬🇧 Thiago Torrez (#46, Paraguay) i",
+    imagen: "NOTICIAS-IG/Dbof-xrlAUg.jpg",
+    ig: "Dbof-xrlAUg",
+    cuerpo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷<br><br>Thiago Torrez (#46, Paraguay) en plena acción — P8 del ranking con 35,5 puntos, confirmado para Villicum.<br><br>🇬🇧 Thiago Torrez (#46, Paraguay) in full flight — P8 in the standings with 35.5 points, confirmed for Villicum.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-08-04",
+    categoria: "Instagram",
     titulo: "⏱️ D-31 | RUMBO A VILLICUM 🇦🇷",
     bajada: "⏱️ D-31 | RUMBO A VILLICUM 🇦🇷  Murilo Gomes (#42, Brasil) esta confirmado para las Rounds 7-8-9 en Villicum — P9 del ranking con 34 puntos.  🇬🇧 31 days to go! Murilo Gomes (#42",
     imagen: "NOTICIAS-IG/DbnpEZok04W.jpg",

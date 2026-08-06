@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-06",
+    categoria: "Instagram",
+    titulo: "⏱️ D-29 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-29 | RUMBO A VILLICUM 🇦🇷  Aidan Hancock (#91, USA) esta confirmado para las Rounds 7-8-9 en Villicum — P11 del ranking con 28 puntos.  🇬🇧 29 days to go! Aidan Hancock (#91",
+    imagen: "NOTICIAS-IG/DbsypFKmlgg.jpg",
+    ig: "DbsypFKmlgg",
+    cuerpo: "⏱️ D-29 | RUMBO A VILLICUM 🇦🇷<br><br>Aidan Hancock (#91, USA) esta confirmado para las Rounds 7-8-9 en Villicum — P11 del ranking con 28 puntos.<br><br>🇬🇧 29 days to go! Aidan Hancock (#91, USA) is confirmed for Rounds 7-8-9 at Villicum — P11 in the standings with 28 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-05",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

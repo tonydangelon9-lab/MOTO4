@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-05",
     categoria: "Instagram",
+    titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷  Santiago Gossa (#11, Argentina) ataca en su tierra — P7 del ranking con 49 puntos, confirmado para las Rounds 7-8-9 en Villicum.  🇬🇧 Santiago",
+    imagen: "NOTICIAS-IG/DbrEysoHB_X.jpg",
+    ig: "DbrEysoHB_X",
+    cuerpo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷<br><br>Santiago Gossa (#11, Argentina) ataca en su tierra — P7 del ranking con 49 puntos, confirmado para las Rounds 7-8-9 en Villicum.<br><br>🇬🇧 Santiago Gossa (#11, Argentina) attacks on home soil — P7 in the standings with 49 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-08-05",
+    categoria: "Instagram",
     titulo: "⏱️ D-30 | RUMBO A VILLICUM 🇦🇷",
     bajada: "⏱️ D-30 | RUMBO A VILLICUM 🇦🇷  Otro argentino en casa: Santiago Vogel (#26, Argentina) esta confirmado para las Rounds 7-8-9 en Villicum — P10 del ranking con 33 puntos.  🇬🇧 30",
     imagen: "NOTICIAS-IG/DbqN2OdjGxV.jpg",

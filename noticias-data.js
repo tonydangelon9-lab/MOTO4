@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-07",
+    categoria: "Instagram",
+    titulo: "⏱️ D-28 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-28 | RUMBO A VILLICUM 🇦🇷  Lorenzo Tiberi (#19, Argentina) esta confirmado para las Rounds 7-8-9 en Villicum — P12 del ranking con 24 puntos.  🇬🇧 28 days to go! Lorenzo Tib",
+    imagen: "NOTICIAS-IG/DbvXb41Gn5k.jpg",
+    ig: "DbvXb41Gn5k",
+    cuerpo: "⏱️ D-28 | RUMBO A VILLICUM 🇦🇷<br><br>Lorenzo Tiberi (#19, Argentina) esta confirmado para las Rounds 7-8-9 en Villicum — P12 del ranking con 24 puntos.<br><br>🇬🇧 28 days to go! Lorenzo Tiberi (#19, Argentina) is confirmed for Rounds 7-8-9 at Villicum — P12 in the standings with 24 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-06",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

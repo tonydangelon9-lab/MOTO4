@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-06",
     categoria: "Instagram",
+    titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷  El chileno Cristobal Carreño (#99) al límite — P6 del ranking con 55 puntos, confirmado para Villicum.  🇬🇧 Chile's Cristobal Carreño (#99) on",
+    imagen: "NOTICIAS-IG/Dbtpk3SHy1g.jpg",
+    ig: "Dbtpk3SHy1g",
+    cuerpo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷<br><br>El chileno Cristobal Carreño (#99) al límite — P6 del ranking con 55 puntos, confirmado para Villicum.<br><br>🇬🇧 Chile's Cristobal Carreño (#99) on the limit — P6 in the standings with 55 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-08-06",
+    categoria: "Instagram",
     titulo: "⏱️ D-29 | RUMBO A VILLICUM 🇦🇷",
     bajada: "⏱️ D-29 | RUMBO A VILLICUM 🇦🇷  Aidan Hancock (#91, USA) esta confirmado para las Rounds 7-8-9 en Villicum — P11 del ranking con 28 puntos.  🇬🇧 29 days to go! Aidan Hancock (#91",
     imagen: "NOTICIAS-IG/DbsypFKmlgg.jpg",

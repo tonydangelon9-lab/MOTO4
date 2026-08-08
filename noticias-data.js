@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-08",
+    categoria: "Instagram",
+    titulo: "⏱️ D-27 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-27 | RUMBO A VILLICUM 🇦🇷  Anyelo Perdomo (#69, Venezuela) esta confirmado para las Rounds 7-8-9 en Villicum — P13 del ranking con 19,5 puntos.  🇬🇧 27 days to go! Anyelo Pe",
+    imagen: "NOTICIAS-IG/Dbx8PHUnXJl.jpg",
+    ig: "Dbx8PHUnXJl",
+    cuerpo: "⏱️ D-27 | RUMBO A VILLICUM 🇦🇷<br><br>Anyelo Perdomo (#69, Venezuela) esta confirmado para las Rounds 7-8-9 en Villicum — P13 del ranking con 19,5 puntos.<br><br>🇬🇧 27 days to go! Anyelo Perdomo (#69, Venezuela) is confirmed for Rounds 7-8-9 at Villicum — P13 in the standings with 19.5 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-07",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-07",
     categoria: "Instagram",
+    titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷  Ulises Weyrauch (#64, USA) en modo ataque — P5 del ranking con 56,5 puntos, confirmado para Villicum.  🇬🇧 Ulises Weyrauch (#64, USA) in attac",
+    imagen: "NOTICIAS-IG/DbwOX8qD3Gd.jpg",
+    ig: "DbwOX8qD3Gd",
+    cuerpo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷<br><br>Ulises Weyrauch (#64, USA) en modo ataque — P5 del ranking con 56,5 puntos, confirmado para Villicum.<br><br>🇬🇧 Ulises Weyrauch (#64, USA) in attack mode — P5 in the standings with 56.5 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-08-07",
+    categoria: "Instagram",
     titulo: "⏱️ D-28 | RUMBO A VILLICUM 🇦🇷",
     bajada: "⏱️ D-28 | RUMBO A VILLICUM 🇦🇷  Lorenzo Tiberi (#19, Argentina) esta confirmado para las Rounds 7-8-9 en Villicum — P12 del ranking con 24 puntos.  🇬🇧 28 days to go! Lorenzo Tib",
     imagen: "NOTICIAS-IG/DbvXb41Gn5k.jpg",

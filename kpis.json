@@ -1,23 +1,23 @@
 {
- "fecha": "08-08-2026",
- "alcance": 2704125,
- "impresiones": 6933965,
- "clics": 259119,
- "ctr": 3.74,
- "yt_subs": 2540,
- "yt_views": 149969,
+ "fecha": "09-08-2026",
+ "alcance": 2712676,
+ "impresiones": 7021977,
+ "clics": 261172,
+ "ctr": 3.72,
+ "yt_subs": 2550,
+ "yt_views": 150027,
  "yt_videos": 127,
- "web_usuarios": 93,
- "web_sesiones": 150,
- "web_vistas": 230,
- "ig_gp3_seg": 30349,
- "ig_moto4_seg": 11175,
+ "web_usuarios": 96,
+ "web_sesiones": 156,
+ "web_vistas": 239,
+ "ig_gp3_seg": 30416,
+ "ig_moto4_seg": 11171,
  "fb_pages": {
   "Team GP3 AD11 BY FIMLA": 3066,
   "GP3  Sports": 6054,
   "Motociclismo de Velocidad Latinoamericano": 8870,
   "Tony D'Angelo #11": 6976,
-  "GP3 Sports": 18012,
+  "GP3 Sports": 18021,
   "Rubus Racing Park": 5164,
   "GP3  Motorcycle": 1526,
   "Mobil Moto4 Latin Cup": 4441,
@@ -61,17 +61,17 @@
   },
   {
    "nombre": "CAV_2026_F4_CONCORDIA_TRAFICO_V1",
-   "alcance": 312275,
-   "impr": 982077,
-   "clics": 23663,
-   "ctr": 2.409485
+   "alcance": 332674,
+   "impr": 1068120,
+   "clics": 25667,
+   "ctr": 2.403007
   },
   {
    "nombre": "CAV_2026_F4_CONCORDIA_ULTIMA_ETAPA_V1",
-   "alcance": 44811,
-   "impr": 78518,
-   "clics": 2395,
-   "ctr": 3.050256
+   "alcance": 45816,
+   "impr": 80487,
+   "clics": 2444,
+   "ctr": 3.036515
   }
  ]
 }

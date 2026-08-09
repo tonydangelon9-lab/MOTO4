@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-08",
     categoria: "Instagram",
+    titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷  Mahdi Salem (#10, Palestina) no levanta — P4 del ranking con 73,5 puntos, confirmado para Villicum.  🇬🇧 Mahdi Salem (#10, Palestine) flat out",
+    imagen: "NOTICIAS-IG/DbyzKhyH2zV.jpg",
+    ig: "DbyzKhyH2zV",
+    cuerpo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷<br><br>Mahdi Salem (#10, Palestina) no levanta — P4 del ranking con 73,5 puntos, confirmado para Villicum.<br><br>🇬🇧 Mahdi Salem (#10, Palestine) flat out — P4 in the standings with 73.5 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-08-08",
+    categoria: "Instagram",
     titulo: "⏱️ D-27 | RUMBO A VILLICUM 🇦🇷",
     bajada: "⏱️ D-27 | RUMBO A VILLICUM 🇦🇷  Anyelo Perdomo (#69, Venezuela) esta confirmado para las Rounds 7-8-9 en Villicum — P13 del ranking con 19,5 puntos.  🇬🇧 27 days to go! Anyelo Pe",
     imagen: "NOTICIAS-IG/Dbx8PHUnXJl.jpg",

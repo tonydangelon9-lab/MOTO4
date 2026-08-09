@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-09",
+    categoria: "Instagram",
+    titulo: "⏱️ D-26 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-26 | RUMBO A VILLICUM 🇦🇷  Luis Bravo (#16, Venezuela) esta confirmado para las Rounds 7-8-9 en Villicum — P14 del ranking con 10 puntos.  🇬🇧 26 days to go! Luis Bravo (#16",
+    imagen: "NOTICIAS-IG/Db0hCZ7H2Jn.jpg",
+    ig: "Db0hCZ7H2Jn",
+    cuerpo: "⏱️ D-26 | RUMBO A VILLICUM 🇦🇷<br><br>Luis Bravo (#16, Venezuela) esta confirmado para las Rounds 7-8-9 en Villicum — P14 del ranking con 10 puntos.<br><br>🇬🇧 26 days to go! Luis Bravo (#16, Venezuela) is confirmed for Rounds 7-8-9 at Villicum — P14 in the standings with 10 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-08",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

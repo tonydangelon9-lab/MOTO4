@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-09",
     categoria: "Instagram",
+    titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷  Andoni Dominguez (#34, Nicaragua) en plena batalla — P3 del ranking con 78,5 puntos, confirmado para Villicum.  🇬🇧 Andoni Dominguez (#34, Nic",
+    imagen: "NOTICIAS-IG/Db1X9keH5dR.jpg",
+    ig: "Db1X9keH5dR",
+    cuerpo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷<br><br>Andoni Dominguez (#34, Nicaragua) en plena batalla — P3 del ranking con 78,5 puntos, confirmado para Villicum.<br><br>🇬🇧 Andoni Dominguez (#34, Nicaragua) in the fight — P3 in the standings with 78.5 points.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-08-09",
+    categoria: "Instagram",
     titulo: "⏱️ D-26 | RUMBO A VILLICUM 🇦🇷",
     bajada: "⏱️ D-26 | RUMBO A VILLICUM 🇦🇷  Luis Bravo (#16, Venezuela) esta confirmado para las Rounds 7-8-9 en Villicum — P14 del ranking con 10 puntos.  🇬🇧 26 days to go! Luis Bravo (#16",
     imagen: "NOTICIAS-IG/Db0hCZ7H2Jn.jpg",

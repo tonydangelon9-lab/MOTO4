@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-10",
+    categoria: "Instagram",
+    titulo: "⏱️ D-25 | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⏱️ D-25 | RUMBO A VILLICUM 🇦🇷  La parrilla completa su cuenta regresiva: Mario Tijerina (#15, Mexico) esta confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P16",
+    imagen: "NOTICIAS-IG/Db3F0nflgUt.jpg",
+    ig: "Db3F0nflgUt",
+    cuerpo: "⏱️ D-25 | RUMBO A VILLICUM 🇦🇷<br><br>La parrilla completa su cuenta regresiva: Mario Tijerina (#15, Mexico) esta confirmado para las Rounds 7-8-9 en el Circuito San Juan Villicum — P16 del ranking de la Mobil Moto4 Latin Cup.<br><br>🇬🇧 25 days to go! The grid completes its countdown: Mario Tijerina (#15, Mexico) is confirmed for Rounds 7-8-9 at Circuito San Juan Villicum — P16 in the Mobil Moto4 Latin Cup standings.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
     fecha: "2026-08-09",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

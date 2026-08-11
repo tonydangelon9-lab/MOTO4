@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-11",
+    categoria: "Instagram",
+    titulo: "🎂 ¡FELIZ CUMPLEANOS, SANTIAGO GOSSA! Hoy celebra el #11 de Argentina, piloto de la Mobi…",
+    bajada: "🎂 ¡FELIZ CUMPLEANOS, SANTIAGO GOSSA! Hoy celebra el #11 de Argentina, piloto de la Mobil Moto4 Latin Cup. ¡Que lo celebres a fondo, Santi!  🇬🇧 HAPPY BIRTHDAY, SANTIAGO GOSSA! Ce",
+    imagen: "NOTICIAS-IG/Db5qoAen09A.jpg",
+    ig: "Db5qoAen09A",
+    cuerpo: "🎂 ¡FELIZ CUMPLEANOS, SANTIAGO GOSSA! Hoy celebra el #11 de Argentina, piloto de la Mobil Moto4 Latin Cup. ¡Que lo celebres a fondo, Santi!<br><br>🇬🇧 HAPPY BIRTHDAY, SANTIAGO GOSSA! Celebrating today: Argentina's #11, Mobil Moto4 Latin Cup rider. Enjoy your day, Santi!<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #HappyBirthday #Mobil"
+  },
+  {
     fecha: "2026-08-10",
     categoria: "Instagram",
     titulo: "⏱️ D-25 | RUMBO A VILLICUM 🇦🇷",

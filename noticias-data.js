@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-12",
+    categoria: "Instagram",
+    titulo: "🏁 GUARDÁ ESTA FECHA. El 15 de agosto se abren las postulaciones al Selection Program 20…",
+    bajada: "🏁 GUARDÁ ESTA FECHA. El 15 de agosto se abren las postulaciones al Selection Program 2027 de la Mobil Moto4 Latin Cup — el camino oficial y directo al MotoGP™, dentro del programa",
+    imagen: "NOTICIAS-IG/Db8o665Nk7H.jpg",
+    ig: "Db8o665Nk7H",
+    cuerpo: "🏁 GUARDÁ ESTA FECHA. El 15 de agosto se abren las postulaciones al Selection Program 2027 de la Mobil Moto4 Latin Cup — el camino oficial y directo al MotoGP™, dentro del programa Road to MotoGP.<br><br>¿Sos piloto de 14 a 19 años en cualquier país de Latinoamérica? Esta es tu chance de subir a una Honda NSF250R oficial y pelear por un lugar en el Team Junior Latin America, con base en Barcelona — si ganás la temporada, corrés en Europa con el 100% de los gastos del equipo cubiertos.<br><br>📅 15 de agosto — abren las postulaciones<br>🌎 Toda Latinoamérica<br>🏍️ 14 a 19 años<br><br>Guardá este post y activá las notificaciones de @moto4latin para no perderte el día que se abre el link. Etiquetá a un piloto que tenga que verlo.<br><br>👉 Más información: moto4latincup.lat<br><br>#Moto4LatinCup #RoadToMotoGP #SelectionProgram2027 #MotoGP #Motociclismo #Latinoamérica"
+  },
+  {
     fecha: "2026-08-11",
     categoria: "Instagram",
     titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",

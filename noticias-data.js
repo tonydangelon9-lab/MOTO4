@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-11",
     categoria: "Instagram",
+    titulo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷",
+    bajada: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷  El líder. Kensei Matsudaira (#74, USA) manda con 113 puntos y llega a Villicum a defender la punta en las Rounds 7-8-9.  🇬🇧 The championship ",
+    imagen: "NOTICIAS-IG/Db6hjEDgTe-.jpg",
+    ig: "Db6hjEDgTe-",
+    cuerpo: "⚡ EN ACCIÓN | RUMBO A VILLICUM 🇦🇷<br><br>El líder. Kensei Matsudaira (#74, USA) manda con 113 puntos y llega a Villicum a defender la punta en las Rounds 7-8-9.<br><br>🇬🇧 The championship leader: Kensei Matsudaira (#74, USA) tops the standings with 113 points heading into Villicum.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Villicum #SanJuan #Mobil"
+  },
+  {
+    fecha: "2026-08-11",
+    categoria: "Instagram",
     titulo: "🎂 ¡FELIZ CUMPLEANOS, SANTIAGO GOSSA! Hoy celebra el #11 de Argentina, piloto de la Mobi…",
     bajada: "🎂 ¡FELIZ CUMPLEANOS, SANTIAGO GOSSA! Hoy celebra el #11 de Argentina, piloto de la Mobil Moto4 Latin Cup. ¡Que lo celebres a fondo, Santi!  🇬🇧 HAPPY BIRTHDAY, SANTIAGO GOSSA! Ce",
     imagen: "NOTICIAS-IG/Db5qoAen09A.jpg",

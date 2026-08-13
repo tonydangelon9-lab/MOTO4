@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-12",
     categoria: "Instagram",
+    titulo: "16 pilotos. 10 países. Una sola categoría: Mobil Moto4 Latin Cup 🏁 Así llegó el plantel…",
+    bajada: "16 pilotos. 10 países. Una sola categoría: Mobil Moto4 Latin Cup 🏁 Así llegó el plantel a San Nicolás.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FI",
+    imagen: "NOTICIAS-IG/Db9GVzckgbL.jpg",
+    ig: "Db9GVzckgbL",
+    cuerpo: "16 pilotos. 10 países. Una sola categoría: Mobil Moto4 Latin Cup 🏁 Así llegó el plantel a San Nicolás.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
+    fecha: "2026-08-12",
+    categoria: "Instagram",
     titulo: "🏁 GUARDÁ ESTA FECHA. El 15 de agosto se abren las postulaciones al Selection Program 20…",
     bajada: "🏁 GUARDÁ ESTA FECHA. El 15 de agosto se abren las postulaciones al Selection Program 2027 de la Mobil Moto4 Latin Cup — el camino oficial y directo al MotoGP™, dentro del programa",
     imagen: "NOTICIAS-IG/Db8o665Nk7H.jpg",

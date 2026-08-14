@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-13",
+    categoria: "Instagram",
+    titulo: "Así quedó San Nicolás 📊 Matsudaira lidera, pero la pelea por los puestos de atrás sigue…",
+    bajada: "Así quedó San Nicolás 📊 Matsudaira lidera, pero la pelea por los puestos de atrás sigue abierta rumbo a Villicum.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · R",
+    imagen: "NOTICIAS-IG/Db_rI0SgYLS.jpg",
+    ig: "Db_rI0SgYLS",
+    cuerpo: "Así quedó San Nicolás 📊 Matsudaira lidera, pero la pelea por los puestos de atrás sigue abierta rumbo a Villicum.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-12",
     categoria: "Instagram",
     titulo: "16 pilotos. 10 países. Una sola categoría: Mobil Moto4 Latin Cup 🏁 Así llegó el plantel…",

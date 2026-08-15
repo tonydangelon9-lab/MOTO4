@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-15",
+    categoria: "Instagram",
+    titulo: "🇪🇸 ESPAÑOL",
+    bajada: "🇪🇸 ESPAÑOL 🏁 HOY ABREN LAS POSTULACIONES. El Selection Program 2027 de la Mobil Moto4 Latin Cup ya está en marcha — el camino oficial y directo al MotoGP™, dentro de Road to Mot",
+    imagen: "NOTICIAS-IG/DcDuYAGkRSZ.jpg",
+    ig: "DcDuYAGkRSZ",
+    cuerpo: "🇪🇸 ESPAÑOL<br>🏁 HOY ABREN LAS POSTULACIONES. El Selection Program 2027 de la Mobil Moto4 Latin Cup ya está en marcha — el camino oficial y directo al MotoGP™, dentro de Road to MotoGP.<br><br>¿Tienes 14 a 19 años? El campeón no gana un trofeo: gana Europa — subís al Team Junior Latin America (Barcelona) con el 100% de los gastos cubiertos. Los 3 primeros acceden al Selection Event de la Red Bull MotoGP Rookies Cup.<br><br>Temporada completa: Honda NSF250R oficial, neumáticos Pirelli, traje y casco, seguro y licencia FIM, grilla en 4 campeonatos. Postular es 100% gratis.<br><br>👉 Postulá ahora: moto4latincup.lat<br><br>🇬🇧 ENGLISH<br>🏁 APPLICATIONS OPEN TODAY. The 2027 Selection Program of the Mobil Moto4 Latin Cup is live — the official, direct path to MotoGP™, part of Road to MotoGP.<br><br>Are you 14 to 19? The champion doesn't win a trophy: they win Europe — a season with the Team Junior Latin America (Barcelona), 100% of costs covered. Top 3 access the Red Bull MotoGP Rookies Cup Selection Event.<br><br>Full season included: official Honda NSF250R, Pirelli tires, suit and helmet, insurance, FIM license, a 4-championship grid. Applying is 100% free.<br><br>👉 Apply now: moto4latincup.lat<br><br>🇧🇷 PORTUGUÊS<br>🏁 AS INSCRIÇÕES ABREM HOJE. O Selection Program 2027 da Mobil Moto4 Latin Cup já está no ar — o caminho oficial para o MotoGP™, dentro do Road to MotoGP.<br><br>Você tem de 14 a 19 anos? O campeão não ganha um troféu: ganha a Europa — uma temporada no Team Junior Latin America (Barcelona), com 100% dos custos cobertos. Os 3 primeiros acessam o Selection Event da Red Bull MotoGP Rookies Cup.<br><br>Temporada completa: Honda NSF250R oficial, pneus Pirelli, traje e capacete, seguro, licença FIM e grid em 4 campeonatos. Inscrever-se é 100% grátis.<br><br>👉 Inscreva-se: moto4latincup.lat<br><br>#Moto4LatinCup #RoadToMotoGP #SelectionProgram2027 #MotoGP #Latinoamérica"
+  },
+  {
     fecha: "2026-08-14",
     categoria: "Instagram",
     titulo: "Así se corre en la Mobil Moto4 Latin Cup 🔥 San Nicolás, Ronda 4-5-6.",

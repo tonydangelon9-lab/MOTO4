@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-14",
+    categoria: "Instagram",
+    titulo: "Así se corre en la Mobil Moto4 Latin Cup 🔥 San Nicolás, Ronda 4-5-6.",
+    bajada: "Así se corre en la Mobil Moto4 Latin Cup 🔥 San Nicolás, Ronda 4-5-6.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #Ro",
+    imagen: "NOTICIAS-IG/DcCP7wHmT5g.jpg",
+    ig: "DcCP7wHmT5g",
+    cuerpo: "Así se corre en la Mobil Moto4 Latin Cup 🔥 San Nicolás, Ronda 4-5-6.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-13",
     categoria: "Instagram",
     titulo: "Así quedó San Nicolás 📊 Matsudaira lidera, pero la pelea por los puestos de atrás sigue…",

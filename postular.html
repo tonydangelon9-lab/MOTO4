@@ -261,18 +261,18 @@ gtag('js',new Date());gtag('config','G-8L674LLGV6');
 <div class="field"><label>Principales resultados <span class="req">*</span></label>
 <textarea name="resultados" placeholder="Campeonato, categoría, posición, año, circuito..." required></textarea></div>
 
-<div class="step-k">Paso 5</div>
-<div class="step-h">Tu material audiovisual</div>
-<div class="hint" style="margin:-6px 0 14px">Sube los archivos a Google Drive o YouTube y pega aquí el enlace. Verifica que el enlace se pueda abrir sin permisos.</div>
-<div class="field"><label>Video de presentación <span class="req">*</span></label>
-<input type="url" name="video_presentacion" placeholder="https://..." required>
+<div class="step-k">Paso 5 · Opcional</div>
+<div class="step-h">Tu material audiovisual (opcional)</div>
+<div class="hint" style="margin:-6px 0 14px"><b>Este paso NO es obligatorio.</b> Si tienes videos o fotos, súbelos a Google Drive o YouTube y pega el enlace (verifica que se abra sin permisos). Si no tienes nada ahora, sigue igual: si quedas preseleccionado te pediremos videos de pista más adelante.</div>
+<div class="field"><label>Video de presentación (opcional)</label>
+<input type="url" name="video_presentacion" placeholder="https://...">
 <div class="hint">Cuenta quién eres, tu recorrido y por qué quieres entrar. Máximo 2 minutos.</div></div>
-<div class="field"><label>Video en pista <span class="req">*</span></label>
-<input type="url" name="video_pista" placeholder="https://..." required>
+<div class="field"><label>Video en pista (opcional)</label>
+<input type="url" name="video_pista" placeholder="https://...">
 <div class="hint">Onboard o filmado desde afuera. Es lo que más miran los seleccionadores.</div></div>
-<div class="field"><label>Fotos (link)</label>
+<div class="field"><label>Fotos (link, opcional)</label>
 <input type="url" name="fotos" placeholder="https://..."></div>
-<div class="field"><label>PDF de resultados (link)</label>
+<div class="field"><label>PDF de resultados (link, opcional)</label>
 <input type="url" name="pdf_resultados" placeholder="https://..."></div>
 
 <div class="step-k">Paso 6</div>
@@ -383,7 +383,7 @@ btn.disabled=true; btn.textContent="Enviando…";
 fetch(FORM_API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"postular",data:data})})
 .then(function(r){return r.json();})
 .then(function(d){
-if(d&&d.ok){ form.style.display="none"; document.getElementById("done").style.display="block"; window.scrollTo({top:0,behavior:"smooth"}); }
+if(d&&d.ok){ try{ if(window.gtag) gtag("event","generate_lead",{form_name:"postulacion"}); }catch(_){} try{ if(window.fbq) fbq("track","Lead"); }catch(_){} form.style.display="none"; document.getElementById("done").style.display="block"; window.scrollTo({top:0,behavior:"smooth"}); }
 else { btn.disabled=false; btn.textContent="Enviar postulación"; msg.className="msg err"; msg.textContent="No se pudo enviar. Inténtalo de nuevo."; }
 })
 .catch(function(){ btn.disabled=false; btn.textContent="Enviar postulación"; msg.className="msg err"; msg.textContent="No se pudo enviar. Revisa tu conexión."; });
@@ -411,13 +411,7 @@ f.addEventListener('focusin',function(e){
   if(s>maxStep){maxStep=s;ev('form_step',{form_name:'postulacion',step:s});}
 });
 f.addEventListener('submit',function(){ev('form_submit_attempt',{form_name:'postulacion',last_step:maxStep});});
-var done=document.getElementById('done');
-if(done){ new MutationObserver(function(){
-  if(done.style.display!=='none'&&done.offsetParent!==null){
-    ev('generate_lead',{form_name:'postulacion'});
-    try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
-  }
-}).observe(done,{attributes:true,attributeFilter:['style']}); }
+/* generate_lead ahora se dispara directo en el exito del envio (script principal) */
 })();
 </script>
 </body>

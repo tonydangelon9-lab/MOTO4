@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-15",
     categoria: "Instagram",
+    titulo: "Kensei Matsudaira se quedó con la Carrera 1 en San Nicolás 🏆",
+    bajada: "Kensei Matsudaira se quedó con la Carrera 1 en San Nicolás 🏆  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMoto",
+    imagen: "NOTICIAS-IG/DcE0uuCAUUV.jpg",
+    ig: "DcE0uuCAUUV",
+    cuerpo: "Kensei Matsudaira se quedó con la Carrera 1 en San Nicolás 🏆<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
+    fecha: "2026-08-15",
+    categoria: "Instagram",
     titulo: "🏁 VOCÊ VAI CORRER NESSA MOTO.",
     bajada: "🏁 VOCÊ VAI CORRER NESSA MOTO.  Honda NSF250R: 13.000 rpm, 47 cv, só 84 kg. A máquina oficial do Selection Program 2027 da Mobil Moto4 Latin Cup — dentro do Road to MotoGP.  Piloto",
     imagen: "NOTICIAS-IG/DcEQR5BBnue.jpg",

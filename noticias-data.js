@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-16",
+    categoria: "Instagram",
+    titulo: "Cara a cara: Matsudaira vs Enríquez. Apenas 18,5 puntos separan al líder del 2°.",
+    bajada: "Cara a cara: Matsudaira vs Enríquez. Apenas 18,5 puntos separan al líder del 2°.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4L",
+    imagen: "NOTICIAS-IG/DcHZhh0oGr3.jpg",
+    ig: "DcHZhh0oGr3",
+    cuerpo: "Cara a cara: Matsudaira vs Enríquez. Apenas 18,5 puntos separan al líder del 2°.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-15",
     categoria: "Instagram",
     titulo: "Kensei Matsudaira se quedó con la Carrera 1 en San Nicolás 🏆",

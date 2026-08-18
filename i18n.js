@@ -287,7 +287,15 @@ var D = {
 /* ===== MOTOR ===== */
 var LANGS=[["es","Español"],["en","English"],["pt","Português"]];
 var cur = "es";
-try{ cur = localStorage.getItem("m4lang") || "es"; }catch(e){}
+try{
+  var m4qp = new URLSearchParams(window.location.search).get("lang");
+  if(m4qp && ["es","en","pt"].indexOf(m4qp.toLowerCase())!==-1){
+    cur = m4qp.toLowerCase();
+    localStorage.setItem("m4lang", cur);
+  } else {
+    cur = localStorage.getItem("m4lang") || "es";
+  }
+}catch(e){ cur = "es"; }
 
 function walk(root, fn){
   var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false), n;

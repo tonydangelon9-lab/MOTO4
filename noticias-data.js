@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-17",
+    categoria: "Instagram",
+    titulo: "El sueño se entrena todos los días 💪 Road to MotoGP 2026.",
+    bajada: "El sueño se entrena todos los días 💪 Road to MotoGP 2026.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP ",
+    imagen: "NOTICIAS-IG/DcJ-UoPICWG.jpg",
+    ig: "DcJ-UoPICWG",
+    cuerpo: "El sueño se entrena todos los días 💪 Road to MotoGP 2026.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-16",
     categoria: "Instagram",
     titulo: "Cara a cara: Matsudaira vs Enríquez. Apenas 18,5 puntos separan al líder del 2°.",

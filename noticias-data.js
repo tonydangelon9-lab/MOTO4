@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-18",
+    categoria: "Instagram",
+    titulo: "En la calle de pits, minutos antes de salir a la parrilla.",
+    bajada: "En la calle de pits, minutos antes de salir a la parrilla.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP ",
+    imagen: "NOTICIAS-IG/DcMjHT3lsdu.jpg",
+    ig: "DcMjHT3lsdu",
+    cuerpo: "En la calle de pits, minutos antes de salir a la parrilla.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-17",
     categoria: "Instagram",
     titulo: "El sueño se entrena todos los días 💪 Road to MotoGP 2026.",

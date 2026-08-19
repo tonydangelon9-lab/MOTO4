@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-19",
+    categoria: "Instagram",
+    titulo: "WILDCARD CONFIRMADO 🇵🇹",
+    bajada: "WILDCARD CONFIRMADO 🇵🇹 Pedro V. de Matos (#13, Portugal) se suma como invitado a la Mobil Moto4 Latin Cup — correrá las Rounds 7-8-9 en el Circuito San Juan Villicum, del 4 al 6 ",
+    imagen: "NOTICIAS-IG/DcOUbD-lgTY.jpg",
+    ig: "DcOUbD-lgTY",
+    cuerpo: "WILDCARD CONFIRMADO 🇵🇹<br>Pedro V. de Matos (#13, Portugal) se suma como invitado a la Mobil Moto4 Latin Cup — correrá las Rounds 7-8-9 en el Circuito San Juan Villicum, del 4 al 6 de septiembre.<br><br>🇬🇧 WILDCARD CONFIRMED<br><br>Pedro V. de Matos (#13, Portugal) joins the Mobil Moto4 Latin Cup as a wildcard guest rider — racing Rounds 7-8-9 at Circuito San Juan Villicum, September 4-6.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #Wildcard #Villicum #Mobil"
+  },
+  {
     fecha: "2026-08-18",
     categoria: "Instagram",
     titulo: "En la calle de pits, minutos antes de salir a la parrilla.",

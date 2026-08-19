@@ -1,17 +1,17 @@
 {
- "fecha": "18-08-2026",
+ "fecha": "19-08-2026",
  "alcance": 2712676,
  "impresiones": 7022828,
  "clics": 261190,
  "ctr": 3.72,
  "yt_subs": 2580,
- "yt_views": 153912,
+ "yt_views": 153932,
  "yt_videos": 128,
- "web_usuarios": 3341,
- "web_sesiones": 3525,
- "web_vistas": 4318,
- "ig_gp3_seg": 30487,
- "ig_moto4_seg": 11263,
+ "web_usuarios": 4512,
+ "web_sesiones": 4747,
+ "web_vistas": 5683,
+ "ig_gp3_seg": 30481,
+ "ig_moto4_seg": 11283,
  "fb_pages": {
   "Team GP3 AD11 BY FIMLA": 3067,
   "GP3  Sports": 6054,
@@ -20,7 +20,7 @@
   "GP3 Sports": 18027,
   "Rubus Racing Park": 5166,
   "GP3  Motorcycle": 1526,
-  "Mobil Moto4 Latin Cup": 4447,
+  "Mobil Moto4 Latin Cup": 4449,
   "Monomarca Femenina Chilena de Velocidad": 505
  },
  "campanas": [

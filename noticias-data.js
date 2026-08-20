@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-08-19",
     categoria: "Instagram",
+    titulo: "La mitad de la tabla también cuenta 📊 Del P6 al P10.",
+    bajada: "La mitad de la tabla también cuenta 📊 Del P6 al P10.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP #SanN",
+    imagen: "NOTICIAS-IG/DcPH6Oams1F.jpg",
+    ig: "DcPH6Oams1F",
+    cuerpo: "La mitad de la tabla también cuenta 📊 Del P6 al P10.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
+    fecha: "2026-08-19",
+    categoria: "Instagram",
     titulo: "WILDCARD CONFIRMADO 🇵🇹",
     bajada: "WILDCARD CONFIRMADO 🇵🇹 Pedro V. de Matos (#13, Portugal) se suma como invitado a la Mobil Moto4 Latin Cup — correrá las Rounds 7-8-9 en el Circuito San Juan Villicum, del 4 al 6 ",
     imagen: "NOTICIAS-IG/DcOUbD-lgTY.jpg",

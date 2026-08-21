@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-20",
+    categoria: "Instagram",
+    titulo: "Carrera 2: el ritmo de un campeonato que no da respiro.",
+    bajada: "Carrera 2: el ritmo de un campeonato que no da respiro.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP #Sa",
+    imagen: "NOTICIAS-IG/DcRss4inACD.jpg",
+    ig: "DcRss4inACD",
+    cuerpo: "Carrera 2: el ritmo de un campeonato que no da respiro.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-19",
     categoria: "Instagram",
     titulo: "La mitad de la tabla también cuenta 📊 Del P6 al P10.",

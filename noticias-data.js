@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-21",
+    categoria: "Instagram",
+    titulo: "Andoni Domínguez ganó la Carrera 2 en San Nicolás 🏆",
+    bajada: "Andoni Domínguez ganó la Carrera 2 en San Nicolás 🏆  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP #SanNi",
+    imagen: "NOTICIAS-IG/DcURflrHdo1.jpg",
+    ig: "DcURflrHdo1",
+    cuerpo: "Andoni Domínguez ganó la Carrera 2 en San Nicolás 🏆<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-20",
     categoria: "Instagram",
     titulo: "Carrera 2: el ritmo de un campeonato que no da respiro.",

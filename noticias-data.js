@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-22",
+    categoria: "Instagram",
+    titulo: "Cara a cara: Domínguez vs Salem. La 3ª plaza se pelea carrera a carrera.",
+    bajada: "Cara a cara: Domínguez vs Salem. La 3ª plaza se pelea carrera a carrera.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup ",
+    imagen: "NOTICIAS-IG/DcW2SrVHXpj.jpg",
+    ig: "DcW2SrVHXpj",
+    cuerpo: "Cara a cara: Domínguez vs Salem. La 3ª plaza se pelea carrera a carrera.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-21",
     categoria: "Instagram",
     titulo: "Andoni Domínguez ganó la Carrera 2 en San Nicolás 🏆",

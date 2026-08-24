@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-23",
+    categoria: "Instagram",
+    titulo: "3 carreras, 3 ganadores distintos. Así de parejo está el campeonato 🔥",
+    bajada: "3 carreras, 3 ganadores distintos. Así de parejo está el campeonato 🔥  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #R",
+    imagen: "NOTICIAS-IG/DcZbFgRlq7q.jpg",
+    ig: "DcZbFgRlq7q",
+    cuerpo: "3 carreras, 3 ganadores distintos. Así de parejo está el campeonato 🔥<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-22",
     categoria: "Instagram",
     titulo: "Cara a cara: Domínguez vs Salem. La 3ª plaza se pelea carrera a carrera.",

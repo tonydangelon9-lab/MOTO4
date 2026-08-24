@@ -1,7 +1,7 @@
 {
  "fecha": "24-08-2026",
  "alcance": 2749867,
- "impresiones": 7227497,
+ "impresiones": 7227533,
  "clics": 270393,
  "ctr": 3.74,
  "yt_subs": 2580,
@@ -9,8 +9,8 @@
  "yt_videos": 128,
  "web_usuarios": 5719,
  "web_sesiones": 6073,
- "web_vistas": 7196,
- "ig_gp3_seg": 30536,
+ "web_vistas": 7197,
+ "ig_gp3_seg": 30537,
  "ig_moto4_seg": 11310,
  "fb_pages": {
   "Team GP3 AD11 BY FIMLA": 3066,
@@ -69,9 +69,9 @@
   {
    "nombre": "CAV_2026_F5_SAN_JUAN_TRAFICO_V1",
    "alcance": 110777,
-   "impr": 204669,
+   "impr": 204705,
    "clics": 9203,
-   "ctr": 4.496529
+   "ctr": 4.495738
   },
   {
    "nombre": "CAV_2026_F4_CONCORDIA_ULTIMA_ETAPA_V1",

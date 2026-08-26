@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-25",
+    categoria: "Instagram",
+    titulo: "En el paddock, la previa de cada carrera.",
+    bajada: "En el paddock, la previa de cada carrera.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP #SanNicolas #Cami",
+    imagen: "NOTICIAS-IG/Dcekr_znGbQ.jpg",
+    ig: "Dcekr_znGbQ",
+    cuerpo: "En el paddock, la previa de cada carrera.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-24",
     categoria: "Instagram",
     titulo: "Modo Villicum activado 🏁 Próxima parada: San Juan, Argentina, 4 al 6 de septiembre.",

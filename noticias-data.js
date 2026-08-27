@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-26",
+    categoria: "Instagram",
+    titulo: "La base también construye 📊 Del P11 al P13.",
+    bajada: "La base también construye 📊 Del P11 al P13.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP #SanNicolas #C",
+    imagen: "NOTICIAS-IG/DchJe5iozN5.jpg",
+    ig: "DchJe5iozN5",
+    cuerpo: "La base también construye 📊 Del P11 al P13.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-25",
     categoria: "Instagram",
     titulo: "En el paddock, la previa de cada carrera.",

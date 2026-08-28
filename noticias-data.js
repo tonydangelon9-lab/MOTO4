@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-27",
+    categoria: "Instagram",
+    titulo: "El equipo: la pieza clave detrás de cada resultado.",
+    bajada: "El equipo: la pieza clave detrás de cada resultado.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP #SanNic",
+    imagen: "NOTICIAS-IG/DcjuRH1IAHM.jpg",
+    ig: "DcjuRH1IAHM",
+    cuerpo: "El equipo: la pieza clave detrás de cada resultado.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-26",
     categoria: "Instagram",
     titulo: "La base también construye 📊 Del P11 al P13.",

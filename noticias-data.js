@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-28",
+    categoria: "Instagram",
+    titulo: "Cara a cara: Weyrauch vs Carreño. El 5° lugar se decide por décimas.",
+    bajada: "Cara a cara: Weyrauch vs Carreño. El 5° lugar se decide por décimas.  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #Roa",
+    imagen: "NOTICIAS-IG/DcmTD6jlFvK.jpg",
+    ig: "DcmTD6jlFvK",
+    cuerpo: "Cara a cara: Weyrauch vs Carreño. El 5° lugar se decide por décimas.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-27",
     categoria: "Instagram",
     titulo: "El equipo: la pieza clave detrás de cada resultado.",

@@ -1,26 +1,26 @@
 {
- "fecha": "29-08-2026",
- "alcance": 2809656,
- "impresiones": 7680776,
- "clics": 283078,
- "ctr": 3.69,
+ "fecha": "30-08-2026",
+ "alcance": 2819730,
+ "impresiones": 7805697,
+ "clics": 285843,
+ "ctr": 3.66,
  "yt_subs": 2590,
- "yt_views": 154129,
+ "yt_views": 154147,
  "yt_videos": 128,
- "web_usuarios": 6229,
- "web_sesiones": 6656,
- "web_vistas": 7842,
- "ig_gp3_seg": 30635,
- "ig_moto4_seg": 11322,
+ "web_usuarios": 6317,
+ "web_sesiones": 6747,
+ "web_vistas": 7949,
+ "ig_gp3_seg": 30642,
+ "ig_moto4_seg": 11323,
  "fb_pages": {
   "Team GP3 AD11 BY FIMLA": 3066,
-  "GP3  Sports": 6053,
+  "GP3  Sports": 6051,
   "Motociclismo de Velocidad Latinoamericano": 8861,
   "Tony D'Angelo #11": 6978,
-  "GP3 Sports": 18060,
-  "Rubus Racing Park": 5167,
+  "GP3 Sports": 18063,
+  "Rubus Racing Park": 5166,
   "GP3  Motorcycle": 1526,
-  "Mobil Moto4 Latin Cup": 4455,
+  "Mobil Moto4 Latin Cup": 4456,
   "Monomarca Femenina Chilena de Velocidad": 505
  },
  "campanas": [
@@ -68,10 +68,10 @@
   },
   {
    "nombre": "CAV_2026_F5_SAN_JUAN_TRAFICO_V1",
-   "alcance": 215309,
-   "impr": 584477,
-   "clics": 19676,
-   "ctr": 3.366428
+   "alcance": 238922,
+   "impr": 667506,
+   "clics": 21586,
+   "ctr": 3.233829
   },
   {
    "nombre": "CAV_2026_F4_CONCORDIA_ULTIMA_ETAPA_V1",
@@ -82,17 +82,17 @@
   },
   {
    "nombre": "CCV_2026_SAN_JUAN_TRAFICO_V1",
-   "alcance": 31255,
-   "impr": 54575,
-   "clics": 1833,
-   "ctr": 3.358681
+   "alcance": 38994,
+   "impr": 75030,
+   "clics": 2282,
+   "ctr": 3.04145
   },
   {
    "nombre": "M4_2026_SAN_JUAN_TRAFICO_V1",
-   "alcance": 15807,
-   "impr": 18672,
-   "clics": 374,
-   "ctr": 2.002999
+   "alcance": 28645,
+   "impr": 40333,
+   "clics": 785,
+   "ctr": 1.946297
   }
  ]
 }

@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-29",
+    categoria: "Instagram",
+    titulo: "Cruzando la meta, con Mobil en cada vuelta 🏁",
+    bajada: "Cruzando la meta, con Mobil en cada vuelta 🏁  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoGP #SanNicolas #",
+    imagen: "NOTICIAS-IG/Dco32-FH2Iy.jpg",
+    ig: "Dco32-FH2Iy",
+    cuerpo: "Cruzando la meta, con Mobil en cada vuelta 🏁<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-28",
     categoria: "Instagram",
     titulo: "Cara a cara: Weyrauch vs Carreño. El 5° lugar se decide por décimas.",

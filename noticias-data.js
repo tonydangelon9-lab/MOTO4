@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-30",
+    categoria: "Instagram",
+    titulo: "🎂 ¡FELIZ CUMPLEANOS, THIAGO TORREZ! Hoy celebra el #46 de Paraguay, piloto de la Mobil …",
+    bajada: "🎂 ¡FELIZ CUMPLEANOS, THIAGO TORREZ! Hoy celebra el #46 de Paraguay, piloto de la Mobil Moto4 Latin Cup. ¡A celebrarlo en grande!  🇬🇧 HAPPY BIRTHDAY, THIAGO TORREZ! Celebrating t",
+    imagen: "NOTICIAS-IG/DcqluBdj6Fc.jpg",
+    ig: "DcqluBdj6Fc",
+    cuerpo: "🎂 ¡FELIZ CUMPLEANOS, THIAGO TORREZ! Hoy celebra el #46 de Paraguay, piloto de la Mobil Moto4 Latin Cup. ¡A celebrarlo en grande!<br><br>🇬🇧 HAPPY BIRTHDAY, THIAGO TORREZ! Celebrating today: Paraguay's #46, Mobil Moto4 Latin Cup rider. Have a great one!<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #HappyBirthday #Mobil"
+  },
+  {
     fecha: "2026-08-29",
     categoria: "Instagram",
     titulo: "Cruzando la meta, con Mobil en cada vuelta 🏁",

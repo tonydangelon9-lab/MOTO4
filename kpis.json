@@ -1,16 +1,16 @@
 {
  "fecha": "31-08-2026",
  "alcance": 2844705,
- "impresiones": 7927091,
- "clics": 288714,
+ "impresiones": 7930554,
+ "clics": 288804,
  "ctr": 3.64,
  "yt_subs": 2590,
  "yt_views": 154163,
  "yt_videos": 128,
- "web_usuarios": 6431,
- "web_sesiones": 6851,
- "web_vistas": 8078,
- "ig_gp3_seg": 30652,
+ "web_usuarios": 6434,
+ "web_sesiones": 6870,
+ "web_vistas": 8083,
+ "ig_gp3_seg": 30650,
  "ig_moto4_seg": 11325,
  "fb_pages": {
   "Team GP3 AD11 BY FIMLA": 3066,
@@ -68,17 +68,17 @@
   },
   {
    "nombre": "CAV_2026_F5_SAN_JUAN_TRAFICO_V1",
-   "alcance": 258516,
-   "impr": 743728,
-   "clics": 23549,
-   "ctr": 3.166346
+   "alcance": 259116,
+   "impr": 745723,
+   "clics": 23611,
+   "ctr": 3.166189
   },
   {
    "nombre": "CCV_2026_SAN_JUAN_TRAFICO_V1",
-   "alcance": 46579,
-   "impr": 97216,
-   "clics": 2779,
-   "ctr": 2.858583
+   "alcance": 46651,
+   "impr": 98004,
+   "clics": 2796,
+   "ctr": 2.852945
   },
   {
    "nombre": "CAV_2026_F4_CONCORDIA_ULTIMA_ETAPA_V1",
@@ -89,10 +89,10 @@
   },
   {
    "nombre": "M4_2026_SAN_JUAN_TRAFICO_V1",
-   "alcance": 40866,
-   "impr": 63319,
-   "clics": 1196,
-   "ctr": 1.888849
+   "alcance": 41260,
+   "impr": 63999,
+   "clics": 1207,
+   "ctr": 1.885967
   }
  ]
 }

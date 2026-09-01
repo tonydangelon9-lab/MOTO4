@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-08-31",
+    categoria: "Instagram",
+    titulo: "Faltan 4 días para Villicum. La cuenta regresiva ya empezó ⏳",
+    bajada: "Faltan 4 días para Villicum. La cuenta regresiva ya empezó ⏳  🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America #Moto4LatinCup #RoadToMotoG",
+    imagen: "NOTICIAS-IG/DcuBcgPH1km.jpg",
+    ig: "DcuBcgPH1km",
+    cuerpo: "Faltan 4 días para Villicum. La cuenta regresiva ya empezó ⏳<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #RoadToMotoGP #SanNicolas #CaminoAVillicum"
+  },
+  {
     fecha: "2026-08-30",
     categoria: "Instagram",
     titulo: "🎂 ¡FELIZ CUMPLEANOS, THIAGO TORREZ! Hoy celebra el #46 de Paraguay, piloto de la Mobil …",

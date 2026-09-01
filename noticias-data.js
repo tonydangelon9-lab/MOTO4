@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-09-01",
+    categoria: "Instagram",
+    titulo: "🎂 ¡FELIZ CUMPLEANOS, MAHDI SALEM! El #10 de Palestina celebra en plena semana de carrer…",
+    bajada: "🎂 ¡FELIZ CUMPLEANOS, MAHDI SALEM! El #10 de Palestina celebra en plena semana de carrera: en dias corre en Villicum. ¡El mejor regalo, a toda velocidad!  🇬🇧 HAPPY BIRTHDAY, MAHD",
+    imagen: "NOTICIAS-IG/DcvvTo-G0iU.jpg",
+    ig: "DcvvTo-G0iU",
+    cuerpo: "🎂 ¡FELIZ CUMPLEANOS, MAHDI SALEM! El #10 de Palestina celebra en plena semana de carrera: en dias corre en Villicum. ¡El mejor regalo, a toda velocidad!<br><br>🇬🇧 HAPPY BIRTHDAY, MAHDI SALEM! Palestine's #10 celebrates on race week — Villicum is just days away. The best gift: full throttle!<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #HappyBirthday #Mobil"
+  },
+  {
     fecha: "2026-08-31",
     categoria: "Instagram",
     titulo: "Faltan 4 días para Villicum. La cuenta regresiva ya empezó ⏳",

@@ -188,6 +188,7 @@ var D = {
 "La preinscripción al Selection Program 2027 abre el":{en:"Pre-registration for the Selection Program 2027 opens on",pt:"A pré-inscrição para o Selection Program 2027 abre em"},
 "15 de agosto de 2026":{en:"August 15, 2026",pt:"15 de agosto de 2026"},
 "19 de octubre de 2026":{en:"October 19, 2026",pt:"19 de outubro de 2026"},
+"24 de octubre de 2026":{en:"October 24, 2026",pt:"24 de outubro de 2026"},
 ". Guarda este enlace y vuelve en esa fecha para postularte.":{en:". Save this link and come back on that date to apply.",pt:". Guarde este link e volte nessa data para se inscrever."},
 "Días":{en:"Days",pt:"Dias"},
 "Horas":{en:"Hours",pt:"Horas"},

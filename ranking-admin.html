@@ -50,7 +50,7 @@
   thead tr.grp th{font-size:11px;letter-spacing:.12em;padding-top:11px;border-bottom:none}
   thead tr.col th{font-size:11px;letter-spacing:.06em;padding-bottom:11px}
   thead th.l{text-align:left}
-  .gbrasil{color:#7dd3fc}.garg{color:#fcd34d}
+  .gbrasil{color:#7dd3fc}.garg{color:#fcd34d}.gvill{color:#f0abfc}
   tbody td{padding:4px 6px;border-bottom:1px solid var(--line);text-align:center;font-variant-numeric:tabular-nums}
   tbody tr:last-child td{border-bottom:none}
   td.l{text-align:left}
@@ -118,19 +118,21 @@
           <th rowspan="2">FMN</th>
           <th class="gbrasil" colspan="3">Brasil</th>
           <th class="garg" colspan="3">Argentina</th>
+          <th class="gvill" colspan="3">Villicum</th>
           <th rowspan="2">Total</th>
           <th rowspan="2" class="c-del editonly" style="display:none"></th>
         </tr>
         <tr class="col">
           <th class="gbrasil">1ª</th><th class="gbrasil">2ª</th><th class="gbrasil">3ª</th>
           <th class="garg">4ª</th><th class="garg">5ª</th><th class="garg">6ª</th>
+          <th class="gvill">7ª</th><th class="gvill">8ª</th><th class="gvill">9ª</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
     </table>
   </div>
 
-  <div class="foot">Clase Moto4 · Honda · 6 válidas (3 Brasil + 3 Argentina) · Fuente oficial: FIM Latin America</div>
+  <div class="foot">Clase Moto4 · Honda · 9 válidas (3 Brasil + 3 Argentina + 3 Villicum) · Fuente oficial: FIM Latin America</div>
 </div>
 
 <div id="toast"></div>
@@ -138,28 +140,30 @@
 <script>
 var API_URL = "https://script.google.com/macros/s/AKfycbystPCHyyVfaxG_ewOD5ZJSLgDEVctdN9rx817EyTT5ciGPMWoE-S45Isx6X4uEah0W/exec";
 var PIN_OK  = "270913";
-var VERSION = "v2026.06.30-CAMP2";
+var VERSION = "v2026.09.06-CAMP3";
 var STORE_KEY = "moto4_campeonato_2026";
 
-// Datos oficiales precargados (PDF FIM LATAM — consolidado 1ª a 6ª válida)
-// v = [Brasil1, Brasil2, Brasil3, Argentina4, Argentina5, Argentina6]
+// Datos oficiales precargados (PDF FIM LATAM — consolidado 1ª a 6ª válida) + Rondas 7-8-9 San Juan Villicum (planillas CAMOD 5-6 sep 2026)
+// v = [Brasil1, Brasil2, Brasil3, Argentina4, Argentina5, Argentina6, Villicum7, Villicum8, Villicum9]
 var DATA_DEFAULT = [
-  { num:74, piloto:"Kensei Matsudaira",   nac:"USA",        fmn:"AMA",   v:[8,20,20,25,20,20] },
-  { num:62, piloto:"Alberto Enriquez",    nac:"Ecuador",    fmn:"RFME",  v:[6.5,25,25,13,0,25] },
-  { num:34, piloto:"Andoni Dominguez",    nac:"Nicaragua",  fmn:"FEM",   v:[12.5,13,6,11,25,11] },
-  { num:10, piloto:"Mahdi Salem",         nac:"Palestina",  fmn:"PMSMF", v:[5.5,0,16,20,16,16] },
-  { num:64, piloto:"Ulises Weyrauch",     nac:"USA",        fmn:"AMA",   v:[3.5,10,10,10,13,10] },
-  { num:99, piloto:"Cristobal Carreño",   nac:"Chile",      fmn:"FEM",   v:[10,9,11,9,9,7] },
-  { num:11, piloto:"Santiago Gossa",      nac:"Argentina",  fmn:"CAMOD", v:[0,0,13,16,11,9] },
-  { num:46, piloto:"Nicolás Torrez",      nac:"Paraguay",   fmn:"FEMOP", v:[2.5,6,5,8,8,6] },
-  { num:42, piloto:"Murilo Gomes",        nac:"Brasil",     fmn:"CBM",   v:[5,16,0,0,0,13] },
-  { num:26, piloto:"Santiago Vogel",      nac:"Argentina",  fmn:"CAMOD", v:[0,7,8,0,10,8] },
-  { num:91, piloto:"Aidan Hancock",       nac:"USA",        fmn:"AMA",   v:[1,4,4,7,7,5] },
-  { num:19, piloto:"Lorenzo Tiberi",      nac:"Argentina",  fmn:"CAMOD", v:[4,11,9,0,0,0] },
-  { num:69, piloto:"Anyelo Perdomo",      nac:"Venezuela",  fmn:"FMV",   v:[4.5,8,7,0,0,0] },
-  { num:16, piloto:"Santiago Bravo",      nac:"Venezuela",  fmn:"FMV",   v:[2,5,3,0,0,0] },
-  { num:8,  piloto:"Matias Alarcon",      nac:"Chile",      fmn:"FEM",   v:[3,0,0,0,0,0] },
-  { num:15, piloto:"Gael Olivo",          nac:"México",     fmn:"FEM",   v:[1.5,0,0,0,0,0] }
+  { num:74, piloto:"Kensei Matsudaira",   nac:"USA",        fmn:"AMA",   v:[8,20,20,25,20,20,16,16,20] },
+  { num:62, piloto:"Alberto Enriquez",    nac:"Ecuador",    fmn:"RFME",  v:[6.5,25,25,13,0,25,25,25,25] },
+  { num:34, piloto:"Andoni Dominguez",    nac:"Nicaragua",  fmn:"FEM",   v:[12.5,13,6,11,25,11,7,11,13] },
+  { num:10, piloto:"Mahdi Salem",         nac:"Palestina",  fmn:"PMSMF", v:[5.5,0,16,20,16,16,13,13,11] },
+  { num:64, piloto:"Ulises Weyrauch",     nac:"USA",        fmn:"AMA",   v:[3.5,10,10,10,13,10,5,8,7] },
+  { num:99, piloto:"Cristobal Carreño",   nac:"Chile",      fmn:"FEM",   v:[10,9,11,9,9,7,10,9,6] },
+  { num:11, piloto:"Santiago Gossa",      nac:"Argentina",  fmn:"CAMOD", v:[0,0,13,16,11,9,11,0,9] },
+  { num:46, piloto:"Nicolás Torrez",      nac:"Paraguay",   fmn:"FEMOP", v:[2.5,6,5,8,8,6,8,0,0] },
+  { num:42, piloto:"Murilo Gomes",        nac:"Brasil",     fmn:"CBM",   v:[5,16,0,0,0,13,3,10,10] },
+  { num:26, piloto:"Santiago Vogel",      nac:"Argentina",  fmn:"CAMOD", v:[0,7,8,0,10,8,0,0,8] },
+  { num:91, piloto:"Aidan Hancock",       nac:"USA",        fmn:"AMA",   v:[1,4,4,7,7,5,0,0,0] },
+  { num:19, piloto:"Lorenzo Tiberi",      nac:"Argentina",  fmn:"CAMOD", v:[4,11,9,0,0,0,9,7,5] },
+  { num:69, piloto:"Anyelo Perdomo",      nac:"Venezuela",  fmn:"FMV",   v:[4.5,8,7,0,0,0,0,0,0] },
+  { num:16, piloto:"Santiago Bravo",      nac:"Venezuela",  fmn:"FMV",   v:[2,5,3,0,0,0,0,0,0] },
+  { num:8,  piloto:"Matias Alarcon",      nac:"Chile",      fmn:"FEM",   v:[3,0,0,0,0,0,0,0,0] },
+  { num:15, piloto:"Gael Olivo",          nac:"México",     fmn:"FEM",   v:[1.5,0,0,0,0,0,6,6,4] },
+  { num:13, piloto:"Pedro De Matos",      nac:"Portugal",   fmn:"FMP",   v:[0,0,0,0,0,0,20,20,16] },
+  { num:29, piloto:"Lucas Jaramillo",     nac:"Colombia",   fmn:"FMC",   v:[0,0,0,0,0,0,4,5,3] }
 ];
 
 var rows = [];
@@ -169,7 +173,7 @@ function $(id){ return document.getElementById(id); }
 function toast(m,k){ var t=$("toast"); t.textContent=m; t.className="show "+(k||""); clearTimeout(t._t); t._t=setTimeout(function(){t.className="";},2600); }
 function num(x){ var n=parseFloat(x); return isNaN(n)?0:n; }
 function totalDe(r){ return (r.v||[]).reduce(function(a,b){ return a+num(b); },0); }
-function cloneRows(arr){ return (arr||[]).map(function(r){ return { num:r.num, piloto:r.piloto, nac:r.nac, fmn:r.fmn, v:(r.v||[]).slice(0,6) }; }); }
+function cloneRows(arr){ return (arr||[]).map(function(r){ return { num:r.num, piloto:r.piloto, nac:r.nac, fmn:r.fmn, v:(r.v||[]).slice(0,9) }; }); }
 
 function api(body){
   return fetch(API_URL,{ method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"},
@@ -240,10 +244,10 @@ function render(){
   });
 }
 function vCells(r){
-  var h=""; for(var i=0;i<6;i++){ var x=num(r.v[i]); h+='<td class="c-v">'+(x?fmt(x):'<span style="color:#5a4f70">·</span>')+'</td>'; } return h;
+  var h=""; for(var i=0;i<9;i++){ var x=num(r.v[i]); h+='<td class="c-v">'+(x?fmt(x):'<span style="color:#5a4f70">·</span>')+'</td>'; } return h;
 }
 function vInputs(r){
-  var h=""; for(var i=0;i<6;i++){ h+='<td class="c-v"><input data-vi="'+i+'" inputmode="decimal" value="'+at(r.v[i]||"")+'"></td>'; } return h;
+  var h=""; for(var i=0;i<9;i++){ h+='<td class="c-v"><input data-vi="'+i+'" inputmode="decimal" value="'+at(r.v[i]||"")+'"></td>'; } return h;
 }
 function bindRow(tr,r,i){
   tr.querySelectorAll('input[data-k]').forEach(function(inp){
@@ -273,7 +277,7 @@ $("editar").onclick=function(){
   render();
 };
 $("agregar").onclick=function(){
-  rows.push({ num:"", piloto:"", nac:"", fmn:"", v:[0,0,0,0,0,0] });
+  rows.push({ num:"", piloto:"", nac:"", fmn:"", v:[0,0,0,0,0,0,0,0,0] });
   render();
 };
 $("ordenar").onclick=function(){ ordenar(true); toast("Ordenado por puntos"); };

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /intranet.html
+Disallow: /datos.html
+Disallow: /informe.html
+Disallow: /ranking-admin.html
+Disallow: /presentacion.html
+Disallow: /socios.html
+
+Sitemap: https://www.moto4latincup.lat/sitemap.xml

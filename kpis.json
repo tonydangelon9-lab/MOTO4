@@ -1,26 +1,26 @@
 {
- "fecha": "02-09-2026",
- "alcance": 2874623,
- "impresiones": 8176002,
- "clics": 294033,
- "ctr": 3.6,
- "yt_subs": 2590,
- "yt_views": 154230,
- "yt_videos": 128,
- "web_usuarios": 6682,
- "web_sesiones": 7137,
- "web_vistas": 8964,
- "ig_gp3_seg": 30677,
- "ig_moto4_seg": 11339,
+ "fecha": "17-09-2026",
+ "alcance": 2986369,
+ "impresiones": 8822449,
+ "clics": 307485,
+ "ctr": 3.49,
+ "yt_subs": 2660,
+ "yt_views": 161822,
+ "yt_videos": 136,
+ "web_usuarios": 8449,
+ "web_sesiones": 9202,
+ "web_vistas": 11387,
+ "ig_gp3_seg": 30750,
+ "ig_moto4_seg": 11417,
  "fb_pages": {
-  "Team GP3 AD11 BY FIMLA": 3066,
+  "Team GP3 AD11 BY FIMLA": 3063,
   "GP3  Sports": 6051,
-  "Motociclismo de Velocidad Latinoamericano": 8860,
-  "Tony D'Angelo #11": 6977,
-  "GP3 Sports": 18070,
-  "Rubus Racing Park": 5167,
-  "GP3  Motorcycle": 1526,
-  "Mobil Moto4 Latin Cup": 4460,
+  "Motociclismo de Velocidad Latinoamericano": 8854,
+  "Tony D'Angelo #11": 6970,
+  "GP3 Sports": 18076,
+  "Rubus Racing Park": 5161,
+  "GP3  Motorcycle": 1524,
+  "Mobil Moto4 Latin Cup": 4469,
   "Monomarca Femenina Chilena de Velocidad": 505
  },
  "campanas": [
@@ -53,6 +53,13 @@
    "ctr": 1.525688
   },
   {
+   "nombre": "CAV_2026_F5_SAN_JUAN_TRAFICO_V1",
+   "alcance": 394940,
+   "impr": 1214026,
+   "clics": 34334,
+   "ctr": 2.828111
+  },
+  {
    "nombre": "TRH - abril26 -RMKT - TICKETS - FOTO",
    "alcance": 343297,
    "impr": 407001,
@@ -67,25 +74,25 @@
    "ctr": 2.402778
   },
   {
-   "nombre": "CAV_2026_F5_SAN_JUAN_TRAFICO_V1",
-   "alcance": 289078,
-   "impr": 906455,
-   "clics": 27308,
-   "ctr": 3.012615
+   "nombre": "CAV_2026_F5_SAN_JUAN_REFUERZO_V1",
+   "alcance": 120270,
+   "impr": 253687,
+   "clics": 5047,
+   "ctr": 1.989459
   },
   {
    "nombre": "CCV_2026_SAN_JUAN_TRAFICO_V1",
-   "alcance": 60669,
-   "impr": 145276,
-   "clics": 3709,
-   "ctr": 2.553071
+   "alcance": 72667,
+   "impr": 194779,
+   "clics": 4504,
+   "ctr": 2.312364
   },
   {
    "nombre": "M4_2026_SAN_JUAN_TRAFICO_V1",
-   "alcance": 57865,
-   "impr": 101549,
-   "clics": 1827,
-   "ctr": 1.799131
+   "alcance": 71976,
+   "impr": 137129,
+   "clics": 2410,
+   "ctr": 1.757469
   },
   {
    "nombre": "CAV_2026_F4_CONCORDIA_ULTIMA_ETAPA_V1",

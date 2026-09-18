@@ -14,6 +14,24 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-09-18",
+    categoria: "Instagram",
+    titulo: "🏁 7 PILOTOS · 7 PAÍSES · UN MISMO SUEÑO",
+    bajada: "🏁 7 PILOTOS · 7 PAÍSES · UN MISMO SUEÑO  🇪🇨 Alberto Enríquez #62 🇺🇸 Kensei Matsudaira #74 🇵🇸 Mahdi Salem #10 🇳🇮 Andoni Domínguez #34 🇵🇷 Ulises Weyrauch #64 🇦🇷 Santiago",
+    imagen: "NOTICIAS-IG/DdaIENZkRCx.jpg",
+    ig: "DdaIENZkRCx",
+    cuerpo: "🏁 7 PILOTOS · 7 PAÍSES · UN MISMO SUEÑO<br><br>🇪🇨 Alberto Enríquez #62<br>🇺🇸 Kensei Matsudaira #74<br>🇵🇸 Mahdi Salem #10<br>🇳🇮 Andoni Domínguez #34<br>🇵🇷 Ulises Weyrauch #64<br>🇦🇷 Santiago Gossa #11<br>🇧🇷 Murilo Gomes #42<br><br>Recibieron la invitación al Selection Event de la Red Bull MotoGP Rookies Cup y en octubre representarán a la Mobil Moto4 Latin Cup en España. 💜<br>De la Latin Cup al Road to MotoGP: el camino existe y ellos lo están recorriendo. ¡Vamos con todo!<br><br>—<br><br>🇬🇧 7 RIDERS · 7 COUNTRIES · ONE DREAM<br>They have been invited to the Red Bull MotoGP Rookies Cup Selection Event and in October they will represent the Mobil Moto4 Latin Cup in Spain. From the Latin Cup to the Road to MotoGP. Let's go!<br><br>—<br><br>🇧🇷 7 PILOTOS · 7 PAÍSES · UM MESMO SONHO<br>Eles receberam o convite para o Selection Event da Red Bull MotoGP Rookies Cup e em outubro vão representar a Mobil Moto4 Latin Cup na Espanha. Da Latin Cup ao Road to MotoGP. Vamos com tudo!<br><br>@roadtomotogp @mobil.moove @hondaracingbr @fim_latinamerica @gp3.sports.latam @pedroventuro_fimla<br>@albertoenriquez26 @kensei74racing @mahdi_salem10 @andonidominguez34 @ulises_w_64 @santigossa @pilotomurilogomes<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #RookiesCup #SelectionEvent #Moto4"
+  },
+  {
+    fecha: "2026-09-13",
+    categoria: "Instagram",
+    titulo: "🏁 RACE WEEK. Del 25 al 27 de septiembre, la Mobil Moto4 Latin Cup llega a Santa Cruz do…",
+    bajada: "🏁 RACE WEEK. Del 25 al 27 de septiembre, la Mobil Moto4 Latin Cup llega a Santa Cruz do Sul, Brasil, para disputar las Rondas 10 y 11 junto al Moto1000GP.  Gracias a nuestros soci",
+    imagen: "NOTICIAS-IG/DdO4ff-DL2H.jpg",
+    ig: "DdO4ff-DL2H",
+    cuerpo: "🏁 RACE WEEK. Del 25 al 27 de septiembre, la Mobil Moto4 Latin Cup llega a Santa Cruz do Sul, Brasil, para disputar las Rondas 10 y 11 junto al Moto1000GP.<br><br>Gracias a nuestros socios: Mobil, Honda, Pirelli, SMK Helmets, Aquiles, Impovar, Revemar y FIM Latin America.<br><br>🏁 RACE WEEK. From September 25 to 27, the Mobil Moto4 Latin Cup heads to Santa Cruz do Sul, Brazil, for Rounds 10 and 11 alongside Moto1000GP.<br><br>Thanks to our partners: Mobil, Honda, Pirelli, SMK Helmets, Aquiles, Impovar, Revemar and FIM Latin America.<br><br>#Moto4LatinCup #RoadToMotoGP #SantaCruzDoSul"
+  },
+  {
     fecha: "2026-09-01",
     categoria: "Instagram",
     titulo: "🎂 ¡FELIZ CUMPLEANOS, MAHDI SALEM! El #10 de Palestina celebra en plena semana de carrer…",

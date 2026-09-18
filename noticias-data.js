@@ -16,6 +16,24 @@ window.NOTICIAS = [
   {
     fecha: "2026-09-06",
     categoria: "Instagram",
+    titulo: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 1",
+    bajada: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 1  Desde Portugal y compitiendo como Wildcard, Pedro se quedó con el segundo lugar de la Carrera 1 en San Juan. 🏍️🔥  Tras el",
+    imagen: "NOTICIAS-IG/Dc8cN-cx1x-.jpg",
+    ig: "Dc8cN-cx1x-",
+    cuerpo: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 1<br><br>Desde Portugal y compitiendo como Wildcard, Pedro se quedó con el segundo lugar de la Carrera 1 en San Juan. 🏍️🔥<br><br>Tras el podio, comparte su experiencia e invita a otros jóvenes pilotos a sumarse y vivir desde dentro la competencia de Mobil Moto4 Latin Cup.<br><br>Carrera 1 | San Juan 🇦🇷<br>Aún quedan dos carreras por delante. 🏁"
+  },
+  {
+    fecha: "2026-09-06",
+    categoria: "Instagram",
+    titulo: "🥇 Alberto Enríquez #62 🇪🇨 | Ganador Carrera 1",
+    bajada: "🥇 Alberto Enríquez #62 🇪🇨 | Ganador Carrera 1  Tras quedarse con la victoria en la primera carrera del fin de semana, Alberto comparte su experiencia, agradece a quienes hacen p",
+    imagen: "NOTICIAS-IG/Dc8byLtx9-q.jpg",
+    ig: "Dc8byLtx9-q",
+    cuerpo: "🥇 Alberto Enríquez #62 🇪🇨 | Ganador Carrera 1<br><br>Tras quedarse con la victoria en la primera carrera del fin de semana, Alberto comparte su experiencia, agradece a quienes hacen posible este camino e invita a jóvenes pilotos a animarse a competir en Mobil Moto4 Latin Cup. 🏍️🔥<br><br>Carrera 1 | San Juan 🇦🇷<br>Aún quedan dos carreras por delante. 🏁"
+  },
+  {
+    fecha: "2026-09-06",
+    categoria: "Instagram",
     titulo: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 2",
     bajada: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 2  ¡Otro podio en San Juan! 🔥 Pedro V. de Matos vuelve a quedarse con el segundo lugar en Mobil Moto4 Latin Cup, sumando su s",
     imagen: "NOTICIAS-IG/Dc8_pKExRC6.jpg",

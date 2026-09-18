@@ -14,6 +14,24 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-09-06",
+    categoria: "Instagram",
+    titulo: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 2",
+    bajada: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 2  ¡Otro podio en San Juan! 🔥 Pedro V. de Matos vuelve a quedarse con el segundo lugar en Mobil Moto4 Latin Cup, sumando su s",
+    imagen: "NOTICIAS-IG/Dc8_pKExRC6.jpg",
+    ig: "Dc8_pKExRC6",
+    cuerpo: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 2<br><br>¡Otro podio en San Juan! 🔥<br>Pedro V. de Matos vuelve a quedarse con el segundo lugar en Mobil Moto4 Latin Cup, sumando su segundo podio del fin de semana. 🏍️💨<br><br>Queda una carrera… ¿podrá dar vuelta el resultado en la última? 👀🏁<br><br>Carrera 2 | San Juan 🇦🇷"
+  },
+  {
+    fecha: "2026-09-06",
+    categoria: "Instagram",
+    titulo: "🥇 Alberto Enríquez #62 🇪🇨 | Ganador Carrera 2",
+    bajada: "🥇 Alberto Enríquez #62 🇪🇨 | Ganador Carrera 2  ¡Otra victoria en San Juan! 🏆🔥 Alberto Enríquez vuelve a quedarse con el primer lugar en Mobil Moto4 Latin Cup, sumando su segun",
+    imagen: "NOTICIAS-IG/Dc8_STex1OZ.jpg",
+    ig: "Dc8_STex1OZ",
+    cuerpo: "🥇 Alberto Enríquez #62 🇪🇨 | Ganador Carrera 2<br><br>¡Otra victoria en San Juan! 🏆🔥<br>Alberto Enríquez vuelve a quedarse con el primer lugar en Mobil Moto4 Latin Cup, sumando su segunda victoria del fin de semana.<br><br>2 carreras. 2 victorias. 🏍️💨<br>Y todavía queda una más. 🏁<br><br>Carrera 2 | San Juan 🇦🇷"
+  },
+  {
     fecha: "2026-09-18",
     categoria: "Instagram",
     titulo: "🏁 7 PILOTOS · 7 PAÍSES · UN MISMO SUEÑO",

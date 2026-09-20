@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<title>Mobil Moto4 Latin Cup · El camino: Latinoamérica → Europa</title>
+<meta content="El camino oficial de la Mobil Moto4 Latin Cup y Team Junior Latin America hacia el MotoGP, de Latinoamérica a Europa." name="description"/>
+<meta content="noindex" name="robots"/>
+<style>
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+  @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+  @font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+  :root{--white:#fff;--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;
+    --line:#2a0f30;--muted:#b79bc0;
+    --grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+    --grad-dark:linear-gradient(135deg,#1a0620 0%,#3a0d47 45%,#000 100%);
+    --disp:"MGP Display","Arial Narrow",Arial,sans-serif;--dispx:"MGP Display Exp","MGP Display","Arial Narrow",sans-serif;
+    --body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{background:#000;color:#fff;font-family:var(--body);overflow:hidden;position:fixed;inset:0;width:100%;height:100%;overscroll-behavior:none;-webkit-text-size-adjust:100%}
+  a{color:inherit;text-decoration:none}
+  .lb{filter:brightness(0) invert(1)}
+
+  /* ===== barra superior ===== */
+  .topbar{position:fixed;top:0;left:0;right:0;height:60px;z-index:60;display:flex;align-items:center;justify-content:space-between;
+    padding:0 18px;background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar img.tl{height:42px}
+  .topbar .acts{display:flex;gap:10px;align-items:center}
+  .tbtn{font-family:var(--disp);text-transform:uppercase;letter-spacing:.05em;font-size:12px;color:#fff;
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;white-space:nowrap}
+  .tbtn.solid{background:var(--grad);border:none;color:#000;font-weight:700}
+
+  /* ===== candado ===== */
+  .gate{position:fixed;inset:0;z-index:100;background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+  .gate::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 35%,rgba(214,61,252,.32),transparent 70%)}
+  .gate .in{position:relative;z-index:2;max-width:420px;width:100%}
+  .gate img{width:min(320px,70vw);margin-bottom:26px}
+  .gate h1{font-family:var(--dispx);text-transform:uppercase;font-size:24px;margin-bottom:8px}
+  .gate p{color:#e9d8ef;font-size:14px;margin-bottom:20px}
+  .gate input{width:100%;background:rgba(0,0,0,.5);border:1px solid var(--purple);border-radius:14px;color:#fff;
+    font-family:var(--dispx);font-size:26px;text-align:center;letter-spacing:.35em;padding:14px}
+  .gate input:focus{outline:none;box-shadow:0 0 0 4px rgba(214,61,252,.3)}
+  .gate button{margin-top:16px;width:100%;font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:16px;
+    color:#fff;background:var(--grad);border:none;border-radius:999px;padding:15px;cursor:pointer}
+  .gate .err{color:#ff9db1;font-size:13px;margin-top:12px;visibility:hidden}
+
+  /* ===== escenario del deck (escala fija 1456x819: idéntico en iPhone y desktop) ===== */
+  .stagewrap{position:fixed;inset:60px 0 64px 0;/* top/bottom los ajusta fit() */display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .stage{width:1456px;height:819px;position:relative;transform-origin:center center}
+  .slide{width:1456px;height:819px;position:absolute;inset:0;overflow:hidden;background:var(--bg);color:#fff;
+    opacity:0;pointer-events:none;transition:opacity .35s}
+  .slide.on{opacity:1;pointer-events:auto}
+
+  /* ===== controles ===== */
+  .ctrl{position:fixed;bottom:0;left:0;right:0;height:64px;z-index:60;display:flex;align-items:center;justify-content:center;gap:18px;
+    background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .nav{width:46px;height:46px;border-radius:50%;background:var(--grad);border:none;color:#000;font-size:20px;font-weight:700;cursor:pointer}
+  .nav:disabled{opacity:.35}
+  .cnt{font-family:var(--dispx);font-weight:700;font-size:16px;min-width:88px;text-align:center;letter-spacing:.06em}
+
+  /* ===== estilos comunes de láminas ===== */
+  .shead{background:var(--grad-dark);padding:30px 60px 22px;position:relative;overflow:hidden}
+  .shead::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 50% 0%,rgba(214,61,252,.3),transparent 70%)}
+  .shead .k{font-family:var(--disp);text-transform:uppercase;letter-spacing:.28em;font-size:13px;color:var(--pink);position:relative;z-index:1}
+  .shead h2{font-family:var(--dispx);text-transform:uppercase;font-size:42px;position:relative;z-index:1}
+  .smark{position:absolute;bottom:20px;right:34px;height:72px;z-index:5}
+  .scont{padding:36px 60px}
+  .bignum{font-family:var(--dispx);font-weight:700}
+  .chip{display:inline-block;background:rgba(214,61,252,.16);border:1px solid rgba(214,61,252,.45);border-radius:999px;padding:6px 16px;font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--pink)}
+
+  /* portada */
+  .s1{background:var(--grad-dark)}
+  .s1 .foto{position:absolute;inset:0;background:url('PRESENTACION/race2026.jpg') center/cover;opacity:.30;filter:saturate(1.1)}
+  .s1::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 50% 30%,rgba(214,61,252,.35),transparent 70%),linear-gradient(180deg,transparent 55%,rgba(0,0,0,.85))}
+  .s1 .c{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+  .s1 .lg{width:520px;filter:drop-shadow(0 16px 50px rgba(214,61,252,.5))}
+  .s1 h1{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:40px;margin-top:26px;letter-spacing:.02em}
+  .s1 h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .s1 .sub{font-family:var(--disp);text-transform:uppercase;letter-spacing:.3em;font-size:15px;color:var(--pink);margin-top:12px}
+  .s1 .tag{position:absolute;top:30px;right:38px;font-family:var(--disp);text-transform:uppercase;font-size:13px;letter-spacing:.16em;color:#e9d8ef;border:1px solid rgba(214,61,252,.5);border-radius:999px;padding:8px 18px;background:rgba(0,0,0,.35);z-index:3}
+  .sponsors{position:absolute;bottom:34px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:56px;z-index:3}
+
+  .s4 .lad{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:6px}
+  .s4 .step{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 30px;font-family:var(--dispx);text-transform:uppercase;font-size:19px;text-align:center}
+  .s4 .step small{display:block;font-family:var(--body);text-transform:none;font-size:12.5px;color:var(--muted);margin-top:3px}
+  .s4 .step .anio{color:var(--pink);margin-right:10px}
+  .s4 .step.top .anio{color:#3a0d47}
+  .s4 .arrow{color:var(--purple);font-size:20px;line-height:.6}
+  .s4 .step.top{background:var(--grad);color:#000;font-weight:700;border:none}
+  .s4 .step.latin{background:rgba(214,61,252,.18);border:2px solid var(--purple);box-shadow:0 10px 30px rgba(214,61,252,.3)}
+  .s4 .lad{justify-content:center}
+
+  /* separadores de capítulo */
+  .sep{background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center}
+  .sep .bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.22;filter:saturate(1.1)}
+  .sep::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 42%,rgba(214,61,252,.32),transparent 70%)}
+  .sep .c{position:relative;z-index:2;padding:40px}
+  .sep h2{font-family:var(--dispx);text-transform:uppercase;font-size:110px;letter-spacing:.02em;line-height:1}
+  .sep .sub{font-family:var(--disp);text-transform:uppercase;letter-spacing:.14em;font-size:20px;color:#e9d8ef;margin-top:18px;background:rgba(58,13,71,.75);display:inline-block;padding:10px 26px;border-radius:8px}
+  .sep .lg{height:64px;margin-bottom:26px}
+
+  /* columnas foto + texto */
+  .cols2 .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .cols2 .foto{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+  .cols2 p{font-size:18px;line-height:1.7;color:#e9d8ef;margin-bottom:14px}
+  .cols2 p b{color:#fff}
+  .cols2 .spec{display:flex;gap:12px;margin-bottom:13px}
+  .cols2 .spec .sk{font-family:var(--disp);text-transform:uppercase;font-size:11px;letter-spacing:.1em;color:#a678b8;min-width:110px;padding-top:3px}
+  .cols2 .spec .sv{font-size:15px;color:#f2eaf7}
+  .cols2 .spec .sv b{color:#fff}
+
+  /* cita Ezpeleta */
+  .qz .cols{display:grid;grid-template-columns:1.15fr 1fr;gap:44px;align-items:center}
+  .qz .quote{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--purple);border-radius:14px;padding:26px 28px}
+  .qz .quote .q{font-size:18px;line-height:1.7;color:#f2eaf7;font-style:italic}
+  .qz .quote .q b{color:#fff}
+  .qz .quote .a{margin-top:14px;font-family:var(--disp);text-transform:uppercase;font-size:13px;letter-spacing:.08em;color:var(--pink)}
+  .qz .qfoto{width:100%;height:560px;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line)}
+
+  /* lámina de imagen completa */
+  .imgslide{display:flex;align-items:flex-start;justify-content:center;background:#000;padding:20px 34px 92px}
+  .imgslide img{max-width:100%;max-height:100%;object-fit:contain;display:block;border-radius:12px}
+  .imgslide.light{background:#f2f2f2}
+  .imgslide.haytitulo{padding-top:78px}
+  .imgslide .imghead{position:absolute;top:0;left:0;right:0;padding:24px 80px 0;text-align:center;z-index:2}
+  .imgslide .imghead h2{font-family:var(--dispx);text-transform:uppercase;font-size:23px;line-height:1.3;letter-spacing:.02em}
+  .imgslide.light .imghead h2{color:#1a0620}
+  .imgslide .imgnote{position:absolute;left:0;right:0;bottom:66px;text-align:center;font-size:12px;z-index:2;color:#e9d8ef}
+  .imgslide.light .imgnote{color:#5a4a60}
+
+  /* estructura: números gigantes */
+  .est .tot{display:flex;gap:70px;justify-content:center;align-items:flex-start;margin-top:60px}
+  .est .t{text-align:center;max-width:250px}
+  .est .bignum{font-size:120px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .est .tl{font-family:var(--disp);text-transform:uppercase;font-size:17px;letter-spacing:.1em;color:#fff;margin-top:10px}
+  .est .ts{font-size:14px;color:var(--muted);margin-top:4px}
+  .est .chips{text-align:center;margin-top:56px;display:flex;gap:20px;justify-content:center}
+
+  /* calendario */
+  .s6 .cal{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:900px;margin:0 auto}
+  .s6 .ev{background:linear-gradient(100deg,#C604F7,#D63DFC);border-radius:13px;padding:13px 18px;display:grid;grid-template-columns:86px 1fr auto;align-items:center;gap:12px}
+  .s6 .ev.hecha{background:var(--surface);border:1px solid var(--line);opacity:.72}
+  .s6 .ev.hecha .n{color:#cbb3d4}
+  .s6 .ev .r{font-family:var(--dispx);font-weight:700;font-size:14px}
+  .s6 .ev .n{font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:16px}
+  .s6 .ev .d{font-family:var(--disp);text-transform:uppercase;font-size:10.5px;opacity:.95;margin-top:2px}
+  .s6 .ev .f{font-size:20px}
+  .s6 .tot{display:flex;gap:40px;justify-content:center;margin-top:26px}
+  .s6 .tot .t{text-align:center}
+  .s6 .tot .bignum{font-size:52px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .s6 .tot .tl{font-family:var(--disp);text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:var(--muted)}
+
+  /* organigrama */
+  .org .dg{width:340px;margin:0 auto 22px;background:var(--grad);color:#000;border-radius:12px;text-align:center;padding:12px;
+    font-family:var(--dispx);text-transform:uppercase;font-weight:700;font-size:18px}
+  .org .dg small{display:block;font-family:var(--body);text-transform:none;font-weight:400;font-size:12px}
+  .org .cols{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  .org .col{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;min-height:0}
+  .org .col h4{background:rgba(214,61,252,.2);border:1px solid rgba(214,61,252,.45);color:#fff;border-radius:8px;padding:8px 6px;text-align:center;
+    font-family:var(--disp);text-transform:uppercase;font-size:12.5px;letter-spacing:.04em;margin-bottom:10px;line-height:1.25}
+  .org .col ul{list-style:none}
+  .org .col li{font-size:13px;color:#d9c8e2;padding:5px 0;border-bottom:1px solid var(--line);line-height:1.35}
+  .org .col li:last-child{border-bottom:none}
+  .org .nota{text-align:center;color:#e9d8ef;font-size:14.5px;margin-bottom:22px}
+  .org .nota b{color:#fff}
+
+  /* mosaico imagen 2026 */
+  .sK .mos{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:560px}
+  .sK .mos .ph{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#fff;position:relative}
+  .sK .mos img{width:100%;height:100%;object-fit:cover;display:block}
+  .sK .mos span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
+
+  /* cuotas: diagramas de espacios */
+  .diagfull{display:flex;align-items:center;justify-content:center;background:#f2f2f2;height:588px;margin:0 34px;border-radius:14px}
+  .diagfull img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;height:600px;padding:24px 60px 0}
+  .duo .ph{border-radius:14px;border:1px solid var(--line);overflow:hidden;background:#f2f2f2;position:relative}
+  .duo .ph img{width:100%;height:100%;object-fit:contain;display:block}
+  .duo .ph.real img{object-fit:cover}
+  .duo span{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.68);color:#fff;
+    font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.08em;padding:4px 10px;border-radius:7px}
+
+  /* tabla brand properties */
+  .bprops{max-width:860px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(214,61,252,.5)}
+  .bprops .hd{background:var(--grad);color:#000;font-family:var(--dispx);text-transform:uppercase;font-weight:700;text-align:center;padding:13px;font-size:21px}
+  .bprops .row{background:var(--surface);padding:12px;text-align:center;font-size:15.5px;color:#f2eaf7;border-top:1px solid var(--line)}
+  .bprops .row:nth-child(even){background:var(--surface2)}
+  .bprops .row b{color:#fff}
+  .bprops .ft{background:var(--grad);color:#000;font-family:var(--dispx);font-weight:700;text-align:center;padding:13px;font-size:19px}
+  .bprops .ft small{font-family:var(--disp);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
+  .tnota{text-align:center;color:var(--muted);font-size:12px;margin-top:14px}
+
+  /* mercado exportador */
+  .mkt .kpis{display:flex;gap:16px;justify-content:center;margin-bottom:20px}
+  .mkt .kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 26px;text-align:center;position:relative;overflow:hidden}
+  .mkt .kpi::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+  .mkt .kpi .bignum{font-size:38px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.05}
+  .mkt .kpi .kt{font-family:var(--disp);text-transform:uppercase;font-size:12.5px;letter-spacing:.06em;color:#e9d8ef;margin-top:6px;max-width:230px}
+  .mkt .bars{max-width:880px;margin:0 auto}
+  .mkt .bar{display:grid;grid-template-columns:130px 1fr 110px;align-items:center;gap:14px;margin:9px 0}
+  .mkt .bar .n{font-family:var(--disp);text-transform:uppercase;font-size:14px;text-align:right;color:#e9d8ef}
+  .mkt .bar .tr{background:var(--surface);border:1px solid var(--line);border-radius:8px;height:28px;overflow:hidden}
+  .mkt .bar .fl{height:100%;background:var(--grad);border-radius:8px 0 0 8px}
+  .mkt .bar .v{font-family:var(--dispx);font-size:15px;color:#fff}
+  .mkt .lids{display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+  .mkt .src{text-align:center;color:#7a5a86;font-size:11px;margin-top:12px}
+
+  /* cierre */
+  .s12{background:var(--grad-dark);display:flex;align-items:center;justify-content:center;text-align:center}
+  .s12::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 40%,rgba(214,61,252,.3),transparent 70%)}
+  .s12 .c{position:relative;z-index:2}
+  .s12 .lg{width:420px;margin-bottom:30px}
+  .s12 .line{font-family:var(--disp);text-transform:uppercase;font-size:20px;letter-spacing:.06em;margin:8px 0}
+  .s12 .line b{color:var(--pink)}
+
+  /* móvil / iPad: barras finas y safe-area */
+  @media (max-width:740px){
+    .topbar{height:46px;padding:0 10px}
+    .topbar img.tl{height:32px}
+    .tbtn{font-size:10px;padding:6px 11px}
+    .ctrl{height:auto;min-height:50px;padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
+    .nav{width:38px;height:38px;font-size:17px}
+    .cnt{font-size:13px;min-width:70px}
+  }
+  .ctrl{padding-bottom:env(safe-area-inset-bottom)}
+
+  /* tira de sponsors en todas las láminas */
+  .sstrip{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:32px;align-items:center;width:max-content;max-width:calc(100% - 32px);
+    background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+    padding:9px 26px;border-radius:999px;z-index:6;white-space:nowrap}
+
+  /* REGLA FINAL: el posicionamiento del deck manda sobre cualquier estilo — SIEMPRE al final */
+  .stagewrap .stage{width:1456px !important;height:819px !important;flex:0 0 auto !important;transform-origin:center center}
+  .stage .slide{width:1456px;height:819px;position:absolute;inset:0;margin:0;overflow:hidden;
+    opacity:0;pointer-events:none;transition:opacity .35s}
+  .stage .slide.on{opacity:1;pointer-events:auto}
+
+  /* ===== CELULAR HORIZONTAL: pantalla completa (la lámina 16:9 llena el móvil) ===== */
+  @media (orientation:landscape) and (max-height:500px){
+    .topbar{transform:translateY(-100%)}
+    .ctrl{transform:translateY(100%)}
+    .stagewrap{top:0 !important;bottom:0 !important}
+  }
+
+  /* ===== impresión / PDF ===== */
+  @media print{
+    .topbar,.ctrl,.gate{display:none !important}
+    body{overflow:visible;position:static;width:auto;height:auto}
+    .stagewrap{position:static;display:block}
+    .stage{width:auto;height:auto;transform:none !important}
+    .slide{position:relative;opacity:1;pointer-events:auto;page-break-after:always;margin:0}
+    @page{size:1456px 819px;margin:0}
+  }
+
+  /* ===== selector de idioma (dropdown estilo sitio) ===== */
+  .langdd{position:relative}
+  .langbtn{display:flex;align-items:center;gap:7px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;
+    font-size:12px;color:#fff;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:999px;
+    padding:8px 14px;cursor:pointer;white-space:nowrap;line-height:1}
+  .langbtn .cej{font-size:10px;opacity:.85;transition:transform .18s}
+  .langdd.open .langbtn .cej{transform:rotate(180deg)}
+  .langmenu{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:#140618;border:1px solid var(--line);
+    border-radius:14px;padding:6px;display:none;flex-direction:column;gap:2px;z-index:80;box-shadow:0 18px 44px rgba(0,0,0,.55)}
+  .langdd.open .langmenu{display:flex}
+  .langmenu button{font-family:var(--disp);text-transform:uppercase;letter-spacing:.04em;font-size:12.5px;color:#c9b3d2;
+    background:transparent;border:none;border-radius:9px;padding:10px 14px;text-align:left;cursor:pointer;white-space:nowrap}
+  .langmenu button:hover{background:var(--surface);color:#fff}
+  .langmenu button.on{background:var(--grad);color:#000;font-weight:700}
+  @media (max-width:740px){ .langbtn{font-size:10px;padding:6px 10px} }
+
+/* ===== BOTON FLOTANTE DE WHATSAPP ===== */
+#wa{position:fixed;right:18px;bottom:18px;z-index:9999;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(0,0,0,.45);transition:transform .18s ease}
+#wa:hover{transform:scale(1.08)}
+#wa svg{width:31px;height:31px;fill:#fff}
+@media(max-width:560px){#wa{width:52px;height:52px;right:14px;bottom:14px}#wa svg{width:28px;height:28px}}
+</style>
+
+<style>
+  /* línea de tiempo histórica */
+  .htl{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:8px 60px 0}
+  .htl .hc{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative}
+  .htl .hc img{width:100%;height:300px;object-fit:cover;display:block}
+  .htl .hc .yy{font-family:var(--dispx);font-weight:700;font-size:30px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding:12px 16px 0}
+  .htl .hc h3{font-family:var(--disp);text-transform:uppercase;font-size:14.5px;letter-spacing:.05em;padding:2px 16px 0;line-height:1.35}
+  .htl .hc p{font-size:12.5px;color:#d9c8e2;line-height:1.5;padding:6px 16px 14px}
+  /* fechas 2026 */
+  .f26{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:6px 60px 0}
+  .f26 .fc{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .f26 .fc img{width:100%;height:270px;object-fit:cover;display:block}
+  .f26 .fc .ft{padding:14px 18px 16px}
+  .f26 .fc .ft .rr{font-family:var(--dispx);font-weight:700;font-size:19px}
+  .f26 .fc .ft .dd{font-family:var(--disp);text-transform:uppercase;font-size:11.5px;letter-spacing:.08em;color:var(--pink);margin-top:2px}
+  .f26 .fc .ft p{font-size:13px;color:#e9d8ef;margin-top:8px;line-height:1.5}
+  .porcorrer{display:flex;gap:12px;justify-content:center;margin-top:22px;opacity:.75}
+  /* frase puente */
+  .puente{background:#000;display:flex;align-items:center;justify-content:center;text-align:center}
+  .puente h2{font-family:var(--dispx);text-transform:uppercase;font-size:64px;line-height:1.25;max-width:1200px}
+  .puente h2 b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  /* grilla de pilotos */
+  .pgr{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;padding:4px 48px 0}
+  .pgr .pc{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;position:relative}
+  .pgr .pc img{width:100%;height:160px;object-fit:cover;object-position:top;display:block;background:#1a0620}
+  .pgr .pc .ph0{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:40px;background:#1a0620;position:absolute;top:0;z-index:0}
+  .pgr .pc img{position:relative;z-index:1}
+  .pgr .pc .fl{position:absolute;top:6px;right:7px;font-size:15px;z-index:2;text-shadow:0 1px 4px #000}
+  .pgr .pc .nn{position:absolute;top:4px;left:8px;font-family:var(--dispx);font-weight:700;font-size:13px;color:#fff;z-index:2;text-shadow:0 1px 4px #000}
+  .pgr .pc .nm{font-family:var(--disp);text-transform:uppercase;font-size:10.5px;letter-spacing:.03em;padding:7px 8px 2px;line-height:1.25}
+  .pgr .pc .ed{font-size:10px;color:var(--muted);padding:0 8px 8px}
+  /* top 5 */
+  .top5{max-width:940px;margin:10px auto 0}
+  .top5 .tr5{display:grid;grid-template-columns:44px 40px 1fr 340px 86px;align-items:center;gap:14px;margin:10px 0}
+  .top5 .pos{font-family:var(--dispx);font-weight:700;font-size:24px;color:var(--pink)}
+  .top5 .bnd{font-size:22px}
+  .top5 .nom{font-family:var(--disp);text-transform:uppercase;font-size:16px;letter-spacing:.05em}
+  .top5 .bar{background:var(--surface);border:1px solid var(--line);border-radius:8px;height:24px;overflow:hidden}
+  .top5 .bar i{display:block;height:100%;background:var(--grad);border-radius:8px 0 0 8px}
+  .top5 .pts{font-family:var(--dispx);font-weight:700;font-size:16px;text-align:right}
+  /* kpis institucionales */
+  .kgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:20px 60px 0}
+  .kgrid .kc{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px 22px;text-align:center;position:relative;overflow:hidden}
+  .kgrid .kc::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad)}
+  .kgrid .kc .n{font-family:var(--dispx);font-weight:700;font-size:56px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+  .kgrid .kc .t{font-family:var(--disp);text-transform:uppercase;font-size:12.5px;letter-spacing:.07em;color:#e9d8ef;margin-top:12px;line-height:1.5}
+  /* portada institucional */
+  .aval{display:flex;gap:40px;align-items:center;justify-content:center;margin-top:26px}
+  .credrow{display:flex;gap:14px;justify-content:center;margin-top:22px;flex-wrap:wrap}
+</style>
+
+<script>
+window.__imgErrs=[];
+window.addEventListener("error",function(e){
+  if(e.target && e.target.tagName==="IMG" && e.target.getAttribute("src"))
+    window.__imgErrs.push(e.target.getAttribute("src"));
+},true);
+</script>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mobil Moto4 Latin Cup">
+<meta property="og:title" content="El camino: Latinoamérica → Europa — Moto4 Latin Cup">
+<meta property="og:description" content="Mobil Moto4 Latin Cup y Team Junior Latin America: un mismo camino hacia el MotoGP.">
+<meta property="og:url" content="https://www.moto4latincup.lat/camino.html">
+<meta property="og:image" content="https://www.moto4latincup.lat/og-moto4.png">
+</head>
+<body>
+<div class="gate" id="gate">
+<div class="in">
+<img alt="Mobil Moto4 Latin Cup" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+<h1>El camino: Latinoamérica → Europa</h1>
+<p>Material institucional para marcas y aliados.<br/>Ingresa el código de acceso.</p>
+<input autocomplete="off" id="code" maxlength="12" placeholder="CÓDIGO" type="text" style="letter-spacing:.18em;text-transform:uppercase"/>
+<button id="entrar">Entrar</button>
+<div class="err" id="err">Código incorrecto</div>
+<p style="margin-top:22px;font-size:12px"><a href="index.html" style="color:var(--pink);text-decoration:underline">← Volver a moto4latincup.lat</a></p>
+</div>
+</div>
+<div class="topbar">
+<a href="index.html"><img alt="Mobil Moto4 Latin Cup" class="tl" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/></a>
+<div class="acts">
+<div class="langdd" id="langdd">
+<button class="langbtn" id="langbtn" aria-haspopup="true"><span aria-hidden="true">🌐</span> <span id="langcur">Español</span> <span class="cej" aria-hidden="true">▾</span></button>
+<div class="langmenu" id="langmenu">
+<button data-lng="es" class="on">Español</button>
+<button data-lng="en">English</button>
+<button data-lng="pt">Português</button>
+</div>
+</div>
+<button class="tbtn" data-i18n="tbpdf" onclick="window.print()">Descargar PDF</button>
+<a class="tbtn solid" data-i18n="tbsite" href="index.html">Volver al sitio</a>
+</div>
+</div>
+<div class="stagewrap"><div class="stage" id="stage">
+
+<!-- 1 · PORTADA -->
+<div class="slide s1">
+<div class="foto"></div>
+<div class="tag" data-i18n="c00">Presentación institucional · 2026–2027</div>
+<div class="c">
+<img alt="Mobil Moto4 Latin Cup" class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="width:440px"/>
+<h1 data-i18n="c01">Un mismo camino: de Latinoamérica al <span class="grad">MotoGP™</span></h1>
+<div class="sub" data-i18n="c02">Mobil Moto4 Latin Cup · Team Junior Latin America · Road to MotoGP™</div>
+<div class="aval"><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:48px"/><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:30px"/></div>
+<div class="credrow"><span class="chip" data-i18n="c03">2 temporadas en pista</span><span class="chip" data-i18n="c04">20 federaciones FIM Latin America</span><span class="chip" data-i18n="c05">Sede propia en Europa</span><span class="chip" data-i18n="c06">2027: el camino se completa</span></div>
+</div>
+<div class="sponsors" style="gap:44px"><img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:27px"/><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:24px"/><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:18px"/><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:18px"/><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:18px"/></div>
+</div>
+
+<!-- 2 · CITA EZPELETA -->
+<div class="slide qz">
+<div class="shead"><div class="k" data-i18n="c10">El aval del Mundial</div><h2 data-i18n="c11">MotoGP Group</h2></div>
+<div class="scont cols">
+<div class="quote">
+<div class="q" data-i18n="c12">"Estamos encantados de ver cómo Road to MotoGP se expande a Latinoamérica, sumando una nueva región al programa y dando una oportunidad increíble a miles de jóvenes pilotos. Nuestra misión con Road to MotoGP es hacer nuestro deporte lo más accesible posible, y <b>estamos orgullosos de apoyar este programa único en el motorsport</b>. La accesibilidad crea igualdad."</div>
+<div class="a" data-i18n="c13">Carmelo Ezpeleta · CEO MotoGP Group</div>
+</div>
+<img alt="Carmelo Ezpeleta" class="qfoto" src="PRESENTACION/ezpeleta.jpg"/>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 3 · QUÉ ES / DOS TEMPORADAS -->
+<div class="slide cols2">
+<div class="shead"><div class="k" data-i18n="c20">Mobil Moto4 Latin Cup</div><h2 data-i18n="c21">Dos temporadas construyendo el camino</h2></div>
+<div class="scont cols">
+<img alt="Mobil Moto4 Latin Cup 2026" class="foto" src="PRESENTACION/race2026.jpg"/>
+<div>
+<p data-i18n="c22">Campeonato oficial <b>FIM Latin America</b> de la categoría Moto4, dentro del programa <b>Road to MotoGP™</b>. Todos los pilotos compiten con la misma Honda NSF250R y neumáticos Pirelli de especificación única.</p>
+<p data-i18n="c23">Primera temporada en 2025: la copa corona a su primer campeón, <b>Facundo Mora</b>. En 2026, segunda temporada: <b>Mobil</b> como title sponsor, <b>Honda Brasil</b> dentro del programa y debut junto a MotoGP™ en Goiânia.</p>
+<div style="height:6px"></div>
+<span class="chip" data-i18n="c24">16 pilotos · 10 nacionalidades · 13 carreras en Brasil y Argentina</span>
+</div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 4 · PUENTE -->
+<div class="slide puente">
+<h2 data-i18n="c30">Esto no es solo una carrera regional.<br/><b>Es un sistema oficial y completo hacia el Mundial.</b></h2>
+</div>
+
+<!-- 5 · EL CAMINO OFICIAL (ESCALERA) -->
+<div class="slide s4">
+<div class="shead"><div class="k" data-i18n="c40">Road to MotoGP™</div><h2 data-i18n="c41">El camino oficial, de punta a punta</h2></div>
+<div class="scont">
+<div class="lad">
+<div class="step latin"><span class="anio">2025–2026</span><span data-i18n="c42">MOTO4 LATIN CUP</span><small data-i18n="c43">Campeonato regional oficial · Latinoamérica</small></div>
+<div class="arrow">↓</div>
+<div class="step"><span class="anio">2027</span><span data-i18n="c44">MOTO4 EUROPEAN CUP</span><small data-i18n="c45">FIM MotoJunior World Championship · calendario Dorna · España</small></div>
+<div class="arrow">↓</div>
+<div class="step"><span class="anio" data-i18n="c46">Próximo paso</span><span data-i18n="c47">MOTO3 JUNIOR DEL MUNDIAL</span><small data-i18n="c48">Dentro del FIM MotoJunior World Championship</small></div>
+<div class="arrow">↓</div>
+<div class="step top"><span data-i18n="c49">MOTOGP™ · MOTO2 · MOTO3</span><small data-i18n="c4a">La meta del programa Road to MotoGP™</small></div>
+</div>
+<div style="display:flex;justify-content:center;margin-top:30px"><span class="chip" data-i18n="c4b">Moto4 Latin Cup es una de las 5 copas oficiales de Moto4 en el mundo, junto a Asia, Norteamérica, Europa y Gran Bretaña</span></div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 6 · TEAM JUNIOR LATIN AMERICA -->
+<div class="slide cols2">
+<div class="shead"><div class="k" data-i18n="c50">El paso siguiente</div><h2 data-i18n="c51">Team Junior Latin America</h2></div>
+<div class="scont cols">
+<img alt="Team Junior Latin America en pista" class="foto" src="tjla_track.jpg"/>
+<div>
+<p data-i18n="c52">La estructura que lleva a los pilotos que se destacan en la copa al escalón siguiente: la <b>Moto4 European Cup</b>, dentro del <b>FIM MotoJunior World Championship</b>, calendario oficial de Dorna.</p>
+<p data-i18n="c53">Sede europea en <b>MotorLand Aragón</b> (Alcañiz), dentro del parque tecnológico del propio circuito. Debuta en <b>2027</b>.</p>
+<div style="height:6px"></div>
+<span class="chip" data-i18n="c54">Primeros pilotos confirmados: Ulises Weyrauch (Puerto Rico) y Mahdi Salem</span>
+<p style="margin-top:14px;font-size:14px;color:var(--muted)" data-i18n="c55">Objetivo declarado del proyecto: sumar el primer piloto brasileño del programa en Europa.</p>
+</div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 7 · LA TEMPORADA 2026 HOY -->
+<div class="slide est">
+<div class="shead"><div class="k" data-i18n="c60">Campeonato 2026 · al 6 de septiembre (San Juan Villicum)</div><h2 data-i18n="c61">La copa ya habla por sí sola</h2></div>
+<div class="scont">
+<div class="top5">
+<div class="tr5"><div class="pos">1</div><div class="bnd">🇪🇨</div><div class="nom">Alberto Enríquez</div><div class="bar"><i style="width:100%"></i></div><div class="pts">169,5</div></div>
+<div class="tr5"><div class="pos">2</div><div class="bnd">🇺🇸</div><div class="nom">Kensei Matsudaira</div><div class="bar"><i style="width:97%"></i></div><div class="pts">165</div></div>
+<div class="tr5"><div class="pos">3</div><div class="bnd">🇵🇸</div><div class="nom">Mahdi Salem</div><div class="bar"><i style="width:65%"></i></div><div class="pts">110,5</div></div>
+<div class="tr5"><div class="pos">4</div><div class="bnd">🇳🇮</div><div class="nom">Andoni Domínguez</div><div class="bar"><i style="width:65%"></i></div><div class="pts">109,5</div></div>
+<div class="tr5"><div class="pos">5</div><div class="bnd">🇨🇱</div><div class="nom">Cristóbal Carreño</div><div class="bar"><i style="width:47%"></i></div><div class="pts">80</div></div>
+</div>
+<div class="lids" style="display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap">
+<span class="chip" data-i18n="c62">5 nacionalidades en el top 5</span>
+<span class="chip" data-i18n="c63">Quedan 2 fechas: Santa Cruz do Sul (25–27 sep) y la final en Goiânia junto a MotoGP™ (4–6 dic)</span>
+</div>
+<div class="src" style="text-align:center;color:#b79bc0;font-size:13.5px;margin-top:14px" data-i18n="c64">Clasificación general al 6 de septiembre de 2026 · Fuente oficial FIM Latin America</div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 8 · LA REGIÓN ESTÁ MIRANDO -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="c70">Audiencia y comunidad · 2026</div><h2 data-i18n="c71">La región está mirando</h2></div>
+<div class="kgrid">
+<div class="kc"><div class="n">2,5M</div><div class="t" data-i18n="c72">Personas alcanzadas en lo que va de la temporada</div></div>
+<div class="kc"><div class="n">5,9M</div><div class="t" data-i18n="c73">Impresiones en las plataformas del campeonato</div></div>
+<div class="kc"><div class="n">233k</div><div class="t" data-i18n="c74">Interacciones directas con el contenido</div></div>
+<div class="kc"><div class="n">149k</div><div class="t" data-i18n="c75">Vistas en YouTube · las carreras se ven</div></div>
+</div>
+<div class="lids" style="display:flex;gap:12px;justify-content:center;margin-top:30px"><span class="chip" data-i18n="c76">Cobertura en 10 países vía federaciones y prensa local</span></div>
+<div class="src" style="text-align:center;color:#7a5a86;font-size:11px;margin-top:12px" data-i18n="c77">Datos al 23 de julio de 2026</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 9 · CIERRE -->
+<div class="slide s12">
+<div class="c">
+<img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+<div class="line" data-i18n="c80" style="font-size:26px"><b>2027: el camino se completa</b></div>
+<div class="line" data-i18n="c81" style="text-transform:none;font-family:var(--body);font-size:17px;color:#e9d8ef;max-width:820px;margin:10px auto">Moto4 Latin Cup en Latinoamérica. Team Junior Latin America en Europa. Un mismo proyecto, dos continentes.</div>
+<div class="credrow" style="margin-top:20px"><span class="chip" data-i18n="c82">Mobil Moto4 Latin Cup</span><span class="chip" data-i18n="c83">Team Junior Latin America</span></div>
+<div class="line" style="margin-top:22px;font-size:15px">moto4latincup.lat · antonio@gp3sports.lat · @moto4latin</div>
+</div>
+<div class="sponsors"><img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:34px"/><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:30px"/><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:22px"/><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:22px"/><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:22px"/><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:38px"/><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:24px"/></div>
+</div>
+
+</div></div>
+<div class="ctrl">
+<button aria-label="Anterior" class="nav" id="prev">‹</button>
+<div class="cnt"><span id="cur">1</span> / <span id="tot"></span></div>
+<button aria-label="Siguiente" class="nav" id="next">›</button>
+</div>
+<script>
+(function(){
+  // Código validado por SHA-256 (no está en claro)
+  var HASH="a00f4fa9d3613f2f3a964c0f3c87a29071e00f0d0522ba9a61f8f4d8d6b76d91";
+  var gate=document.getElementById("gate"), inp=document.getElementById("code"), err=document.getElementById("err");
+  function abrir(){ gate.style.display="none"; try{sessionStorage.setItem("m4cam","1");}catch(e){} fit(); }
+  function sha256hex(txt){
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(txt)).then(function(buf){
+      return Array.prototype.map.call(new Uint8Array(buf),function(b){return b.toString(16).padStart(2,"0");}).join("");
+    });
+  }
+  function probar(){
+    var v=inp.value.trim().toUpperCase();
+    if(!v){ err.style.visibility="visible"; inp.focus(); return; }
+    sha256hex(v).then(function(hex){
+      if(hex===HASH) abrir();
+      else{ err.style.visibility="visible"; inp.value=""; inp.focus(); }
+    }).catch(function(){ err.style.visibility="visible"; });
+  }
+  document.getElementById("entrar").addEventListener("click",probar);
+  inp.addEventListener("keydown",function(e){ if(e.key==="Enter") probar(); });
+  try{ if(sessionStorage.getItem("m4cam")==="1") gate.style.display="none"; }catch(e){}
+
+  var slides=[].slice.call(document.querySelectorAll(".slide"));
+  var i=0; document.getElementById("tot").textContent=slides.length;
+  function show(n){
+    try{
+      i=Math.max(0,Math.min(slides.length-1,n));
+      slides.forEach(function(s,k){ s.classList.toggle("on",k===i); });
+      document.getElementById("cur").textContent=i+1;
+      document.getElementById("prev").disabled=(i===0);
+      document.getElementById("next").disabled=(i===slides.length-1);
+    }catch(e){}
+  }
+  document.getElementById("prev").addEventListener("click",function(e){e.stopPropagation();show(i-1);});
+  document.getElementById("next").addEventListener("click",function(e){e.stopPropagation();show(i+1);});
+  document.addEventListener("keydown",function(e){
+    if(gate.style.display!=="none") return;
+    if(e.key==="ArrowRight"||e.key===" ") show(i+1);
+    if(e.key==="ArrowLeft") show(i-1);
+  });
+  document.querySelector(".stagewrap").addEventListener("click",function(e){
+    if(gate.style.display!=="none") return;
+    if(e.clientX > window.innerWidth/2) show(i+1); else show(i-1);
+  });
+  var x0=null;
+  document.addEventListener("touchstart",function(e){ x0=e.touches[0].clientX; },{passive:true});
+  document.addEventListener("touchend",function(e){
+    if(x0===null||gate.style.display!=="none") return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(dx<-50) show(i+1); if(dx>50) show(i-1); x0=null;
+  },{passive:true});
+
+  function fit(){
+    var fs=(window.matchMedia&&window.matchMedia("(orientation:landscape) and (max-height:500px)").matches)||false;
+    var tb=fs?0:document.querySelector(".topbar").offsetHeight;
+    var cb=fs?0:document.querySelector(".ctrl").offsetHeight;
+    var wrap=document.querySelector(".stagewrap");
+    wrap.style.top=tb+"px"; wrap.style.bottom=cb+"px";
+    var vw=(window.visualViewport?visualViewport.width:window.innerWidth);
+    var vh=(window.visualViewport?visualViewport.height:window.innerHeight)-tb-cb;
+    var s=Math.min(vw/1456, vh/819);
+    document.getElementById("stage").style.transform="scale("+s+")";
+  }
+  var STRIP = '<div class="sstrip">'
+    +'<img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:24px">'
+    +'<img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:21px">'
+    +'<img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:16px">'
+    +'<img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:16px">'
+    +'<img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:16px">'
+    +'<img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:27px">'
+    +'<img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:17px">'
+    +'</div>';
+  slides.forEach(function(s){ if(!s.querySelector(".sponsors")) s.insertAdjacentHTML("beforeend", STRIP); });
+
+  window.addEventListener("resize",fit);
+  window.addEventListener("orientationchange",function(){ fit(); setTimeout(fit,250); setTimeout(fit,600); });
+  if(window.visualViewport) visualViewport.addEventListener("resize",fit);
+  fit(); show(0);
+})();
+</script>
+<script>
+(function(){
+  var I18N={"en":{"c00":"Institutional presentation · 2026–2027","c01":"One road: from Latin America to <span class=\"grad\">MotoGP™</span>","c02":"Mobil Moto4 Latin Cup · Team Junior Latin America · Road to MotoGP™","c03":"2 seasons on track","c04":"20 FIM Latin America federations","c05":"Own base in Europe","c06":"2027: the path comes full circle","c10":"Backed by the World Championship","c11":"MotoGP Group","c12":"\"We are delighted to see how Road to MotoGP is expanding into Latin America, adding a new region to the program and giving an incredible opportunity to thousands of young riders. Our mission with Road to MotoGP is to make our sport as accessible as possible, and <b>we are proud to support this unique program in motorsport</b>. Accessibility creates equality.\"","c13":"Carmelo Ezpeleta · CEO, MotoGP Group","c20":"Mobil Moto4 Latin Cup","c21":"Two seasons building the path","c22":"Official <b>FIM Latin America</b> championship in the Moto4 category, within the <b>Road to MotoGP™</b> program. Every rider competes on the same Honda NSF250R with single-spec Pirelli tyres.","c23":"First season in 2025: the cup crowns its first champion, <b>Facundo Mora</b>. In 2026, second season: <b>Mobil</b> as title sponsor, <b>Honda Brasil</b> inside the program and the debut alongside MotoGP™ in Goiânia.","c24":"16 riders · 10 nationalities · 13 races in Brazil and Argentina","c30":"This is not just a regional race.<br/><b>It is a complete, official system toward the World Championship.</b>","c40":"Road to MotoGP™","c41":"The official path, start to finish","c42":"MOTO4 LATIN CUP","c43":"Official regional championship · Latin America","c44":"MOTO4 EUROPEAN CUP","c45":"FIM MotoJunior World Championship · Dorna calendar · Spain","c46":"Next step","c47":"MOTO3 JUNIOR WORLD CHAMPIONSHIP","c48":"Within the FIM MotoJunior World Championship","c49":"MOTOGP™ · MOTO2 · MOTO3","c4a":"The goal of the Road to MotoGP™ program","c4b":"Moto4 Latin Cup is one of the 5 official Moto4 cups worldwide, alongside Asia, Northern, Europe and Great Britain","c50":"The next step","c51":"Team Junior Latin America","c52":"The structure that takes the cup's standout riders to the next level: the <b>Moto4 European Cup</b>, within the <b>FIM MotoJunior World Championship</b>, Dorna's official calendar.","c53":"European base at <b>MotorLand Aragón</b> (Alcañiz), inside the circuit's own technology park. Debuts in <b>2027</b>.","c54":"First confirmed riders: Ulises Weyrauch (Puerto Rico) and Mahdi Salem","c55":"The project's stated goal: to add the program's first Brazilian rider in Europe.","c60":"2026 championship · as of September 6 (San Juan Villicum)","c61":"The cup already speaks for itself","c62":"5 nationalities in the top 5","c63":"2 rounds left: Santa Cruz do Sul (Sep 25–27) and the finale in Goiânia alongside MotoGP™ (Dec 4–6)","c64":"Overall standings as of September 6, 2026 · Official FIM Latin America source","c70":"Audience and community · 2026","c71":"The region is watching","c72":"People reached so far this season","c73":"Impressions across the championship's platforms","c74":"Direct interactions with the content","c75":"YouTube views · the races get watched","c76":"Coverage in 10 countries via federations and local press","c77":"Data as of July 23, 2026","c80":"2027: the path comes full circle","c81":"Moto4 Latin Cup in Latin America. Team Junior Latin America in Europe. One project, two continents.","c82":"Mobil Moto4 Latin Cup","c83":"Team Junior Latin America"},"pt":{"c00":"Apresentação institucional · 2026–2027","c01":"Um mesmo caminho: da América Latina ao <span class=\"grad\">MotoGP™</span>","c02":"Mobil Moto4 Latin Cup · Team Junior Latin America · Road to MotoGP™","c03":"2 temporadas na pista","c04":"20 federações FIM Latin America","c05":"Sede própria na Europa","c06":"2027: o caminho se completa","c10":"O aval do Mundial","c11":"MotoGP Group","c12":"\"Estamos encantados em ver como o Road to MotoGP se expande para a América Latina, somando uma nova região ao programa e dando uma oportunidade incrível a milhares de jovens pilotos. Nossa missão com o Road to MotoGP é tornar nosso esporte o mais acessível possível, e <b>temos orgulho de apoiar este programa único no motorsport</b>. A acessibilidade cria igualdade.\"","c13":"Carmelo Ezpeleta · CEO, MotoGP Group","c20":"Mobil Moto4 Latin Cup","c21":"Duas temporadas construindo o caminho","c22":"Campeonato oficial <b>FIM Latin America</b> da categoria Moto4, dentro do programa <b>Road to MotoGP™</b>. Todos os pilotos competem com a mesma Honda NSF250R e pneus Pirelli de especificação única.","c23":"Primeira temporada em 2025: a copa coroa seu primeiro campeão, <b>Facundo Mora</b>. Em 2026, segunda temporada: <b>Mobil</b> como title sponsor, <b>Honda Brasil</b> dentro do programa e estreia junto ao MotoGP™ em Goiânia.","c24":"16 pilotos · 10 nacionalidades · 13 corridas no Brasil e na Argentina","c30":"Isto não é só uma corrida regional.<br/><b>É um sistema oficial e completo rumo ao Mundial.</b>","c40":"Road to MotoGP™","c41":"O caminho oficial, do início ao fim","c42":"MOTO4 LATIN CUP","c43":"Campeonato regional oficial · América Latina","c44":"MOTO4 EUROPEAN CUP","c45":"FIM MotoJunior World Championship · calendário da Dorna · Espanha","c46":"Próximo passo","c47":"MOTO3 JUNIOR DO MUNDIAL","c48":"Dentro do FIM MotoJunior World Championship","c49":"MOTOGP™ · MOTO2 · MOTO3","c4a":"A meta do programa Road to MotoGP™","c4b":"A Moto4 Latin Cup é uma das 5 copas oficiais de Moto4 no mundo, junto com Ásia, América do Norte, Europa e Grã-Bretanha","c50":"O próximo passo","c51":"Team Junior Latin America","c52":"A estrutura que leva os pilotos de destaque da copa ao próximo degrau: a <b>Moto4 European Cup</b>, dentro do <b>FIM MotoJunior World Championship</b>, calendário oficial da Dorna.","c53":"Sede europeia em <b>MotorLand Aragón</b> (Alcañiz), dentro do parque tecnológico do próprio circuito. Estreia em <b>2027</b>.","c54":"Primeiros pilotos confirmados: Ulises Weyrauch (Porto Rico) e Mahdi Salem","c55":"Objetivo declarado do projeto: somar o primeiro piloto brasileiro do programa na Europa.","c60":"Campeonato 2026 · em 6 de setembro (San Juan Villicum)","c61":"A copa já fala por si","c62":"5 nacionalidades no top 5","c63":"Faltam 2 etapas: Santa Cruz do Sul (25–27 set) e a final em Goiânia junto ao MotoGP™ (4–6 dez)","c64":"Classificação geral em 6 de setembro de 2026 · Fonte oficial FIM Latin America","c70":"Audiência e comunidade · 2026","c71":"A região está de olho","c72":"Pessoas alcançadas até agora na temporada","c73":"Impressões nas plataformas do campeonato","c74":"Interações diretas com o conteúdo","c75":"Visualizações no YouTube · as corridas são vistas","c76":"Cobertura em 10 países via federações e imprensa local","c77":"Dados em 23 de julho de 2026","c80":"2027: o caminho se completa","c81":"Moto4 Latin Cup na América Latina. Team Junior Latin America na Europa. Um mesmo projeto, dois continentes.","c82":"Mobil Moto4 Latin Cup","c83":"Team Junior Latin America"}};
+  I18N.en.tbpdf="Download PDF"; I18N.en.tbsite="Back to site";
+  I18N.pt.tbpdf="Baixar PDF"; I18N.pt.tbsite="Voltar ao site";
+  var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  els.forEach(function(el){ el.setAttribute('data-es', el.innerHTML); });
+  var NAMES={es:'Español',en:'English',pt:'Português'};
+  var dd=document.getElementById('langdd'), btn=document.getElementById('langbtn'),
+      menu=document.getElementById('langmenu'), cur=document.getElementById('langcur');
+  function setLang(l){
+    document.documentElement.lang=l;
+    els.forEach(function(el){
+      var k=el.getAttribute('data-i18n');
+      var v=(l==='es')?el.getAttribute('data-es'):((I18N[l]&&I18N[l][k])!=null?I18N[l][k]:el.getAttribute('data-es'));
+      el.innerHTML=v;
+    });
+    if(cur) cur.textContent=NAMES[l]||'Español';
+    [].slice.call(menu.querySelectorAll('button')).forEach(function(b){
+      b.classList.toggle('on', b.getAttribute('data-lng')===l);
+    });
+    try{sessionStorage.setItem('m4lang',l);}catch(e){}
+  }
+  btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('open');});
+  [].slice.call(menu.querySelectorAll('button')).forEach(function(b){
+    b.addEventListener('click',function(e){e.stopPropagation();setLang(b.getAttribute('data-lng'));dd.classList.remove('open');});
+  });
+  document.addEventListener('click',function(){ dd.classList.remove('open'); });
+  var saved='es'; try{saved=sessionStorage.getItem('m4lang')||'es';}catch(e){}
+  setLang(saved);
+  window.M4setLang=setLang;
+})();
+</script>
+<script data-goatcounter="https://gp3sports.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<footer style="text-align:center;padding:16px;font-size:12px;opacity:.75">Sitio diseñado y desarrollado por KODELAT GROUP SpA</footer></body>
+</html>

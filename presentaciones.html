@@ -136,6 +136,10 @@ const PRESENTACIONES = [
     tag:{es:'EL EQUIPO · INVERSIONISTAS', en:'THE TEAM · INVESTORS', pt:'A EQUIPE · INVESTIDORES'},
     nombre:{es:'SOCIOS · MASTER PLAN COMPLETO', en:'PARTNERS · FULL MASTER PLAN', pt:'SÓCIOS · MASTER PLAN COMPLETO'},
     desc:{es:'Documento integral del proyecto para el directorio y potenciales asociados del equipo.', en:'The full project document for the board and potential team associates.', pt:'Documento integral do projeto para a diretoria e potenciais associados da equipe.'} },
+  { id:'camino', hash:'a00f4fa9d3613f2f3a964c0f3c87a29071e00f0d0522ba9a61f8f4d8d6b76d91', slides:null, link:'camino.html',
+    tag:{es:'LA COPA + TEAM JUNIOR · EL CAMINO', en:'THE CUP + TEAM JUNIOR · THE PATH', pt:'A COPA + TEAM JUNIOR · O CAMINHO'},
+    nombre:{es:'EL CAMINO: LATINOAMÉRICA → EUROPA', en:'THE PATH: LATIN AMERICA → EUROPE', pt:'O CAMINHO: AMÉRICA LATINA → EUROPA'},
+    desc:{es:'Mobil Moto4 Latin Cup y Team Junior Latin America: un mismo camino hacia el MotoGP™. Sin contenido comercial.', en:'Mobil Moto4 Latin Cup and Team Junior Latin America: one road to MotoGP™. No commercial content.', pt:'Mobil Moto4 Latin Cup e Team Junior Latin America: um mesmo caminho rumo ao MotoGP™. Sem conteúdo comercial.'} },
 ];
 let lang='es', deckLang='es', cur=0, activo=null, gateOK=false;
 const GATE_HASH='a00f4fa9d3613f2f3a964c0f3c87a29071e00f0d0522ba9a61f8f4d8d6b76d91';
@@ -183,7 +187,7 @@ async function tryOpen(idx){
   if(hv!==p.hash){ err.style.color='#ff7a9c'; err.textContent=u.wrong; const c=err.closest('.card'); c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); return; }
   err.textContent='';
   if(p.link){
-    try{ if(p.id==='moto4') sessionStorage.setItem('m4pres','1'); if(p.id==='honda') sessionStorage.setItem('m4tj','1'); if(p.id==='socios') sessionStorage.setItem('m4soc','1'); if(p.id==='inst') sessionStorage.setItem('m4inst','1'); }catch(e){}
+    try{ if(p.id==='moto4') sessionStorage.setItem('m4pres','1'); if(p.id==='honda') sessionStorage.setItem('m4tj','1'); if(p.id==='socios') sessionStorage.setItem('m4soc','1'); if(p.id==='inst') sessionStorage.setItem('m4inst','1'); if(p.id==='camino') sessionStorage.setItem('m4cam','1'); }catch(e){}
     window.location.href = p.link; return;
   }
   if(!p.slides){ err.textContent=u.prep; err.style.color='#8be89b'; return; }

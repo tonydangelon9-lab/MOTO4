@@ -5,8 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<title>Mobil Moto4 Latin Cup · El camino: Latinoamérica → Europa</title>
-<meta content="El camino oficial de la Mobil Moto4 Latin Cup y Team Junior Latin America hacia el MotoGP, de Latinoamérica a Europa." name="description"/>
+<title>Mobil Moto4 Latin Cup · Presentación para marcas · Brasil</title>
+<meta content="Mobil Moto4 Latin Cup: el primer paso oficial hacia el MotoGP para los pilotos de Latinoamérica." name="description"/>
 <meta content="noindex" name="robots"/>
 <style>
   @font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
@@ -276,6 +276,10 @@
 #wa:hover{transform:scale(1.08)}
 #wa svg{width:31px;height:31px;fill:#fff}
 @media(max-width:560px){#wa{width:52px;height:52px;right:14px;bottom:14px}#wa svg{width:28px;height:28px}}
+  /* ===== PANTALLA COMPLETA ===== */
+  :fullscreen .topbar,:fullscreen .ctrl{display:none !important}
+  :fullscreen .stagewrap{top:0 !important;bottom:0 !important}
+  :fullscreen body{background:#000}
 </style>
 
 <style>
@@ -338,7 +342,7 @@ window.addEventListener("error",function(e){
 </script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobil Moto4 Latin Cup">
-<meta property="og:title" content="El camino: Latinoamérica → Europa — Moto4 Latin Cup">
+<meta property="og:title" content="Presentación para marcas · Brasil — Moto4 Latin Cup">
 <meta property="og:description" content="Mobil Moto4 Latin Cup y Team Junior Latin America: un mismo camino hacia el MotoGP.">
 <meta property="og:url" content="https://www.moto4latincup.lat/camino.html">
 <meta property="og:image" content="https://www.moto4latincup.lat/og-moto4.png">
@@ -347,12 +351,12 @@ window.addEventListener("error",function(e){
 <div class="gate" id="gate">
 <div class="in">
 <img alt="Mobil Moto4 Latin Cup" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
-<h1>El camino: Latinoamérica → Europa</h1>
-<p>Material institucional para marcas y aliados.<br/>Ingresa el código de acceso.</p>
+<h1>Mobil Moto4 Latin Cup</h1>
+<p>Material para marcas y aliados · Material para marcas e parceiros<br/>Ingresa el código de acceso · Digite o código de acesso.</p>
 <input autocomplete="off" id="code" maxlength="12" placeholder="CÓDIGO" type="text" style="letter-spacing:.18em;text-transform:uppercase"/>
 <button id="entrar">Entrar</button>
-<div class="err" id="err">Código incorrecto</div>
-<p style="margin-top:22px;font-size:12px"><a href="index.html" style="color:var(--pink);text-decoration:underline">← Volver a moto4latincup.lat</a></p>
+<div class="err" id="err">Código incorrecto · Código incorreto</div>
+<p style="margin-top:22px;font-size:12px"><a href="index.html" style="color:var(--pink);text-decoration:underline">← moto4latincup.lat</a></p>
 </div>
 </div>
 <div class="topbar">
@@ -366,137 +370,177 @@ window.addEventListener("error",function(e){
 <button data-lng="pt">Português</button>
 </div>
 </div>
+<button class="tbtn solid" id="fsbtn" data-i18n="tbfs" onclick="M4fs()">⛶ Pantalla completa</button>
 <button class="tbtn" data-i18n="tbpdf" onclick="window.print()">Descargar PDF</button>
 <a class="tbtn solid" data-i18n="tbsite" href="index.html">Volver al sitio</a>
 </div>
 </div>
 <div class="stagewrap"><div class="stage" id="stage">
 
-<!-- 1 · PORTADA -->
+<!-- 1 · ¿QUÉ ES ESTO? -->
 <div class="slide s1">
 <div class="foto"></div>
-<div class="tag" data-i18n="c00">Presentación institucional · 2026–2027</div>
+<div class="tag" data-i18n="c00">Mobil Moto4 Latin Cup · 2026</div>
 <div class="c">
-<img alt="Mobil Moto4 Latin Cup" class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="width:440px"/>
-<h1 data-i18n="c01">Un mismo camino: de Latinoamérica al <span class="grad">MotoGP™</span></h1>
-<div class="sub" data-i18n="c02">Mobil Moto4 Latin Cup · Team Junior Latin America · Road to MotoGP™</div>
+<img alt="Mobil Moto4 Latin Cup" class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" style="width:400px"/>
+<h1 data-i18n="c01" style="font-size:38px;max-width:1150px">El primer paso oficial hacia el <span class="grad">MotoGP™</span><br/>para los pilotos de Latinoamérica</h1>
+<div class="sub" data-i18n="c02">Campeonato oficial FIM Latin America · Programa Road to MotoGP™</div>
 <div class="aval"><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:48px"/><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:30px"/></div>
-<div class="credrow"><span class="chip" data-i18n="c03">2 temporadas en pista</span><span class="chip" data-i18n="c04">20 federaciones FIM Latin America</span><span class="chip" data-i18n="c05">Sede propia en Europa</span><span class="chip" data-i18n="c06">2027: el camino se completa</span></div>
+<div class="credrow"><span class="chip" data-i18n="c03">2 temporadas en pista</span><span class="chip" data-i18n="c04">16 pilotos · 10 países</span><span class="chip" data-i18n="c05">13 carreras en Brasil y Argentina</span><span class="chip" data-i18n="c06">1 fecha junto a MotoGP™</span></div>
 </div>
 <div class="sponsors" style="gap:44px"><img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:27px"/><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:24px"/><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:18px"/><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:18px"/><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:18px"/></div>
 </div>
 
-<!-- 2 · CITA EZPELETA -->
+<!-- 2 · ¿QUÉ ES MOTOGP? -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="c10">Para empezar por el principio</div><h2 data-i18n="c11">¿Qué es MotoGP™?</h2></div>
+<div class="kgrid" style="grid-template-columns:repeat(3,1fr);padding-top:34px">
+<div class="kc" style="padding:34px 26px"><div class="n" style="font-size:34px" data-i18n="c12">MotoGP™</div><div class="t" style="text-transform:none;letter-spacing:0;font-size:16px;line-height:1.55;font-family:var(--body);margin-top:16px" data-i18n="c13">Es el Campeonato del Mundo de motociclismo: <b>la Fórmula 1 de las motos</b>. Corre en 5 continentes, y desde 2026 volvió a Brasil, en Goiânia.</div></div>
+<div class="kc" style="padding:34px 26px"><div class="n" style="font-size:34px" data-i18n="c14">Dorna &amp; FIM</div><div class="t" style="text-transform:none;letter-spacing:0;font-size:16px;line-height:1.55;font-family:var(--body);margin-top:16px" data-i18n="c15">Dorna organiza el Mundial; la FIM es la federación internacional. Entre las dos definen <b>el camino oficial</b> para llegar a MotoGP™.</div></div>
+<div class="kc" style="padding:34px 26px"><div class="n" style="font-size:34px" data-i18n="c16">Road to MotoGP™</div><div class="t" style="text-transform:none;letter-spacing:0;font-size:16px;line-height:1.55;font-family:var(--body);margin-top:16px" data-i18n="c17">Es ese camino: <b>la escalera oficial de formación</b>. Empieza en copas regionales para jóvenes y termina en la parrilla del Mundial.</div></div>
+</div>
+<div style="padding:22px 60px 0"><div style="position:relative;height:250px;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><img src="PRESENTACION/race2026.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 40%"/><span style="position:absolute;left:14px;bottom:12px;background:rgba(0,0,0,.65);color:#fff;font-family:var(--disp);text-transform:uppercase;font-size:11px;letter-spacing:.08em;padding:5px 12px;border-radius:7px" data-i18n="c19">Goiânia 2026 · Moto4 Latin Cup en el fin de semana del GP de Brasil de MotoGP™</span></div></div>
+<div style="display:flex;justify-content:center;margin-top:22px"><span class="chip" data-i18n="c18">Moto4 Latin Cup es el primer escalón de esa escalera en Latinoamérica</span></div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 3 · ¿Y MOTO4 LATIN CUP? -->
+<div class="slide cols2">
+<div class="shead"><div class="k" data-i18n="c20">Qué es</div><h2 data-i18n="c21">Moto4 Latin Cup</h2></div>
+<div class="scont cols">
+<img alt="Honda NSF250R" class="foto" src="PRESENTACION/moto_real_2026.jpg" style="aspect-ratio:16/9"/>
+<div>
+<p data-i18n="c22"><b>Una de las 5 copas oficiales de Moto4 en el mundo</b> — junto a Asia, Europa, Norteamérica y Gran Bretaña. La de Latinoamérica es esta.</p>
+<p data-i18n="c23">Pilotos de <b>14 a 18 años</b>, seleccionados con las federaciones de 20 países. Todos corren con <b>la misma moto Honda</b> y los mismos neumáticos Pirelli: <b>aquí gana el talento, no el presupuesto</b>.</p>
+<div style="height:6px"></div>
+<span class="chip" data-i18n="c24">Organizada por GP3 Sports · Chancelada por FIM Latin America</span>
+</div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 4 · ¿QUIÉN LO RESPALDA? -->
 <div class="slide qz">
-<div class="shead"><div class="k" data-i18n="c10">El aval del Mundial</div><h2 data-i18n="c11">MotoGP Group</h2></div>
+<div class="shead"><div class="k" data-i18n="c30">Quién lo respalda</div><h2 data-i18n="c31">El CEO de MotoGP™, en sus palabras</h2></div>
 <div class="scont cols">
 <div class="quote">
-<div class="q" data-i18n="c12">"Estamos encantados de ver cómo Road to MotoGP se expande a Latinoamérica, sumando una nueva región al programa y dando una oportunidad increíble a miles de jóvenes pilotos. Nuestra misión con Road to MotoGP es hacer nuestro deporte lo más accesible posible, y <b>estamos orgullosos de apoyar este programa único en el motorsport</b>. La accesibilidad crea igualdad."</div>
-<div class="a" data-i18n="c13">Carmelo Ezpeleta · CEO MotoGP Group</div>
+<div class="q" data-i18n="c32">"Estamos encantados de ver cómo Road to MotoGP se expande a Latinoamérica, sumando una nueva región al programa y dando una oportunidad increíble a miles de jóvenes pilotos. Nuestra misión con Road to MotoGP es hacer nuestro deporte lo más accesible posible, y <b>estamos orgullosos de apoyar este programa único en el motorsport</b>. La accesibilidad crea igualdad."</div>
+<div class="a" data-i18n="c33">Carmelo Ezpeleta · CEO MotoGP Group (Dorna)</div>
 </div>
 <img alt="Carmelo Ezpeleta" class="qfoto" src="PRESENTACION/ezpeleta.jpg"/>
 </div>
 <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
 </div>
 
-<!-- 3 · QUÉ ES / DOS TEMPORADAS -->
-<div class="slide cols2">
-<div class="shead"><div class="k" data-i18n="c20">Mobil Moto4 Latin Cup</div><h2 data-i18n="c21">Dos temporadas construyendo el camino</h2></div>
-<div class="scont cols">
-<img alt="Mobil Moto4 Latin Cup 2026" class="foto" src="PRESENTACION/race2026.jpg"/>
-<div>
-<p data-i18n="c22">Campeonato oficial <b>FIM Latin America</b> de la categoría Moto4, dentro del programa <b>Road to MotoGP™</b>. Todos los pilotos compiten con la misma Honda NSF250R y neumáticos Pirelli de especificación única.</p>
-<p data-i18n="c23">Primera temporada en 2025: la copa corona a su primer campeón, <b>Facundo Mora</b>. En 2026, segunda temporada: <b>Mobil</b> como title sponsor, <b>Honda Brasil</b> dentro del programa y debut junto a MotoGP™ en Goiânia.</p>
-<div style="height:6px"></div>
-<span class="chip" data-i18n="c24">16 pilotos · 10 nacionalidades · 13 carreras en Brasil y Argentina</span>
-</div>
-</div>
-<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
-</div>
-
-<!-- 4 · PUENTE -->
-<div class="slide puente">
-<h2 data-i18n="c30">Esto no es solo una carrera regional.<br/><b>Es un sistema oficial y completo hacia el Mundial.</b></h2>
-</div>
-
-<!-- 5 · EL CAMINO OFICIAL (ESCALERA) -->
-<div class="slide s4">
-<div class="shead"><div class="k" data-i18n="c40">Road to MotoGP™</div><h2 data-i18n="c41">El camino oficial, de punta a punta</h2></div>
-<div class="scont">
-<div class="lad">
-<div class="step latin"><span class="anio">2025–2026</span><span data-i18n="c42">MOTO4 LATIN CUP</span><small data-i18n="c43">Campeonato regional oficial · Latinoamérica</small></div>
-<div class="arrow">↓</div>
-<div class="step"><span class="anio">2027</span><span data-i18n="c44">MOTO4 EUROPEAN CUP</span><small data-i18n="c45">FIM MotoJunior World Championship · calendario Dorna · España</small></div>
-<div class="arrow">↓</div>
-<div class="step"><span class="anio" data-i18n="c46">Próximo paso</span><span data-i18n="c47">MOTO3 JUNIOR DEL MUNDIAL</span><small data-i18n="c48">Dentro del FIM MotoJunior World Championship</small></div>
-<div class="arrow">↓</div>
-<div class="step top"><span data-i18n="c49">MOTOGP™ · MOTO2 · MOTO3</span><small data-i18n="c4a">La meta del programa Road to MotoGP™</small></div>
-</div>
-<div style="display:flex;justify-content:center;margin-top:30px"><span class="chip" data-i18n="c4b">Moto4 Latin Cup es una de las 5 copas oficiales de Moto4 en el mundo, junto a Asia, Norteamérica, Europa y Gran Bretaña</span></div>
-</div>
-<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
-</div>
-
-<!-- 6 · TEAM JUNIOR LATIN AMERICA -->
-<div class="slide cols2">
-<div class="shead"><div class="k" data-i18n="c50">El paso siguiente</div><h2 data-i18n="c51">Team Junior Latin America</h2></div>
-<div class="scont cols">
-<img alt="Team Junior Latin America en pista" class="foto" src="tjla_track.jpg"/>
-<div>
-<p data-i18n="c52">La estructura que lleva a los pilotos que se destacan en la copa al escalón siguiente: la <b>Moto4 European Cup</b>, dentro del <b>FIM MotoJunior World Championship</b>, calendario oficial de Dorna.</p>
-<p data-i18n="c53">Sede europea en <b>MotorLand Aragón</b> (Alcañiz), dentro del parque tecnológico del propio circuito. Debuta en <b>2027</b>.</p>
-<div style="height:6px"></div>
-<span class="chip" data-i18n="c54">Primeros pilotos confirmados: Ulises Weyrauch (Puerto Rico) y Mahdi Salem</span>
-<p style="margin-top:14px;font-size:14px;color:var(--muted)" data-i18n="c55">Objetivo declarado del proyecto: sumar el primer piloto brasileño del programa en Europa.</p>
-</div>
-</div>
-<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
-</div>
-
-<!-- 7 · LA TEMPORADA 2026 HOY -->
-<div class="slide est">
-<div class="shead"><div class="k" data-i18n="c60">Campeonato 2026 · al 6 de septiembre (San Juan Villicum)</div><h2 data-i18n="c61">La copa ya habla por sí sola</h2></div>
-<div class="scont">
-<div class="top5">
-<div class="tr5"><div class="pos">1</div><div class="bnd">🇪🇨</div><div class="nom">Alberto Enríquez</div><div class="bar"><i style="width:100%"></i></div><div class="pts">169,5</div></div>
-<div class="tr5"><div class="pos">2</div><div class="bnd">🇺🇸</div><div class="nom">Kensei Matsudaira</div><div class="bar"><i style="width:97%"></i></div><div class="pts">165</div></div>
-<div class="tr5"><div class="pos">3</div><div class="bnd">🇵🇸</div><div class="nom">Mahdi Salem</div><div class="bar"><i style="width:65%"></i></div><div class="pts">110,5</div></div>
-<div class="tr5"><div class="pos">4</div><div class="bnd">🇳🇮</div><div class="nom">Andoni Domínguez</div><div class="bar"><i style="width:65%"></i></div><div class="pts">109,5</div></div>
-<div class="tr5"><div class="pos">5</div><div class="bnd">🇨🇱</div><div class="nom">Cristóbal Carreño</div><div class="bar"><i style="width:47%"></i></div><div class="pts">80</div></div>
-</div>
-<div class="lids" style="display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap">
-<span class="chip" data-i18n="c62">5 nacionalidades en el top 5</span>
-<span class="chip" data-i18n="c63">Quedan 2 fechas: Santa Cruz do Sul (25–27 sep) y la final en Goiânia junto a MotoGP™ (4–6 dic)</span>
-</div>
-<div class="src" style="text-align:center;color:#b79bc0;font-size:13.5px;margin-top:14px" data-i18n="c64">Clasificación general al 6 de septiembre de 2026 · Fuente oficial FIM Latin America</div>
-</div>
-<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
-</div>
-
-<!-- 8 · LA REGIÓN ESTÁ MIRANDO -->
+<!-- 5 · ¿ES REAL? -->
 <div class="slide">
-<div class="shead"><div class="k" data-i18n="c70">Audiencia y comunidad · 2026</div><h2 data-i18n="c71">La región está mirando</h2></div>
-<div class="kgrid">
-<div class="kc"><div class="n">2,5M</div><div class="t" data-i18n="c72">Personas alcanzadas en lo que va de la temporada</div></div>
-<div class="kc"><div class="n">5,9M</div><div class="t" data-i18n="c73">Impresiones en las plataformas del campeonato</div></div>
-<div class="kc"><div class="n">233k</div><div class="t" data-i18n="c74">Interacciones directas con el contenido</div></div>
-<div class="kc"><div class="n">149k</div><div class="t" data-i18n="c75">Vistas en YouTube · las carreras se ven</div></div>
+<div class="shead"><div class="k" data-i18n="c40">Dos años en pista</div><h2 data-i18n="c41">De una idea en la FIM al GP de Brasil</h2></div>
+<div class="htl" style="margin-top:20px">
+<div class="hc"><img src="PRESENTACION/h2022.jpg" alt="Rimini 2022" style="object-position:center 20%"/><div class="yy">2022</div><h3 data-i18n="c42">Rimini · Asamblea de la FIM</h3><p data-i18n="c43">Presentación mundial del proyecto junto a Jorge Viegas, presidente de la FIM.</p></div>
+<div class="hc"><img src="PRESENTACION/h2023.jpg" alt="Termas 2023"/><div class="yy">2023</div><h3 data-i18n="c44">GP de Argentina · Lanzamiento</h3><p data-i18n="c45">Lanzamiento oficial junto a Carmelo Ezpeleta (Dorna) y Pedro Venturo (FIM Latin America).</p></div>
+<div class="hc"><img src="PRESENTACION/h2025.jpg" alt="2025"/><div class="yy">2025</div><h3 data-i18n="c46">Primera temporada</h3><p data-i18n="c47">Debut en carrera y primer campeón: <b>Facundo Mora</b>, que hoy corre en Europa.</p></div>
+<div class="hc"><img src="PRESENTACION/h2026.jpg" alt="2026"/><div class="yy">2026</div><h3 data-i18n="c48">Junto al MotoGP™ de Brasil</h3><p data-i18n="c49">Segunda temporada: Mobil como title sponsor, Honda Brasil dentro y debut en Goiânia en el fin de semana del GP.</p></div>
 </div>
-<div class="lids" style="display:flex;gap:12px;justify-content:center;margin-top:30px"><span class="chip" data-i18n="c76">Cobertura en 10 países vía federaciones y prensa local</span></div>
-<div class="src" style="text-align:center;color:#7a5a86;font-size:11px;margin-top:12px" data-i18n="c77">Datos al 23 de julio de 2026</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+<!-- 6 · ¿QUIÉNES CORREN? -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="c50">14–18 años · seleccionados con las federaciones</div><h2 data-i18n="c51">16 pilotos, 10 países</h2></div>
+<div class="pgr" style="margin-top:16px">
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/kensei-matsudaira.jpg" alt="Kensei Matsudaira" onerror="this.style.display='none'"/><span class="nn">#74</span><span class="fl">🇺🇸</span><div class="nm">Kensei Matsudaira</div><div class="ed" data-i18n="p00">15 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/alberto-enriquez.jpg" alt="Alberto Enríquez" onerror="this.style.display='none'"/><span class="nn">#62</span><span class="fl">🇪🇨</span><div class="nm">Alberto Enríquez</div><div class="ed" data-i18n="p01">16 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/andoni-dominguez.jpg" alt="Andoni Domínguez" onerror="this.style.display='none'"/><span class="nn">#34</span><span class="fl">🇳🇮</span><div class="nm">Andoni Domínguez</div><div class="ed" data-i18n="p02">16 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/mahdi-salem.jpg" alt="Mahdi Salem" onerror="this.style.display='none'"/><span class="nn">#10</span><span class="fl">🇵🇸</span><div class="nm">Mahdi Salem</div><div class="ed" data-i18n="p03">15 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/ulises-jie-wuu.jpg" alt="Ulises Weyrauch" onerror="this.style.display='none'"/><span class="nn">#64</span><span class="fl">🇵🇷</span><div class="nm">Ulises Weyrauch</div><div class="ed" data-i18n="p04">16 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/cristobal-carreno.jpg" alt="Cristóbal Carreño" onerror="this.style.display='none'"/><span class="nn">#99</span><span class="fl">🇨🇱</span><div class="nm">Cristóbal Carreño</div><div class="ed" data-i18n="p05">16 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/santiago-gossa.jpg" alt="Santiago Gossa" onerror="this.style.display='none'"/><span class="nn">#11</span><span class="fl">🇦🇷</span><div class="nm">Santiago Gossa</div><div class="ed" data-i18n="p06">15 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/thiago-torrez.jpg" alt="Thiago Torrez" onerror="this.style.display='none'"/><span class="nn">#46</span><span class="fl">🇵🇾</span><div class="nm">Thiago Torrez</div><div class="ed" data-i18n="p07">17 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/murilo-gomes.jpg" alt="Murilo Gomes" onerror="this.style.display='none'"/><span class="nn">#42</span><span class="fl">🇧🇷</span><div class="nm">Murilo Gomes</div><div class="ed" data-i18n="p08">15 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/santiago-vogel.jpg" alt="Santiago Vogel" onerror="this.style.display='none'"/><span class="nn">#26</span><span class="fl">🇦🇷</span><div class="nm">Santiago Vogel</div><div class="ed" data-i18n="p09">14 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/aidan-leonard.jpg" alt="Aidan Hancok" onerror="this.style.display='none'"/><span class="nn">#91</span><span class="fl">🇺🇸</span><div class="nm">Aidan Hancok</div><div class="ed" data-i18n="p10">17 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/lorenzo-tiberi.jpg" alt="Lorenzo Tiberi" onerror="this.style.display='none'"/><span class="nn">#19</span><span class="fl">🇦🇷</span><div class="nm">Lorenzo Tiberi</div><div class="ed" data-i18n="p11">14 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/anyelo-vidal.jpg" alt="Anyelo Vidal" onerror="this.style.display='none'"/><span class="nn">#69</span><span class="fl">🇻🇪</span><div class="nm">Anyelo Vidal</div><div class="ed" data-i18n="p12">17 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/luis-bravo.jpg" alt="Luis Bravo" onerror="this.style.display='none'"/><span class="nn">#16</span><span class="fl">🇻🇪</span><div class="nm">Luis Bravo</div><div class="ed" data-i18n="p13">18 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/matias-alarcon.jpg" alt="Matías Alarcón" onerror="this.style.display='none'"/><span class="nn">#8</span><span class="fl">🇨🇱</span><div class="nm">Matías Alarcón</div><div class="ed" data-i18n="p14">16 años</div></div>
+<div class="pc"><div class="ph0">🏍️</div><img src="FOTOS-DE-PILOTO/mario-tijerina.jpg" alt="Gael Olivo" onerror="this.style.display='none'"/><span class="nn">#15</span><span class="fl">🇲🇽</span><div class="nm">Gael Olivo</div><div class="ed" data-i18n="p15">17 años</div></div>
+</div>
+
 <img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
 </div>
 
-<!-- 9 · CIERRE -->
+<!-- 7 · ¿DÓNDE? -->
+<div class="slide s6">
+<div class="shead"><div class="k" data-i18n="c60">Temporada 2026 · Brasil y Argentina</div><h2 data-i18n="c61">13 carreras en los circuitos grandes de la región</h2></div>
+<div class="scont">
+<div class="cal">
+<div class="ev hecha"><div class="r">R1</div><div><div class="n">Goiânia</div><div class="d" data-i18n="c62">20–22 MAR · Junto a MotoGP™ Brasil · ✓</div></div><div class="f">🇧🇷</div></div>
+<div class="ev hecha"><div class="r">R2–3</div><div><div class="n">Interlagos</div><div class="d" data-i18n="c63">10–12 ABR · São Paulo · ✓</div></div><div class="f">🇧🇷</div></div>
+<div class="ev hecha"><div class="r">R4–5–6</div><div><div class="n">San Nicolás</div><div class="d" data-i18n="c64">19–21 JUN · Argentina · ✓</div></div><div class="f">🇦🇷</div></div>
+<div class="ev hecha"><div class="r">R7–8–9</div><div><div class="n">San Juan Villicum</div><div class="d" data-i18n="c65">4–6 SEPT · Argentina · ✓</div></div><div class="f">🇦🇷</div></div>
+<div class="ev"><div class="r">R10–11</div><div><div class="n">Santa Cruz do Sul</div><div class="d" data-i18n="c66">25–27 SEPT · Rio Grande do Sul</div></div><div class="f">🇧🇷</div></div>
+<div class="ev"><div class="r">R12–13</div><div><div class="n">Goiânia</div><div class="d" data-i18n="c67">4–6 DIC · Final</div></div><div class="f">🇧🇷</div></div>
+</div>
+<div class="tot">
+<div class="t"><div class="bignum">6</div><div class="tl" data-i18n="c68">Fechas</div></div>
+<div class="t"><div class="bignum">13</div><div class="tl" data-i18n="c69">Carreras</div></div>
+<div class="t"><div class="bignum">20</div><div class="tl" data-i18n="c6a">Federaciones detrás</div></div>
+<div class="t"><div class="bignum">1</div><div class="tl" data-i18n="c6b">Fecha junto a MotoGP™</div></div>
+</div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 8 · ¿QUIÉN YA APOSTÓ? -->
 <div class="slide s12">
 <div class="c">
-<img class="lg" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
-<div class="line" data-i18n="c80" style="font-size:26px"><b>2027: el camino se completa</b></div>
-<div class="line" data-i18n="c81" style="text-transform:none;font-family:var(--body);font-size:17px;color:#e9d8ef;max-width:820px;margin:10px auto">Moto4 Latin Cup en Latinoamérica. Team Junior Latin America en Europa. Un mismo proyecto, dos continentes.</div>
-<div class="credrow" style="margin-top:20px"><span class="chip" data-i18n="c82">Mobil Moto4 Latin Cup</span><span class="chip" data-i18n="c83">Team Junior Latin America</span></div>
-<div class="line" style="margin-top:22px;font-size:15px">moto4latincup.lat · antonio@gp3sports.lat · @moto4latin</div>
+<div class="line" data-i18n="c70" style="font-size:15px;letter-spacing:.28em;color:var(--pink)">Quién ya está dentro</div>
+<div class="line" data-i18n="c71" style="font-family:var(--dispx);font-size:36px;margin-top:6px"><b>Marcas globales ya apostaron por este camino</b></div>
+<div style="display:flex;justify-content:center;align-items:center;gap:64px;margin:46px auto 30px;flex-wrap:wrap;max-width:1200px">
+<img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:64px"/><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:44px"/><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:54px"/><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:42px"/><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:42px"/>
 </div>
-<div class="sponsors"><img src="07-LOGOS-SPONSORS/Mobil_White.png" style="height:34px"/><img src="07-LOGOS-SPONSORS/Pirelli_Logo.png" style="height:30px"/><img src="07-LOGOS-SPONSORS/Honda_Asa_Horizontal_Blanco.png" style="height:22px"/><img src="07-LOGOS-SPONSORS/SMK-LOGO-2.webp" style="height:22px"/><img src="07-LOGOS-SPONSORS/Revemar_White.png" style="height:22px"/><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:38px"/><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:24px"/></div>
+<div class="line" data-i18n="c72" style="text-transform:none;font-family:var(--body);font-size:17px;color:#e9d8ef;max-width:900px;margin:0 auto">Mobil es el title sponsor. Honda pone las motos, Pirelli los neumáticos, SMK los cascos. Con el aval institucional de FIM Latin America y del programa Road to MotoGP™.</div>
+<div class="credrow" style="margin-top:26px"><img class="lb" src="07-LOGOS-SPONSORS/FIM_Logo_Latin_America_RGB_Color.png" style="height:46px"/><img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" style="height:30px"/></div>
+</div>
+<div class="sponsors" style="display:none"></div>
+</div>
+
+<!-- 9 · ¿HACIA DÓNDE VA? -->
+<div class="slide s4">
+<div class="shead"><div class="k" data-i18n="c80">Hacia dónde va</div><h2 data-i18n="c81">De aquí al Mundial: el camino ya está trazado</h2></div>
+<div class="scont">
+<div class="lad">
+<div class="step latin"><span class="anio">2025–2026</span><span data-i18n="c82">MOTO4 LATIN CUP</span><small data-i18n="c83">Latinoamérica · el primer escalón, donde estamos hoy</small></div>
+<div class="arrow">↓</div>
+<div class="step"><span class="anio">2027</span><span data-i18n="c84">MOTO4 EUROPEAN CUP · ESPAÑA</span><small data-i18n="c85">Nuestro equipo, Team Junior Latin America, debuta en Europa con sede en MotorLand Aragón</small></div>
+<div class="arrow">↓</div>
+<div class="step"><span class="anio" data-i18n="c86">Luego</span><span data-i18n="c87">MOTO3 JUNIOR · MUNDIAL</span><small data-i18n="c88">La antesala directa del Campeonato del Mundo</small></div>
+<div class="arrow">↓</div>
+<div class="step top"><span data-i18n="c89">MOTOGP™</span><small data-i18n="c8a">El objetivo: que el primer campeón latinoamericano se forme en casa</small></div>
+</div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
+</div>
+
+<!-- 10 · ¿Y AHORA? -->
+<div class="slide">
+<div class="shead"><div class="k" data-i18n="c90">Lo que ya mueve</div><h2 data-i18n="c91">La región está mirando</h2></div>
+<div class="kgrid" style="grid-template-columns:repeat(3,1fr);padding-top:26px">
+<div class="kc"><div class="n">2,5M</div><div class="t" data-i18n="c92">Personas alcanzadas en la temporada</div></div>
+<div class="kc"><div class="n">5,9M</div><div class="t" data-i18n="c93">Impresiones en las plataformas del campeonato</div></div>
+<div class="kc"><div class="n">149k</div><div class="t" data-i18n="c94">Vistas en YouTube · las carreras se transmiten en vivo</div></div>
+</div>
+<div class="src" style="text-align:center;color:#7a5a86;font-size:11px;margin-top:10px" data-i18n="c95">Datos al 23 de julio de 2026 · cobertura en 10 países vía federaciones y prensa local</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding:16px 60px 0">
+<div style="height:190px;border-radius:14px;overflow:hidden;border:1px solid var(--line)"><img src="PRESENTACION/sn_parque.jpg" style="width:100%;height:100%;object-fit:cover"/></div>
+<div style="height:190px;border-radius:14px;overflow:hidden;border:1px solid var(--line)"><img src="PRESENTACION/largada_pirelli.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 65%"/></div>
+<div style="height:190px;border-radius:14px;overflow:hidden;border:1px solid var(--line)"><img src="PRESENTACION/podio_gp3.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 30%"/></div>
+</div>
+<div style="text-align:center;margin-top:20px">
+<div class="line" data-i18n="c96" style="font-family:var(--dispx);text-transform:uppercase;font-size:24px">Ven a verlo en pista</div>
+<div class="credrow" style="margin-top:14px"><span class="chip" data-i18n="c97">Santa Cruz do Sul · 25–27 de septiembre</span><span class="chip" data-i18n="c98">Final en Goiânia junto a MotoGP™ · 4–6 de diciembre</span></div>
+<div style="margin-top:26px;font-family:var(--disp);text-transform:uppercase;letter-spacing:.08em;font-size:15px">Antonio D'Angelo · GP3 Sports · antonio@gp3sports.lat · moto4latincup.lat</div>
+</div>
+<img class="smark" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
 </div>
 
 </div></div>
@@ -580,6 +624,9 @@ window.addEventListener("error",function(e){
     +'</div>';
   slides.forEach(function(s){ if(!s.querySelector(".sponsors")) s.insertAdjacentHTML("beforeend", STRIP); });
 
+  window.M4fs=function(){ var d=document.documentElement; if(!document.fullscreenElement){ (d.requestFullscreen||d.webkitRequestFullscreen).call(d); } else { (document.exitFullscreen||document.webkitExitFullscreen).call(document); } };
+  document.addEventListener("fullscreenchange",function(){ setTimeout(fit,50); setTimeout(fit,300); });
+  document.addEventListener("webkitfullscreenchange",function(){ setTimeout(fit,50); setTimeout(fit,300); });
   window.addEventListener("resize",fit);
   window.addEventListener("orientationchange",function(){ fit(); setTimeout(fit,250); setTimeout(fit,600); });
   if(window.visualViewport) visualViewport.addEventListener("resize",fit);
@@ -588,9 +635,9 @@ window.addEventListener("error",function(e){
 </script>
 <script>
 (function(){
-  var I18N={"en":{"c00":"Institutional presentation · 2026–2027","c01":"One road: from Latin America to <span class=\"grad\">MotoGP™</span>","c02":"Mobil Moto4 Latin Cup · Team Junior Latin America · Road to MotoGP™","c03":"2 seasons on track","c04":"20 FIM Latin America federations","c05":"Own base in Europe","c06":"2027: the path comes full circle","c10":"Backed by the World Championship","c11":"MotoGP Group","c12":"\"We are delighted to see how Road to MotoGP is expanding into Latin America, adding a new region to the program and giving an incredible opportunity to thousands of young riders. Our mission with Road to MotoGP is to make our sport as accessible as possible, and <b>we are proud to support this unique program in motorsport</b>. Accessibility creates equality.\"","c13":"Carmelo Ezpeleta · CEO, MotoGP Group","c20":"Mobil Moto4 Latin Cup","c21":"Two seasons building the path","c22":"Official <b>FIM Latin America</b> championship in the Moto4 category, within the <b>Road to MotoGP™</b> program. Every rider competes on the same Honda NSF250R with single-spec Pirelli tyres.","c23":"First season in 2025: the cup crowns its first champion, <b>Facundo Mora</b>. In 2026, second season: <b>Mobil</b> as title sponsor, <b>Honda Brasil</b> inside the program and the debut alongside MotoGP™ in Goiânia.","c24":"16 riders · 10 nationalities · 13 races in Brazil and Argentina","c30":"This is not just a regional race.<br/><b>It is a complete, official system toward the World Championship.</b>","c40":"Road to MotoGP™","c41":"The official path, start to finish","c42":"MOTO4 LATIN CUP","c43":"Official regional championship · Latin America","c44":"MOTO4 EUROPEAN CUP","c45":"FIM MotoJunior World Championship · Dorna calendar · Spain","c46":"Next step","c47":"MOTO3 JUNIOR WORLD CHAMPIONSHIP","c48":"Within the FIM MotoJunior World Championship","c49":"MOTOGP™ · MOTO2 · MOTO3","c4a":"The goal of the Road to MotoGP™ program","c4b":"Moto4 Latin Cup is one of the 5 official Moto4 cups worldwide, alongside Asia, Northern, Europe and Great Britain","c50":"The next step","c51":"Team Junior Latin America","c52":"The structure that takes the cup's standout riders to the next level: the <b>Moto4 European Cup</b>, within the <b>FIM MotoJunior World Championship</b>, Dorna's official calendar.","c53":"European base at <b>MotorLand Aragón</b> (Alcañiz), inside the circuit's own technology park. Debuts in <b>2027</b>.","c54":"First confirmed riders: Ulises Weyrauch (Puerto Rico) and Mahdi Salem","c55":"The project's stated goal: to add the program's first Brazilian rider in Europe.","c60":"2026 championship · as of September 6 (San Juan Villicum)","c61":"The cup already speaks for itself","c62":"5 nationalities in the top 5","c63":"2 rounds left: Santa Cruz do Sul (Sep 25–27) and the finale in Goiânia alongside MotoGP™ (Dec 4–6)","c64":"Overall standings as of September 6, 2026 · Official FIM Latin America source","c70":"Audience and community · 2026","c71":"The region is watching","c72":"People reached so far this season","c73":"Impressions across the championship's platforms","c74":"Direct interactions with the content","c75":"YouTube views · the races get watched","c76":"Coverage in 10 countries via federations and local press","c77":"Data as of July 23, 2026","c80":"2027: the path comes full circle","c81":"Moto4 Latin Cup in Latin America. Team Junior Latin America in Europe. One project, two continents.","c82":"Mobil Moto4 Latin Cup","c83":"Team Junior Latin America"},"pt":{"c00":"Apresentação institucional · 2026–2027","c01":"Um mesmo caminho: da América Latina ao <span class=\"grad\">MotoGP™</span>","c02":"Mobil Moto4 Latin Cup · Team Junior Latin America · Road to MotoGP™","c03":"2 temporadas na pista","c04":"20 federações FIM Latin America","c05":"Sede própria na Europa","c06":"2027: o caminho se completa","c10":"O aval do Mundial","c11":"MotoGP Group","c12":"\"Estamos encantados em ver como o Road to MotoGP se expande para a América Latina, somando uma nova região ao programa e dando uma oportunidade incrível a milhares de jovens pilotos. Nossa missão com o Road to MotoGP é tornar nosso esporte o mais acessível possível, e <b>temos orgulho de apoiar este programa único no motorsport</b>. A acessibilidade cria igualdade.\"","c13":"Carmelo Ezpeleta · CEO, MotoGP Group","c20":"Mobil Moto4 Latin Cup","c21":"Duas temporadas construindo o caminho","c22":"Campeonato oficial <b>FIM Latin America</b> da categoria Moto4, dentro do programa <b>Road to MotoGP™</b>. Todos os pilotos competem com a mesma Honda NSF250R e pneus Pirelli de especificação única.","c23":"Primeira temporada em 2025: a copa coroa seu primeiro campeão, <b>Facundo Mora</b>. Em 2026, segunda temporada: <b>Mobil</b> como title sponsor, <b>Honda Brasil</b> dentro do programa e estreia junto ao MotoGP™ em Goiânia.","c24":"16 pilotos · 10 nacionalidades · 13 corridas no Brasil e na Argentina","c30":"Isto não é só uma corrida regional.<br/><b>É um sistema oficial e completo rumo ao Mundial.</b>","c40":"Road to MotoGP™","c41":"O caminho oficial, do início ao fim","c42":"MOTO4 LATIN CUP","c43":"Campeonato regional oficial · América Latina","c44":"MOTO4 EUROPEAN CUP","c45":"FIM MotoJunior World Championship · calendário da Dorna · Espanha","c46":"Próximo passo","c47":"MOTO3 JUNIOR DO MUNDIAL","c48":"Dentro do FIM MotoJunior World Championship","c49":"MOTOGP™ · MOTO2 · MOTO3","c4a":"A meta do programa Road to MotoGP™","c4b":"A Moto4 Latin Cup é uma das 5 copas oficiais de Moto4 no mundo, junto com Ásia, América do Norte, Europa e Grã-Bretanha","c50":"O próximo passo","c51":"Team Junior Latin America","c52":"A estrutura que leva os pilotos de destaque da copa ao próximo degrau: a <b>Moto4 European Cup</b>, dentro do <b>FIM MotoJunior World Championship</b>, calendário oficial da Dorna.","c53":"Sede europeia em <b>MotorLand Aragón</b> (Alcañiz), dentro do parque tecnológico do próprio circuito. Estreia em <b>2027</b>.","c54":"Primeiros pilotos confirmados: Ulises Weyrauch (Porto Rico) e Mahdi Salem","c55":"Objetivo declarado do projeto: somar o primeiro piloto brasileiro do programa na Europa.","c60":"Campeonato 2026 · em 6 de setembro (San Juan Villicum)","c61":"A copa já fala por si","c62":"5 nacionalidades no top 5","c63":"Faltam 2 etapas: Santa Cruz do Sul (25–27 set) e a final em Goiânia junto ao MotoGP™ (4–6 dez)","c64":"Classificação geral em 6 de setembro de 2026 · Fonte oficial FIM Latin America","c70":"Audiência e comunidade · 2026","c71":"A região está de olho","c72":"Pessoas alcançadas até agora na temporada","c73":"Impressões nas plataformas do campeonato","c74":"Interações diretas com o conteúdo","c75":"Visualizações no YouTube · as corridas são vistas","c76":"Cobertura em 10 países via federações e imprensa local","c77":"Dados em 23 de julho de 2026","c80":"2027: o caminho se completa","c81":"Moto4 Latin Cup na América Latina. Team Junior Latin America na Europa. Um mesmo projeto, dois continentes.","c82":"Mobil Moto4 Latin Cup","c83":"Team Junior Latin America"}};
-  I18N.en.tbpdf="Download PDF"; I18N.en.tbsite="Back to site";
-  I18N.pt.tbpdf="Baixar PDF"; I18N.pt.tbsite="Voltar ao site";
+  var I18N={"en":{"p00":"15 years old","p01":"16 years old","p02":"16 years old","p03":"15 years old","p04":"16 years old","p05":"16 years old","p06":"15 years old","p07":"17 years old","p08":"15 years old","p09":"14 years old","p10":"17 years old","p11":"14 years old","p12":"17 years old","p13":"18 years old","p14":"16 years old","p15":"17 years old","c00":"Mobil Moto4 Latin Cup · 2026","c01":"The first official step toward <span class=\"grad\">MotoGP™</span><br/>for Latin America's riders","c02":"Official FIM Latin America championship · Road to MotoGP™ program","c03":"2 seasons on track","c04":"16 riders · 10 countries","c05":"13 races in Brazil and Argentina","c06":"1 round alongside MotoGP™","c10":"Starting from the beginning","c11":"What is MotoGP™?","c12":"MotoGP™","c13":"The motorcycle racing World Championship: <b>the Formula 1 of motorcycles</b>. It races on 5 continents and, since 2026, is back in Brazil, in Goiânia.","c14":"Dorna &amp; FIM","c15":"Dorna organizes the World Championship; the FIM is the international federation. Together they define <b>the official path</b> to MotoGP™.","c16":"Road to MotoGP™","c17":"That path: <b>the official development ladder</b>. It starts in regional cups for young riders and ends on the World Championship grid.","c18":"Moto4 Latin Cup is the first rung of that ladder in Latin America","c19":"Goiânia 2026 · Moto4 Latin Cup on the MotoGP™ Brazilian GP weekend","c20":"What it is","c21":"Moto4 Latin Cup","c22":"<b>One of the 5 official Moto4 cups in the world</b> — alongside Asia, Europe, North America and Great Britain. This is Latin America's.","c23":"Riders aged <b>14 to 18</b>, selected with the federations of 20 countries. Everyone races <b>the same Honda motorcycle</b> and the same Pirelli tyres: <b>here talent wins, not budget</b>.","c24":"Organized by GP3 Sports · Sanctioned by FIM Latin America","c30":"Who backs it","c31":"MotoGP™'s CEO, in his own words","c32":"\"We are delighted to see how Road to MotoGP is expanding into Latin America, adding a new region to the program and giving an incredible opportunity to thousands of young riders. Our mission with Road to MotoGP is to make our sport as accessible as possible, and <b>we are proud to support this unique program in motorsport</b>. Accessibility creates equality.\"","c33":"Carmelo Ezpeleta · CEO MotoGP Group (Dorna)","c40":"Two years on track","c41":"From an idea at the FIM to the Brazilian GP","c42":"Rimini · FIM General Assembly","c43":"World presentation of the project alongside FIM President Jorge Viegas.","c44":"Argentine GP · Launch","c45":"Official launch alongside Carmelo Ezpeleta (Dorna) and Pedro Venturo (FIM Latin America).","c46":"First season","c47":"Racing debut and first champion: <b>Facundo Mora</b>, now racing in Europe.","c48":"Alongside MotoGP™ Brazil","c49":"Second season: Mobil as title sponsor, Honda Brasil inside, and the debut in Goiânia on GP weekend.","c50":"Aged 14–18 · selected with the federations","c51":"16 riders, 10 countries","c60":"2026 season · Brazil and Argentina","c61":"13 races at the region's major circuits","c62":"MAR 20–22 · Alongside MotoGP™ Brazil · ✓","c63":"APR 10–12 · São Paulo · ✓","c64":"JUN 19–21 · Argentina · ✓","c65":"SEP 4–6 · Argentina · ✓","c66":"SEP 25–27 · Rio Grande do Sul","c67":"DEC 4–6 · Finale","c68":"Rounds","c69":"Races","c6a":"Federations behind it","c6b":"Round alongside MotoGP™","c70":"Who is already in","c71":"<b>Global brands have already bet on this path</b>","c72":"Mobil is the title sponsor. Honda supplies the bikes, Pirelli the tyres, SMK the helmets. With the institutional backing of FIM Latin America and the Road to MotoGP™ program.","c80":"Where it goes","c81":"From here to the World Championship: the path is already mapped","c82":"MOTO4 LATIN CUP","c83":"Latin America · the first rung, where we are today","c84":"MOTO4 EUROPEAN CUP · SPAIN","c85":"Our team, Team Junior Latin America, debuts in Europe, based at MotorLand Aragón","c86":"Then","c87":"MOTO3 JUNIOR · WORLD","c88":"The direct antechamber of the World Championship","c89":"MOTOGP™","c8a":"The goal: the first Latin American champion, made at home","c90":"What it already moves","c91":"The region is watching","c92":"People reached this season","c93":"Impressions across the championship's platforms","c94":"YouTube views · races are streamed live","c95":"Data as of July 23, 2026 · coverage in 10 countries via federations and local press","c96":"Come see it on track","c97":"Santa Cruz do Sul · September 25–27","c98":"Finale in Goiânia alongside MotoGP™ · December 4–6"},"pt":{"p00":"15 anos","p01":"16 anos","p02":"16 anos","p03":"15 anos","p04":"16 anos","p05":"16 anos","p06":"15 anos","p07":"17 anos","p08":"15 anos","p09":"14 anos","p10":"17 anos","p11":"14 anos","p12":"17 anos","p13":"18 anos","p14":"16 anos","p15":"17 anos","c00":"Mobil Moto4 Latin Cup · 2026","c01":"O primeiro passo oficial rumo ao <span class=\"grad\">MotoGP™</span><br/>para os pilotos da América Latina","c02":"Campeonato oficial FIM Latin America · Programa Road to MotoGP™","c03":"2 temporadas na pista","c04":"16 pilotos · 10 países","c05":"13 corridas no Brasil e na Argentina","c06":"1 etapa junto ao MotoGP™","c10":"Começando pelo começo","c11":"O que é o MotoGP™?","c12":"MotoGP™","c13":"É o Campeonato Mundial de motovelocidade: <b>a Fórmula 1 das motos</b>. Corre em 5 continentes e, desde 2026, voltou ao Brasil, em Goiânia.","c14":"Dorna &amp; FIM","c15":"A Dorna organiza o Mundial; a FIM é a federação internacional. Juntas, definem <b>o caminho oficial</b> para chegar ao MotoGP™.","c16":"Road to MotoGP™","c17":"É esse caminho: <b>a escada oficial de formação</b>. Começa em copas regionais para jovens e termina no grid do Mundial.","c18":"A Moto4 Latin Cup é o primeiro degrau dessa escada na América Latina","c19":"Goiânia 2026 · Moto4 Latin Cup no fim de semana do GP do Brasil de MotoGP™","c20":"O que é","c21":"Moto4 Latin Cup","c22":"<b>Uma das 5 copas oficiais de Moto4 no mundo</b> — junto com Ásia, Europa, América do Norte e Grã-Bretanha. A da América Latina é esta.","c23":"Pilotos de <b>14 a 18 anos</b>, selecionados com as federações de 20 países. Todos correm com <b>a mesma moto Honda</b> e os mesmos pneus Pirelli: <b>aqui vence o talento, não o orçamento</b>.","c24":"Organizada pela GP3 Sports · Chancelada pela FIM Latin America","c30":"Quem respalda","c31":"O CEO do MotoGP™, nas próprias palavras","c32":"\"Estamos encantados em ver como o Road to MotoGP se expande para a América Latina, somando uma nova região ao programa e dando uma oportunidade incrível a milhares de jovens pilotos. Nossa missão com o Road to MotoGP é tornar nosso esporte o mais acessível possível, e <b>temos orgulho de apoiar este programa único no motorsport</b>. A acessibilidade cria igualdade.\"","c33":"Carmelo Ezpeleta · CEO MotoGP Group (Dorna)","c40":"Dois anos na pista","c41":"De uma ideia na FIM ao GP do Brasil","c42":"Rimini · Assembleia da FIM","c43":"Apresentação mundial do projeto junto a Jorge Viegas, presidente da FIM.","c44":"GP da Argentina · Lançamento","c45":"Lançamento oficial junto a Carmelo Ezpeleta (Dorna) e Pedro Venturo (FIM Latin America).","c46":"Primeira temporada","c47":"Estreia em corrida e primeiro campeão: <b>Facundo Mora</b>, que hoje corre na Europa.","c48":"Junto ao MotoGP™ do Brasil","c49":"Segunda temporada: Mobil como title sponsor, Honda Brasil dentro e estreia em Goiânia no fim de semana do GP.","c50":"14–18 anos · selecionados com as federações","c51":"16 pilotos, 10 países","c60":"Temporada 2026 · Brasil e Argentina","c61":"13 corridas nos grandes circuitos da região","c62":"20–22 MAR · Junto ao MotoGP™ Brasil · ✓","c63":"10–12 ABR · São Paulo · ✓","c64":"19–21 JUN · Argentina · ✓","c65":"4–6 SET · Argentina · ✓","c66":"25–27 SET · Rio Grande do Sul","c67":"4–6 DEZ · Final","c68":"Etapas","c69":"Corridas","c6a":"Federações por trás","c6b":"Etapa junto ao MotoGP™","c70":"Quem já está dentro","c71":"<b>Marcas globais já apostaram neste caminho</b>","c72":"A Mobil é o title sponsor. A Honda fornece as motos, a Pirelli os pneus, a SMK os capacetes. Com o aval institucional da FIM Latin America e do programa Road to MotoGP™.","c80":"Para onde vai","c81":"Daqui ao Mundial: o caminho já está traçado","c82":"MOTO4 LATIN CUP","c83":"América Latina · o primeiro degrau, onde estamos hoje","c84":"MOTO4 EUROPEAN CUP · ESPANHA","c85":"Nossa equipe, Team Junior Latin America, estreia na Europa com sede em MotorLand Aragón","c86":"Depois","c87":"MOTO3 JUNIOR · MUNDIAL","c88":"A antessala direta do Campeonato Mundial","c89":"MOTOGP™","c8a":"O objetivo: o primeiro campeão latino-americano formado em casa","c90":"O que já movimenta","c91":"A região está de olho","c92":"Pessoas alcançadas na temporada","c93":"Impressões nas plataformas do campeonato","c94":"Visualizações no YouTube · as corridas são transmitidas ao vivo","c95":"Dados em 23 de julho de 2026 · cobertura em 10 países via federações e imprensa local","c96":"Venha ver na pista","c97":"Santa Cruz do Sul · 25–27 de setembro","c98":"Final em Goiânia junto ao MotoGP™ · 4–6 de dezembro"}};
+  I18N.en.tbpdf="Download PDF"; I18N.en.tbfs="⛶ Full screen"; I18N.en.tbsite="Back to site";
+  I18N.pt.tbpdf="Baixar PDF"; I18N.pt.tbfs="⛶ Tela cheia"; I18N.pt.tbsite="Voltar ao site";
   var els=[].slice.call(document.querySelectorAll('[data-i18n]'));
   els.forEach(function(el){ el.setAttribute('data-es', el.innerHTML); });
   var NAMES={es:'Español',en:'English',pt:'Português'};
@@ -614,7 +661,7 @@ window.addEventListener("error",function(e){
     b.addEventListener('click',function(e){e.stopPropagation();setLang(b.getAttribute('data-lng'));dd.classList.remove('open');});
   });
   document.addEventListener('click',function(){ dd.classList.remove('open'); });
-  var saved='es'; try{saved=sessionStorage.getItem('m4lang')||'es';}catch(e){}
+  var saved='pt'; try{saved=sessionStorage.getItem('m4lang')||'pt';}catch(e){}
   setLang(saved);
   window.M4setLang=setLang;
 })();

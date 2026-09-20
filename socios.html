@@ -548,7 +548,7 @@ window.addEventListener("error",function(e){
 <script>
 (function(){
   // Candado: código alfanumérico validado por SHA-256 (crypto.subtle). El código NO está en claro.
-  var HASH="c0bc4bf9dcbdf78dd5d503455bfea489f4bca70b62c8543f346eab5260ff3b88";
+  var HASH="a00f4fa9d3613f2f3a964c0f3c87a29071e00f0d0522ba9a61f8f4d8d6b76d91";
   var gate=document.getElementById("gate"), inp=document.getElementById("code"), err=document.getElementById("err");
   function abrir(){ gate.style.display="none"; try{sessionStorage.setItem("m4soc","1");}catch(e){} fit(); }
   function sha256hex(txt){

@@ -314,7 +314,7 @@ fbq("track","PageView");
 <img alt="Mobil Moto4 Latin Cup" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png"/>
 <h1>Propuesta comercial</h1>
 <p>Material reservado para marcas y aliados.<br/>Ingresa el código de acceso.</p>
-<input autocomplete="off" id="code" inputmode="numeric" maxlength="4" placeholder="····" type="tel"/>
+<input autocomplete="off" id="code" inputmode="numeric" maxlength="6" placeholder="······" type="tel"/>
 <button id="entrar">Entrar</button>
 <div class="err" id="err">Código incorrecto</div>
 <p style="margin-top:22px;font-size:12px"><a href="index.html" style="color:var(--pink);text-decoration:underline">← Volver a moto4latincup.lat</a></p>
@@ -615,7 +615,7 @@ fbq("track","PageView");
 </div>
 <script>
 (function(){
-  var CODIGO = "2027"; // ← cambiar aquí el código de acceso
+  var CODIGO = "270913"; // ← cambiar aquí el código de acceso
   var gate=document.getElementById("gate"), inp=document.getElementById("code"), err=document.getElementById("err");
   function abrir(){ gate.style.display="none"; try{sessionStorage.setItem("m4pres","1");}catch(e){} fit(); }
   function probar(){

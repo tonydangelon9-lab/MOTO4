@@ -1,25 +1,25 @@
 {
- "fecha": "02-10-2026",
- "alcance": 3032248,
- "impresiones": 9052190,
- "clics": 317947,
- "ctr": 3.51,
+ "fecha": "03-10-2026",
+ "alcance": 3072826,
+ "impresiones": 9195579,
+ "clics": 325466,
+ "ctr": 3.54,
  "yt_subs": 2670,
- "yt_views": 162245,
+ "yt_views": 162269,
  "yt_videos": 136,
- "web_usuarios": 9929,
- "web_sesiones": 10731,
- "web_vistas": 13227,
- "ig_gp3_seg": 30812,
- "ig_moto4_seg": 11488,
+ "web_usuarios": 9993,
+ "web_sesiones": 10812,
+ "web_vistas": 13342,
+ "ig_gp3_seg": 30831,
+ "ig_moto4_seg": 11493,
  "fb_pages": {
-  "Team GP3 AD11 BY FIMLA": 3060,
+  "Team GP3 AD11 BY FIMLA": 3059,
   "GP3  Sports": 6050,
-  "Motociclismo de Velocidad Latinoamericano": 8852,
-  "Tony D'Angelo #11": 6962,
-  "GP3 Sports": 18085,
+  "Motociclismo de Velocidad Latinoamericano": 8851,
+  "Tony D'Angelo #11": 6961,
+  "GP3 Sports": 18091,
   "Rubus Racing Park": 5157,
-  "GP3  Motorcycle": 1525,
+  "GP3  Motorcycle": 1524,
   "Mobil Moto4 Latin Cup": 4469,
   "Monomarca Femenina Chilena de Velocidad": 505
  },
@@ -75,10 +75,10 @@
   },
   {
    "nombre": "TRH26_C01",
-   "alcance": 143082,
-   "impr": 215194,
-   "clics": 9684,
-   "ctr": 4.500125
+   "alcance": 217819,
+   "impr": 344183,
+   "clics": 16328,
+   "ctr": 4.743988
   },
   {
    "nombre": "CAV_2026_F5_SAN_JUAN_REFUERZO_V1",
@@ -110,10 +110,10 @@
   },
   {
    "nombre": "TRH26_C02",
-   "alcance": 11905,
-   "impr": 14547,
-   "clics": 778,
-   "ctr": 5.348182
+   "alcance": 20711,
+   "impr": 28947,
+   "clics": 1653,
+   "ctr": 5.710436
   }
  ]
 }

@@ -1,15 +1,15 @@
 {
  "fecha": "05-10-2026",
  "alcance": 3115765,
- "impresiones": 9426010,
- "clics": 336802,
+ "impresiones": 9426095,
+ "clics": 336807,
  "ctr": 3.57,
  "yt_subs": 2670,
  "yt_views": 162310,
  "yt_videos": 136,
- "web_usuarios": 10128,
- "web_sesiones": 11057,
- "web_vistas": 13524,
+ "web_usuarios": 10133,
+ "web_sesiones": 11026,
+ "web_vistas": 13532,
  "ig_gp3_seg": 30852,
  "ig_moto4_seg": 11499,
  "fb_pages": {
@@ -76,9 +76,9 @@
   {
    "nombre": "TRH26_C01",
    "alcance": 302030,
-   "impr": 550242,
-   "clics": 26307,
-   "ctr": 4.780987
+   "impr": 550309,
+   "clics": 26312,
+   "ctr": 4.781314
   },
   {
    "nombre": "CAV_2026_F5_SAN_JUAN_REFUERZO_V1",
@@ -111,9 +111,9 @@
   {
    "nombre": "TRH26_C02",
    "alcance": 32391,
-   "impr": 53325,
+   "impr": 53337,
    "clics": 3010,
-   "ctr": 5.644632
+   "ctr": 5.643362
   }
  ]
 }

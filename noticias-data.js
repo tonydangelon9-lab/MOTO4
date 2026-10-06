@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-06",
+    categoria: "Instagram",
+    titulo: "🏁 MOBIL™ EN EL PADDOCK DE LA MOBIL MOTO4 LATIN CUP",
+    bajada: "🏁 MOBIL™ EN EL PADDOCK DE LA MOBIL MOTO4 LATIN CUP Merchandising oficial, hospitalidad y la energía de San Juan Villicum. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembr",
+    imagen: "NOTICIAS-IG/DeKs05JAdZX.jpg",
+    ig: "DeKs05JAdZX",
+    cuerpo: "🏁 MOBIL™ EN EL PADDOCK DE LA MOBIL MOTO4 LATIN CUP<br>Merchandising oficial, hospitalidad y la energía de San Juan Villicum. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembre. 💜<br>—<br>🇬🇧 Mobil™ in the Mobil Moto4 Latin Cup paddock: official merchandise, hospitality and the Villicum vibe. Road to the 2026 finale: Goiânia, Brazil, December 4–6.<br>—<br>🇧🇷 Mobil™ no paddock da Mobil Moto4 Latin Cup: merchandising oficial, hospitalidade e a energia de Villicum. Rumo à final 2026: Goiânia, Brasil, 4 a 6 de dezembro.<br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4 #MovimientoMobil"
+  },
+  {
     fecha: "2026-09-06",
     categoria: "Instagram",
     titulo: "🥈 Pedro V. de Matos #13 🇵🇹 | Segundo lugar Carrera 1",

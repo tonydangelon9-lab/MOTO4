@@ -1,23 +1,23 @@
 {
- "fecha": "06-10-2026",
- "alcance": 3131150,
- "impresiones": 9545091,
- "clics": 341907,
- "ctr": 3.58,
- "yt_subs": 2670,
- "yt_views": 162338,
+ "fecha": "07-10-2026",
+ "alcance": 3149664,
+ "impresiones": 9666332,
+ "clics": 346582,
+ "ctr": 3.59,
+ "yt_subs": 2660,
+ "yt_views": 162362,
  "yt_videos": 136,
- "web_usuarios": 10210,
- "web_sesiones": 11099,
- "web_vistas": 13648,
- "ig_gp3_seg": 30861,
- "ig_moto4_seg": 11499,
+ "web_usuarios": 10354,
+ "web_sesiones": 11260,
+ "web_vistas": 13817,
+ "ig_gp3_seg": 30876,
+ "ig_moto4_seg": 11509,
  "fb_pages": {
-  "Team GP3 AD11 BY FIMLA": 3060,
+  "Team GP3 AD11 BY FIMLA": 3059,
   "GP3  Sports": 6049,
   "Motociclismo de Velocidad Latinoamericano": 8851,
-  "Tony D'Angelo #11": 6959,
-  "GP3 Sports": 18101,
+  "Tony D'Angelo #11": 6958,
+  "GP3 Sports": 18105,
   "Rubus Racing Park": 5159,
   "GP3  Motorcycle": 1524,
   "Mobil Moto4 Latin Cup": 4471,
@@ -60,18 +60,18 @@
    "ctr": 2.828111
   },
   {
+   "nombre": "TRH26_C01",
+   "alcance": 376988,
+   "impr": 758910,
+   "clics": 34850,
+   "ctr": 4.592112
+  },
+  {
    "nombre": "TRH - abril26 -RMKT - TICKETS - FOTO",
    "alcance": 343297,
    "impr": 407001,
    "clics": 12775,
    "ctr": 3.138813
-  },
-  {
-   "nombre": "TRH26_C01",
-   "alcance": 341416,
-   "impr": 658518,
-   "clics": 30971,
-   "ctr": 4.703136
   },
   {
    "nombre": "CAV_2026_F4_CONCORDIA_TRAFICO_V1",
@@ -110,10 +110,17 @@
   },
   {
    "nombre": "TRH26_C02",
-   "alcance": 37412,
-   "impr": 64124,
-   "clics": 3451,
-   "ctr": 5.38176
+   "alcance": 41214,
+   "impr": 74106,
+   "clics": 3906,
+   "ctr": 5.270828
+  },
+  {
+   "nombre": "TRH26_C03",
+   "alcance": 8884,
+   "impr": 10867,
+   "clics": 341,
+   "ctr": 3.137941
   }
  ]
 }

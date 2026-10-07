@@ -161,7 +161,7 @@ gtag("config", "G-8L674LLGV6");
   <h2 class="msec">Alcance amplificado (pauta Meta 2026)</h2>
   <div class="kgrid" id="pauta"></div>
   <div class="panelbox tscroll" style="margin-top:14px"><table id="pautatabla"></table></div>
-  <div class="metod">Alcance e impresiones de las campañas propias de GP3 en Meta (Facebook/Instagram) durante 2026, amplificadas con pauta. Complementa el alcance orgánico de arriba. Se actualiza solo cada día. No incluye montos de inversión.</div>
+  <div class="metod">Alcance e impresiones de las campañas propias de GP3 en Meta (Facebook/Instagram) durante 2026, amplificadas con pauta. Se solapa con el acumulado de arriba (que ya incluye distribución pagada): no sumar ambos. Se actualiza solo cada día. No incluye montos de inversión.</div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -292,7 +292,7 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     var visMeta=s4("visualizaciones"), inter=s4("interacciones");
     var segn=(s4("seg_nuevos")||0)+((A.youtube&&A.youtube.seg_nuevos)||0);
     document.getElementById("acum").innerHTML =
-      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+esc(A.periodo_meta)+' · orgánico</div></div>'+
+      '<div class="kcard"><div class="lbl">Visualizaciones Meta (FB+IG)</div><div class="val">'+M(visMeta)+'</div><div class="sub">'+esc(A.periodo_meta)+' · incluye pagado</div></div>'+
       '<div class="kcard"><div class="lbl">Vistas YouTube</div><div class="val">'+M(A.youtube&&A.youtube.vistas)+'</div><div class="sub">'+esc(A.periodo_yt)+' · '+M(A.youtube&&A.youtube.horas)+' horas vistas</div></div>'+
       '<div class="kcard"><div class="lbl">Interacciones</div><div class="val">'+M(inter)+'</div><div class="sub">likes, comentarios y compartidos</div></div>'+
       '<div class="kcard"><div class="lbl">Seguidores nuevos</div><div class="val">+'+M(segn)+'</div><div class="sub">todas las plataformas</div></div>';
@@ -302,7 +302,7 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     if(A.youtube) at+="<tr><td>YouTube GP3 Sports TV</td><td>"+M(A.youtube.vistas)+"</td><td>"+M(A.youtube.horas)+" h vistas</td><td>—</td><td>—</td><td>+"+M(A.youtube.seg_nuevos)+"</td></tr>";
     document.getElementById("acumtabla").innerHTML=at;
     var tops=(A.youtube&&A.youtube.top||[]).map(function(t){return esc(t[0])+" ("+M(t[1])+" vistas)";}).join(" · ");
-    document.getElementById("acumnota").innerHTML="<b>Lo más visto en YouTube:</b> "+tops+".<br><b>Nota:</b> "+esc(A.notas)+"<br><b>Metodología:</b> las visualizaciones de FB GP3 Sports corresponden a alcance de campaña orgánica (distribución algorítmica a no-seguidores), no a comunidad propia; se reportan separadas de las métricas de la copa.";
+    document.getElementById("acumnota").innerHTML="<b>Lo más visto en YouTube:</b> "+tops+".<br><b>Nota:</b> "+esc(A.notas)+"<br><b>Metodología:</b> las visualizaciones son reproducciones (no personas únicas) e incluyen distribución orgánica y pagada; las de FB GP3 Sports provienen en gran parte de distribución a no seguidores, no de la comunidad propia; se reportan separadas de las métricas de la copa.";
   });
 
   /* ===== por fin de semana de carrera ===== */

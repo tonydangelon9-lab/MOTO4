@@ -9,10 +9,36 @@
    Fuentes: perfiles públicos de Instagram/YouTube y páginas de
    Facebook administradas (leídas vía navegador o API).
    ============================================================ */
-/* ===== ACUMULADO TEMPORADA 2026 =====
+/* ===== ACUMULADO TEMPORADA 2026 (corte 05-oct-2026) =====
+   Meta (FB+IG): Meta Business Suite, ventana 18 abr – 5 oct 2026 (171 días), leída el 06-oct-2026.
+   Método validado contra el corte anterior: la suma de series diarias de Business Suite reproduce interacciones, clics, visitas y seguidores de ACUMULADO_ANTERIOR.
+   Interacciones, clics, visitas y seguidores nuevos = suma diaria de toda la ventana (no se calculó sobre el corte anterior redondeado).
+   Visualizaciones de Instagram = solo Instagram (sin la parte que Business Suite atribuye a Facebook).
+   Espectadores / alcance = personas únicas en toda la ventana (lectura directa; no son sumas). FB GP3 espectadores redondeado a 100 mil.
+   Incluyen distribución pagada: Business Suite cuenta visualizaciones orgánicas y de anuncios.
+   YouTube: YouTube Studio, 1 mar – 5 oct 2026 (ventana distinta a Meta); los últimos días pueden estar incompletos; horas redondeadas a 100. */
+var ACUMULADO = {
+  corte: "2026-10-05",
+  periodo_meta: "18 abr – 5 oct 2026 (171 días)",
+  periodo_yt: "1 mar – 5 oct 2026",
+  gp3_fb:  { visualizaciones: 5402340, espectadores: 1800000, interacciones: 11648, clics: 115625, visitas: 11571, seg_nuevos: 444 },
+  gp3_ig:  { visualizaciones: 2314408, alcance: 831400, interacciones: 39631, clics: 31940, visitas: 24517, seg_nuevos: 3851 },
+  m4_fb:   { visualizaciones: 696132, espectadores: 447600, interacciones: 3254, clics: 4280, visitas: 3030, seg_nuevos: 139 },
+  m4_ig:   { visualizaciones: 1251754, alcance: 465000, interacciones: 22195, clics: 2961, visitas: 10159, seg_nuevos: 1110 },
+  youtube: { vistas: 36349, horas: 6200, seg_nuevos: 455,
+             top: [ ["Termas de Río Hondo · opener (5 abr, vistas al 16-jul)", 10564],
+                    ["Transmisión San Juan · Villicum (6 sep, vistas al 6-oct)", 5500],
+                    ["Transmisión San Nicolás (21 jun, vistas al 16-jul)", 4912],
+                    ["Transmisión Toay · La Pampa (24 may, vistas al 16-jul)", 4079],
+                    ["Transmisión Concordia · Entre Ríos (9 ago, vistas al 6-oct)", 3800] ] },
+  notas: "Cifras tal como las reportan Meta Business Suite y YouTube Studio. Las visualizaciones son reproducciones (no personas) e incluyen distribución orgánica y pagada (campañas Meta 2026). Espectadores y alcance son personas únicas en toda la ventana y no se suman entre sí. Las visualizaciones de Instagram cuentan solo Instagram. Ventanas distintas: Meta 18 abr – 5 oct; YouTube 1 mar – 5 oct (sus últimos días pueden estar incompletos). Las transmisiones anfitrionas del canal Moto1000GP (Interlagos, Santa Cruz do Sul) no están en las vistas de YouTube de este bloque: se informan por evento. El aumento frente al corte anterior (18 abr – 16 jul) no debe atribuirse solo a las carreras: coincide con periodos de campañas pagadas. Este bloque se solapa con la sección de pauta: no sumar ambos."
+};
+
+/* ===== ACUMULADO ANTERIOR (corte 16-jul-2026, conservado como historial) =====
+   Aclaración 06-oct-2026: estas cifras también incluían distribución pagada cuando existió; la palabra "orgánica" del texto de abajo es anterior a esa aclaración.
    Meta (FB+IG): ventana de 90 días exportada de Meta Business Suite (18 abr - 16 jul 2026).
    YouTube: YouTube Studio, 1 mar - 16 jul 2026. No editar hacia atrás; se actualiza por corte. */
-var ACUMULADO = {
+var ACUMULADO_ANTERIOR = {
   corte: "2026-07-16",
   periodo_meta: "18 abr – 16 jul 2026 (90 días)",
   periodo_yt: "1 mar – 16 jul 2026",
@@ -28,11 +54,19 @@ var ACUMULADO = {
   notas: "Cifras tal como las reportan Meta Business Suite y YouTube Studio. Los picos diarios coinciden con los fines de semana de carrera (hasta 237.591 visualizaciones en un día, dom 17 may; 30.074 en la página Moto4 el domingo 21 jun, San Nicolás). Estas visualizaciones corresponden a la distribución orgánica de las páginas. La pauta pagada (campañas Meta 2026) se muestra por separado en la sección “Alcance amplificado”."
 };
 
-/* ===== POR FIN DE SEMANA DE CARRERA (ventana Meta 90 días) =====
+
+/* ===== POR FIN DE SEMANA DE CARRERA (ventana Meta; cada evento = fin de semana de carrera) =====
    Sumas de visualizaciones de Facebook por página en la ventana del evento,
    calculadas de la serie diaria de Meta Business Suite. YouTube = vistas del
    directo en el canal GP3 Sports TV. */
 var EVENTOS = [
+  { nombre: "Santa Cruz do Sul (BRA)", marca: "Moto4", fechas: "25–28 sep",
+    fb_moto4: 554, fb_gp3: 1204, yt_stream: 23474,
+    nota: "Rondas 10 y 11 (26–27 sep). Facebook casi sin movimiento ese fin de semana (25–28 sep). Instagram @moto4latin: 46.900 visualizaciones en el mismo fin de semana (24–28 sep). Directo YouTube = 23.474 vistas de las carreras Moto4 en el canal oficial Moto1000GP (Corrida 1: 8.335 + Corrida 2: 15.139, al 6-oct), transmisión anfitriona." },
+  { nombre: "San Juan · Villicum (ARG)", marca: "Moto4 + CAV", fechas: "4–7 sep",
+    fb_moto4: 113378, fb_gp3: 295232, yt_stream: 5500, nota: "pico FB Moto4: 105.250 el viernes 4 de sep" },
+  { nombre: "Concordia · Entre Ríos (ARG)", marca: "CAV / GP3", fechas: "7–10 ago",
+    fb_moto4: 491, fb_gp3: 129525, yt_stream: 3800, nota: "FB GP3 ya registraba unas 67 mil visualizaciones diarias el 5–6 ago, antes del fin de semana de carrera" },
   { nombre: "San Nicolás (ARG)", marca: "Moto4 + GP3", fechas: "19–22 jun",
     fb_moto4: 39110, fb_gp3: 2840, yt_stream: 4912, nota: "pico FB Moto4: 30.074 el domingo 21" },
   { nombre: "Huachalalume (CHI)", marca: "GP3 binacional", fechas: "29 may – 1 jun",
@@ -40,11 +74,11 @@ var EVENTOS = [
   { nombre: "Toay, La Pampa (ARG)", marca: "CAV / GP3", fechas: "22–25 may",
     fb_moto4: 10990, fb_gp3: 275599, yt_stream: 4079, nota: "" },
   { nombre: "Interlagos (BRA)", marca: "Moto1000GP", fechas: "10–12 abr",
-    fb_moto4: null, fb_gp3: null, yt_stream: 19400,
-    nota: "Fechas 2 y 3. Ganó Alberto Enríquez las dos finales. Directo YouTube = 19.400 vistas de las carreras Moto4 en el canal oficial Moto1000GP (Corrida 1: 9.400 + Corrida 2: 10.000), transmisión anfitriona. Además, TV en ESPN Latin America. Fuera de la ventana Meta de 90 días (empieza 18 abr) → sin datos de FB/IG." },
+    fb_moto4: null, fb_gp3: null, yt_stream: 21536,
+    nota: "Fechas 2 y 3. Ganó Alberto Enríquez las dos finales. Directo YouTube = 21.536 vistas de las carreras Moto4 en el canal oficial Moto1000GP (Corrida 1: 9.819 + Corrida 2: 11.717, al 6-oct), transmisión anfitriona. Además, TV en ESPN Latin America. Fuera de la ventana Meta (empieza 18 abr) → sin datos de FB/IG." },
   { nombre: "Goiânia (BRA)", marca: "Apoyo MotoGP™", fechas: "20–22 mar",
     fb_moto4: null, fb_gp3: null, yt_stream: null,
-    nota: "Fecha 1 · DEBUT junto al Gran Premio de MotoGP™. Ganó Andoni Domínguez; podio de Kensei Matsudaira. Exposición por TV en ESPN Latin America dentro del marco MotoGP™ (retorno de altísimo valor). Sin transmisión libre en YouTube y fuera de la ventana Meta → sin métricas digitales propias; el rating de ESPN no es público (se solicita a ESPN / al organizador)." }
+    nota: "Fecha 1 · DEBUT junto al Gran Premio de MotoGP™. Ganó Andoni Domínguez; podio de Kensei Matsudaira. Exposición por TV en ESPN Latin America dentro del marco MotoGP™ (retorno de altísimo valor). Sin transmisión libre en YouTube y fuera de la ventana Meta (empieza 18 abr) → sin métricas digitales propias; el rating de ESPN no es público (se solicita a ESPN / al organizador)." }
 ];
 
 var METRICS = [

@@ -1,26 +1,26 @@
 {
- "fecha": "07-10-2026",
- "alcance": 3149664,
- "impresiones": 9666332,
- "clics": 346582,
- "ctr": 3.59,
+ "fecha": "08-10-2026",
+ "alcance": 3164855,
+ "impresiones": 9861917,
+ "clics": 352460,
+ "ctr": 3.57,
  "yt_subs": 2660,
- "yt_views": 162362,
+ "yt_views": 162386,
  "yt_videos": 136,
- "web_usuarios": 10354,
- "web_sesiones": 11260,
- "web_vistas": 13817,
- "ig_gp3_seg": 30876,
- "ig_moto4_seg": 11509,
+ "web_usuarios": 10477,
+ "web_sesiones": 11433,
+ "web_vistas": 13980,
+ "ig_gp3_seg": 30888,
+ "ig_moto4_seg": 11514,
  "fb_pages": {
-  "Team GP3 AD11 BY FIMLA": 3059,
-  "GP3  Sports": 6049,
+  "Team GP3 AD11 BY FIMLA": 3057,
+  "GP3  Sports": 6048,
   "Motociclismo de Velocidad Latinoamericano": 8851,
-  "Tony D'Angelo #11": 6958,
-  "GP3 Sports": 18105,
+  "Tony D'Angelo #11": 6957,
+  "GP3 Sports": 18112,
   "Rubus Racing Park": 5159,
-  "GP3  Motorcycle": 1524,
-  "Mobil Moto4 Latin Cup": 4471,
+  "GP3  Motorcycle": 1523,
+  "Mobil Moto4 Latin Cup": 4469,
   "Monomarca Femenina Chilena de Velocidad": 505
  },
  "campanas": [
@@ -53,18 +53,18 @@
    "ctr": 1.525688
   },
   {
+   "nombre": "TRH26_C01",
+   "alcance": 420926,
+   "impr": 866149,
+   "clics": 38352,
+   "ctr": 4.427876
+  },
+  {
    "nombre": "CAV_2026_F5_SAN_JUAN_TRAFICO_V1",
    "alcance": 394940,
    "impr": 1214026,
    "clics": 34334,
    "ctr": 2.828111
-  },
-  {
-   "nombre": "TRH26_C01",
-   "alcance": 376988,
-   "impr": 758910,
-   "clics": 34850,
-   "ctr": 4.592112
   },
   {
    "nombre": "TRH - abril26 -RMKT - TICKETS - FOTO",
@@ -102,6 +102,13 @@
    "ctr": 1.757469
   },
   {
+   "nombre": "TRH26_C03",
+   "alcance": 49249,
+   "impr": 90977,
+   "clics": 2408,
+   "ctr": 2.646823
+  },
+  {
    "nombre": "CAV_2026_F4_CONCORDIA_ULTIMA_ETAPA_V1",
    "alcance": 45816,
    "impr": 80487,
@@ -110,17 +117,10 @@
   },
   {
    "nombre": "TRH26_C02",
-   "alcance": 41214,
-   "impr": 74106,
-   "clics": 3906,
-   "ctr": 5.270828
-  },
-  {
-   "nombre": "TRH26_C03",
-   "alcance": 8884,
-   "impr": 10867,
-   "clics": 341,
-   "ctr": 3.137941
+   "alcance": 44095,
+   "impr": 82342,
+   "clics": 4215,
+   "ctr": 5.118894
   }
  ]
 }

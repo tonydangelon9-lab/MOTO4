@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-09",
+    categoria: "Instagram",
+    titulo: "⚙️ LA PROTECCIÓN QUE ACOMPAÑA A LA MOBIL MOTO4 LATIN CUP",
+    bajada: "⚙️ LA PROTECCIÓN QUE ACOMPAÑA A LA MOBIL MOTO4 LATIN CUP Mobil Super Moto™ Racing 4T: tecnología Mobil™ en el paddock de San Juan Villicum. Rumbo a la final 2026: Goiânia, Brasil, ",
+    imagen: "NOTICIAS-IG/DeSbPtKFPxi.jpg",
+    ig: "DeSbPtKFPxi",
+    cuerpo: "⚙️ LA PROTECCIÓN QUE ACOMPAÑA A LA MOBIL MOTO4 LATIN CUP<br>Mobil Super Moto™ Racing 4T: tecnología Mobil™ en el paddock de San Juan Villicum. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembre. 💜<br>—<br>🇬🇧 The protection behind the Mobil Moto4 Latin Cup: Mobil Super Moto™ Racing 4T, Mobil™ technology in the Villicum paddock. Road to the 2026 finale: Goiânia, Brazil, December 4–6.<br>—<br>🇧🇷 A proteção que acompanha a Mobil Moto4 Latin Cup: Mobil Super Moto™ Racing 4T, tecnologia Mobil™ no paddock de Villicum. Rumo à final 2026: Goiânia, Brasil, 4 a 6 de dezembro.<br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4 #MobilSuperMoto #MovimientoMobil"
+  },
+  {
     fecha: "2026-10-06",
     categoria: "Instagram",
     titulo: "🏁 MOBIL™ EN EL PADDOCK DE LA MOBIL MOTO4 LATIN CUP",

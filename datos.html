@@ -158,10 +158,10 @@ gtag("config", "G-8L674LLGV6");
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-  <h2 class="msec">Alcance amplificado (pauta Meta 2026)</h2>
+  <h2 class="msec">Pauta Meta 2026 · cuenta GP3 (CAV, CCV y Moto4)</h2>
   <div class="kgrid" id="pauta"></div>
   <div class="panelbox tscroll" style="margin-top:14px"><table id="pautatabla"></table></div>
-  <div class="metod">Alcance e impresiones de las campañas propias de GP3 en Meta (Facebook/Instagram) durante 2026, amplificadas con pauta. Se solapa con el acumulado de arriba (que ya incluye distribución pagada): no sumar ambos. Se actualiza solo cada día. No incluye montos de inversión.</div>
+  <div class="metod">Alcance de personas únicas a nivel de cuenta publicitaria de GP3 en Meta (Facebook/Instagram), no suma de campañas; incluye campañas de CAV y CCV, campeonatos donde el sponsor de Moto4 puede no estar presente. Se solapa con el acumulado de arriba (que ya incluye distribución pagada): no sumar ambos. Se actualiza solo cada día. No incluye montos de inversión.</div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -359,17 +359,16 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
     if(s.indexOf("huacha")>=0)return "Huachalalume";
     var t=(nombre||"").split(/[-_]/)[0].trim(); return t.charAt(0).toUpperCase()+t.slice(1);
   }
-  fetch("kpis.json?t="+Date.now()).then(function(r){return r.json();}).then(function(d){
+  fetch("kpis-publico.json?t="+Date.now()).then(function(r){return r.json();}).then(function(d){
     try{ var ld=document.getElementById("lastdate"); if(ld&&d.fecha) ld.textContent=d.fecha; }catch(e){}
     try{ var pa=document.getElementById("pauta"); if(pa){ pa.innerHTML=
-      '<div class="kcard"><div class="lbl">Personas alcanzadas</div><div class="val">'+M(d.alcance)+'</div><div class="sub">campañas Meta 2026 · amplificado con pauta</div></div>'+
-      '<div class="kcard"><div class="lbl">Impresiones de marca</div><div class="val">'+M(d.impresiones)+'</div><div class="sub">veces que apareció la marca</div></div>'+
-      '<div class="kcard"><div class="lbl">Clics</div><div class="val">'+M(d.clics)+'</div><div class="sub">interacciones al anuncio</div></div>'+
-      '<div class="kcard"><div class="lbl">CTR</div><div class="val">'+pct(d.ctr)+'</div><div class="sub">afinidad (referencia industria ~1%)</div></div>';
+      '<div class="kcard"><div class="lbl">Personas alcanzadas</div><div class="val">'+M(d.alcance)+'</div><div class="sub">personas únicas · cuenta Meta de GP3 · 2026</div></div>'+
+      '<div class="kcard"><div class="lbl">Impresiones</div><div class="val">'+M(d.impresiones)+'</div><div class="sub">veces que se mostraron los anuncios</div></div>'+
+      '<div class="kcard"><div class="lbl">Clics</div><div class="val">'+M(d.clics)+'</div><div class="sub">clics en los anuncios</div></div>';
     } }catch(e){}
-    try{ var pt=document.getElementById("pautatabla"); if(pt){ var camps=(d.campanas||[]).slice().sort(function(a,b){return b.alcance-a.alcance;});
-      var t='<tr><th>Campaña</th><th>Alcance</th><th>Impresiones</th><th>Clics</th><th>CTR</th></tr>';
-      camps.forEach(function(c){ if(!c.alcance&&!c.impr) return; t+='<tr><td>'+esc(label(c.nombre))+'</td><td>'+M(c.alcance)+'</td><td>'+M(c.impr)+'</td><td>'+M(c.clics)+'</td><td>'+pct(c.ctr)+'</td></tr>'; });
+    try{ var pt=document.getElementById("pautatabla"); if(pt){
+      var t='<tr><th>Pauta Meta 2026</th><th>Alcance</th><th>Impresiones</th><th>Clics</th></tr>';
+      t+='<tr><td>Consolidado cuenta GP3 · CAV, CCV y Moto4</td><td>'+M(d.alcance)+'</td><td>'+M(d.impresiones)+'</td><td>'+M(d.clics)+'</td></tr>';
       pt.innerHTML=t;
     } }catch(e){}
   }).catch(function(e){});
@@ -378,7 +377,7 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
 <script>
 (function(){
   function M(n){ if(n==null||!isFinite(n)) return "—"; n=Number(n); return n>=1000000 ? (n/1000000).toLocaleString("es-CL",{maximumFractionDigits:1})+" M" : Math.round(n).toLocaleString("es-CL"); }
-  fetch("kpis.json?t="+Date.now()).then(function(r){return r.json();}).then(function(d){
+  fetch("kpis-publico.json?t="+Date.now()).then(function(r){return r.json();}).then(function(d){
     try{ var w=document.getElementById("webvis"); if(w){ w.innerHTML=
       '<div class="kcard"><div class="lbl">Usuarios</div><div class="val">'+M(d.web_usuarios)+'</div><div class="sub">personas distintas que entraron</div></div>'+
       '<div class="kcard"><div class="lbl">Sesiones</div><div class="val">'+M(d.web_sesiones)+'</div><div class="sub">visitas al sitio</div></div>'+

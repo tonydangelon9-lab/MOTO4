@@ -173,7 +173,8 @@ gtag("config", "G-8L674LLGV6");
 <section style="padding-top:0"><div class="wrap">
   <h2 class="msec" data-i18n>Por fin de semana de carrera</h2>
   <div class="panelbox tscroll"><table id="evtabla"></table></div>
-  <div class="metod" data-i18n>Visualizaciones de Facebook sumadas en la ventana de cada evento (serie diaria de Meta) + vistas del directo en YouTube. Goiânia (fecha 1, junto a MotoGP™) e Interlagos (fechas 2-3) son anteriores a la ventana de Meta (que empieza el 18 de abril), por lo que no tienen datos de Facebook/Instagram. De Interlagos sí hay directo: 19.400 vistas de las carreras Moto4 en el canal oficial del Moto1000GP (transmisión anfitriona). Ambas se transmitieron además por TV en ESPN Latin America dentro del marco MotoGP™/Moto1000GP — un retorno televisivo cuyo rating no es público. Goiânia, al no tener transmisión libre, se valora principalmente por esa exposición en TV junto al Gran Premio. Las próximas fechas (Villicum 4-6 sept, Santa Cruz do Sul 25-27 sept, Goiânia 4-6 dic) se medirán completas, incluyendo Instagram.</div>
+<div class="metod" data-i18n>Público: cifras por fecha declaradas por el organizador, aproximadas y no auditadas (no provienen de un conteo de boletería verificado). «Pilotos y staff» es un promedio estimado fijo de 500 personas por fecha en el parque cerrado, no un conteo, y no debe sumarse al público. Concordia y Termas de Río Hondo 2 fueron fechas del CAV/GP3 sin Moto4: se muestran solo como contexto. DATO NO DISPONIBLE se indica con «—».</div>
+  <div class="metod" data-i18n>Visualizaciones de Facebook sumadas en la ventana de cada evento (serie diaria de Meta) + vistas del directo en YouTube. Goiânia (fecha 1, junto a MotoGP™) e Interlagos (fechas 2-3) son anteriores a la ventana de Meta (que empieza el 18 de abril), por lo que no tienen datos de Facebook/Instagram. De Interlagos sí hay directo: 21.536 vistas de las carreras Moto4 en el canal oficial del Moto1000GP (transmisión anfitriona). Ambas se transmitieron además por TV en ESPN Latin America dentro del marco MotoGP™/Moto1000GP — un retorno televisivo cuyo rating no es público. Goiânia, al no tener transmisión libre, se valora principalmente por esa exposición en TV junto al Gran Premio. Las próximas fechas (Villicum 4-6 sept, Santa Cruz do Sul 25-27 sept, Goiânia 4-6 dic) se medirán completas, incluyendo Instagram.</div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -196,6 +197,7 @@ gtag("config", "G-8L674LLGV6");
 
 <script src="chart.umd.js"></script>
 <script src="metrics-data.js"></script>
+<script src="publico-eventos.js?v=20261013"></script>
 <script>
 var b=document.getElementById("burger"),m=document.getElementById("menu");
 if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
@@ -308,9 +310,14 @@ if(b){b.addEventListener("click",function(){m.classList.toggle("open");});}
   /* ===== por fin de semana de carrera ===== */
   guard(function(){
     if(typeof EVENTOS==="undefined"||!EVENTOS.length) return;
-    var et='<tr><th>Evento</th><th>Marca</th><th>Fechas 2026</th><th>FB Moto4</th><th>FB GP3</th><th>Directo YouTube</th><th>Nota</th></tr>';
-    EVENTOS.forEach(function(e){
-      et+="<tr><td>"+esc(e.nombre)+"</td><td>"+esc(e.marca)+"</td><td>"+esc(e.fechas)+"</td><td>"+M(e.fb_moto4)+"</td><td>"+M(e.fb_gp3)+"</td><td>"+M(e.yt_stream)+"</td><td>"+esc(e.nota)+"</td></tr>";
+    var P=(typeof PUBLICO!=="undefined")?PUBLICO:{};
+    var lista=EVENTOS.slice();
+    if(typeof EVENTOS_EXTRA!=="undefined"){ var ya={}; EVENTOS.forEach(function(e){ya[e.nombre]=1;}); lista=EVENTOS_EXTRA.filter(function(e){return !ya[e.nombre];}).concat(lista); } /* fechas más recientes primero; si el Motor ya trae el evento, manda el dato real */
+    function pub(n){ return (n==null||!isFinite(n)) ? "—" : "≈"+Number(n).toLocaleString("es-CL"); }
+    var et='<tr><th>Evento</th><th>Marca</th><th>Fechas 2026</th><th>FB Moto4</th><th>FB GP3</th><th>Directo YouTube</th><th>Asistentes con entrada (declarado)</th><th>Pilotos y staff en parque cerrado (est. fija)</th><th>Nota</th></tr>';
+    lista.forEach(function(e){
+      var p=P[e.nombre]||{};
+      et+="<tr><td>"+esc(e.nombre)+"</td><td>"+esc(e.marca)+"</td><td>"+esc(e.fechas)+"</td><td>"+M(e.fb_moto4)+"</td><td>"+M(e.fb_gp3)+"</td><td>"+M(e.yt_stream)+"</td><td>"+pub(p.entradas)+"</td><td>"+pub(p.pilotos_staff)+"</td><td>"+esc(e.nota)+(p.nota?(e.nota?" · ":"")+esc(p.nota):"")+"</td></tr>";
     });
     document.getElementById("evtabla").innerHTML=et;
   });

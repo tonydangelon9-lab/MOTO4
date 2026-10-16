@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-16",
+    categoria: "Instagram",
+    titulo: "⚙️ MOBIL™ EN LA RED DE DISTRIBUIDORES",
+    bajada: "⚙️ MOBIL™ EN LA RED DE DISTRIBUIDORES Agustín Batistella, distribuidor Mobil en Mendoza, y la protección Mobil Super Moto™ que acompaña a la Mobil Moto4 Latin Cup. Rumbo a la final",
+    imagen: "NOTICIAS-IG/DekcvA7CJLK.jpg",
+    ig: "DekcvA7CJLK",
+    cuerpo: "⚙️ MOBIL™ EN LA RED DE DISTRIBUIDORES<br>Agustín Batistella, distribuidor Mobil en Mendoza, y la protección Mobil Super Moto™ que acompaña a la Mobil Moto4 Latin Cup. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembre. 💜<br>—<br>🇬🇧 Mobil™ across the dealer network: Agustín Batistella, Mobil dealer in Mendoza, on the Mobil Super Moto™ protection behind the Mobil Moto4 Latin Cup. Road to the 2026 finale: Goiânia, Brazil, December 4–6.<br>—<br>🇧🇷 Mobil™ na rede de distribuidores: Agustín Batistella, distribuidor Mobil em Mendoza, e a proteção Mobil Super Moto™ que acompanha a Mobil Moto4 Latin Cup. Rumo à final 2026: Goiânia, Brasil, 4 a 6 de dezembro.<br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4 #MobilSuperMoto #MovimientoMobil"
+  },
+  {
     fecha: "2026-10-09",
     categoria: "Instagram",
     titulo: "⚙️ LA PROTECCIÓN QUE ACOMPAÑA A LA MOBIL MOTO4 LATIN CUP",

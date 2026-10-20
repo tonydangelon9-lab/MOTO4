@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-20",
+    categoria: "Instagram",
+    titulo: "🤝 MOBIL™ JUNTO A SUS CLIENTES EN LA PISTA",
+    bajada: "🤝 MOBIL™ JUNTO A SUS CLIENTES EN LA PISTA Cristian Armiñana, distribuidor Mobil en la región de Cuyo, vivió la Mobil Moto4 Latin Cup en San Juan Villicum con sus clientes: máxima ",
+    imagen: "NOTICIAS-IG/Deuv7WOjMl4.jpg",
+    ig: "Deuv7WOjMl4",
+    cuerpo: "🤝 MOBIL™ JUNTO A SUS CLIENTES EN LA PISTA<br>Cristian Armiñana, distribuidor Mobil en la región de Cuyo, vivió la Mobil Moto4 Latin Cup en San Juan Villicum con sus clientes: máxima exigencia en pista y la confiabilidad de siempre. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembre. 💜<br>—<br>🇬🇧 Mobil™ with its customers at the track: Cristian Armiñana, Mobil distributor for the Cuyo region, experienced the Mobil Moto4 Latin Cup at San Juan Villicum with his customers — the toughest demands on track and the reliability they trust. Road to the 2026 finale: Goiânia, Brazil, December 4–6.<br>—<br>🇧🇷 Mobil™ com seus clientes na pista: Cristian Armiñana, distribuidor Mobil na região de Cuyo, viveu a Mobil Moto4 Latin Cup em San Juan Villicum com seus clientes — máxima exigência na pista e a confiabilidade de sempre. Rumo à final 2026: Goiânia, Brasil, 4 a 6 de dezembro.<br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4 #MovimientoMobil"
+  },
+  {
     fecha: "2026-10-16",
     categoria: "Instagram",
     titulo: "⚙️ MOBIL™ EN LA RED DE DISTRIBUIDORES",

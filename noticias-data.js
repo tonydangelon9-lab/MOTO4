@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-21",
+    categoria: "Instagram",
+    titulo: "🎂 ¡FELIZ CUMPLEANOS, KENSEI MATSUDAIRA! Hoy celebra el #74, piloto de la Mobil Moto4 La…",
+    bajada: "🎂 ¡FELIZ CUMPLEANOS, KENSEI MATSUDAIRA! Hoy celebra el #74, piloto de la Mobil Moto4 Latin Cup. ¡Felicidades, Kensei!  🇬🇧 HAPPY BIRTHDAY, KENSEI MATSUDAIRA! Celebrating today: t",
+    imagen: "NOTICIAS-IG/DewYL3-lx0W.jpg",
+    ig: "DewYL3-lx0W",
+    cuerpo: "🎂 ¡FELIZ CUMPLEANOS, KENSEI MATSUDAIRA! Hoy celebra el #74, piloto de la Mobil Moto4 Latin Cup. ¡Felicidades, Kensei!<br><br>🇬🇧 HAPPY BIRTHDAY, KENSEI MATSUDAIRA! Celebrating today: the #74, Mobil Moto4 Latin Cup rider. Congratulations, Kensei!<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #HappyBirthday #Mobil"
+  },
+  {
     fecha: "2026-10-20",
     categoria: "Instagram",
     titulo: "🤝 MOBIL™ JUNTO A SUS CLIENTES EN LA PISTA",

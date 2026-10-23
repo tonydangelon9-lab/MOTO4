@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-23",
+    categoria: "Instagram",
+    titulo: "🌎 MOBIL™ ACOMPAÑA EL DESARROLLO DE LOS PILOTOS",
+    bajada: "🌎 MOBIL™ ACOMPAÑA EL DESARROLLO DE LOS PILOTOS Carlos Glavinich, representante comercial de Mobil llegado desde Paraguay, vio en San Juan Villicum disciplina, esfuerzo y a los fut",
+    imagen: "NOTICIAS-IG/De2eZmfCZsG.jpg",
+    ig: "De2eZmfCZsG",
+    cuerpo: "🌎 MOBIL™ ACOMPAÑA EL DESARROLLO DE LOS PILOTOS<br>Carlos Glavinich, representante comercial de Mobil llegado desde Paraguay, vio en San Juan Villicum disciplina, esfuerzo y a los futuros grandes pilotos de la categoría, con un producto de alta tecnología probado en la máxima exigencia. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembre. 💜<br>—<br>🇬🇧 Mobil™ backs rider development: Carlos Glavinich, Mobil sales representative from Paraguay, at San Juan Villicum — discipline, hard work and the category's next great riders, with high-technology products tested under the toughest conditions. Road to the 2026 finale: Goiânia, Brazil, December 4–6.<br>—<br>🇧🇷 Mobil™ acompanha o desenvolvimento dos pilotos: Carlos Glavinich, representante comercial da Mobil vindo do Paraguai, em San Juan Villicum — disciplina, esforço e os futuros grandes pilotos da categoria, com um produto de alta tecnologia testado sob a máxima exigência. Rumo à final 2026: Goiânia, Brasil, 4 a 6 de dezembro.<br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4 #MovimientoMobil"
+  },
+  {
     fecha: "2026-10-21",
     categoria: "Instagram",
     titulo: "🎂 ¡FELIZ CUMPLEANOS, KENSEI MATSUDAIRA! Hoy celebra el #74, piloto de la Mobil Moto4 La…",

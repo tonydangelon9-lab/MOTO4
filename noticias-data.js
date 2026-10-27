@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-27",
+    categoria: "Instagram",
+    titulo: "🤝 UNA DÉCADA JUNTO A MOBIL™",
+    bajada: "🤝 UNA DÉCADA JUNTO A MOBIL™ Erick Estrada, promotor de Estrada Service Car en Caucete (San Juan), lleva diez años con Mobil y vivió la Mobil Moto4 Latin Cup en San Juan Villicum: ",
+    imagen: "NOTICIAS-IG/DfAxhMijZP8.jpg",
+    ig: "DfAxhMijZP8",
+    cuerpo: "🤝 UNA DÉCADA JUNTO A MOBIL™<br>Erick Estrada, promotor de Estrada Service Car en Caucete (San Juan), lleva diez años con Mobil y vivió la Mobil Moto4 Latin Cup en San Juan Villicum: productos desarrollados y probados para las exigencias de la pista, con la confianza que respalda a sus clientes. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembre. 💜<br>—<br>🇬🇧 A decade with Mobil™: Erick Estrada, promoter at Estrada Service Car in Caucete (San Juan), has worked with Mobil for ten years and experienced the Mobil Moto4 Latin Cup at San Juan Villicum — products developed and tested for the demands of the track, with the trust that backs his customers. Road to the 2026 finale: Goiânia, Brazil, December 4–6.<br>—<br>🇧🇷 Uma década com a Mobil™: Erick Estrada, promotor da Estrada Service Car em Caucete (San Juan), trabalha há dez anos com a Mobil e viveu a Mobil Moto4 Latin Cup em San Juan Villicum — produtos desenvolvidos e testados para as exigências da pista, com a confiança que respalda seus clientes. Rumo à final 2026: Goiânia, Brasil, 4 a 6 de dezembro.<br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4 #MovimientoMobil"
+  },
+  {
     fecha: "2026-10-23",
     categoria: "Instagram",
     titulo: "🌎 MOBIL™ ACOMPAÑA EL DESARROLLO DE LOS PILOTOS",

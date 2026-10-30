@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-10-30",
+    categoria: "Instagram",
+    titulo: "WILDCARD confirmado. Oliver Cuevas Britez (Paraguay) se suma a la gran final de la Mobil…",
+    bajada: "WILDCARD confirmado. Oliver Cuevas Britez (Paraguay) se suma a la gran final de la Mobil Moto4 Latin Cup, de la mano de Ohvale Brasil y la Mini GP Brasil. ¡Bienvenido a la Latin Cu",
+    imagen: "NOTICIAS-IG/DfIEYdzDzZS.jpg",
+    ig: "DfIEYdzDzZS",
+    cuerpo: "WILDCARD confirmado. Oliver Cuevas Britez (Paraguay) se suma a la gran final de la Mobil Moto4 Latin Cup, de la mano de Ohvale Brasil y la Mini GP Brasil. ¡Bienvenido a la Latin Cup, Oliver!<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-10-28",
     categoria: "Instagram",
     titulo: "WILDCARD confirmado. Leonel dos Santos Neto (Brasil) se suma a la gran final de la Mobil…",

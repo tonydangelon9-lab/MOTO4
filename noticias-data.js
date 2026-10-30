@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-10-30",
     categoria: "Instagram",
+    titulo: "⚙️ MOBIL™ EN EL BOX DE LA MOTO4",
+    bajada: "⚙️ MOBIL™ EN EL BOX DE LA MOTO4 Maximiliano Gómez, representante comercial de Mobil, en el box de San Juan Villicum: el mismo producto que cualquier cliente encuentra en una casa d",
+    imagen: "NOTICIAS-IG/DfIf5s1j6xQ.jpg",
+    ig: "DfIf5s1j6xQ",
+    cuerpo: "⚙️ MOBIL™ EN EL BOX DE LA MOTO4<br>Maximiliano Gómez, representante comercial de Mobil, en el box de San Juan Villicum: el mismo producto que cualquier cliente encuentra en una casa de repuestos o en un taller, lubricando motores exigidos al máximo, y una alianza con una categoría formativa en pleno desarrollo. Rumbo a la final 2026: Goiânia, Brasil, 4 – 6 de diciembre. 💜<br>—<br>🇬🇧 Mobil™ in the Moto4 garage: Maximiliano Gómez, Mobil sales representative, at San Juan Villicum — the same product any customer finds at a parts store or a workshop, lubricating engines pushed to the limit, and a partnership with a development category on the rise. Road to the 2026 finale: Goiânia, Brazil, December 4–6.<br>—<br>🇧🇷 Mobil™ no box da Moto4: Maximiliano Gómez, representante comercial da Mobil, em San Juan Villicum — o mesmo produto que qualquer cliente encontra em uma loja de peças ou em uma oficina, lubrificando motores exigidos ao máximo, e uma parceria com uma categoria formativa em pleno desenvolvimento. Rumo à final 2026: Goiânia, Brasil, 4 a 6 de dezembro.<br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4 #MovimientoMobil"
+  },
+  {
+    fecha: "2026-10-30",
+    categoria: "Instagram",
     titulo: "WILDCARD confirmado. Oliver Cuevas Britez (Paraguay) se suma a la gran final de la Mobil…",
     bajada: "WILDCARD confirmado. Oliver Cuevas Britez (Paraguay) se suma a la gran final de la Mobil Moto4 Latin Cup, de la mano de Ohvale Brasil y la Mini GP Brasil. ¡Bienvenido a la Latin Cu",
     imagen: "NOTICIAS-IG/DfIEYdzDzZS.jpg",

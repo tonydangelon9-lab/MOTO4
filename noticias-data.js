@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-01",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Luis Bravo (Venezuela) llega a la gran final de la Mobil Moto4 Latin C…",
+    bajada: "CAMINO A GOIÂNIA. Luis Bravo (Venezuela) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 17 del campeonato, con 10 puntos. Dos carreras por delante para seguir suman",
+    imagen: "NOTICIAS-IG/DfNN-L0lGBx.jpg",
+    ig: "DfNN-L0lGBx",
+    cuerpo: "CAMINO A GOIÂNIA. Luis Bravo (Venezuela) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 17 del campeonato, con 10 puntos. Dos carreras por delante para seguir sumando en la Latin Cup.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-10-30",
     categoria: "Instagram",
     titulo: "⚙️ MOBIL™ EN EL BOX DE LA MOTO4",

@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-02",
+    categoria: "Instagram",
+    titulo: "WILDCARD confirmado. Ivo Roche (Paraguay) se suma a la gran final de la Mobil Moto4 Lati…",
+    bajada: "WILDCARD confirmado. Ivo Roche (Paraguay) se suma a la gran final de la Mobil Moto4 Latin Cup. ¡Bienvenido a la Latin Cup, Ivo! Goiânia · 4-6 dic",
+    imagen: "NOTICIAS-IG/DfOPAG3lqW7.jpg",
+    ig: "DfOPAG3lqW7",
+    cuerpo: "WILDCARD confirmado. Ivo Roche (Paraguay) se suma a la gran final de la Mobil Moto4 Latin Cup. ¡Bienvenido a la Latin Cup, Ivo!<br>Goiânia · 4-6 dic"
+  },
+  {
     fecha: "2026-11-01",
     categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Luis Bravo (Venezuela) llega a la gran final de la Mobil Moto4 Latin C…",

@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-03",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Aidan Hancock (Estados Unidos) llega a la gran final de la Mobil Moto4…",
+    bajada: "CAMINO A GOIÂNIA. Aidan Hancock (Estados Unidos) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 13 del campeonato, con 28 puntos. Dos carreras por delante para segu",
+    imagen: "NOTICIAS-IG/DfSXlp_CHES.jpg",
+    ig: "DfSXlp_CHES",
+    cuerpo: "CAMINO A GOIÂNIA. Aidan Hancock (Estados Unidos) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 13 del campeonato, con 28 puntos. Dos carreras por delante para seguir sumando en la Latin Cup.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-02",
     categoria: "Instagram",
     titulo: "WILDCARD confirmado. Ivo Roche (Paraguay) se suma a la gran final de la Mobil Moto4 Lati…",

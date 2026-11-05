@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-05",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Santiago Vogel (Argentina) llega a la gran final de la Mobil Moto4 Lat…",
+    bajada: "CAMINO A GOIÂNIA. Santiago Vogel (Argentina) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 12 del campeonato, con 41 puntos. Dos carreras por delante para cerrar e",
+    imagen: "NOTICIAS-IG/DfXhKeHAmgZ.jpg",
+    ig: "DfXhKeHAmgZ",
+    cuerpo: "CAMINO A GOIÂNIA. Santiago Vogel (Argentina) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 12 del campeonato, con 41 puntos. Dos carreras por delante para cerrar el año sumando.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-03",
     categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Aidan Hancock (Estados Unidos) llega a la gran final de la Mobil Moto4…",

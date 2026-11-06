@@ -447,6 +447,10 @@ try{
     var idade=ref.getFullYear()-nasc.getFullYear(); var mm=ref.getMonth()-nasc.getMonth();
     if(mm<0||(mm===0&&ref.getDate()<nasc.getDate())) idade--;
     data.idade_na_seletiva=String(idade);
+    if(idade<14 || idade>18){
+      msg.className="msg err"; msg.textContent=T("A seletiva é para pilotos de 14 a 18 anos (idade no dia 18 de novembro de 2026).");
+      document.getElementById("f_nasc").focus(); return;
+    }
     if(idade<18 && (!String(data.tutor||"").trim() || !String(data.tutor_contacto||"").trim())){
       msg.className="msg err"; msg.textContent=T("Preencha os dados do responsável: o piloto é menor de 18 anos.");
       document.getElementById("f_tut").focus(); return;
@@ -594,6 +598,7 @@ var D = {
 "Enviando…":{es:"Enviando…",en:"Sending…"},
 "Não foi possível enviar. Tente novamente.":{es:"No se pudo enviar. Inténtalo de nuevo.",en:"Could not send. Please try again."},
 "Não foi possível enviar. Verifique a sua conexão.":{es:"No se pudo enviar. Revisa tu conexión.",en:"Could not send. Check your connection."},
+"A seletiva é para pilotos de 14 a 18 anos (idade no dia 18 de novembro de 2026).":{es:"La selectiva es para pilotos de 14 a 18 años (edad al 18 de noviembre de 2026).",en:"The selection is for riders aged 14 to 18 (age on November 18, 2026)."},
 "Preencha os dados do responsável: o piloto é menor de 18 anos.":{es:"Completa los datos del tutor: el piloto es menor de 18 años.",en:"Fill in the guardian details: the rider is under 18."}
 };
 window.m4T=function(k){var e=D[k];return (cur!=="pt"&&e&&e[cur])?e[cur]:k;};

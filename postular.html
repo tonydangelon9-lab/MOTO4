@@ -219,6 +219,16 @@ gtag('js',new Date());gtag('config','G-8L674LLGV6');
 <p class="pcierre">Edad: 14 a 19 a&ntilde;os. Una moto igual para todos. Un camino directo y oficial.<br><b>El Mundial ahora mira hacia aqu&iacute;.</b></p>
 </div></section>
 
+<div class="wrap"><div class="done" id="cerrado" style="padding:40px 0 20px">
+<div class="chk">🏁</div>
+<h2>Postulaciones 2027 cerradas</h2>
+<p>La preinscripción al Selection Program 2027 cerró el <b>19 de octubre de 2026</b>. Gracias a todos los pilotos que postularon.</p>
+<div id="aviso-seletiva">
+<p>¿Eres piloto en Brasil? La <b>Seletiva Brasil</b> tiene inscripciones abiertas.</p>
+<a href="seletiva-brasil.html" class="submit" style="display:inline-block;text-decoration:none;max-width:300px">Ir a la Seletiva Brasil</a>
+</div>
+</div></div>
+
 <div class="wrap">
 <form id="form">
 
@@ -343,6 +353,19 @@ gtag('js',new Date());gtag('config','G-8L674LLGV6');
 var FORM_API = "https://script.google.com/macros/s/AKfycbyvpEIEs-SZ4H6OEYZtJoEiTBtzil1EHL9KhXk8BM__SpdqznxSqXBMU3FFr22555_2/exec";
 // 2) Apertura de la preinscripción (hora local del visitante). Cambiá aquí si mueven la fecha:
 var OPEN_DATE = new Date("2026-08-15T09:00:00"); // Apertura de inscripciones. Para cambiar el dia, edita solo esta fecha.
+var CLOSE_DATE = new Date("2026-10-19T23:59:59-03:00"); // Cierre de la preinscripción 2027 (hora de Chile/Argentina).
+
+// --- control de cierre del formulario (después del 19-10-2026) ---
+(function(){
+var preview = /[?&]preview/i.test(location.search);
+if(!preview && new Date() > CLOSE_DATE){
+document.getElementById("cerrado").style.display="block";
+var fm=document.getElementById("form");
+fm.classList.add("locked");
+fm.querySelectorAll("input,textarea,select,button").forEach(function(el){el.disabled=true;});
+var b=document.getElementById("btn"); if(b){b.textContent="Postulaciones cerradas";}
+}
+})();
 
 // --- control de apertura del formulario ---
 (function(){
@@ -367,6 +390,8 @@ var form=document.getElementById("form"), btn=document.getElementById("btn"), ms
 try{ document.getElementById("ts_form").value=String(Date.now()); }catch(_){}
 form.addEventListener("submit",function(e){
 e.preventDefault();
+// W3: programa cerrado. En vista previa (?preview) se muestra la pantalla final pero NO se envía nada.
+if(new Date() > CLOSE_DATE){ if(/[?&]preview/i.test(location.search)){ form.style.display="none"; var dn=document.getElementById("done"); dn.style.display="block"; var pv=document.createElement("p"); pv.style.fontWeight="700"; pv.textContent="Vista previa: esta postulación NO se envió (el programa está cerrado)."; dn.appendChild(pv); } return; }
 var data={}; new FormData(form).forEach(function(v,k){ data[k]=v; });
 data.fecha_envio=new Date().toISOString();
 try{ data.idioma=(localStorage.getItem("m4lang")||document.documentElement.lang||"es").slice(0,2).toLowerCase(); }catch(_){ data.idioma="es"; }

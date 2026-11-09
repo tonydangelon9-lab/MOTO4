@@ -83,7 +83,7 @@ h2{font-family:var(--dispx);font-weight:800;font-stretch:120%;text-transform:upp
 footer{border-top:1px solid var(--line);padding:22px 0 34px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
 footer img{height:26px;width:auto;opacity:.95}
 @media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(34px,11vw,52px)}.card{padding:18px}.wagrid b{font-size:26px}.wagrid{gap:8px}.wagrid .card{padding:14px 6px}.wagrid span{font-size:9.5px;letter-spacing:.06em}.poster{max-width:420px;margin:0 auto;width:100%}.info{grid-template-columns:1fr}.counter{gap:16px}.ring,.ring svg{width:124px;height:124px}.ring .n b{font-size:42px}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.stat span{font-size:13px}}
-@media (max-width:359px){header img.logo{height:28px}.live{font-size:9px;letter-spacing:.06em;padding:6px 8px}}
+@media (max-width:359px){header img.logo{height:28px}.live{font-size:9px;letter-spacing:.06em;padding:6px 8px}.ring,.ring svg{width:104px;height:104px}.ring .n b{font-size:36px}.counter{gap:12px}.stat b{font-size:18px}.stats{min-width:0}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -162,17 +162,18 @@ footer img{height:26px;width:auto;opacity:.95}
 </div>
 
 <script>
-// O painel mostra uma foto dos dados embutida abaixo (gerada manualmente; não há leitura automática).
-var DATA_URL = null;
-var SNAPSHOT = {"atualizado": "2026-11-09T18:31:00-03:00", "meta": 50, "confirmados": [{"nome": "Kayque S.", "uf": "SP", "canal": "web", "data": "2026-10-27T15:10:00-03:00", "n": 1}, {"nome": "Marcos S.", "uf": "SP", "canal": "web", "data": "2026-10-27T16:12:00-03:00", "n": 2}, {"nome": "João S.", "uf": "SP", "canal": "web", "data": "2026-11-07T06:13:00-03:00", "n": 3}, {"nome": "Kaio P.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:14:00-03:00", "n": 4}, {"nome": "Erick A.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:15:00-03:00", "n": 5}, {"nome": "Henrique G.", "uf": "", "canal": "wa", "data": "2026-11-09T17:54:00-03:00", "n": 6}, {"nome": "Well", "uf": "SP", "canal": "wa", "data": "2026-11-09T17:57:00-03:00", "n": 7}], "wa": {"convidados": 82, "enviado": "2026-11-09T16:46:00-03:00", "sim": 2, "nao": 3}};
+// O painel lê os dados publicados pelo bot da Seletiva (atualizados automaticamente a cada 15 minutos).
+// Se a leitura falhar, mostra a última foto dos dados embutida abaixo.
+var DATA_URL = "https://script.google.com/macros/s/AKfycbzvEWvW5beIcYPnfpMILQPOv964tb8KbeEuO8KqhN9A6Dfg34SO1bgMMT1J1FiABFjEHQ/exec?seletiva=painel";
+var SNAPSHOT = {"atualizado": "2026-11-09T19:46:00-03:00", "meta": 50, "auto": true, "confirmados": [{"nome": "Kayque S.", "uf": "SP", "canal": "web", "data": "2026-10-27T12:00:00-03:00", "n": 1}, {"nome": "Marcos S.", "uf": "SP", "canal": "web", "data": "2026-10-27T12:00:00-03:00", "n": 2}, {"nome": "João S.", "uf": "SP", "canal": "web", "data": "2026-11-07T12:00:00-03:00", "n": 3}, {"nome": "Kaio P.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:00:00-03:00", "n": 4}, {"nome": "Erick A.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:00:00-03:00", "n": 5}, {"nome": "Henrique G.", "uf": "", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 6}, {"nome": "Piloto", "uf": "SP", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 7}, {"nome": "Willian O.", "uf": "", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 8}, {"nome": "Gaspar T.", "uf": "", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 9}], "wa": {"convidados": 82, "enviado": "2026-11-09T16:46:00-03:00", "sim": 4, "nao": 4}};
 var CIERRE = new Date("2026-11-15T23:59:00-03:00");
-var filtro = "all", datos = SNAPSHOT;
+var filtro = "all", datos = SNAPSHOT, enVivo = false;
 
 function fmt(d){try{return new Date(d).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}catch(e){return d}}
 function fdia(d){try{return new Date(d).toLocaleDateString("pt-BR",{timeZone:"America/Sao_Paulo",day:"2-digit",month:"2-digit"})}catch(e){return ""}}
 function render(){
   var meta = datos.meta || 50, lista = datos.confirmados || [], n = Math.min(lista.length, meta);
-  var web = lista.filter(function(p){return p.canal==="web"}).length, wa = lista.length - web;
+  var web = lista.slice(0, meta).filter(function(p){return p.canal==="web"}).length, wa = n - web;
   document.getElementById("meta").textContent = meta;
   document.getElementById("cnt").textContent = n;
   document.getElementById("sConf").textContent = n;
@@ -184,13 +185,13 @@ function render(){
     document.getElementById("bar").style.width = (p*100).toFixed(1)+"%";
   });
   document.getElementById("full").style.display = n>=meta ? "block" : "none";
-  var up = fmt(datos.atualizado); document.getElementById("upd2").textContent = up;
+  var up = fmt(datos.atualizado); document.getElementById("upd2").textContent = up + (datos.auto && enVivo ? " · atualização automática a cada 15 minutos" : "");
   document.getElementById("upd").textContent = "Dados de "+up;
   var w = datos.wa; if(w){ document.getElementById("waSec").style.display="block";
     document.getElementById("waConv").textContent=w.convidados; document.getElementById("waSim").textContent=w.sim; document.getElementById("waNao").textContent=w.nao;
     document.getElementById("waEnv").textContent = w.enviado ? "Enviado em "+fmt(w.enviado) : ""; }
   var g = document.getElementById("grid"); g.innerHTML = "";
-  var vis = lista.filter(function(r){return filtro==="all"||r.canal===filtro});
+  var vis = lista.slice(0, meta).filter(function(r){return filtro==="all"||r.canal===filtro});
   if(!vis.length){ g.innerHTML = '<div class="empty">Ainda não há confirmações neste canal.</div>'; return; }
   vis.forEach(function(r,i){
     var d = document.createElement("div"); d.className="rider"; d.style.animationDelay=(i*40)+"ms";
@@ -212,12 +213,13 @@ function tick(){
 }
 function cargar(){
   if(!DATA_URL) return;
-  fetch(DATA_URL,{cache:"no-store"}).then(function(r){return r.json()}).then(function(j){ if(j&&j.confirmados){ datos=j; render(); } }).catch(function(){});
+  fetch(DATA_URL,{cache:"no-store"}).then(function(r){return r.json()}).then(function(j){ if(j && Array.isArray(j.confirmados) && j.atualizado){ datos=j; enVivo=true; render(); } }).catch(function(){});
 }
 document.querySelectorAll(".filters button").forEach(function(b){
   b.addEventListener("click",function(){ filtro=b.dataset.f; document.querySelectorAll(".filters button").forEach(function(x){x.setAttribute("aria-pressed",x===b)}); render(); });
 });
-render(); tick(); setInterval(tick,30000); cargar(); setInterval(cargar,60000);
+render(); tick(); setInterval(tick,30000); cargar(); setInterval(function(){ if(!document.hidden) cargar(); },300000);
+document.addEventListener("visibilitychange",function(){ if(!document.hidden) cargar(); });
 </script>
 </body>
 </html>

@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-09",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Lorenzo Tiberi (Argentina) llega a la gran final de la Mobil Moto4 Lat…",
+    bajada: "CAMINO A GOIÂNIA. Lorenzo Tiberi (Argentina) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 9 del campeonato, con 61 puntos. Dos carreras por delante para seguir es",
+    imagen: "NOTICIAS-IG/Dfh0VD6DKLU.jpg",
+    ig: "Dfh0VD6DKLU",
+    cuerpo: "CAMINO A GOIÂNIA. Lorenzo Tiberi (Argentina) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 9 del campeonato, con 61 puntos. Dos carreras por delante para seguir escalando posiciones.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica @gp3.sports.latam<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-07",
     categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Thiago Torrez (Paraguay) llega a la gran final de la Mobil Moto4 Latin…",

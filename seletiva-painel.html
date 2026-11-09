@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seletiva 2027 · Moto4</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+:root{
+--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;--line:#2a0f30;--muted:#b79bc0;--gold:#facc15;--green:#22c55e;
+--grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+--disp:"MGP Display","Archivo",Arial,sans-serif;
+--dispx:"MGP Display Exp","Archivo",Arial,sans-serif;
+--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:#fff;font-family:var(--body);line-height:1.45;min-height:100vh;
+background-image:radial-gradient(1100px 520px at 85% -10%,rgba(198,4,247,.28),transparent 60%),radial-gradient(800px 480px at -10% 30%,rgba(227,123,253,.12),transparent 60%)}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header{padding:26px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header img.logo{height:46px;width:auto}
+.live{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:rgba(14,4,16,.7)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--purple)}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch;padding:22px 0 10px}.hero>*{min-width:0}
+.k{font:700 12px/1 var(--disp);letter-spacing:.22em;text-transform:uppercase;color:var(--pink)}
+h1{font-family:var(--dispx);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(40px,5.4vw,60px);line-height:.92;margin:10px 0 12px}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);font-size:15px}
+.sub b{color:#fff;font-weight:600}
+.card{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:22px;padding:22px}
+.counter{display:flex;align-items:center;gap:22px;margin-top:20px}
+.ring{position:relative;width:150px;height:150px;flex:0 0 auto}
+.ring svg{width:150px;height:150px;transform:rotate(-90deg)}
+.ring .n{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .n b{font-family:var(--dispx);font-weight:800;font-stretch:125%;font-size:52px;line-height:1}
+.ring .n span{font:700 12px/1.2 var(--disp);letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.stats{display:grid;gap:10px;flex:1}
+.stat{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:8px}
+.stat span{color:var(--muted);font-size:14px}
+.stat b{white-space:nowrap;font:700 22px/1 var(--disp);letter-spacing:.02em}
+.stat b.hi{color:var(--gold)}
+.poster{border-radius:22px;overflow:hidden;border:1px solid var(--line);position:relative;background:#000}
+.poster{align-self:start;aspect-ratio:4/5}.poster img{display:block;width:100%;height:100%;object-fit:contain}
+.bar{height:10px;border-radius:999px;background:#1d0a22;overflow:hidden;margin-top:18px}
+.bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:999px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.countdown{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.cd{background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:10px 12px;min-width:70px;text-align:center}
+.cd b{display:block;font-family:var(--dispx);font-weight:800;font-stretch:115%;font-size:26px;line-height:1}
+.cd span{font:700 10px/1 var(--disp);letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.cdl{font:700 12px/1.3 var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+.cta{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:999px;background:var(--grad);color:#fff;text-decoration:none;font:700 13px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase}
+.full{display:none;margin-top:16px;padding:14px 16px;border-radius:16px;background:var(--grad);font:700 16px/1.2 var(--disp);letter-spacing:.06em;text-transform:uppercase;text-align:center}
+section{padding:26px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+h2{font-family:var(--dispx);font-weight:800;font-stretch:120%;text-transform:uppercase;font-size:clamp(22px,3.6vw,30px);line-height:1}
+.filters{display:flex;gap:8px}
+.filters button{font:700 12px/1 var(--disp);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer}
+.filters button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.rider{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;animation:in .5s both}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.rider .num{font-family:var(--dispx);font-weight:800;font-stretch:120%;font-size:22px;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#160518;border:1px solid var(--line);flex:0 0 auto}
+.rider .nm{font:700 16px/1.15 var(--disp);letter-spacing:.02em;text-transform:uppercase}
+.rider .meta{font-size:12.5px;color:var(--muted);margin-top:3px;display:flex;gap:8px;align-items:center}
+.tag{font:700 10px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;padding:4px 7px;border-radius:6px}
+.tag.web{background:rgba(214,61,252,.16);color:var(--pink)}
+.tag.wa{background:rgba(34,197,94,.15);color:#6ee7a0}
+.slot{border:1px dashed #2a0f30;border-radius:16px;min-height:68px;display:flex;align-items:center;justify-content:center;color:#3b1d42;font:700 14px/1 var(--disp);letter-spacing:.1em}
+.empty{color:var(--muted);padding:20px;text-align:center;border:1px dashed var(--line);border-radius:16px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.wagrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.wagrid .card{padding:16px 12px;text-align:center;min-width:0}.wagrid b{display:block;font-family:var(--dispx);font-weight:800;font-stretch:120%;font-size:34px;line-height:1}.wagrid span{font:700 11px/1.3 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.info .card{padding:16px 18px}
+.info b{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.info span{font:700 17px/1.2 var(--disp);text-transform:uppercase}
+footer{border-top:1px solid var(--line);padding:22px 0 34px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
+footer img{height:26px;width:auto;opacity:.95}
+@media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(34px,11vw,52px)}.card{padding:18px}.wagrid b{font-size:26px}.wagrid{gap:8px}.wagrid .card{padding:14px 6px}.wagrid span{font-size:9.5px;letter-spacing:.06em}.poster{max-width:420px;margin:0 auto;width:100%}.info{grid-template-columns:1fr}.counter{gap:16px}.ring,.ring svg{width:124px;height:124px}.ring .n b{font-size:42px}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.stat span{font-size:13px}}
+@media (max-width:359px){header img.logo{height:28px}.live{font-size:9px;letter-spacing:.06em;padding:6px 8px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup">
+  <div class="live"><i></i><span id="upd">Dados</span></div>
+</header>
+
+<div class="hero">
+  <div class="card">
+    <div class="k">Seletiva Mobil Moto4 Brasil</div>
+    <h1>Seletiva <span>2027</span></h1>
+    <p class="sub"><b>17 e 18 de novembro</b> · Kartódromo Internacional de Nova Odessa (SP)</p>
+    <div class="counter">
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#C604F7"/><stop offset=".5" stop-color="#D63DFC"/><stop offset="1" stop-color="#E37BFD"/></linearGradient></defs>
+          <circle cx="60" cy="60" r="52" fill="none" stroke="#1d0a22" stroke-width="10"/>
+          <circle id="arc" cx="60" cy="60" r="52" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" style="transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)"/></svg>
+        <div class="n"><b id="cnt">0</b><span>de <em id="meta" style="font-style:normal">50</em></span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Pilotos confirmados</span><b id="sConf">0</b></div>
+        <div class="stat"><span>Lugares restantes</span><b class="hi" id="sRest">50</b></div>
+        <div class="stat"><span>Pela web · pelo WhatsApp</span><b id="sCanal">0 · 0</b></div>
+      </div>
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="full" id="full">Seletiva completa · 50 pilotos confirmados</div>
+    <a class="cta" href="seletiva-brasil.html">Inscrição e informações</a>
+    <div class="cdl" id="cdl">Inscrições encerram em 15/11 às 23:59 (Brasília)</div>
+    <div class="countdown" id="cd">
+      <div class="cd"><b id="cdD">0</b><span>dias</span></div>
+      <div class="cd"><b id="cdH">0</b><span>horas</span></div>
+      <div class="cd"><b id="cdM">0</b><span>min</span></div>
+    </div>
+  </div>
+  <div class="poster"><img src="seletiva-painel-afiche.jpg" alt="Cartaz oficial da Seletiva Mobil Moto4 Brasil 2027"></div>
+</div>
+
+<section id="waSec" style="display:none">
+  <div class="sh"><h2>Convite pelo WhatsApp</h2><div class="sub" id="waEnv"></div></div>
+  <div class="wagrid">
+    <div class="card"><b id="waConv">0</b><span>Convites enviados</span></div>
+    <div class="card"><b id="waSim" style="color:#6ee7a0">0</b><span>Vão participar</span></div>
+    <div class="card"><b id="waNao">0</b><span>Não podem ir</span></div>
+  </div>
+  <p class="sub" style="margin-top:10px;font-size:13px">Respostas pelos botões do convite contadas desde 09/11 às 17h34. Quem confirma pelo WhatsApp entra na lista de pilotos confirmados.</p>
+</section>
+
+<section>
+  <div class="sh">
+    <h2>Pilotos confirmados</h2>
+    <div class="filters" role="group" aria-label="Filtrar por canal">
+      <button aria-pressed="true" data-f="all">Todos</button>
+      <button aria-pressed="false" data-f="web">Web</button>
+      <button aria-pressed="false" data-f="wa">WhatsApp</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section style="padding-top:0">
+  <div class="info">
+    <div class="card"><b>1ª vaga</b><span>Temporada 2027 grátis · inscrição de US$ 14.500 coberta 100%</span></div>
+    <div class="card"><b>2ª vaga</b><span>Bolsa de 50%</span></div>
+    <div class="card"><b>Credenciamento</b><span>17/11 das 13h às 16h · 18/11 das 8h às 9h</span></div>
+  </div>
+</section>
+
+<footer>
+  <div>Dados de <span id="upd2">—</span> · Mobil Moto4 Latin Cup</div>
+  <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+</footer>
+</div>
+
+<script>
+// O painel mostra uma foto dos dados embutida abaixo (gerada manualmente; não há leitura automática).
+var DATA_URL = null;
+var SNAPSHOT = {"atualizado": "2026-11-09T18:31:00-03:00", "meta": 50, "confirmados": [{"nome": "Kayque S.", "uf": "SP", "canal": "web", "data": "2026-10-27T15:10:00-03:00", "n": 1}, {"nome": "Marcos S.", "uf": "SP", "canal": "web", "data": "2026-10-27T16:12:00-03:00", "n": 2}, {"nome": "João S.", "uf": "SP", "canal": "web", "data": "2026-11-07T06:13:00-03:00", "n": 3}, {"nome": "Kaio P.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:14:00-03:00", "n": 4}, {"nome": "Erick A.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:15:00-03:00", "n": 5}, {"nome": "Henrique G.", "uf": "", "canal": "wa", "data": "2026-11-09T17:54:00-03:00", "n": 6}, {"nome": "Well", "uf": "SP", "canal": "wa", "data": "2026-11-09T17:57:00-03:00", "n": 7}], "wa": {"convidados": 82, "enviado": "2026-11-09T16:46:00-03:00", "sim": 2, "nao": 3}};
+var CIERRE = new Date("2026-11-15T23:59:00-03:00");
+var filtro = "all", datos = SNAPSHOT;
+
+function fmt(d){try{return new Date(d).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}catch(e){return d}}
+function fdia(d){try{return new Date(d).toLocaleDateString("pt-BR",{timeZone:"America/Sao_Paulo",day:"2-digit",month:"2-digit"})}catch(e){return ""}}
+function render(){
+  var meta = datos.meta || 50, lista = datos.confirmados || [], n = Math.min(lista.length, meta);
+  var web = lista.filter(function(p){return p.canal==="web"}).length, wa = lista.length - web;
+  document.getElementById("meta").textContent = meta;
+  document.getElementById("cnt").textContent = n;
+  document.getElementById("sConf").textContent = n;
+  document.getElementById("sRest").textContent = Math.max(meta-n,0);
+  document.getElementById("sCanal").textContent = web+" · "+wa;
+  var p = n/meta;
+  requestAnimationFrame(function(){
+    document.getElementById("arc").style.strokeDashoffset = (326.7*(1-p)).toFixed(1);
+    document.getElementById("bar").style.width = (p*100).toFixed(1)+"%";
+  });
+  document.getElementById("full").style.display = n>=meta ? "block" : "none";
+  var up = fmt(datos.atualizado); document.getElementById("upd2").textContent = up;
+  document.getElementById("upd").textContent = "Dados de "+up;
+  var w = datos.wa; if(w){ document.getElementById("waSec").style.display="block";
+    document.getElementById("waConv").textContent=w.convidados; document.getElementById("waSim").textContent=w.sim; document.getElementById("waNao").textContent=w.nao;
+    document.getElementById("waEnv").textContent = w.enviado ? "Enviado em "+fmt(w.enviado) : ""; }
+  var g = document.getElementById("grid"); g.innerHTML = "";
+  var vis = lista.filter(function(r){return filtro==="all"||r.canal===filtro});
+  if(!vis.length){ g.innerHTML = '<div class="empty">Ainda não há confirmações neste canal.</div>'; return; }
+  vis.forEach(function(r,i){
+    var d = document.createElement("div"); d.className="rider"; d.style.animationDelay=(i*40)+"ms";
+    d.innerHTML = '<div class="num"></div><div><div class="nm"></div><div class="meta"><span class="tag"></span><span class="uf"></span></div></div>';
+    d.querySelector(".num").textContent = r.n;
+    d.querySelector(".nm").textContent = r.nome;
+    var t = d.querySelector(".tag"); t.textContent = r.canal==="web"?"Web":"WhatsApp"; t.className="tag "+(r.canal==="web"?"web":"wa");
+    d.querySelector(".uf").textContent = [r.uf, r.data?fdia(r.data):""].filter(Boolean).join(" · ");
+    g.appendChild(d);
+  });
+  if(filtro==="all"){ for(var k=vis.length;k<Math.min(meta,vis.length+4);k++){ var s=document.createElement("div"); s.className="slot"; s.textContent=String(k+1).padStart(2,"0"); g.appendChild(s);} }
+}
+function tick(){
+  var ms = CIERRE - new Date();
+  if(ms<=0){ document.getElementById("cd").style.display="none"; document.getElementById("cdl").textContent="Inscrições encerradas"; return; }
+  document.getElementById("cdD").textContent = Math.floor(ms/864e5);
+  document.getElementById("cdH").textContent = Math.floor(ms/36e5)%24;
+  document.getElementById("cdM").textContent = Math.floor(ms/6e4)%60;
+}
+function cargar(){
+  if(!DATA_URL) return;
+  fetch(DATA_URL,{cache:"no-store"}).then(function(r){return r.json()}).then(function(j){ if(j&&j.confirmados){ datos=j; render(); } }).catch(function(){});
+}
+document.querySelectorAll(".filters button").forEach(function(b){
+  b.addEventListener("click",function(){ filtro=b.dataset.f; document.querySelectorAll(".filters button").forEach(function(x){x.setAttribute("aria-pressed",x===b)}); render(); });
+});
+render(); tick(); setInterval(tick,30000); cargar(); setInterval(cargar,60000);
+</script>
+</body>
+</html>

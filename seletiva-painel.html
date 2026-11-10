@@ -163,15 +163,24 @@ footer img{height:26px;width:auto;opacity:.95}
 
 <script>
 // O painel lê os dados publicados pelo bot da Seletiva (atualizados automaticamente a cada 15 minutos).
-// Se a leitura falhar, mostra a última foto dos dados embutida abaixo.
+// Ao abrir: mostra a última leitura salva neste navegador (se houver) ou "Carregando…"; nunca um número mais antigo.
+// Se a leitura falhar por 8 segundos e não houver nada salvo, mostra a foto embutida abaixo.
 var DATA_URL = "https://script.google.com/macros/s/AKfycbzvEWvW5beIcYPnfpMILQPOv964tb8KbeEuO8KqhN9A6Dfg34SO1bgMMT1J1FiABFjEHQ/exec?seletiva=painel";
 var SNAPSHOT = {"atualizado": "2026-11-09T19:46:00-03:00", "meta": 50, "auto": true, "confirmados": [{"nome": "Kayque S.", "uf": "SP", "canal": "web", "data": "2026-10-27T12:00:00-03:00", "n": 1}, {"nome": "Marcos S.", "uf": "SP", "canal": "web", "data": "2026-10-27T12:00:00-03:00", "n": 2}, {"nome": "João S.", "uf": "SP", "canal": "web", "data": "2026-11-07T12:00:00-03:00", "n": 3}, {"nome": "Kaio P.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:00:00-03:00", "n": 4}, {"nome": "Erick A.", "uf": "SP", "canal": "web", "data": "2026-11-09T12:00:00-03:00", "n": 5}, {"nome": "Henrique G.", "uf": "", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 6}, {"nome": "Piloto", "uf": "SP", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 7}, {"nome": "Willian O.", "uf": "", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 8}, {"nome": "Gaspar T.", "uf": "", "canal": "wa", "data": "2026-11-09T12:00:00-03:00", "n": 9}], "wa": {"convidados": 82, "enviado": "2026-11-09T16:46:00-03:00", "sim": 4, "nao": 4}};
 var CIERRE = new Date("2026-11-15T23:59:00-03:00");
-var filtro = "all", datos = SNAPSHOT, enVivo = false;
+var CACHE_KEY = "seletiva2027_painel", filtro = "all", enVivo = false;
+function recente(j){ return j && Array.isArray(j.confirmados) && j.atualizado ? j : null; }
+function leerCache(){ try{ var c = recente(JSON.parse(localStorage.getItem(CACHE_KEY) || "null")); return c && c.atualizado >= SNAPSHOT.atualizado ? c : null; }catch(e){ return null; } }
+var datos = DATA_URL ? leerCache() : SNAPSHOT;
 
 function fmt(d){try{return new Date(d).toLocaleString("pt-BR",{timeZone:"America/Sao_Paulo",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}catch(e){return d}}
 function fdia(d){try{return new Date(d).toLocaleDateString("pt-BR",{timeZone:"America/Sao_Paulo",day:"2-digit",month:"2-digit"})}catch(e){return ""}}
 function render(){
+  if(!datos){
+    ["cnt","sConf","sRest","sCanal"].forEach(function(id){ document.getElementById(id).textContent = "…"; });
+    document.getElementById("upd").textContent = "Carregando…"; document.getElementById("upd2").textContent = "…";
+    document.getElementById("grid").innerHTML = '<div class="empty">Carregando dados…</div>'; return;
+  }
   var meta = datos.meta || 50, lista = datos.confirmados || [], n = Math.min(lista.length, meta);
   var web = lista.slice(0, meta).filter(function(p){return p.canal==="web"}).length, wa = n - web;
   document.getElementById("meta").textContent = meta;
@@ -213,12 +222,17 @@ function tick(){
 }
 function cargar(){
   if(!DATA_URL) return;
-  fetch(DATA_URL,{cache:"no-store"}).then(function(r){return r.json()}).then(function(j){ if(j && Array.isArray(j.confirmados) && j.atualizado){ datos=j; enVivo=true; render(); } }).catch(function(){});
+  fetch(DATA_URL,{cache:"no-store"}).then(function(r){return r.json()}).then(function(j){
+    j = recente(j); if(!j || (datos && j.atualizado < datos.atualizado)) return;   // nunca volta para um dado mais antigo
+    datos = j; enVivo = true; try{ localStorage.setItem(CACHE_KEY, JSON.stringify(j)); }catch(e){}
+    render();
+  }).catch(function(){ if(!datos){ datos = SNAPSHOT; render(); } });  // sem conexão e nada salvo: mostra a foto já
 }
 document.querySelectorAll(".filters button").forEach(function(b){
   b.addEventListener("click",function(){ filtro=b.dataset.f; document.querySelectorAll(".filters button").forEach(function(x){x.setAttribute("aria-pressed",x===b)}); render(); });
 });
-render(); tick(); setInterval(tick,30000); cargar(); setInterval(function(){ if(!document.hidden) cargar(); },300000);
+render(); tick(); setInterval(tick,30000); cargar();
+setTimeout(function(){ if(!datos){ datos = SNAPSHOT; render(); } }, 8000); setInterval(function(){ if(!document.hidden) cargar(); },300000);
 document.addEventListener("visibilitychange",function(){ if(!document.hidden) cargar(); });
 </script>
 </body>

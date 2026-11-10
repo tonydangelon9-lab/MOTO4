@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-10",
+    categoria: "Instagram",
+    titulo: "🏁 TEMPORADA 2027 GRÁTIS",
+    bajada: "🏁 TEMPORADA 2027 GRÁTIS  Seletiva da Mobil Moto4 Latin Cup no Brasil · 17 e 18 de novembro · Kartódromo Internacional de Nova Odessa (SP).  🥇 1ª vaga: temporada 2027 grátis (insc",
+    imagen: "NOTICIAS-IG/DflCVGpJVEe.jpg",
+    ig: "DflCVGpJVEe",
+    cuerpo: "🏁 TEMPORADA 2027 GRÁTIS<br><br>Seletiva da Mobil Moto4 Latin Cup no Brasil · 17 e 18 de novembro · Kartódromo Internacional de Nova Odessa (SP).<br><br>🥇 1ª vaga: temporada 2027 grátis (inscrição de US$ 14.500 coberta 100%).<br>🥈 2ª vaga: bolsa de 50%.<br><br>✅ Pilotos brasileiros de 14 a 18 anos, com no máximo 18 anos em 4 de abril de 2027.<br>🏍️ Participação 100% gratuita, com Honda CB 300F Twister para a seletiva.<br>✈️ Viagens, alimentação e hospedagem ficam por conta de cada piloto.<br><br>📅 Inscrições até 15 de novembro (23h59, horário de Brasília) ou até completar 50 pilotos.<br>👉 Link na bio<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP"
+  },
+  {
     fecha: "2026-11-09",
     categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Lorenzo Tiberi (Argentina) llega a la gran final de la Mobil Moto4 Lat…",

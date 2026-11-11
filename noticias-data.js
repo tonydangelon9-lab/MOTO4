@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-11",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Murilo Gomes (Brasil) llega a la gran final de la Mobil Moto4 Latin Cu…",
+    bajada: "CAMINO A GOIÂNIA. Murilo Gomes (Brasil) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 8 del campeonato, con 73 puntos. En casa, en Goiânia, dos carreras por delant",
+    imagen: "NOTICIAS-IG/Dfm96xuDxKr.jpg",
+    ig: "Dfm96xuDxKr",
+    cuerpo: "CAMINO A GOIÂNIA. Murilo Gomes (Brasil) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 8 del campeonato, con 73 puntos. En casa, en Goiânia, dos carreras por delante para cerrar el año lo más arriba posible.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-10",
     categoria: "Instagram",
     titulo: "🏁 TEMPORADA 2027 GRÁTIS",

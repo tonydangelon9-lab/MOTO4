@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-11-13",
     categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Ulises Weyrauch (Estados Unidos) llega a la gran final de la Mobil Mot…",
+    bajada: "CAMINO A GOIÂNIA. Ulises Weyrauch (Estados Unidos) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 7 del campeonato, con 89,5 puntos, a 2,5 del sexto lugar. Dos carr",
+    imagen: "NOTICIAS-IG/DfsHgsIiQMt.jpg",
+    ig: "DfsHgsIiQMt",
+    cuerpo: "CAMINO A GOIÂNIA. Ulises Weyrauch (Estados Unidos) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 7 del campeonato, con 89,5 puntos, a 2,5 del sexto lugar. Dos carreras por delante para seguir escalando posiciones.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
+    fecha: "2026-11-13",
+    categoria: "Instagram",
     titulo: "🎂 ¡FELIZ CUMPLEAÑOS, CRISTÓBAL CARREÑO! Hoy celebra el #99 de Chile, piloto de la Mobil…",
     bajada: "🎂 ¡FELIZ CUMPLEAÑOS, CRISTÓBAL CARREÑO! Hoy celebra el #99 de Chile, piloto de la Mobil Moto4 Latin Cup. ¡Grande, Cristóbal!  🇬🇧 HAPPY BIRTHDAY, CRISTÓBAL CARREÑO! Celebrating t",
     imagen: "NOTICIAS-IG/DfrmeNFIEge.jpg",

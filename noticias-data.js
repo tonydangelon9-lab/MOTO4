@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-13",
+    categoria: "Instagram",
+    titulo: "🎂 ¡FELIZ CUMPLEAÑOS, CRISTÓBAL CARREÑO! Hoy celebra el #99 de Chile, piloto de la Mobil…",
+    bajada: "🎂 ¡FELIZ CUMPLEAÑOS, CRISTÓBAL CARREÑO! Hoy celebra el #99 de Chile, piloto de la Mobil Moto4 Latin Cup. ¡Grande, Cristóbal!  🇬🇧 HAPPY BIRTHDAY, CRISTÓBAL CARREÑO! Celebrating t",
+    imagen: "NOTICIAS-IG/DfrmeNFIEge.jpg",
+    ig: "DfrmeNFIEge",
+    cuerpo: "🎂 ¡FELIZ CUMPLEAÑOS, CRISTÓBAL CARREÑO! Hoy celebra el #99 de Chile, piloto de la Mobil Moto4 Latin Cup. ¡Grande, Cristóbal!<br><br>🇬🇧 HAPPY BIRTHDAY, CRISTÓBAL CARREÑO! Celebrating today: Chile's #99, Mobil Moto4 Latin Cup rider. Congratulations, Cristóbal!<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #HappyBirthday #Mobil"
+  },
+  {
     fecha: "2026-11-11",
     categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Murilo Gomes (Brasil) llega a la gran final de la Mobil Moto4 Latin Cu…",

@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-11-13",
     categoria: "Instagram",
+    titulo: "🇧🇷 SEU CAMINHO ATÉ A EUROPA COMEÇA EM NOVA ODESSA",
+    bajada: "🇧🇷 SEU CAMINHO ATÉ A EUROPA COMEÇA EM NOVA ODESSA  A Seletiva Brasil dá a vaga na Mobil Moto4 Latin Cup 2027. E quem for campeão da Mobil Moto4 Latin Cup ganha o passe grátis par",
+    imagen: "NOTICIAS-IG/DfswtYjCUvE.jpg",
+    ig: "DfswtYjCUvE",
+    cuerpo: "🇧🇷 SEU CAMINHO ATÉ A EUROPA COMEÇA EM NOVA ODESSA<br><br>A Seletiva Brasil dá a vaga na Mobil Moto4 Latin Cup 2027. E quem for campeão da Mobil Moto4 Latin Cup ganha o passe grátis para correr na Europa com o Team Junior Latin America, com tudo o que precisa para correr.<br><br>É o Road to MotoGP™, o caminho oficial até o Campeonato do Mundo. Murilo Gomes já está nele. A próxima vaga pode ser sua.<br><br>🥇 1ª vaga: inscrição da temporada 2027 100% coberta (US$ 14.500)<br>🥈 2ª vaga: bolsa de 50%<br>📍 17 e 18 de novembro · Kartódromo Internacional de Nova Odessa (SP)<br>✅ Pilotos brasileiros de 14 a 18 anos · participação gratuita na seletiva<br>✈️ Viagens, alimentação e hospedagem por conta de cada piloto<br><br>📅 Inscrições até 15/11, às 23h59 (horário de Brasília)<br>👉 Link na bio<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP"
+  },
+  {
+    fecha: "2026-11-13",
+    categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Ulises Weyrauch (Estados Unidos) llega a la gran final de la Mobil Mot…",
     bajada: "CAMINO A GOIÂNIA. Ulises Weyrauch (Estados Unidos) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 7 del campeonato, con 89,5 puntos, a 2,5 del sexto lugar. Dos carr",
     imagen: "NOTICIAS-IG/DfsHgsIiQMt.jpg",

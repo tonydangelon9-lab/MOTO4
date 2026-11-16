@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-16",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Santiago Gossa (Argentina) llega a la gran final de la Mobil Moto4 Lat…",
+    bajada: "CAMINO A GOIÂNIA. Santiago Gossa (Argentina) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 6 del campeonato, con 92 puntos. Dos carreras por delante para cerrar el",
+    imagen: "NOTICIAS-IG/Dfz14wylEWf.jpg",
+    ig: "Dfz14wylEWf",
+    cuerpo: "CAMINO A GOIÂNIA. Santiago Gossa (Argentina) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 6 del campeonato, con 92 puntos. Dos carreras por delante para cerrar el año lo más arriba posible.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-13",
     categoria: "Instagram",
     titulo: "🇧🇷 SEU CAMINHO ATÉ A EUROPA COMEÇA EM NOVA ODESSA",

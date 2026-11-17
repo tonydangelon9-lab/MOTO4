@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Juiz Fernando · Seletiva 2027 · Moto4</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+:root{
+--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;--line:#2a0f30;--muted:#b79bc0;--gold:#facc15;--green:#22c55e;
+--grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+--disp:"MGP Display","Archivo",Arial,sans-serif;
+--dispx:"MGP Display Exp","Archivo",Arial,sans-serif;
+--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:#fff;font-family:var(--body);line-height:1.45;min-height:100vh;
+background-image:radial-gradient(1100px 520px at 85% -10%,rgba(198,4,247,.28),transparent 60%),radial-gradient(800px 480px at -10% 30%,rgba(227,123,253,.12),transparent 60%)}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header{padding:26px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header img.logo{height:46px;width:auto}
+.live{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:rgba(14,4,16,.7)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--purple)}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch;padding:22px 0 10px}.hero>*{min-width:0}
+.k{font:700 12px/1 var(--disp);letter-spacing:.22em;text-transform:uppercase;color:var(--pink)}
+h1{font-family:var(--dispx);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(40px,5.4vw,60px);line-height:.92;margin:10px 0 12px;overflow-wrap:anywhere}
+h1.long{font-size:clamp(26px,5vw,52px);overflow-wrap:normal}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);font-size:15px}
+.sub b{color:#fff;font-weight:600}
+.card{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:22px;padding:22px}
+.poster{border-radius:22px;overflow:hidden;border:1px solid var(--line);position:relative;background:#000;align-self:start;aspect-ratio:4/5}
+.poster img{display:block;width:100%;height:100%;object-fit:contain}
+.who{font:700 15px/1.2 var(--disp);letter-spacing:.08em;text-transform:uppercase;margin-top:18px}
+.cta{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:999px;background:var(--grad);color:#fff;text-decoration:none;font:700 13px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase}
+.cta.big{display:block;text-align:center;padding:18px 20px;font-size:16px;margin-top:14px;box-shadow:0 10px 30px rgba(198,4,247,.35)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.ghost{display:inline-block;padding:14px 16px;border-radius:999px;border:1px solid var(--purple);color:#fff;text-decoration:none;font:700 11.5px/1.1 var(--disp);letter-spacing:.1em;text-transform:uppercase;background:rgba(22,5,24,.6)}
+.note{color:var(--muted);font-size:13.5px;margin-top:12px}
+.warn{margin-top:12px;font:700 11px/1.3 var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+section{padding:26px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+h2{font-family:var(--dispx);font-weight:800;font-stretch:120%;text-transform:uppercase;font-size:clamp(22px,3.6vw,30px);line-height:1}
+.pill{font:700 10.5px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(250,204,21,.4);border-radius:999px;padding:7px 10px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}.two>*{min-width:0}
+.tl{list-style:none;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.tl li:last-child{border-bottom:0}
+.tl b{font:700 15px/1.2 var(--disp);color:var(--pink);letter-spacing:.02em}
+.tl span{display:block;font:700 15px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.03em}
+.tl em{display:block;font-style:normal;color:var(--muted);font-size:13px;margin-top:2px}
+.dots{list-style:none;display:grid;gap:10px}
+.dots li{position:relative;padding-left:18px;font-size:14.5px}
+.dots li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.escala{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.esc{background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.esc b{display:block;font-family:var(--dispx);font-weight:800;font-stretch:115%;font-size:22px;line-height:1}
+.esc span{font:700 10px/1.25 var(--disp);letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.info3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.info3 .card{padding:16px 18px}
+.bt{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.cr{font:700 15px/1.25 var(--disp);text-transform:uppercase;letter-spacing:.02em;padding:6px 0;border-bottom:1px solid var(--line)}
+.cr:last-child{border-bottom:0}
+.empty{color:var(--muted);padding:20px;text-align:center;border:1px dashed var(--line);border-radius:16px}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lk{text-decoration:none;color:#fff;padding:16px 18px;display:block}
+.lk b{display:block;font:700 16px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.03em}
+.lk span{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+.lk:hover,.ghost:hover{border-color:var(--pink)}
+.steps{list-style:none;display:grid;gap:10px}
+.steps li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px}
+.steps li>b{font-family:var(--dispx);font-weight:800;font-stretch:120%;font-size:22px;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#160518;border:1px solid var(--line);flex:0 0 auto}
+.steps span{display:block;font:700 16px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.03em}
+.steps p{color:var(--muted);font-size:14px;margin-top:4px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.info .card{padding:16px 18px}
+.info b{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.info span{font:700 17px/1.2 var(--disp);text-transform:uppercase}
+footer{border-top:1px solid var(--line);padding:22px 0 34px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
+footer img{height:26px;width:auto;opacity:.95}
+@media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(34px,11vw,52px)}h1.long{font-size:clamp(18px,5.6vw,40px)}.card{padding:18px}.poster{max-width:420px;margin:0 auto;width:100%}.info,.info3,.links,.two{grid-template-columns:1fr}.escala{grid-template-columns:repeat(2,1fr)}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.tl li{grid-template-columns:84px 1fr}}
+@media (max-width:359px){header img.logo{height:28px}.live{font-size:9px;letter-spacing:.06em;padding:6px 8px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup">
+  <div class="live"><i></i><span>Juiz · Seletiva 2027</span></div>
+</header>
+<div class="hero">
+  <div class="card">
+    <div class="k">Seletiva Mobil Moto4 Brasil</div>
+    <h1>Juiz <span>Fernando</span></h1>
+    <p class="sub"><b>17 e 18 de novembro</b> · Kartódromo Internacional de Nova Odessa (SP)</p>
+    <p class="who">Fernando Moretto · Juiz</p>
+    <a class="cta big" href="https://docs.google.com/forms/d/e/1FAIpQLSdWhMr8LywYZXilXMsM4CbwTmCuhe-IFeHqbP2K721XeBYI0A/viewform?usp=pp_url&amp;entry.1458699294=Fernando+Moretto" target="_blank" rel="noopener">Avaliar piloto</a>
+    <p class="note">Seu nome já está preenchido. Digite o código pessoal que o Antonio enviou por mensagem privada, escolha a saída (campo "Bateria": 1, 2, 3 ou 4), o nº do colete e dê as 10 notas. Um formulário por piloto em cada saída.</p>
+    <div class="btns"><a class="ghost" href="https://docs.google.com/spreadsheets/d/1PLpLpeWoyGz2rLKXMCW0JH3BGeFXP1JUJfsQBeJseQo/edit" target="_blank" rel="noopener">Painel dos pilotos (dados técnicos)</a></div>
+    <p class="warn">O código pessoal chega por mensagem privada. Não o compartilhe.</p>
+  </div>
+  <div class="poster"><img src="seletiva-painel-afiche.jpg" alt="Cartaz oficial da Seletiva Mobil Moto4 Brasil 2027"></div>
+</div>
+<section>
+  <div class="sh"><h2>Programação 18/11</h2><div class="pill">Proposta · a confirmar pelos juízes</div></div>
+  <div class="two">
+    <div class="card"><ul class="tl">
+      <li><b>8h30</b><div><span>Checagem da pista</span><em>Seca: início às 9h · Molhada: início às 10h e tudo atrasa 1 hora</em></div></li>
+      <li><b>9h–11h</b><div><span>1ª saída</span><em>Todos os pilotos</em></div></li>
+      <li><b>11h–13h</b><div><span>2ª saída</span><em>Todos os pilotos</em></div></li>
+      <li><b>13h–14h</b><div><span>Almoço</span></div></li>
+      <li><b>14h–16h</b><div><span>3ª saída</span><em>Todos os pilotos</em></div></li>
+      <li><b>16h–16h40</b><div><span>4ª saída · final</span><em>Os 10 melhores da nota parcial</em></div></li>
+      <li><b>17h</b><div><span>Decisão das 2 vagas</span><em>Reunião dos juízes</em></div></li>
+    </ul></div>
+    <div class="card"><ul class="dots">
+      <li>10 motos em 2 grupos de 5: enquanto um grupo está na pista, o outro esfria.</li>
+      <li>Baterias de até 5 pilotos: 15 min de pista + 5 min de troca.</li>
+      <li>Grupo 1 = coletes 1 a 5, Grupo 2 = coletes 6 a 10, e assim por diante.</li>
+    </ul><p class="note">Previsão da Climatempo em 17/11 para 18/11: 19 a 31 °C (sensação até 36 °C), pancadas de chuva possíveis até cerca de 9h e entre 12h e 16h. Pôr do sol às 18h31.</p></div>
+  </div>
+</section>
+<section>
+  <div class="sh"><h2>Como avaliar</h2></div>
+  <div class="escala"><div class="esc"><b>1–3</b><span>Baixo</span></div><div class="esc"><b>4–6</b><span>Em desenvolvimento</span></div><div class="esc"><b>7–8</b><span>Bom</span></div><div class="esc"><b>9–10</b><span>Nível campeonato</span></div></div>
+  <div class="info3">
+    <div class="card"><b class="bt">Postura</b><div class="cr">1 Posição na reta</div><div class="cr">2 Posição na frenagem</div><div class="cr">3 Posição na curva</div></div>
+    <div class="card"><b class="bt">Técnica</b><div class="cr">4 Olhar</div><div class="cr">5 Frenagem</div><div class="cr">6 Trajetória</div><div class="cr">7 Saída e acelerador</div></div>
+    <div class="card"><b class="bt">Evolução</b><div class="cr">8 Constância</div><div class="cr">9 Aprendizado</div><div class="cr">10 Conduta na pista</div></div>
+  </div>
+  <p class="note">Ao final: recomenda para as 2 vagas? (Sim / Não / Dúvida) e comentário opcional.</p>
+</section>
+<section>
+  <div class="sh"><h2>Pilotos por grupo</h2></div>
+  <div class="empty">A lista de pilotos por grupo está no Painel dos pilotos (botão acima).</div>
+</section>
+<section>
+  <div class="sh"><h2>Resultado</h2><div class="pill">Proposta · a confirmar pelos juízes</div></div>
+  <div class="card"><ul class="dots">
+      <li>Nota final = média dos 10 critérios de pista + bônus de perfil.</li>
+      <li>Bônus de perfil (se aprovado; máx. +1,5): idade em 17/11 até 14 anos +0,75 · 15 anos +0,5 · 16 anos +0,25 · 17 ou mais 0; já foi campeão de algum campeonato +0,5 (vice não conta); 3 anos ou mais de experiência +0,25.</li>
+      <li>Empate: mais recomendações &quot;Sim&quot;; depois, quem foi avaliado por mais juízes.</li>
+      <li>Se errar uma nota, é só enviar de novo: vale a última do mesmo juiz, saída e colete. Se errar o colete, avise o Antonio.</li>
+  </ul></div>
+</section>
+<footer>
+  <div>Seletiva Mobil Moto4 Brasil 2027 · Juízes</div>
+  <img src="00-LOGOTIPOS/Road_to_MotoGP_Logo_RGB_White-1.webp" alt="Road to MotoGP">
+</footer>
+</div>
+</body>
+</html>

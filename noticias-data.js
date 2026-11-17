@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-17",
+    categoria: "Instagram",
+    titulo: "Uma temporada decidida nos centésimos. 🏁",
+    bajada: "Uma temporada decidida nos centésimos. 🏁 11 corridas, 5 circuitos, 2 países — e o título se decide em Goiânia, de 4 a 6 de dezembro. O próximo capítulo começa hoje na Seletiva Bra",
+    imagen: "NOTICIAS-IG/Df2W6G6k3GO.jpg",
+    ig: "Df2W6G6k3GO",
+    cuerpo: "Uma temporada decidida nos centésimos. 🏁<br>11 corridas, 5 circuitos, 2 países — e o título se decide em Goiânia, de 4 a 6 de dezembro.<br>O próximo capítulo começa hoje na Seletiva Brasil, em Nova Odessa.<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-16",
     categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Santiago Gossa (Argentina) llega a la gran final de la Mobil Moto4 Lat…",

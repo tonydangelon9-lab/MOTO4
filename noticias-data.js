@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-11-17",
     categoria: "Instagram",
+    titulo: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Dia 1",
+    bajada: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Dia 1  Começou em Nova Odessa! Os pilotos chegaram ao Kartódromo Internacional em busca de uma vaga na Mobil Moto4 Latin Cup 2027, o caminho a",
+    imagen: "NOTICIAS-IG/Df23yPXDW_S.jpg",
+    ig: "Df23yPXDW_S",
+    cuerpo: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Dia 1<br><br>Começou em Nova Odessa! Os pilotos chegaram ao Kartódromo Internacional em busca de uma vaga na Mobil Moto4 Latin Cup 2027, o caminho até a MotoGP™.<br><br>Amanhã é dia de pista. 🔥<br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br>@cbmmotociclismo @hondaracingbr @cesarbarrospiloto @ericgranado @mobil.moove <br>#Moto4LatinCup #RoadToMotoGP #SeletivaMoto4 #NovaOdessa #Mobil"
+  },
+  {
+    fecha: "2026-11-17",
+    categoria: "Instagram",
     titulo: "Uma temporada decidida nos centésimos. 🏁",
     bajada: "Uma temporada decidida nos centésimos. 🏁 11 corridas, 5 circuitos, 2 países — e o título se decide em Goiânia, de 4 a 6 de dezembro. O próximo capítulo começa hoje na Seletiva Bra",
     imagen: "NOTICIAS-IG/Df2W6G6k3GO.jpg",

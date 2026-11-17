@@ -87,9 +87,27 @@ h2{font-family:var(--dispx);font-weight:800;font-stretch:120%;text-transform:upp
 .info span{font:700 17px/1.2 var(--disp);text-transform:uppercase}
 footer{border-top:1px solid var(--line);padding:22px 0 34px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
 footer img{height:26px;width:auto;opacity:.95}
-@media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(34px,11vw,52px)}h1.long{font-size:clamp(18px,5.6vw,40px)}.card{padding:18px}.poster{max-width:420px;margin:0 auto;width:100%}.info,.info3,.links,.two{grid-template-columns:1fr}.escala{grid-template-columns:repeat(2,1fr)}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.tl li{grid-template-columns:84px 1fr}}
+@media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(30px,9vw,52px);overflow-wrap:normal}h1.long{font-size:clamp(18px,5.6vw,40px)}.card{padding:18px}.poster{max-width:420px;margin:0 auto;width:100%}.info,.info3,.links,.two{grid-template-columns:1fr}.escala{grid-template-columns:repeat(2,1fr)}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.tl li{grid-template-columns:84px 1fr}}
 @media (max-width:359px){header img.logo{height:28px}.live{font-size:9px;letter-spacing:.06em;padding:6px 8px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.gate{margin-top:14px}
+.gate label{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.gate .row{display:flex;gap:8px}
+.gate input{flex:1;min-width:0;font:700 22px/1 var(--disp);letter-spacing:.3em;text-align:center;color:#fff;background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:14px 12px}
+.gate input:focus{outline:2px solid var(--purple);outline-offset:1px}
+.gate button{border:0;border-radius:14px;padding:0 20px;background:var(--grad);color:#fff;font:700 14px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.ok{margin-top:14px;font:700 11px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:#6ee7a0}
+.k2{font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-top:14px}
+.sai{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.sai button{font:800 20px/1 var(--dispx);font-stretch:115%;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:14px 0;cursor:pointer}
+.sai button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+.lnk{margin-top:10px;background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px;cursor:pointer;padding:8px 0}
+.key{margin-top:16px;border:1px solid rgba(250,204,21,.45);border-radius:16px;padding:14px 16px;background:rgba(250,204,21,.06)}
+.key b{display:block;font:700 14px/1.2 var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.key span{display:block;font-size:14px;margin-top:6px}
+[hidden]{display:none!important}
+.gate input::placeholder{letter-spacing:.04em;font-size:15px;color:#6b5872}
+.cta.off{background:#1d0a22;color:var(--muted);box-shadow:none;cursor:default;border:1px dashed var(--line)}
 
 </style>
 </head>
@@ -104,24 +122,32 @@ footer img{height:26px;width:auto;opacity:.95}
     <div class="k">Seletiva Mobil Moto4 Brasil</div>
     <h1 class="long">Credencia<span>mento</span></h1>
     <p class="sub"><b>17 e 18 de novembro</b> · Kartódromo Internacional de Nova Odessa (SP)</p>
-    <p class="who">Equipe de credenciamento</p>
+    <p class="who">Equipe de credenciamento · no Mac</p>
     <a class="cta big" href="https://docs.google.com/forms/d/e/1FAIpQLSeQJiXAZhrts7KS2RbfO3hLSABQ1fLIHMp2-OoErDOc_dX2QQ/viewform" target="_blank" rel="noopener">Formulário de credenciamento</a>
     <div class="btns"><a class="ghost" href="https://docs.google.com/spreadsheets/d/1OsxphDvN-jsBesbj41J1kt2WUmSlOjuDrhGjfrkaDAg/edit" target="_blank" rel="noopener">Lista de presença</a><a class="ghost" href="seletiva-painel.html">Painel de inscritos</a></div>
-    <p class="note">Se errar algum dado no formulário, avise o Antonio. Não envie de novo com outro colete.</p>
+    <div class="key"><b>O número do colete é o número do piloto</b><span>Durante toda a seletiva, é o único número que os juízes veem na pista, e é com ele que o sistema junta o credenciamento com as notas. O mesmo número na lista, no formulário e no colete. Um número por piloto, entregue em ordem, e nunca trocado depois.</span></div>
     <p class="warn">Não compartilhe este link fora da equipe.</p>
   </div>
   <div class="poster"><img src="seletiva-painel-afiche.jpg" alt="Cartaz oficial da Seletiva Mobil Moto4 Brasil 2027"></div>
 </div>
 <section>
-  <div class="sh"><h2>Passo a passo</h2></div>
+  <div class="sh"><h2>Antes de começar</h2></div>
   <ol class="steps">
-    <li class="card"><b>1</b><div><span>Chegada</span><p>Procure o nome do piloto na lista de presença e marque &quot;Chegou&quot; = Sim.</p></div></li>
-    <li class="card"><b>2</b><div><span>Colete</span><p>Entregue os coletes em ordem: 1, 2, 3… Escreva o número na lista. Um colete por piloto: se a célula ficar vermelha, o número está repetido.</p></div></li>
-    <li class="card"><b>3</b><div><span>Camiseta</span><p>Entregue a camiseta e marque &quot;Camiseta entregue&quot; = Sim.</p></div></li>
-    <li class="card"><b>4</b><div><span>Formulário</span><p>Preencha o formulário de credenciamento com o mesmo número de colete, sem esquecer a data de nascimento e os anos de experiência. Um formulário por piloto.</p></div></li>
-    <li class="card"><b>5</b><div><span>Credenciado</span><p>Marque &quot;Credenciamento feito&quot; = Sim. A linha fica verde.</p></div></li>
-    <li class="card"><b>6</b><div><span>Campeão</span><p>Pergunte se já foi campeão de algum campeonato (vice não conta) e marque Sim ou Não.</p></div></li>
-    <li class="card"><b>7</b><div><span>Sem nome na lista</span><p>Se confirmou pelo WhatsApp e não aparece pelo nome, escreva o nome numa linha &quot;nome pendente&quot;. Quem não está na lista só entra com autorização do responsável da organização.</p></div></li>
+    <li class="card"><b>1</b><div><span>No Mac do Antonio</span><p>Use o Chrome do Mac do Antonio, com a conta Google dele aberta. Assim a lista de presença e o formulário abrem direto, sem pedir acesso.</p></div></li>
+    <li class="card"><b>2</b><div><span>Duas abas</span><p>Abra a lista de presença numa aba e o formulário de credenciamento em outra (botões acima). Troque de aba com Cmd + Option + seta.</p></div></li>
+    <li class="card"><b>3</b><div><span>Coletes em ordem</span><p>Deixe os coletes empilhados em ordem, do número 1 em diante, e o que for usar para medir altura e peso.</p></div></li>
+  </ol>
+</section>
+<section>
+  <div class="sh"><h2>Quando o piloto chegar</h2></div>
+  <ol class="steps">
+    <li class="card"><b>1</b><div><span>Procure o piloto</span><p>Na lista de presença, aperte Cmd + F, digite o nome e marque &quot;Chegou&quot; = Sim. Se confirmou pelo WhatsApp e não aparece pelo nome, escreva o nome numa linha &quot;nome pendente&quot;. Quem não está na lista só entra com autorização do Antonio.</p></div></li>
+    <li class="card"><b>2</b><div><span>Entregue o colete</span><p>Entregue o próximo colete da pilha e escreva o número dele na coluna &quot;Nº do colete&quot;. Se a célula ficar vermelha, esse número já foi usado: troque o colete.</p></div></li>
+    <li class="card"><b>3</b><div><span>Entregue a camiseta</span><p>Marque &quot;Camiseta entregue&quot; = Sim.</p></div></li>
+    <li class="card"><b>4</b><div><span>Preencha o formulário</span><p>Na outra aba, o primeiro campo é o Nº do colete: o mesmo número da lista. Depois: nome completo, data de nascimento, estado, altura e peso medidos, se já correu em Nova Odessa, licença, documento conferido, autorização do responsável (menores de 18) e contato de emergência. Preencha também anos de experiência e melhor resultado.</p></div></li>
+    <li class="card"><b>5</b><div><span>Envie</span><p>Clique em Enviar. Para o próximo piloto, clique em &quot;Enviar outra resposta&quot;.</p></div></li>
+    <li class="card"><b>6</b><div><span>Finalize na lista</span><p>Marque &quot;Credenciamento feito&quot; = Sim (a linha fica verde) e &quot;Já foi campeão?&quot; Sim ou Não (vice não conta).</p></div></li>
+    <li class="card"><b>7</b><div><span>Se errar</span><p>Dado errado: envie o formulário de novo com o mesmo colete, vale o último envio. Colete errado: avise o Antonio.</p></div></li>
   </ol>
 </section>
 <section style="padding-top:0">

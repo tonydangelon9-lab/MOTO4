@@ -87,9 +87,27 @@ h2{font-family:var(--dispx);font-weight:800;font-stretch:120%;text-transform:upp
 .info span{font:700 17px/1.2 var(--disp);text-transform:uppercase}
 footer{border-top:1px solid var(--line);padding:22px 0 34px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
 footer img{height:26px;width:auto;opacity:.95}
-@media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(34px,11vw,52px)}h1.long{font-size:clamp(18px,5.6vw,40px)}.card{padding:18px}.poster{max-width:420px;margin:0 auto;width:100%}.info,.info3,.links,.two{grid-template-columns:1fr}.escala{grid-template-columns:repeat(2,1fr)}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.tl li{grid-template-columns:84px 1fr}}
+@media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(30px,9vw,52px);overflow-wrap:normal}h1.long{font-size:clamp(18px,5.6vw,40px)}.card{padding:18px}.poster{max-width:420px;margin:0 auto;width:100%}.info,.info3,.links,.two{grid-template-columns:1fr}.escala{grid-template-columns:repeat(2,1fr)}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.tl li{grid-template-columns:84px 1fr}}
 @media (max-width:359px){header img.logo{height:28px}.live{font-size:9px;letter-spacing:.06em;padding:6px 8px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.gate{margin-top:14px}
+.gate label{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.gate .row{display:flex;gap:8px}
+.gate input{flex:1;min-width:0;font:700 22px/1 var(--disp);letter-spacing:.3em;text-align:center;color:#fff;background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:14px 12px}
+.gate input:focus{outline:2px solid var(--purple);outline-offset:1px}
+.gate button{border:0;border-radius:14px;padding:0 20px;background:var(--grad);color:#fff;font:700 14px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.ok{margin-top:14px;font:700 11px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:#6ee7a0}
+.k2{font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-top:14px}
+.sai{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.sai button{font:800 20px/1 var(--dispx);font-stretch:115%;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:14px 0;cursor:pointer}
+.sai button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+.lnk{margin-top:10px;background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px;cursor:pointer;padding:8px 0}
+.key{margin-top:16px;border:1px solid rgba(250,204,21,.45);border-radius:16px;padding:14px 16px;background:rgba(250,204,21,.06)}
+.key b{display:block;font:700 14px/1.2 var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.key span{display:block;font-size:14px;margin-top:6px}
+[hidden]{display:none!important}
+.gate input::placeholder{letter-spacing:.04em;font-size:15px;color:#6b5872}
+.cta.off{background:#1d0a22;color:var(--muted);box-shadow:none;cursor:default;border:1px dashed var(--line)}
 
 </style>
 </head>
@@ -105,13 +123,61 @@ footer img{height:26px;width:auto;opacity:.95}
     <h1>Juez <span>Antonio</span></h1>
     <p class="sub"><b>17 y 18 de noviembre</b> · Kartódromo Internacional de Nova Odessa (SP)</p>
     <p class="who">Antonio D&#x27;Angelo · Juez</p>
-    <a class="cta big" href="https://docs.google.com/forms/d/e/1FAIpQLSdWhMr8LywYZXilXMsM4CbwTmCuhe-IFeHqbP2K721XeBYI0A/viewform?usp=pp_url&amp;entry.1458699294=Antonio+D%27Angelo" target="_blank" rel="noopener">Evaluar piloto</a>
-    <p class="note">Tu nombre ya está puesto. Escribe tu código personal, elige la salida (campo «Bateria»: 1, 2, 3 o 4), el número de chaleco y pon las 10 notas. Un formulario por piloto en cada salida.</p>
+    <div class="gate" id="gate">
+      <label for="cod">Tu código personal</label>
+      <div class="row"><input id="cod" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="5" autocomplete="off" placeholder="5 números"><button type="button" id="entrar">Entrar</button></div>
+      <p class="note" id="gmsg" aria-live="polite">Queda guardado solo en este teléfono. Escríbelo con cuidado: con un código incorrecto, las notas no cuentan.</p>
+    </div>
+    <div id="painel" hidden>
+      <p class="ok">Código guardado en este teléfono: <b id="cv"></b></p>
+      <div class="k2">Salida actual</div>
+      <div class="sai" role="group" aria-label="Salida actual"><button type="button" data-s="1" aria-pressed="false">1ª</button><button type="button" data-s="2" aria-pressed="false">2ª</button><button type="button" data-s="3" aria-pressed="false">3ª</button><button type="button" data-s="4" aria-pressed="false">4ª</button></div>
+      <a class="cta big off" id="avaliar" aria-disabled="true">Elige la salida para evaluar</a>
+      <p class="note">El formulario se abre con tu nombre, tu código y la salida ya puestos. Escribe el número de chaleco, pon las 10 notas y toca Enviar. Para el siguiente piloto, vuelve a esta página y toca otra vez Evaluar piloto.</p>
+      <button type="button" class="lnk" id="sair">Cambiar código</button>
+    </div>
+    <noscript><a class="cta big" href="https://docs.google.com/forms/d/e/1FAIpQLSdWhMr8LywYZXilXMsM4CbwTmCuhe-IFeHqbP2K721XeBYI0A/viewform?usp=pp_url&amp;entry.1458699294=Antonio+D%27Angelo">Evaluar piloto (escribe el código en el formulario)</a></noscript>
     <div class="btns"><a class="ghost" href="https://docs.google.com/spreadsheets/d/1PLpLpeWoyGz2rLKXMCW0JH3BGeFXP1JUJfsQBeJseQo/edit" target="_blank" rel="noopener">Panel de pilotos (datos técnicos)</a></div>
-    <p class="warn">El código personal de cada juez va solo por mensaje privado.</p>
+    <p class="warn">El código es personal. No lo compartas.</p>
+    <script>
+    (function(){
+      var K="seletiva2027_juiz_antonio_", F="https://docs.google.com/forms/d/e/1FAIpQLSdWhMr8LywYZXilXMsM4CbwTmCuhe-IFeHqbP2K721XeBYI0A/viewform", N="Antonio+D%27Angelo", mem={};
+      function get(n){if(n==="s")return mem.s||"";try{return localStorage.getItem(K+n)||mem[n]||""}catch(x){return mem[n]||""}}
+      function set(n,v){mem[n]=v;if(n==="s")return;try{localStorage.setItem(K+n,v)}catch(x){}}
+      function del(n){delete mem[n];try{localStorage.removeItem(K+n)}catch(x){}}
+      var gate=document.getElementById("gate"), painel=document.getElementById("painel"), cod=document.getElementById("cod"),
+          msg=document.getElementById("gmsg"), av=document.getElementById("avaliar"), bs=document.querySelectorAll(".sai button");
+      function show(){
+        var c=get("c");
+        if(!/^\d{5}$/.test(c)){gate.hidden=false;painel.hidden=true;return}
+        gate.hidden=true;painel.hidden=false;
+        document.getElementById("cv").textContent=c;
+        var s=get("s");
+        for(var i=0;i<bs.length;i++)bs[i].setAttribute("aria-pressed",bs[i].getAttribute("data-s")===s?"true":"false");
+        if(!s){av.removeAttribute("href");av.className="cta big off";av.setAttribute("aria-disabled","true");av.textContent="Elige la salida para evaluar";return}
+        av.href=F+"?usp=pp_url&entry.1458699294="+N+"&entry.1571350456="+c+"&entry.16767817="+s;av.className="cta big";av.removeAttribute("aria-disabled");av.textContent="Evaluar piloto · "+s+"ª";
+      }
+      function entrar(){var v=(cod.value||"").replace(/\D/g,"");if(!/^\d{5}$/.test(v)){msg.textContent="El código tiene 5 números.";cod.focus();return}set("c",v);cod.value="";show()}
+      document.getElementById("entrar").addEventListener("click",entrar);
+      cod.addEventListener("keydown",function(ev){if(ev.key==="Enter")entrar()});
+      for(var i=0;i<bs.length;i++)bs[i].addEventListener("click",function(){set("s",this.getAttribute("data-s"));show()});
+      document.getElementById("sair").addEventListener("click",function(){del("c");msg.textContent="Queda guardado solo en este teléfono. Escríbelo con cuidado: con un código incorrecto, las notas no cuentan.";show();cod.focus()});
+      show();
+    })();
+    </script>
   </div>
   <div class="poster"><img src="seletiva-painel-afiche.jpg" alt="Afiche oficial de la Seletiva Mobil Moto4 Brasil 2027"></div>
 </div>
+<section>
+  <div class="sh"><h2>Cómo entrar desde el teléfono</h2></div>
+  <ol class="steps">
+    <li class="card"><b>1</b><div><span>Abre el enlace</span><p>Abre esta página en el teléfono. Para tenerla siempre a mano: en iPhone (Safari), toca Compartir y luego Agregar a pantalla de inicio; en Android (Chrome), toca ⋮ y luego Agregar a la pantalla principal.</p></div></li>
+    <li class="card"><b>2</b><div><span>Escribe el código</span><p>Escribe tu código personal de 5 números y toca Entrar. Solo hay que hacerlo una vez.</p></div></li>
+    <li class="card"><b>3</b><div><span>Elige la salida</span><p>Antes de cada salida, toca su número: 1ª, 2ª, 3ª o 4ª. El botón Evaluar piloto aparece solo después de elegir y muestra la salida elegida.</p></div></li>
+    <li class="card"><b>4</b><div><span>Evalúa</span><p>Toca Evaluar piloto, escribe el número de chaleco, pon las 10 notas y la recomendación y toca Enviar. Un formulario por piloto en cada salida.</p></div></li>
+    <li class="card"><b>5</b><div><span>Siguiente piloto</span><p>Vuelve a esta página (por el ícono o con el botón atrás), revisa la salida y toca otra vez Evaluar piloto. No uses «Enviar otra respuesta», porque borra tu nombre y tu código.</p></div></li>
+  </ol>
+</section>
 <section>
   <div class="sh"><h2>Programa 18/11</h2><div class="pill">Propuesta · por confirmar con los jueces</div></div>
   <div class="two">
@@ -157,7 +223,7 @@ footer img{height:26px;width:auto;opacity:.95}
 <section>
   <div class="sh"><h2>Enlaces de la organización</h2><div class="sub">Para enviar a cada persona</div></div>
   <div class="links">
-    <a class="card lk" href="seletiva-credenciamento-kd9zoadr.html"><b>Acreditación</b><span>Equipo de ingreso</span></a>
+    <a class="card lk" href="seletiva-credenciamento-kd9zoadr.html"><b>Acreditación</b><span>Equipo de ingreso, en tu Mac</span></a>
     <a class="card lk" href="seletiva-juiz-thales-78gnqjk2.html"><b>Juez Thales</b><span>Thales Silva</span></a>
     <a class="card lk" href="seletiva-juiz-fernando-hjsvbfdq.html"><b>Juez Fernando</b><span>Fernando Moretto</span></a>
     <a class="card lk" href="seletiva-painel.html"><b>Panel de inscritos</b><span>Público</span></a>

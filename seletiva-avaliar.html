@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Avaliação · Seletiva 2027 · Moto4</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#000000">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,800&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"MGP Display";src:url("05-MGP-FONT/MGPDisplay-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"MGP Display Exp";src:url("05-MGP-FONT/MGPDisplay-BoldExpanded.ttf") format("truetype");font-weight:700;font-display:swap}
+:root{
+--purple:#D63DFC;--violet:#C604F7;--pink:#E37BFD;--bg:#000;--surface:#0e0410;--surface2:#160518;--line:#2a0f30;--muted:#b79bc0;--gold:#facc15;--green:#22c55e;
+--grad:linear-gradient(120deg,var(--violet),var(--purple),var(--pink));
+--disp:"MGP Display","Archivo",Arial,sans-serif;
+--dispx:"MGP Display Exp","Archivo",Arial,sans-serif;
+--body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:#fff;font-family:var(--body);line-height:1.45;min-height:100vh;
+background-image:radial-gradient(1100px 520px at 85% -10%,rgba(198,4,247,.28),transparent 60%),radial-gradient(800px 480px at -10% 30%,rgba(227,123,253,.12),transparent 60%)}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+header{padding:26px 0 8px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header img.logo{height:46px;width:auto}
+.live{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:rgba(14,4,16,.7)}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--purple)}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:stretch;padding:22px 0 10px}.hero>*{min-width:0}
+.k{font:700 12px/1 var(--disp);letter-spacing:.22em;text-transform:uppercase;color:var(--pink)}
+h1{font-family:var(--dispx);font-weight:800;font-stretch:125%;text-transform:uppercase;font-size:clamp(40px,5.4vw,60px);line-height:.92;margin:10px 0 12px;overflow-wrap:anywhere}
+h1.long{font-size:clamp(26px,3.4vw,36px);overflow-wrap:normal}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);font-size:15px}
+.sub b{color:#fff;font-weight:600}
+.card{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:22px;padding:22px}
+.poster{border-radius:22px;overflow:hidden;border:1px solid var(--line);position:relative;background:#000;align-self:start;aspect-ratio:4/5}
+.poster img{display:block;width:100%;height:100%;object-fit:contain}
+.who{font:700 15px/1.2 var(--disp);letter-spacing:.08em;text-transform:uppercase;margin-top:18px}
+.cta{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:999px;background:var(--grad);color:#fff;text-decoration:none;font:700 13px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase}
+.cta.big{display:block;text-align:center;padding:18px 20px;font-size:16px;margin-top:14px;box-shadow:0 10px 30px rgba(198,4,247,.35)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.ghost{display:inline-block;padding:14px 16px;border-radius:999px;border:1px solid var(--purple);color:#fff;text-decoration:none;font:700 11.5px/1.1 var(--disp);letter-spacing:.1em;text-transform:uppercase;background:rgba(22,5,24,.6)}
+.note{color:var(--muted);font-size:13.5px;margin-top:12px}
+.warn{margin-top:12px;font:700 11px/1.3 var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+section{padding:26px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+h2{font-family:var(--dispx);font-weight:800;font-stretch:120%;text-transform:uppercase;font-size:clamp(22px,3.6vw,30px);line-height:1}
+.pill{font:700 10.5px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(250,204,21,.4);border-radius:999px;padding:7px 10px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:10px}.two>*{min-width:0}
+.tl{list-style:none;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.tl li:last-child{border-bottom:0}
+.tl b{font:700 15px/1.2 var(--disp);color:var(--pink);letter-spacing:.02em}
+.tl span{display:block;font:700 15px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.03em}
+.tl em{display:block;font-style:normal;color:var(--muted);font-size:13px;margin-top:2px}
+.dots{list-style:none;display:grid;gap:10px}
+.dots li{position:relative;padding-left:18px;font-size:14.5px}
+.dots li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.escala{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.esc{background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+.esc b{display:block;font-family:var(--dispx);font-weight:800;font-stretch:115%;font-size:22px;line-height:1}
+.esc span{font:700 10px/1.25 var(--disp);letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.info3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.info3 .card{padding:16px 18px}
+.bt{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.cr{font:700 15px/1.25 var(--disp);text-transform:uppercase;letter-spacing:.02em;padding:6px 0;border-bottom:1px solid var(--line)}
+.cr:last-child{border-bottom:0}
+.empty{color:var(--muted);padding:20px;text-align:center;border:1px dashed var(--line);border-radius:16px}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.lk{text-decoration:none;color:#fff;padding:16px 18px;display:block}
+.lk b{display:block;font:700 16px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.03em}
+.lk span{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+.lk:hover,.ghost:hover{border-color:var(--pink)}
+.steps{list-style:none;display:grid;gap:10px}
+.steps li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px}
+.steps li>b{font-family:var(--dispx);font-weight:800;font-stretch:120%;font-size:22px;width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#160518;border:1px solid var(--line);flex:0 0 auto}
+.steps span{display:block;font:700 16px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.03em}
+.steps p{color:var(--muted);font-size:14px;margin-top:4px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.info .card{padding:16px 18px}
+.info b{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.info span{font:700 17px/1.2 var(--disp);text-transform:uppercase}
+footer{border-top:1px solid var(--line);padding:22px 0 34px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
+footer img{height:26px;width:auto;opacity:.95}
+@media (max-width:760px){.hero{grid-template-columns:1fr}h1{font-size:clamp(30px,9vw,52px);overflow-wrap:normal}h1.long{font-size:clamp(18px,5.6vw,40px)}.card{padding:18px}.poster{max-width:420px;margin:0 auto;width:100%}.info,.info3,.links,.two{grid-template-columns:1fr}.escala{grid-template-columns:repeat(2,1fr)}header img.logo{height:34px}.live{font-size:10px;padding:7px 10px}.tl li{grid-template-columns:84px 1fr}}
+@media (max-width:359px){header img.logo{height:28px}.live{font-size:9px;letter-spacing:.06em;padding:6px 8px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.gate{margin-top:14px}
+.gate label{display:block;font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:8px}
+.gate .row{display:flex;gap:8px}
+.gate input{flex:1;min-width:0;font:700 22px/1 var(--disp);letter-spacing:.3em;text-align:center;color:#fff;background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:14px 12px}
+.gate input:focus{outline:2px solid var(--purple);outline-offset:1px}
+.gate button{border:0;border-radius:14px;padding:0 20px;background:var(--grad);color:#fff;font:700 14px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.ok{margin-top:14px;font:700 11px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:#6ee7a0}
+.k2{font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-top:14px}
+.sai{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.sai button{font:800 20px/1 var(--dispx);font-stretch:115%;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:14px 0;cursor:pointer}
+.sai button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+.lnk{margin-top:10px;background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px;cursor:pointer;padding:8px 0}
+.key{margin-top:16px;border:1px solid rgba(250,204,21,.45);border-radius:16px;padding:14px 16px;background:rgba(250,204,21,.06)}
+.key b{display:block;font:700 14px/1.2 var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.key span{display:block;font-size:14px;margin-top:6px}
+[hidden]{display:none!important}
+.gate input::placeholder{letter-spacing:.04em;font-size:15px;color:#6b5872}
+.cta.off{background:#1d0a22;color:var(--muted);box-shadow:none;cursor:default;border:1px dashed var(--line)}
+
+body{padding-bottom:110px}
+.wrap{max-width:720px}
+.box{margin-top:14px}
+.lbl{font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin:18px 0 8px}
+.row{display:flex;gap:8px}
+.big{flex:1;min-width:0;font:800 30px/1 var(--dispx);font-stretch:115%;text-align:center;color:#fff;background:#0a0a0a;border:1px solid var(--line);border-radius:16px;padding:14px 10px}
+.big:focus{outline:2px solid var(--purple);outline-offset:1px}
+.big::placeholder{font:700 15px/1 var(--disp);letter-spacing:.06em;color:#6b5872}
+.btn{border:0;border-radius:16px;padding:0 20px;background:var(--grad);color:#fff;font:700 14px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin-top:10px}
+.chip{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 10px;border-radius:14px;background:#0a0a0a;border:1px solid var(--line);color:#fff;cursor:pointer;text-align:left;min-width:0}
+.chip b{font:800 20px/1 var(--dispx);font-stretch:115%}
+.chip span{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.chip.done{border-color:#1f6b3f;background:rgba(34,197,94,.08)}
+.chip.done b:after{content:" ✓";color:#6ee7a0;font-size:14px}
+.chip[aria-pressed=true]{border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+.pil{display:flex;gap:14px;align-items:center}
+.pil .n{font:800 44px/1 var(--dispx);font-stretch:120%;min-width:76px;height:76px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:#160518;border:1px solid var(--purple)}
+.pil h3{font:700 20px/1.15 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.pil p{color:var(--muted);font-size:13.5px;margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px}
+.facts div{background:#0a0a0a;border:1px solid var(--line);border-radius:12px;padding:9px 11px;min-width:0}
+.facts b{display:block;font:700 9.5px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:5px}
+.facts span{font-size:13.5px;overflow-wrap:anywhere}
+.alert{margin-top:12px;border:1px solid rgba(250,204,21,.45);background:rgba(250,204,21,.07);border-radius:12px;padding:10px 12px;font-size:13.5px;color:#fde68a}
+.err{margin-top:10px;color:#fca5a5;font-size:14px;min-height:1em}
+.grp{font:700 11px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin:22px 0 4px}
+.crb{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:18px;padding:14px;margin-top:10px}
+.crb h4{font:700 15px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.crb p{color:var(--muted);font-size:12.5px;margin-top:4px}
+.sc{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin-top:10px}
+.sc button{font:800 17px/1 var(--dispx);font-stretch:110%;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:10px;padding:13px 0;cursor:pointer;min-width:0}
+.sc button.l{border-color:#3b1d42}.sc button.m{border-color:#4a2552}.sc button.h{border-color:#5d2c68}
+.sc button[aria-pressed=true]{color:#fff;background:var(--grad);border-color:transparent}
+.crb.fx{border-color:#1f6b3f}
+.rec{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.rec button{font:700 15px/1 var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:16px 0;cursor:pointer}
+.rec button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+textarea{width:100%;min-height:80px;margin-top:10px;background:#0a0a0a;border:1px solid var(--line);border-radius:14px;color:#fff;font:15px/1.4 var(--body);padding:12px}
+.bar2{position:fixed;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:rgba(0,0,0,.92);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bar2 .in{max-width:720px;margin:0 auto;display:flex;gap:12px;align-items:center}
+.bar2 .st{font:700 12px/1.3 var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:86px}
+.bar2 button{flex:1;border:0;border-radius:999px;padding:17px 10px;background:var(--grad);color:#fff;font:700 15px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.bar2 button:disabled{background:#1d0a22;color:#6b5872;cursor:default}
+.toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);background:#0f2a1b;border:1px solid #1f6b3f;color:#bbf7d0;border-radius:14px;padding:12px 16px;font:700 13px/1.3 var(--disp);letter-spacing:.06em;text-transform:uppercase;z-index:9;max-width:92vw;text-align:center}
+.sai{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sai button{font:800 22px/1 var(--dispx);font-stretch:115%;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:14px;padding:15px 0;cursor:pointer}
+.sai button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+.hello h1{font-size:clamp(28px,8vw,46px);margin:8px 0 6px;overflow-wrap:normal}
+.muted{color:var(--muted);font-size:13.5px}
+@media (max-width:420px){.sc{grid-template-columns:repeat(5,1fr)}.facts{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img class="logo" src="00-LOGOTIPOS/Moto4_Latin_Cup_2_Line_Purple_Grad_White_RGB.png" alt="Mobil Moto4 Latin Cup">
+  <div class="live"><i></i><span id="chip">Avaliação</span></div>
+</header>
+
+<div class="card hello">
+  <div class="k">Seletiva Mobil Moto4 Brasil 2027</div>
+  <h1 id="ola">…</h1>
+  <p class="muted" id="sub"></p>
+  <p class="warn" id="aviso"></p>
+  <p class="err" id="erroTop" role="alert"></p>
+</div>
+
+<div id="app" hidden>
+  <div class="lbl" id="lSai"></div>
+  <div class="sai" id="sai" role="group"></div>
+
+  <div class="lbl" id="lCol"></div>
+  <div class="row">
+    <input class="big" id="col" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="2" autocomplete="off">
+    <button class="btn" id="buscar" type="button"></button>
+  </div>
+  <p class="err" id="erroCol" role="alert"></p>
+  <details class="box" id="det" open><summary class="muted" id="lLista"></summary><div class="chips" id="chips"></div></details>
+
+  <div id="ficha" hidden>
+    <div class="card box">
+      <div class="pil"><div class="n" id="fN"></div><div><h3 id="fNome"></h3><p id="fSub"></p></div></div>
+      <div class="facts" id="facts"></div>
+      <div class="alert" id="fJa" hidden></div>
+    </div>
+    <div id="crits"></div>
+    <div class="lbl" id="lRec"></div>
+    <div class="rec" id="rec" role="group"></div>
+    <div class="lbl" id="lCom"></div>
+    <textarea id="com" maxlength="500"></textarea>
+  </div>
+</div>
+</div>
+
+<div class="bar2" id="bar" hidden><div class="in"><div class="st" id="st"></div><button id="salvar" type="button" disabled></button></div></div>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+(function(){
+var API = "https://script.google.com/macros/s/AKfycbzMYJUKeBj5Pb5-sSnvky-zM52LrvaGp8CT2DQxa9SuJUa-q2uryz3g6NmtghgvvFBO/exec";
+var CRIT = [{"pt": "1. Posição na reta", "es": "1. Posición en recta", "dpt": "Cabeça baixa atrás da bolha, cotovelos e joelhos fechados.", "des": "Cabeza baja detrás de la cúpula, codos y rodillas cerrados.", "gpt": "Postura técnica", "ges": "Postura técnica"}, {"pt": "2. Posição na frenagem", "es": "2. Posición en frenada", "dpt": "Corpo firme, sem se levantar; segura a moto com as pernas e deixa os braços soltos.", "des": "Cuerpo firme, sin levantarse; se sujeta con las piernas y deja los brazos sueltos.", "gpt": "Postura técnica", "ges": "Postura técnica"}, {"pt": "3. Posição na curva", "es": "3. Posición en curva", "dpt": "Entra com cabeça e ombros para dentro, não só com quadril e joelho; troca de lado sem forçar o guidão.", "des": "Entra con cabeza y hombros hacia dentro, no solo con cadera y rodilla; cambia de lado sin cargar el manubrio.", "gpt": "Postura técnica", "ges": "Postura técnica"}, {"pt": "4. Olhar", "es": "4. Mirada", "dpt": "Olha longe, para a saída da curva, não para a roda dianteira.", "des": "Mira lejos, hacia la salida de la curva, no a la rueda delantera.", "gpt": "Postura técnica", "ges": "Postura técnica"}, {"pt": "5. Frenagem", "es": "5. Frenada", "dpt": "Ponto de frenagem constante, força progressiva, solta o freio aos poucos.", "des": "Punto de frenada constante, fuerza progresiva, suelta el freno poco a poco.", "gpt": "Pilotagem", "ges": "Pilotaje"}, {"pt": "6. Trajetória", "es": "6. Trazada", "dpt": "Ponto de entrada claro, usa toda a largura da pista, passa pelo ápice.", "des": "Punto de entrada claro, usa todo el ancho de la pista, pasa por el vértice.", "gpt": "Pilotagem", "ges": "Pilotaje"}, {"pt": "7. Saída e acelerador", "es": "7. Salida y gas", "dpt": "Abre o acelerador de forma progressiva, sem perder tração.", "des": "Abre el gas de forma progresiva, sin perder tracción.", "gpt": "Pilotagem", "ges": "Pilotaje"}, {"pt": "8. Constância", "es": "8. Constancia", "dpt": "Repete as mesmas referências volta após volta.", "des": "Repite las mismas referencias vuelta tras vuelta.", "gpt": "Pilotagem", "ges": "Pilotaje"}, {"pt": "9. Aprendizado", "es": "9. Aprendizaje", "dpt": "Aplica a correção do treinador de uma bateria para a outra.", "des": "Aplica la corrección del entrenador de una batería a la siguiente.", "gpt": "Potencial", "ges": "Potencial"}, {"pt": "10. Conduta na pista", "es": "10. Conducta en pista", "dpt": "Respeita bandeiras, ultrapassa de forma limpa, cuida dos outros.", "des": "Respeta banderas, adelanta de forma limpia, cuida a los demás.", "gpt": "Potencial", "ges": "Potencial"}];
+var TX = {
+ pt:{chip:"Avaliação",ola:"Juiz ",sub:"Escolha a saída, digite o número do piloto (o número da camiseta) e toque as notas.",aviso:"Link pessoal. Dados de menores: não compartilhe o link nem tire print.",sai:"Saída",col:"Número do piloto (camiseta)",ph:"Nº",buscar:"Ver",lista:"Pilotos credenciados",vazio:"Ainda não há pilotos credenciados.",
+     idade:"Idade",uf:"Estado",alt:"Altura",peso:"Peso",exp:"Experiência",anos:" anos",melhor:"Melhor resultado",motos:"Motos",no:"Nova Odessa · melhor volta",lic:"Licença",
+     ja:"Você já avaliou este piloto nesta saída. Se salvar de novo, vale a nova nota.",jaOutras:"Já avaliado nas saídas: ",rec:"Recomenda para as 2 vagas?",recs:["Sim","Não","Dúvida"],com:"Comentário (opcional)",
+     salvar:"Salvar avaliação",falta:"Escolha a saída",faltaP:"Escolha o piloto",notas:" notas",faltaR:"Falta a recomendação",enviando:"Salvando…",ok:"Salvo · piloto ",okS:" · saída ",
+     e_link:"Link inválido. Peça o seu link ao Antonio.",e_colete:"Esse número não está credenciado. Confira o número da camiseta ou avise o Antonio.",e_rede:"Sem conexão. Tente de novo.",e_servidor:"Erro no servidor. Tente de novo em alguns segundos.",e_ocupado:"Sistema ocupado. Tente de novo.",e_dados:"Faltam dados. Confira as notas e a recomendação."},
+ es:{chip:"Evaluación",ola:"Juez ",sub:"Elige la salida, escribe el número del piloto (el número de la polera) y toca las notas.",aviso:"Enlace personal. Datos de menores: no compartas el enlace ni hagas capturas.",sai:"Salida",col:"Número del piloto (polera)",ph:"Nº",buscar:"Ver",lista:"Pilotos acreditados",vazio:"Todavía no hay pilotos acreditados.",
+     idade:"Edad",uf:"Estado",alt:"Altura",peso:"Peso",exp:"Experiencia",anos:" años",melhor:"Mejor resultado",motos:"Motos",no:"Nova Odessa · mejor vuelta",lic:"Licencia",
+     ja:"Ya evaluaste a este piloto en esta salida. Si guardas de nuevo, vale la nueva nota.",jaOutras:"Ya evaluado en las salidas: ",rec:"¿Lo recomiendas para los 2 cupos?",recs:["Sí","No","Duda"],com:"Comentario (opcional)",
+     salvar:"Guardar evaluación",falta:"Elige la salida",faltaP:"Elige el piloto",notas:" notas",faltaR:"Falta la recomendación",enviando:"Guardando…",ok:"Guardado · piloto ",okS:" · salida ",
+     e_link:"Enlace inválido. Pídele tu enlace a Antonio.",e_colete:"Ese número no está acreditado. Revisa el número de la polera.",e_rede:"Sin conexión. Inténtalo de nuevo.",e_servidor:"Error del servidor. Inténtalo de nuevo en unos segundos.",e_ocupado:"Sistema ocupado. Inténtalo de nuevo.",e_dados:"Faltan datos. Revisa las notas y la recomendación."}
+};
+var REC = ["sim","nao","duvida"];
+var $ = function(id){return document.getElementById(id)};
+function store(k,v){try{ if(v===undefined) return localStorage.getItem("sel27_"+k); if(v===null) localStorage.removeItem("sel27_"+k); else localStorage.setItem("sel27_"+k,v);}catch(x){} return null}
+var m = /(?:^|[#&])t=([A-Za-z0-9_-]{16,64})/.exec(location.hash||"");
+var T = m ? m[1] : (store("t")||"");
+if(m){ store("t",T); try{history.replaceState(null,"",location.pathname+location.search+"#t="+T)}catch(x){} }
+var L = TX.pt, st = {saida:0, piloto:null, notas:[], rec:"", lista:[]};
+
+function api(q){ return fetch(API+"?"+q+"&t="+encodeURIComponent(T),{cache:"no-store"}).then(function(r){return r.json()}); }
+function txt(el,s){ el.textContent = s; }
+function toast(s){ var t=$("toast"); txt(t,s); t.hidden=false; clearTimeout(toast.h); toast.h=setTimeout(function(){t.hidden=true},2600); }
+function errMsg(code){ return L["e_"+code] || L.e_servidor; }
+
+function montar(){
+  txt($("chip"),L.chip); txt($("sub"),L.sub); txt($("aviso"),L.aviso); txt($("lSai"),L.sai); txt($("lCol"),L.col); $("col").placeholder=L.ph; txt($("buscar"),L.buscar);
+  txt($("lLista"),L.lista); txt($("lRec"),L.rec); txt($("lCom"),L.com);
+  var s=$("sai"); s.setAttribute("aria-label",L.sai);
+  for(var i=1;i<=4;i++){ var b=document.createElement("button"); b.type="button"; b.textContent=i+"ª"; b.setAttribute("data-s",i); b.setAttribute("aria-pressed","false");
+    b.addEventListener("click",function(){ st.saida=+this.getAttribute("data-s"); pintarSai(); pintarLista(); pintarJa(); estado(); }); s.appendChild(b); }
+  var cw=$("crits"), g="";
+  CRIT.forEach(function(c,i){
+    var grp = L===TX.es ? c.ges : c.gpt;
+    if(grp!==g){ g=grp; var h=document.createElement("div"); h.className="grp"; h.textContent=g; cw.appendChild(h); }
+    var d=document.createElement("div"); d.className="crb"; d.id="cr"+i;
+    var h4=document.createElement("h4"); h4.textContent = L===TX.es ? c.es : c.pt; d.appendChild(h4);
+    var p=document.createElement("p"); p.textContent = L===TX.es ? c.des : c.dpt; d.appendChild(p);
+    var sc=document.createElement("div"); sc.className="sc"; sc.setAttribute("role","group"); sc.setAttribute("aria-label",h4.textContent);
+    for(var v=1;v<=10;v++){ var b=document.createElement("button"); b.type="button"; b.textContent=v; b.className=v<=3?"l":(v<=6?"m":(v<=8?"h":"")); b.setAttribute("aria-pressed","false");
+      b.setAttribute("data-i",i); b.setAttribute("data-v",v);
+      b.addEventListener("click",function(){ var i=+this.getAttribute("data-i"); st.notas[i]=+this.getAttribute("data-v"); pintarNota(i); estado(); }); sc.appendChild(b); }
+    d.appendChild(sc); cw.appendChild(d);
+  });
+  var r=$("rec"); r.setAttribute("aria-label",L.rec);
+  REC.forEach(function(k,i){ var b=document.createElement("button"); b.type="button"; b.textContent=L.recs[i]; b.setAttribute("data-r",k); b.setAttribute("aria-pressed","false");
+    b.addEventListener("click",function(){ st.rec=this.getAttribute("data-r"); pintarRec(); estado(); }); r.appendChild(b); });
+  $("buscar").addEventListener("click",function(){ buscar($("col").value); });
+  $("col").addEventListener("keydown",function(e){ if(e.key==="Enter") buscar($("col").value); });
+  $("salvar").addEventListener("click",salvar);
+}
+function pintarSai(){ [].forEach.call($("sai").children,function(b){ b.setAttribute("aria-pressed", +b.getAttribute("data-s")===st.saida ? "true":"false"); }); }
+function pintarNota(i){ [].forEach.call($("cr"+i).querySelectorAll("button"),function(b){ b.setAttribute("aria-pressed", +b.getAttribute("data-v")===st.notas[i] ? "true":"false"); }); $("cr"+i).classList.toggle("fx", !!st.notas[i]); }
+function pintarRec(){ [].forEach.call($("rec").children,function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-r")===st.rec ? "true":"false"); }); }
+function pintarLista(){
+  var c=$("chips"); c.innerHTML="";
+  if(!st.lista.length){ var p=document.createElement("p"); p.className="muted"; p.textContent=L.vazio; c.appendChild(p); return; }
+  st.lista.slice().sort(function(a,b){return a.colete-b.colete}).forEach(function(x){
+    var b=document.createElement("button"); b.type="button"; b.className="chip"+(st.saida && x.feitas.indexOf(st.saida)!==-1 ? " done":"");
+    b.setAttribute("aria-pressed", st.piloto && st.piloto.colete===x.colete ? "true":"false");
+    var n=document.createElement("b"); n.textContent=x.colete; var s=document.createElement("span"); s.textContent=x.nome.split(" ")[0];
+    b.appendChild(n); b.appendChild(s); b.addEventListener("click",function(){ $("col").value=x.colete; buscar(x.colete); }); c.appendChild(b);
+  });
+}
+function pintarJa(){
+  var p=st.piloto, el=$("fJa"); if(!p){ el.hidden=true; return; }
+  if(st.saida && p.feitas.indexOf(st.saida)!==-1){ txt(el,L.ja); el.hidden=false; }
+  else if(p.feitas.length){ txt(el,L.jaOutras+p.feitas.slice().sort().map(function(s){return s+"ª"}).join(", ")); el.hidden=false; }
+  else el.hidden=true;
+}
+function fato(lbl,val){ if(val===""||val===null||val===undefined) return; var d=document.createElement("div"); var b=document.createElement("b"); b.textContent=lbl; var s=document.createElement("span"); s.textContent=val; d.appendChild(b); d.appendChild(s); $("facts").appendChild(d); }
+function limparFicha(){ st.piloto=null; st.notas=[]; st.rec=""; $("com").value=""; for(var i=0;i<CRIT.length;i++) pintarNota(i); pintarRec(); $("ficha").hidden=true; }
+function buscar(v){
+  var c=parseInt(String(v).replace(/\D/g,""),10); txt($("erroCol"),"");
+  if(!(c>=1&&c<=98)) { txt($("erroCol"),errMsg("colete")); return; }
+  limparFicha(); txt($("buscar"),"…");
+  api("a=piloto&n="+c).then(function(j){
+    txt($("buscar"),L.buscar);
+    if(!j.ok){ txt($("erroCol"),errMsg(j.erro)); estado(); return; }
+    var p=j.piloto; st.piloto=p;
+    txt($("fN"),p.colete); txt($("fNome"),p.nome);
+    txt($("fSub"),[p.idade!==""?p.idade+L.anos:"", p.uf].filter(Boolean).join(" · "));
+    $("facts").innerHTML="";
+    fato(L.alt, p.altura!==""?p.altura+" cm":""); fato(L.peso, p.peso!==""?p.peso+" kg":"");
+    fato(L.exp, p.exp!==""?p.exp+L.anos:""); fato(L.lic, p.licenca);
+    fato(L.no, [p.novaOdessa, p.voltaNO].filter(Boolean).join(" · ")); fato(L.motos, p.motos); fato(L.melhor, p.melhor);
+    pintarJa(); $("ficha").hidden=false; pintarLista(); estado();
+    $("ficha").scrollIntoView({behavior:"smooth",block:"start"});
+  }).catch(function(){ txt($("buscar"),L.buscar); txt($("erroCol"),L.e_rede); });
+}
+function estado(){
+  var n=st.notas.filter(Boolean).length, b=$("salvar"), s=$("st");
+  $("bar").hidden=false;
+  if(!st.saida){ txt(s,L.falta); b.disabled=true; txt(b,L.salvar); return; }
+  if(!st.piloto){ txt(s,L.faltaP); b.disabled=true; txt(b,L.salvar); return; }
+  txt(s, n+"/10"+L.notas+(n===10 && !st.rec ? " · "+L.faltaR : ""));
+  b.disabled = !(n===10 && st.rec); txt(b, L.salvar+" · "+st.piloto.colete);
+}
+function salvar(){
+  var b=$("salvar"); if(b.disabled) return; b.disabled=true; txt(b,L.enviando);
+  var dados={t:T, colete:st.piloto.colete, saida:st.saida, notas:st.notas.slice(0,10), rec:st.rec, com:$("com").value};
+  fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(dados)})
+  .then(function(r){return r.json()}).then(function(j){
+    if(!j.ok){ toast(errMsg(j.erro)); estado(); return; }
+    toast(L.ok+j.colete+L.okS+j.saida+"ª");
+    st.lista.forEach(function(x){ if(x.colete===j.colete && x.feitas.indexOf(j.saida)===-1) x.feitas.push(j.saida); });
+    limparFicha(); $("col").value=""; pintarLista(); estado(); window.scrollTo({top:0,behavior:"smooth"});
+  }).catch(function(){ toast(L.e_rede); estado(); });
+}
+function carregarLista(){ api("a=lista").then(function(j){ if(j.ok){ st.lista=j.pilotos; pintarLista(); } }).catch(function(){}); }
+
+if(!T){ txt($("ola"),"—"); txt($("erroTop"),TX.pt.e_link); return; }
+api("a=eu").then(function(j){
+  if(!j.ok){ txt($("ola"),"—"); txt($("erroTop"),TX.pt.e_link); store("t",null); return; }
+  L = TX[j.lang] || TX.pt; document.documentElement.lang = j.lang==="es"?"es":"pt-BR";
+  txt($("ola"), L.ola+j.nome.split(" ")[0]); montar(); $("app").hidden=false; estado(); carregarLista();
+  setInterval(function(){ if(!document.hidden) carregarLista(); }, 60000);
+}).catch(function(){ txt($("ola"),"—"); txt($("erroTop"),TX.pt.e_rede); });
+})();
+</script>
+</body>
+</html>

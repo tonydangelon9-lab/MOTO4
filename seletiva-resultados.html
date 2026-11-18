@@ -203,6 +203,7 @@ function rec(r){ r=String(r||""); if(/^Sim/i.test(r)) return ["Sí","si"]; if(/^
 function cls(v){ return v<=4?"b":(v<=6?"m":(v<=8?"a":"x")); }
 function fmt(v){ return (Math.round(v*10)/10).toFixed(1).replace(".",","); }
 function num(s){ return String(s||"").replace(".",","); }
+function hhmm(h){ var n=Number(h); if(isFinite(n) && n>30000){ var f=Math.round((n-Math.floor(n))*1440); var hh=Math.floor(f/60)%24, mm=f%60; return (hh<10?"0":"")+hh+":"+(mm<10?"0":"")+mm; } return String(h||""); }
 
 function pintar(d){
   ultimo = d;
@@ -253,7 +254,7 @@ function detalhe(dt, p, notas, juizes){
       var hn=el("div","ns h"); for(var k=1;k<=10;k++) hn.appendChild(el("i",null,String(k))); dt.appendChild(hn); }
     var ev=el("div","ev"), hd=el("div","hd");
     var media = x.notas.reduce(function(a,v){ return a+v; },0)/x.notas.length;
-    var esq=el("div"); esq.appendChild(el("b",null,x.juiz)); esq.appendChild(document.createTextNode(" ")); esq.appendChild(el("span",null,x.hora));
+    var esq=el("div"); esq.appendChild(el("b",null,x.juiz)); esq.appendChild(document.createTextNode(" ")); esq.appendChild(el("span",null,hhmm(x.hora)));
     var dir=el("div"); var r=rec(x.rec); dir.appendChild(el("span","rc "+r[1],r[0])); dir.appendChild(document.createTextNode(" ")); dir.appendChild(el("em",null,fmt(media)));
     hd.appendChild(esq); hd.appendChild(dir); ev.appendChild(hd);
     var ns=el("div","ns"); x.notas.forEach(function(v,i){ var c=el("i",cls(v),String(v)); c.title=(i+1)+". "+CRIT[i]; ns.appendChild(c); }); ev.appendChild(ns);

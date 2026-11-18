@@ -156,6 +156,15 @@ footer img{height:26px;width:auto;opacity:.95}
 .sn{display:flex;flex-wrap:wrap;gap:6px}
 .sn span{background:#0a0a0a;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12.5px;color:var(--muted)}
 .leg{color:var(--muted);font-size:11.5px;margin-top:8px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:18px}
+.seg button{font:700 12px/1.15 var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:12px;padding:12px 4px;cursor:pointer}
+.seg button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
+.seg button small{display:block;font:500 10.5px/1.2 var(--body);letter-spacing:0;text-transform:none;margin-top:3px}
+.tag{display:inline-block;font:700 10px/1 var(--disp);letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:999px;margin-top:5px;margin-right:4px}
+.tag.ok{background:rgba(34,197,94,.12);border:1px solid #1f6b3f;color:#bbf7d0}
+.tag.up{background:rgba(198,4,247,.12);border:1px solid var(--purple);color:#f5d0fe}
+.tag.dn{background:rgba(239,68,68,.1);border:1px solid #7f1d1d;color:#fecaca}
+.it.corte{border-bottom:2px dashed #1f6b3f}
 @media (max-width:480px){.cg{grid-template-columns:repeat(5,1fr)}.ns i{font-size:11.5px}.it .nt{font-size:24px}}
 </style>
 </head>
@@ -176,12 +185,13 @@ footer img{height:26px;width:auto;opacity:.95}
 </div>
 
 <div id="app" hidden>
+  <div class="seg" id="seg" role="tablist"></div>
   <div class="lbl">Notas cargadas por juez</div>
   <div class="jz" id="jz"></div>
-  <div class="lbl">Ranking · toca un piloto para ver quién puso cada nota</div>
+  <div class="lbl" id="lRk"></div>
   <div class="rk" id="rk"></div>
-  <p class="leg">Nota final = promedio de los 10 criterios con todas las notas válidas. Si un juez guardó dos veces el mismo piloto en la misma salida, vale la última.</p>
-  <div id="snBox" hidden><div class="lbl">Sin notas todavía</div><div class="sn" id="sn"></div></div>
+  <p class="leg" id="leg"></p>
+  <div id="snBox" hidden><div class="lbl" id="lSn"></div><div class="sn" id="sn"></div></div>
 </div>
 </div>
 
@@ -197,55 +207,130 @@ function leer(){ try{ return localStorage.getItem(K)||""; }catch(e){ return ""; 
 var m = location.hash.match(/t=([A-Za-z0-9_-]{10,})/);
 var T = m ? m[1] : leer();
 if(m){ store(T); try{ history.replaceState(null,"",location.pathname); }catch(e){} }
-var abiertos = {}, ultimo = null, carregando = false;
+var abiertos = {}, ultimo = null, carregando = false, vista = null;
+var VISTAS = [
+  {id:"c", s:[1,2], t:"1ª + 2ª", sub:"Clasificación", corte:12, tagCorte:"Pasa a la 3ª"},
+  {id:"3", s:[3], t:"3ª tanda", sub:"Desde cero · pasan los 6 mejores", corte:6, tagCorte:"Pasa a la 4ª"},
+  {id:"4", s:[4], t:"4ª tanda", sub:"Final · 2 cupos", corte:2, tagCorte:"Cupo"}
+];
 
 function rec(r){ r=String(r||""); if(/^Sim/i.test(r)) return ["Sí","si"]; if(/^N/i.test(r)) return ["No","no"]; if(/^D/i.test(r)) return ["Duda","du"]; return [r,""]; }
 function cls(v){ return v<=4?"b":(v<=6?"m":(v<=8?"a":"x")); }
-function fmt(v){ return (Math.round(v*10)/10).toFixed(1).replace(".",","); }
-function num(s){ return String(s||"").replace(".",","); }
+function fmt(v){ return (Math.round(v*100)/100).toFixed(2).replace(".",","); }
+function f1(v){ return (Math.round(v*10)/10).toFixed(1).replace(".",","); }
 function hhmm(h){ var n=Number(h); if(isFinite(n) && n>30000){ var f=Math.round((n-Math.floor(n))*1440); var hh=Math.floor(f/60)%24, mm=f%60; return (hh<10?"0":"")+hh+":"+(mm<10?"0":"")+mm; } return String(h||""); }
+function seg(v){ var t=String(v).trim().replace(",","."); var p=t.split(":"); var x = p.length===2 ? Number(p[0])*60+Number(p[1]) : Number(t); return isFinite(x)&&x>0 ? x : null; }
+function media(a){ return a.length ? a.reduce(function(p,v){return p+v;},0)/a.length : 0; }
+function avg10(x){ return media(x.notas); }
+
+function calcular(d, V, permit){
+  var todasV=(d.notas||[]).filter(function(x){ return V.s.indexOf(x.saida)>=0; });
+  var ok={}; if(permit) permit.forEach(function(c){ ok[c]=1; });
+  var notas=permit ? todasV.filter(function(x){ return ok[x.colete]; }) : todasV;
+  var fora=permit ? todasV.filter(function(x){ return !ok[x.colete]; }) : [];
+  var fic={}; (d.fichas||[]).forEach(function(p){ fic[p.colete]=p; });
+  (d.ranking||[]).forEach(function(p){ if(!fic[p.colete]) fic[p.colete]={colete:p.colete,nome:p.nome,idade:p.idade,uf:p.uf}; });
+  var col={}; notas.forEach(function(x){ (col[x.colete]=col[x.colete]||[]).push(x); });
+  var tanda = V.s.length===1 ? V.s[0] : null;
+  var tempos={}, melhor=null, ilegiveis=[];
+  if(tanda){ (d.tempos||[]).forEach(function(t){ if(t.saida!==tanda) return; if(permit && !ok[t.colete]) return; var v=seg(t.volta); if(v){ tempos[t.colete]={txt:t.volta, v:v}; if(melhor===null||v<melhor) melhor=v; } else ilegiveis.push("#"+t.colete+" «"+t.volta+"»"); }); }
+  var aj={}; if(tanda){ (d.ajustes||[]).forEach(function(a){ if(a.saida===tanda) (aj[a.colete]=aj[a.colete]||[]).push(a); }); }
+  var lista=Object.keys(col).map(function(k){
+    var c=Number(k), ev=col[k], base=media(ev.map(avg10));
+    var bon = (tanda && tempos[c] && tempos[c].v===melhor) ? 1 : 0;
+    var soma = (aj[c]||[]).reduce(function(p,a){ return p+a.valor; },0);
+    var juizes={}; ev.forEach(function(x){ juizes[x.juiz]=1; });
+    var crit=[]; for(var i=0;i<10;i++) crit.push(media(ev.map(function(x){ return x.notas[i]; })));
+    return {c:c, f:fic[c]||{nome:"#"+c}, ev:ev, base:base, bon:bon, aj:aj[c]||[], soma:soma, total:base+bon+soma, nj:Object.keys(juizes).length,
+            si:ev.filter(function(x){ return /^Sim/i.test(x.rec); }).length, crit:crit, tempo:tempos[c]||null};
+  });
+  var rd=function(x){ return Math.round(x*1000); };
+  lista.sort(function(a,b){ return (rd(b.total)-rd(a.total)) || (b.si-a.si) || (b.nj-a.nj); });
+  var empate = false;
+  if(V.corte && lista.length>V.corte){ var a=lista[V.corte-1], b=lista[V.corte]; empate = rd(a.total)===rd(b.total) && a.si===b.si && a.nj===b.nj; }
+  var foraCol={}; fora.forEach(function(x){ foraCol[x.colete]=(foraCol[x.colete]||0)+1; });
+  return {lista:lista, notas:notas, tanda:tanda, fora:foraCol, ilegiveis:ilegiveis, empate:empate};
+}
+
+function congelados(d, V){ var c=d.clasificados||{}; var l=c[V.id]; return (l && l.length) ? l : null; }
+function clasificados(d, V){
+  var cg=congelados(d, V); if(cg) return cg;
+  if(V.id==="3") return calcular(d, VISTAS[0]).lista.slice(0,12).map(function(x){ return x.c; });
+  if(V.id==="4") return calcular(d, VISTAS[1], clasificados(d, VISTAS[1])).lista.slice(0,6).map(function(x){ return x.c; });
+  return (d.fichas||[]).map(function(p){ return p.colete; });
+}
+
+function pintarSeg(d){
+  var sg=$("seg"); sg.innerHTML="";
+  VISTAS.forEach(function(V){
+    var b=el("button"); b.type="button"; b.setAttribute("aria-pressed", vista===V.id?"true":"false");
+    b.appendChild(document.createTextNode(V.t)); b.appendChild(el("small",null,V.sub));
+    b.addEventListener("click", function(){ vista=V.id; abiertos={}; pintar(ultimo); });
+    sg.appendChild(b);
+  });
+}
 
 function pintar(d){
   ultimo = d;
-  var notas = d.notas||[], rk = d.ranking||[], sem = d.semNotas||[];
-  var total = rk.length + sem.length;
-  $("st").textContent = "Actualizado " + d.hora + " · " + notas.length + " notas · " + rk.length + " de " + total + " pilotos con notas";
-  // jueces
+  var todas = d.notas||[];
+  if(!vista){ vista = todas.some(function(x){ return x.saida===4; }) ? "4" : (todas.some(function(x){ return x.saida===3; }) ? "3" : "c"); }
+  var V = VISTAS.filter(function(v){ return v.id===vista; })[0];
+  pintarSeg(d);
+  var esperados = clasificados(d, V);
+  var R = calcular(d, V, V.id==="c" ? null : esperados);
+  $("st").textContent = "Actualizado " + d.hora + " · " + todas.length + " notas en total";
   var jz=$("jz"); jz.innerHTML="";
   (d.juizes||[]).forEach(function(n){
-    var mine = notas.filter(function(x){ return x.juiz===n; });
+    var mine = todas.filter(function(x){ return x.juiz===n; });
     var por=[0,0,0,0]; mine.forEach(function(x){ if(x.saida>=1&&x.saida<=4) por[x.saida-1]++; });
-    var c=el("div", mine.length?"":"cero"); c.appendChild(el("b",null,n)); c.appendChild(el("em",null,String(mine.length)));
+    var esta = R.notas.filter(function(x){ return x.juiz===n; }).length;
+    var c=el("div", esta?"":"cero"); c.appendChild(el("b",null,n)); c.appendChild(el("em",null,String(esta)));
     c.appendChild(el("small",null,"1ª "+por[0]+" · 2ª "+por[1]+" · 3ª "+por[2]+" · 4ª "+por[3])); jz.appendChild(c);
   });
-  // ranking
+  $("lRk").textContent = V.id==="c" ? "Clasificación 1ª + 2ª · toca un piloto para ver quién puso cada nota" : (V.t+" · desde cero · toca un piloto para ver el detalle");
+  if(V.id!=="c" && !congelados(d, V)) $("lRk").textContent += " · lista de clasificados PROVISORIA (calculada, sin confirmar)";
   var box=$("rk"); box.innerHTML="";
-  if(!rk.length) box.appendChild(el("p","muted","Todavía no hay notas válidas."));
-  rk.forEach(function(p, i){
-    var it=el("div","it"+(i<2?" top":"")); var b=el("button"); b.type="button"; b.setAttribute("aria-expanded", abiertos[p.colete]?"true":"false");
-    b.appendChild(el("span","ps",p.pos+"º")); b.appendChild(el("span","nu",String(p.colete)));
-    var tx=el("span","tx"); tx.appendChild(el("b",null,p.nome));
-    tx.appendChild(el("small",null,[p.idade?p.idade+" años":"", p.uf, p.aval+" notas", p.juizes+" jueces", p.sim+" sí"].filter(Boolean).join(" · ")));
-    if(p.alerta) tx.appendChild(el("span","al",p.alerta.split(" · ").map(function(a){ return a.split(" / ").pop(); }).join(" · ")));
-    b.appendChild(tx); b.appendChild(el("span","nt",num(p.nota)));
+  if(R.empate) box.appendChild(el("p","al","⚠ Empate en el corte (misma nota, mismos «sí» y mismos jueces): decide Antonio."));
+  if(R.ilegiveis.length) box.appendChild(el("p","al","⚠ Tiempo que no se pudo leer: "+R.ilegiveis.join(", ")+". Revisa la pestaña Tempos."));
+  var fk=Object.keys(R.fora); if(fk.length) box.appendChild(el("p","al","⚠ Notas de pilotos no clasificados para esta tanda (revisar, no cuentan): "+fk.map(function(c){ return "#"+c+" ("+R.fora[c]+")"; }).join(", ")+"."));
+  if(!R.lista.length) box.appendChild(el("p","muted","Todavía no hay notas en esta tanda."));
+  R.lista.forEach(function(p, i){
+    var it=el("div","it"+(i<V.corte?" top":"")+(i===V.corte-1&&R.lista.length>V.corte?" corte":""));
+    var b=el("button"); b.type="button"; b.setAttribute("aria-expanded", abiertos[p.c]?"true":"false");
+    b.appendChild(el("span","ps",(i+1)+"º")); b.appendChild(el("span","nu",String(p.c)));
+    var tx=el("span","tx"); tx.appendChild(el("b",null,p.f.nome));
+    var ln=[p.f.idade?p.f.idade+" años":"", p.f.uf, p.ev.length+" notas", p.nj+" jueces", p.si+" sí"];
+    if(R.tanda) ln.unshift("base "+fmt(p.base));
+    tx.appendChild(el("small",null,ln.filter(Boolean).join(" · ")));
+    if(i<V.corte) tx.appendChild(el("span","tag ok",V.tagCorte));
+    if(p.bon) tx.appendChild(el("span","tag up","+1 mejor vuelta"+(p.tempo?" "+p.tempo.txt:"")));
+    p.aj.forEach(function(a){ tx.appendChild(el("span","tag "+(a.valor<0?"dn":"up"),(a.valor>0?"+":"")+String(a.valor).replace(".",",")+" "+(a.motivo||"ajuste"))); });
+    b.appendChild(tx); b.appendChild(el("span","nt",fmt(p.total)));
     it.appendChild(b);
-    var dt=el("div","dt"); dt.hidden=!abiertos[p.colete];
-    if(abiertos[p.colete]) detalhe(dt, p, notas, d.juizes||[]);
-    b.addEventListener("click", function(){ abiertos[p.colete]=!abiertos[p.colete]; b.setAttribute("aria-expanded", abiertos[p.colete]?"true":"false");
-      dt.hidden=!abiertos[p.colete]; dt.innerHTML=""; if(abiertos[p.colete]) detalhe(dt, p, notas, d.juizes||[]); });
+    var dt=el("div","dt"); dt.hidden=!abiertos[p.c];
+    if(abiertos[p.c]) detalhe(dt, p, d.juizes||[]);
+    b.addEventListener("click", function(){ abiertos[p.c]=!abiertos[p.c]; b.setAttribute("aria-expanded", abiertos[p.c]?"true":"false");
+      dt.hidden=!abiertos[p.c]; dt.innerHTML=""; if(abiertos[p.c]) detalhe(dt, p, d.juizes||[]); });
     it.appendChild(dt); box.appendChild(it);
   });
-  var sn=$("sn"); sn.innerHTML=""; $("snBox").hidden=!sem.length;
-  sem.forEach(function(p){ sn.appendChild(el("span",null,"#"+p.colete+" "+String(p.nome).split(" ")[0])); });
+  $("leg").textContent = V.id==="c" ? "Nota = promedio de las notas válidas de la 1ª y 2ª salida (los 10 criterios, mismo peso). Pasan a la 3ª los 12 primeros." :
+    "Nota de la tanda = promedio de los jueces en esta tanda + 1 a la mejor vuelta de la tanda − 1 por cada caída. Empate: más «sí», después más jueces.";
+  var com = {}; R.lista.forEach(function(p){ com[p.c]=1; });
+  var falt = esperados.filter(function(c){ return !com[c]; });
+  var fic={}; (d.fichas||[]).forEach(function(p){ fic[p.colete]=p; });
+  var sn=$("sn"); sn.innerHTML=""; $("snBox").hidden=!falt.length;
+  $("lSn").textContent = V.id==="c" ? "Sin notas todavía" : "Clasificados sin notas en esta tanda";
+  falt.forEach(function(c){ sn.appendChild(el("span",null,"#"+c+" "+String((fic[c]||{}).nome||"").split(" ")[0])); });
   $("app").hidden=false;
 }
 
-function detalhe(dt, p, notas, juizes){
+function detalhe(dt, p, juizes){
+  if(p.tempo) dt.appendChild(el("div","sh","Mejor vuelta en esta tanda: "+p.tempo.txt+(p.bon?" · la más rápida (+1)":"")));
   dt.appendChild(el("div","sh","Promedio por criterio"));
   var cg=el("div","cg");
-  CRIT.forEach(function(c,i){ var x=el("div"); x.appendChild(el("small",null,(i+1)+". "+c)); x.appendChild(el("b",null,num(p.crit[i]))); cg.appendChild(x); });
+  CRIT.forEach(function(c,i){ var x=el("div"); x.appendChild(el("small",null,(i+1)+". "+c)); x.appendChild(el("b",null,f1(p.crit[i]))); cg.appendChild(x); });
   dt.appendChild(cg);
-  var mine = notas.filter(function(x){ return x.colete===p.colete; });
+  var mine = p.ev.slice();
   var ord = function(n){ var k=juizes.indexOf(n); return k<0?99:k; };
   mine.sort(function(a,b){ return (a.saida-b.saida) || (ord(a.juiz)-ord(b.juiz)); });
   var sAtual = 0;
@@ -253,9 +338,8 @@ function detalhe(dt, p, notas, juizes){
     if(x.saida!==sAtual){ sAtual=x.saida; dt.appendChild(el("div","sh",x.saida+"ª salida"));
       var hn=el("div","ns h"); for(var k=1;k<=10;k++) hn.appendChild(el("i",null,String(k))); dt.appendChild(hn); }
     var ev=el("div","ev"), hd=el("div","hd");
-    var media = x.notas.reduce(function(a,v){ return a+v; },0)/x.notas.length;
     var esq=el("div"); esq.appendChild(el("b",null,x.juiz)); esq.appendChild(document.createTextNode(" ")); esq.appendChild(el("span",null,hhmm(x.hora)));
-    var dir=el("div"); var r=rec(x.rec); dir.appendChild(el("span","rc "+r[1],r[0])); dir.appendChild(document.createTextNode(" ")); dir.appendChild(el("em",null,fmt(media)));
+    var dir=el("div"); var r=rec(x.rec); dir.appendChild(el("span","rc "+r[1],r[0])); dir.appendChild(document.createTextNode(" ")); dir.appendChild(el("em",null,f1(avg10(x))));
     hd.appendChild(esq); hd.appendChild(dir); ev.appendChild(hd);
     var ns=el("div","ns"); x.notas.forEach(function(v,i){ var c=el("i",cls(v),String(v)); c.title=(i+1)+". "+CRIT[i]; ns.appendChild(c); }); ev.appendChild(ns);
     if(x.com) ev.appendChild(el("p","cm","“"+x.com+"”"));

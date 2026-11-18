@@ -216,12 +216,12 @@ var TX = {
      idade:"Idade",uf:"Estado",alt:"Altura",peso:"Peso",exp:"Experiência",anos:" anos",melhor:"Melhor resultado",motos:"Motos",no:"Nova Odessa · melhor volta",lic:"Licença",
      ja:"Você já avaliou este piloto nesta saída. Se salvar de novo, vale a nova nota.",jaOutras:"Já avaliado nas saídas: ",rec:"Recomenda para as 2 vagas?",recs:["Sim","Não","Dúvida"],com:"Comentário (opcional)",
      salvar:"Salvar avaliação",falta:"Escolha a saída",faltaP:"Escolha o piloto",notas:" notas",faltaR:"Falta a recomendação",enviando:"Salvando…",ok:"Salvo · piloto ",okS:" · saída ",
-     e_link:"Link inválido. Peça o seu link ao Antonio.",e_colete:"Esse número não está credenciado. Confira o número da camiseta ou avise o Antonio.",e_rede:"Sem conexão. Tente de novo.",e_servidor:"Erro no servidor. Tente de novo em alguns segundos.",e_ocupado:"Sistema ocupado. Tente de novo.",e_dados:"Faltam dados. Confira as notas e a recomendação."},
+     e_link:"Link inválido. Peça o seu link ao Antonio.",e_colete:"Esse número não está credenciado. Confira o número da camiseta ou avise o Antonio.",e_rede:"Sem conexão. Tente de novo.",e_servidor:"Erro no servidor. Tente de novo em alguns segundos.",e_ocupado:"Sistema ocupado. Tente de novo.",e_dados:"Faltam dados. Confira as notas e a recomendação.",e_tanda:"Esse piloto não corre nesta saída (não está entre os classificados).",soCls:"Saída {s}: só os {n} classificados"},
  es:{chip:"Evaluación",ola:"Juez ",sub:"Elige la salida, escribe el número del piloto (el número de la polera) y toca las notas.",aviso:"Enlace personal. Datos de menores: no compartas el enlace ni hagas capturas.",sai:"Salida",col:"Número del piloto (polera)",ph:"Nº",buscar:"Ver",lista:"Pilotos acreditados",vazio:"Todavía no hay pilotos acreditados.",
      idade:"Edad",uf:"Estado",alt:"Altura",peso:"Peso",exp:"Experiencia",anos:" años",melhor:"Mejor resultado",motos:"Motos",no:"Nova Odessa · mejor vuelta",lic:"Licencia",
      ja:"Ya evaluaste a este piloto en esta salida. Si guardas de nuevo, vale la nueva nota.",jaOutras:"Ya evaluado en las salidas: ",rec:"¿Lo recomiendas para los 2 cupos?",recs:["Sí","No","Duda"],com:"Comentario (opcional)",
      salvar:"Guardar evaluación",falta:"Elige la salida",faltaP:"Elige el piloto",notas:" notas",faltaR:"Falta la recomendación",enviando:"Guardando…",ok:"Guardado · piloto ",okS:" · salida ",
-     e_link:"Enlace inválido. Pídele tu enlace a Antonio.",e_colete:"Ese número no está acreditado. Revisa el número de la polera.",e_rede:"Sin conexión. Inténtalo de nuevo.",e_servidor:"Error del servidor. Inténtalo de nuevo en unos segundos.",e_ocupado:"Sistema ocupado. Inténtalo de nuevo.",e_dados:"Faltan datos. Revisa las notas y la recomendación."}
+     e_link:"Enlace inválido. Pídele tu enlace a Antonio.",e_colete:"Ese número no está acreditado. Revisa el número de la polera.",e_rede:"Sin conexión. Inténtalo de nuevo.",e_servidor:"Error del servidor. Inténtalo de nuevo en unos segundos.",e_ocupado:"Sistema ocupado. Inténtalo de nuevo.",e_dados:"Faltan datos. Revisa las notas y la recomendación.",e_tanda:"Ese piloto no corre en esta salida (no está entre los clasificados).",soCls:"Salida {s}: solo los {n} clasificados"}
 };
 var REC = ["sim","nao","duvida"];
 var $ = function(id){return document.getElementById(id)};
@@ -229,7 +229,7 @@ function store(k,v){try{ if(v===undefined) return localStorage.getItem("sel27_"+
 var m = /(?:^|[#&])t=([A-Za-z0-9_-]{16,64})/.exec(location.hash||"");
 var T = m ? m[1] : (store("t")||"");
 if(m){ store("t",T); try{history.replaceState(null,"",location.pathname+location.search+"#t="+T)}catch(x){} }
-var L = TX.pt, st = {saida:0, piloto:null, notas:[], rec:"", lista:[]};
+var L = TX.pt, st = {saida:0, piloto:null, notas:[], rec:"", lista:[], clas:{}};
 
 function api(q){ return fetch(API+"?"+q+"&t="+encodeURIComponent(T),{cache:"no-store"}).then(function(r){return r.json()}); }
 function txt(el,s){ el.textContent = s; }
@@ -241,7 +241,7 @@ function montar(){
   txt($("lLista"),L.lista); txt($("lRec"),L.rec); txt($("lCom"),L.com);
   var s=$("sai"); s.setAttribute("aria-label",L.sai);
   for(var i=1;i<=4;i++){ var b=document.createElement("button"); b.type="button"; b.textContent=i+"ª"; b.setAttribute("data-s",i); b.setAttribute("aria-pressed","false");
-    b.addEventListener("click",function(){ st.saida=+this.getAttribute("data-s"); pintarSai(); pintarLista(); pintarJa(); estado(); }); s.appendChild(b); }
+    b.addEventListener("click",function(){ st.saida=+this.getAttribute("data-s"); var pm=permitidos(); if(st.piloto && pm && pm.indexOf(st.piloto.colete)===-1){ limparFicha(); $("col").value=""; txt($("erroCol"),errMsg("tanda")); } else txt($("erroCol"),""); pintarSai(); pintarLista(); pintarJa(); estado(); }); s.appendChild(b); }
   var cw=$("crits"), g="";
   CRIT.forEach(function(c,i){
     var grp = L===TX.es ? c.ges : c.gpt;
@@ -265,10 +265,13 @@ function montar(){
 function pintarSai(){ [].forEach.call($("sai").children,function(b){ b.setAttribute("aria-pressed", +b.getAttribute("data-s")===st.saida ? "true":"false"); }); }
 function pintarNota(i){ [].forEach.call($("cr"+i).querySelectorAll("button"),function(b){ b.setAttribute("aria-pressed", +b.getAttribute("data-v")===st.notas[i] ? "true":"false"); }); $("cr"+i).classList.toggle("fx", !!st.notas[i]); }
 function pintarRec(){ [].forEach.call($("rec").children,function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-r")===st.rec ? "true":"false"); }); }
+function permitidos(){ var l=st.clas && st.saida ? st.clas[st.saida] : null; return (l && l.length) ? l : null; }
 function pintarLista(){
   var c=$("chips"); c.innerHTML="";
   if(!st.lista.length){ var p=document.createElement("p"); p.className="muted"; p.textContent=L.vazio; c.appendChild(p); return; }
-  st.lista.slice().sort(function(a,b){return a.colete-b.colete}).forEach(function(x){
+  var pm=permitidos();
+  if(pm){ var aviso=document.createElement("p"); aviso.className="muted"; aviso.style.gridColumn="1 / -1"; aviso.textContent=L.soCls.replace("{s}",st.saida+"ª").replace("{n}",pm.length); c.appendChild(aviso); }
+  st.lista.filter(function(x){ return !pm || pm.indexOf(x.colete)!==-1; }).slice().sort(function(a,b){return a.colete-b.colete}).forEach(function(x){
     var b=document.createElement("button"); b.type="button"; b.className="chip"+(st.saida && x.feitas.indexOf(st.saida)!==-1 ? " done":"");
     b.setAttribute("aria-pressed", st.piloto && st.piloto.colete===x.colete ? "true":"false");
     var n=document.createElement("b"); n.textContent=x.colete; var s=document.createElement("span"); s.textContent=x.nome.split(" ")[0];
@@ -286,6 +289,7 @@ function limparFicha(){ st.piloto=null; st.notas=[]; st.rec=""; $("com").value="
 function buscar(v){
   var c=parseInt(String(v).replace(/\D/g,""),10); txt($("erroCol"),"");
   if(!(c>=1&&c<=98)) { txt($("erroCol"),errMsg("colete")); return; }
+  var pm=permitidos(); if(pm && pm.indexOf(c)===-1) { limparFicha(); txt($("erroCol"),errMsg("tanda")); estado(); return; }
   limparFicha(); txt($("buscar"),"…");
   api("a=piloto&n="+c).then(function(j){
     txt($("buscar"),L.buscar);
@@ -320,7 +324,7 @@ function salvar(){
     limparFicha(); $("col").value=""; pintarLista(); estado(); window.scrollTo({top:0,behavior:"smooth"});
   }).catch(function(){ toast(L.e_rede); estado(); });
 }
-function carregarLista(){ api("a=lista").then(function(j){ if(j.ok){ st.lista=j.pilotos; pintarLista(); } }).catch(function(){}); }
+function carregarLista(){ api("a=lista").then(function(j){ if(j.ok){ st.lista=j.pilotos; st.clas=j.clas||{}; pintarLista(); } }).catch(function(){}); }
 
 if(!T){ txt($("ola"),"—"); txt($("erroTop"),TX.pt.e_link); return; }
 api("a=eu").then(function(j){

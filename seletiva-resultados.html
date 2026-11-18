@@ -156,7 +156,7 @@ footer img{height:26px;width:auto;opacity:.95}
 .sn{display:flex;flex-wrap:wrap;gap:6px}
 .sn span{background:#0a0a0a;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12.5px;color:var(--muted)}
 .leg{color:var(--muted);font-size:11.5px;margin-top:8px}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:18px}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:18px}
 .seg button{font:700 12px/1.15 var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:#0a0a0a;border:1px solid var(--line);border-radius:12px;padding:12px 4px;cursor:pointer}
 .seg button[aria-pressed=true]{color:#fff;background:var(--surface2);border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple)}
 .seg button small{display:block;font:500 10.5px/1.2 var(--body);letter-spacing:0;text-transform:none;margin-top:3px}
@@ -165,6 +165,11 @@ footer img{height:26px;width:auto;opacity:.95}
 .tag.up{background:rgba(198,4,247,.12);border:1px solid var(--purple);color:#f5d0fe}
 .tag.dn{background:rgba(239,68,68,.1);border:1px solid #7f1d1d;color:#fecaca}
 .it.corte{border-bottom:2px dashed #1f6b3f}
+.adm{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.adm button{font:700 11px/1 var(--disp);letter-spacing:.08em;text-transform:uppercase;padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#0a0a0a;color:#fff;cursor:pointer}
+.adm button.dn{border-color:#7f1d1d;color:#fecaca}.adm button.up{border-color:var(--purple);color:#f5d0fe}
+.adm button.conf{background:var(--grad);border-color:transparent;color:#fff}
+.adm button:disabled{opacity:.5}
 @media (max-width:480px){.cg{grid-template-columns:repeat(5,1fr)}.ns i{font-size:11.5px}.it .nt{font-size:24px}}
 </style>
 </head>
@@ -209,9 +214,10 @@ var T = m ? m[1] : leer();
 if(m){ store(T); try{ history.replaceState(null,"",location.pathname); }catch(e){} }
 var abiertos = {}, ultimo = null, carregando = false, vista = null;
 var VISTAS = [
-  {id:"c", s:[1,2], t:"1ª + 2ª", sub:"Clasificación", corte:12, tagCorte:"Pasa a la 3ª"},
-  {id:"3", s:[3], t:"3ª tanda", sub:"Desde cero · pasan los 6 mejores", corte:6, tagCorte:"Pasa a la 4ª"},
-  {id:"4", s:[4], t:"4ª tanda", sub:"Final · 2 cupos", corte:2, tagCorte:"Cupo"}
+  {id:"c", s:[1,2], t:"1ª + 2ª", sub:"Clasificación", corte:12, sig:"3", tagCorte:"Pasa a la 3ª"},
+  {id:"3", s:[3], t:"3ª", sub:"Pasan 7", corte:7, sig:"4", tagCorte:"Pasa a la 4ª"},
+  {id:"4", s:[4], t:"4ª", sub:"Pasan a la 5ª", corte:0, sig:"5", tagCorte:"Pasa a la 5ª"},
+  {id:"5", s:[5], t:"5ª", sub:"Final · 2 cupos", corte:2, sig:null, tagCorte:"Cupo"}
 ];
 
 function rec(r){ r=String(r||""); if(/^Sim/i.test(r)) return ["Sí","si"]; if(/^N/i.test(r)) return ["No","no"]; if(/^D/i.test(r)) return ["Duda","du"]; return [r,""]; }
@@ -237,7 +243,7 @@ function calcular(d, V, permit){
   var aj={}; if(tanda){ (d.ajustes||[]).forEach(function(a){ if(a.saida===tanda) (aj[a.colete]=aj[a.colete]||[]).push(a); }); }
   var lista=Object.keys(col).map(function(k){
     var c=Number(k), ev=col[k], base=media(ev.map(avg10));
-    var bon = (tanda && tempos[c] && tempos[c].v===melhor) ? 1 : 0;
+    var bon = 0;
     var soma = (aj[c]||[]).reduce(function(p,a){ return p+a.valor; },0);
     var juizes={}; ev.forEach(function(x){ juizes[x.juiz]=1; });
     var crit=[]; for(var i=0;i<10;i++) crit.push(media(ev.map(function(x){ return x.notas[i]; })));
@@ -256,7 +262,8 @@ function congelados(d, V){ var c=d.clasificados||{}; var l=c[V.id]; return (l &&
 function clasificados(d, V){
   var cg=congelados(d, V); if(cg) return cg;
   if(V.id==="3") return calcular(d, VISTAS[0]).lista.slice(0,12).map(function(x){ return x.c; });
-  if(V.id==="4") return calcular(d, VISTAS[1], clasificados(d, VISTAS[1])).lista.slice(0,6).map(function(x){ return x.c; });
+  if(V.id==="4") return calcular(d, VISTAS[1], clasificados(d, VISTAS[1])).lista.slice(0,7).map(function(x){ return x.c; });
+  if(V.id==="5") return null;
   return (d.fichas||[]).map(function(p){ return p.colete; });
 }
 
@@ -273,23 +280,28 @@ function pintarSeg(d){
 function pintar(d){
   ultimo = d;
   var todas = d.notas||[];
-  if(!vista){ vista = todas.some(function(x){ return x.saida===4; }) ? "4" : (todas.some(function(x){ return x.saida===3; }) ? "3" : "c"); }
+  if(!vista){ vista = todas.some(function(x){ return x.saida===5; }) ? "5" : (todas.some(function(x){ return x.saida===4; }) ? "4" : (todas.some(function(x){ return x.saida===3; }) ? "3" : "c")); }
   var V = VISTAS.filter(function(v){ return v.id===vista; })[0];
   pintarSeg(d);
   var esperados = clasificados(d, V);
-  var R = calcular(d, V, V.id==="c" ? null : esperados);
+  var sigCg = V.sig ? congelados(d, VISTAS.filter(function(v){ return v.id===V.sig; })[0]) : null;
+  V = Object.assign({}, V, {corte: sigCg ? sigCg.length : V.corte});
+  var sinLista5 = V.id==="5" && !congelados(d, V);
+  if(sinLista5) V = Object.assign({}, V, {corte: 0});
+  var R = calcular(d, V, (V.id==="c" || !esperados) ? null : esperados);
   $("st").textContent = "Actualizado " + d.hora + " · " + todas.length + " notas en total";
   var jz=$("jz"); jz.innerHTML="";
   (d.juizes||[]).forEach(function(n){
     var mine = todas.filter(function(x){ return x.juiz===n; });
-    var por=[0,0,0,0]; mine.forEach(function(x){ if(x.saida>=1&&x.saida<=4) por[x.saida-1]++; });
+    var por=[0,0,0,0,0]; mine.forEach(function(x){ if(x.saida>=1&&x.saida<=5) por[x.saida-1]++; });
     var esta = R.notas.filter(function(x){ return x.juiz===n; }).length;
     var c=el("div", esta?"":"cero"); c.appendChild(el("b",null,n)); c.appendChild(el("em",null,String(esta)));
-    c.appendChild(el("small",null,"1ª "+por[0]+" · 2ª "+por[1]+" · 3ª "+por[2]+" · 4ª "+por[3])); jz.appendChild(c);
+    c.appendChild(el("small",null,"1ª "+por[0]+" · 2ª "+por[1]+" · 3ª "+por[2]+" · 4ª "+por[3]+" · 5ª "+por[4])); jz.appendChild(c);
   });
   $("lRk").textContent = V.id==="c" ? "Clasificación 1ª + 2ª · toca un piloto para ver quién puso cada nota" : (V.t+" · desde cero · toca un piloto para ver el detalle");
   if(V.id!=="c" && !congelados(d, V)) $("lRk").textContent += " · lista de clasificados PROVISORIA (calculada, sin confirmar)";
   var box=$("rk"); box.innerHTML="";
+  if(sinLista5) box.appendChild(el("p","al","⚠ Lista de la 5ª sin congelar: los cupos todavía no son válidos."));
   if(R.empate) box.appendChild(el("p","al","⚠ Empate en el corte (misma nota, mismos «sí» y mismos jueces): decide Antonio."));
   if(R.ilegiveis.length) box.appendChild(el("p","al","⚠ Tiempo que no se pudo leer: "+R.ilegiveis.join(", ")+". Revisa la pestaña Tempos."));
   var fk=Object.keys(R.fora); if(fk.length) box.appendChild(el("p","al","⚠ Notas de pilotos no clasificados para esta tanda (revisar, no cuentan): "+fk.map(function(c){ return "#"+c+" ("+R.fora[c]+")"; }).join(", ")+"."));
@@ -308,15 +320,15 @@ function pintar(d){
     b.appendChild(tx); b.appendChild(el("span","nt",fmt(p.total)));
     it.appendChild(b);
     var dt=el("div","dt"); dt.hidden=!abiertos[p.c];
-    if(abiertos[p.c]) detalhe(dt, p, d.juizes||[]);
+    if(abiertos[p.c]) detalhe(dt, p, d.juizes||[], R.tanda);
     b.addEventListener("click", function(){ abiertos[p.c]=!abiertos[p.c]; b.setAttribute("aria-expanded", abiertos[p.c]?"true":"false");
-      dt.hidden=!abiertos[p.c]; dt.innerHTML=""; if(abiertos[p.c]) detalhe(dt, p, d.juizes||[]); });
+      dt.hidden=!abiertos[p.c]; dt.innerHTML=""; if(abiertos[p.c]) detalhe(dt, p, d.juizes||[], R.tanda); });
     it.appendChild(dt); box.appendChild(it);
   });
   $("leg").textContent = V.id==="c" ? "Nota = promedio de las notas válidas de la 1ª y 2ª salida (los 10 criterios, mismo peso). Pasan a la 3ª los 12 primeros." :
-    "Nota de la tanda = promedio de los jueces en esta tanda + 1 a la mejor vuelta de la tanda − 1 por cada caída. Empate: más «sí», después más jueces.";
+    "Nota de la tanda = promedio de los jueces en esta tanda + 1 a la mejor vuelta (la marcas tú) − caídas (−1 en la 3ª; −2 desde la 4ª). Empate: más «sí», después más jueces.";
   var com = {}; R.lista.forEach(function(p){ com[p.c]=1; });
-  var falt = esperados.filter(function(c){ return !com[c]; });
+  var falt = (esperados||[]).filter(function(c){ return !com[c]; });
   var fic={}; (d.fichas||[]).forEach(function(p){ fic[p.colete]=p; });
   var sn=$("sn"); sn.innerHTML=""; $("snBox").hidden=!falt.length;
   $("lSn").textContent = V.id==="c" ? "Sin notas todavía" : "Clasificados sin notas en esta tanda";
@@ -324,7 +336,8 @@ function pintar(d){
   $("app").hidden=false;
 }
 
-function detalhe(dt, p, juizes){
+function detalhe(dt, p, juizes, tanda){
+  if(tanda) controles(dt, p, tanda);
   if(p.tempo) dt.appendChild(el("div","sh","Mejor vuelta en esta tanda: "+p.tempo.txt+(p.bon?" · la más rápida (+1)":"")));
   dt.appendChild(el("div","sh","Promedio por criterio"));
   var cg=el("div","cg");
@@ -345,6 +358,31 @@ function detalhe(dt, p, juizes){
     if(x.com) ev.appendChild(el("p","cm","“"+x.com+"”"));
     dt.appendChild(ev);
   });
+}
+
+function controles(dt, p, tanda){
+  dt.appendChild(el("div","sh","Ajustes de la "+tanda+"ª tanda (solo tú)"));
+  var box=el("div","adm");
+  var temMV = p.aj.some(function(a){ return /mejor vuelta/i.test(a.motivo); });
+  var temQ = p.aj.some(function(a){ return /ca[ií]da|queda/i.test(a.motivo); });
+  var acoes=[["caida", tanda<=3 ? "Caída −1" : "Caída −2","dn"]];
+  if(temQ) acoes.push(["quitar_caida","Quitar caída",""]);
+  acoes.push(temMV ? ["quitar_mejor_vuelta","Quitar mejor vuelta",""] : ["mejor_vuelta","Mejor vuelta +1","up"]);
+  acoes.forEach(function(a){
+    var b=el("button",a[2],a[1]); b.type="button"; var armado=false, tm=null;
+    b.addEventListener("click", function(ev){
+      ev.stopPropagation();
+      if(!armado){ armado=true; b.className="conf"; b.textContent="¿Confirmar? "+a[1]; tm=setTimeout(function(){ armado=false; b.className=a[2]; b.textContent=a[1]; }, 5000); return; }
+      clearTimeout(tm); b.disabled=true; b.textContent="Guardando…";
+      fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({a:"ajuste",t:T,op:a[0],saida:tanda,colete:p.c})})
+        .then(function(r){ return r.json(); }).then(function(j){
+          if(!j.ok){ b.disabled=false; armado=false; b.className=a[2]; b.textContent=a[1]; $("err").textContent = j.erro==="ocupado" ? "Sistema ocupado. Inténtalo de nuevo." : "No se pudo guardar el ajuste. Inténtalo de nuevo."; return; }
+          carregar();
+        }).catch(function(){ b.disabled=false; armado=false; b.className=a[2]; b.textContent=a[1]; $("err").textContent="Sin conexión. Inténtalo de nuevo."; });
+    });
+    box.appendChild(b);
+  });
+  dt.appendChild(box);
 }
 
 function carregar(){

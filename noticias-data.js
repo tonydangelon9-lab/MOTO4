@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-11-19",
     categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Andoni Domínguez (Nicaragua) llega a la gran final de la Mobil Moto4 L…",
+    bajada: "CAMINO A GOIÂNIA. Andoni Domínguez (Nicaragua) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 3 del campeonato, con 131,5 puntos. Dos carreras por delante para defe",
+    imagen: "NOTICIAS-IG/Df7kSncgpsW.jpg",
+    ig: "Df7kSncgpsW",
+    cuerpo: "CAMINO A GOIÂNIA. Andoni Domínguez (Nicaragua) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 3 del campeonato, con 131,5 puntos. Dos carreras por delante para defender su lugar en el podio final de la temporada.<br>Goiânia · 4-6 dic<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
+    fecha: "2026-11-19",
+    categoria: "Instagram",
     titulo: "🥇 João Moreira Guimarães Teixeira conquistou a 1ª vaga da Seletiva Mobil Moto4 Brasil 2…",
     bajada: "🥇 João Moreira Guimarães Teixeira conquistou a 1ª vaga da Seletiva Mobil Moto4 Brasil 2027 e vai correr a Mobil Moto4 Latin Cup 2027 com 100% da inscrição coberta. Parabéns, João!",
     imagen: "NOTICIAS-IG/Df7WnYTDa3Z.jpg",

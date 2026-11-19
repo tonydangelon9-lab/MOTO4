@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-11-19",
     categoria: "Instagram",
+    titulo: "🥇 João Moreira Guimarães Teixeira conquistou a 1ª vaga da Seletiva Mobil Moto4 Brasil 2…",
+    bajada: "🥇 João Moreira Guimarães Teixeira conquistou a 1ª vaga da Seletiva Mobil Moto4 Brasil 2027 e vai correr a Mobil Moto4 Latin Cup 2027 com 100% da inscrição coberta. Parabéns, João!",
+    imagen: "NOTICIAS-IG/Df7WnYTDa3Z.jpg",
+    ig: "Df7WnYTDa3Z",
+    cuerpo: "🥇 João Moreira Guimarães Teixeira conquistou a 1ª vaga da Seletiva Mobil Moto4 Brasil 2027 e vai correr a Mobil Moto4 Latin Cup 2027 com 100% da inscrição coberta. Parabéns, João! @joaoteixeira_jt14 <br><br>Obrigado @mobil.moove @hondamotosbr @kartnovaodessa @pedroventuro_fimla @fim_latinamerica <br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #SeletivaMoto4 #NovaOdessa #Mobil"
+  },
+  {
+    fecha: "2026-11-19",
+    categoria: "Instagram",
     titulo: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Missão cumprida!",
     bajada: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Missão cumprida!  Dois dias no Kartódromo Internacional de Nova Odessa e duas vagas para a Mobil Moto4 Latin Cup 2027:  🥇 1ª vaga (100% da in",
     imagen: "NOTICIAS-IG/Df51G_hE4Xz.jpg",

@@ -16,6 +16,15 @@ window.NOTICIAS = [
   {
     fecha: "2026-11-19",
     categoria: "Instagram",
+    titulo: "🥈 Willian Santos de Oliveira conquistou a 2ª vaga da Seletiva Mobil Moto4 Brasil 2027, …",
+    bajada: "🥈 Willian Santos de Oliveira conquistou a 2ª vaga da Seletiva Mobil Moto4 Brasil 2027, com 50% da inscrição 2027. Parabéns, Willian! @piloto_willian_santos   Obrigado @mobil.moove",
+    imagen: "NOTICIAS-IG/Df7_1WGlPry.jpg",
+    ig: "Df7_1WGlPry",
+    cuerpo: "🥈 Willian Santos de Oliveira conquistou a 2ª vaga da Seletiva Mobil Moto4 Brasil 2027, com 50% da inscrição 2027. Parabéns, Willian! @piloto_willian_santos <br><br>Obrigado @mobil.moove @hondamotosbr @kartnovaodessa @pedroventuro_fimla @fim_latinamerica <br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #SeletivaMoto4 #NovaOdessa #Mobil"
+  },
+  {
+    fecha: "2026-11-19",
+    categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Andoni Domínguez (Nicaragua) llega a la gran final de la Mobil Moto4 L…",
     bajada: "CAMINO A GOIÂNIA. Andoni Domínguez (Nicaragua) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 3 del campeonato, con 131,5 puntos. Dos carreras por delante para defe",
     imagen: "NOTICIAS-IG/Df7kSncgpsW.jpg",

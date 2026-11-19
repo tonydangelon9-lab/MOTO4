@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-19",
+    categoria: "Instagram",
+    titulo: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Missão cumprida!",
+    bajada: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Missão cumprida!  Dois dias no Kartódromo Internacional de Nova Odessa e duas vagas para a Mobil Moto4 Latin Cup 2027:  🥇 1ª vaga (100% da in",
+    imagen: "NOTICIAS-IG/Df51G_hE4Xz.jpg",
+    ig: "Df51G_hE4Xz",
+    cuerpo: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Missão cumprida!<br><br>Dois dias no Kartódromo Internacional de Nova Odessa e duas vagas para a Mobil Moto4 Latin Cup 2027:<br><br>🥇 1ª vaga (100% da inscrição 2027): João Moreira Guimarães Teixeira @joaoteixeira_jt14 <br>🥈 2ª vaga (50% da inscrição 2027): Willian Santos de Oliveira @piloto_willian_santos <br><br>Obrigado a todos os pilotos e famílias que vieram até Nova Odessa. O caminho até a MotoGP™ continua!<br><br>Obrigado @mobil.moove @hondamotosbr @kartnovaodessa @pedroventuro_fimla @fim_latinamerica <br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #SeletivaMoto4 #NovaOdessa #Mobil"
+  },
+  {
     fecha: "2026-11-17",
     categoria: "Instagram",
     titulo: "🏁 Seletiva Mobil Moto4 Brasil 2027 · Dia 1",

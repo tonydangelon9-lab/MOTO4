@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-20",
+    categoria: "Instagram",
+    titulo: "Os dois selecionados da Seletiva Mobil Moto4 Brasil 2027, João Teixeira e Willian Santos…",
+    bajada: "Os dois selecionados da Seletiva Mobil Moto4 Brasil 2027, João Teixeira e Willian Santos, ao lado de Murilo Gomes, piloto oficial da Mobil Moto4 Latin Cup. 🇧🇷 @joaoteixeira_jt14 ",
+    imagen: "NOTICIAS-IG/Df97agCEe9j.jpg",
+    ig: "Df97agCEe9j",
+    cuerpo: "Os dois selecionados da Seletiva Mobil Moto4 Brasil 2027, João Teixeira e Willian Santos, ao lado de Murilo Gomes, piloto oficial da Mobil Moto4 Latin Cup. 🇧🇷 @joaoteixeira_jt14 @piloto_willian_santos @pilotomurilogomes <br><br>Obrigado @mobil.moove @hondamotosbr @kartnovaodessa @pedroventuro_fimla @fim_latinamerica <br><br>🤝 Mobil · Honda · Pirelli · SMK Helmets · Aquiles · Impovar · Revemar · FIM Latin America<br><br>#Moto4LatinCup #RoadToMotoGP #SeletivaMoto4 #NovaOdessa #Mobil"
+  },
+  {
     fecha: "2026-11-19",
     categoria: "Instagram",
     titulo: "🥈 Willian Santos de Oliveira conquistou a 2ª vaga da Seletiva Mobil Moto4 Brasil 2027, …",

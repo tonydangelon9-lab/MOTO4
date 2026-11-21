@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-21",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Kensei Matsudaira (Estados Unidos) llega a la gran final de la Mobil M…",
+    bajada: "CAMINO A GOIÂNIA. Kensei Matsudaira (Estados Unidos) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 2 del campeonato, con 201 puntos, a 18,5 del líder: es el único ",
+    imagen: "NOTICIAS-IG/DgAt31-jKCq.jpg",
+    ig: "DgAt31-jKCq",
+    cuerpo: "CAMINO A GOIÂNIA. Kensei Matsudaira (Estados Unidos) llega a la gran final de la Mobil Moto4 Latin Cup en el puesto 2 del campeonato, con 201 puntos, a 18,5 del líder: es el único que todavía puede pelear el título con Alberto Enriquez en las dos últimas carreras del año.<br>Goiânia · 4-6 dic<br><br>🇬🇧 ROAD TO GOIÂNIA. Kensei Matsudaira (USA) heads into the Mobil Moto4 Latin Cup grand final second in the championship, on 201 points and 18.5 behind the leader: he is the only rider who can still fight Alberto Enriquez for the title in the final two races of the year.<br>Goiânia · Dec 4–6<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-20",
     categoria: "Instagram",
     titulo: "Os dois selecionados da Seletiva Mobil Moto4 Brasil 2027, João Teixeira e Willian Santos…",

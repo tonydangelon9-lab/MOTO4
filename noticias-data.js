@@ -14,6 +14,15 @@
 
 window.NOTICIAS = [
   {
+    fecha: "2026-11-23",
+    categoria: "Instagram",
+    titulo: "CAMINO A GOIÂNIA. Alberto Enriquez (Ecuador) llega a la gran final de la Mobil Moto4 Lat…",
+    bajada: "CAMINO A GOIÂNIA. Alberto Enriquez (Ecuador) llega a la gran final de la Mobil Moto4 Latin Cup como líder del campeonato, con 219,5 puntos y 18,5 de ventaja sobre Kensei Matsudaira",
+    imagen: "NOTICIAS-IG/DgF3dswmcvV.jpg",
+    ig: "DgF3dswmcvV",
+    cuerpo: "CAMINO A GOIÂNIA. Alberto Enriquez (Ecuador) llega a la gran final de la Mobil Moto4 Latin Cup como líder del campeonato, con 219,5 puntos y 18,5 de ventaja sobre Kensei Matsudaira. El título se define en Goiânia.<br>Goiânia · 4-6 dic<br><br>🇬🇧 ROAD TO GOIÂNIA. Alberto Enriquez (Ecuador) heads into the Mobil Moto4 Latin Cup grand final as championship leader, on 219.5 points and 18.5 clear of Kensei Matsudaira. The title will be decided in Goiânia.<br>Goiânia · Dec 4–6<br><br>@mobil.moove @roadtomotogp @hondaracingbr @fim_latinamerica<br>#Moto4LatinCup #MobilMoto4LatinCup #RoadToMotoGP #Moto4"
+  },
+  {
     fecha: "2026-11-21",
     categoria: "Instagram",
     titulo: "CAMINO A GOIÂNIA. Kensei Matsudaira (Estados Unidos) llega a la gran final de la Mobil M…",
